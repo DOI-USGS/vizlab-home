@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-LABEL maintainer="makerspace-team@usgs.gov"
+LABEL maintainer="gs-w_vizlab@usgs.gov"
 
 # Run updates and install curl
 RUN apt-get update && \
