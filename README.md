@@ -369,7 +369,10 @@ We have dependabot set up on this repo to alert us when there are dependencies t
 
 1. Pull down the repo to local
 2. Checkout to new branch
-3. Run npm audit fix`
+3. Run the following command: 
+```
+npm audit fix 
+```
 4. Test to make sure it runs
 5. Anything that doesn't update, look into why
 6. Update individual dependencies manually as needed, testing that it runs after each one.
