@@ -1,7 +1,7 @@
 <template>
-    <div id="portfolio-container">
-        <h2>This is a test!</h2>
-    </div>
+  <div id="portfolio-container">
+    <h2>This is a test!</h2>
+  </div>
 </template>
 
 <script>
