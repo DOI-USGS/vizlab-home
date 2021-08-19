@@ -13,7 +13,7 @@
         >
           <img
             class="img"
-            src="@/assets/usgsHeaderAndFooter/images/logo.png"
+            src="@/assets/usgsHeaderAndFooter/images/usgsLogo_white.png"
             alt="Home"
           >
         </a>
