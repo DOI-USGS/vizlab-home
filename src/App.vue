@@ -7,6 +7,8 @@
     <router-view
       v-if="!isInternetExplorer"
     />
+    <ContentHeader />
+    <Hero />
     <PortfolioCards />
     <PreFooterVisualizationsLinks v-if="!isInternetExplorer" />
     <PreFooterCodeLinks v-if="!isInternetExplorer" />
@@ -27,6 +29,8 @@
             HeaderUSGS,
             InternetExplorerPage: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "internet-explorer-page"*/ "./components/InternetExplorerPage"),
             WorkInProgressWarning: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "work-in-progress-warning"*/ "./components/WorkInProgressWarning"),
+            ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./components/ContentHeader"),
+            Hero: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "hero"*/ "./components/Hero"),
             PortfolioCards: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-cards"*/ "./components/PortfolioCards"),
             PreFooterVisualizationsLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/PreFooterVisualizationsLinks"),
             PreFooterCodeLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-code"*/ "./components/PreFooterCodeLinks"),
