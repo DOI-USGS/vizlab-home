@@ -1,19 +1,26 @@
 <template>
-  <div id="portfolio-container" class="grid-container">
+  <div
+    id="portfolio-container"
+    class="grid-container"
+  >
     <ul class="usa-card-group grid-row">
       <li
-        v-for="viz in viz_list" :key="viz.title"
-        class="tablet:grid-col-4 usa-card">
+        v-for="viz in viz_list"
+        :key="viz.title"
+        class="tablet:grid-col-4 usa-card"
+      >
         <div class="usa-card__container">
           <header class="usa-card__header">
-            <h2 class="usa-card__heading">{{ viz.title }}</h2>
+            <h2 class="usa-card__heading">
+              {{ viz.title }}
+            </h2>
           </header>
           <div class="usa-card__media">
             <div class="usa-card__img">
-                <img
-                  src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-                  :alt="viz.title" 
-                />
+              <img
+                src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
+                :alt="viz.title" 
+              >
             </div>
           </div>
           <div class="usa-card__body">
@@ -31,16 +38,14 @@
                   :href="viz.url"
                   target="_blank"
                   class="usa-button"
-                  >View</a
-                >
+                >View</a>
               </li> 
               <li class="usa-button-group__item">
                 <a 
                   :href="viz.url" 
                   target="_blank"
                   class="usa-button usa-button--outline"
-                  >Code</a
-                >
+                >Code</a>
               </li>              
             </ul>
           </div>
