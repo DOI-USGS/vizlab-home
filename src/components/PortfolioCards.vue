@@ -27,10 +27,18 @@
           <div class="usa-card__footer">
             <ul class="usa-button-group">
               <li class="usa-button-group__item">
-                <button class="usa-button">View</button>
-              </li>
+                <a 
+                  :href="viz.url"
+                  target="_blank"
+                  class="usa-button"
+                  >View</a
+                >
+              </li> 
               <li class="usa-button-group__item">
-                <a href="javascript:void(0);" class="usa-button usa-button--outline"
+                <a 
+                  :href="viz.url" 
+                  target="_blank"
+                  class="usa-button usa-button--outline"
                   >Code</a
                 >
               </li>              
@@ -81,10 +89,6 @@
             // assign data
             this.viz_list = data[0];
             // console.log(this.viz_list)
-          },
-          goTo(data){
-            // use data to dynamically load url to button so it functions like a link
-
           }
         }
     }
