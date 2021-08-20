@@ -18,6 +18,8 @@
     // import WindowSize from "./components/WindowSize";
     import HeaderUSGS from './components/HeaderUSGS';
     import { isMobile } from 'mobile-device-detect';
+  
+    
     export default {
         name: 'App',
         components: {
