@@ -361,3 +361,20 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Updating Dependencies
+
+We have dependabot set up on this repo to alert us when there are dependencies that need to be updated. To do that, 
+
+1. Pull down the repo to local
+2. Checkout to new branch
+3. Run the following command: 
+```
+npm audit fix 
+```
+4. Test to make sure it runs
+5. Anything that doesn't update, look into why
+6. Update individual dependencies manually as needed, testing that it runs after each one.
+7. Once it's confirmed working, save the updates, commit, push, make one bit pull request and merge into main repo.
+8. Delete the dependabot prs
