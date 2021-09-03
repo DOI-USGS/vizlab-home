@@ -1,8 +1,5 @@
 # Step by Step Project Setup
-With the information provided, you can build a website using the Vue framework that incorporates both the US Web Design System (USWDS) and the standard USGS headers and footers.
-
-Image 1: Example of Final Product 
-![alt text](./markDownImages/Sample.png "Image of expected output")
+With the information provided, you can build a website using the Vue framework.
 
 ### Background
 Vue CLI (command line interface) is a full system for rapid Vue.js development that provides project scaffolding, a instantly updating development server, a graphic user interface and much more. Vue CLI is not Vue.js; it is Vue.js plus many additional user friendly features. Vue CLI is not required to create a Vue.js project, but it is a slick way of doing so.
