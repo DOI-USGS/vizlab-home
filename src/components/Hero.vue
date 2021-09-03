@@ -57,14 +57,8 @@
           return {
             publicPath: process.env.BASE_URL, // allows app to find the files when on different deployment roots
           }
-        },
-        mounted(){
-          this.d3 = Object.assign(d3Base);
-          this.loadData();  
-        },
-        methods:{
-          
         }
+        
     }
 </script>
 
