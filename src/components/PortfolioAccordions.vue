@@ -22,7 +22,7 @@
         id="m-a1"
         class="usa-accordion__content usa-prose"
       >
-       <div class="card-container grid-container">
+        <div class="card-container grid-container">
           <ul 
             class="usa-card-group grid-row"
           >
@@ -80,7 +80,7 @@
         id="m-a3"
         class="usa-accordion__content"
       >
-       <div class="card-container grid-container">
+        <div class="card-container grid-container">
           <ul 
             class="usa-card-group grid-row"
           >
