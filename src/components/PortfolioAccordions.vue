@@ -15,7 +15,7 @@
           aria-expanded="true"
           aria-controls="m-a1"
         >
-          Integrated Water Science Basins
+          Integrated Water Science
         </button>
       </h4>
       <div
