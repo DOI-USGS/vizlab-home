@@ -11,7 +11,7 @@
       <div class="usa-card__media">
         <div class="usa-card__img">
           <img
-            src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
+            :src="getImgUrl(viz.img)"
             :alt="viz.title" 
           >
         </div>
@@ -47,11 +47,7 @@
 </template>
 
 <script>
-  import * as d3Base from 'd3';
-  import uswds from 'uswds';
-   
-  // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
-   
+
    export default {
         name: 'PortfolioCard',
         props: {
@@ -62,12 +58,17 @@
             viz: { 
               type: Object
             } 
+        },
+        methods: {
+          getImgUrl(pic) {
+            return require('../assets/images/cards/'+pic)
+          }
         }
     }
 </script>
 
 <style>
-  /* this line is critical for importing USWDS styling */
+  /* import USWDS styling */
   @import '~uswds/dist/css/uswds.css'; 
 
 </style>

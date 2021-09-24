@@ -15,7 +15,7 @@
           aria-expanded="true"
           aria-controls="m-a1"
         >
-          Integrated Water Science
+          Visualizations
         </button>
       </h4>
       <div
@@ -31,6 +31,7 @@
               v-for="viz in vizList1"
               :key="viz.title"
               :viz="viz"
+              :src="viz.img"
               class="tablet:grid-col-4 usa-card"
             />
           </ul>
@@ -118,6 +119,7 @@
               v-for="viz in vizList"
               :key="viz.title"
               :viz="viz"
+              :src="viz.img"
               class="tablet:grid-col-4 usa-card"
             />
           </ul>
@@ -130,7 +132,6 @@
 
 <script>
   import * as d3Base from 'd3';
-  import uswds from 'uswds';
   import PortfolioCard from './PortfolioCard.vue';
    
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
