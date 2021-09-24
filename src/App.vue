@@ -9,7 +9,8 @@
     />
     <ContentHeader />
     <Hero />
-    <PortfolioCards />
+    <PortfolioAccordions />
+    <!-- <PortfolioCards /> -->
     <PreFooterVisualizationsLinks v-if="!isInternetExplorer" />
     <PreFooterCodeLinks v-if="!isInternetExplorer" />
     <FooterUSGS />
@@ -31,7 +32,8 @@
             WorkInProgressWarning: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "work-in-progress-warning"*/ "./components/WorkInProgressWarning"),
             ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./components/ContentHeader"),
             Hero: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "hero"*/ "./components/Hero"),
-            PortfolioCards: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-cards"*/ "./components/PortfolioCards"),
+            PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./components/PortfolioAccordions"),
+            // PortfolioCards: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-cards"*/ "./components/PortfolioCards"),
             PreFooterVisualizationsLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/PreFooterVisualizationsLinks"),
             PreFooterCodeLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-code"*/ "./components/PreFooterCodeLinks"),
             FooterUSGS: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "usgs-footer"*/ "./components/FooterUSGS") // Have Webpack put the footer in a separate chunk so we can load it conditionally (with a v-if) if we desire
