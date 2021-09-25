@@ -20,9 +20,6 @@
         <p>
           {{ viz.description }}
         </p>
-        <p>
-          Published {{ viz.released }}
-        </p>
       </div>
       <div class="usa-card__footer">
         <ul class="usa-button-group">
@@ -35,7 +32,7 @@
           </li> 
           <li class="usa-button-group__item">
             <a 
-              :href="viz.url" 
+              :href="viz.code" 
               target="_blank"
               class="usa-button usa-button--outline"
             >Code</a>
@@ -61,6 +58,7 @@
         },
         methods: {
           getImgUrl(pic) {
+            // TODO: alternative if image is not given or broken
             return require('../assets/images/cards/'+pic)
           }
         }

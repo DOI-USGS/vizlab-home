@@ -15,7 +15,7 @@
           aria-expanded="true"
           aria-controls="m-a1"
         >
-          Visualizations
+          Interactives
         </button>
       </h4>
       <div
@@ -28,7 +28,7 @@
           >
             <PortfolioCard
         
-              v-for="viz in vizList1"
+              v-for="viz in vizList"
               :key="viz.title"
               :viz="viz"
               :src="viz.img"
@@ -58,7 +58,7 @@
           >
             <PortfolioCard
         
-              v-for="viz in vizList2"
+              v-for="viz in vizList_riverConditions"
               :key="viz.title"
               :viz="viz"
               class="tablet:grid-col-4 usa-card"
@@ -87,7 +87,7 @@
           >
             <PortfolioCard
         
-              v-for="viz in vizList3"
+              v-for="viz in vizList_hurricanes"
               :key="viz.title"
               :viz="viz"
               class="tablet:grid-col-4 usa-card"
@@ -96,14 +96,14 @@
         </div>
       </div>
 
-      <!-- Use the accurate heading level to maintain the document outline -->
+            <!-- Use the accurate heading level to maintain the document outline -->
       <h4 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
           aria-expanded="false"
           aria-controls="m-a4"
         >
-          All
+          ChART Gallery
         </button>
       </h4>
       <div
@@ -116,10 +116,9 @@
           >
             <PortfolioCard
         
-              v-for="viz in vizList"
+              v-for="viz in vizList_charts"
               :key="viz.title"
               :viz="viz"
-              :src="viz.img"
               class="tablet:grid-col-4 usa-card"
             />
           </ul>
@@ -151,11 +150,7 @@
           return {
             publicPath: process.env.BASE_URL, // allows app to find the files when on different deployment roots
             d3: null,
-            vizList: null, // raw list of visualizations
-            vizList1: null, // featured group #1
-            vizList2: null,// featured group #2
-            vizList3: null, // featured group #3
-            vizGroups: ["iws-basin", "river-conditions", "hurricane"]  // these will be the three featured groups of vizzies, in order, pulled from the "groups" property of each object
+            vizGroups: ["interactives", "river-conditions", "hurricanes"]  // these will be the three featured groups of vizzies, in order, pulled from the "groups" property of each object
           }
         },
         mounted(){
@@ -178,9 +173,10 @@
             console.log(this.vizList);
 
             // create groups
-            this.vizList1 = this.vizList.filter((viz) => viz.group === this.vizGroups[0]);
-            this.vizList2 = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
-            this.vizList3 = this.vizList.filter((viz) => viz.group === this.vizGroups[2]);
+            this.vizList_riverConditions = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
+            this.vizList_hurricanes = this.vizList.filter((viz) => viz.group === this.vizGroups[2]);
+            this.vizList_interactives = this.vizList.filter((viz) => viz.group === this.vizGroups[2]); // all but river conditions and hurricanes
+            this.vizList_charts = this.vizList.filter((viz) => viz.group === this.vizGroups[2]); // static charts, twitter content
 
 
             

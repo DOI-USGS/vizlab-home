@@ -10,9 +10,7 @@
             <a
               href=""
               title="Vizlab"
-            >
-              Vizlab
-            </a>
+            />
           </em>
         </div>
         <button class="usa-menu-btn">
@@ -91,8 +89,8 @@
     export default {
         name: "ContentHeader",
         mounted() {
-            // This is a fix for the weird USWDS glitch that causes the Methods section accordion menus to be open on page load
-            const targetAccordionDivs = document.querySelectorAll('usa-nav__submenu-item');
+            // This is a fix for a USWDS glitch that causes accordion menus to be open on page load
+            const targetAccordionDivs = document.querySelectorAll('usa-nav__submenu');
             targetAccordionDivs.forEach((div) => {
                 div.setAttribute('hidden', '""');
             });
