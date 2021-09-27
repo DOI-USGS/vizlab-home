@@ -1,5 +1,5 @@
 module.exports = {
-  'extends': 'plugin:vue/recommended',
+  'extends': 'plugin:vue/vue3-recommended',
   'parserOptions': {
     'parser': 'babel-eslint'
   }
