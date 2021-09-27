@@ -30,10 +30,7 @@
         </div>
         <div class="tablet:grid-col-8 usa-prose">
           <p>
-            The tagline should inspire confidence and interest, focusing on the
-            value that your overall approach offers to your audience. Use a
-            heading typeface and keep your tagline to just a few words, and don’t
-            confuse or mystify.
+            
           </p>
           <p>
             View our entire portfolio of visualizations below. 

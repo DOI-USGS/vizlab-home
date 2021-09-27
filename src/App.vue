@@ -3,12 +3,12 @@
     <!-- <WindowSize v-if="checkTypeOfEnv === '-test build-'" /> -->
     <HeaderUSGS />
     <InternetExplorerPage v-if="isInternetExplorer" />
-    <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" /> <!-- an empty string in this case means the 'prod' version of the application   -->
+    <!-- <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" /> --> <!-- an empty string in this case means the 'prod' version of the application   -->
     <router-view
       v-if="!isInternetExplorer"
     />
     <ContentHeader />
-    <Hero />
+    <!-- <Hero /> -->
     <PortfolioAccordions />
     <!-- <PortfolioCards /> -->
     <PreFooterVisualizationsLinks v-if="!isInternetExplorer" />
@@ -29,9 +29,9 @@
             // WindowSize,
             HeaderUSGS,
             InternetExplorerPage: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "internet-explorer-page"*/ "./components/InternetExplorerPage"),
-            WorkInProgressWarning: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "work-in-progress-warning"*/ "./components/WorkInProgressWarning"),
+            //WorkInProgressWarning: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "work-in-progress-warning"*/ "./components/WorkInProgressWarning"),
             ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./components/ContentHeader"),
-            Hero: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "hero"*/ "./components/Hero"),
+            //Hero: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "hero"*/ "./components/Hero"),
             PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./components/PortfolioAccordions"),
             // PortfolioCards: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-cards"*/ "./components/PortfolioCards"),
             PreFooterVisualizationsLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/PreFooterVisualizationsLinks"),
