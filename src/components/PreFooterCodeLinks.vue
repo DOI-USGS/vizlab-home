@@ -4,7 +4,7 @@
       :href="gitHubRepositoryLink"
       target="_blank"
       aria-label="github link"
-    >Get the {{ projectTitle }} code
+    >Get the code behind this site
       <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'github' }" />
     </a>
   </div>
@@ -15,8 +15,7 @@
       name: 'PreFooterCodeLinks',
       data() {
           return {
-              gitHubRepositoryLink: process.env.VUE_APP_GITHUB_REPOSITORY_LINK,
-              projectTitle: process.env.VUE_APP_TITLE
+              gitHubRepositoryLink: process.env.VUE_APP_GITHUB_REPOSITORY_LINK
           }
       }
   }
@@ -24,17 +23,19 @@
 </script>
 
 <style scoped lang="scss">
+$nearBlack: #181a1a;
   #code-repository-link-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
-    background-color: #00264c;
+    height: auto;
+    background-color: $nearBlack;
     margin: 0 auto;
-    padding-bottom: 0.4rem;
+    padding: 0.4rem;
     a {
       color: white;
       font-family: 'Source Sans Pro',sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       text-decoration: none
     }
   }

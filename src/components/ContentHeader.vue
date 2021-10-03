@@ -6,12 +6,10 @@
     <div class="usa-navbar">
       <div class="usa-logo" id="basic-logo">
         <em class="usa-logo__text">
-          <a href="javascript:void(0)" title="USGS Vizlab">
-            USGS Vizlab
-          </a>
+          <vizHeader />
         </em>
       </div>
-      <button class="usa-menu-btn">Menu</button>
+      <button class="usa-menu-btn">What's new</button>
     </div>
     <nav aria-label="Primary navigation" class="usa-nav">
       <button class="usa-nav__close">
@@ -32,13 +30,10 @@
               <a href="#">Interactives</a>
             </li>
             <li class="usa-nav__submenu-item">
-              <a href="#">Hurricanes</a>
+              <a href="#">Chart Gallery</a>
             </li>
               <li class="usa-nav__submenu-item">
-              <a href="#">U.S. River Conditions</a>
-            </li>
-            <li class="usa-nav__submenu-item">
-              <a href="#">Chart Gallery</a>
+              <a href="#">Hurricanes</a>
             </li>
           </ul>
         </li>
@@ -51,22 +46,16 @@
             <span>About</span>
           </button>
         </li>
+         <li class="usa-nav__primary-item">
+          <button
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="basic-nav-section-two"
+          >
+            <span>Follow us</span>
+          </button>
+        </li>
       </ul>
-
-<!--       <form class="usa-search usa-search--small" role="search">
-        <label class="usa-sr-only" for="basic-search-field-en-small">
-          Search
-        </label>
-        <input
-          class="usa-input"
-          id="basic-search-field-en-small"
-          type="search"
-          name="search"
-        />
-        <button class="usa-button" type="submit">
-          <span class="usa-sr-only">Search</span>
-        </button>
-      </form> -->
     </nav>
   </div>
 </header>

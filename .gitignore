@@ -22,3 +22,5 @@ yarn-error.log*
 
 # gif files - need to go to AWS
 *.gif
+
+scratch/

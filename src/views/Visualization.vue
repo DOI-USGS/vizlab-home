@@ -1,49 +1,83 @@
 <template>
   <div id="visualization">
-    <!-- <h1>{{ title }}</h1> -->
+    <section id="viz-header" >
+      <vizHeader id="viz-header-svg" />
+    </section>
+    <section id="viz-menu">
+         <ContentHeader />
+         <WhatsNew />
+    </section>
+   <section id="viz-cards">
+    <PortfolioAccordions />
+   </section>
+   <section id="viz-about">
+     <About />
+     </section>
+     <section id="viz-follow">
+      <FollowUs />
+     </section>
   </div>
 </template>
 
 <script>
-import * as d3Base from 'd3';
+import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg"; 
     export default {
         name: 'Visualization',
-      //   props: {
-      //       title: {
-      //           type: String,
-      //           default: process.env.VUE_APP_TITLE
-      //       }
-      //   },
-      //  data() {
-      //   return {
-      //     publicPath: process.env.BASE_URL, // allows app to find the files when on different deployment roots
-      //     d3: null,
-      //     viz_list: null,
-      //   }
-      //  },
-      //   mounted(){
-      //     this.d3 = Object.assign(d3Base);
-      //     this.loadData();  
-      // },
-      // methods:{
-      //   loadData() {
-      //     const self = this;
+        components: {
+          vizHeader,
+          ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
+          About: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/About"),
+          WhatsNew: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/WhatsNew"),
+          PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions"),
+          FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
+        }
 
-      //     // read in data 
-      //     let promises = [
-      //     self.d3.csv(self.publicPath + "viz-list.csv",  this.d3.autotype) // list of published viz from drupal page
-      //     ];
-      //     Promise.all(promises).then(self.callback); // once it's loaded
-      //   },
-      //   callback(data) {
-      //     // assign data
-      //     this.viz_list = data[0];
-      //     console.log(this.viz_list)
-      //   }
-      // }
     }
 </script>
 
 <style scoped lang="scss">
+$nearBlack: #181a1a;
 
+// repeating section style
+section {
+  margin-bottom: 1rem;
+}
+// create page layout as grid
+// mobile
+#visualization {
+  margin: 2.5%;
+  display: grid;
+  width: 100vw;
+  overflow: hidden;
+  grid-template-areas:
+  "logo logo"
+  "menu menu"
+  "cards cards"
+  "about about"
+  "follow follow"
+
+}
+#viz-header {
+  grid-area: logo;
+}
+#viz-menu {
+  grid-area: menu;
+}
+#viz-cards {
+  grid-area: cards;
+}
+#viz-about {
+  grid-area: about;
+}
+#viz-follow {
+  grid-area: follow;
+}
+
+// each section is assigned a grid area
+// elements within each section contained in div to control positioning
+
+#viz-header-svg {
+  fill: $nearBlack;
+  width: 40vw;
+}
 </style>

@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$nearBlack: #181a1a;
 header {
   display: block;
 }
@@ -59,7 +60,7 @@ header {
 }
 /* header (only) nav */
 .header-nav {
-  background: #00264c;
+  background: $nearBlack;
 }
 .logo-header img {
   margin-top: 8px;
@@ -69,6 +70,6 @@ header {
   height: auto;
 }
 .logo-header img {
-  height: 65px;
+  height: 45px;
 }
 </style>

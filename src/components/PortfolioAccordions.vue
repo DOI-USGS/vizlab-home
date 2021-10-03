@@ -38,31 +38,32 @@
         </div>
       </div>
 
-      <!-- Use the accurate heading level to maintain the document outline -->
+
+     <!-- Use the accurate heading level to maintain the document outline -->
       <h4 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
           aria-expanded="false"
           aria-controls="m-a2"
         >
-          River Conditions
+          Chart Gallery
         </button>
       </h4>
       <div
-        id="m-a2"
+        id="m-a4"
         class="usa-accordion__content"
       >
         <div class="card-container grid-container">
           <ul 
             class="usa-card-group grid-row"
           >
-            <PortfolioCard
+            <PortfolioImage
         
-              v-for="viz in vizList_riverConditions"
+              v-for="viz in vizList_charts"
               :key="viz.title"
               :viz="viz"
               :src="viz.img"
-              class="tablet:grid-col-4 grid-col-auto usa-card"
+              class="tablet:grid-col-4 usa-card"
             />
           </ul>
         </div>
@@ -97,31 +98,31 @@
         </div>
       </div>
 
-            <!-- Use the accurate heading level to maintain the document outline -->
+      <!-- Use the accurate heading level to maintain the document outline -->
       <h4 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
           aria-expanded="false"
           aria-controls="m-a4"
         >
-          Chart Gallery
+          River Conditions
         </button>
       </h4>
       <div
-        id="m-a4"
+        id="m-a2"
         class="usa-accordion__content"
       >
         <div class="card-container grid-container">
           <ul 
             class="usa-card-group grid-row"
           >
-            <PortfolioImage
+            <PortfolioCard
         
-              v-for="viz in vizList_charts"
+              v-for="viz in vizList_riverConditions"
               :key="viz.title"
               :viz="viz"
               :src="viz.img"
-              class="tablet:grid-col-4 usa-card"
+              class="tablet:grid-col-4 grid-col-auto usa-card"
             />
           </ul>
         </div>

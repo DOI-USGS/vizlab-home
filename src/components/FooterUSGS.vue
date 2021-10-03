@@ -61,7 +61,7 @@
             </li>
             <li class="twitter">
               <a
-                href="https://twitter.com/usgs"
+                href="https://twitter.com/usgs_datasci"
                 target="_blank"
                 aria-label="twitter link"
               >
@@ -79,7 +79,7 @@
             </li>
             <li class="github">
               <a
-                href="https://github.com/usgs"
+                href="https://github.com/usgs-vizlab"
                 target="_blank"
                 aria-label="github link"
               >
@@ -106,7 +106,7 @@
             </li>
             <li class="instagram">
               <a
-                href="https://instagram.com/usgs"
+                href="https://instagram.com/usgs_streamgages"
                 target="_blank"
                 aria-label="instagram link"
               >
@@ -129,6 +129,7 @@
 </script>
 
 <style scoped lang="scss">
+$nearBlack: #181a1a;
   footer, #navbar {
     font-family: 'Source Sans Pro',sans-serif;
     margin: 0;
@@ -186,7 +187,7 @@
     content: none;
   }
   footer.footer {
-    background: #00264c;
+    background: $nearBlack;
     padding-bottom: 0;
     position: relative;
     width: 100%;
