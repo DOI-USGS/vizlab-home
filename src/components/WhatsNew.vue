@@ -56,11 +56,10 @@ $nearBlack: #181a1a;
     display:grid;
     width: 90%;
     height: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 6fr;
     grid-template-areas:
-    "ft-title ft-title ft-text"
-    "ft-img ft-img ft-text"
+    "ft-title"
+    "ft-img"
+    "ft-text"
 }
 #viz-title {
     grid-area: ft-title;
@@ -116,4 +115,19 @@ a:active, a:focus {
     outline: 0;
 }
 :focus:not(:focus-visible) { outline: none }
+
+
+// desktop layout
+@media (min-width:1024px) {
+  #viz-latest {
+    display:grid;
+    width: 90%;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 6fr;
+    grid-template-areas:
+    "ft-title ft-title ft-text"
+    "ft-img ft-img ft-text"
+}
+}
 </style>

@@ -81,7 +81,7 @@ section {
 
 #viz-header-svg {
   fill: $nearBlack;
-  width: 0%;
+  width: 80%;
 }
 
 // desktop layout
