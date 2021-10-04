@@ -27,7 +27,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
           vizHeader,
           ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
           About: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/About"),
-          WhatsNew: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/WhatsNew"),
+          WhatsNew: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "whats-new"*/ "./../components/WhatsNew"),
           PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions"),
           FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
         }
@@ -37,21 +37,24 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
 
 <style scoped lang="scss">
 $nearBlack: #181a1a;
+$darkGreen: #1F7564;
 
 // repeating section style
 section {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 // create page layout as grid
 // mobile
 #visualization {
-  margin: 2.5%;
+  margin: 5%;
+  margin-top: 2%;
   display: grid;
   width: 100vw;
   overflow: hidden;
   grid-template-areas:
   "logo logo"
-  "menu menu"
+  "menu-bar menu-bar"
   "cards cards"
   "about about"
   "follow follow"
@@ -61,7 +64,7 @@ section {
   grid-area: logo;
 }
 #viz-menu {
-  grid-area: menu;
+  grid-area: menu-bar;
 }
 #viz-cards {
   grid-area: cards;
@@ -78,6 +81,21 @@ section {
 
 #viz-header-svg {
   fill: $nearBlack;
+  width: 0%;
+}
+
+// desktop layout
+@media (min-width:1024px) {
+  #visualization {
+    grid-template-areas:
+    "logo logo"
+    "menu-bar menu-bar"
+    "cards cards"
+    "about about"
+  "follow follow"
+  }
+#viz-header-svg {
   width: 40vw;
+}
 }
 </style>

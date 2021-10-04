@@ -3,13 +3,12 @@
     <h2 class="site-preview-heading">
       Visualizations
     </h2>
-
     <div
       class="usa-accordion"
       aria-multiselectable="true"
     >
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h4 class="usa-accordion__heading">
+      <h3 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -17,7 +16,7 @@
         >
           Interactives
         </button>
-      </h4>
+      </h3>
       <div
         id="m-a1"
         class="usa-accordion__content usa-prose"
@@ -40,7 +39,7 @@
 
 
      <!-- Use the accurate heading level to maintain the document outline -->
-      <h4 class="usa-accordion__heading">
+      <h3 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
           aria-expanded="false"
@@ -48,7 +47,7 @@
         >
           Chart Gallery
         </button>
-      </h4>
+      </h3>
       <div
         id="m-a4"
         class="usa-accordion__content"
@@ -70,15 +69,15 @@
       </div>
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h4 class="usa-accordion__heading">
+      <h3 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
           aria-expanded="false"
           aria-controls="m-a3"
         >
-          Hurricanes
+          Events
         </button>
-      </h4>
+      </h3>
       <div
         id="m-a3"
         class="usa-accordion__content"
@@ -92,36 +91,6 @@
               v-for="viz in vizList_hurricanes"
               :key="viz.title"
               :viz="viz"
-              class="tablet:grid-col-4 grid-col-auto usa-card"
-            />
-          </ul>
-        </div>
-      </div>
-
-      <!-- Use the accurate heading level to maintain the document outline -->
-      <h4 class="usa-accordion__heading">
-        <button
-          class="usa-accordion__button"
-          aria-expanded="false"
-          aria-controls="m-a4"
-        >
-          River Conditions
-        </button>
-      </h4>
-      <div
-        id="m-a2"
-        class="usa-accordion__content"
-      >
-        <div class="card-container grid-container">
-          <ul 
-            class="usa-card-group grid-row"
-          >
-            <PortfolioCard
-        
-              v-for="viz in vizList_riverConditions"
-              :key="viz.title"
-              :viz="viz"
-              :src="viz.img"
               class="tablet:grid-col-4 grid-col-auto usa-card"
             />
           </ul>
@@ -196,8 +165,8 @@
 </script>
 
 <style scoped lang="scss">
-  /* this line is critical for importing USWDS styling */
-  @import '~uswds/dist/css/uswds.css'; 
+$nearBlack: #181a1a;
+$darkGreen: #1F7564;
 
   $icons:(
   "chevronLeft": '<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 255"><path d="M165,36v4c-1.78,2.17-3.4,4.52-5.38,6.5q-38.06,38.16-76.18,76.25c-1.48,1.48-2.85,3.08-4.46,4.83,1.73,1.82,3.06,3.28,4.45,4.67q38.1,38.13,76.19,76.25c2,2,3.6,4.33,5.38,6.5v4c-1.55,2.12-2.86,4.47-4.68,6.32Q147.78,238.13,135,250.67a48.26,48.26,0,0,1-6,4.33h-4a78.69,78.69,0,0,1-7-5.58Q62.55,194.07,7.18,138.6C4.71,136.14,2.39,133.54,0,131v-7c1.57-1.71,3.07-3.49,4.71-5.13Q61.51,62,118.4,5.22A70.08,70.08,0,0,1,125,0h5q16.42,16.11,32.81,32.25C163.8,33.24,164.28,34.74,165,36Z" style="fill:%%COLOR%%"/></svg>',
@@ -220,31 +189,43 @@ $brightBlue: rgb(0, 6, 10);
 }
 
   #portfolio-accordions {
-      max-width: 1000px;
-      margin: auto;
+      max-width: 90vw;
   }
 
   /* using flex positioning on card groups */
 .usa-card-group .grid-row {
-  max-width: 1000px;
+  max-width: 90vw;
   flex-grow:2;
 }
 .usa-accordion__button{
-  background-image: get-icon("chevronDown", "black");
+  background-image: get-icon("chevronDown", $darkGreen);
   background-size: 15px 10px;
-  &:hover{
-    color: "black";
-  }
+ 
 }
 .usa-accordion__button[aria-expanded=false]{
-  background-image: get-icon("chevronLeft", rgb(7, 0, 0));
+  background-image: get-icon("chevronLeft", $darkGreen);
   background-size: 10px 15px;
   &:hover{
-    background-image: get-icon("chevronLeft", #fff);
-    color: "black";
+    background-image: get-icon("chevronLeft", $darkGreen);
+    color: $darkGreen;
   }
 }
+
 .usa-accordion__button {
-  color: "black";
+  color: $darkGreen;
+  border-style: none none solid none;
+  border-top: 5px solid $darkGreen;
+  background-color: transparent;
+  h3 {
+    border-style: none none solid none;
+  }
 }
+.site-preview-heading {
+  padding: 1rem;
+
+}
+h2 {
+    color: $nearBlack;
+    margin-bottom: 0px;
+  }
 </style>

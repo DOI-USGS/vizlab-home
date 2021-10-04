@@ -65,6 +65,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 $darkGreen: #1F7564;
 $nearBlack: #181a1a;
+$linkColor: rgb(121, 82, 158);
 $sourceSans: 'Source Sans Pro', sans-serif;
 
 html,
@@ -89,7 +90,6 @@ body {
   font-family: $sourceSans;
   line-height: 1;
   text-align: left;
-  text-shadow: 1px 1px 100px rgba(0,0,0,.8);
   @media screen and (max-width: 600px) {
     font-size: 2.5em;
   }
@@ -98,23 +98,25 @@ h2{
   font-weight: 600;
   text-align: left;
   font-family:$sourceSans;
-  font-size: 3em;
-  margin-top: 5px;
+  font-size: 2.5em;
+  margin-top: 2px;
   line-height: 1;
-  text-shadow: 10px 10px 100px rgba(20, 20, 20, 0.8);
   @media screen and (max-width: 600px) {
     font-size: 2em;
   }
-  padding-left: 1rem;
+  padding-left: 0rem;
 }
 h3{
   font-size: 1.5em;
   padding-top: 0em;
+  margin: 0px;
   font-family: $sourceSans;
-  font-weight: 300;
+  font-weight: 600;
   @media screen and (max-width: 600px) {
       font-size: 1em;
   }  
 }
-
+a {
+  color: $darkGreen;
+}
 </style>

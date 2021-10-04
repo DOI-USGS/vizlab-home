@@ -1,5 +1,8 @@
 <template>
-<div >
+  <div id="about-container">
+    <h2 class="site-preview-heading">
+      About
+    </h2>
     </div>
 </template>
 
@@ -22,6 +25,23 @@
 </script>
 
 <style lang="scss">
- 
+ $nearBlack: #181a1a;
+$darkGreen: #1F7564;
+.usa-accordion__button {
+  color: $darkGreen;
+  border-style: none none solid none;
+  border-top: 5px solid $darkGreen;
+  background-color: transparent;
+  h3 {
+    border-style: none none solid none;
+  }
+}
+.site-preview-heading {
+  padding: 1rem;
 
+}
+h2 {
+    color: $nearBlack;
+    margin-bottom: 0px;
+  }
 </style>

@@ -1,31 +1,30 @@
 <template>
   <div>
-    <div class="usa-overlay"></div>
 <header class="usa-header usa-header--basic">
   <div class="usa-nav-container">
-    <div class="usa-navbar">
-      <div class="usa-logo" id="basic-logo">
-        <em class="usa-logo__text">
-          <vizHeader />
-        </em>
-      </div>
-      <button class="usa-menu-btn">What's new</button>
-    </div>
     <nav aria-label="Primary navigation" class="usa-nav">
-      <button class="usa-nav__close">
-        <img src="/assets/img/usa-icons/close.svg" role="img" alt="Close" />
-      </button>
       <ul class="usa-nav__primary usa-accordion">
+         <li class="usa-nav__primary-item">
+          <button
+            class="usa-accordion__button usa-nav__link"
+            aria-expanded="false"
+            aria-controls="basic-nav-new"
+            onClick="document.getElementById('viz-new').scrollIntoView();"
+          >
+            <span>What's new</span>
+          </button>
+        </li>
         <li class="usa-nav__primary-item">
           <button
-            class="usa-accordion__button usa-nav__link usa-current"
+            class="usa-nav__button usa-nav__link usa-current"
             aria-expanded="false"
-            aria-controls="basic-nav-section-one"
+            aria-controls="basic-nav-viz"
+            onClick="document.getElementById('viz-cards').scrollIntoView();"
           >
             <span>Visualizations</span>
           </button>
 
-          <ul id="basic-nav-section-one" class="usa-nav__submenu">
+    <!--       <ul id="basic-nav-section-one" class="usa-nav__submenu">
             <li class="usa-nav__submenu-item">
               <a href="#">Interactives</a>
             </li>
@@ -35,22 +34,24 @@
               <li class="usa-nav__submenu-item">
               <a href="#">Hurricanes</a>
             </li>
-          </ul>
+          </ul> -->
         </li>
         <li class="usa-nav__primary-item">
           <button
-            class="usa-accordion__button usa-nav__link"
+            class="usa-nav__button usa-nav__link"
             aria-expanded="false"
-            aria-controls="basic-nav-section-two"
+            aria-controls="basic-nav-about"
+            onClick="document.getElementById('viz-about').scrollIntoView();"
           >
             <span>About</span>
           </button>
         </li>
          <li class="usa-nav__primary-item">
           <button
-            class="usa-accordion__button usa-nav__link"
+            class="usa-nav__button usa-nav__link"
             aria-expanded="false"
-            aria-controls="basic-nav-section-two"
+            aria-controls="basic-nav-follow"
+            onClick="document.getElementById('viz-follow').scrollIntoView();"
           >
             <span>Follow us</span>
           </button>
@@ -76,6 +77,28 @@
     }
 </script>
 
-<style scoped>
-  @import '~uswds/dist/css/uswds.css'; 
+<style scoped lang="scss">
+$color_menu: #1F7564;
+
+.usa-header.usa-header--basic {
+  width: 90%;
+  background-color: $color_menu;
+}
+.usa_accordion__button .usa-nav__link {
+  color: white;
+  stroke: white;
+
+}
+  @media (min-width:1024px) {
+  }
+button {
+  // text on menu
+  span {
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  }
+
+}
 </style>

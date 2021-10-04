@@ -39,12 +39,14 @@ export default {
 $nearBlack: #181a1a;
 header {
   display: block;
+  width: 100vw;
 }
 .tmp-container {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 0;
+  margin-left: 0;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 0px;
 }
 .tmp-container a {
   text-decoration: none;
