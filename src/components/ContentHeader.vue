@@ -49,7 +49,7 @@
                 <span>About</span>
               </button>
             </li>
-            <li class="usa-nav__primary-item">
+            <!-- <li class="usa-nav__primary-item">
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
@@ -58,7 +58,7 @@
               >
                 <span>Follow us</span>
               </button>
-            </li>
+            </li> -->
           </ul>
         </nav>
       </div>
@@ -82,9 +82,11 @@
 
 <style scoped lang="scss">
 $color_menu: #1F7564;
-
+div.usa-nav-container {
+  width: 100%;
+}
 .usa-header.usa-header--basic {
-  width: 90%;
+  width: 95%;
   background-color: $color_menu;
 }
 .usa_nav__button .usa-nav__link {
@@ -110,5 +112,5 @@ button {
     outline: none;
     outline-offset: 0;
 } */
-
+ $theme-header-min-width: 300px;
 </style>

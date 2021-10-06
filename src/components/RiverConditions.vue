@@ -5,8 +5,8 @@
       target="_blank"
     >
       <div id="rc-title">
-        <h3>See the latest U.S. River Conditions</h3>
-        <p>April 1 - June 30, 2021</p>
+        <h3>U.S. River Conditions</h3>
+        <p>See the latest animation: <span id="date-hilite"> April 1 - June 30, 2021</span></p>
       </div>
       <div id="rc-dropdown" />
       <div id="rc-img">
@@ -36,7 +36,8 @@
 
 <style lang="scss">
 $nearBlack: #181a1a;
-
+$darkGreen: #1F7564;
+$coolBlue: #005ea2;
  #rc-container {
      display: grid;
      grid-template-areas: 
@@ -49,11 +50,19 @@ $nearBlack: #181a1a;
 #rc-img {
     grid-area: img;
 }
+#date-hilite {
+  color: $coolBlue;
+}
 a{
   #rc-title  {
-    h3 {
+    h2, h3 {
       color: $nearBlack;
       padding-top: 1rem;
+      margin-bottom: 0rem;
+    }
+    p {
+      color: $nearBlack;
+      margin: 0;
     }
   }
 }

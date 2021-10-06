@@ -83,8 +83,11 @@
 </script>
 
 <style lang="scss" >
+$nearBlack: #181a1a;
+$darkGreen: #1F7564;
+$lightGrey: rgb(145, 146, 145);
+$coolBlue: #005ea2;
   /* style card appearance */ 
-
 .usa-card__container.main:hover {
   transform: translate3D(0,-0.5px,0) scale(1.02); 
   box-shadow: 4px 8px 4px rgba(39,44,49,.07), 1px 4px 4px rgba(39,44,49,.04);
@@ -93,5 +96,15 @@
 .usa-button-group a:focus {
     outline: None;
 }
-
+a.usa-button {
+  //background-color: $nearBlack;
+}
+a.usa-button.usa-button--outline {
+  background-color: white;
+  //color: $nearBlack;
+  //box-shadow: inset 0 0 0 2px $nearBlack;
+}
+h2 {
+  color: $nearBlack;
+}
 </style>

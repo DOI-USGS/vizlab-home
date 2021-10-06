@@ -5,7 +5,7 @@
     </div>
     <div id="viz-text">
         <div class="text-container">
-        <h2 id="title-blog"><a href="https://waterdata.usgs.gov/blog/" target="_blank">Water data blog</a></h2><br/>
+        <h3 id="title-blog"><a href="https://waterdata.usgs.gov/blog/" target="_blank">In the water data blog</a></h3>
         <!-- <li>We're hiring!</li> -->
         <li><a href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/" target="_blank">A month of data viz for the #30DayChartChallenge</a></li>
         <li><a href="https://waterdata.usgs.gov/blog/build-r-animations/" target="_blank">Recreating the U.S. River Conditions animations in R</a></li>
@@ -21,7 +21,7 @@
             <img src="../assets/images/new/da-animated.gif"
             alt=""
             />
-            <h3 id="title-new">Data assimilation animated</h3> <a id="twitter-link" href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1" target="_blank" >See it on twitter</a> 
+            <h3 id="title-new">Data assimilation animated  </h3> <a id="twitter-link" href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1" target="_blank" >See it on twitter</a> 
         </div>
     </div>
     </div>
@@ -74,14 +74,17 @@ $nearBlack: #181a1a;
     grid-area: ft-text;
     .text-container {
         padding: 1rem;
-        //padding-top: 3.5rem;
     }
 }
 #title-new {
     margin-top: 1rem;
 }
-.river-container {
-    //padding: 1rem;
+#title-new-main {
+    margin-top: 1rem;
+    color: $darkGreen;
+}
+#title-blog {
+    color: $nearBlack;
 }
 #viz-img {
     grid-area: ft-img;
@@ -98,14 +101,29 @@ a {
     text-decoration: none;
 }
 h2 {
-    color: $nearBlack;
+    color: $darkGreen;
 }
 h3 {
   color: $nearBlack;
+      padding-bottom: 1rem;
+  a {
+      color: $nearBlack;
+      padding-bottom: 1rem;
+  }
 
   }
-#twitter-link {
+  #viz-text li {
+  list-style-type: square;
+  padding-left: 0em;
+  list-style-position: outside;
+  text-indent: -1em;
+}
+  
+#title-new, #twitter-link {
     display: inline;
+}
+#twitter-link {
+    font-style: italic;
 }
 a:active, a:focus {
     border: none;

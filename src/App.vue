@@ -65,7 +65,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 $darkGreen: #1F7564;
 $nearBlack: #181a1a;
-$coolBlue: #751e5b;
+$coolBlue: #005ea2;
 $sourceSans: 'Source Sans Pro', sans-serif;
 
 html,
@@ -97,9 +97,9 @@ body {
 h2{
   font-weight: 600;
   text-align: left;
-  color: $nearBlack;
+  color: $darkGreen;
   font-family:$sourceSans;
-  font-size: 2.5em;
+  font-size: 2.25em;
   margin-top: 2px;
   line-height: 1;
   @media screen and (max-width: 600px) {
@@ -108,7 +108,7 @@ h2{
   padding-left: 0rem;
 }
 h3{
-  font-size: 1.5em;
+  font-size: 1.75em;
   padding-top: 0em;
   color: $nearBlack;
   margin: 0px;
@@ -119,10 +119,11 @@ h3{
   }  
 }
 a {
-  color: $darkGreen;
+  color: $coolBlue;
 }
 .site-preview-heading {
   padding: 1rem;
 }
 $theme-accordion-font-family: $sourceSans;
+
 </style>
