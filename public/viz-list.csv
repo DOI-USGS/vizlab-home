@@ -5,6 +5,7 @@ flow-area,8/1/21,,chart,,,charts/flow-area-202008-202108.jpeg,,,,
 flow-cartogram-202107,8/1/21,,chart,,,charts/flow-cartogram-202107.jpeg,,,,
 river-conditions-202104-202106,7/1/21,animation,river-conditions,"April 1 to June 1, 2021",,river_conditions_apr_jun_2021_thumbnail.png,,https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021,"river-conditions, animation, r, nwis, flow",https://github.com/USGS-VIZLAB/gage-conditions-gif
 temperature-prediction-modeling,6/21/21,narrative,interactives,How we Model Stream Temperature in the Delaware River Basin,,temp-modeling-physics-01.png,,https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling,"temperature, interactive, d3, DRB, ML",https://github.com/usgs-makerspace/temperature-prediction
+,6/21/21,,chart,,,charts/iceflag_dreamsicle_viz_lplatt_twitter.png,,,,
 temperature-prediction-monitoring,6/2/21,narrative,interactives,How we Monitor Stream Temperature in the Delaware River Basin,,temp-monitor.jpg,,https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/monitoring,"temperature, interactive, d3, DRB, ML",https://github.com/usgs-makerspace/temperature-prediction
 hex-map,6/1/21,,chart,,,hex-map_large.png,,,,
 rmse-bees,5/21/21,,chart,,,rmse_bees_twitter-01.png,,,,

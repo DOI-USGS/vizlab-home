@@ -36,14 +36,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$nearBlack: #181a1a;
 header {
   display: block;
+  width: 100vw;
 }
 .tmp-container {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 0;
+  margin-left: 0;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 0px;
 }
 .tmp-container a {
   text-decoration: none;
@@ -59,7 +62,7 @@ header {
 }
 /* header (only) nav */
 .header-nav {
-  background: #00264c;
+  background: $nearBlack;
 }
 .logo-header img {
   margin-top: 8px;
@@ -69,6 +72,6 @@ header {
   height: auto;
 }
 .logo-header img {
-  height: 65px;
+  height: 45px;
 }
 </style>

@@ -3,7 +3,6 @@
     class="card"
   >
     <div class="usa-card__container">
-    
       <div class="usa-card__media-exdent">
         <div class="usa-card__img">
           <img

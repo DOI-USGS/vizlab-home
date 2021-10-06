@@ -1,75 +1,68 @@
 <template>
   <div>
-    <div class="usa-overlay"></div>
-<header class="usa-header usa-header--basic">
-  <div class="usa-nav-container">
-    <div class="usa-navbar">
-      <div class="usa-logo" id="basic-logo">
-        <em class="usa-logo__text">
-          <a href="javascript:void(0)" title="USGS Vizlab">
-            USGS Vizlab
-          </a>
-        </em>
-      </div>
-      <button class="usa-menu-btn">Menu</button>
-    </div>
-    <nav aria-label="Primary navigation" class="usa-nav">
-      <button class="usa-nav__close">
-        <img src="/assets/img/usa-icons/close.svg" role="img" alt="Close" />
-      </button>
-      <ul class="usa-nav__primary usa-accordion">
-        <li class="usa-nav__primary-item">
-          <button
-            class="usa-accordion__button usa-nav__link usa-current"
-            aria-expanded="false"
-            aria-controls="basic-nav-section-one"
-          >
-            <span>Visualizations</span>
-          </button>
+    <header class="usa-header usa-header--basic">
+      <div class="usa-nav-container">
+        <nav
+          aria-label="Primary navigation"
+          class="usa-nav"
+        >
+          <ul class="usa-nav__primary usa-accordion">
+            <li class="usa-nav__primary-item">
+              <button
+                class="usa-nav__button usa-nav__link"
+                aria-expanded="false"
+                aria-controls="basic-nav-latest"
+                onClick="document.getElementById('viz-menu').scrollIntoView();"
+              >
+                <span>What's new</span>
+              </button>
+            </li>
+            <li class="usa-nav__primary-item">
+              <button
+                class="usa-nav__button usa-nav__link"
+                aria-expanded="false"
+                aria-controls="basic-nav-viz"
+                onClick="document.getElementById('viz-cards').scrollIntoView();"
+              >
+                <span>Visualizations</span>
+              </button>
 
-          <ul id="basic-nav-section-one" class="usa-nav__submenu">
+              <!--       <ul id="basic-nav-section-one" class="usa-nav__submenu">
             <li class="usa-nav__submenu-item">
               <a href="#">Interactives</a>
             </li>
             <li class="usa-nav__submenu-item">
-              <a href="#">Hurricanes</a>
-            </li>
-              <li class="usa-nav__submenu-item">
-              <a href="#">U.S. River Conditions</a>
-            </li>
-            <li class="usa-nav__submenu-item">
               <a href="#">Chart Gallery</a>
             </li>
+              <li class="usa-nav__submenu-item">
+              <a href="#">Hurricanes</a>
+            </li>
+          </ul> -->
+            </li>
+            <li class="usa-nav__primary-item">
+              <button
+                class="usa-nav__button usa-nav__link"
+                aria-expanded="false"
+                aria-controls="basic-nav-about"
+                onClick="document.getElementById('viz-about').scrollIntoView();"
+              >
+                <span>About</span>
+              </button>
+            </li>
+            <li class="usa-nav__primary-item">
+              <button
+                class="usa-nav__button usa-nav__link"
+                aria-expanded="false"
+                aria-controls="basic-nav-follow"
+                onClick="document.getElementById('viz-follow').scrollIntoView();"
+              >
+                <span>Follow us</span>
+              </button>
+            </li>
           </ul>
-        </li>
-        <li class="usa-nav__primary-item">
-          <button
-            class="usa-accordion__button usa-nav__link"
-            aria-expanded="false"
-            aria-controls="basic-nav-section-two"
-          >
-            <span>About</span>
-          </button>
-        </li>
-      </ul>
-
-<!--       <form class="usa-search usa-search--small" role="search">
-        <label class="usa-sr-only" for="basic-search-field-en-small">
-          Search
-        </label>
-        <input
-          class="usa-input"
-          id="basic-search-field-en-small"
-          type="search"
-          name="search"
-        />
-        <button class="usa-button" type="submit">
-          <span class="usa-sr-only">Search</span>
-        </button>
-      </form> -->
-    </nav>
-  </div>
-</header>
+        </nav>
+      </div>
+    </header>
   </div>
 </template>
 
@@ -87,6 +80,35 @@
     }
 </script>
 
-<style scoped>
-  @import '~uswds/dist/css/uswds.css'; 
+<style scoped lang="scss">
+$color_menu: #1F7564;
+
+.usa-header.usa-header--basic {
+  width: 90%;
+  background-color: $color_menu;
+}
+.usa_nav__button .usa-nav__link {
+  color: white;
+  stroke: white;
+      outline: none;
+    outline-offset: 0;
+
+}
+  @media (min-width:1024px) {
+  }
+button {
+  // text on menu
+  span {
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  }
+
+}
+/* .usa-nav__primary button:focus {
+    outline: none;
+    outline-offset: 0;
+} */
+
 </style>

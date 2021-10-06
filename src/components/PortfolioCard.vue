@@ -2,7 +2,8 @@
   <li 
     class="card"
   >
-    <div class="usa-card__container main"
+    <div
+      class="usa-card__container main"
     >
       <header class="usa-card__header">
         <h2 class="usa-card__heading">
@@ -17,7 +18,7 @@
           >
         </div>
       </div>
-<!--       <div class="usa-card__body">
+      <!--       <div class="usa-card__body">
         <p>
           {{ viz.description }}
         </p>
@@ -28,7 +29,7 @@
             <a 
               :href="viz.url"
               target="_blank"
-              class="usa-button main-link"
+              class="usa-button"
             >View</a>
           </li> 
           <li class="usa-button-group__item">
@@ -48,11 +49,6 @@
 
    export default {
         name: 'PortfolioCard',
-        data() {
-          return {
-            mainLink: null
-          }
-        },
         props: {
             title: {
                 type: String,
@@ -62,11 +58,16 @@
               type: Object
             } 
         },
+        data() {
+          return {
+            mainLink: null
+          }
+        },
         mounted(){
           const card = document.querySelector(".card")
           this.mainLink = document.querySelector(".main-link")
 
-          card.addEventListener("click", this.handleClick)
+          //card.addEventListener("click", this.handleClick)
 
         },
         methods: {
@@ -82,8 +83,6 @@
 </script>
 
 <style lang="scss" >
-  /* import USWDS styling */
-  @import '~uswds/dist/css/uswds.css'; 
   /* style card appearance */ 
 
 .usa-card__container.main:hover {
@@ -91,9 +90,8 @@
   box-shadow: 4px 8px 4px rgba(39,44,49,.07), 1px 4px 4px rgba(39,44,49,.04);
   transition: all .3s ease; 
 }
-/* .btn-move {
-  display:block;
-  top:  0;
-  left: 0;
-} */
+.usa-button-group a:focus {
+    outline: None;
+}
+
 </style>

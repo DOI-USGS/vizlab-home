@@ -7,11 +7,6 @@
     <router-view
       v-if="!isInternetExplorer"
     />
-    <ContentHeader />
-    <!-- <Hero /> -->
-    <PortfolioAccordions />
-    <!-- <PortfolioCards /> -->
-    <PreFooterVisualizationsLinks v-if="!isInternetExplorer" />
     <PreFooterCodeLinks v-if="!isInternetExplorer" />
     <FooterUSGS />
   </div>
@@ -30,11 +25,7 @@
             HeaderUSGS,
             InternetExplorerPage: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "internet-explorer-page"*/ "./components/InternetExplorerPage"),
             //WorkInProgressWarning: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "work-in-progress-warning"*/ "./components/WorkInProgressWarning"),
-            ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./components/ContentHeader"),
-            //Hero: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "hero"*/ "./components/Hero"),
-            PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./components/PortfolioAccordions"),
-            // PortfolioCards: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-cards"*/ "./components/PortfolioCards"),
-            PreFooterVisualizationsLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/PreFooterVisualizationsLinks"),
+            //PreFooterVisualizationsLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/PreFooterVisualizationsLinks"),
             PreFooterCodeLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-code"*/ "./components/PreFooterCodeLinks"),
             FooterUSGS: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "usgs-footer"*/ "./components/FooterUSGS") // Have Webpack put the footer in a separate chunk so we can load it conditionally (with a v-if) if we desire
         },
@@ -71,9 +62,67 @@
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+$darkGreen: #1F7564;
+$nearBlack: #181a1a;
+$coolBlue: #751e5b;
+$sourceSans: 'Source Sans Pro', sans-serif;
 
+html,
 body {
-  margin: 0;
+      height:100%;
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+      font-family: $sourceSans;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 100%;
+      @media screen and (max-width: 600px) {
+        font-size: 16px;
+      }
   }
-
+  h1{
+  font-size: 3.5em;
+  font-weight: 600;
+  font-family: $sourceSans;
+  line-height: 1;
+  text-align: left;
+  @media screen and (max-width: 600px) {
+    font-size: 2.5em;
+  }
+}
+h2{
+  font-weight: 600;
+  text-align: left;
+  color: $nearBlack;
+  font-family:$sourceSans;
+  font-size: 2.5em;
+  margin-top: 2px;
+  line-height: 1;
+  @media screen and (max-width: 600px) {
+    font-size: 2em;
+  }
+  padding-left: 0rem;
+}
+h3{
+  font-size: 1.5em;
+  padding-top: 0em;
+  color: $nearBlack;
+  margin: 0px;
+  font-family: $sourceSans;
+  font-weight: 600;
+  @media screen and (max-width: 600px) {
+      font-size: 1em;
+  }  
+}
+a {
+  color: $darkGreen;
+}
+.site-preview-heading {
+  padding: 1rem;
+}
+$theme-accordion-font-family: $sourceSans;
 </style>
