@@ -40,7 +40,7 @@ $darkGreen: #1F7564;
 }
 
 h2 {
-    color: $darkGreen;
+    color: $nearBlack;
     margin-bottom: 0px;
   }
 </style>

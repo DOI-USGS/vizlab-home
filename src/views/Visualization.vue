@@ -41,9 +41,9 @@ $darkGreen: #1F7564;
 
 // repeating section style
 section {
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
   margin-top: 1rem;
-  margin: 5%;
+  margin-left: 5%;
 }
 // create page layout as grid
 // mobile
