@@ -2,7 +2,8 @@
   <li 
     class="card"
   >
-    <div class="usa-card__container main"
+    <div
+      class="usa-card__container main"
     >
       <header class="usa-card__header">
         <h2 class="usa-card__heading">
@@ -17,7 +18,7 @@
           >
         </div>
       </div>
-<!--       <div class="usa-card__body">
+      <!--       <div class="usa-card__body">
         <p>
           {{ viz.description }}
         </p>
@@ -48,11 +49,6 @@
 
    export default {
         name: 'PortfolioCard',
-        data() {
-          return {
-            mainLink: null
-          }
-        },
         props: {
             title: {
                 type: String,
@@ -61,6 +57,11 @@
             viz: { 
               type: Object
             } 
+        },
+        data() {
+          return {
+            mainLink: null
+          }
         },
         mounted(){
           const card = document.querySelector(".card")
@@ -88,6 +89,9 @@
   transform: translate3D(0,-0.5px,0) scale(1.02); 
   box-shadow: 4px 8px 4px rgba(39,44,49,.07), 1px 4px 4px rgba(39,44,49,.04);
   transition: all .3s ease; 
+}
+.usa-button-group a:focus {
+    outline: None;
 }
 
 </style>

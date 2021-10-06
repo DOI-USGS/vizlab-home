@@ -1,6 +1,6 @@
 <template>
   <div id="portfolio-accordions">
-    <h2 class="site-preview-heading">
+    <h2 class="site-preview-heading" id="header-viz">
       Visualizations
     </h2>
     <div
@@ -38,11 +38,11 @@
       </div>
 
 
-     <!-- Use the accurate heading level to maintain the document outline -->
+      <!-- Use the accurate heading level to maintain the document outline -->
       <h3 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-controls="m-a2"
         >
           Chart Gallery
@@ -72,7 +72,7 @@
       <h3 class="usa-accordion__heading">
         <button
           class="usa-accordion__button"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-controls="m-a3"
         >
           Events
@@ -198,30 +198,41 @@ $brightBlue: rgb(0, 6, 10);
   flex-grow:2;
 }
 .usa-accordion__button{
-  background-image: get-icon("chevronDown", $darkGreen);
+  background-image: get-icon("chevronDown", $nearBlack);
   background-size: 15px 10px;
  
 }
 .usa-accordion__button[aria-expanded=false]{
-  background-image: get-icon("chevronLeft", $darkGreen);
+  background-image: get-icon("chevronLeft", $nearBlack);
   background-size: 10px 15px;
   &:hover{
-    background-image: get-icon("chevronLeft", $darkGreen);
-    color: $darkGreen;
+    background-image: get-icon("chevronLeft", $nearBlack);
+    color: $nearBlack;
   }
 }
 
-.usa-accordion__button {
+.site-preview-heading#header-viz {
   color: $darkGreen;
+  width: 100%;
   border-style: none none solid none;
-  border-top: 5px solid $darkGreen;
+  border-bottom: 4px solid $darkGreen;
+    padding: 1rem;
   background-color: transparent;
   h3 {
     border-style: none none solid none;
   }
 }
-.site-preview-heading {
-  padding: 1rem;
+// style accordions
+.usa-accordion__button {
+  color: $nearBlack;
+  border-style: none none solid none;
+  border-top: 5px solid $darkGreen;
+  background-color: transparent;
+  font-size: 24px;
+  font-weight: 600;
+  h3 {
+    border-style: none none solid none;
+  }
 
 }
 h2 {

@@ -1,11 +1,12 @@
 <template>
 <div id="viz-latest">
     <div id="viz-title">
-        <h2 >What's new  </h2><h3 id="title-new"><a href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1" target="_blank">Data assimilation animated</a> </h3>
+        <h2 id="title-new-main">What's new  </h2><br/>
+        <h3 id="title-new"><a href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1" target="_blank">Data assimilation animated</a> </h3>
     </div>
     <div id="viz-text">
         <div class="text-container">
-        <h3>In the <a href="https://waterdata.usgs.gov/blog/" target="_blank">water data blog</a>:</h3><br/>
+        <h3 id="title-blog">In the <a href="https://waterdata.usgs.gov/blog/" target="_blank">water data blog</a>:</h3><br/>
         <!-- <li>We're hiring!</li> -->
         <li><a href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/" target="_blank">A month of data viz for the #30DayChartChallenge</a></li>
         <li><a href="https://waterdata.usgs.gov/blog/build-r-animations/" target="_blank">Recreating the U.S. River Conditions animations in R</a></li>
@@ -51,7 +52,7 @@
 $darkGreen: #1F7564;
 $nearBlack: #181a1a;
 
- // 2 column layout
+ // mobile layout
 #viz-latest {
     display:grid;
     width: 90%;
@@ -73,7 +74,7 @@ $nearBlack: #181a1a;
     grid-area: ft-text;
     .text-container {
         padding: 1rem;
-    padding-top: 2rem;
+        padding-top: 3.5rem;
     }
 }
 .river-container {
@@ -95,16 +96,12 @@ a {
 }
 h2 {
     color: $nearBlack;
-    
-  }
-h3#title-new {
-    align-content: end;
-    text-align: right;
-    float: right;
-    margin-top: 10px;
-    margin-right: 2.5%;
-
 }
+h3 {
+  color: $nearBlack;
+
+  }
+
 a:active, a:focus {
     border: none;
     outline: 0;
@@ -115,7 +112,9 @@ a:active, a:focus {
     outline: 0;
 }
 :focus:not(:focus-visible) { outline: none }
-
+#viz-text a:focus {
+    outline: None;
+}
 
 // desktop layout
 @media (min-width:1024px) {

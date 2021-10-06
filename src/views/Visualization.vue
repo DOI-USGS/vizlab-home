@@ -1,21 +1,21 @@
 <template>
   <div id="visualization">
-    <section id="viz-header" >
+    <section id="viz-header">
       <vizHeader id="viz-header-svg" />
     </section>
     <section id="viz-menu">
-         <ContentHeader />
-         <WhatsNew />
+      <ContentHeader />
+      <WhatsNew />
     </section>
-   <section id="viz-cards">
-    <PortfolioAccordions />
-   </section>
-   <section id="viz-about">
-     <About />
-     </section>
-     <section id="viz-follow">
+    <section id="viz-cards">
+      <PortfolioAccordions />
+    </section>
+    <section id="viz-about">
+      <About />
+    </section>
+    <section id="viz-follow">
       <FollowUs />
-     </section>
+    </section>
   </div>
 </template>
 
@@ -43,15 +43,15 @@ $darkGreen: #1F7564;
 section {
   margin-bottom: 1rem;
   margin-top: 1rem;
+  margin: 5%;
 }
 // create page layout as grid
 // mobile
 #visualization {
-  margin: 5%;
+  margin: 0%;
   margin-top: 2%;
   display: grid;
   width: 100vw;
-  overflow: hidden;
   grid-template-areas:
   "logo logo"
   "menu-bar menu-bar"
@@ -92,10 +92,13 @@ section {
     "menu-bar menu-bar"
     "cards cards"
     "about about"
-  "follow follow"
+   "follow follow"
   }
 #viz-header-svg {
   width: 40vw;
 }
 }
+// style accordions
+//$theme-accordion-font-family: $sourceSans;
+
 </style>
