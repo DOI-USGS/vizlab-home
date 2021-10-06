@@ -5,7 +5,7 @@
     </div>
     <div id="viz-text">
         <div class="text-container">
-        <h2 id="title-blog">In the <a href="https://waterdata.usgs.gov/blog/" target="_blank">water data blog</a></h2><br/>
+        <h2 id="title-blog"><a href="https://waterdata.usgs.gov/blog/" target="_blank">Water data blog</a></h2><br/>
         <!-- <li>We're hiring!</li> -->
         <li><a href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/" target="_blank">A month of data viz for the #30DayChartChallenge</a></li>
         <li><a href="https://waterdata.usgs.gov/blog/build-r-animations/" target="_blank">Recreating the U.S. River Conditions animations in R</a></li>
