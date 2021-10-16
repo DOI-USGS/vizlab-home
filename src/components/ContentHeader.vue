@@ -80,10 +80,10 @@
 <style scoped lang="scss">
 $color_menu: #1F7564;
 div.usa-nav-container {
-  width: 100%;
+  //width: 100%;
 }
 .usa-header.usa-header--basic {
-  width: 95%;
+  width: 100vw;
   background-color: $color_menu;
 }
 .usa_nav__button .usa-nav__link {

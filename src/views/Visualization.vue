@@ -63,9 +63,7 @@ $nearBlack: #181a1a;
 $darkGreen: #1F7564;
 
 // repeating section style
-#vizHeader, #sticky-body {
-  margin-left: 5%;
-}
+
 section {
   //margin-bottom: 1rem;
   margin-top: 1rem;
@@ -74,6 +72,7 @@ section {
 // create page layout as grid
 // mobile
 #sticky-body {
+  top: 50px;
   margin: 0%;
   margin-top: 0%;
   display: grid;
@@ -143,6 +142,8 @@ section {
   z-index:50;
 
 }
-
+#viz-menu {
+  margin-left: 0;
+}
 
 </style>
