@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="sticky-header" class="stuck">
     <header class="usa-header usa-header--basic">
       <div class="usa-nav-container">
         <nav
@@ -11,8 +11,7 @@
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
-                aria-controls="basic-nav-latest"
-                onClick="document.getElementById('viz-menu').scrollIntoView();"
+                onClick="document.getElementById('viz-new').scrollIntoView();"
               >
                 <span>What's new</span>
               </button>
@@ -21,7 +20,6 @@
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
-                aria-controls="basic-nav-viz"
                 onClick="document.getElementById('viz-cards').scrollIntoView();"
               >
                 <span>Visualizations</span>
@@ -43,7 +41,6 @@
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
-                aria-controls="basic-nav-about"
                 onClick="document.getElementById('viz-about').scrollIntoView();"
               >
                 <span>About</span>

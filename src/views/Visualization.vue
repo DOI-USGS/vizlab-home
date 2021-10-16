@@ -4,7 +4,10 @@
       <vizHeader id="viz-header-svg" />
     </section>
     <section id="viz-menu">
-      <ContentHeader />
+      <NavBar id="sticky-header" />
+      </section>
+<div id= "sticky-body" >
+      <section id="viz-new">
       <WhatsNew />
     </section>
     <section id="viz-cards">
@@ -13,9 +16,10 @@
     <section id="viz-about">
       <About />
     </section>
-    <section id="viz-follow">
+<!--     <section id="viz-follow">
       <FollowUs />
-    </section>
+    </section> -->
+    </div>
   </div>
 </template>
 
@@ -25,11 +29,30 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
         name: 'Visualization',
         components: {
           vizHeader,
-          ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
+          NavBar: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
           About: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/About"),
           WhatsNew: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "whats-new"*/ "./../components/WhatsNew"),
           PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions"),
-          FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
+          //FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
+        },
+        mounted(){
+
+          // sticky nav bar
+          window.onscroll = function() {stickyOnScroll()};
+          var header = document.getElementById("viz-menu");
+          var sticky = header.offsetTop;
+          
+          function stickyOnScroll() {
+            if (window.pageYOffset > sticky) {
+              header.classList.add("sticky");
+            } else {
+              header.classList.remove("sticky");
+            }
+          }
+
+        },
+        methods: {
+          
         }
 
     }
@@ -40,6 +63,9 @@ $nearBlack: #181a1a;
 $darkGreen: #1F7564;
 
 // repeating section style
+#vizHeader, #sticky-body {
+  margin-left: 5%;
+}
 section {
   //margin-bottom: 1rem;
   margin-top: 1rem;
@@ -47,27 +73,35 @@ section {
 }
 // create page layout as grid
 // mobile
-#visualization {
+#sticky-body {
   margin: 0%;
-  margin-top: 2%;
+  margin-top: 0%;
   display: grid;
   width: 100vw;
   grid-template-areas:
-  "logo logo"
-  "menu-bar menu-bar"
+ // "logo logo"
+  //"menu-bar menu-bar"
+ // "whatsNew whatsNew"
   "cards cards"
   "about about"
   "follow follow"
 
+}
+#visualization {
+  position: relative;
 }
 #viz-header {
   grid-area: logo;
 }
 #viz-menu {
   grid-area: menu-bar;
+  display: fixed;
 }
 #viz-cards {
   grid-area: cards;
+}
+#viz-new {
+  grid-area: whatsNew;
 }
 #viz-about {
   grid-area: about;
@@ -86,10 +120,11 @@ section {
 
 // desktop layout
 @media (min-width:1024px) {
-  #visualization {
+  #sticky-body {
     grid-template-areas:
-    "logo logo"
-    "menu-bar menu-bar"
+    //"logo logo"
+    //"menu-bar menu-bar"
+    "whatsNew whatsNew"
     "cards cards"
     "about about"
    "follow follow"
@@ -98,7 +133,16 @@ section {
   width: 40vw;
 }
 }
-// style accordions
-//$theme-accordion-font-family: $sourceSans;
+
+.sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top:0;
+  left: 0;
+  width: 95vw;
+  z-index:50;
+
+}
+
 
 </style>

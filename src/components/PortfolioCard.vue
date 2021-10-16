@@ -18,11 +18,11 @@
           >
         </div>
       </div>
-      <!--       <div class="usa-card__body">
+            <div class="usa-card__body">
         <p>
-          {{ viz.description }}
+          Published {{ viz.released }}
         </p>
-      </div> -->
+      </div>
       <div class="usa-card__footer">
         <ul class="usa-button-group">
           <li class="usa-button-group__item btn-move">
@@ -106,5 +106,8 @@ a.usa-button.usa-button--outline {
 }
 h2 {
   color: $nearBlack;
+}
+.usa-card__body p {
+  font-size: 1rem;
 }
 </style>

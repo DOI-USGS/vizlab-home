@@ -1,6 +1,9 @@
 <template>
   <div id="portfolio-accordions">
-    <h2 class="site-preview-heading" id="header-viz">
+    <h2
+      id="header-viz"
+      class="site-preview-heading"
+    >
       Visualizations
     </h2>
     <div

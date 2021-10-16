@@ -1,29 +1,38 @@
 <template>
-<div>
-    <h2 class="site-preview-heading" id="header-about">
+  <div>
+    <h2
+      id="header-about"
+      class="site-preview-heading"
+    >
       About
     </h2>
-        <div id="about-container">
-<div id="about-grp">
-  <h3 id="about-title">What is the USGS Vizlab?</h3>
-  <p>We are a data visualization team that strives to make water science accessible and fun. We are part of the Integrated Information Dissemination Division of the USGS Water Mission Area.</p>
-  </div>
-  <div id="contact-grp">
-  <h3 id="about-title-contact">Contact us</h3>
-  <div id="about-text-contact">
-  <p>gs-w_vizlab@usgs.gov</p>
-  </div>
-    </div>
-  <div id="follow-grp">
-  <h3 id="about-title-follow">Follow us</h3>
-  <div id="about-text-follow">
-  <p>USGS Data Science</p>
-  <p>USGS Water</p>
-  <p>USGS streamgages</p>
-  </div>
-  </div>
-  </div>
+    <div id="about-container">
+      <div id="about-grp">
+        <h3 id="about-title">
+          What is the USGS Vizlab?
+        </h3>
+        <p>We are a data visualization team that strives to make water science accessible and fun. We are part of the Integrated Information Dissemination Division of the USGS Water Mission Area.</p>
+      </div>
+      <div id="contact-grp">
+        <h3 id="about-title-contact">
+          Contact us
+        </h3>
+        <div id="about-text-contact">
+          <p>gs-w_vizlab@usgs.gov</p>
         </div>
+      </div>
+      <div id="follow-grp">
+        <h3 id="about-title-follow">
+          Follow us
+        </h3>
+        <div id="about-text-follow">
+          <p>USGS Data Science</p>
+          <p>USGS Water</p>
+          <p>USGS streamgages</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

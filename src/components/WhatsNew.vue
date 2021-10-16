@@ -1,30 +1,54 @@
 <template>
-<div id="viz-latest">
+  <div id="viz-latest">
     <div id="viz-title">
-        <h2 id="title-new-main">What's new  </h2><br/>
+      <h2 id="title-new-main">
+        What's new
+      </h2><br>
     </div>
     <div id="viz-text">
-        <div class="text-container">
-        <h3 id="title-blog"><a href="https://waterdata.usgs.gov/blog/" target="_blank">In the water data blog</a></h3>
+      <div class="text-container">
+        <h3 id="title-blog">
+          <a
+            href="https://waterdata.usgs.gov/blog/"
+            target="_blank"
+          >In the water data blog</a>
+        </h3>
         <!-- <li>We're hiring!</li> -->
-        <li><a href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/" target="_blank">A month of data viz for the #30DayChartChallenge</a></li>
-        <li><a href="https://waterdata.usgs.gov/blog/build-r-animations/" target="_blank">Recreating the U.S. River Conditions animations in R</a></li>
-        <br/>
-        <hr class="rounded" />
+        <li>
+          <a
+            href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
+            target="_blank"
+          >A month of data viz for the #30DayChartChallenge</a>
+        </li>
+        <li>
+          <a
+            href="https://waterdata.usgs.gov/blog/build-r-animations/"
+            target="_blank"
+          >Recreating the U.S. River Conditions animations in R</a>
+        </li>
+        <br>
+        <hr class="rounded">
         <div class="river-container">
-            <RiverConditions />
+          <RiverConditions />
         </div>
-        </div>
+      </div>
     </div>
     <div id="viz-img">
-        <div class="img-container">
-            <img src="../assets/images/new/da-animated.gif"
-            alt=""
-            />
-            <h3 id="title-new">Data assimilation animated  </h3> <a id="twitter-link" href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1" target="_blank" >See it on twitter</a> 
-        </div>
+      <div class="img-container">
+        <img
+          src="../assets/images/new/da-animated.gif"
+          alt=""
+        >
+        <h3 id="title-new">
+          Data assimilation animated
+        </h3> <a
+          id="twitter-link"
+          href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1"
+          target="_blank"
+        >See it on twitter</a> 
+      </div>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
