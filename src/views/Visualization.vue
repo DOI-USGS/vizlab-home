@@ -42,6 +42,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
           var header = document.getElementById("viz-menu");
           var sticky = header.offsetTop;
           
+          // add/remove class based on scroll offset
           function stickyOnScroll() {
             if (window.pageYOffset > sticky) {
               header.classList.add("sticky");
@@ -60,8 +61,10 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
 
 <style scoped lang="scss">
 $nearBlack: #181a1a;
-$darkGreen: #1F7564;
+$darkGreen: #0713b3;
 
+
+$theme-focus-color: darkorchid;
 // repeating section style
 
 section {
@@ -72,15 +75,16 @@ section {
 // create page layout as grid
 // mobile
 #sticky-body {
-  top: 50px;
+  top: 150px;
   margin: 0%;
   margin-top: 0%;
   display: grid;
   width: 100vw;
+ // grid-template-columns: 1fr 1fr;
   grid-template-areas:
  // "logo logo"
   //"menu-bar menu-bar"
- // "whatsNew whatsNew"
+  "whatsNew whatsNew"
   "cards cards"
   "about about"
   "follow follow"
@@ -95,6 +99,7 @@ section {
 #viz-menu {
   grid-area: menu-bar;
   display: fixed;
+  margin-top: 0;
 }
 #viz-cards {
   grid-area: cards;
@@ -114,7 +119,8 @@ section {
 
 #viz-header-svg {
   fill: $nearBlack;
-  width: 80%;
+  //width: 60%;
+  max-width: 600px;
 }
 
 // desktop layout
@@ -129,21 +135,30 @@ section {
    "follow follow"
   }
 #viz-header-svg {
+  max-width: 600px;
+}
+}
+@media (max-width: 63.99 em){
+  
+#viz-header-svg {
   width: 40vw;
+  min-width: 400px;
 }
 }
-
 .sticky {
     position: sticky;
   position: -webkit-sticky;
   top:0;
   left: 0;
-  width: 95vw;
+  width: 100vw;
   z-index:50;
 
 }
 #viz-menu {
   margin-left: 0;
+}
+#stick-body {
+
 }
 
 </style>
