@@ -102,9 +102,7 @@ div.usa-nav-container {
   border-style: none none solid none;
   border-bottom: 5px solid $darkGreen;
 }
-.usa-header--basic .usa-nav {
-  //align-items: right;
-}
+
 .usa-nav {
   align-items: right;
   float: left;
@@ -159,18 +157,31 @@ nav.usa-nav {
     border: none;
   }
   #title-water {
-    padding-bottom:: 0;
+    padding-bottom: 0;
   }
 }
 button {
   // text on menu
   span {
-  color: $nearBlack;
+  color: $darkGreen;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 24px;
   }
 
+}
+.usa-nav__primary button:focus {
+    outline: None;
+    outline-offset: 0;
+}
+.usa-nav__primary button:hover {
+    outline: None;
+    outline-offset: 0;
+    border: 0;
+    background-color: $coolBlue;
+    span {
+     color: white;
+    }
 }
 
 </style>

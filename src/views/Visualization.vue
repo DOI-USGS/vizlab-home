@@ -100,6 +100,7 @@ section {
   grid-area: menu-bar;
   display: fixed;
   margin-top: 0;
+    margin-left: 0;
 }
 #viz-cards {
   grid-area: cards;
@@ -152,7 +153,6 @@ section {
   left: 0;
   width: 100vw;
   z-index:50;
-
 }
 #viz-menu {
   margin-left: 0;
@@ -160,5 +160,4 @@ section {
 #stick-body {
 
 }
-
 </style>

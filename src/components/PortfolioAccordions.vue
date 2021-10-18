@@ -1,9 +1,6 @@
 <template>
   <div id="portfolio-accordions">
-    <h2
-      id="header-viz"
-      class="site-preview-heading"
-    >
+    <h2 class="site-preview-heading" id="header-viz">
       Visualizations
     </h2>
     <div
@@ -11,7 +8,7 @@
       aria-multiselectable="true"
     >
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading">
+      <h3 class="usa-accordion__heading" id="head-interactives">
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -42,7 +39,7 @@
 
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading">
+      <h3 class="usa-accordion__heading"  id="head-gallery">
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -72,7 +69,7 @@
       </div>
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading">
+      <h3 class="usa-accordion__heading" id="head-events">
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -138,6 +135,7 @@
         mounted(){
           this.d3 = Object.assign(d3Base);
           this.loadData();  
+        
 
         },
         methods: {
@@ -197,6 +195,7 @@ $brightBlue: rgb(0, 6, 10);
 
   /* using flex positioning on card groups */
 .usa-card-group .grid-row {
+  
   max-width: 90vw;
   flex-grow:2;
 }
@@ -219,7 +218,7 @@ $brightBlue: rgb(0, 6, 10);
   width: 100%;
   border-style: none none solid none;
   border-bottom: 4px solid $darkGreen;
-    padding: 1rem;
+  padding: 1rem;
   background-color: transparent;
   h3 {
     border-style: none none solid none;
@@ -231,15 +230,25 @@ $brightBlue: rgb(0, 6, 10);
   border-style: none none solid none;
   border-top: 5px solid $darkGreen;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   h3 {
     border-style: none none solid none;
   }
-
 }
 h2 {
     color: $nearBlack;
     margin-bottom: 0px;
   }
+
+  .sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top:64px;
+  left: 0;
+  width: 100vw;
+  z-index:50;
+  background-color: white;
+}
+
 </style>

@@ -19,8 +19,7 @@
         </div>
       </div>
             <div class="usa-card__body">
-        <p>
-          Published {{ viz.released }}
+        <p>{{ viz.released }}
         </p>
       </div>
       <div class="usa-card__footer">
@@ -87,6 +86,8 @@ $nearBlack: #181a1a;
 $darkGreen: #1F7564;
 $lightGrey: rgb(145, 146, 145);
 $coolBlue: #005ea2;
+$sourceSans: 'Source Sans Pro', sans-serif;
+
   /* style card appearance */ 
 .usa-card__container.main:hover {
   transform: translate3D(0,-0.5px,0) scale(1.02); 
@@ -109,5 +110,18 @@ h2 {
 }
 .usa-card__body p {
   font-size: 1rem;
+}
+h2.usa-card__heading {
+  font-size: 1.1rem;
+  //font-family: $sourceSans;
+  //font-weight: 400;
+}
+.sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top:0;
+  left: 0;
+  width: 100vw;
+  z-index:50;
 }
 </style>

@@ -79,7 +79,7 @@ $nearBlack: #181a1a;
  // mobile layout
 #viz-latest {
     display:grid;
-    width: 90%;
+    width: 100%;
     height: auto;
     grid-template-areas:
     "ft-title"
@@ -167,7 +167,7 @@ a:active, a:focus {
 @media (min-width:1024px) {
   #viz-latest {
     display:grid;
-    width: 90%;
+    width: 95%;
     height: auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 6fr;
