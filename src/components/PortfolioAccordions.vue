@@ -133,6 +133,15 @@
           }
         },
         mounted(){
+  /*         var windowWidth = window.innerWidth;
+          var cards = document.getElementsByClassName('tester')
+
+          if (windowWidth > 1200) {
+              cards.classList.add("tablet:grid-col-3");
+            } else {
+              cards.classList.add("tablet:grid-col-4");
+            } */
+
           this.d3 = Object.assign(d3Base);
           this.loadData();  
         
@@ -157,7 +166,6 @@
             this.vizList_hurricanes = this.vizList.filter((viz) => viz.group === this.vizGroups[2]);
             this.vizList_interactives = this.vizList.filter((viz) => viz.group === this.vizGroups[0]); // all but river conditions and hurricanes
             this.vizList_charts = this.vizList.filter((viz) => viz.group === this.vizGroups[3]); // static charts, twitter content
-
 
           }
         }
@@ -195,9 +203,11 @@ $brightBlue: rgb(0, 6, 10);
 
   /* using flex positioning on card groups */
 .usa-card-group .grid-row {
-  
   max-width: 90vw;
   flex-grow:2;
+}
+.grid-container {
+  max-width: 90vw;
 }
 .usa-accordion__button{
   background-image: get-icon("chevronDown", $nearBlack);

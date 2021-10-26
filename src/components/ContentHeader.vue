@@ -25,7 +25,6 @@
               >
                 <span>Visualizations</span>
               </button>
-
               <!--       <ul id="basic-nav-section-one" class="usa-nav__submenu">
             <li class="usa-nav__submenu-item">
               <a href="#">Interactives</a>
@@ -47,16 +46,6 @@
                 <span>About</span>
               </button>
             </li>
-            <!-- <li class="usa-nav__primary-item">
-              <button
-                class="usa-nav__button usa-nav__link"
-                aria-expanded="false"
-                aria-controls="basic-nav-follow"
-                onClick="document.getElementById('viz-follow').scrollIntoView();"
-              >
-                <span>Follow us</span>
-              </button>
-            </li> -->
           </ul>
         </nav>
       </div>
