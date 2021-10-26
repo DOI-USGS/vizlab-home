@@ -6,11 +6,11 @@
     >
       <div id="rc-title">
         <h3>U.S. River Conditions</h3>
-        <p>See the latest animation: <span id="date-hilite"> April 1 - June 30, 2021</span></p>
+        <p>See the latest animation: <span id="date-hilite"> July 1 - Sept 30, 2021</span></p>
       </div>
       <div id="rc-dropdown" />
       <div id="rc-img">
-        <img src="../assets/images/new/river_conditions_apr_jun_2021_latest.png">
+        <img src="../assets/images/new/river_conditions_jan_mar_2021_thumbnail.png">
       </div>
     </a>
   </div>
@@ -59,6 +59,7 @@ a{
       color: $nearBlack;
       padding-top: 1rem;
       margin-bottom: 0rem;
+      //font-size: 1.5 rem;
     }
     p {
       color: $nearBlack;

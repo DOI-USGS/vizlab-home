@@ -128,5 +128,7 @@ a {
   padding: 1rem;
 }
 $theme-accordion-font-family: $sourceSans;
-
+p {
+  font-size: 1.2rem;
+}
 </style>

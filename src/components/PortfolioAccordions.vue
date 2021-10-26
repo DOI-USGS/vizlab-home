@@ -49,7 +49,7 @@
         </button>
       </h3>
       <div
-        id="m-a4"
+        id="m-a2"
         class="usa-accordion__content"
       >
         <div class="card-container grid-container">
@@ -197,18 +197,16 @@ $brightBlue: rgb(0, 6, 10);
   @return str-replace($data-uri, "#", "%23");
 }
 
-  #portfolio-accordions {
-      max-width: 90vw;
-  }
+   #portfolio-accordions {
+      max-width:90vw;
+  } 
 
   /* using flex positioning on card groups */
 .usa-card-group .grid-row {
   max-width: 90vw;
   flex-grow:2;
 }
-.grid-container {
-  max-width: 90vw;
-}
+
 .usa-accordion__button{
   background-image: get-icon("chevronDown", $nearBlack);
   background-size: 15px 10px;
@@ -227,7 +225,7 @@ $brightBlue: rgb(0, 6, 10);
   color: $darkGreen;
   width: 100%;
   border-style: none none solid none;
-  border-bottom: 4px solid $darkGreen;
+  border-bottom: 4px solid grey;
   padding: 1rem;
   background-color: transparent;
   h3 {
@@ -261,4 +259,16 @@ h2 {
   background-color: white;
 }
 
+// adjust number of cards per row based on viewport
+@media (min-width: 40em) {
+  .tablet\:grid-col-4 {
+    width: 50%;
+  }
+}
+@media (min-width: 900px) {
+  .tablet\:grid-col-4 {
+    width: 33.33%;
+    align-content: center;
+  }
+}
 </style>

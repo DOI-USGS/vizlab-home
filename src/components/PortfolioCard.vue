@@ -14,13 +14,13 @@
         <div class="usa-card__img">
           <img
             :src="getImgUrl(viz.img)"
-            :alt="viz.title" 
+            :alt="viz.alt" 
           >
         </div>
       </div>
             <div class="usa-card__body">
-        <p>{{ viz.released }}
-        </p>
+       <!--  <p>{{ viz.released }}
+        </p> -->
       </div>
       <div class="usa-card__footer">
         <ul class="usa-button-group">
@@ -123,5 +123,8 @@ h2.usa-card__heading {
   left: 0;
   width: 100vw;
   z-index:50;
+}
+.usa-card {
+  max-width: 300px;
 }
 </style>
