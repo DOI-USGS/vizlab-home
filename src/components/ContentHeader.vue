@@ -14,7 +14,7 @@
                 aria-expanded="false"
                 onClick="document.getElementById('viz-new').scrollIntoView();"
               >
-                <span>What's new</span>
+                <span>Recent work</span>
               </button>
             </li>
             <li class="usa-nav__primary-item">
@@ -45,6 +45,18 @@
               >
                 <span>About</span>
               </button>
+            </li>
+
+             <li class="usa-nav__primary-item">
+          
+              <a
+                href="https://twitter.com/usgs_datasci"
+                target="_blank"
+                aria-label="twitter link"
+                id="twitter-bird"
+              >
+                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">Twitter</span></font-awesome-icon>
+              </a>
             </li>
           </ul>
         </nav>
@@ -167,10 +179,18 @@ button {
     outline: None;
     outline-offset: 0;
     border: 0;
-    background-color: $coolBlue;
+    background-color: rgb(170, 112, 218);
     span {
      color: white;
     }
 }
+.usa-nav__primary-item a:focus {
+    outline: none;
+    outline-offset: 0;
+}
 
+  #twitter-bird {
+    transform: scale(2, 2);
+    color: $darkGreen;
+  }
 </style>
