@@ -1,6 +1,9 @@
 <template>
   <div id="portfolio-accordions">
-    <h2 class="site-preview-heading" id="header-viz">
+    <h2
+      id="header-viz"
+      class="site-preview-heading"
+    >
       Visualizations
     </h2>
     <div
@@ -8,7 +11,10 @@
       aria-multiselectable="true"
     >
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading">
+      <h3
+        id="head-interactives"
+        class="usa-accordion__heading"
+      >
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -39,7 +45,10 @@
 
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading">
+      <h3
+        id="head-gallery"
+        class="usa-accordion__heading"
+      >
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -49,7 +58,7 @@
         </button>
       </h3>
       <div
-        id="m-a4"
+        id="m-a2"
         class="usa-accordion__content"
       >
         <div class="card-container grid-container">
@@ -69,7 +78,10 @@
       </div>
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading">
+      <h3
+        id="head-events"
+        class="usa-accordion__heading"
+      >
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -135,6 +147,7 @@
         mounted(){
           this.d3 = Object.assign(d3Base);
           this.loadData();  
+        
 
         },
         methods: {
@@ -156,7 +169,6 @@
             this.vizList_hurricanes = this.vizList.filter((viz) => viz.group === this.vizGroups[2]);
             this.vizList_interactives = this.vizList.filter((viz) => viz.group === this.vizGroups[0]); // all but river conditions and hurricanes
             this.vizList_charts = this.vizList.filter((viz) => viz.group === this.vizGroups[3]); // static charts, twitter content
-
 
           }
         }
@@ -188,15 +200,16 @@ $brightBlue: rgb(0, 6, 10);
   @return str-replace($data-uri, "#", "%23");
 }
 
-  #portfolio-accordions {
-      max-width: 90vw;
-  }
+   #portfolio-accordions {
+      max-width:90vw;
+  } 
 
   /* using flex positioning on card groups */
 .usa-card-group .grid-row {
   max-width: 90vw;
   flex-grow:2;
 }
+
 .usa-accordion__button{
   background-image: get-icon("chevronDown", $nearBlack);
   background-size: 15px 10px;
@@ -216,7 +229,7 @@ $brightBlue: rgb(0, 6, 10);
   width: 100%;
   border-style: none none solid none;
   border-bottom: 4px solid $darkGreen;
-    padding: 1rem;
+  padding: 1rem;
   background-color: transparent;
   h3 {
     border-style: none none solid none;
@@ -228,15 +241,37 @@ $brightBlue: rgb(0, 6, 10);
   border-style: none none solid none;
   border-top: 5px solid $darkGreen;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   h3 {
     border-style: none none solid none;
   }
-
 }
 h2 {
     color: $nearBlack;
     margin-bottom: 0px;
   }
+
+  .sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top:64px;
+  left: 0;
+  width: 100vw;
+  z-index:50;
+  background-color: white;
+}
+
+// adjust number of cards per row based on viewport
+@media (min-width: 40em) {
+  .tablet\:grid-col-4 {
+    width: 50%;
+  }
+}
+@media (min-width: 900px) {
+  .tablet\:grid-col-4 {
+    width: 33.33%;
+    align-content: center;
+  }
+}
 </style>

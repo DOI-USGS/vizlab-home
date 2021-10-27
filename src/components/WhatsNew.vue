@@ -1,30 +1,54 @@
 <template>
-<div id="viz-latest">
+  <div id="viz-latest">
     <div id="viz-title">
-        <h2 id="title-new-main">What's new  </h2><br/>
+      <h2 id="title-new-main">
+        Recent work
+      </h2><br>
     </div>
     <div id="viz-text">
-        <div class="text-container">
-        <h3 id="title-blog"><a href="https://waterdata.usgs.gov/blog/" target="_blank">In the water data blog</a></h3>
+      <div class="text-container">
+        <h3 id="title-blog">
+          In the water data blog
+        </h3>
         <!-- <li>We're hiring!</li> -->
-        <li><a href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/" target="_blank">A month of data viz for the #30DayChartChallenge</a></li>
-        <li><a href="https://waterdata.usgs.gov/blog/build-r-animations/" target="_blank">Recreating the U.S. River Conditions animations in R</a></li>
-        <br/>
-        <hr class="rounded" />
+        <p>
+          <a
+            href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
+            target="_blank"
+          >- A month of data viz for the #30DayChartChallenge</a>
+        </p>
+
+        <p>
+          <a
+            href="https://waterdata.usgs.gov/blog/build-r-animations/"
+            target="_blank"
+          >- Recreating the U.S. River Conditions animations in R</a>
+        </p>
+        <br>
+
+        <hr class="rounded">
+
         <div class="river-container">
-            <RiverConditions />
+          <RiverConditions />
         </div>
-        </div>
+      </div>
     </div>
     <div id="viz-img">
-        <div class="img-container">
-            <img src="../assets/images/new/da-animated.gif"
-            alt=""
-            />
-            <h3 id="title-new">Data assimilation animated  </h3> <a id="twitter-link" href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1" target="_blank" >See it on twitter</a> 
-        </div>
+      <div class="img-container">
+        <img
+          src="https://labs.waterdata.usgs.gov/visualizations/gifs/da-animated.gif"
+          alt=""
+        >
+        <h3 id="title-new">
+          Data assimilation animated
+        </h3> <a
+          id="twitter-link"
+          href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1"
+          target="_blank"
+        >See it on twitter</a> 
+      </div>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -55,7 +79,7 @@ $nearBlack: #181a1a;
  // mobile layout
 #viz-latest {
     display:grid;
-    width: 90%;
+    width: 100%;
     height: auto;
     grid-template-areas:
     "ft-title"
@@ -66,6 +90,7 @@ $nearBlack: #181a1a;
     grid-area: ft-title;
     height: auto;
     padding: 1rem;
+    padding-bottom: 0.5rem;
     h2, h3{
         display: inline;
         }
@@ -77,14 +102,15 @@ $nearBlack: #181a1a;
     }
 }
 #title-new {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 #title-new-main {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     color: $darkGreen;
 }
 #title-blog {
-    color: $nearBlack;
+    color: black;
+    //background-color: $darkGreen;
 }
 #viz-img {
     grid-area: ft-img;
@@ -99,15 +125,21 @@ hr.rounded {
 }
 a {
     text-decoration: none;
+    font-size: 1.2rem;
 }
 h2 {
     color: $darkGreen;
+}
+p {
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  margin: 0;
 }
 h3 {
   color: $nearBlack;
       padding-bottom: 1rem;
   a {
-      color: $nearBlack;
+      color: black;
       padding-bottom: 1rem;
   }
 
@@ -116,7 +148,7 @@ h3 {
   list-style-type: square;
   padding-left: 0em;
   list-style-position: outside;
-  text-indent: -1em;
+  //text-indent: -1em;
 }
   
 #title-new, #twitter-link {
@@ -143,7 +175,7 @@ a:active, a:focus {
 @media (min-width:1024px) {
   #viz-latest {
     display:grid;
-    width: 90%;
+    width: 95%;
     height: auto;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 6fr;

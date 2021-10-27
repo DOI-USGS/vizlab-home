@@ -13,16 +13,15 @@
       <div class="usa-card__media">
         <div class="usa-card__img">
           <img
-            :src="getImgUrl(viz.img)"
-            :alt="viz.title" 
+            :src="getThumb(viz.img)"
+            :alt="viz.alt" 
           >
         </div>
       </div>
-      <!--       <div class="usa-card__body">
-        <p>
-          {{ viz.description }}
-        </p>
-      </div> -->
+      <div class="usa-card__body">
+        <!--  <p>{{ viz.released }}
+        </p> -->
+      </div>
       <div class="usa-card__footer">
         <ul class="usa-button-group">
           <li class="usa-button-group__item btn-move">
@@ -71,9 +70,11 @@
 
         },
         methods: {
-          getImgUrl(pic) {
-            // TODO: alternative if image is not given or broken
-            return require('../assets/images/cards/'+pic)
+          getGif(pic) {
+            return 'https://labs.waterdata.usgs.gov/visualizations/gifs/'+pic
+          },
+          getThumb(pic) {
+            return 'https://labs.waterdata.usgs.gov/visualizations/thumbnails/'+pic
           },
           handleClick(event){
             this.mainLink.click();
@@ -87,6 +88,8 @@ $nearBlack: #181a1a;
 $darkGreen: #1F7564;
 $lightGrey: rgb(145, 146, 145);
 $coolBlue: #005ea2;
+$sourceSans: 'Source Sans Pro', sans-serif;
+
   /* style card appearance */ 
 .usa-card__container.main:hover {
   transform: translate3D(0,-0.5px,0) scale(1.02); 
@@ -106,5 +109,27 @@ a.usa-button.usa-button--outline {
 }
 h2 {
   color: $nearBlack;
+}
+.usa-card__body p {
+  font-size: 1rem;
+}
+h2.usa-card__heading {
+  font-size: 1.1rem;
+  //font-family: $sourceSans;
+  //font-weight: 400;
+}
+.sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top:0;
+  left: 0;
+  width: 100vw;
+  z-index:50;
+}
+.usa-card {
+  max-width: 300px;
+}
+a.usa-button {
+  //background-color: rgb(68, 57, 167);
 }
 </style>

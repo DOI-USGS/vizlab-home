@@ -1,29 +1,79 @@
 <template>
-<div>
-    <h2 class="site-preview-heading" id="header-about">
+  <div id="about-all">
+    <h2
+      id="header-about"
+      class="site-preview-heading"
+    >
       About
     </h2>
-        <div id="about-container">
-<div id="about-grp">
-  <h3 id="about-title">What is the USGS Vizlab?</h3>
-  <p>We are a data visualization team that strives to make water science accessible and fun. We are part of the Integrated Information Dissemination Division of the USGS Water Mission Area.</p>
-  </div>
-  <div id="contact-grp">
-  <h3 id="about-title-contact">Contact us</h3>
-  <div id="about-text-contact">
-  <p>gs-w_vizlab@usgs.gov</p>
-  </div>
-    </div>
-  <div id="follow-grp">
-  <h3 id="about-title-follow">Follow us</h3>
-  <div id="about-text-follow">
-  <p>USGS Data Science</p>
-  <p>USGS Water</p>
-  <p>USGS streamgages</p>
-  </div>
-  </div>
-  </div>
+    <div id="about-container">
+      <div id="about-grp">
+        <h3 id="about-title">
+          What is the USGS Vizlab?
+        </h3>
+        <p>
+          The USGS Vizlab is a data visualization team that strives to make water science fun and accessible. <br> <br>We are part of the <a
+            href="https://www.usgs.gov/mission-areas/water-resources"
+            target="_blank"
+          >USGS Water Mission Area.</a>
+        </p>
+      </div>
+      <div id="contact-grp">
+        <h3 id="about-title-contact">
+          Email us
+        </h3>
+        <div id="about-text-contact">
+          <p>gs-w_vizlab@usgs.gov</p>
         </div>
+      </div>
+      <div id="follow-grp">
+        <h3 id="about-title-follow">
+          Follow us
+        </h3>
+        <div id="about-text-follow">
+          <p>
+            <a
+              id="twitter-bird"
+              href="https://twitter.com/usgs_datasci"
+              target="_blank"
+              aria-label="twitter link"
+            >
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Data Science</span></font-awesome-icon>
+              USGS Data Science</a>
+          </p>
+          <p>
+            <a
+              id="twitter-bird"
+              href="https://twitter.com/usgs_water"
+              target="_blank"
+              aria-label="twitter link"
+            >
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Water</span></font-awesome-icon>
+              USGS Water</a>
+          </p>
+
+          <p>
+            <a
+              id="insta"
+              href="https://instagram.com/usgs_streamgages"
+              target="_blank"
+              aria-label="instagram link"
+            >
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"><span class="only">USGS streamgages</span></font-awesome-icon>
+              USGS streamgages</a>
+          </p>
+        </div>
+      </div>
+      <div id="email-grp">
+        <h3 id="about-title-email">
+          Get email notifications
+        </h3>
+        <div id="about-text-email">
+          <p>Provide your email address to receive notifications when new data visualizations are published.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -61,10 +111,13 @@ $darkGreen: #1F7564;
 #about-container {
     display:grid;
     margin-left: 1rem;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "about follow"
-    "contact follow"
+    "about about follow"
+    "email email contact"
+}
+#email-grp {
+  grid-area: email;
 }
 #about-grp {
     grid-area: about;
@@ -74,5 +127,16 @@ $darkGreen: #1F7564;
 }
 #follow-grp {
     grid-area: follow;
+}
+
+  #twitter-bird, #insta {
+    transform: scale(2, 2);
+    color: $darkGreen;
+  }
+#about-all {
+  margin-bottom: 50px;
+}
+p {
+  font-size: 1.3rem;
 }
 </style>

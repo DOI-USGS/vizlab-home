@@ -68,6 +68,9 @@ $nearBlack: #181a1a;
 $coolBlue: #005ea2;
 $sourceSans: 'Source Sans Pro', sans-serif;
 
+.logo-header {
+  margin-left: 0.5rem;
+}
 html,
 body {
       height:100%;
@@ -125,5 +128,7 @@ a {
   padding: 1rem;
 }
 $theme-accordion-font-family: $sourceSans;
-
+p {
+  font-size: 1.2rem;
+}
 </style>

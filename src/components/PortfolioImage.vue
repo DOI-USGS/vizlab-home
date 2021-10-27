@@ -4,14 +4,17 @@
   >
     <div class="usa-card__container">
       <div class="usa-card__media-exdent">
-        <a :href="viz.url" target="_blank">
-        <div class="usa-card__img">
-          <img
-            :src="getImgUrl(viz.img)"
-            :alt="viz.alt" 
-          >
+        <a
+          :href="viz.url"
+          target="_blank"
+        >
+          <div class="usa-card__img">
+            <img
+              :src="getImgUrl(viz.img)"
+              :alt="viz.alt" 
+            >
           <!-- link to image and add download option -->
-        </div>
+          </div>
         </a>
       </div>
     </div>
@@ -34,7 +37,7 @@
         methods: {
           getImgUrl(pic) {
             // TODO: alternative if image is not given or broken
-            return require('../assets/images/cards/'+pic)
+            return 'https://labs.waterdata.usgs.gov/visualizations/charts/'+pic
           }
         }
     }

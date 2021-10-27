@@ -4,18 +4,22 @@
       <vizHeader id="viz-header-svg" />
     </section>
     <section id="viz-menu">
-      <ContentHeader />
-      <WhatsNew />
+      <NavBar id="sticky-header" />
     </section>
-    <section id="viz-cards">
-      <PortfolioAccordions />
-    </section>
-    <section id="viz-about">
-      <About />
-    </section>
-    <section id="viz-follow">
+    <div id="sticky-body">
+      <section id="viz-new">
+        <WhatsNew />
+      </section>
+      <section id="viz-cards">
+        <PortfolioAccordions />
+      </section>
+      <section id="viz-about">
+        <About />
+      </section>
+      <!--     <section id="viz-follow">
       <FollowUs />
-    </section>
+    </section> -->
+    </div>
   </div>
 </template>
 
@@ -25,11 +29,30 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
         name: 'Visualization',
         components: {
           vizHeader,
-          ContentHeader: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
+          NavBar: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
           About: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/About"),
           WhatsNew: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "whats-new"*/ "./../components/WhatsNew"),
           PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions"),
-          FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
+          //FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
+        },
+        mounted(){
+
+          // sticky nav bar
+          window.onscroll = function() {stickyOnScroll()};
+          var header = document.getElementById("viz-menu");
+          var sticky = header.offsetTop;
+          // add/remove class based on scroll offset
+          function stickyOnScroll() {
+            if (window.pageYOffset > sticky) {
+              header.classList.add("sticky");
+            } else {
+              header.classList.remove("sticky");
+            }
+          }
+
+        },
+        methods: {
+          
         }
 
     }
@@ -37,9 +60,12 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
 
 <style scoped lang="scss">
 $nearBlack: #181a1a;
-$darkGreen: #1F7564;
+$darkGreen: #0713b3;
 
+
+$theme-focus-color: darkorchid;
 // repeating section style
+
 section {
   //margin-bottom: 1rem;
   margin-top: 1rem;
@@ -47,27 +73,39 @@ section {
 }
 // create page layout as grid
 // mobile
-#visualization {
+#sticky-body {
+  top: 150px;
   margin: 0%;
-  margin-top: 2%;
+  margin-top: 0%;
   display: grid;
   width: 100vw;
+ // grid-template-columns: 1fr 1fr;
   grid-template-areas:
-  "logo logo"
-  "menu-bar menu-bar"
+ // "logo logo"
+  //"menu-bar menu-bar"
+  "whatsNew whatsNew"
   "cards cards"
   "about about"
   "follow follow"
 
+}
+#visualization {
+  position: relative;
 }
 #viz-header {
   grid-area: logo;
 }
 #viz-menu {
   grid-area: menu-bar;
+  display: fixed;
+  margin-top: 0;
+    margin-left: 0;
 }
 #viz-cards {
   grid-area: cards;
+}
+#viz-new {
+  grid-area: whatsNew;
 }
 #viz-about {
   grid-area: about;
@@ -81,24 +119,41 @@ section {
 
 #viz-header-svg {
   fill: $nearBlack;
-  width: 80%;
+  //width: 60%;
+  max-width: 600px;
 }
 
 // desktop layout
 @media (min-width:1024px) {
-  #visualization {
+  #sticky-body {
     grid-template-areas:
-    "logo logo"
-    "menu-bar menu-bar"
+    //"logo logo"
+    //"menu-bar menu-bar"
+    "whatsNew whatsNew"
     "cards cards"
     "about about"
    "follow follow"
   }
 #viz-header-svg {
+  max-width: 600px;
+}
+}
+@media (max-width: 63.99 em){
+  
+#viz-header-svg {
   width: 40vw;
+  min-width: 400px;
 }
 }
-// style accordions
-//$theme-accordion-font-family: $sourceSans;
-
+.sticky {
+    position: sticky;
+  position: -webkit-sticky;
+  top:0;
+  left: 0;
+  width: 100vw;
+  z-index:50;
+}
+#viz-menu {
+  margin-left: 0;
+}
 </style>

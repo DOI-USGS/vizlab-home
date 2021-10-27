@@ -1,7 +1,13 @@
 <template>
-  <div>
+  <div
+    id="sticky-header"
+    class="stuck"
+  >
     <header class="usa-header usa-header--basic">
       <div class="usa-nav-container">
+        <h2 id="title-water">
+          water data visualizations
+        </h2>
         <nav
           aria-label="Primary navigation"
           class="usa-nav"
@@ -11,22 +17,19 @@
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
-                aria-controls="basic-nav-latest"
-                onClick="document.getElementById('viz-menu').scrollIntoView();"
+                onClick="document.getElementById('viz-new').scrollIntoView();"
               >
-                <span>What's new</span>
+                <span>Recent work</span>
               </button>
             </li>
             <li class="usa-nav__primary-item">
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
-                aria-controls="basic-nav-viz"
                 onClick="document.getElementById('viz-cards').scrollIntoView();"
               >
                 <span>Visualizations</span>
               </button>
-
               <!--       <ul id="basic-nav-section-one" class="usa-nav__submenu">
             <li class="usa-nav__submenu-item">
               <a href="#">Interactives</a>
@@ -43,22 +46,22 @@
               <button
                 class="usa-nav__button usa-nav__link"
                 aria-expanded="false"
-                aria-controls="basic-nav-about"
                 onClick="document.getElementById('viz-about').scrollIntoView();"
               >
                 <span>About</span>
               </button>
             </li>
-            <!-- <li class="usa-nav__primary-item">
-              <button
-                class="usa-nav__button usa-nav__link"
-                aria-expanded="false"
-                aria-controls="basic-nav-follow"
-                onClick="document.getElementById('viz-follow').scrollIntoView();"
+
+            <li class="usa-nav__primary-item">
+              <a
+                id="twitter-bird"
+                href="https://twitter.com/usgs_datasci"
+                target="_blank"
+                aria-label="twitter link"
               >
-                <span>Follow us</span>
-              </button>
-            </li> -->
+                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">Twitter</span></font-awesome-icon>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -81,13 +84,36 @@
 </script>
 
 <style scoped lang="scss">
-$color_menu: #1F7564;
+$darkGreen: #1F7564;
+$nearBlack: #181a1a;
+$coolBlue: #005ea2;
 div.usa-nav-container {
-  width: 100%;
+  //width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  max-width: 90vw;
+  width: 95vw;
+}
+.usa-nav__primary, .usa-accordion {
+ align-items: right;
+ float: right;
 }
 .usa-header.usa-header--basic {
-  width: 95%;
-  background-color: $color_menu;
+  width: 100vw;
+  background-color: white;
+  color: $darkGreen;
+  border-style: none none solid none;
+  border-bottom: 5px solid $darkGreen;
+}
+
+.usa-nav {
+  align-items: right;
+  float: left;
+}
+nav.usa-nav {
+  display:inline;
 }
 .usa_nav__button .usa-nav__link {
   color: white;
@@ -96,21 +122,79 @@ div.usa-nav-container {
     outline-offset: 0;
 
 }
-  @media (min-width:1024px) {
+ $theme-header-min-width: 300px;
+ #title-water {
+   width: 100vw;
+   padding-bottom: 0.75rem;
+   scroll-padding-top: 0.75rem;
+   margin: 0;
+   font-weight: 300;
+   font-size: 3.1em;
+   line-height: 01;
+ }
+  @media (max-width:1200px) {
+     #title-water {
+    font-size: 2.5em;
+     }
+
   }
+  // fixing auto sidembar naviation for mobile
+  // make two rows instead
+@media (max-width: 63.99em){
+  .usa-nav {
+    position: relative;
+    left:0; 
+    top:0;
+    height: auto;
+    width: auto;
+    margin-left: 0;
+    padding: 0;
+  }
+  .usa-nav__primary.usa-accordion{
+    width: 100vw;
+    margin-top: 0;
+  }
+  .usa-nav__primary > li {
+   // max-width: 90vw;
+    display: inline-block;
+  }
+  .usa-nav__primary-item {
+    border: none;
+  }
+  #title-water {
+    padding-bottom: 0;
+  }
+}
 button {
   // text on menu
   span {
-  color: white;
+  color: $darkGreen;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 24px;
   }
 
 }
-/* .usa-nav__primary button:focus {
+.usa-nav__primary button:focus {
+    outline: None;
+    outline-offset: 0;
+}
+.usa-nav__primary button:hover {
+    outline: None;
+    outline-offset: 0;
+    border: 0;
+    background-color: rgb(110, 202, 159);
+    span {
+     color: white;
+    }
+}
+.usa-nav__primary-item a:focus {
     outline: none;
     outline-offset: 0;
-} */
- $theme-header-min-width: 300px;
+}
+
+  #twitter-bird {
+    transform: scale(2, 2);
+    color: $darkGreen;
+  }
 </style>
