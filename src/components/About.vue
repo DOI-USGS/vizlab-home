@@ -11,7 +11,12 @@
         <h3 id="about-title">
           What is the USGS Vizlab?
         </h3>
-        <p>The USGS Vizlab is a data visualization team that strives to make water science fun and accessible. <br> <br>We are part of the <a href="https://www.usgs.gov/mission-areas/water-resources" target="_blank" >USGS Water Mission Area.</a> </p>
+        <p>
+          The USGS Vizlab is a data visualization team that strives to make water science fun and accessible. <br> <br>We are part of the <a
+            href="https://www.usgs.gov/mission-areas/water-resources"
+            target="_blank"
+          >USGS Water Mission Area.</a>
+        </p>
       </div>
       <div id="contact-grp">
         <h3 id="about-title-contact">
@@ -26,34 +31,40 @@
           Follow us
         </h3>
         <div id="about-text-follow">
-          <p><a
-                href="https://twitter.com/usgs_datasci"
-                target="_blank"
-                aria-label="twitter link"
-                id="twitter-bird"
-              >
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Data Science</span></font-awesome-icon>
-          USGS Data Science</a></p>
-          <p><a
-                href="https://twitter.com/usgs_water"
-                target="_blank"
-                aria-label="twitter link"
-                id="twitter-bird"
-              >
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Water</span></font-awesome-icon>
-          USGS Water</a></p>
+          <p>
+            <a
+              id="twitter-bird"
+              href="https://twitter.com/usgs_datasci"
+              target="_blank"
+              aria-label="twitter link"
+            >
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Data Science</span></font-awesome-icon>
+              USGS Data Science</a>
+          </p>
+          <p>
+            <a
+              id="twitter-bird"
+              href="https://twitter.com/usgs_water"
+              target="_blank"
+              aria-label="twitter link"
+            >
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Water</span></font-awesome-icon>
+              USGS Water</a>
+          </p>
 
-          <p><a
-                href="https://instagram.com/usgs_streamgages"
-                target="_blank"
-                aria-label="instagram link"
-                id="insta"
-              >
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"><span class="only">USGS streamgages</span></font-awesome-icon>
-          USGS streamgages</a></p>
+          <p>
+            <a
+              id="insta"
+              href="https://instagram.com/usgs_streamgages"
+              target="_blank"
+              aria-label="instagram link"
+            >
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"><span class="only">USGS streamgages</span></font-awesome-icon>
+              USGS streamgages</a>
+          </p>
         </div>
       </div>
-       <div id="email-grp">
+      <div id="email-grp">
         <h3 id="about-title-email">
           Get email notifications
         </h3>

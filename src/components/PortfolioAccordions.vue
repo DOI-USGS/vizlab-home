@@ -1,6 +1,9 @@
 <template>
   <div id="portfolio-accordions">
-    <h2 class="site-preview-heading" id="header-viz">
+    <h2
+      id="header-viz"
+      class="site-preview-heading"
+    >
       Visualizations
     </h2>
     <div
@@ -8,7 +11,10 @@
       aria-multiselectable="true"
     >
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading" id="head-interactives">
+      <h3
+        id="head-interactives"
+        class="usa-accordion__heading"
+      >
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -39,7 +45,10 @@
 
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading"  id="head-gallery">
+      <h3
+        id="head-gallery"
+        class="usa-accordion__heading"
+      >
         <button
           class="usa-accordion__button"
           aria-expanded="true"
@@ -69,7 +78,10 @@
       </div>
 
       <!-- Use the accurate heading level to maintain the document outline -->
-      <h3 class="usa-accordion__heading" id="head-events">
+      <h3
+        id="head-events"
+        class="usa-accordion__heading"
+      >
         <button
           class="usa-accordion__button"
           aria-expanded="true"

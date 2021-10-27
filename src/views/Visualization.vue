@@ -5,18 +5,18 @@
     </section>
     <section id="viz-menu">
       <NavBar id="sticky-header" />
-      </section>
-<div id= "sticky-body" >
+    </section>
+    <div id="sticky-body">
       <section id="viz-new">
-      <WhatsNew />
-    </section>
-    <section id="viz-cards">
-      <PortfolioAccordions />
-    </section>
-    <section id="viz-about">
-      <About />
-    </section>
-<!--     <section id="viz-follow">
+        <WhatsNew />
+      </section>
+      <section id="viz-cards">
+        <PortfolioAccordions />
+      </section>
+      <section id="viz-about">
+        <About />
+      </section>
+      <!--     <section id="viz-follow">
       <FollowUs />
     </section> -->
     </div>

@@ -18,8 +18,8 @@
           >
         </div>
       </div>
-            <div class="usa-card__body">
-       <!--  <p>{{ viz.released }}
+      <div class="usa-card__body">
+        <!--  <p>{{ viz.released }}
         </p> -->
       </div>
       <div class="usa-card__footer">

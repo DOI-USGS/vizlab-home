@@ -1,8 +1,13 @@
 <template>
-  <div id="sticky-header" class="stuck">
+  <div
+    id="sticky-header"
+    class="stuck"
+  >
     <header class="usa-header usa-header--basic">
       <div class="usa-nav-container">
-      <h2 id="title-water"> water data visualizations </h2>
+        <h2 id="title-water">
+          water data visualizations
+        </h2>
         <nav
           aria-label="Primary navigation"
           class="usa-nav"
@@ -47,13 +52,12 @@
               </button>
             </li>
 
-             <li class="usa-nav__primary-item">
-          
+            <li class="usa-nav__primary-item">
               <a
+                id="twitter-bird"
                 href="https://twitter.com/usgs_datasci"
                 target="_blank"
                 aria-label="twitter link"
-                id="twitter-bird"
               >
                 <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">Twitter</span></font-awesome-icon>
               </a>

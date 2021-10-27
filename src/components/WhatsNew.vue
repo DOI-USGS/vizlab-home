@@ -6,20 +6,24 @@
       </h2><br>
     </div>
     <div id="viz-text">
-        <div class="text-container">
+      <div class="text-container">
         <h3 id="title-blog">
-         In the water data blog
+          In the water data blog
         </h3>
         <!-- <li>We're hiring!</li> -->
-          <p><a
+        <p>
+          <a
             href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
             target="_blank"
-          >- A month of data viz for the #30DayChartChallenge</a></p>
+          >- A month of data viz for the #30DayChartChallenge</a>
+        </p>
 
-         <p><a
+        <p>
+          <a
             href="https://waterdata.usgs.gov/blog/build-r-animations/"
             target="_blank"
-          >- Recreating the U.S. River Conditions animations in R</a></p>
+          >- Recreating the U.S. River Conditions animations in R</a>
+        </p>
         <br>
 
         <hr class="rounded">
@@ -43,8 +47,8 @@
           target="_blank"
         >See it on twitter</a> 
       </div>
-</div>
-</div>
+    </div>
+  </div>
 </template>
 
 <script>
