@@ -133,15 +133,6 @@
           }
         },
         mounted(){
-  /*         var windowWidth = window.innerWidth;
-          var cards = document.getElementsByClassName('tester')
-
-          if (windowWidth > 1200) {
-              cards.classList.add("tablet:grid-col-3");
-            } else {
-              cards.classList.add("tablet:grid-col-4");
-            } */
-
           this.d3 = Object.assign(d3Base);
           this.loadData();  
         
@@ -225,7 +216,7 @@ $brightBlue: rgb(0, 6, 10);
   color: $darkGreen;
   width: 100%;
   border-style: none none solid none;
-  border-bottom: 4px solid grey;
+  border-bottom: 4px solid $darkGreen;
   padding: 1rem;
   background-color: transparent;
   h3 {

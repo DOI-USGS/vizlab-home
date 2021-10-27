@@ -41,7 +41,6 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
           window.onscroll = function() {stickyOnScroll()};
           var header = document.getElementById("viz-menu");
           var sticky = header.offsetTop;
-          console.log(sticky)
           // add/remove class based on scroll offset
           function stickyOnScroll() {
             if (window.pageYOffset > sticky) {

@@ -10,7 +10,7 @@
       </div>
       <div id="rc-dropdown" />
       <div id="rc-img">
-        <img src="../assets/images/new/river_conditions_jan_mar_2021_thumbnail.png">
+        <img src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/river_conditions_apr_jun_2021_thumbnail_crop.png">
       </div>
     </a>
   </div>

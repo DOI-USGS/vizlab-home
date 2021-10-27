@@ -37,7 +37,7 @@
         methods: {
           getImgUrl(pic) {
             // TODO: alternative if image is not given or broken
-            return require('../assets/images/cards/'+pic)
+            return 'https://labs.waterdata.usgs.gov/visualizations/charts/'+pic
           }
         }
     }

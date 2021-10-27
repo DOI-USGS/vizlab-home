@@ -179,7 +179,7 @@ button {
     outline: None;
     outline-offset: 0;
     border: 0;
-    background-color: rgb(170, 112, 218);
+    background-color: rgb(110, 202, 159);
     span {
      color: white;
     }

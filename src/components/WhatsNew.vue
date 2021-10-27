@@ -32,7 +32,7 @@
     <div id="viz-img">
       <div class="img-container">
         <img
-          src="../assets/images/new/da-animated.gif"
+          src="https://labs.waterdata.usgs.gov/visualizations/gifs/da-animated.gif"
           alt=""
         >
         <h3 id="title-new">

@@ -13,7 +13,7 @@
       <div class="usa-card__media">
         <div class="usa-card__img">
           <img
-            :src="getImgUrl(viz.img)"
+            :src="getThumb(viz.img)"
             :alt="viz.alt" 
           >
         </div>
@@ -70,9 +70,11 @@
 
         },
         methods: {
-          getImgUrl(pic) {
-            // TODO: alternative if image is not given or broken
-            return require('../assets/images/cards/'+pic)
+          getGif(pic) {
+            return 'https://labs.waterdata.usgs.gov/visualizations/gifs/'+pic
+          },
+          getThumb(pic) {
+            return 'https://labs.waterdata.usgs.gov/visualizations/thumbnails/'+pic
           },
           handleClick(event){
             this.mainLink.click();
@@ -126,5 +128,8 @@ h2.usa-card__heading {
 }
 .usa-card {
   max-width: 300px;
+}
+a.usa-button {
+  //background-color: rgb(68, 57, 167);
 }
 </style>
