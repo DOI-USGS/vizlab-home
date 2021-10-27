@@ -20,7 +20,9 @@ yarn-error.log*
 *.sln
 *.sw?
 
-# gif files - need to go to AWS
-src/assets/images/cards/*.gif
+# image files that correspond to aws files in water-visualizations-prod-website
+src/assets/images/charts/
+src/assets/images/thumbnails/
+src/assets/images/gifs/
 
 scratch/
