@@ -65,12 +65,12 @@
         </div>
       </div>
       <div id="email-grp">
-        <h3 id="about-title-email">
+       <!--  <h3 id="about-title-email">
           Get email notifications
         </h3>
         <div id="about-text-email">
           <p>Provide your email address to receive notifications when new data visualizations are published.</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
