@@ -4,7 +4,12 @@
       id="header-about"
       class="site-preview-heading"
     >
-      About
+      <span
+        class="lowlight"
+        style="line-height: 10%"
+      >
+        About
+      </span>
     </h2>
     <div id="about-container">
       <div id="about-grp">
@@ -12,7 +17,7 @@
           What is the USGS Vizlab?
         </h3>
         <p>
-          The USGS Vizlab is a data visualization team that strives to make water science fun and accessible. <br> <br>We are part of the <a
+          The USGS Vizlab is a data visualization team that strives to make water science fun and accessible. We make charts, maps, and interactive websites to communicate USGS research and data. We are part of the <a
             href="https://www.usgs.gov/mission-areas/water-resources"
             target="_blank"
           >USGS Water Mission Area.</a>
@@ -20,10 +25,10 @@
       </div>
       <div id="contact-grp">
         <h3 id="about-title-contact">
-          Email us
+          Email the team
         </h3>
         <div id="about-text-contact">
-          <p>gs-w_vizlab@usgs.gov</p>
+          <p><a href="mailto:gs-w_vizlab@usgs.gov" target="_blank">gs-w_vizlab@usgs.gov</a></p>
         </div>
       </div>
       <div id="follow-grp">
@@ -64,14 +69,27 @@
           </p>
         </div>
       </div>
-      <div id="email-grp">
-       <!--  <h3 id="about-title-email">
+      <!-- <div id="email-grp">
+        <h3 id="about-title-email">
           Get email notifications
         </h3>
         <div id="about-text-email">
-          <p>Provide your email address to receive notifications when new data visualizations are published.</p>
-        </div> -->
-      </div>
+          <div id="mc_embed_signup">
+            <form action="https://usgs.us5.list-manage.com/subscribe/post?u=54239c191d60c957fecb1eda9&amp;id=b1922dda68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <label for="mce-EMAIL">Subscribe</label>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+  
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_54239c191d60c957fecb1eda9_b1922dda68" tabindex="-1" value=""></div>
+                    <div class="clear foot">
+                      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    </div>
+                 </div>
+            </form>
+            </div>
+          <p>Provide your email address to receive notifications when new data visualizations are published. Email frequency is low.</p>
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -97,15 +115,17 @@
 <style lang="scss">
 $nearBlack: #181a1a;
 $darkGreen: #1F7564;
+$coolBlue: rgb(66, 145, 235);
 .site-preview-heading#header-about {
-  color: $darkGreen;
+  color: $nearBlack;
   width: 95%;
-  border-style: none none solid none;
-  border-bottom: 10px solid $darkGreen;
+  //border-style: none none solid none;
+  //border-top: 3px solid lightgrey;
     padding: 1rem;
   background-color: transparent;
   h3 {
-    border-style: none none solid none;
+    //border-style: none none solid none;
+
   }
 }
 #about-container {
@@ -118,25 +138,33 @@ $darkGreen: #1F7564;
 }
 #email-grp {
   grid-area: email;
+  padding-right: 5vw;
 }
 #about-grp {
     grid-area: about;
+    padding-right: 5vw;
+     a {
+  font-size: 1.3rem;
+}
 }
 #contact-grp {
     grid-area: contact;
 }
 #follow-grp {
     grid-area: follow;
+    a {
+  font-size: 1.2rem;
+}
 }
 
   #twitter-bird, #insta {
     transform: scale(2, 2);
-    color: $darkGreen;
+    color: $coolBlue;
   }
 #about-all {
   margin-bottom: 50px;
 }
 p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 </style>

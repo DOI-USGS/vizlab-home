@@ -85,9 +85,8 @@
 
 <style lang="scss" >
 $nearBlack: #181a1a;
-$darkGreen: #1F7564;
 $lightGrey: rgb(145, 146, 145);
-$coolBlue: #005ea2;
+$coolBlue: rgb(66, 145, 235);
 $sourceSans: 'Source Sans Pro', sans-serif;
 
   /* style card appearance */ 
@@ -114,9 +113,9 @@ h2 {
   font-size: 1rem;
 }
 h2.usa-card__heading {
-  font-size: 1.1rem;
-  //font-family: $sourceSans;
-  //font-weight: 400;
+  font-size: 1.5rem;
+  font-family: $sourceSans;
+  font-weight: 600;
 }
 .sticky {
     position: sticky;
@@ -130,6 +129,6 @@ h2.usa-card__heading {
   max-width: 300px;
 }
 a.usa-button {
-  //background-color: rgb(68, 57, 167);
+  //background-color: $coolBlue;
 }
 </style>

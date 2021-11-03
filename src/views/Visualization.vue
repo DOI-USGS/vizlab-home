@@ -32,8 +32,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
           NavBar: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "content-header"*/ "./../components/ContentHeader"),
           About: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "about"*/ "./../components/About"),
           WhatsNew: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "whats-new"*/ "./../components/WhatsNew"),
-          PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions"),
-          //FollowUs: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./../components/FollowUs")
+          PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions")
         },
         mounted(){
 
@@ -59,13 +58,9 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
 </script>
 
 <style scoped lang="scss">
-$nearBlack: #181a1a;
-$darkGreen: #0713b3;
+$nearBlack: #212222;
 
-
-$theme-focus-color: darkorchid;
 // repeating section style
-
 section {
   //margin-bottom: 1rem;
   margin-top: 1rem;
@@ -94,6 +89,9 @@ section {
 }
 #viz-header {
   grid-area: logo;
+  background-color: $nearBlack;
+  margin: 0;
+    width: 100vw;
 }
 #viz-menu {
   grid-area: menu-bar;
@@ -118,11 +116,16 @@ section {
 // elements within each section contained in div to control positioning
 
 #viz-header-svg {
-  fill: $nearBlack;
+  margin-left: 5vw;
+  margin-top: 1rem;
+  background-color: $nearBlack;
+  fill: white;
   //width: 60%;
   max-width: 600px;
 }
-
+#viz-header {
+  background-color: $nearBlack;
+}
 // desktop layout
 @media (min-width:1024px) {
   #sticky-body {
@@ -143,6 +146,7 @@ section {
 #viz-header-svg {
   width: 40vw;
   min-width: 400px;
+  background-color: $nearBlack;
 }
 }
 .sticky {

@@ -2,42 +2,80 @@
   <div id="viz-latest">
     <div id="viz-title">
       <h2 id="title-new-main">
-        Recent work
+        <span
+          class="lowlight"
+          style="line-height: 10%"
+        >
+          Recent work
+        </span>
       </h2><br>
     </div>
-    <div id="viz-text">
-      <div class="text-container">
-        <h3 id="title-blog">
-          In the water data blog
-        </h3>
-        <!-- <li>We're hiring!</li> -->
-        <p>
-          <a
-            href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
-            target="_blank"
-          >- A month of data viz for the #30DayChartChallenge</a>
-        </p>
+    <div id="right">
+      <div id="right-grid">
+      <!-- wdfn blog links -->
+      <div id="viz-blog-title">
+        <a
+          href="https://waterdata.usgs.gov/blog/"
+          target="_blank"
+        >
+          <h2 id="title-blog">
+            <span
+              class="lowlight"
+              style="line-height: 10%"
+            >
+              Water Data Blog </span>
+          </h2></a>
+      </div>
+      <div id="viz-text">
+      
+        <div class="text-container">
+          <li>
+            <span class="date-text">
+              11/3/2021:
+            </span> 
+            We're hiring!  
+            <a
+              href="https://waterdata.usgs.gov/blog/viz-hires-2021/"
+              target="_blank"
+            >
+              <span class="arrow">
+                Read &#8594;
+              </span>
+            </a>
+          </li>
+          </div>
+           <div class="thumbnail-container">
+          <img 
+            class="blog-thumbnail"
+            src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/viz-hires-dark.png" 
+            alt="an ad that the USGS Vizlab is hiring Data Visualization Specialists. Positions will be open to applicaiton son USAjobs from November 17th to the 23rd."
+          >
+        </div>
+        <div class="text-container">
+          <li>
+            <span class="date-text">5/18/2021:</span> A month of data viz for the #30DayChartChallenge  
+            <a
+              href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
+              target="_blank"
+            ><span class="arrow">Read &#8594;</span></a>
+          </li>
 
-        <p>
-          <a
-            href="https://waterdata.usgs.gov/blog/build-r-animations/"
-            target="_blank"
-          >- Recreating the U.S. River Conditions animations in R</a>
-        </p>
-        <br>
-
-        <hr class="rounded">
-
-        <div class="river-container">
-          <RiverConditions />
+          <li>
+            <span class="date-text">3/29/2021:</span> Recreating the U.S. River Conditions animations in R  
+            <a
+              href="https://waterdata.usgs.gov/blog/build-r-animations/"
+              target="_blank"
+            ><span class="arrow">Read&#8594;</span></a>
+          </li>
         </div>
       </div>
+    </div>
     </div>
     <div id="viz-img">
       <div class="img-container">
         <img
           src="https://labs.waterdata.usgs.gov/visualizations/gifs/da-animated.gif"
-          alt=""
+          alt="An animation of a data assimilation process across a series of timesteps. First, a model makes a prediction. At the next timestep, predictions are paired with actual observations, which are used to update the model prediction. This is repeated in time to improve prediction accuracy to the truth"
         >
         <h3 id="title-new">
           Data assimilation animated
@@ -45,9 +83,12 @@
           id="twitter-link"
           href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1"
           target="_blank"
-        >See it on twitter</a> 
+        >See it on twitter<span class="arrow">&#8594;</span></a> 
       </div>
     </div>
+    <!-- <div class="river-container">
+      <RiverConditions />
+    </div> -->
   </div>
 </template>
 
@@ -55,7 +96,7 @@
     export default {
         name: 'WhatsNew',
         components: {
-            RiverConditions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "river-conditions"*/ "../components/RiverConditions"),
+           // RiverConditions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "river-conditions"*/ "../components/RiverConditions"),
         },
         props: {
             title: {
@@ -73,47 +114,75 @@
 </script>
 
 <style lang="scss">
-$darkGreen: #1F7564;
 $nearBlack: #181a1a;
-
+$coolBlue: rgb(66, 145, 235);
  // mobile layout
 #viz-latest {
     display:grid;
     width: 100%;
     height: auto;
+    margin-bottom: 0.5em;
     grid-template-areas:
-    "ft-title"
-    "ft-img"
-    "ft-text"
+  "recent"
+  "recent-img"
+  "blog"
+ 
 }
+
 #viz-title {
-    grid-area: ft-title;
+    grid-area: recent;
     height: auto;
     padding: 1rem;
-    padding-bottom: 0.5rem;
-    h2, h3{
-        display: inline;
-        }
+    padding-bottom: 0rem;
+
+}
+#right {
+  grid-area: blog;
+}
+#right-grid {
+  display: grid;
+  grid-template-areas:
+  "blog-title blog-title"
+  "blog-text blog-img"
+}
+#viz-blog-title {
+  grid-area: blog-title;
+  padding: 1rem;
+  padding-bottom: 0rem;
 }
 #viz-text {
-    grid-area: ft-text;
+  //grid-area: blog-text;
     .text-container {
         padding: 1rem;
     }
 }
-#title-new {
-    margin-top: 0.5rem;
+#viz-text {
+  .thumbnail-container {
+  grid-area: blog-img;
 }
+.text-container {
+  grid-area: blog-text;
+}
+.blog-thumbnail {
+  grid-area: blog-img;
+  display: block;
+  margin-left: 3%;
+  max-width: 40vw;
+}
+}
+
+
 #title-new-main {
     margin-top: 0.5rem;
-    color: $darkGreen;
+    margin-bottom: 0.5rem;
+    color: $nearBlack;
 }
-#title-blog {
-    color: black;
-    //background-color: $darkGreen;
+.lowlight {
+  background: linear-gradient(180deg,rgba(255,255,255,0.5) 70%, $coolBlue 10%);
 }
 #viz-img {
-    grid-area: ft-img;
+    grid-area: recent-img;
+    margin-bottom: 0.5rem;
     .img-container {
         max-width: 90%;
         margin-left: 5%;
@@ -125,12 +194,12 @@ hr.rounded {
 }
 a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 h2 {
-    color: $darkGreen;
+    color: $nearBlack;
 }
-p {
+li {
   font-size: 1.2rem;
   padding: 0.25rem;
   margin: 0;
@@ -146,16 +215,34 @@ h3 {
   }
   #viz-text li {
   list-style-type: square;
-  padding-left: 0em;
+  padding-left: 1em;
   list-style-position: outside;
-  //text-indent: -1em;
+  text-indent: -1em;
 }
-  
+#title-blog {
+    color: $nearBlack;
+    a{
+      color: $nearBlack;
+    }
+}
+.date-text {
+  font-style: italic;
+  color: rgb(90, 88, 88);
+}
+.blog-thumbnail {
+  max-width: 18vw;
+  padding-left: 1em;
+}
+.arrow{
+  font-size: 1.2rem;
+  font-style: italic;
+}
 #title-new, #twitter-link {
     display: inline;
 }
 #twitter-link {
     font-style: italic;
+    font-size: 1.2em;
 }
 a:active, a:focus {
     border: none;
@@ -177,11 +264,51 @@ a:active, a:focus {
     display:grid;
     width: 95%;
     height: auto;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 6fr;
-    grid-template-areas:
-    "ft-title ft-title ft-text"
-    "ft-img ft-img ft-text"
+}
+  #viz-title {
+      grid-column:  1 / 1;
+      grid-row: 1 / 1;
+      height: auto;
+      padding: 1rem;
+      padding-bottom: 0rem;
+
+  }
+  #right {
+    grid-column: 2/ 2;
+    grid-row: 1 / 3
+  }
+  #viz-blog-title {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    padding: 1rem;
+    padding-bottom: 0rem;
+  }
+  
+  #viz-text {
+      grid-column: 2 / 2;
+      grid-row: 2 / 3;
+      .text-container {
+        padding: 1rem;
+    }
+    .blog-thumbnail {
+  display: block;
+  margin: auto;
+  max-width: 20vw;
+}
+
+    #viz-img {
+    grid-column: 1 / 1;
+    grid-row: 2 / 3;
+    margin-bottom: 0.5rem;
+
+    .img-container {
+        max-width: 90%;
+        margin-left: 5%;
+
+    }
+    }
 }
 }
 </style>

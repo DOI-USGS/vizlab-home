@@ -129,7 +129,7 @@
 </script>
 
 <style scoped lang="scss">
-$nearBlack: #181a1a;
+$nearBlack: #212222;
   footer, #navbar {
     font-family: 'Source Sans Pro',sans-serif;
     margin: 0;
