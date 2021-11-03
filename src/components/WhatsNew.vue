@@ -11,6 +11,7 @@
       </h2><br>
     </div>
     <div id="right">
+      <div id="right-grid">
       <!-- wdfn blog links -->
       <div id="viz-blog-title">
         <a
@@ -26,6 +27,7 @@
           </h2></a>
       </div>
       <div id="viz-text">
+      
         <div class="text-container">
           <li>
             <span class="date-text">
@@ -41,8 +43,8 @@
               </span>
             </a>
           </li>
-        </div>
-        <div class="thumbnail-container">
+          </div>
+           <div class="thumbnail-container">
           <img 
             class="blog-thumbnail"
             src="./../assets/images/thumbnails/viz-hires-dark.png" 
@@ -67,6 +69,7 @@
           </li>
         </div>
       </div>
+    </div>
     </div>
     <div id="viz-img">
       <div class="img-container">
@@ -125,10 +128,7 @@ $coolBlue: rgb(66, 145, 235);
   "blog"
  
 }
-/* .river-container {
-  grid-column: 1 / 2;
-  background-color: red;
-} */
+
 #viz-title {
     grid-area: recent;
     height: auto;
@@ -138,9 +138,12 @@ $coolBlue: rgb(66, 145, 235);
 }
 #right {
   grid-area: blog;
+}
+#right-grid {
+  display: grid;
   grid-template-areas:
   "blog-title blog-title"
-  "blog-img blog-text"
+  "blog-text blog-img"
 }
 #viz-blog-title {
   grid-area: blog-title;
@@ -148,16 +151,26 @@ $coolBlue: rgb(66, 145, 235);
   padding-bottom: 0rem;
 }
 #viz-text {
-  grid-area: blog-text;
+  //grid-area: blog-text;
     .text-container {
         padding: 1rem;
     }
 }
+#viz-text {
+  .thumbnail-container {
+  grid-area: blog-img;
+}
+.text-container {
+  grid-area: blog-text;
+}
 .blog-thumbnail {
   grid-area: blog-img;
   display: block;
-  margin: auto;
+  margin-left: 3%;
+  max-width: 40vw;
 }
+}
+
 
 #title-new-main {
     margin-top: 0.5rem;
@@ -272,16 +285,24 @@ a:active, a:focus {
     padding: 1rem;
     padding-bottom: 0rem;
   }
+  
   #viz-text {
       grid-column: 2 / 2;
       grid-row: 2 / 3;
       .text-container {
         padding: 1rem;
     }
+    .blog-thumbnail {
+  display: block;
+  margin: auto;
+  max-width: 20vw;
+}
+
     #viz-img {
     grid-column: 1 / 1;
     grid-row: 2 / 3;
     margin-bottom: 0.5rem;
+
     .img-container {
         max-width: 90%;
         margin-left: 5%;
