@@ -72,7 +72,7 @@
       <div class="img-container">
         <img
           src="https://labs.waterdata.usgs.gov/visualizations/gifs/da-animated.gif"
-          alt=""
+          alt="An animation of a data assimilation process across a series of timesteps. First, a model makes a prediction. At the next timestep, predictions are paired with actual observations, which are used to update the model prediction. This is repeated in time to improve prediction accuracy to the truth"
         >
         <h3 id="title-new">
           Data assimilation animated
