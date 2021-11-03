@@ -47,7 +47,7 @@
            <div class="thumbnail-container">
           <img 
             class="blog-thumbnail"
-            src="./../assets/images/thumbnails/viz-hires-dark.png" 
+            src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/viz-hires-dark.png" 
             alt="an ad that the USGS Vizlab is hiring Data Visualization Specialists. Positions will be open to applicaiton son USAjobs from November 17th to the 23rd."
           >
         </div>
