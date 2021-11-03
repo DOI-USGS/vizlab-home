@@ -8,7 +8,7 @@ import uswds from 'uswds';
 import browserDetect from 'vue-browser-detect-plugin';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
+import VueCarousel from 'vue-carousel';
 
 // social icons
 import { faTwitterSquare } from '@fortawesome/free-brands-svg-icons'
@@ -19,7 +19,7 @@ import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
-
+Vue.use(VueCarousel);
 
 // social icons
 library.add(faTwitterSquare);

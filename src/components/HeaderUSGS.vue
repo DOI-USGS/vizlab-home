@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$nearBlack: #181a1a;
+$nearBlack: #212222;
 header {
   display: block;
   width: 100vw;

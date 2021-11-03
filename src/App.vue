@@ -63,9 +63,8 @@
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-$darkGreen: #1F7564;
 $nearBlack: #181a1a;
-$coolBlue: #005ea2;
+$coolBlue: rgb(66, 145, 235);
 $sourceSans: 'Source Sans Pro', sans-serif;
 
 .logo-header {
@@ -100,9 +99,9 @@ body {
 h2{
   font-weight: 600;
   text-align: left;
-  color: $darkGreen;
+  color: white;
   font-family:$sourceSans;
-  font-size: 2.25em;
+  font-size: 2.5em;
   margin-top: 2px;
   line-height: 1;
   @media screen and (max-width: 600px) {
@@ -111,9 +110,9 @@ h2{
   padding-left: 0rem;
 }
 h3{
-  font-size: 1.75em;
+  font-size: 1.5em;
   padding-top: 0em;
-  color: $nearBlack;
+  color: white;
   margin: 0px;
   font-family: $sourceSans;
   font-weight: 600;
@@ -130,5 +129,8 @@ a {
 $theme-accordion-font-family: $sourceSans;
 p {
   font-size: 1.2rem;
+}
+.button.usa-accordion__button {
+  font-size: 3rem;
 }
 </style>

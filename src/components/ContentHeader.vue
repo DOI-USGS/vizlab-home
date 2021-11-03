@@ -15,7 +15,7 @@
           <ul class="usa-nav__primary usa-accordion">
             <li class="usa-nav__primary-item">
               <button
-                class="usa-nav__button usa-nav__link"
+                class="usa-nav__button usa-nav__link first-button"
                 aria-expanded="false"
                 onClick="document.getElementById('viz-new').scrollIntoView();"
               >
@@ -84,9 +84,8 @@
 </script>
 
 <style scoped lang="scss">
-$darkGreen: #1F7564;
-$nearBlack: #181a1a;
-$coolBlue: #005ea2;
+$nearBlack: #212222;
+$coolBlue: rgb(66, 145, 235);
 div.usa-nav-container {
   //width: 100%;
   padding-left: 0;
@@ -99,13 +98,14 @@ div.usa-nav-container {
 .usa-nav__primary, .usa-accordion {
  align-items: right;
  float: right;
+ background-color: $nearBlack;
 }
 .usa-header.usa-header--basic {
   width: 100vw;
-  background-color: white;
-  color: $darkGreen;
+  background-color: $nearBlack;
+  color: white;
   border-style: none none solid none;
-  border-bottom: 5px solid $darkGreen;
+  border-bottom: 5px solid $nearBlack;
 }
 
 .usa-nav {
@@ -120,6 +120,11 @@ nav.usa-nav {
   stroke: white;
       outline: none;
     outline-offset: 0;
+    span {
+       color: white;
+       stroke: white;
+       fill: white;
+    }
 
 }
  $theme-header-min-width: 300px;
@@ -131,6 +136,10 @@ nav.usa-nav {
    font-weight: 300;
    font-size: 3.1em;
    line-height: 01;
+   color: white;
+ }
+ .first-button {
+   min-width: 165px;
  }
   @media (max-width:1200px) {
      #title-water {
@@ -153,6 +162,7 @@ nav.usa-nav {
   .usa-nav__primary.usa-accordion{
     width: 100vw;
     margin-top: 0;
+    margin-left: 0;
   }
   .usa-nav__primary > li {
    // max-width: 90vw;
@@ -163,12 +173,16 @@ nav.usa-nav {
   }
   #title-water {
     padding-bottom: 0;
+    //color: white;
+  }
+  .first-button {
+    padding-left: 0vw;
   }
 }
 button {
   // text on menu
   span {
-  color: $darkGreen;
+  color: white;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   font-size: 24px;
@@ -183,7 +197,7 @@ button {
     outline: None;
     outline-offset: 0;
     border: 0;
-    background-color: rgb(110, 202, 159);
+    background-color: $coolBlue;
     span {
      color: white;
     }
@@ -195,6 +209,6 @@ button {
 
   #twitter-bird {
     transform: scale(2, 2);
-    color: $darkGreen;
+    color: white;
   }
 </style>
