@@ -19,7 +19,7 @@
                 aria-expanded="false"
                 onClick="document.getElementById('viz-new').scrollIntoView();"
               >
-                <span>Recent work</span>
+                <span>Recent</span>
               </button>
             </li>
             <li class="usa-nav__primary-item">
@@ -134,12 +134,12 @@ nav.usa-nav {
    scroll-padding-top: 0.75rem;
    margin: 0;
    font-weight: 300;
-   font-size: 3.1em;
-   line-height: 01;
+   font-size: 3em;
+   line-height: 1;
    color: white;
  }
  .first-button {
-   min-width: 165px;
+   min-width: 100px;
  }
   @media (max-width:1200px) {
      #title-water {
@@ -174,6 +174,7 @@ nav.usa-nav {
   #title-water {
     padding-bottom: 0;
     //color: white;
+    font-size: 1.5em
   }
   .first-button {
     padding-left: 0vw;
@@ -185,7 +186,7 @@ button {
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   }
 
 }

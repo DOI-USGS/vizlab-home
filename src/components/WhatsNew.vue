@@ -6,7 +6,7 @@
           class="lowlight"
           style="line-height: 10%"
         >
-          Recent work
+          Recent
         </span>
       </h2><br>
     </div>
