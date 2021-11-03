@@ -119,8 +119,10 @@ $coolBlue: rgb(66, 145, 235);
     width: 100%;
     height: auto;
     margin-bottom: 0.5em;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1rem 1fr 1fr ;
+    grid-template-areas:
+  "recent"
+  "recent-img"
+  "blog"
  
 }
 /* .river-container {
@@ -128,31 +130,31 @@ $coolBlue: rgb(66, 145, 235);
   background-color: red;
 } */
 #viz-title {
-    grid-column:  1 / 1;
-    grid-row: 1 / 1;
+    grid-area: recent;
     height: auto;
     padding: 1rem;
     padding-bottom: 0rem;
 
 }
 #right {
-  grid-column: 2/ 2;
-  grid-row: 1 / 3
+  grid-area: blog;
+  grid-template-areas:
+  "blog-title blog-title"
+  "blog-img blog-text"
 }
 #viz-blog-title {
-  grid-column: 2 / 2;
-  grid-row: 1 / 1;
+  grid-area: blog-title;
   padding: 1rem;
   padding-bottom: 0rem;
 }
 #viz-text {
-    grid-column: 2 / 2;
-    grid-row: 2 / 3;
+  grid-area: blog-text;
     .text-container {
         padding: 1rem;
     }
 }
 .blog-thumbnail {
+  grid-area: blog-img;
   display: block;
   margin: auto;
 }
@@ -166,8 +168,7 @@ $coolBlue: rgb(66, 145, 235);
   background: linear-gradient(180deg,rgba(255,255,255,0.5) 70%, $coolBlue 10%);
 }
 #viz-img {
-    grid-column: 1 / 1;
-    grid-row: 2 / 3;
+    grid-area: recent-img;
     margin-bottom: 0.5rem;
     .img-container {
         max-width: 90%;
@@ -252,6 +253,41 @@ a:active, a:focus {
     height: auto;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 6fr;
+}
+  #viz-title {
+      grid-column:  1 / 1;
+      grid-row: 1 / 1;
+      height: auto;
+      padding: 1rem;
+      padding-bottom: 0rem;
+
+  }
+  #right {
+    grid-column: 2/ 2;
+    grid-row: 1 / 3
+  }
+  #viz-blog-title {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1;
+    padding: 1rem;
+    padding-bottom: 0rem;
+  }
+  #viz-text {
+      grid-column: 2 / 2;
+      grid-row: 2 / 3;
+      .text-container {
+        padding: 1rem;
+    }
+    #viz-img {
+    grid-column: 1 / 1;
+    grid-row: 2 / 3;
+    margin-bottom: 0.5rem;
+    .img-container {
+        max-width: 90%;
+        margin-left: 5%;
+
+    }
+    }
 }
 }
 </style>
