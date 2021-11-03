@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <WindowSize v-if="checkTypeOfEnv === '-test build-'" /> -->
+    <GovSite />
     <HeaderUSGS />
     <InternetExplorerPage v-if="isInternetExplorer" />
     <!-- <WorkInProgressWarning v-if="checkTypeOfEnv !== '' & !isInternetExplorer" /> --> <!-- an empty string in this case means the 'prod' version of the application   -->
@@ -23,6 +24,7 @@
         components: {
             // WindowSize,
             HeaderUSGS,
+            GovSite: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./components/HeaderUSWDSBanner"),
             InternetExplorerPage: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "internet-explorer-page"*/ "./components/InternetExplorerPage"),
             //WorkInProgressWarning: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "work-in-progress-warning"*/ "./components/WorkInProgressWarning"),
             //PreFooterVisualizationsLinks: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "pre-footer-links-visualizations"*/ "./components/PreFooterVisualizationsLinks"),
