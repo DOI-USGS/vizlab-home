@@ -59,7 +59,7 @@
           aria-expanded="true"
           aria-controls="m-a2"
         >
-          Chart Gallery <span id="text-info"> Click to see in the wild</span>
+          Chart Gallery <span id="text-info"> Click on each card to see in the wild</span>
         </button>
       </h3>
       <div

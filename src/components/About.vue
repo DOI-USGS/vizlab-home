@@ -28,7 +28,7 @@
           Email the team
         </h3>
         <div id="about-text-contact">
-          <p>gs-w_vizlab@usgs.gov</p>
+          <p><a href="mailto:gs-w_vizlab@usgs.gov" target="_blank">gs-w_vizlab@usgs.gov</a></p>
         </div>
       </div>
       <div id="follow-grp">
