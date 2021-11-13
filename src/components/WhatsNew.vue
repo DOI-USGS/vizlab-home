@@ -12,64 +12,63 @@
     </div>
     <div id="right">
       <div id="right-grid">
-      <!-- wdfn blog links -->
-      <div id="viz-blog-title">
-        <a
-          href="https://waterdata.usgs.gov/blog/"
-          target="_blank"
-        >
-          <h2 id="title-blog">
-            <span
-              class="lowlight"
-              style="line-height: 10%"
-            >
-              Water Data Blog </span>
-          </h2></a>
-      </div>
-      <div id="viz-text">
-      
-        <div class="text-container">
-          <li>
-            <span class="date-text">
-              11/3/2021:
-            </span> 
-            We're hiring!  
-            <a
-              href="https://waterdata.usgs.gov/blog/viz-hires-2021/"
-              target="_blank"
-            >
-              <span class="arrow">
-                Read &#8594;
-              </span>
-            </a>
-          </li>
-          </div>
-           <div class="thumbnail-container">
-          <img 
-            class="blog-thumbnail"
-            src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/viz-hires-dark.png" 
-            alt="an ad that the USGS Vizlab is hiring Data Visualization Specialists. Positions will be open to applicaiton son USAjobs from November 17th to the 23rd."
+        <!-- wdfn blog links -->
+        <div id="viz-blog-title">
+          <a
+            href="https://waterdata.usgs.gov/blog/"
+            target="_blank"
           >
+            <h2 id="title-blog">
+              <span
+                class="lowlight"
+                style="line-height: 10%"
+              >
+                Water Data Blog </span>
+            </h2></a>
         </div>
-        <div class="text-container">
-          <li>
-            <span class="date-text">5/18/2021:</span> A month of data viz for the #30DayChartChallenge  
-            <a
-              href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
-              target="_blank"
-            ><span class="arrow">Read &#8594;</span></a>
-          </li>
+        <div id="viz-text">
+          <div class="text-container">
+            <li>
+              <span class="date-text">
+                11/3/2021:
+              </span> 
+              We're hiring!  
+              <a
+                href="https://waterdata.usgs.gov/blog/viz-hires-2021/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+            </li>
+          </div>
+          <div class="thumbnail-container">
+            <img 
+              class="blog-thumbnail"
+              src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/viz-hires-dark.png" 
+              alt="an ad that the USGS Vizlab is hiring Data Visualization Specialists. Positions will be open to applicaiton son USAjobs from November 17th to the 23rd."
+            >
+          </div>
+          <div class="text-container">
+            <li>
+              <span class="date-text">5/18/2021:</span> A month of data viz for the #30DayChartChallenge  
+              <a
+                href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
+                target="_blank"
+              ><span class="arrow">Read &#8594;</span></a>
+            </li>
 
-          <li>
-            <span class="date-text">3/29/2021:</span> Recreating the U.S. River Conditions animations in R  
-            <a
-              href="https://waterdata.usgs.gov/blog/build-r-animations/"
-              target="_blank"
-            ><span class="arrow">Read&#8594;</span></a>
-          </li>
+            <li>
+              <span class="date-text">3/29/2021:</span> Recreating the U.S. River Conditions animations in R  
+              <a
+                href="https://waterdata.usgs.gov/blog/build-r-animations/"
+                target="_blank"
+              ><span class="arrow">Read&#8594;</span></a>
+            </li>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div id="viz-img">
       <div class="img-container">

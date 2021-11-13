@@ -160,7 +160,7 @@ nav.usa-nav {
     padding: 0;
   }
   .usa-nav__primary.usa-accordion{
-    width: 100vw;
+    width: 95vw;
     margin-top: 0;
     margin-left: 0;
   }
