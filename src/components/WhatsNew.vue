@@ -27,7 +27,24 @@
             </h2></a>
         </div>
         <div id="viz-text">
+          <!-- blog list item -->
           <div class="text-container">
+            <li>
+              <span class="date-text">
+                11/10/2021:
+              </span> 
+              What is the USGS Vizlab? 
+              <a
+                href="https://waterdata.usgs.gov/blog/what-is-vizlab/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+            </li>
+          <!-- end blog list item -->
+          <!-- blog list item -->
             <li>
               <span class="date-text">
                 11/3/2021:
@@ -43,6 +60,8 @@
               </a>
             </li>
           </div>
+          <!-- end blog list item -->
+          <!-- include thumbnail of most recent blog post -->
           <div class="thumbnail-container">
             <img 
               class="blog-thumbnail"
@@ -50,6 +69,7 @@
               alt="an ad that the USGS Vizlab is hiring Data Visualization Specialists. Positions will be open to applicaiton son USAjobs from November 17th to the 23rd."
             >
           </div>
+          <!-- blog list item -->
           <div class="text-container">
             <li>
               <span class="date-text">5/18/2021:</span> A month of data viz for the #30DayChartChallenge  
@@ -67,10 +87,12 @@
               ><span class="arrow">Read&#8594;</span></a>
             </li>
           </div>
+          <!-- end blog list item -->
         </div>
       </div>
     </div>
     <div id="viz-img">
+      <!-- main featured graphic -->
       <div class="img-container">
         <img
           src="https://labs.waterdata.usgs.gov/visualizations/gifs/da-animated.gif"
