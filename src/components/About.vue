@@ -30,7 +30,7 @@
           </a>
           <br/>
           <br />
-          We wrote a blog post about our work inn the <a href="https://waterdata.usgs.gov/blog/what-is-vizlab/" target="_blank" > Water Data for the Nation blog</a>.
+          We wrote a blog post about our work in the <a href="https://waterdata.usgs.gov/blog/what-is-vizlab/" target="_blank" > Water Data for the Nation blog</a>.
         </p>
       </div>
       <div id="contact-grp">
