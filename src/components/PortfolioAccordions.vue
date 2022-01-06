@@ -105,7 +105,7 @@
           >
             <PortfolioCard
         
-              v-for="viz in vizList_hurricanes"
+              v-for="viz in vizList_events"
               :key="viz.title"
               :viz="viz"
               class="tablet:grid-col-4 grid-col-auto usa-card"
@@ -142,11 +142,10 @@
             publicPath: process.env.BASE_URL, // allows app to find the files when on different deployment roots
             d3: null,
 
-            vizList_hurricanes: null,
-            vizList_riverConditions: null,
+            vizList_events: null,
             vizList_interactives: null,
             vizList_charts: null,
-            vizGroups: ["interactives", "river-conditions", "hurricane", "chart"]  // these will be the three featured groups of vizzies, in order, pulled from the "groups" property of each object
+            vizGroups: ["interactives", "event", "chart"]  // these will be the three featured groups of vizzies, in order, pulled from the "groups" property of each object
           }
         },
         mounted(){
@@ -170,10 +169,9 @@
             this.vizList = data[0];
 
             // create groups
-            this.vizList_riverConditions = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
-            this.vizList_hurricanes = this.vizList.filter((viz) => viz.group === this.vizGroups[2]);
             this.vizList_interactives = this.vizList.filter((viz) => viz.group === this.vizGroups[0]); // all but river conditions and hurricanes
-            this.vizList_charts = this.vizList.filter((viz) => viz.group === this.vizGroups[3]); // static charts, twitter content
+            this.vizList_events = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
+            this.vizList_charts = this.vizList.filter((viz) => viz.group === this.vizGroups[2]); // static charts, twitter content
 
           }
         }
