@@ -19,8 +19,8 @@
         <p>
           The USGS Vizlab is a data visualization team that strives to make water science fun and accessible. We make charts, maps, and interactive websites to communicate USGS research and data. We are part of the 
           <a 
-          href="https://waterdata.usgs.gov/blog/water-data-science-2021/" 
-          target="_blank"
+            href="https://waterdata.usgs.gov/blog/water-data-science-2021/" 
+            target="_blank"
           >Data Science Branch
           </a>of the 
           <a
@@ -28,9 +28,12 @@
             target="_blank"
           >USGS Water Mission Area.
           </a>
-          <br/>
-          <br />
-          We wrote a blog post about our work in the <a href="https://waterdata.usgs.gov/blog/what-is-vizlab/" target="_blank" > Water Data for the Nation blog</a>.
+          <br>
+          <br>
+          We wrote a blog post about our work inn the <a
+            href="https://waterdata.usgs.gov/blog/what-is-vizlab/"
+            target="_blank"
+          > Water Data for the Nation blog</a>.
         </p>
       </div>
       <div id="contact-grp">
