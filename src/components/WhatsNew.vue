@@ -43,8 +43,8 @@
                 </span>
               </a>
             </li>
-          <!-- end blog list item -->
-          <!-- blog list item -->
+            <!-- end blog list item -->
+            <!-- blog list item -->
             <li>
               <span class="date-text">
                 11/3/2021:
