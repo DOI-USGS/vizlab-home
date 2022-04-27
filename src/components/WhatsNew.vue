@@ -45,13 +45,13 @@
             </li>
             <!-- end blog list item -->
             <!-- include thumbnail of most recent blog post -->
-          <div class="thumbnail-container">
-            <img 
-              class="blog-thumbnail"
-              src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/what-is-vizlab.png" 
-              alt="What is the USGS VizLab?"
-            >
-          </div>
+            <div class="thumbnail-container">
+              <img 
+                class="blog-thumbnail"
+                src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/what-is-vizlab.png" 
+                alt="What is the USGS VizLab?"
+              >
+            </div>
             <!-- blog list item -->
             <li>
               <span class="date-text">
