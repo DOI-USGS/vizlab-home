@@ -44,12 +44,20 @@
               </a>
             </li>
             <!-- end blog list item -->
+            <!-- include thumbnail of most recent blog post -->
+          <div class="thumbnail-container">
+            <img 
+              class="blog-thumbnail"
+              src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/what-is-vizlab.png" 
+              alt="What is the USGS VizLab?"
+            >
+          </div>
             <!-- blog list item -->
             <li>
               <span class="date-text">
                 11/3/2021:
               </span> 
-              We're hiring!  
+              Data viz hiring   
               <a
                 href="https://waterdata.usgs.gov/blog/viz-hires-2021/"
                 target="_blank"
@@ -61,14 +69,6 @@
             </li>
           </div>
           <!-- end blog list item -->
-          <!-- include thumbnail of most recent blog post -->
-          <div class="thumbnail-container">
-            <img 
-              class="blog-thumbnail"
-              src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/viz-hires-dark.png" 
-              alt="an ad that the USGS Vizlab is hiring Data Visualization Specialists. Positions will be open to applicaiton son USAjobs from November 17th to the 23rd."
-            >
-          </div>
           <!-- blog list item -->
           <div class="text-container">
             <li>
