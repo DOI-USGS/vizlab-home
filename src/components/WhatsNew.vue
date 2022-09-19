@@ -31,6 +31,32 @@
           <div class="text-container">
             <li>
               <span class="date-text">
+                09/08/2021:
+              </span> 
+              Water data science in 2022
+              <a
+                href="https://waterdata.usgs.gov/blog/water-data-science-2022/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+            </li>
+            </div>
+            <!-- end blog list item -->
+            <!-- include thumbnail of most recent blog post -->
+            <div class="thumbnail-container">
+              <img 
+                class="blog-thumbnail"
+                src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/DaSB_thumbnail.png" 
+                alt="A network with water droplets for nodes. The biggest node says 'USGS Data Science' and stemming from it are nodes for data viz, analytics, machine learning, and reproducible data assembly, the four specializations of the Data Science Branch"
+              >
+            </div>
+          <!-- blog list item -->
+          <div class="text-container">
+            <li>
+              <span class="date-text">
                 11/10/2021:
               </span> 
               What is the USGS Vizlab? 
@@ -44,14 +70,6 @@
               </a>
             </li>
             <!-- end blog list item -->
-            <!-- include thumbnail of most recent blog post -->
-            <div class="thumbnail-container">
-              <img 
-                class="blog-thumbnail"
-                src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/what-is-vizlab.png" 
-                alt="What is the USGS VizLab?"
-              >
-            </div>
             <!-- blog list item -->
             <li>
               <span class="date-text">
@@ -67,10 +85,8 @@
                 </span>
               </a>
             </li>
-          </div>
           <!-- end blog list item -->
           <!-- blog list item -->
-          <div class="text-container">
             <li>
               <span class="date-text">5/18/2021:</span> A month of data viz for the #30DayChartChallenge  
               <a
