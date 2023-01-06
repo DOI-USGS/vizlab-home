@@ -111,14 +111,14 @@
       <!-- main featured graphic -->
       <div class="img-container">
         <img
-          src="https://labs.waterdata.usgs.gov/visualizations/gifs/da-animated.gif"
-          alt="An animation of a data assimilation process across a series of timesteps. First, a model makes a prediction. At the next timestep, predictions are paired with actual observations, which are used to update the model prediction. This is repeated in time to improve prediction accuracy to the truth"
+          src="https://labs.waterdata.usgs.gov/visualizations/charts/snow-tiles-hex.png"
+          alt="A map of the contiguous U.S. using a snowflake hex pattern to show snow persistence over a 20-year period. Snow persistence is measured as the snow cover index, or the average fraction of time snow was on the ground from Jan 1 to. July 3 from 2001-2020. Snowier places are white with snow, emphasizing the Rocky Mountains and Sierra range in the western U.S., and Maine in the northeast. The majority of the southern half of the country is within a 0-10% snow cover index. Data from: https://doi.org/10.5066/P9U7U5FP"
         >
         <h3 id="title-new">
-          Data assimilation animated
+          Snow persistence
         </h3> <a
           id="twitter-link"
-          href="https://twitter.com/USGS_DataSci/status/1431332579634991114/photo/1"
+          href="https://twitter.com/USGS_DataSci/status/1610316680579670016"
           target="_blank"
         >See it on twitter<span class="arrow">&#8594;</span></a> 
       </div>
