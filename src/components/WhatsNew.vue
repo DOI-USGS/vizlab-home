@@ -26,12 +26,27 @@
                 Water Data Blog </span>
             </h2></a>
         </div>
+        
         <div id="viz-text">
-          <!-- blog list item -->
+         <!-- blog list item -->
           <div class="text-container">
             <li>
               <span class="date-text">
-                09/08/2021:
+                01/04/2023:
+              </span> 
+              A New Take on the Water Cycle
+              <a
+                href="https://waterdata.usgs.gov/blog/water-cycle-release/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+            </li>
+            <li>
+              <span class="date-text">
+                09/08/2022:
               </span> 
               Water data science in 2022
               <a
@@ -332,7 +347,8 @@ a:active, a:focus {
     .blog-thumbnail {
   display: block;
   margin: auto;
-  max-width: 20vw;
+  width: 20vw;
+  max-width: 300px;
 }
 
     #viz-img {
