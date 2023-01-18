@@ -1,3 +1,6 @@
+# local image files
+visualizations/
+
 .DS_Store
 node_modules
 /dist
@@ -26,3 +29,16 @@ src/assets/images/thumbnails/
 src/assets/images/gifs/
 
 scratch/
+# RStudio files
+.Rproj.user/
+*.Rproj
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
