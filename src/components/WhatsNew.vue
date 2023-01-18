@@ -26,10 +26,33 @@
                 Water Data Blog </span>
             </h2></a>
         </div>
-        
         <div id="viz-text">
-         <!-- blog list item -->
           <div class="text-container">
+            <!-- blog list item -->
+            <li>
+              <span class="date-text">
+                01/11/2023:
+              </span> 
+              Origin and development of a Snowflake Map
+              <a
+                href="https://waterdata.usgs.gov/blog/snow-tiles-demo/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+              <!-- include thumbnail of most recent blog post -->
+              <div class="thumbnail-container">
+                <img 
+                  class="blog-thumbnail"
+                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/SnowTiles_thumbnail.png" 
+                  alt="A network with water droplets for nodes. The biggest node says 'USGS Data Science' and stemming from it are nodes for data viz, analytics, machine learning, and reproducible data assembly, the four specializations of the Data Science Branch"
+                >
+              </div>
+            </li>
+            <!-- end blog list item -->
+            <!-- blog list item -->
             <li>
               <span class="date-text">
                 01/04/2023:
@@ -44,6 +67,8 @@
                 </span>
               </a>
             </li>
+            <!-- end blog list item -->
+            <!-- blog list item -->
             <li>
               <span class="date-text">
                 09/08/2022:
@@ -58,18 +83,17 @@
                 </span>
               </a>
             </li>
-            </div>
             <!-- end blog list item -->
-            <!-- include thumbnail of most recent blog post -->
-            <div class="thumbnail-container">
-              <img 
-                class="blog-thumbnail"
-                src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/DaSB_thumbnail.png" 
-                alt="A network with water droplets for nodes. The biggest node says 'USGS Data Science' and stemming from it are nodes for data viz, analytics, machine learning, and reproducible data assembly, the four specializations of the Data Science Branch"
-              >
-            </div>
-          <!-- blog list item -->
-          <div class="text-container">
+            <!-- blog list item -->
+            <li>
+              <span class="date-text">5/12/2022:</span> The 30 Day Chart Challenge with the USGS Vizlab  
+              <a
+                href="https://waterdata.usgs.gov/blog/chart-challenge-2022/"
+                target="_blank"
+              ><span class="arrow">Read &#8594;</span></a>
+            </li>
+            <!-- end blog list item -->
+            <!-- blog list item -->
             <li>
               <span class="date-text">
                 11/10/2021:
@@ -85,40 +109,7 @@
               </a>
             </li>
             <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                11/3/2021:
-              </span> 
-              Data viz hiring   
-              <a
-                href="https://waterdata.usgs.gov/blog/viz-hires-2021/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-          <!-- end blog list item -->
-          <!-- blog list item -->
-            <li>
-              <span class="date-text">5/18/2021:</span> A month of data viz for the #30DayChartChallenge  
-              <a
-                href="https://waterdata.usgs.gov/blog/30daychartchallenge-2021/"
-                target="_blank"
-              ><span class="arrow">Read &#8594;</span></a>
-            </li>
-
-            <li>
-              <span class="date-text">3/29/2021:</span> Recreating the U.S. River Conditions animations in R  
-              <a
-                href="https://waterdata.usgs.gov/blog/build-r-animations/"
-                target="_blank"
-              ><span class="arrow">Read&#8594;</span></a>
-            </li>
           </div>
-          <!-- end blog list item -->
         </div>
       </div>
     </div>
