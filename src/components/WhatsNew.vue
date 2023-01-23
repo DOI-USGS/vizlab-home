@@ -42,14 +42,6 @@
                   Read &#8594;
                 </span>
               </a>
-              <!-- include thumbnail of most recent blog post -->
-              <div class="thumbnail-container">
-                <img 
-                  class="blog-thumbnail"
-                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/SnowTiles_thumbnail.png" 
-                  alt="A network with water droplets for nodes. The biggest node says 'USGS Data Science' and stemming from it are nodes for data viz, analytics, machine learning, and reproducible data assembly, the four specializations of the Data Science Branch"
-                >
-              </div>
             </li>
             <!-- end blog list item -->
             <!-- blog list item -->
@@ -66,6 +58,14 @@
                   Read &#8594;
                 </span>
               </a>
+              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
+              <div class="thumbnail-container">
+                <img 
+                  class="blog-thumbnail"
+                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/water_cycle_blog_thumbnail.png" 
+                  alt="A water droplet announces the release of the new USGS water cycle diagram, downloadable for free at usgs.gov/water-cycle. Above the droplet is the diagram, showing the movement of water on Earth."
+                >
+              </div>
             </li>
             <!-- end blog list item -->
             <!-- blog list item -->
