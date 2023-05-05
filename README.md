@@ -1,6 +1,8 @@
 # Step by Step Project Setup
 With the information provided, you can build a website using the Vue framework.
 
+The final website for this build is : https://labs.waterdata.usgs.gov/visualizations/vizlab-home/index.html#/
+
 ### Background
 Vue CLI (command line interface) is a full system for rapid Vue.js development that provides project scaffolding, a instantly updating development server, a graphic user interface and much more. Vue CLI is not Vue.js; it is Vue.js plus many additional user friendly features. Vue CLI is not required to create a Vue.js project, but it is a slick way of doing so.
 
@@ -377,15 +379,4 @@ npm audit fix
 8. Delete the dependabot prs
 
 
-## Disclaimer
 
-This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the official USGS copyright policy at [http://www.usgs.gov/visual-id/credit_usgs.html#copyright](http://www.usgs.gov/visual-id/credit_usgs.html#copyright)
-
-This information is preliminary or provisional and is subject to revision. It is being provided to meet the need for timely best science. The information has not received final approval by the U.S. Geological Survey (USGS) and is provided on the condition that neither the USGS nor the U.S. Government shall be held liable for any damages resulting from the authorized or unauthorized use of the information. Although this software program has been used by the USGS, no warranty, expressed or implied, is made by the USGS or the U.S. Government as to the accuracy and functioning of the program and related program material nor shall the fact of distribution constitute any such warranty, and no responsibility is assumed by the USGS in connection therewith.
-
-This software is provided "AS IS."
-
-
-[
-  ![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)
-](http://creativecommons.org/publicdomain/zero/1.0/)
