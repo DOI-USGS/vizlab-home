@@ -31,6 +31,30 @@
             <!-- blog list item -->
             <li>
               <span class="date-text">
+                05/3/2023:
+              </span> 
+              The 30 Day Chart Challenge with the USGS VizLab
+              <a
+                href="https://waterdata.usgs.gov/blog/chart-challenge-2023/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
+              <div class="thumbnail-container">
+                <img 
+                  class="blog-thumbnail"
+                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/chart-challenge-23-thumbnail.webp" 
+                  alt="Collage of 25 chart challenge entries for the USGS Data Science branch and collaborators. Entries are arranged so that charts with a dark theme are in the lower right (i.e., charts on dark backgrounds) and they create a gradient to charts that are lighter (i.e., on a white background) in the upper left."
+                >
+              </div>
+            </li>
+            <!-- end blog list item -->
+            <!-- blog list item -->
+            <li>
+              <span class="date-text">
                 01/11/2023:
               </span> 
               Origin and development of a Snowflake Map
@@ -58,14 +82,6 @@
                   Read &#8594;
                 </span>
               </a>
-              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
-              <div class="thumbnail-container">
-                <img 
-                  class="blog-thumbnail"
-                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/water_cycle_blog_thumbnail.png" 
-                  alt="A water droplet announces the release of the new USGS water cycle diagram, downloadable for free at usgs.gov/water-cycle. Above the droplet is the diagram, showing the movement of water on Earth."
-                >
-              </div>
             </li>
             <!-- end blog list item -->
             <!-- blog list item -->
@@ -84,31 +100,6 @@
               </a>
             </li>
             <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">5/12/2022:</span> The 30 Day Chart Challenge with the USGS Vizlab  
-              <a
-                href="https://waterdata.usgs.gov/blog/chart-challenge-2022/"
-                target="_blank"
-              ><span class="arrow">Read &#8594;</span></a>
-            </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                11/10/2021:
-              </span> 
-              What is the USGS Vizlab? 
-              <a
-                href="https://waterdata.usgs.gov/blog/what-is-vizlab/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-            <!-- end blog list item -->
           </div>
         </div>
       </div>
@@ -117,14 +108,14 @@
       <!-- main featured graphic -->
       <div class="img-container">
         <img
-          src="https://labs.waterdata.usgs.gov/visualizations/charts/snow-tiles-hex.png"
-          alt="A map of the contiguous U.S. using a snowflake hex pattern to show snow persistence over a 20-year period. Snow persistence is measured as the snow cover index, or the average fraction of time snow was on the ground from Jan 1 to. July 3 from 2001-2020. Snowier places are white with snow, emphasizing the Rocky Mountains and Sierra range in the western U.S., and Maine in the northeast. The majority of the southern half of the country is within a 0-10% snow cover index. Data from: https://doi.org/10.5066/P9U7U5FP"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/data-science-leadership-banner.webp"
+          alt="We're hiring! Data Science Leadership. Permanent Federal Position (GS-14) in the United States Geological Survey Water Mission Area."
         >
         <h3 id="title-new">
-          Snow persistence
+          We're hiring a leader for the USGS Data Science team
         </h3> <a
           id="twitter-link"
-          href="https://twitter.com/USGS_DataSci/status/1610316680579670016"
+          href="https://twitter.com/USGS_DataSci/status/1658606629984817153"
           target="_blank"
         >See it on twitter<span class="arrow">&#8594;</span></a> 
       </div>
