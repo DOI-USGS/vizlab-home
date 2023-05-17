@@ -108,14 +108,14 @@
       <!-- main featured graphic -->
       <div class="img-container">
         <img
-          src="https://labs.waterdata.usgs.gov/visualizations/charts/snow-tiles-hex.png"
-          alt="A map of the contiguous U.S. using a snowflake hex pattern to show snow persistence over a 20-year period. Snow persistence is measured as the snow cover index, or the average fraction of time snow was on the ground from Jan 1 to. July 3 from 2001-2020. Snowier places are white with snow, emphasizing the Rocky Mountains and Sierra range in the western U.S., and Maine in the northeast. The majority of the southern half of the country is within a 0-10% snow cover index. Data from: https://doi.org/10.5066/P9U7U5FP"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/data-science-leadership-banner.png"
+          alt="We're hiring! Data Science Leadership. Permanent Federal Position (GS-14) in the United States Geological Survey Water Mission Area."
         >
         <h3 id="title-new">
-          Snow persistence
+          We're hiring a leader for the USGS Data Science team
         </h3> <a
           id="twitter-link"
-          href="https://twitter.com/USGS_DataSci/status/1610316680579670016"
+          href="https://twitter.com/USGS_DataSci/status/1658606629984817153"
           target="_blank"
         >See it on twitter<span class="arrow">&#8594;</span></a> 
       </div>
