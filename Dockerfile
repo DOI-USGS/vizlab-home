@@ -1,4 +1,4 @@
-FROM artifactory.wma.chs.usgs.gov/docker-official-mirror/debian:stretch
+FROM artifactory.wma.chs.usgs.gov/docker-official-mirror/debian:stable
 
 LABEL maintainer="gs-w_vizlab@usgs.gov"
 
