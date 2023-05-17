@@ -31,6 +31,30 @@
             <!-- blog list item -->
             <li>
               <span class="date-text">
+                05/3/2023:
+              </span> 
+              The 30 Day Chart Challenge with the USGS VizLab
+              <a
+                href="https://waterdata.usgs.gov/blog/chart-challenge-2023/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
+              <div class="thumbnail-container">
+                <img 
+                  class="blog-thumbnail"
+                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/chart-challenge-23-thumbnail.png" 
+                  alt="Collage of 25 chart challenge entries for the USGS Data Science branch and collaborators. Entries are arranged so that charts with a dark theme are in the lower right (i.e., charts on dark backgrounds) and they create a gradient to charts that are lighter (i.e., on a white background) in the upper left."
+                >
+              </div>
+            </li>
+            <!-- end blog list item -->
+            <!-- blog list item -->
+            <li>
+              <span class="date-text">
                 01/11/2023:
               </span> 
               Origin and development of a Snowflake Map
@@ -58,14 +82,6 @@
                   Read &#8594;
                 </span>
               </a>
-              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
-              <div class="thumbnail-container">
-                <img 
-                  class="blog-thumbnail"
-                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/water_cycle_blog_thumbnail.png" 
-                  alt="A water droplet announces the release of the new USGS water cycle diagram, downloadable for free at usgs.gov/water-cycle. Above the droplet is the diagram, showing the movement of water on Earth."
-                >
-              </div>
             </li>
             <!-- end blog list item -->
             <!-- blog list item -->
@@ -76,31 +92,6 @@
               Water data science in 2022
               <a
                 href="https://waterdata.usgs.gov/blog/water-data-science-2022/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">5/12/2022:</span> The 30 Day Chart Challenge with the USGS Vizlab  
-              <a
-                href="https://waterdata.usgs.gov/blog/chart-challenge-2022/"
-                target="_blank"
-              ><span class="arrow">Read &#8594;</span></a>
-            </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                11/10/2021:
-              </span> 
-              What is the USGS Vizlab? 
-              <a
-                href="https://waterdata.usgs.gov/blog/what-is-vizlab/"
                 target="_blank"
               >
                 <span class="arrow">
