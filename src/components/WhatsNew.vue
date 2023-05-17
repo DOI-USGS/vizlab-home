@@ -46,7 +46,7 @@
               <div class="thumbnail-container">
                 <img 
                   class="blog-thumbnail"
-                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/chart-challenge-23-thumbnail.png" 
+                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/chart-challenge-23-thumbnail.webp" 
                   alt="Collage of 25 chart challenge entries for the USGS Data Science branch and collaborators. Entries are arranged so that charts with a dark theme are in the lower right (i.e., charts on dark backgrounds) and they create a gradient to charts that are lighter (i.e., on a white background) in the upper left."
                 >
               </div>
@@ -108,7 +108,7 @@
       <!-- main featured graphic -->
       <div class="img-container">
         <img
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/data-science-leadership-banner.png"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/data-science-leadership-banner.webp"
           alt="We're hiring! Data Science Leadership. Permanent Federal Position (GS-14) in the United States Geological Survey Water Mission Area."
         >
         <h3 id="title-new">
