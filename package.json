@@ -14,9 +14,9 @@
     "serve-test": "env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development vue-cli-service serve --mode test_tier"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "core-js": "^3.6.5",
     "d3": "^6.0.0",
@@ -40,10 +40,10 @@
     "@vue/cli-plugin-eslint": "^4.5.4",
     "@vue/cli-service": "^4.5.4",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.2.0",
+    "eslint": "^7.7.0",
     "eslint-plugin-vue": "^7.0.0-alpha.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^9.0.2",
+    "sass": "^1.62.1",
+    "sass-loader": "^9.0.3",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
