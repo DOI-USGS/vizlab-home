@@ -108,6 +108,7 @@
       <!-- main featured graphic -->
       <div class="img-container">
         <img
+          class="recent-image"
           src="https://labs.waterdata.usgs.gov/visualizations/banners/data-science-leadership-banner.webp"
           alt="We're hiring! Data Science Leadership. Permanent Federal Position (GS-14) in the United States Geological Survey Water Mission Area."
         >
@@ -345,5 +346,8 @@ a:active, a:focus {
     }
     }
 }
+.recent-image{
+      max-width: 100%;
+    }
 }
 </style>
