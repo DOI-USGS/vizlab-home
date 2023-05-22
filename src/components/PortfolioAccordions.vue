@@ -11,6 +11,9 @@
         Visualizations                       
       </span>
     </h2>
+    <template>
+      <ChartChallenge23Carousel/>
+    </template>
     <div
       class="usa-accordion"
       aria-multiselectable="true"
@@ -122,14 +125,15 @@
   import * as d3Base from 'd3';
   import PortfolioCard from './PortfolioCard.vue';
   import PortfolioImage from './PortfolioImage.vue';
-   
+  import ChartChallenge23Carousel from './CC23_Carousel.vue' 
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
    
    export default {
         name: 'PortfolioAccordions',
         components: {
             PortfolioCard,
-            PortfolioImage
+            PortfolioImage,
+            ChartChallenge23Carousel
         },
         props: {
             title: {
