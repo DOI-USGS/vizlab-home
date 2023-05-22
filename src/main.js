@@ -1,6 +1,7 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import Vue from 'vue';
+import VueImg from 'v-img';
 import router from "./router";
 import { store } from './store/store'
 import App from './App.vue';
@@ -18,8 +19,13 @@ import { faFlickr } from '@fortawesome/free-brands-svg-icons'
 import { faYoutubeSquare } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
+const vueImgConfig = {
+  altAsTitle: true
+}
+
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 Vue.use(VueCarousel);
+Vue.use(VueImg, vueImgConfig)
 
 // social icons
 library.add(faTwitterSquare);
