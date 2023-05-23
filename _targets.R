@@ -11,7 +11,8 @@ list(
   # https://doimspp.sharepoint.com/:f:/r/sites/IIDDStaff/Shared%20Documents/Function%20-%20Vizlab/Social%20media/30DayChartChallenge/chart-challenge-23/UPLOAD_IMAGES_HERE?csf=1&web=1&e=MAdFsZ
   tar_target(
     cc23_image_basenames,
-    list.files('in/CC23')
+    list.files('in/CC23'),
+    cue = tar_cue(mode = "always")
   ),
   tar_target(
     cc23_images,
