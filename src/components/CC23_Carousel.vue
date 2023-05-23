@@ -99,6 +99,12 @@
   }
   </style>
   <style lang="scss">
+  .VueCarousel-dot-container {
+    margin-top: 0px !important;
+  }
+  .VueCarousel-dot {
+    margin-top: 0px !important;
+  }
   //Hides v-img title element
   .title-v-img{
     display: none;
