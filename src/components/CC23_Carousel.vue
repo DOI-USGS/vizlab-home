@@ -2,7 +2,7 @@
   <div class="maxWidth carouselContainer">
     <carousel
       class="image-slider"
-      :autoplay="true"
+      :autoplay="false"
       :autoplay-hover-pause="true"
       :per-page="4"
     >
