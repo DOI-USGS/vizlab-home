@@ -118,7 +118,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
             }
 
             // Override some default styling on the lightbox
-            img.style.maxHeight = "70vh"; // set height
+            img.style.maxHeight = "68vh"; // set height
             img.style.top = "-15vh"; // move up
           },
           switchCaptionText(text){
