@@ -86,14 +86,15 @@
   }
   .slider-image-container {
     padding: 10px;
-    display: block;
+    display: grid;
+    grid-template-columns: max-content;
     height: 200px;
-    width: auto;
-    object-fit: contain;
+    max-width: 275px;
+    align-content: center;
+    justify-content: center;
     img {
-      height: 200px; 
-      width: auto;
-      max-width: 500%;
+      max-width: 255px;
+      max-height: 180px;
     }
   }
   </style>
