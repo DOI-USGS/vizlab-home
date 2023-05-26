@@ -22,7 +22,7 @@ export default {
             drupal_url: 'https://www.usgs.gov/media/images/comparisons-part-whole-image-2',
             image_basename: '20230401b_part-to-whole_mcarr',
             image_type: 'png',
-            image_alt: 'Where is Earth\'s water? Series of 3 landscapes depicting where water is in blue for all Earth’s water, all freshwater, and surface & other freshwater. All Earth\'s landscape denotes regions of freshwater, other saline water, and oceans; All freshwater landscape denotes regions of glaciers & ice caps, surface & other freshwater, and groundwater; surface & other freshwater landscape denotes regions of swaps & marches, ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.'
+            image_alt: 'Where is Earth\'s water? Series of 3 landscapes depicting where water is in blue for all Earth\'s water, all freshwater, and surface & other freshwater. All Earth\'s landscape denotes regions of freshwater, other saline water, and oceans; All freshwater landscape denotes regions of glaciers & ice caps, surface & other freshwater, and groundwater; surface & other freshwater landscape denotes regions of swaps & marches, ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.'
         },
         {
             id: '3',
