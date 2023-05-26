@@ -133,13 +133,15 @@
     padding: 20px 10px;
     color: black;
     font-size: 1em;
+    display: flex;
+    justify-content: center;
     @media screen and (max-width: 600px) {
       padding: 20px 10px;
       font-size: .8em;
     }
     .caption{
       margin: 0 auto 70px auto;
-      max-width: 700px;
+      max-width: 900px;
       line-height: 1.5em;
     }
   }
