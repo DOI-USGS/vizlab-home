@@ -283,7 +283,7 @@ export default {
             author: 'Althea Archer',
             profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
             tweet_url: 'https://twitter.com/USGS_DataSci/status/1649511296055017475?cxt=HHwWhoDU5ZjynuQtAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/timeseries-downupwards-long-term-daily-stream-temperatures',
+            drupal_url: 'https://www.usgs.gov/media/images/timeseries-downupwards-ocean-currents-cycle-between-warmer-el-nino-and-cooler-la-nina',
             image_basename: '20230421_down-upward_aaarcher',
             image_type: 'png',
             image_alt: 'A timeseries of monthly Oceanic Niño Index values from 1950 to 2023. The y-axis is mirrored at 0, with positive teal values indicating el Niño periods and negative lavender values corresponding to la Niña periods. The chart sits over a watercolor wash that has a gradient from teal at the top to lavender at the bottom. The ocean current-driven periods cycle every couple years, and we are currently in a la Niña period.'
