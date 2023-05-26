@@ -123,6 +123,10 @@
   .footer-v-img {
     justify-content: start !important;
   }
+  .footer-v-img img {
+    width: auto !important;
+    height: 40px !important;
+  }
   #captionArea{
     background: rgba(255,255,255,1);
     position: absolute;
