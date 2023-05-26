@@ -11,9 +11,29 @@
         Visualizations                       
       </span>
     </h2>
-    <template>
-      <ChartChallenge23Carousel/>
-    </template>
+    <div
+      class="usa-accordion"
+      aria-multiselectable="true"
+    >
+      <h3
+        id="head-chart-challenge"
+        class="usa-accordion__heading"
+      >
+        <button
+          class="usa-accordion__button"
+          aria-expanded="true"
+          aria-controls="m-a0"
+        >
+          Chart Challenge 2023
+        </button>
+      </h3>
+      <div
+        id="m-a0"
+        class="usa-accordion__content"
+      >
+        <ChartChallenge23Carousel/>
+      </div>
+    </div>
     <div
       class="usa-accordion"
       aria-multiselectable="true"
