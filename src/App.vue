@@ -136,6 +136,6 @@ p {
   font-size: 3rem;
 }
 .non-accordion-heading {
-  padding: 1rem 0 0 1.25rem;
+  padding: 1rem 3.5rem 1rem 1.25rem;
 }
 </style>
