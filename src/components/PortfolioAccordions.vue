@@ -30,7 +30,7 @@
       <div
         id="m-a0"
       >
-        <ChartChallenge23Carousel/>
+        <ChartChallenge23Carousel />
       </div>
     </div>
     <div
