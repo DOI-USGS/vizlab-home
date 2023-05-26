@@ -97,7 +97,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
             const imgContainer = document.querySelector(".fullscreen-v-img");
             const title = document.querySelector(".title-v-img");
             const img = document.querySelector(".content-v-img img");
-
+            
             //Mutation observer
             //If img src changes, update caption
             const observer = new MutationObserver((changes) => {
@@ -109,7 +109,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
             })
             //Telling observer what to observe
             observer.observe(img, {attributes: true});
-          
+            
             if(e.target.classList.contains("sliderImage")){
               const captionHTML = `
                 <div id="captionArea">
@@ -126,7 +126,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
           },
           switchCaptionText(text){
             const caption = document.querySelector(".caption");
-            caption.textContent = text.textContent;
+            caption.innerHTML = text.textContent;
           }
         }
 
