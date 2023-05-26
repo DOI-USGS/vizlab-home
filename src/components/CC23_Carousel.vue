@@ -120,6 +120,9 @@
   .fullscreen-v-img{
     position: relative;
   }
+  .footer-v-img {
+    justify-content: start !important;
+  }
   #captionArea{
     background: rgba(255,255,255,1);
     position: absolute;
