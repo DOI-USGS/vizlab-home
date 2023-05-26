@@ -53,6 +53,9 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
             self.findCarouselContainers();
           });
         },
+        updated(){
+          this.lazyLoadImages();
+        },
         methods: {
           lazyLoadImages(){
             const loadImg = function(entries, observer){
