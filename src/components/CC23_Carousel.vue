@@ -84,6 +84,10 @@
       outline: none;
     }
   }
+  .slide:hover {
+    transform: translate3D(0,-0.5px,0) scale(1.05);
+    transition: all .3s ease; 
+  }
   .slider-image-container {
     padding: 10px;
     display: grid;
