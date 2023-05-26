@@ -135,4 +135,7 @@ p {
 .button.usa-accordion__button {
   font-size: 3rem;
 }
+.non-accordion-heading {
+  padding: 1rem 0 0 1.25rem;
+}
 </style>

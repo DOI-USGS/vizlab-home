@@ -11,28 +11,13 @@
         Visualizations                       
       </span>
     </h2>
-    <div
-      class="usa-accordion"
-      aria-multiselectable="true"
-    >
-      <h3
+    <h3
         id="head-chart-challenge"
-        class="usa-accordion__heading"
+        class="non-accordion-heading"
       >
-        <button
-          class="usa-accordion__button"
-          aria-expanded="true"
-          aria-controls="m-a0"
-        >
-          Chart Challenge 2023
-        </button>
-      </h3>
-      <div
-        id="m-a0"
-      >
-        <ChartChallenge23Carousel />
-      </div>
-    </div>
+      Chart Challenge 2023
+    </h3>
+    <ChartChallenge23Carousel />
     <div
       class="usa-accordion"
       aria-multiselectable="true"
