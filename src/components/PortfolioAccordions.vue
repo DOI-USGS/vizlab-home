@@ -29,7 +29,6 @@
       </h3>
       <div
         id="m-a0"
-        class="usa-accordion__content"
       >
         <ChartChallenge23Carousel/>
       </div>
