@@ -122,6 +122,16 @@ h3{
       font-size: 1em;
   }  
 }
+h4{
+  font-size: 1.2em;
+  padding: 0.3em 0em 0.2em 0em;
+  margin: 0px;
+  font-family: $sourceSans;
+  font-weight: 400;
+  @media screen and (max-width: 600px) {
+      font-size: 1em;
+  }  
+}
 a {
   color: $coolBlue;
 }
@@ -134,8 +144,5 @@ p {
 }
 .button.usa-accordion__button {
   font-size: 3rem;
-}
-.non-accordion-heading {
-  padding: 1rem 3.5rem 1rem 1.25rem;
 }
 </style>

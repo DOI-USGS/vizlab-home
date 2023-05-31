@@ -11,13 +11,6 @@
         Visualizations                       
       </span>
     </h2>
-    <h3
-        id="head-chart-challenge"
-        class="non-accordion-heading"
-      >
-      Chart Challenge 2023
-    </h3>
-    <ChartChallenge23Carousel />
     <div
       class="usa-accordion"
       aria-multiselectable="true"
@@ -73,6 +66,17 @@
         id="m-a2"
         class="usa-accordion__content"
       >
+        <h4
+          id="head-chart-challenge"
+        >
+          Chart Challenge 2023
+        </h4>
+        <ChartChallenge23Carousel />
+        <h4
+          id="head-chart-challenge"
+        >
+          Other charts
+        </h4>
         <div class="card-container grid-container">
           <ul 
             class="usa-card-group grid-row"
