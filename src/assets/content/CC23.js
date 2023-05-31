@@ -351,7 +351,7 @@ export default {
         {
             id: '30',
             date: '2023-04-28',
-            cc_prompt: 'Uncertainties: tren',
+            cc_prompt: 'Uncertainties: trend',
             author: 'Julie Padilla',
             profile_url: '',
             tweet_url: 'https://twitter.com/USGS_DataSci/status/1652051986827874305?cxt=HHwWgsDUle6hou0tAAAA',
