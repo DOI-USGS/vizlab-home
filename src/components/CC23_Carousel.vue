@@ -5,6 +5,8 @@
       :autoplay="false"
       :autoplay-hover-pause="true"
       :per-page="4"
+      navigation-enabled
+      :speed="800"
     >
       <slide
         v-for="chart in charts"
@@ -109,6 +111,11 @@
   }
   .VueCarousel-dot {
     margin-top: 0px !important;
+  }
+  .VueCarousel-navigation {
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
   //Hides v-img title element
   .title-v-img{
