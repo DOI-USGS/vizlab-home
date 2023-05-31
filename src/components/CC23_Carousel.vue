@@ -42,7 +42,6 @@
 </template>
 
 <script>
-    import * as d3Base from 'd3';
     import { Carousel, Slide } from 'vue-carousel';
     import CC23 from "@/assets/content/CC23.js";
     export default {
@@ -53,14 +52,12 @@
         },
         data() {
           return {
-            d3: null,
             charts: CC23.chartChallengeCharts
           }
         },
         mounted(){
-          this.d3 = Object.assign(d3Base);
           // sort charts
-          this.charts.sort((a,b) => this.d3.ascending(a.date, b.date))
+          this.charts.sort((a,b) => new Date(a.date) - new Date(b.date))
           // for each chart, build caption for use w/ v-img
           this.charts.forEach(chart => {
             chart.caption = 'Contribution for ' + chart.cc_prompt + ' by ' + chart.author + '. Original available <a href=' + chart.drupal_url + ' target="_blank">here</a>. Released on <a href=' + chart.tweet_url + ' target="_blank">Twitter</a>.'
