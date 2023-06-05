@@ -122,6 +122,16 @@ h3{
       font-size: 1em;
   }  
 }
+h4{
+  font-size: 1.2em;
+  padding: 0.3em 0em 0.2em 0em;
+  margin: 0px;
+  font-family: $sourceSans;
+  font-weight: 400;
+  @media screen and (max-width: 600px) {
+      font-size: 1em;
+  }  
+}
 a {
   color: $coolBlue;
 }

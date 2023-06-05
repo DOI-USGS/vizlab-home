@@ -30,7 +30,7 @@
           </a>
           <br>
           <br>
-          We wrote a blog post about our work inn the <a
+          We wrote a blog post about our work on the <a
             href="https://waterdata.usgs.gov/blog/what-is-vizlab/"
             target="_blank"
           > Water Data for the Nation blog</a>.

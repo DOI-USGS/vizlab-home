@@ -43,3 +43,11 @@ scratch/
 # User-specific files
 .Ruserdata
 .Rproj.user
+
+# pipeline files
+_targets/
+in/*
+!in/.empty
+!/in/CC23/.empty
+tmp/*
+!tmp/.empty

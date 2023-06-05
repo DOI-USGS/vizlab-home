@@ -66,6 +66,17 @@
         id="m-a2"
         class="usa-accordion__content"
       >
+        <h4
+          id="head-chart-challenge"
+        >
+          Chart Challenge 2023
+        </h4>
+        <ChartChallenge23Carousel />
+        <h4
+          id="head-chart-challenge"
+        >
+          Other charts
+        </h4>
         <div class="card-container grid-container">
           <ul 
             class="usa-card-group grid-row"
@@ -122,14 +133,15 @@
   import * as d3Base from 'd3';
   import PortfolioCard from './PortfolioCard.vue';
   import PortfolioImage from './PortfolioImage.vue';
-   
+  import ChartChallenge23Carousel from './CC23_Carousel.vue' 
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
    
    export default {
         name: 'PortfolioAccordions',
         components: {
             PortfolioCard,
-            PortfolioImage
+            PortfolioImage,
+            ChartChallenge23Carousel
         },
         props: {
             title: {

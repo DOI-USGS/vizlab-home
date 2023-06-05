@@ -35,7 +35,7 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
           PortfolioAccordions: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "portfolio-accordions"*/ "./../components/PortfolioAccordions")
         },
         mounted(){
-
+          const self = this;
           // sticky nav bar
           window.onscroll = function() {stickyOnScroll()};
           var header = document.getElementById("viz-menu");
@@ -48,10 +48,86 @@ import vizHeader from "@/assets/usgsHeaderAndFooter/viz-header.svg";
               header.classList.remove("sticky");
             }
           }
-
+          //Wait for page to load then run this function
+          window.addEventListener("load", function(){
+            self.findCarouselContainers();
+          });
+        },
+        updated(){
+          this.lazyLoadImages();
         },
         methods: {
-          
+          lazyLoadImages(){
+            const loadImg = function(entries, observer){
+              entries.forEach(entry => {
+                if(entry.isIntersecting){
+                  //Get first source element
+                  entry.target.srcset = entry.target.dataset.srcset; 
+                  //Get second source element
+                  entry.target.nextElementSibling.srcset = entry.target.dataset.srcset; 
+                  const findImg = entry.target.parentElement.querySelector("img");
+                  findImg.addEventListener('load', function () {
+                    entry.target.parentElement.classList.remove('lazy');
+                  });
+                  observer.unobserve(entry.target);
+                }
+              });
+            }
+            const imgTargets = document.querySelectorAll(".lazy > source");
+            const imgObserver = new window.IntersectionObserver(loadImg, {
+              //Watch entire viewport
+              root: null,
+              threshold: 0,
+              rootMargin: "300px"
+            })
+            imgTargets.forEach(img => {
+              imgObserver.observe(img)
+            });
+          },
+          findCarouselContainers(){
+            let self = this;
+            const carouselContainers = document.querySelectorAll(".carouselContainer");
+            carouselContainers.forEach(function(container){
+              container.addEventListener("click", self.addFooterCaption);
+            });
+          },
+          //Carousel full size image captions
+          addFooterCaption(e){
+            const self = this;
+            const imgContainer = document.querySelector(".fullscreen-v-img");
+            const title = document.querySelector(".title-v-img");
+            const img = document.querySelector(".content-v-img img");
+            
+            //Mutation observer
+            //If img src changes, update caption
+            const observer = new MutationObserver((changes) => {
+              changes.forEach(change => {
+                if(change.attributeName.includes('src')){
+                  self.switchCaptionText(title);
+                }
+              })
+            })
+            //Telling observer what to observe
+            observer.observe(img, {attributes: true});
+            
+            if(e.target.classList.contains("sliderImage")){
+              const captionHTML = `
+                <div id="captionArea">
+                  <div class="caption">
+                    ${title.textContent}
+                  </div>
+                </div>`;
+              imgContainer.insertAdjacentHTML("afterbegin", captionHTML);
+            }
+
+            // Override some default styling on the lightbox
+            img.style.maxHeight = "68vh"; // set height
+            img.style.top = "-15vh"; // move up
+          },
+          switchCaptionText(text){
+            const caption = document.querySelector(".caption");
+            caption.innerHTML = text.textContent;
+          }
         }
 
     }
