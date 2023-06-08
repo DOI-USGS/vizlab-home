@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-885PJEGWQ7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-885PJEGWQ7');
-    </script>
-    <!-- VIZLAB Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4H936L4LV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-G4H936L4LV');
-    </script>
-    <!-- End gtag -->
-   
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TPNDF8R');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <%= process.env.VUE_APP_TIER !== '' ? '<meta name="robots" content="noindex,nofollow">' : '' %><!-- an empty string in this case means the 'prod' version of the application   -->
-      <!-- Primary Meta Tags -->
-      <title><%= VUE_APP_TIER %><%= VUE_APP_TITLE %></title>
-      <meta name="title" content="Vizlab home">
-      <meta name="description" content="Water data visualizations from the USGS Vizlab">
-      <!-- Open Graph / Facebook -->
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="labs.waterdata.usgs.gov/visualizations/index.html">
-      <meta property="og:title" content="USGS Vizlab">
-      <meta property="og:description" content="Water data visualizations from the USGS Vizlab">
-      <meta property="og:image" content="https://labs.waterdata.usgs.gov/visualizations/thumbnails/vizlab-gage.png">
-      <!-- Twitter -->
-      <meta property="twitter:card" content="summary_large_image">
-      <meta property="twitter:url" content="labs.waterdata.usgs.gov/visualizations/index.html">
-      <meta property="twitter:title" content="USGS Vizlab">
-      <meta property="twitter:description" content="Water data visualizations from the USGS Vizlab">
-      <meta property="twitter:image" content="https://labs.waterdata.usgs.gov/visualizations/thumbnails/vizlab-gage.png">
+    <!-- Primary Meta Tags -->
+    <title><%= VUE_APP_TIER %><%= VUE_APP_TITLE %></title>
+    <meta name="title" content="Vizlab home">
+    <meta name="description" content="Water data visualizations from the USGS Vizlab">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="labs.waterdata.usgs.gov/visualizations/index.html">
+    <meta property="og:title" content="USGS Vizlab">
+    <meta property="og:description" content="Water data visualizations from the USGS Vizlab">
+    <meta property="og:image" content="https://labs.waterdata.usgs.gov/visualizations/thumbnails/vizlab-gage.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="labs.waterdata.usgs.gov/visualizations/index.html">
+    <meta property="twitter:title" content="USGS Vizlab">
+    <meta property="twitter:description" content="Water data visualizations from the USGS Vizlab">
+    <meta property="twitter:image" content="https://labs.waterdata.usgs.gov/visualizations/thumbnails/vizlab-gage.png">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <script type='application/ld+json'>
       { "@context": "http://www.schema.org",
@@ -71,6 +58,10 @@
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPNDF8R"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <noscript>
       <strong>We're sorry but this application doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

@@ -75,7 +75,12 @@
 </script>
 
 <style scoped lang="scss">
+  .carouselContainer {
+    max-width: 98%;
+  }
   .image-slider {
+    margin: auto;
+    max-width: 70rem;
     *:focus{
       outline: none;
     }
