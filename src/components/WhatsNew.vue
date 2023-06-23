@@ -109,16 +109,16 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/data-science-leadership-banner.webp"
-          alt="We're hiring! Data Science Leadership. Permanent Federal Position (GS-14) in the United States Geological Survey Water Mission Area."
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/WhatIsDrought-banner.webp"
+          alt="What is streamflow drought? As drought conditions persist, lesss water moves into and through streams. Reduced streamflow has significant impact on plants, animals, and humans. When streamflow levels are unusually low, this is defined as streamflow drought. But what does 'unusually low' really mean?"
         >
         <h3 id="title-new">
-          We're hiring a leader for the USGS Data Science team
+          What is streamflow drought?
         </h3> <a
           id="twitter-link"
-          href="https://twitter.com/USGS_DataSci/status/1658606629984817153"
+          href="https://labs.waterdata.usgs.gov/visualizations/what-is-drought/index.html#/"
           target="_blank"
-        >See it on twitter<span class="arrow">&#8594;</span></a> 
+        >Check out the interactive data viz<span class="arrow">&#8594;</span></a> 
       </div>
     </div>
     <!-- <div class="river-container">
