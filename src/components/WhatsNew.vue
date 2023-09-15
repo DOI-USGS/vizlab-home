@@ -31,6 +31,30 @@
             <!-- blog list item -->
             <li>
               <span class="date-text">
+                07/21/2023:
+              </span> 
+              Jazz up your ggplots!
+              <a
+                href="https://waterdata.usgs.gov/blog/ggplot-jazz/"
+                target="_blank"
+              >
+                <span class="arrow">
+                  Read &#8594;
+                </span>
+              </a>
+              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
+              <div class="thumbnail-container">
+                <img 
+                  class="blog-thumbnail"
+                  src="https://waterdata.usgs.gov/blog/static/ggplot-extensions/ggplot-extensions-banner.png" 
+                  alt="Musical notes drawn with the center of the notes containing data viz examples"
+                >
+              </div>
+            </li>
+            <!-- end blog list item -->
+            <!-- blog list item -->
+            <li>
+              <span class="date-text">
                 05/3/2023:
               </span> 
               The 30 Day Chart Challenge with the USGS VizLab
@@ -42,14 +66,6 @@
                   Read &#8594;
                 </span>
               </a>
-              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
-              <div class="thumbnail-container">
-                <img 
-                  class="blog-thumbnail"
-                  src="https://labs.waterdata.usgs.gov/visualizations/thumbnails/chart-challenge-23-thumbnail.webp" 
-                  alt="Collage of 25 chart challenge entries for the USGS Data Science branch and collaborators. Entries are arranged so that charts with a dark theme are in the lower right (i.e., charts on dark backgrounds) and they create a gradient to charts that are lighter (i.e., on a white background) in the upper left."
-                >
-              </div>
             </li>
             <!-- end blog list item -->
             <!-- blog list item -->
