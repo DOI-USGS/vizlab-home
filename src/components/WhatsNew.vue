@@ -125,14 +125,14 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/WhatIsDrought-banner.webp"
-          alt="What is streamflow drought? As drought conditions persist, lesss water moves into and through streams. Reduced streamflow has significant impact on plants, animals, and humans. When streamflow levels are unusually low, this is defined as streamflow drought. But what does 'unusually low' really mean?"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/drought_timeline_banner.webp"
+          alt="Five droughts that changed history. The U.S. has experienced thousands of droughts that have caused water-related problems for humans and ecosystems. But in the last 100 years, five major drought events stand out in their effects on agriculture, wildfires, and streamflow"
         >
         <h3 id="title-new">
-          What is streamflow drought?
+          Five droughts that changed history
         </h3> <a
           id="twitter-link"
-          href="https://labs.waterdata.usgs.gov/visualizations/what-is-drought/index.html#/"
+          href="https://labs.waterdata.usgs.gov/visualizations/drought-timeline/index.html#/"
           target="_blank"
         >Check out the interactive data viz<span class="arrow">&#8594;</span></a> 
       </div>
