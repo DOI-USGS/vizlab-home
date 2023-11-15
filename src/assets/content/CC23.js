@@ -1,18 +1,6 @@
 export default {
     chartChallengeCharts: [
         {
-            id: '1',
-            date: '2023-04-01',
-            cc_prompt: 'Comparisons: part-to-whole',
-            author: 'Mandie Carr',
-            profile_url: 'https://www.usgs.gov/staff-profiles/amanda-carr',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1642168132013027328?cxt=HHwWgMDToeXNk8otAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-part-whole-image-1',
-            image_basename: '20230401a_part-to-whole_mcarr',
-            image_type: 'png',
-            image_alt: 'Where is Earth\'s water? Series of 3 interconnected tree maps for all Earth\'s water, all freshwater, and surface & other freshwater. All Earth\'s water tree map is broken down in size order displaying oceans, other saline water, and freshwater. Second tree map displays all freshwater broken down in size order by glaciers & ice caps, groundwater, and surface & other freshwater. Third tree map breaks down surface & other freshwater in size order by ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.'
-        },
-        {
             id: '2',
             date: '2023-04-01',
             cc_prompt: 'Comparisons: part-to-whole',
