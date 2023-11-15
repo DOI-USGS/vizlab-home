@@ -125,7 +125,7 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/bottled_water_banner.webp"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/bottled_water_barplot.gif"
           alt="Map showing the counts of bottled water facilities in all states and territories, by county. The counts are showed as scaled proportional symbols."
         >
         <h3 id="title-new">
