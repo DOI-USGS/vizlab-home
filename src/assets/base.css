@@ -1,10 +1,11 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
   --white: #ffffff;
   --white-soft: #F0F0F0;
 
   --black-soft: #151515;
   --dodger-blue: #1e90ff;
+
+  font-size: 62.5%;
 }
 
 /* semantic color variables for this project */
@@ -49,7 +50,7 @@ body {
     'Droid Sans',
     'Helvetica Neue',
     sans-serif;
-  font-size: 62.5%;;
+  font-size: 2rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
