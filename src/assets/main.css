@@ -1,4 +1,6 @@
 @import './base.css';
+@import './common.css'; /* USGS Viz ID Stylesheet */
+@import './custom.css'; /* USGS Viz ID Stylesheet */
 
 /* whole page except header fit within viewport - no scrolling */
 #app {
