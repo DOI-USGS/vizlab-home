@@ -1,18 +1,52 @@
 <template>
   <div>
+    <WindowSize v-if="checkTypeOfEnv === '-test build-'" />
     <HeaderUSGS />
-    <WorkInProgressWarning v-if="envType === '-beta build-'" />
+    <WorkInProgressWarning v-if="checkTypeOfEnv === '-beta build-'" />
     <RouterView />
     <FooterUSGS />
   </div>
 </template>
 
-<script setup>
+<script>
 import { RouterView } from 'vue-router'
+import WindowSize from "./components/WindowSize.vue";
 import HeaderUSGS from './components/HeaderUSGS.vue';
 import WorkInProgressWarning from "./components/WorkInProgressWarning.vue";
 import FooterUSGS from './components/FooterUSGS.vue';
-const envType = import.meta.env.VITE_APP_TIER;
+import { useWindowSizeStore } from './stores/WindowSizeStore';
+
+export default {
+  name: 'App',
+  components: {
+      RouterView,
+      WindowSize,
+      HeaderUSGS,
+      WorkInProgressWarning,
+      FooterUSGS
+  },
+  data() {
+    return {
+      WindowSizeStore: useWindowSizeStore()
+    }
+  },
+  computed: {
+    checkTypeOfEnv() {
+        return import.meta.env.VITE_APP_TIER
+    }
+  },
+  created() {
+    // Add window size tracking by adding a listener and a way to store the values in the Pinia state
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  methods:{
+    handleResize() {
+      this.WindowSizeStore.windowWidth = window.innerWidth;
+      this.WindowSizeStore.windowHeight = window.innerHeight;
+    },
+  }
+}
 </script>
 
 <style scoped>
