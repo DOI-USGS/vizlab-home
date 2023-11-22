@@ -15,11 +15,9 @@ If you want the want to restrict the width of the page, remove the comment out s
 /* BY DEFAULT, Search box is displayed:
 If you want the to hide the search, remove the comment out slashes and astricks surrounding the ".search-box {display:none;}" below.  */
  
-/*
 #search-box {
 	display: none;
 }
-*/
 
 /* =============LOGO===============*/ 
 /* THE DEFAULT LOGO HEIGHT IS 65PX:
