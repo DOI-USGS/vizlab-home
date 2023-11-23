@@ -98,15 +98,8 @@
 </template>
 
 <script>
-  //   export default {
-  //       // name: 'HeaderUSWDSBanner',
-  //       components: {
-  //         UsaTag
-  //       },
-  //       mounted() {
-  //       }
-  //   }
 </script>
+
 <style scoped lang="scss">
   @import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
   .usa-banner {
