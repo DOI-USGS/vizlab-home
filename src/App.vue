@@ -1,6 +1,7 @@
 <template>
   <div>
-    <WindowSize v-if="checkTypeOfEnv === '-test build-'" />
+    <WindowSize v-if="checkTypeOfEnv !== '-test build-'" />
+    <HeaderUSWDSBanner v-if="checkTypeOfEnv === '-test build-'" />
     <HeaderUSGS />
     <WorkInProgressWarning v-if="checkTypeOfEnv === '-beta build-'" />
     <RouterView />
@@ -11,6 +12,7 @@
 <script>
 import { RouterView } from 'vue-router'
 import WindowSize from "./components/WindowSize.vue";
+import HeaderUSWDSBanner from "./components/HeaderUSWDSBanner.vue";
 import HeaderUSGS from './components/HeaderUSGS.vue';
 import WorkInProgressWarning from "./components/WorkInProgressWarning.vue";
 import FooterUSGS from './components/FooterUSGS.vue';
@@ -20,6 +22,7 @@ export default {
   name: 'App',
   components: {
       RouterView,
+      HeaderUSWDSBanner,
       WindowSize,
       HeaderUSGS,
       WorkInProgressWarning,
