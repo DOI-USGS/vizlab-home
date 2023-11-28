@@ -1,15 +1,16 @@
 <template>
   <section>
-    <p class="test-text">Visualization.vue</p>
+    <h1 class="section-header">svg import w/ d3-added interaction + v-for</h1>
+    <RegionalViolins />
   </section>
 </template>
 
 <script setup>
+import RegionalViolins from '.././components/RegionalViolins.vue';
 </script>
 
 <style scoped>
-.test-text {
+.section-header {
   color: var(--dodger-blue);
-  font-size: 2rem;
 }
 </style>
