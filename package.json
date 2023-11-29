@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "vite --mode test_tier",
-    "build": "vite build",
+    "build": "vite build --mode prod_tier",
+    "build-test": "vite build --mode test_tier",
+    "build-beta": "vite build --mode beta_tier",
+    "build-prod": "vite build --mode prod_tier",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
