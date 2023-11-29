@@ -1,19 +1,26 @@
 <template>
-    <div id="region-grid-container">
+    <div id="region-grid-container" :class="{ mobile: mobileView}">
+        <cascMap
+            v-if="mobileView"
+            id="casc-svg"
+        />
         <img
+            v-if="!mobileView"
             id="radial-chart"
             src="@/assets/images/polar_background_plot.png"
             alt=""
         >
         <polarWedges
+            v-if="!mobileView"
             id="wedges-svg"
         />
         <img
+            v-if="!mobileView"
             id="region-map"
             :src="regionMapFilepath"
             alt=""
         >
-        <div id="violin-container">
+        <div id="violin-container" :class="{ mobile: mobileView}">
           <img
             v-for="region in regions"
             :id="`region-violin-${region}`"
@@ -28,10 +35,13 @@
   
 <script setup>
     import { onMounted, ref } from "vue";
+    import { isMobile } from 'mobile-device-detect';
     import * as d3 from 'd3';
-    import polarWedges from "@/assets/svgs/polar_wedges.svg?component";
+    import polarWedges from "@/assets/svgs/polar_wedges.svg";
+    import cascMap from "@/assets/svgs/casc_regions_map.svg";
 
     // global variables
+    const mobileView = isMobile;
     const regions = ['Midwest', 'Northeast', 'Southeast', 'South-Central', 'Southwest', 'Northwest', 'North-Central']
 
     // build dynamic filepath for map image
@@ -105,6 +115,58 @@
         // Add mouseleave to wrapper, which is a group that contains the wedges
         wedgesSVG.selectAll('#wrapper')
             .on("mouseleave", mouseleaveWrapper)
+
+        // On mobile, set up interactions
+        if (mobileView) {
+            // Set viewbox for svg map of CASC regions
+            const cascSVG = d3.select("#casc-svg")
+                .attr("viewBox", "0 0 " + 648 + " " + 432)
+                .attr("preserveAspectRatio", "xMidYMid meet")
+                .attr("width", '100%')
+                .attr("height", '100%')
+
+            // by default have Northwest region showing
+            // Highlight that region on the map and show violin chart and description
+            const selectedRegion = "Northwest"
+            showSelectedRegion(cascSVG, selectedRegion)
+
+            // add interaction to CASC regions map
+            cascSVG.selectAll('.CASC_region')
+                .on("click", (event) =>clickRegion(event))
+        }
+    }
+
+    function showSelectedRegion(svg, region) {
+        svg.selectAll(".CASC_region")
+            .style("fill", "#ffffff")
+            .style("opacity", 1)
+        svg.select("#" + region)
+            .style("fill", "#E48951")
+            .style("fill-opacity", 0.5)
+
+        // Show the regional violin chart
+        const regionalViolin = document.querySelector('#region-violin-' + region);
+        regionalViolin.classList.add("show");
+    }
+
+    function clickRegion(event) {
+        // Pull the region identifier
+        let regionID = event.target.id // unique region id - use to tie to regional violin and map
+        
+        // Highlight that region on the map while dehighlighting other regions
+        const cascSVG = d3.select("#casc-svg")
+        cascSVG.selectAll(".CASC_region")
+            .style("fill", "#ffffff")
+            .style("opacity", 1)
+        cascSVG.selectAll("#" + regionID)
+            .style("fill", "#E48951")
+            .style("fill-opacity", 0.5)
+
+        // Show the regional violin chart while hiding other violin charts
+        const allViolins = document.querySelectorAll('.violin-chart')
+        allViolins.forEach(violin => violin.classList.remove("show"))
+        const regionalViolin = document.querySelector('#region-violin-' + regionID);
+        regionalViolin.classList.add("show");
     }
 </script>
   
@@ -118,6 +180,13 @@
         grid-template-rows:  70vh;
         grid-template-areas:
             "radial violin";
+    }
+    #region-grid-container.mobile {
+        grid-template-columns: 100%;
+        grid-template-rows:  max-content 100vh ;
+        grid-template-areas:
+            "map"
+            "violin"; 
     }
     #radial-chart {
         grid-area: radial;
@@ -138,12 +207,21 @@
         place-self: center;
         margin-left: 0.5%; //nudges map right
     }
+    #casc-svg {
+        max-height: 150px;
+        grid-area: map;
+        width: 100%;
+        height: 100%;
+    }
     #violin-container {
         grid-area: violin;
         position: relative;
         display: flex;
         justify-content: start;
         align-items: center;
+    }
+    #violin-container.mobile {
+        justify-content: center;
     }
     .violin-chart {
         transform: rotate(180deg);
