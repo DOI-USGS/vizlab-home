@@ -8,6 +8,11 @@ const router = createRouter({
       path: '/',
       name: 'VisualizationContent',
       component: VisualizationView
+    },
+    {
+      path: '/index.html',
+      name: 'Index',
+      component: VisualizationView
     }
   ]
 })
