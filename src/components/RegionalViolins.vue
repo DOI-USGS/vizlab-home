@@ -14,20 +14,30 @@
             v-if="!mobileView"
             id="wedges-svg"
         />
-        <img
-            v-if="!mobileView"
-            id="region-map"
-            :src="regionMapFilepath"
-            alt=""
-        >
+        <div id="map-container" v-if="!mobileView">
+            <img    
+                id="region-map-default"
+                class="region-map"
+                src="@/assets/images/casc_regions_map.png"
+                alt=""
+            >
+            <img    
+                v-for="region in regions"
+                :id="`region-map-${region}`"
+                :key="`map-${region}`" 
+                class="region-map hide"
+                :src="getMapImageUrl(region)"
+                alt=""
+            >
+        </div>
         <div id="violin-container" :class="{ mobile: mobileView}">
           <img
-            v-for="region in regions"
-            :id="`region-violin-${region}`"
-            :key="`violin-${region}`"
-            class="violin-chart hide"
-            :src=getViolinImageUrl(region)
-            alt=""
+                v-for="region in regions"
+                :id="`region-violin-${region}`"
+                :key="`violin-${region}`"
+                class="violin-chart hide"
+                :src=getViolinImageUrl(region)
+                alt=""
           >
         </div>
     </div>
@@ -43,12 +53,6 @@
     // global variables
     const mobileView = isMobile;
     const regions = ['Midwest', 'Northeast', 'Southeast', 'South-Central', 'Southwest', 'Northwest', 'North-Central']
-
-    // build dynamic filepath for map image
-    const regionMapFilename = ref();
-    regionMapFilename.value = "casc_regions_map";
-    const regionMapFilepath = ref();
-    regionMapFilepath.value = new URL(`../assets/images/${regionMapFilename.value}.png`, import.meta.url).href
     
     // Declare behavior on mounted
     // functions called here
@@ -56,10 +60,8 @@
         addInteractions();
     });
 
-    // All functions
-    function updateMapPath(val) {
-        regionMapFilename.value = val;
-        regionMapFilepath.value = new URL(`../assets/images/${regionMapFilename.value}.png`, import.meta.url).href
+    function getMapImageUrl(name) {
+        return new URL(`../assets/images/states_regions_${name}.png`, import.meta.url).href
     }
 
     function getViolinImageUrl(name) {
@@ -69,9 +71,14 @@
     function mouseoverWedge(event) {
         // Pull the region identifier
         let regionID = event.target.parentElement.id
+
+        // Hide the default map
+        const defaultMap = document.querySelector('#region-map-default');
+        defaultMap.classList.add("hide");
         
         // Show the region-specific map
-        updateMapPath(`states_regions_${regionID}`)
+        const regionalMap = document.querySelector('#region-map-' + regionID);
+        regionalMap.classList.add("show");
         
         // Make all wedges _except_ the one hovered over partially opaque
         // This highlights the current wedge
@@ -88,13 +95,18 @@
         // Pull the region identifier
         let regionID = event.target.parentElement.id
 
+        // Hide the regional map
+        const regionalMap = document.querySelector('#region-map-' + regionID);
+        regionalMap.classList.remove("show"); 
+
         // Hide the regional violin chart
         const regionalViolin = document.querySelector('#region-violin-' + regionID);
         regionalViolin.classList.remove("show"); 
     }
     function mouseleaveWrapper() {
         // Show the default map
-        updateMapPath("casc_regions_map")
+        const defaultMap = document.querySelector('#region-map-default');
+        defaultMap.classList.remove("hide");
 
         // Make all wedges transparent
         d3.selectAll(".wedge").selectAll('polygon')
@@ -201,11 +213,17 @@
         width: 115%;
         height: 115%;
     }
-    #region-map {
+    #map-container {
         grid-area: radial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+    .region-map {
+        position: absolute;
         height: 10%;
         width: auto;
-        place-self: center;
         margin-left: 0.5%; //nudges map right
     }
     #casc-svg {
