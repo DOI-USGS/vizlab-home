@@ -1,19 +1,14 @@
 <template>
   <div id="window-size-component">
-    <p>window width {{ windowWidth }} -- height {{ windowHeight }}</p>
+    <p>window width {{ windowSizeStore.windowWidth }} -- height {{ windowSizeStore.windowHeight }}</p>
   </div>
 </template>
 
-<script>
-import { useWindowSizeStore } from '../stores/WindowSizeStore';
-import { mapState } from 'pinia' // add this
+<script setup>
+  import { useWindowSizeStore } from '../stores/WindowSizeStore';
 
-export default {
-  name: 'WindowSize',
-  computed: {
-    ...mapState(useWindowSizeStore, ['windowWidth', 'windowHeight']),
-  }
-}
+  const windowSizeStore = useWindowSizeStore();
+
 </script>
 
 <style scoped lang="scss">
