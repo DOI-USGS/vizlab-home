@@ -44,7 +44,7 @@
 </template>
   
 <script setup>
-    import { onMounted, ref } from "vue";
+    import { onMounted } from "vue";
     import { isMobile } from 'mobile-device-detect';
     import * as d3 from 'd3';
     import polarWedges from "@/assets/svgs/polar_wedges.svg";
