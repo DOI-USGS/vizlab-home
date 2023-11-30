@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-import RegionalViolins from '.././components/RegionalViolins.vue';
-import BarChartExample from '.././components/BarChartExample.vue';
+  import RegionalViolins from '.././components/RegionalViolins.vue';
+  import BarChartExample from '.././components/BarChartExample.vue';
 </script>
 
 <style scoped>
