@@ -18,4 +18,4 @@ Vue syntax has changed with the shift to Vue 3. We can now use the `<script setu
 ## Example components
 At the moment this repo contains two example components, both of which use `D3`. 
   * `RegionalViolins.vue` pulls in part of the regional section from [Drought timeline](https://labs.waterdata.usgs.gov/visualizations/drought-timeline/index.html#/). Here, a R-generated svg is loaded into the component, and `D3` is used to layer on interaction, showing and hiding map images and violin charts for different regions. The images were added using a `v-for` pattern and dynamic filepath urls. This component also has a mobile-specific layout.
-  * `BarChartExample` pulls in the water bottling facility bar chart and state dropdown from [Bottled water](https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html). It loads in a csv and uses it to build an updating `D3` bar chart.
+  * `BarChartExample.vue` pulls in the water bottling facility bar chart and state dropdown from [Bottled water](https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html). It loads in a csv and uses it to build an updating `D3` bar chart.
