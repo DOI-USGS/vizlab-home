@@ -26,7 +26,7 @@
             :id="`region-violin-${region}`"
             :key="`violin-${region}`"
             class="violin-chart hide"
-            :src="`${violinFilepath}/vertical_violin_jd7d_2pct_${region}.png`"
+            :src="`${violinFilepath}vertical_violin_jd7d_2pct_${region}.png`"
             alt=""
           >
         </div>
