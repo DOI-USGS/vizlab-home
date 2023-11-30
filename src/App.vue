@@ -1,55 +1,41 @@
 <template>
   <div>
-    <WindowSize v-if="checkTypeOfEnv === '-test build-'" />
-    <HeaderUSWDSBanner v-if="checkTypeOfEnv !== '-test build-'" />
+    <WindowSize v-if="typeOfEnv === '-test build-'" />
+    <HeaderUSWDSBanner v-if="typeOfEnv !== '-test build-'" />
     <HeaderUSGS />
-    <WorkInProgressWarning v-if="checkTypeOfEnv === '-beta build-'" />
+    <WorkInProgressWarning v-if="typeOfEnv === '-beta build-'" />
     <RouterView />
     <FooterUSGS />
   </div>
 </template>
 
-<script>
-import { RouterView } from 'vue-router'
-import WindowSize from "./components/WindowSize.vue";
-import HeaderUSWDSBanner from "./components/HeaderUSWDSBanner.vue";
-import HeaderUSGS from './components/HeaderUSGS.vue';
-import WorkInProgressWarning from "./components/WorkInProgressWarning.vue";
-import FooterUSGS from './components/FooterUSGS.vue';
-import { useWindowSizeStore } from './stores/WindowSizeStore';
+<script setup>
+  import { onMounted } from "vue";
+  import { RouterView } from 'vue-router'
+  import WindowSize from "./components/WindowSize.vue";
+  import HeaderUSWDSBanner from "./components/HeaderUSWDSBanner.vue";
+  import HeaderUSGS from './components/HeaderUSGS.vue';
+  import WorkInProgressWarning from "./components/WorkInProgressWarning.vue";
+  import FooterUSGS from './components/FooterUSGS.vue';
+  import { useWindowSizeStore } from './stores/WindowSizeStore';
 
-export default {
-  name: 'App',
-  components: {
-      RouterView,
-      HeaderUSWDSBanner,
-      WindowSize,
-      HeaderUSGS,
-      WorkInProgressWarning,
-      FooterUSGS
-  },
-  data() {
-    return {
-      WindowSizeStore: useWindowSizeStore()
-    }
-  },
-  computed: {
-    checkTypeOfEnv() {
-        return import.meta.env.VITE_APP_TIER
-    }
-  },
-  created() {
-    // Add window size tracking by adding a listener and a way to store the values in the Pinia state
-    window.addEventListener('resize', this.handleResize);
-    this.handleResize();
-  },
-  methods:{
-    handleResize() {
-      this.WindowSizeStore.windowWidth = window.innerWidth;
-      this.WindowSizeStore.windowHeight = window.innerHeight;
-    },
+  const windowSizeStore = useWindowSizeStore();
+  const typeOfEnv = import.meta.env.VITE_APP_TIER;
+
+  // Declare behavior on mounted
+  // functions called here
+  onMounted(() => {
+    // Add window size tracking by adding a listener
+    window.addEventListener('resize', handleResize);
+    handleResize();
+  });
+
+  // Functions
+  function handleResize() {
+    // store the window size values in the Pinia state
+    windowSizeStore.windowWidth = window.innerWidth;
+    windowSizeStore.windowHeight = window.innerHeight;
   }
-}
 </script>
 
 <style scoped>
