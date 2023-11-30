@@ -15,6 +15,7 @@ RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg -
       apt-get install nodejs -y
 
 # Create temp directory for building viz app
+ARG VITE_APP_TITLE="project"
 RUN mkdir -p /tmp/$VITE_APP_TITLE
 
 # Copy source code
