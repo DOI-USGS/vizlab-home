@@ -26,7 +26,7 @@
             :id="`region-violin-${region}`"
             :key="`violin-${region}`"
             class="violin-chart hide"
-            :src="`${violinFilepath}vertical_violin_jd7d_2pct_${region}.png`"
+            :src="`${violinFilepath}/vertical_violin_jd7d_2pct_${region}.png`"
             alt=""
           >
         </div>
@@ -52,7 +52,7 @@
 
     // Set url path for violin images added w/ v-for
     const violinFilepath = new URL("../assets/images/", import.meta.url).href
-
+    console.log(violinFilepath)
     // Declare behavior on mounted
     // functions called here
     onMounted(() => {
