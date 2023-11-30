@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 // import replace from "@rollup/plugin-replace";
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { createHtmlPlugin } from 'vite-plugin-html'
+import {ViteEjsPlugin} from "vite-plugin-ejs";
 import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
@@ -17,7 +17,9 @@ export default ({mode}) => {
     assetsDir: "static",
     plugins: [
       vue(), 
-      createHtmlPlugin(),
+      ViteEjsPlugin({
+        VITE_APP_TIER: process.env.VITE_APP_TIER
+      }),
       svgLoader({
         svgo: false
       })
