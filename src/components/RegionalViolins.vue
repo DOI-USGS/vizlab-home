@@ -26,7 +26,7 @@
             :id="`region-violin-${region}`"
             :key="`violin-${region}`"
             class="violin-chart hide"
-            :src="`${violinFilepath}/vertical_violin_jd7d_2pct_${region}.png`"
+            :src=getViolinImageUrl(region)
             alt=""
           >
         </div>
@@ -49,10 +49,7 @@
     regionMapFilename.value = "casc_regions_map";
     const regionMapFilepath = ref();
     regionMapFilepath.value = new URL(`../assets/images/${regionMapFilename.value}.png`, import.meta.url).href
-
-    // Set url path for violin images added w/ v-for
-    const violinFilepath = new URL("../assets/images/", import.meta.url).href
-    console.log(violinFilepath)
+    
     // Declare behavior on mounted
     // functions called here
     onMounted(() => {
@@ -65,6 +62,10 @@
         regionMapFilepath.value = new URL(`../assets/images/${regionMapFilename.value}.png`, import.meta.url).href
     }
 
+    function getViolinImageUrl(name) {
+        return new URL(`../assets/images/vertical_violin_jd7d_2pct_${name}.png`, import.meta.url).href
+    }
+    
     function mouseoverWedge(event) {
         // Pull the region identifier
         let regionID = event.target.parentElement.id
