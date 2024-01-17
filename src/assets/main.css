@@ -1,0 +1,9 @@
+@import './base.css';
+@import './common.css'; /* USGS Viz ID Stylesheet */
+@import './custom.css'; /* USGS Viz ID Stylesheet */
+
+/* whole page except header fit within viewport - no scrolling */
+#app {
+  /* height: calc(100vh + 87px); 87 is the height of the USGS header */
+  margin: 0 auto;
+}
