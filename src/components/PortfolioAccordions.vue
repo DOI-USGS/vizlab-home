@@ -75,6 +75,12 @@
         <h4
           id="head-chart-challenge"
         >
+          River Conditions
+        </h4>
+        <RiverConditionsCarousel />
+        <h4
+          id="head-chart-challenge"
+        >
           Other charts
         </h4>
         <div class="card-container grid-container">
@@ -133,7 +139,8 @@
   import * as d3Base from 'd3';
   import PortfolioCard from './PortfolioCard.vue';
   import PortfolioImage from './PortfolioImage.vue';
-  import ChartChallenge23Carousel from './CC23_Carousel.vue' 
+  import ChartChallenge23Carousel from './CC23_Carousel.vue'; 
+  import RiverConditionsCarousel from './RiverConditions_Carousel.vue'
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
    
    export default {
@@ -141,7 +148,8 @@
         components: {
             PortfolioCard,
             PortfolioImage,
-            ChartChallenge23Carousel
+            ChartChallenge23Carousel,
+            RiverConditionsCarousel
         },
         props: {
             title: {
