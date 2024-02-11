@@ -17,11 +17,11 @@
                 <div class="slider-image-container">
                     <picture>
                     <source
-                    :srcset="getImgUrl(chart.image_basename, 'webp')"
-                    type="image/webp"
+                    :srcset="getImgUrl(chart.folder, chart.image_basename, 'png')"
+                    type="image/png"
                     >
                     <source
-                    :srcset="getImgUrl(chart.image_basename, chart.image_type)"
+                    :srcset="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
                     type="image/jpg"
                     >
                     <img 
@@ -32,7 +32,7 @@
                         title: chart.caption
                         }"
                     class="sliderImage"
-                    :src="getImgUrl(chart.image_basename, chart.image_type)"
+                    :src="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
                     :alt="chart.image_alt"
                     loading="lazy"
                     >
@@ -66,9 +66,9 @@
             })
         },
         methods: {
-            getImgUrl(pic, extension) {
+            getImgUrl(folder, pic, extension) {
               // TODO: alternative if image is not given or broken
-                return 'https://labs.waterdata.usgs.gov/visualizations/charts/' + pic + '.' + extension
+                return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + pic + '.' + extension
             }
         }
     }
