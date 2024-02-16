@@ -73,7 +73,7 @@
         </h4>
         <ChartChallenge23Carousel />
         <h4
-          id="head-chart-challenge"
+          id="head-river-conditions"
         >
           River Conditions
         </h4>

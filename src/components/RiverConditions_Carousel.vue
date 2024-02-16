@@ -10,7 +10,7 @@
         >
             <slide
                 v-for="chart in charts"
-                :id="`chart-challenge-${chart.id}`"
+                :id="`river-conditions-${chart.id}`"
                 :key="chart.id"
                 class="slide"
                 >
@@ -25,10 +25,10 @@
                     type="image/jpg"
                     >
                     <img 
-                        :id="`chart-challenge-${chart.id}`"
+                        :id="`river-conditions-${chart.id}`"
                         v-img="{
                         thumbnails: true,
-                        group: 'chart-challenge', 
+                        group: 'river-conditions', 
                         title: chart.caption
                         }"
                     class="sliderImage"
@@ -62,7 +62,7 @@
             this.charts.sort((a,b) => new Date(a.date) - new Date(b.date))
             // for each chart, build caption for use w/ v-img
             this.charts.forEach(chart => {
-                chart.caption = 'Contribution for ' + chart.cc_prompt + ' by ' + chart.author + '. Original available <a href=' + chart.drupal_url + ' target="_blank">here</a>. Released on <a href=' + chart.tweet_url + ' target="_blank">Twitter</a>.'
+                chart.caption = 'Animation available <a href=' + chart.drupal_url + ' target="_blank">here</a>.'
             })
         },
         methods: {

@@ -1,414 +1,130 @@
 export default {
     riverConditionsCharts: [
+        // TO DO: 
+        //URL to a video/animation version of the RC? which file to point to for that
+            // - I think they should be the drupal:  https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022 for example. I think I can pull these URLS from the vislist.csv or whatever
+        //author? Do you want it to say Created By VizLab or Water Resources Mission Area or anything
+        //is the thumbnail a correct version to be pulling in and displaying here? Quality looks fine to me.
+            //some of the thumbnails are B&W
+            //some of them are small square vs the larger rectangle - pre FY22
         {
             id: '2',
-            date: '2023-04-01',
-            cc_prompt: 'Comparisons: part-to-whole',
-            author: 'Mandie Carr',
-            profile_url: 'https://www.usgs.gov/staff-profiles/amanda-carr',
-            tweet_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022',
-            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023',
             folder: 'FY24_Q1/',
             image_basename: 'river_conditions_oct_dec_2023_visid_thumbnail',
             image_type: 'png',
-            image_alt: 'A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.'
+            image_alt: 'River Conditions for Fiscal Year 2024, Quarter 1, spanning from October-December 2023.'
         }
         ,
         {
             id: '3',
-            date: '2023-04-02',
-            cc_prompt: 'Comparisons: waffle',
-            author: 'Elmera Azadpour',
-            profile_url: 'https://www.usgs.gov/staff-profiles/elmera-azadpour',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1642512475722481676?cxt=HHwWmICw6Z2ZsMstAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-waffle-regional-patterns-4-common-drinking-water-contaminants',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2023',
             folder: 'FY23_Q4/',
             image_basename: 'river_conditions_jul_sep_2023_visid_thumbnail',
             image_type: 'png',
-            image_alt: 'Waffle charts are colorized and faceted by contaminant (Pb, Fe, NO3-, and Sr) and region (West, Central, Midwest, East). Each 10 x 10 waffle charts shows the proportion of study area that contains high, moderate, and low concentrations where 1 square = 1 % of region. Figure contains callouts where, for example, NO3- in the Central U.S. show greater proportions of high due to fertilizer use and permeable soils.'
+            image_alt: 'River Conditions for Fiscal Year 2023, Quarter 4, spanning from July-September 2023.'
         },
         {
             id: '4',
-            date: '2023-04-02',
-            cc_prompt: 'Comparisons: waffle',
-            author: 'Hayley Corson-Dosch',
-            profile_url: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1642513512118222849?cxt=HHwWgoCwycfVsMstAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-waffle-2015-daily-water-use',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2023',
             folder: 'FY23_Q3/',
             image_basename: 'river_conditions_apr_jun_2023_visid_thumbnail',
             image_type: 'png',
-            image_alt: 'In 2015, water use in the U.S. totaled 322 billion gallons/day. Total water use is broken out into 8 categories using different colors. The categories, in ranked order for 2015, followed by their water use, in units of billion gallons/day, are: thermoelectric power (133), Irrigation (118), public supply (39), self-supplied industrial (14.8), aquaculture (7.6), mining (4), self-supplied domestic (3.3) and livestock (2).'
+            image_alt: 'River Conditions for Fiscal Year 2023, Quarter 3, spanning from April-June 2023.'
         },
         {
             id: '5',
-            date: '2023-04-03',
-            cc_prompt: 'Comparisons: fauna/flora',
-            author: 'Althea Archer',
-            profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1643008373439471617?cxt=HHwWgoDR3aPakc0tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-faunaflora-urban-trees',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2023',
             folder: 'FY23_Q2/',
             image_basename: 'river_conditions_jan_mar_2023_visid_thumbnail_color',
             image_type: 'png',
-            image_alt: 'Six panel data visualization in the graphical form of a comic. The first panel is of a bright sun with trees lining a street that has tall buildings on either side. The second panel shows a squirrel sitting on a park bench under a tree; the squirrel\'s thought bubble reads: \'it\'s so hot today, glad I can shelter under this tree.\' The third panel depicts a chart of a tree with flowers of varying size which depicts the magnitude of energy savings for 744 major US cities. The fourth panel shows a skyline with a storm; the text reads: \'Later that day...\' The fifth panel depicts a chart where the length and size of the water droplets indicate the average water savings by state. The sixth panel says, \'Learn more about how urban trees reduce energy costs and increase rain infiltration across the United States.\' with the USGS logo and DOI link for data.'
+            image_alt: 'River Conditions for Fiscal Year 2023, Quarter 2, spanning from January-March 2023.'
         },
         {
             id: '6',
-            date: '2023-04-03',
-            cc_prompt: 'Comparisons: fauna/flora',
-            author: 'Cee Nell',
-            profile_url: 'https://www.usgs.gov/staff-profiles/cee-nell',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1643033875218857984?cxt=HHwWgIDU5damnc0tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-florafauna-time-spring-leaf-out',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022',
             folder: 'FY23_Q1/',
             image_basename: 'river_conditions_oct_dec_2022_visid_thumbnail',
             image_type: 'png',
-            image_alt: 'An animation of spring leaf out timing in the contiguous U.S. from Jan 1 2023 to Apr 3, 2023. A map and bar chart are synchronized to show the onset of spring as the year progresses, with southernmost parts of the U.S. first entering spring and rising up through parts of the midwest and east coast. On the west coast, spring first appears in southern California and Arizona, moving up towards Washington along the coast, while the interior western states remain in winter. Compared to the 30 year average, spring timing is generally consistent.'
+            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2023.'
         },
         {
             id: '7',
-            date: '2023-04-04',
-            cc_prompt: 'Comparisons: historical',
-            author: 'Althea Archer',
-            profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1643378388751597568?cxt=HHwWgIC-0YD8uc4tAAAA',
-            drupal_url: 'https://cms.usgs.gov/media/images/comparisons-historical-minimum-annual-streamflow-across-generations',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2022',
             folder: 'FY22_Q4/',
             image_basename: 'river_conditions_jul_sep_2022_visid_thumbnail',
             image_type: 'png',
-            image_alt: 'A data visualization showing how Minimum Annual Streamflow has changed from generation to generation over the past 100 years. Across the contiguous United States, streamflow has increased by 22% when comparing the baseline “Silent generation” (1920-1946) against the Gen Z years (1997-2020). Regionally, streamflow has increased on average for every area of the U.S. other than the Southwest (excluding California) and Southeast, which both have decreased 10-14% since the silent generation. The largest increase was in the south central region, which was an increase of 81%.'
+            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 4, spanning from July-September 2022.'
         },
         {
             id: '8',
-            date: '2023-04-04',
-            cc_prompt: 'Comparisons: historical',
-            author: 'Elmera Azadpour and Cee Nell',
-            profile_url: '',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1643383570965184514?cxt=HHwWhIC-kdOpvM4tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/march-2023-streamflow',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2022',
             folder: 'FY22_Q3/',
             image_basename: 'river_conditions_apr_jun_2022_thumbnail',
             image_type: 'png',
-            image_alt: 'A tile map of the US showing streamgages by flow levels through the month of March 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\'s flow levels to the historic record for each streamgage. During the month of March, storms brought wetter than normal conditions for much of the U.S. Concurrently, large parts of California, the Southwest and the Mississippi River Basin saw heightened precipitation, while much of the Northwest and Northern Plains remain dry.'
+            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 3, spanning from April-June 2022.'
         },
         {
             id: '9',
-            date: '2023-04-06',
-            cc_prompt: 'Comparisons: data day: OWID',
-            author: 'Hayley Corson-Dosch',
-            profile_url: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1644092108104400899?cxt=HHwWhoCwmfjD_tAtAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-data-day-owid-lives-lost-natural-disasters',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2022',
             folder: 'FY22_Q2/',
             image_basename: 'river_conditions_jan_mar_2022_thumbnail',
             image_type: 'png',
-            image_alt: 'An alluvial diagram showing the number of deaths due to natural disasters in the United States over the past 50 years (1972 - 2022). The data include deaths due to eight types of natural disasters: wildfires, drought, extreme temperatures, landslides, volcanic activity, earthquakes, storms, and floods. In most years, the largest cause of deaths are storms (hurricanes, tornadoes, and cyclones). Some individual events stand out, for example deaths due to the eruption of Mt. Saint Helens and to the 2018 Camp Fire in California. For each type of disaster, a timeseries of deaths is plotted as a horizontal band of varying height. The height corresponds to the number of deaths caused by that type of disaster. The bands are stacked, and total height equals total deaths across all disaster types. The stacking order varies by year, so that the band with the most deaths is on top. The bands therefore cross one another, showing changes in deaths over time and the top causes of deaths in each year.'
+            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 2, spanning from January-March 2022.'
         },
-        {
+        { 
             id: '10',
-            date: '2023-04-07',
-            cc_prompt: 'Distributions: hazards',
-            author: 'Matthew Conlon and James Colgin',
-            profile_url: '',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1644410199711842304?cxt=HHwWgIDUraeXj9ItAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/distributions-hazards-flooding-norriston-pa-during-hurricane-ida-september-2021',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2021',
             folder: 'FY22_Q1/',
             image_basename: 'river_conditions_oct_dec_2021_thumbnail',
             image_type: 'png',
-            image_alt: 'A 3D aerial view of Norristown, Pennsylvania shows where the Schuylkill River passes through the city. The water in the river is shown in bright blue, while the surrounding city is shown in natural color. The view animates through time, showing how the water level in the river rose rapidly during Hurricane Ida in September 2021, eclipsing an island in the center of the river, two bridges, and much of the lower reaches of the city.'
+            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2021.'
         },
-        {
+        {//***this one appears to have the wrong thumbnail in the FY21_Q4 folder on Sharepoint */
             id: '11',
-            date: '2023-04-08',
-            cc_prompt: 'Distributions: humans',
-            author: 'Hayley Corson-Dosch',
-            profile_url: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1644686840312610818?cxt=HHwWhIC-ufT9jNMtAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/distributions-humans-how-are-we-using-water',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021',
             folder: 'FY21_Q4/',
             image_basename: 'river_conditions_jan_mar_2021_thumbnail',
             image_type: 'png',
-            image_alt: '8 maps of the continental U.S. show county-level water use for 8 categories of use – thermoelectric, irrigation, public supply, industrial, aquaculture, mining, domestic, and livestock. Use in each category is shown as a percent of total water use, by county. In the northern plains, most water is used for livestock. In west Texas, most water is used for mining. In northern Maine, most water is used for industry.'
+            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 4, spanning from January-March 2021.'
         },
         {
             id: '12',
-            date: '2023-04-09',
-            cc_prompt: 'Distributions: high/low',
-            author: 'Althea Archer',
-            profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1645049420805820417?cxt=HHwWgsC-0e_usdQtAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/distributions-highlow-a-tale-two-winters',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021',
             folder: 'FY21_Q3/',
             image_basename: 'river_conditions_apr_jun_2021_thumbnail',
             image_type: 'png',
-            image_alt: 'A Tale of two winters. A map of CONUS and lollipop style charts show the difference in percent snow covered area for February 2023 compared to the 20-year mean (2003-2022). Paired charts show the relationships between latitude, longitude, and difference in percent snow covered area, depicting two very different winters between the coasts. High snow conditions were mainly in the west and lower snow to the east.'
+            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 3, spanning from April-June 2021'
         },
         {
             id: '13',
-            date: '2023-04-11',
-            cc_prompt: 'Distributions: circular',
-            author: 'Jay Hariharan',
-            profile_url: 'https://www.usgs.gov/staff-profiles/jayaram-hariharan',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1645908291300765696?cxt=HHwWgMDRvdu3uNctAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/distributions-circular-circularity-named-lakes-united-states',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021',
             folder: 'FY21_Q2/',
             image_basename: 'river_conditions_jan_mar_2021_thumbnail',
             image_type: 'png',
-            image_alt: 'Circularity of named lakes in the U.S. A histogram shows circularity for lakes and reservoirs in the United States, defined as 4π * Area / perimeter squared. The distribution is skewed left, as most lakes and reservoirs aren\'t very circular. Specific lakes are highlighted, such as sinuous Lake Cumberland, in Kentucky, which has low circularity, and Lower Van Norman Lake, California which has high circularity. Non-lake examples of shapes such as a rhombus and circle that include circularity, area, and perimeter values are shown for comparison.'
+            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 2, spanning from January-March 2021'
         },
         {
             id: '14',
-            date: '2023-04-13',
-            cc_prompt: 'Relationships: pop culture',
-            author: 'Anthony Martinez',
-            profile_url: 'https://www.usgs.gov/staff-profiles/anthony-martinez',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1646632023581401088?cxt=HHwWgIDRlb3GgdotAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/relationships-pop-culture-water-uses-affected-wildfire-2000-2020',
+            date: '',
+            author: '',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2020',
             folder: 'FY21_Q1/',
             image_basename: 'river_conditions_oct_dec_2020_thumbnail',
             image_type: 'png',
-            image_alt: 'Animated map of the continental U.S. and paired line chart. For each month from 2000 to 2020, the map shows burned areas within water supply watersheds, and the chart displays the total number of affected water users. In 2003, 2005, 2014, and 2017, wildfires burned key water supply watersheds that together supply water to over 1.5 million consumers.'
-        },
-//         {
-//             id: '15',
-//             date: '2023-04-13',
-//             cc_prompt: 'Relationships: pop culture',
-//             author: 'Elmera Azadpour',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/elmera-azadpour',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1646632643562475520?cxt=HHwWgMDUscjqgdotAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/relationships-pop-culture-thirty-years-daily-average-streamflow-cubic-feet-second-rio',
-//             image_basename: '20230413_pop-culture_eazadpour',
-//             image_type: 'png',
-//             image_alt: 'Mean daily streamflow (cfs) of the Rio Grande at Embudo, New Mexico from 1991 to 2022. The chart has a black background and the 30 years of mean daily streamflow data are plotted as stacked white ridge lines that emulate the aesthetics of a classic rock album. In each year there is a peak of streamflow mid-year, with tapering streamflow levels during winter months.'
-//         },
-//         {
-//             id: '16',
-//             date: '2023-04-14',
-//             cc_prompt: 'Relationships: new tool',
-//             author: 'Elmera Azadpour',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/elmera-azadpour',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1646967370483920896?cxt=HHwWgMDTpZ6GmtstAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/relationships-new-tool-split-panel-map-inspecting-timeseries-images-landsat-and-nlcd',
-//             image_basename: '20230414_new-tool_eazadpour',
-//             image_type: 'gif',
-//             image_alt: 'A split-panel map of Salt Lake City, Utah, highlighting the Great Salt Lake, shows 2006 Landsat imagery on the left side panel and 2006 NLCD, with colorized legend of land use classes on the right. The animation displays a slider being used to switch between the two different datasets, revealing the land cover classes shown in Landsat imagery. A user is interacting with dropdown menus for each of the panels to change data sources from 2006 to 2016.'
-//         },
-//         {
-//             id: '17',
-//             date: '2023-04-15',
-//             cc_prompt: 'Relationships: positve/negative',
-//             author: 'Althea Archer',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1647223501651099650?cxt=HHwWhIC2mYTDjtwtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/relationships-positivenegative-march-2023-snow-covered-area',
-//             image_basename: '20230415_positive-negative_aaarcher01',
-//             image_type: 'png',
-//             image_alt: 'A map of the contiguous U.S. using a snowflake hex pattern to show snow cover for March 2023. Snowier places are white with snow, emphasizing the Rocky Mountains and Sierra range in the western U.S., the Upper Midwest, and Maine in the northeast. The majority of the eastern half of the country is within a 0-10% snow cover index, including the lower Midwest and much of New England.'
-//         },
-//         {
-//             id: '18',
-//             date: '2023-04-15',
-//             cc_prompt: 'Relationships: positve/negative',
-//             author: 'Althea Archer',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1647223501651099650?cxt=HHwWhIC2mYTDjtwtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/relationships-positivenegative-march-2023-relative-snow-covered-area',
-//             image_basename: '20230415_positive-negative_aaarcher02',
-//             image_type: 'png',
-//             image_alt: 'A map of the contiguous U.S. using a snowflake hex pattern to show relative snow cover for March 2023 compared to 20-year average (2003 through 2022). Much of the western states experienced more snow than normal, such as the Rocky Mountains and the upper Great Plains. Much of the eastern U.S. is green indicating less snow cover than usual, including the lower Midwest and much of New England.'
-//         },
-//         {
-//             id: '19',
-//             date: '2023-04-17',
-//             cc_prompt: 'Relationships: networks',
-//             author: 'Hayley Corson-Dosch',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1648357029214298117?cxt=HHwWioCx1YL_keAtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/relationships-network-which-stream-order-covers-most-distance',
-//             image_basename: '20230417_networks_hcorson-dosch',
-//             image_type: 'png',
-//             image_alt: 'A map of the Potomac River stream network is colored by Strahler stream order, where higher order represents a larger stream. Next to the map is a donut chart, showing that small headwater streams (order 1) make up 57% of the river network, by length. The first three orders of streams, together, make up 87% of the network by length. The eighth-order Potomac River makes up less than 1% of the river network, by length. Data for the plot are USGS National Hydrography Dataset High Resolution.'
-//         },
-//         {
-//             id: '20',
-//             date: '2023-04-19',
-//             cc_prompt: 'Timeseries: anthropocene',
-//             author: 'Margaret Jaenicke',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1648799423697412096?cxt=HHwWgIDTteKV2-EtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-anthropocene-grand-canyon-be-dammed',
-//             image_basename: '20230419_anthropocene_mjaenicke',
-//             image_type: 'png',
-//             image_alt: 'A heatmap of streamflow downstream from the Glen Canyon Dam at USGS gage 09402500 in the Grand Canyon. The heatmap shows within year variation in streamflow from 1920 to 2020, and how this has changed with the construction of the Glen Canyon Dam, There is natural variability throughout the year until 1963 when the Glen Canyon Dam began impounding water to fill Lake Powell. After that, the streamflow showed much more seasonal changes as the dam and water releases were controlled by water managers.'
-//         },
-//         {
-//             id: '21',
-//             date: '2023-04-20',
-//             cc_prompt: 'Timeseries: correlation',
-//             author: 'Althea Archer',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1649167330209943555?cxt=HHwWhsC-xd-8guMtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-correlation-hysteresis-image-1',
-//             image_basename: '20230420a_correlation_aaarcher',
-//             image_type: 'png',
-//             image_alt: 'A scatter plot of water temperature versus air temperature on April 27, 2019, for the Paine Run stream in Shenandoah National Park. Points are plotted for each 30-minute interval. Daytime points are hollow, while nighttime points are solid. The points form a figure eight shape, illustrating the concept of hysteresis - a phenomenon in which the value of a physical property lags behind changes in the effect causing it. For example, stream temperature changes in response to air temperature, but the stream warms more slowly than air in the mornings, and cools more slowly than air in the evenings. If water temperature tracked stream temperature exactly, the points would fall on a straight line, rather than in a figure eight.'
-//         },
-//         {
-//             id: '22',
-//             date: '2023-04-20',
-//             cc_prompt: 'Timeseries: correlation',
-//             author: 'Althea Archer',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1649167330209943555?cxt=HHwWhsC-xd-8guMtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-correlation-hysteresis-image-2',
-//             image_basename: '20230420b_correlation_aaarcher',
-//             image_type: 'gif',
-//             image_alt: 'Animation showing changes in stream temperature relative to air temperature over the course of a day. The animation begins at midnight, adding a point at each half-hour interval. After dawn, as air temperature starts warming, the stream warms more slowly than air, and water temperature lags behind air temperature. Similarly, in the evening, the stream cools more slowly than the air. Over the course of the day, the points form a figure eight shape.'
-//         },
-//         {
-//             id: '23',
-//             date: '2023-04-21',
-//             cc_prompt: 'Timeseries: down/upwards',
-//             author: 'Natalie Schmer',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/natalie-schmer',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1649510834924847109?cxt=HHwWioDUja3XnuQtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-downupwards-long-term-daily-stream-temperatures',
-//             image_basename: '20230421_downupward_nschmer',
-//             image_type: 'png',
-//             image_alt: 'A tile map of the U.S. showing mean daily stream temperature for the 5 USGS stream sites with the longest daily temperature records in each U.S. state. The oldest site, in Philadelphia, Pennsylvania, began collecting data in October 1964. For each state, a line chart shows the mean daily temperature for each day of year, averaged over the period of record for each site. Stream temperatures in most states are between 0 and 20 degrees Celsius in winter months, and peak around 30 degrees Celsius in the summer. Sites in some states display different patterns. For example, at the Hawaii sites, stream temperature remains around 25 degrees Celsius year-round. At the Alaska sites, summer temperatures peak around 12 degrees Celsius.'
-//         },
-//         {
-//             id: '24',
-//             date: '2023-04-21',
-//             cc_prompt: 'Timeseries: down/upwards',
-//             author: 'Althea Archer',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1649511296055017475?cxt=HHwWhoDU5ZjynuQtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-downupwards-ocean-currents-cycle-between-warmer-el-nino-and-cooler-la-nina',
-//             image_basename: '20230421_down-upward_aaarcher',
-//             image_type: 'png',
-//             image_alt: 'A timeseries of monthly Oceanic Niño Index values from 1950 to 2023. The y-axis is mirrored at 0, with positive teal values indicating el Niño periods and negative lavender values corresponding to la Niña periods. The chart sits over a watercolor wash that has a gradient from teal at the top to lavender at the bottom. The ocean current-driven periods cycle every couple years, and we are currently in a la Niña period.'
-//         },
-//         {
-//             id: '25',
-//             date: '2023-04-22',
-//             cc_prompt: 'Timeseries: green energy',
-//             author: 'Mandie Carr',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/amanda-carr',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1649760530595233794?cxt=HHwWhIC26cadkOUtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-green-energy-electricity-generated-renewable-energy-us',
-//             image_basename: '20230422_green-energy_ancarr',
-//             image_type: 'png',
-//             image_alt: 'Step chart timeseries of U.S. electricity generation (in gigawatt hours) across five classes of renewable energy, from 2000 to 2020. As of 2020, these classes ranked (from high to low): wind, hydropower, solar, bioenergy, and geothermal. From 2000 to 2020, wind power generation steadily grew from roughly 10,000 to over 325,000 gigawatt hours. Hydropower generation is consistently high but can be impacted by drought.'
-//         },
-//         {
-//             id: '26',
-//             date: '2023-04-23',
-//             cc_prompt: 'Timeseries: tiles',
-//             author: 'Hayley Corson-Dosch',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1650122616722604033?cxt=HHwWgoC22d7xtOYtAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/timeseries-tiles-changes-us-water-use-1985-2015',
-//             image_basename: '20230423_tiles_hcorson-dosch',
-//             image_type: 'png',
-//             image_alt: 'A tile map of the U.S. with alluvial charts for each state and the nation that show changes in the total volume of water use from 1985-2015 across eight categories (thermoelectric, irrigation, public supply, industrial, aquaculture, mining, domestic, and livestock). There is change in how much water is used (like the decline in Massachusetts) and in the categories of use (growth of irrigation in Arkansas).'
-//         },
-//         {
-//             id: '27',
-//             date: '2023-04-25',
-//             cc_prompt: 'Uncertainties: global change',
-//             author: 'Katie Nuessly',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1650967244401430533?cxt=HHwWisDSpcX9tOktAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-global-change-loss-north-american-grassland-biome',
-//             image_basename: '20230425_global-change_knuessly',
-//             image_type: 'png',
-//             image_alt: 'The loss of the North American grassland biome. Once spanning more than 2 million square kilometers, we have lost over half of the world\'s most imperiled ecosystem: the temperate grasslands. A map of North America shows the loss of the grassland biome from Canada to Mexico, largely contained within the central plains of North America. The current grassland range is a subset of the historical extent, located mainly in the U.S. in parts of MT, ND, SD, NE, KS, OK, WY, CO, NM, & TX. Four midwestern states of IA, MO, MN, & WI have lost most of their historic grasslands. Only 50,000 square kilometers remain of Texas native grassland — 18% of historic grasslands in the state. Next to the map is a circular stacked bar chart that emphasizes the difference between current and lost grassland range (like the loss of half of Montana\'s native grassland). Overall, only 38% of historic native grasslands exist today. Chart made using data from Comer et al, 2018 doi.org/10.3375/043.038.0209.'
-//         },
-//         {
-//             id: '28',
-//             date: '2023-04-26',
-//             cc_prompt: 'Uncertainties: local change',
-//             author: 'Ellie White',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1651336691838504962?cxt=HHwWhMDSmZv-3OotAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-local-change-how-will-climate-change-affect-timing-fish-spawning-image-1',
-//             image_basename: '20230426a_local-change_ewhite',
-//             image_type: 'png',
-//             image_alt: 'Circular calendar charts showing the projected effects of climate change on the onset and end of spawning for the American Shad and the Striped Bass in the Hudson River Estuary, during two modeling periods: 1950 to 2012 and 2012 to 2099.  Representative Concentration Pathways (RCP) scenarios 2.6, 4.5, 6.0, and 8.5 were used to model spawning for each species in each period. RCP are scenarios constructed to represent how well we can curb and contain greenhouse gas emissions. RCP 2.6 implements the most aggressive strategies, while RCP 8.5 is "business-as-usual". The model results show increasing effects on spawning onset and end dates with less aggressive RCP. For the 2012 to 2099 model period, spawning is projected to start 15 days earlier on average than during the 1950 to 2012 period. The magnitude of the shift ranges from approximately 4 days for RCP 2.6 to over 20 days early for RCP 8.5.'
-//         },
-//         {
-//             id: '29',
-//             date: '2023-04-26',
-//             cc_prompt: 'Uncertainties: local change',
-//             author: 'Ellie White',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1651336691838504962?cxt=HHwWhMDSmZv-3OotAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-local-change-how-will-climate-change-affect-timing-fish-spawning-image-2',
-//             image_basename: '20230426b_local-change_ewhite',
-//             image_type: 'png',
-//             image_alt: 'Under the Representative Concentration Pathways (RCP) 8.5 climate scenario (termed "business-as-usual"), the spawning period for American Shad and Striped Bass in the Hudson River Estuary is projected to start earlier and to be shorter overall. Circular calendar charts show the projected start, duration, and end of spawning for each species in each year from 1950-2099. For the 2012-2099 modeling period, spawning is projected to start 20 days earlier and end 26 days earlier on average compared to the 1950-2012 period.'
-//         },
-//         {
-//             id: '30',
-//             date: '2023-04-28',
-//             cc_prompt: 'Uncertainties: trend',
-//             author: 'Julie Padilla',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1652051986827874305?cxt=HHwWgsDUle6hou0tAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-trend-maximum-percent-ice-cover-great-lakes-difference-50-year-mean-1973',
-//             image_basename: '20230428_trends_greatlakesice',
-//             image_type: 'png',
-//             image_alt: 'Six lollipop charts highlight deviations in maximum percent ice cover on the five Great Lakes (Lake Michigan, Lake Erie, Lake Superior, Lake Huron, and Lake Ontario) from 1973-2023. The difference in lake ice cover is shown for each lake and across the entire system compared to the 50-year mean (1973-2023).  Positive oriented lollipops are shown in shades of blue, and negative oriented lollipop are shown in shades of purple. Across all five of the great lakes, 2023 maximum percent ice coverage was below the 50 year average, with basin wide ice coverage being 59% below average in 2023. Most lakes show a general pattern of lower ice coverage through time, although ice cover is highly variable from year to year.'
-//         },
-//         {
-//             id: '31',
-//             date: '2023-04-28',
-//             cc_prompt: 'Uncertainties: trend',
-//             author: 'Elmera Azadpour',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/elmera-azadpour',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1652053353634107397?cxt=HHwWisDU1bXxou0tAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-trend-change-forest-area-compared-35-year-mean-1985-2020',
-//             image_basename: '20230428_trend_eazadpour',
-//             image_type: 'png',
-//             image_alt: 'A tile map of the U.S. with lollipop charts for each state that show differences in forest area magnitude, in squared kilometers, from the 35-year mean (1985-2020) across the contiguous United States (CONUS). Positive differences are shown in forest green lollipops and negative differences are shown in burnt orange lollipops. There is variation in forest area difference across CONUS. Notably, much of the U.S. have seen declines in forest area magnitude in recent years, whereas the Nothern Plains (such as North Dakota, Nebraska, and Kansas) have seen a slight increase in recent years.'
-//         },
-//         {
-//             id: '32',
-//             date: '2023-04-28',
-//             cc_prompt: 'Uncertainties: trend',
-//             author: 'Margaux Sleckman',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1653511510205816833?cxt=HHwWgoCz3ab9ufItAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-trend-big-melt-has-begun',
-//             image_basename: '20230428_trends_msleckman',
-//             image_type: 'png',
-//             image_alt: 'The Big Melt has begun; 2023 spring flows into Lake Tahoe compared to the historical record. Nine timeseries plots show daily streamflow (cubic feet per second) from March 2023 to present, highlighted in green, compared to historical record, shown in grey that date back to 1975.  Streamgraphs show the 2023 snowmelt runoff in the basin trending upwards across all stream gauges, aiming to surpass previous years dating back to 1975.'
-//         },
-//         {
-//             id: '33',
-//             date: '2023-04-29',
-//             cc_prompt: 'Uncertainties: monochrome',
-//             author: 'Merritt Harlan',
-//             profile_url: '',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1652296971959300100',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-monochrome-estimating-streamflow-satellites',
-//             image_basename: '20230429_monochrome_mharlan',
-//             image_type: 'gif',
-//             image_alt: 'Animation of five satellite images of the Tanana River in Alaska. The imagery is colored in shades of blue to show the degree of confidence that water is present. Two scatter plots show positive pairwise relationships between satellite river elevation and satellite river width and satellite streamflow. A timeseries chart shows that satellite streamflow captures the dynamics of observed streamflow at a gaged site.'
-//         },
-//         {
-//             id: '34',
-//             date: '2023-04-30',
-//             cc_prompt: 'Uncertainties: ',
-//             author: 'Jay Hariharan',
-//             profile_url: 'https://www.usgs.gov/staff-profiles/jayaram-hariharan',
-//             tweet_url: 'https://twitter.com/USGS_DataSci/status/1652659322373931009?cxt=HHwWgoCwzbi5tu8tAAAA',
-//             drupal_url: 'https://www.usgs.gov/media/images/uncertainties-data-day-annual-freshwater-withdrawals-united-states-1990-2019',
-//             image_basename: '20230430_worldbank_jhariharan',
-//             image_type: 'gif',
-//             image_alt: 'Stacked bar chart of 1990-2019 agriculture, domestic, and industry freshwater withdrawals in the U.S., estimated by the World Bank. In all years, industry withdraws the most freshwater, followed by agriculture and domestic. From 2006 to 2010, industrial water dropped 5,000 cubic kilometers, then remained low. From 2010 to 2015 agriculture water use grew by 3,000 cubic kilometers. The chart is animated through time.'
-//         }
+            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 1, spanning from January-March 2020'
+        }
     ]
 };
