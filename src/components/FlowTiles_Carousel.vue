@@ -10,7 +10,7 @@
         >
             <slide
                 v-for="chart in charts"
-                :id="`river-conditions-${chart.id}`"
+                :id="`flow-tiles-${chart.id}`"
                 :key="chart.id"
                 class="slide"
                 >
@@ -25,10 +25,10 @@
                     type="image/jpg"
                     >
                     <img 
-                        :id="`river-conditions-${chart.id}`"
+                        :id="`flow-tiles-${chart.id}`"
                         v-img="{
                         thumbnails: true,
-                        group: 'river-conditions', 
+                        group: 'flow-tiles', 
                         title: chart.caption
                         }"
                     class="sliderImage"
@@ -45,16 +45,16 @@
 
 <script>
     import { Carousel, Slide } from 'vue-carousel';
-    import RiverConditions from "@/assets/content/RiverConditions.js";
+    import FlowTiles from "@/assets/content/FlowTiles.js";
     export default {
-        name: 'RiverConditionsCarousel',
+        name: 'FlowTilesCarousel',
         components:{
             Carousel,
             Slide
         },
         data() {
             return {
-                charts: RiverConditions.riverConditionsCharts
+                charts: FlowTiles.flowTilesCharts
             }
         },
         mounted(){
@@ -68,7 +68,7 @@
         methods: {
             getImgUrl(folder, pic, extension) {
               // TODO: alternative if image is not given or broken
-                return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + pic + '.' + extension
+                //return 'https://labs.waterdata.usgs.gov/visualizations/FLOWTILESFOLDER' + folder + pic + '.' + extension
             }
         }
     }

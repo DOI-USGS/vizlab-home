@@ -75,9 +75,15 @@
         <h4
           id="head-river-conditions"
         >
-          River Conditions
+          Quarterly River Conditions
         </h4>
         <RiverConditionsCarousel />
+        <h4
+          id="head-chart-challenge"
+        >
+          Monthly Streamflow Conditions
+        </h4>
+        <FlowTilesCarousel/>
         <h4
           id="head-chart-challenge"
         >
@@ -140,7 +146,8 @@
   import PortfolioCard from './PortfolioCard.vue';
   import PortfolioImage from './PortfolioImage.vue';
   import ChartChallenge23Carousel from './CC23_Carousel.vue'; 
-  import RiverConditionsCarousel from './RiverConditions_Carousel.vue'
+  import RiverConditionsCarousel from './RiverConditions_Carousel.vue';
+  import FlowTilesCarousel from './FlowTiles_Carousel.vue'
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
    
    export default {
@@ -149,7 +156,8 @@
             PortfolioCard,
             PortfolioImage,
             ChartChallenge23Carousel,
-            RiverConditionsCarousel
+            RiverConditionsCarousel,
+            FlowTilesCarousel
         },
         props: {
             title: {
