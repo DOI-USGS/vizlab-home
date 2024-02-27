@@ -1,123 +1,124 @@
 export default {
     flowTilesCharts: [
+        //Replace everything with Flow Tiles -- where are more recent flow tiles housed? folder here with some: 
+        //https://doimspp.sharepoint.com/sites/IIDDStaff/Shared%20Documents/Forms/AllItems.aspx?ct=1708118783486&or=Teams%2DHL&ga=1&LOF=1&id=%2Fsites%2FIIDDStaff%2FShared%20Documents%2FFunction%20%2D%20Vizlab%2FProjects%2Fflow%2Dtiles&viewid=acf8af64%2Daaf3%2D4f23%2D8b74%2D2859a89813c5
         {
             id: '2',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023',
-            folder: 'FY24_Q1/',
-            image_basename: 'river_conditions_oct_dec_2023_visid_thumbnail',
+            folder: '2024_01/',
+            image_basename: 'flow_cartogram-jan-2024',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2024, Quarter 1, spanning from October-December 2023.'
+            image_alt: ''
         }
         ,
         {
             id: '3',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2023',
-            folder: 'FY23_Q4/',
-            image_basename: 'river_conditions_jul_sep_2023_visid_thumbnail',
+            folder: '2023_12/',
+            image_basename: 'flow_cartogram-dec-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2023, Quarter 4, spanning from July-September 2023.'
+            image_alt: ''
         },
         {
             id: '4',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2023',
-            folder: 'FY23_Q3/',
-            image_basename: 'river_conditions_apr_jun_2023_visid_thumbnail',
+            folder: '2023_11/',
+            image_basename: 'flow_cartogram-nov-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2023, Quarter 3, spanning from April-June 2023.'
+            image_alt: ''
         },
         {
             id: '5',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2023',
-            folder: 'FY23_Q2/',
-            image_basename: 'river_conditions_jan_mar_2023_visid_thumbnail_color',
+            folder: '2023_10/',
+            image_basename: 'flow_cartogram-oct-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2023, Quarter 2, spanning from January-March 2023.'
+            image_alt: ''
         },
         {
             id: '6',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022',
-            folder: 'FY23_Q1/',
-            image_basename: 'river_conditions_oct_dec_2022_visid_thumbnail',
+            folder: '2023_09/',
+            image_basename: 'flow_cartogram-sep-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2023.'
+            image_alt: ''
         },
         {
             id: '7',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2022',
-            folder: 'FY22_Q4/',
-            image_basename: 'river_conditions_jul_sep_2022_visid_thumbnail',
+            folder: '2023_08/',
+            image_basename: 'flow_cartogram-aug-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 4, spanning from July-September 2022.'
+            image_alt: ''
         },
         {
             id: '8',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2022',
-            folder: 'FY22_Q3/',
-            image_basename: 'river_conditions_apr_jun_2022_thumbnail',
+            folder: '2023_07/',
+            image_basename: 'flow_cartogram-jul-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 3, spanning from April-June 2022.'
+            image_alt: ''
         },
         {
             id: '9',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2022',
-            folder: 'FY22_Q2/',
-            image_basename: 'river_conditions_jan_mar_2022_thumbnail',
+            folder: '2023_06/',
+            image_basename: 'flow_cartogram-june-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 2, spanning from January-March 2022.'
+            image_alt: ''
         },
         { 
             id: '10',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2021',
-            folder: 'FY22_Q1/',
-            image_basename: 'river_conditions_oct_dec_2021_thumbnail',
+            folder: '2023_05/',
+            image_basename: 'flow_cartogram-may-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2021.'
+            image_alt: ''
         },
-        {//***this one appears to have the wrong thumbnail in the FY21_Q4 folder on Sharepoint */
+        {
             id: '11',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021',
-            folder: 'FY21_Q4/',
-            image_basename: 'river_conditions_jan_mar_2021_thumbnail',
+            folder: '2023_04/',
+            image_basename: 'flow_cartogram-apr-2023',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 4, spanning from January-March 2021.'
+            image_alt: ''
         },
         {
             id: '12',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021',
-            folder: 'FY21_Q3/',
-            image_basename: 'river_conditions_apr_jun_2021_thumbnail',
+            folder: '2023_03/',
+            image_basename: 'flow_cartogram_2023-03',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 3, spanning from April-June 2021'
+            image_alt: ''
         },
         {
             id: '13',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021',
-            folder: 'FY21_Q2/',
-            image_basename: 'river_conditions_jan_mar_2021_thumbnail',
+            folder: '2023_02/',
+            image_basename: 'flow_cartogram_2023-02',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 2, spanning from January-March 2021'
+            image_alt: ''
         },
         {
             id: '14',
-            date: '',
             author: '',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2020',
-            folder: 'FY21_Q1/',
-            image_basename: 'river_conditions_oct_dec_2020_thumbnail',
+            folder: '2023_01/',
+            image_basename: 'flow_cartogram_2023_jan-01',
             image_type: 'png',
-            image_alt: 'River Conditions for Fiscal Year 2021, Quarter 1, spanning from January-March 2020'
+            image_alt: ''
         }
     ]
 };

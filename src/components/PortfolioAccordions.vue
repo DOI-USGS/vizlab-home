@@ -81,7 +81,7 @@
         <h4
           id="head-chart-challenge"
         >
-          Monthly Streamflow Conditions
+          Monthly Streamflow
         </h4>
         <FlowTilesCarousel/>
         <h4

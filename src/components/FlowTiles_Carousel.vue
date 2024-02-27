@@ -68,7 +68,7 @@
         methods: {
             getImgUrl(folder, pic, extension) {
               // TODO: alternative if image is not given or broken
-                //return 'https://labs.waterdata.usgs.gov/visualizations/FLOWTILESFOLDER' + folder + pic + '.' + extension
+                return 'https://labs.waterdata.usgs.gov/visualizations/flow/' + folder + pic + '.' + extension
             }
         }
     }

@@ -6,14 +6,17 @@
             :autoplay-hover-pause="true"
             :per-page="4"
             navigation-enabled
-            :speed="800"
-        >
+            :speed="800"        >
             <slide
                 v-for="chart in charts"
                 :id="`river-conditions-${chart.id}`"
                 :key="chart.id"
                 class="slide"
+                @slideclick="handleSlideClick">
                 >
+                <center>
+                <br>{{chart.name}}
+                </center>
                 <div class="slider-image-container">
                     <picture>
                     <source
@@ -38,6 +41,12 @@
                     >
                     </picture>
                 </div>
+                <center>
+                <div>
+                    <a :href=chart.drupal_url target="_blank" class="usa-button usa-button--outline">View</a>
+                    <a :href=chart.code_url target="_blank" class="usa-button">Code</a>
+                </div><br>
+                </center>
             </slide>
         </carousel>
     </div>
@@ -69,6 +78,12 @@
             getImgUrl(folder, pic, extension) {
               // TODO: alternative if image is not given or broken
                 return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + pic + '.' + extension
+            },
+            handleSlideClick () {
+                console.log('drpual link')
+                this.charts.forEach(chart => {
+                    window.open(chart.drupal_url, "_blank");
+                })
             }
         }
     }
@@ -85,6 +100,19 @@
         outline: none;
         }
     }
+
+    .fullscreen-v-img[data-v-5928e1c7] {
+    z-index: 9999;
+    /* height: 100%; this disabled the thumbnails from enlarging when clicked--I want the only action when clicked to be going to the drupal page*/ 
+    // width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    -ms-touch-action: none;
+    touch-action: none;
+}
     .slide {
         margin: 0;
         padding: 0;
