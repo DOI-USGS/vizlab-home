@@ -64,6 +64,15 @@ header {
 .header-nav {
   background: $nearBlack;
 }
+.usa-nav__primary button[aria-expanded=false] span::after {
+    background: url([object Object]) no-repeat center/contain;
+    display: inline-block;
+    height: 0px;
+    width: 0rem;
+    content: "";
+    vertical-align: middle;
+    margin-left: auto;
+}
 .logo-header img {
   margin-top: 8px;
   margin-bottom: 8px;

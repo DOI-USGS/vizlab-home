@@ -22,6 +22,14 @@
 </script>
 
 <style lang="scss">
- 
+.usa-nav__primary button[aria-expanded=false] span::after {
+    background: url([object Object]) no-repeat center/contain;
+    display: inline-block;
+    height: 0px;
+    width: 0rem;
+    content: "";
+    vertical-align: middle;
+    margin-left: auto;
+}
 
 </style>

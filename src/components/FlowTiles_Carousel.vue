@@ -62,7 +62,7 @@
             this.charts.sort((a,b) => new Date(a.date) - new Date(b.date))
             // for each chart, build caption for use w/ v-img
             this.charts.forEach(chart => {
-                chart.caption = 'Animation available <a href=' + chart.drupal_url + ' target="_blank">here</a>. View code <a href=' + chart.drupal_url + ' target="_blank">here</a>.'
+                // chart.caption = 'Animation available <a href=' + chart.drupal_url + ' target="_blank">here</a>. View code <a href=' + chart.drupal_url + ' target="_blank">here</a>.'
             })
         },
         methods: {

@@ -98,7 +98,7 @@ export default {
             image_type: 'png',
             image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2021.'
         },
-        {//***this one appears to have the wrong thumbnail in the FY21_Q4 folder on Sharepoint */
+        {
             id: '11',
             name: 'Jan-Mar 2021',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2021',
