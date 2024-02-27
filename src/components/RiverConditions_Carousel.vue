@@ -4,7 +4,8 @@
             class="image-slider"
             :autoplay="false"
             :autoplay-hover-pause="true"
-            :per-page="4"
+            :per-page="3"
+            :center-mode="true"
             navigation-enabled
             :speed="800"        >
             <slide
@@ -42,7 +43,7 @@
                     </picture>
                 </div>
                 <center>
-                <div>
+                <div style="padding-bottom: 8px;">
                     <a :href=chart.drupal_url target="_blank" class="usa-button usa-button--outline">View</a>
                     <a :href=chart.code_url target="_blank" class="usa-button">Code</a>
                 </div><br>
@@ -101,19 +102,6 @@
         }
     }
 
-    .fullscreen-v-img[data-v-5928e1c7] {
-    z-index: 9999;
-    /* height: 100%; this disabled the thumbnails from enlarging when clicked--I want the only action when clicked to be going to the drupal page*/ 
-    // width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.7);
-    -ms-touch-action: none;
-    touch-action: none;
-}
-
     .VueCarousel-slide {
         flex-basis: inherit;
         flex-grow: 0;
@@ -138,16 +126,17 @@
         transition: all .3s ease; 
     }
     .slider-image-container {
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
         display: grid;
         grid-template-columns: max-content;
-        height: 200px;
-        max-width: 275px;
+        height: 280px;
+        max-width: 400px;
         align-content: center;
         justify-content: center;
         img {
-            max-width: 255px;
-            max-height: 180px;
+            max-width: 370px;
+            max-height: 270px;
         }
     }
     </style>
@@ -169,6 +158,7 @@
     }
     .fullscreen-v-img{
         position: relative;
+        //display: none; //hides opening the images?
     }
     .footer-v-img {
         justify-content: start !important;

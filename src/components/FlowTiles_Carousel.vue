@@ -4,7 +4,7 @@
             class="image-slider"
             :autoplay="false"
             :autoplay-hover-pause="true"
-            :per-page="4"
+            :per-page="3"
             navigation-enabled
             :speed="800"
         >
@@ -62,7 +62,7 @@
             this.charts.sort((a,b) => new Date(a.date) - new Date(b.date))
             // for each chart, build caption for use w/ v-img
             this.charts.forEach(chart => {
-                // chart.caption = 'Animation available <a href=' + chart.drupal_url + ' target="_blank">here</a>. View code <a href=' + chart.drupal_url + ' target="_blank">here</a>.'
+                chart.caption = 'Released on <a href=' + chart.twitter_url + ' target="_blank">Twitter</a>. View code <a href=https://github.com/DOI-USGS/flow-tiles target="_blank">here</a>.'
             })
         },
         methods: {
@@ -92,14 +92,7 @@
         outline: none;
         }
     }
-    .slider-image-container img[data-v-4c49c810] {
-    max-width: 255px;
-    max-height: 180px;
-    border-width: 2px;
-    border-color: #dfe1e2;
-    border-style: solid;
-    border-radius: 7px;
-    }
+
     .slide:hover {
         transform: translate3D(0,-0.5px,0) scale(1.05);
         transition: all .3s ease; 
@@ -109,12 +102,16 @@
         display: grid;
         grid-template-columns: max-content;
         height: 200px;
-        max-width: 275px;
+        max-width: 375px;
         align-content: center;
         justify-content: center;
         img {
-            max-width: 255px;
-            max-height: 180px;
+            max-width: 320px;
+            max-height: 250px;
+                border-width: 2px;
+                border-color: #dfe1e2;
+                border-style: solid;
+                border-radius: 7px;
         }
     }
     </style>
