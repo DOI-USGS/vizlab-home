@@ -13,7 +13,7 @@
                 :key="chart.id"
                 class="slide"
                 @slideclick="handleSlideClick">
-                >
+                
                 <center>
                 <br>{{chart.name}}
                 </center>
@@ -113,6 +113,19 @@
     -ms-touch-action: none;
     touch-action: none;
 }
+
+    .VueCarousel-slide {
+        flex-basis: inherit;
+        flex-grow: 0;
+        flex-shrink: 0;
+        user-select: none;
+        backface-visibility: hidden;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        outline: 2px solid #dfe1e2;
+        outline-offset: -15px;
+        border-radius: 19px;
+    }
     .slide {
         margin: 0;
         padding: 0;

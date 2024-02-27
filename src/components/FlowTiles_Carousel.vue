@@ -92,6 +92,14 @@
         outline: none;
         }
     }
+    .slider-image-container img[data-v-4c49c810] {
+    max-width: 255px;
+    max-height: 180px;
+    border-width: 2px;
+    border-color: #dfe1e2;
+    border-style: solid;
+    border-radius: 7px;
+    }
     .slide:hover {
         transform: translate3D(0,-0.5px,0) scale(1.05);
         transition: all .3s ease; 
