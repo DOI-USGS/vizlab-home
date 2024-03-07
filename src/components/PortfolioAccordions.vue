@@ -149,8 +149,8 @@
   import RiverConditionsCarousel from './RiverConditions_Carousel.vue';
   import FlowTilesCarousel from './FlowTiles_Carousel.vue'
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
-   
-   export default {
+  
+  export default {
         name: 'PortfolioAccordions',
         components: {
             PortfolioCard,
@@ -200,7 +200,6 @@
             this.vizList_interactives = this.vizList.filter((viz) => viz.group === this.vizGroups[0]); // all but river conditions and hurricanes
             this.vizList_events_all = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
             this.vizList_events = this.vizList_events_all.filter((viz) => !viz.title.includes("River Conditions"));
-            console.log('here', this.vizList_events)
             this.vizList_charts_all = this.vizList.filter((viz) => viz.group === this.vizGroups[2]); // static charts, twitter content
             this.vizList_charts = this.vizList_charts_all.filter((viz) => !viz.title.includes("Flow cartogram")); //filters out streamflow tiles, can also just take them out of the viz_list eventually
           }
