@@ -14,7 +14,7 @@ export default {
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
             folder: 'FY24_Q1/',
             video_basename: 'river_conditions_oct_dec_2023_insta',
-            image_thumbnail: 'river_conditions_oct_dec_2023_square_thumbnail_color',
+            image_thumbnail: 'river_conditions_oct_dec_2023_square_thumbnail_color.png',
             video_type: 'mp4',
             image_alt: 'River Conditions for Fiscal Year 2024, Quarter 1, spanning from October-December 2023.'
         }

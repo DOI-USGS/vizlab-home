@@ -15,21 +15,21 @@
                 class="slide"
                 @slideclick="handleSlideClick">
                 
-                <center>
+                <!-- <center>
                 <br>{{chart.name}}
-                </center>
+                </center> -->
                 <div class="slider-video-container">
-                    <video controls width="100%">
+                    <video controls width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" autoplay muted>
                         <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <center>
+                <!-- <center>
                 <div style="padding-bottom: 8px;">
                     <a :href=chart.drupal_url target="_blank" class="usa-button usa-button--outline">View</a>
                     <a :href=chart.code_url target="_blank" class="usa-button">Code</a>
                 </div><br>
-                </center>
+                </center> -->
             </slide>
         </carousel>
     </div>
@@ -60,6 +60,9 @@
         methods: {
             getVideoUrl(folder, video, extension) {
                 return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + video + '.' + extension;
+            },
+            getThumbnailUrl(folder, thumbnail) {
+                return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + thumbnail;
             },
             handleSlideClick () {
                 //console.log('drpual link')
@@ -111,13 +114,15 @@
         padding-right: 10px;
         display: grid;
         grid-template-columns: max-content;
-        height: 280px;
+        height: 380px;
         max-width: 400px;
         align-content: center;
         justify-content: center;
         video {
-            max-width: 370px;
-            max-height: 270px;
+            max-width: 470px;
+            max-height: 370px;
+            padding-bottom: 20px;
+            padding-top: 20px
         }
     }
 </style>
