@@ -8,7 +8,7 @@ export default {
             //some of the thumbnails are B&W
             //some of them are small square vs the larger rectangle - pre FY22
         {
-            id: '45',
+            id: '1',
             name: 'Oct-Dec 2024',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -20,47 +20,51 @@ export default {
         }
         ,
         {
-            id: '46',
+            id: '2',
             name: 'Jul-Sep 2023',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2023',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
             folder: 'FY23_Q4/',
-            image_basename: 'river_conditions_jul_sep_2023_square_thumbnail_colorized',
-            image_type: 'png',
+            video_basename: 'river_conditions_jul_sep_2023_insta',
+            image_thumbnail: 'river_conditions_jul_sep_2023_square_thumbnail_colorized.png',
+            video_type: 'mp4',
             image_alt: 'River Conditions for Fiscal Year 2023, Quarter 4, spanning from July-September 2023.'
         },
         {
-            id: '47',
+            id: '3',
             name: 'Apr-Jun 2023',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2023',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
             folder: 'FY23_Q3/',
-            image_basename: 'river_conditions_apr_jun_2023_square_thumbnail_colorized',
-            image_type: 'png',
+            video_basename: 'river_conditions_apr_jun_2023_insta',
+            image_thumbnail: 'river_conditions_apr_jun_2023_square_thumbnail_colorized.png',
+            video_type: 'mp4',
             image_alt: 'River Conditions for Fiscal Year 2023, Quarter 3, spanning from April-June 2023.'
         },
         {
-            id: '48',
+            id: '4',
             name: 'Jan-Mar 2023',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2023',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
             folder: 'FY23_Q2/',
-            image_basename: 'river_conditions_jan_mar_2023_square_thumbnail_color',
-            image_type: 'png',
+            video_basename: 'river_conditions_jan_mar_2023_insta',
+            image_thumbnail: 'river_conditions_jan_mar_2023_square_thumbnail_color.png',
+            video_type: 'mp4',
             image_alt: 'River Conditions for Fiscal Year 2023, Quarter 2, spanning from January-March 2023.'
         },
         {
-            id: '49',
+            id: '5',
             name: 'Oct-Dec 2022',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
             folder: 'FY23_Q1/',
-            image_basename: 'river_conditions_oct_dec_2022_square_thumbnail_colorized',
-            image_type: 'png',
+            video_basename: 'river_conditions_oct_dec_2022_insta',
+            image_thumbnail: 'river_conditions_oct_dec_2022_square_thumbnail_colorized.png',
+            video_type: 'mp4',
             image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2022.'
         },
         {
-            id: '50',
+            id: '6',
             name: 'Jul-Sep 2022',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2022',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -70,7 +74,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2022, Quarter 4, spanning from July-September 2022.'
         },
         {
-            id: '51',
+            id: '7',
             name: 'Apr-Jun 2022',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2022',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -80,7 +84,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2022, Quarter 3, spanning from April-June 2022.'
         },
         {
-            id: '52',
+            id: '8',
             name: 'Jan-Mar 2022',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2022',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -90,7 +94,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2022, Quarter 2, spanning from January-March 2022.'
         },
         { 
-            id: '53',
+            id: '9',
             name: 'Oct-Dec 2021',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2021',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -100,7 +104,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2022, Quarter 1, spanning from October-December 2021.'
         },
         {
-            id: '54',
+            id: '10',
             name: 'Jan-Mar 2021',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2021',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -110,7 +114,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2021, Quarter 4, spanning from January-March 2021.'
         },
         {
-            id: '55',
+            id: '11',
             name: 'Apr-Jun 2021',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -120,7 +124,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2021, Quarter 3, spanning from April-June 2021'
         },
         {
-            id: '56',
+            id: '12',
             name: 'Jan-Mar 2021',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',
@@ -130,7 +134,7 @@ export default {
             image_alt: 'River Conditions for Fiscal Year 2021, Quarter 2, spanning from January-March 2021'
         },
         {
-            id: '57',
+            id: '13',
             name: 'Oct-Dec 2020',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2020',
             code_url: 'https://github.com/DOI-USGS/gage-conditions-gif',

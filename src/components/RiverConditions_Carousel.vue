@@ -19,7 +19,7 @@
                 <br>{{chart.name}}
                 </center> -->
                 <div class="slider-video-container">
-                    <video controls width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" autoplay muted>
+                    <video width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" onmouseover="this.play();this.setAttribute('controls','controls')" onmouseout="this.load();this.removeAttribute('controls')"> <!-- use atuoplay muted to get videos to autoplay -->
                         <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -94,9 +94,6 @@
         backface-visibility: hidden;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        outline: 2px solid #dfe1e2;
-        outline-offset: -15px;
-        border-radius: 19px;
     }
     .slide {
         margin: 0;
@@ -109,6 +106,7 @@
         transform: translate3D(0,-0.5px,0) scale(1.05);
         transition: all .3s ease; 
     }
+
     .slider-video-container {
         padding-left: 10px;
         padding-right: 10px;
@@ -119,10 +117,12 @@
         align-content: center;
         justify-content: center;
         video {
-            max-width: 470px;
-            max-height: 370px;
-            padding-bottom: 20px;
-            padding-top: 20px
+            max-width: 430px;
+            max-height: 330px;
+            border-width: 2px;
+                border-color: #dfe1e2;
+                border-style: solid;
+                border-radius: 7px;
         }
     }
 </style>
