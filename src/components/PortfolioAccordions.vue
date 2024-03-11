@@ -75,11 +75,15 @@
         <h4
           id="head-river-conditions"
         >
-          Quarterly River Conditions
+          Quarterly River Conditions <a
+          href="https://github.com/DOI-USGS/gage-conditions-gif"
+          target="_blank"
+          style="font-style: italic; font-size: 0.9em"
+        >View Code<span class="arrow">&#8594;</span></a> 
         </h4>
         <RiverConditionsCarousel />
         <h4
-          id="head-chart-challenge"
+          id="head-streamflow"
         >
           Monthly Streamflow
         </h4>

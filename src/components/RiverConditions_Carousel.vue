@@ -14,22 +14,12 @@
                 :key="chart.id"
                 class="slide"
                 @slideclick="handleSlideClick">
-                
-                <!-- <center>
-                <br>{{chart.name}}
-                </center> -->
                 <div class="slider-video-container">
                     <video width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" onmouseover="this.play();this.setAttribute('controls','controls')" onmouseout="this.load();this.removeAttribute('controls')"> <!-- use atuoplay muted to get videos to autoplay -->
                         <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <!-- <center>
-                <div style="padding-bottom: 8px;">
-                    <a :href=chart.drupal_url target="_blank" class="usa-button usa-button--outline">View</a>
-                    <a :href=chart.code_url target="_blank" class="usa-button">Code</a>
-                </div><br>
-                </center> -->
             </slide>
         </carousel>
     </div>
@@ -65,10 +55,8 @@
                 return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + thumbnail;
             },
             handleSlideClick () {
-                //console.log('drpual link')
                 this.charts.forEach(chart => {
-                    //console.log('chart', getVideoURL(chart))
-                    //window.open(chart.drupal_url, "_blank");
+                    window.open(chart.drupal_url, "_blank");
                 })
             }
         }
