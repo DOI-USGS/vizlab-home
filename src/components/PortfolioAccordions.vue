@@ -75,7 +75,7 @@
         <h4
           id="head-river-conditions"
         >
-          Quarterly River Conditions <a
+          U.S. River Conditions (quarterly)<a
           href="https://github.com/DOI-USGS/gage-conditions-gif"
           target="_blank"
           style="font-style: italic; font-size: 0.9em"

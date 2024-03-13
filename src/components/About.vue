@@ -146,12 +146,11 @@ $coolBlue: rgb(66, 145, 235);
 
   }
 }
-.usa-nav__primary button[aria-expanded=false] span::after {  //removes those little squares that were appearing by Recent, Visualizations, About
+ .usa-nav__primary button[aria-expanded=false] span::after {  //removes those little squares that were appearing by Recent, Visualizations, About
     background: url([object Object]) no-repeat center/contain;
     display: inline-block;
     height: 0px;
     width: 0px;
-    content: "";
     vertical-align: middle;
     margin-left: auto;
 }
