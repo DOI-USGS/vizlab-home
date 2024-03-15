@@ -73,6 +73,22 @@
         </h4>
         <ChartChallenge23Carousel />
         <h4
+          id="head-river-conditions"
+        >
+          U.S. River Conditions (quarterly)<a
+          href="https://github.com/DOI-USGS/gage-conditions-gif"
+          target="_blank"
+          style="font-style: italic; font-size: 0.9em"
+        >View Code<span class="arrow">&#8594;</span></a> 
+        </h4>
+        <RiverConditionsCarousel />
+        <h4
+          id="head-streamflow"
+        >
+          Monthly Streamflow
+        </h4>
+        <FlowTilesCarousel/>
+        <h4
           id="head-chart-challenge"
         >
           Other charts
@@ -133,15 +149,19 @@
   import * as d3Base from 'd3';
   import PortfolioCard from './PortfolioCard.vue';
   import PortfolioImage from './PortfolioImage.vue';
-  import ChartChallenge23Carousel from './CC23_Carousel.vue' 
+  import ChartChallenge23Carousel from './CC23_Carousel.vue'; 
+  import RiverConditionsCarousel from './RiverConditions_Carousel.vue';
+  import FlowTilesCarousel from './FlowTiles_Carousel.vue'
   // make sure that the prop for the viz cards is passed in, not sure if this needs to be imported or piped
-   
-   export default {
+  
+  export default {
         name: 'PortfolioAccordions',
         components: {
             PortfolioCard,
             PortfolioImage,
-            ChartChallenge23Carousel
+            ChartChallenge23Carousel,
+            RiverConditionsCarousel,
+            FlowTilesCarousel
         },
         props: {
             title: {
@@ -182,9 +202,10 @@
 
             // create groups
             this.vizList_interactives = this.vizList.filter((viz) => viz.group === this.vizGroups[0]); // all but river conditions and hurricanes
-            this.vizList_events = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
-            this.vizList_charts = this.vizList.filter((viz) => viz.group === this.vizGroups[2]); // static charts, twitter content
-
+            this.vizList_events_all = this.vizList.filter((viz) => viz.group === this.vizGroups[1]);
+            this.vizList_events = this.vizList_events_all.filter((viz) => !viz.title.includes("River Conditions"));
+            this.vizList_charts_all = this.vizList.filter((viz) => viz.group === this.vizGroups[2]); // static charts, twitter content
+            this.vizList_charts = this.vizList_charts_all.filter((viz) => !viz.title.includes("Flow cartogram")); //filters out streamflow tiles, can also just take them out of the viz_list eventually
           }
         }
     }

@@ -1,6 +1,6 @@
 <template v-slot:figures>
   <div class="maxWidth carouselContainer">
-    <carousel
+    <carousel 
       class="image-slider"
       :autoplay="false"
       :autoplay-hover-pause="true"
