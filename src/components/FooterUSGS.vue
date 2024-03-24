@@ -8,7 +8,7 @@
           <ul class="menu nav">
             <li class="first leaf menu-links menu-level-1"><a href="https://www.doi.gov/privacy" target="_blank">DOI Privacy Policy</a></li>
             <li class="leaf menu-links menu-level-1"><a href="https://www.usgs.gov/policies-and-notices" target="_blank">Legal</a></li>
-            <li class="leaf menu-links menu-level-1"><a href="https://www.usgs.gov/accessibility-and-us-geological-survey" target="_blank">Accessibility</a></li>
+            <li class="leaf menu-links menu-level-1"><a href="https://www.usgs.gov/accessibility" target="_blank">Accessibility</a></li>
             <li class="leaf menu-links menu-level-1"><a href="https://www.usgs.gov/sitemap" target="_blank">Site Map</a></li>
             <li class="last leaf menu-links menu-level-1"><a href="https://answers.usgs.gov/" target="_blank">Contact USGS</a></li>
           </ul>
@@ -26,7 +26,7 @@
           <li class="leaf menu-links menu-level-1"><a href="https://www.whitehouse.gov/" target="_blank">White House</a></li>
           <li class="leaf menu-links menu-level-1"><a href="https://www.whitehouse.gov/omb/management/egov/" target="_blank">E-gov</a></li>
           <li class="leaf menu-links menu-level-1"><a href="https://www.doi.gov/pmb/eeo/no-fear-act" target="_blank">No Fear Act</a></li>
-          <li class="last leaf menu-links menu-level-1"><a href="https://www.usgs.gov/about/organization/science-support/foia" target="_blank">FOIA</a></li>
+          <li class="last leaf menu-links menu-level-1"><a href="https://www.usgs.gov/foia" target="_blank">FOIA</a></li>
         </ul>
         </div>			
       <!-- /.footer-utl-links -->
