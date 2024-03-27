@@ -16,12 +16,12 @@
                 <div class="slider-video-container">
                     <div class="video-border">
                         <center>
-                            <div class="video-title">{{ chart.name }}</div>
+                            <a :href="chart.drupal_url" target="_blank" class="video-title">{{ chart.name }}</a>
                         </center>
-                            <video class="video" width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" onmouseover="this.play();this.setAttribute('controls','controls')" onmouseout="this.load();this.removeAttribute('controls')"> <!-- use atuoplay muted to get videos to autoplay -->
-                                <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                        <video class="video" width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" controls> 
+                        <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </slide>
