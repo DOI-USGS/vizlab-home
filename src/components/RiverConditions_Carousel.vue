@@ -9,10 +9,11 @@
             navigation-enabled
             :speed="800"        >
             <slide
-                v-for="chart in charts"
+                v-for="(chart, index) in charts"
                 :id="`river-conditions-${chart.id}`"
                 :key="chart.id"
-                class="slide">
+                class="slide"
+                @slideclick="handleSlideClick(index)">
                 <div class="slider-video-container">
                     <div class="video-border">
                         <center>
@@ -57,6 +58,9 @@
             },
             getThumbnailUrl(folder, thumbnail) {
                 return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + thumbnail;
+            },
+            handleSlideClick (index) {
+                window.open(this.charts[index].drupal_url, "_blank");
             }
         }
     }
