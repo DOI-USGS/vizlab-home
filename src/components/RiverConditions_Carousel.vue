@@ -9,16 +9,21 @@
             navigation-enabled
             :speed="800"        >
             <slide
-                v-for="chart in charts"
+                v-for="(chart, index) in charts"
                 :id="`river-conditions-${chart.id}`"
                 :key="chart.id"
                 class="slide"
-                @slideclick="handleSlideClick">
+                @slideclick="handleSlideClick(index)">
                 <div class="slider-video-container">
-                    <video width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" onmouseover="this.play();this.setAttribute('controls','controls')" onmouseout="this.load();this.removeAttribute('controls')"> <!-- use atuoplay muted to get videos to autoplay -->
+                    <div class="video-border">
+                        <center>
+                            <a :href="chart.drupal_url" target="_blank" class="video-title">{{ chart.name }}</a>
+                        </center>
+                        <video class="video" width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" controls> 
                         <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>
+                        </video>
+                    </div>
                 </div>
             </slide>
         </carousel>
@@ -54,10 +59,8 @@
             getThumbnailUrl(folder, thumbnail) {
                 return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + thumbnail;
             },
-            handleSlideClick () {
-                this.charts.forEach(chart => {
-                    window.open(chart.drupal_url, "_blank");
-                })
+            handleSlideClick (index) {
+                window.open(this.charts[index].drupal_url, "_blank");
             }
         }
     }
@@ -104,13 +107,25 @@
         max-width: 400px;
         align-content: center;
         justify-content: center;
-        video {
-            max-width: 430px;
-            max-height: 330px;
-            border-width: 2px;
-                border-color: #dfe1e2;
-                border-style: solid;
-                border-radius: 7px;
-        }
     }
+
+    .video-border {
+        border-width: 2px;
+        border-color: #dfe1e2;
+        border-style: solid;
+        border-radius: 7px;
+    }
+
+    .video {
+        max-width: 430px;
+        max-height: 300px;
+        margin-bottom: -7px;
+        border-radius: 7px;
+    }
+
+    .video-title {
+        margin-top: 5px;
+        margin-bottom: -5px;
+    }
+
 </style>
