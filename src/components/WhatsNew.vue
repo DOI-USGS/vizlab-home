@@ -28,94 +28,22 @@
         </div>
         <div id="viz-text">
           <div class="text-container">
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                07/21/2023:
-              </span> 
-              Jazz up your ggplots!
-              <a
-                href="https://waterdata.usgs.gov/blog/ggplot-jazz/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
+            <!-- begin blog items -->
+            <li v-for="item in blogItems" :key="item.id">
+              <span class="date-text">{{ item.date }}</span>
+              {{ item.title }}
+              <a :href="item.url" target="_blank">
+                <span class="arrow">Read &#8594;</span>
               </a>
-              <!-- include thumbnail of most recent blog post - for now, water cycle to be distinct from the 'recent' image -->
-              <div class="thumbnail-container">
+              <div class="thumbnail-container" v-if="item.img_src">
                 <img 
                   class="blog-thumbnail"
-                  src="https://waterdata.usgs.gov/blog/static/ggplot-extensions/ggplot-extensions-banner.png" 
-                  alt="Musical notes drawn with the center of the notes containing data viz examples"
+                  :src="item.img_src"
+                  :alt="item.img_alt"
                 >
               </div>
             </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                05/3/2023:
-              </span> 
-              The 30 Day Chart Challenge with the USGS VizLab
-              <a
-                href="https://waterdata.usgs.gov/blog/chart-challenge-2023/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                01/11/2023:
-              </span> 
-              Origin and development of a Snowflake Map
-              <a
-                href="https://waterdata.usgs.gov/blog/snow-tiles-demo/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                01/04/2023:
-              </span> 
-              A New Take on the Water Cycle
-              <a
-                href="https://waterdata.usgs.gov/blog/water-cycle-release/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-            <!-- end blog list item -->
-            <!-- blog list item -->
-            <li>
-              <span class="date-text">
-                09/08/2022:
-              </span> 
-              Water data science in 2022
-              <a
-                href="https://waterdata.usgs.gov/blog/water-data-science-2022/"
-                target="_blank"
-              >
-                <span class="arrow">
-                  Read &#8594;
-                </span>
-              </a>
-            </li>
-            <!-- end blog list item -->
+            <!-- end blog items -->
           </div>
         </div>
       </div>
@@ -144,6 +72,7 @@
 </template>
 
 <script>
+import WhatsNew from "@/assets/content/WhatsNew.js";
     export default {
         name: 'WhatsNew',
         components: {
@@ -158,6 +87,7 @@
         data() {
           return {
             publicPath: process.env.BASE_URL, 
+            blogItems: WhatsNew.blogListItems
           }
         }
         
