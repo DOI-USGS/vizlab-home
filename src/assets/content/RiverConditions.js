@@ -9,8 +9,7 @@ export default {
             image_thumbnail: 'river_conditions_oct_dec_2023_square_thumbnail_color.png',
             video_type: 'mp4',
             image_alt: 'U.S. River Conditions from October 1, 2023 to December 31, 2023 at USGS streamgages.'
-        }
-        ,
+        },
         {
             id: '12',
             name: 'July 1 - September 30, 2023',
