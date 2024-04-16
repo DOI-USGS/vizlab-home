@@ -5,11 +5,13 @@
     <h1 class="section-header">d3 bar chart from data</h1>
     <BarChartExample />
     <References />
+    <Authorship />
   </section>
 </template>
 
 <script setup>
   import References from '@/components/References.vue';
+  import Authorship from '@/components/Authorship.vue';
   import RegionalViolins from '.././components/RegionalViolins.vue';
   import BarChartExample from '.././components/BarChartExample.vue';
 </script>
