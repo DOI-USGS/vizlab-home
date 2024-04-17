@@ -48,6 +48,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  padding: 0rem 0 1rem 0;
+}
+h2 {
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 700;
+  padding: 3rem 0 1rem 0;
+}
+p, text, li {
+  padding: 0 0 1rem 0;
 }

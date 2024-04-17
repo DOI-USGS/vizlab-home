@@ -186,7 +186,7 @@
 <style scoped lang="scss">
     #region-grid-container {
         display: grid;
-        width: 95vw;
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto 0 auto;
         grid-template-columns: 80% 20%;
