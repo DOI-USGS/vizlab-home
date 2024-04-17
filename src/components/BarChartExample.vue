@@ -375,7 +375,7 @@
         grid-template-areas:
             "dropdown"
             "chart";
-        justify-items: start;
+        justify-items: center;
         margin: 3rem auto 5rem auto;
         width: 100%;
     }
