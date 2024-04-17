@@ -18,15 +18,15 @@
     </div>
     <div class="text-container">
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid a blanditiis debitis quasi mollitia molestias labore provident optio consequuntur. Odio iure adipisci magnam esse quis, minus commodi enim. Maxime.</p>
-      <References />
-      <Authorship />
+      <ReferencesSection />
+      <AuthorshipSection />
     </div>
   </section>
 </template>
 
 <script setup>
-  import References from '@/components/References.vue';
-  import Authorship from '@/components/Authorship.vue';
+  import ReferencesSection from '@/components/ReferencesSection.vue';
+  import AuthorshipSection from '@/components/AuthorshipSection.vue';
   import RegionalViolins from '.././components/RegionalViolins.vue';
   import BarChartExample from '.././components/BarChartExample.vue';
 </script>
