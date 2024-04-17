@@ -18,6 +18,7 @@
     </div>
     <div class="text-container">
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid a blanditiis debitis quasi mollitia molestias labore provident optio consequuntur. Odio iure adipisci magnam esse quis, minus commodi enim. Maxime.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero harum in ipsa voluptatum quas quia quod dolores illo animi doloribus. Soluta ea, necessitatibus quos officia id blanditiis ab quisquam optio.</p>
       <ReferencesSection />
       <AuthorshipSection />
     </div>
