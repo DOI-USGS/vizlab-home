@@ -21,11 +21,11 @@ const router = createRouter({
     {
       path: "/404",
       name: "Error404",
-      component: lazyLoad('VisualizationContent')
+      component: lazyLoad('Error404Page')
     },
     { 
       path: '/:pathMatch(.*)*', 
-      redirect: { name: "VisualizationContent" }
+      redirect: { name: "Error404" }
     }
   ]
 })
