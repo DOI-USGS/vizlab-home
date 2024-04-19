@@ -3,7 +3,7 @@ export default {
         {
             id: '14',
             name: 'January 1 - March 31, 2024',
-            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2024',
             folder: 'FY24_Q2/',
             video_basename: 'river_conditions_jan_mar_2024_insta',
             image_thumbnail: 'river_conditions_jan_mar_2024_square_thumbnail_color.png',
