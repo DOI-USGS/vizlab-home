@@ -7,7 +7,7 @@
     <h2>Authors</h2>
     <p>
       <span id="primary-author-statment">
-        The development of {{ appTitle }} was lead by 
+        The development of {{ appTitle }} was led by 
         <span
           v-for="(author, index) in primaryAuthors" 
           :id="`initial-${author.initials}`"
