@@ -38,6 +38,19 @@ export default {
       data_release: false,
       link:"https://www.usgs.gov/mission-areas/water-resources/science/drought-prediction-science",
       doi: null
-    }
+    },
+    {
+      reference: "Reference 4.",
+      num:"4",
+      authors: "Viviroli, D., Dürr, H. H., Messerli, B., Meybeck, M. & Weingartner, R.",
+      year: "2007",
+      title: "Mountains of the world, water towers for humanity: Typology, mapping, and global significance",
+      link:"https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2006WR005653",
+      journal: true,
+      journal_name: "Water Resources Research",
+      journal_issue: " 43",
+      data_release: false,
+      doi:"https://doi.org/10.1029/2006WR005653"
+    },
   ]
 };
