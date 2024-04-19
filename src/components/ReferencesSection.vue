@@ -1,11 +1,11 @@
 <template>
   <section id="references">       
     <div class="text-content">
-      <h2>{{ text.title }}</h2>
+      <h2>References</h2>
       <div>
         <div
-          v-for="reference in text.references"
-          :key="reference.subTitle"
+          v-for="reference in references.references"
+          :key="reference.num"
         >
           <p>
             <span v-html="reference.num" />. <span v-html="reference.authors" /> (<span v-html="reference.year" />) <a
@@ -20,8 +20,7 @@
 </template>
 
 <script setup>
-  import referencesText from "@/assets/text/referencesText";
-  const text = referencesText.referencesContent
+  import references from "@/assets/text/references";
 </script>
 
 <style scoped lang="scss">
