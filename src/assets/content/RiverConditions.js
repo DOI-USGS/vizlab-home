@@ -8,7 +8,7 @@ export default {
             video_basename: 'river_conditions_jan_mar_2024_insta',
             image_thumbnail: 'river_conditions_jan_mar_2024_square_thumbnail_color.png',
             video_type: 'mp4',
-            image_alt: 'U.S. River Conditions from October 1, 2023 to December 31, 2023 at USGS streamgages.'
+            image_alt: 'U.S. River Conditions from January 1, 2024 to March 31, 2024 at USGS streamgages.'
         },
         {
             id: '13',
@@ -18,7 +18,7 @@ export default {
             video_basename: 'river_conditions_oct_dec_2023_insta',
             image_thumbnail: 'river_conditions_oct_dec_2023_square_thumbnail_color.png',
             video_type: 'mp4',
-            image_alt: 'U.S. River Conditions from January 1, 2024 to March 31, 2024 at USGS streamgages.'
+            image_alt: 'U.S. River Conditions from October 1, 2023 to December 31, 2023 at USGS streamgages.'
         },
         {
             id: '12',
