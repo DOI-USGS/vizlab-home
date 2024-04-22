@@ -1,40 +1,62 @@
 <template>
-  <div class="main-content">
-    <div class="usa-prose">
-      <h1>
-        Whoa, we have a problem.
-      </h1>
+  <div class="usa-overlay"></div>
+  <header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo">
+          <em class="usa-logo__text"
+            ><a href="/" title="<Project title>"> {{ long_title }}</a></em
+          >
+        </div>
+      </div>
     </div>
-    <p>
-      In techie terms, what has happened is called a 404 Error.
-    </p>
-    <p>
-      It means the web page for which you are looking cannot be found in the
-      place where you told the computer to look. Perhaps this elusive item really does not exist or perhaps while manually
-      entering the URL something didn't go quite right. Either way, a good option is to give it one more shot.
-    </p>
-    <p>
-      If that fails, the other option is to click the button below, which will take you to the {{ title }} main page. You can probably find the
-      item for which you are looking there.
-    </p>
-    <router-link to="/">
-      <button
-        class="usa-button--inverse"
-      >
-        {{ title }} main page
-      </button>
-    </router-link>
-    <p>
-      Good luck, and sorry for the inconvenience.
-    </p>
+  </header>
+  <div class="usa-section">
+    <div class="grid-container">
+      <div class="grid-row grid-gap">
+        <main class="" id="main-content">
+          <div class="usa-prose">
+            <h1>Page not found</h1>
+            <p class="usa-intro">
+              We’re sorry, we can’t find the page you're looking for. The site
+              administrator may have removed it, changed its location, or made
+              it otherwise unavailable.
+            </p>
+            <p>
+              If you typed the URL directly, check your spelling and
+              capitalization. Our URLs look like this:
+              <strong>&lt;agency.gov/example-one&gt;</strong>.
+            </p>
+            <p>
+              Visit our homepage for helpful tools and resources, or contact us
+              and we’ll point you in the right direction.
+            </p>
+            <div class="margin-y-5">
+              <ul class="usa-button-group">
+                <li class="usa-button-group__item">
+                  <a href="/" class="usa-button"
+                    >Visit {{ long_title }} main page</a
+                  >
+                </li>
+                <li class="usa-button-group__item">
+                  <a href="mailto:gs-w_vizlab@usgs.gov" target="_blank" class="usa-button usa-button--outline" >Contact us</a>
+                </li>
+              </ul>
+            </div>
+            <p class="text-base"><strong>Error code:</strong> 404</p>
+          </div>
+        </main>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-  const title = import.meta.env.VITE_APP_TITLE;
+  const long_title = import.meta.env.VITE_APP_LONG_TITLE;
 </script>
 
 <style scoped lang="scss">
+  @import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
   .main-content {
     height: max(700px, calc(100vh - 85.7px - 40px - 95px)); /* page height - USGS header - prefooter code links - USGS footer */
     margin-left: auto;
