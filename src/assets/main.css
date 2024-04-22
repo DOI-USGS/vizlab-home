@@ -14,7 +14,7 @@
   margin: 5rem 0 5rem 0;
 }
 .title {
-  color: var(--dodger-blue);
+  color: var(--color-title-text);
 }
 .text-container {
   max-width: 70rem;
