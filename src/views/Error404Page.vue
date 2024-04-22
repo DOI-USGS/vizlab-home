@@ -1,16 +1,4 @@
 <template>
-  <div class="usa-overlay"></div>
-  <header class="usa-header usa-header--basic">
-    <div class="usa-nav-container">
-      <div class="usa-navbar">
-        <div class="usa-logo">
-          <em class="usa-logo__text"
-            ><a href="/" title="<Project title>"> {{ long_title }}</a></em
-          >
-        </div>
-      </div>
-    </div>
-  </header>
   <div class="usa-section">
     <div class="grid-container">
       <div class="grid-row grid-gap">
@@ -25,10 +13,10 @@
             <p>
               If you typed the URL directly, check your spelling and
               capitalization. Our URLs look like this:
-              <strong>&lt;agency.gov/example-one&gt;</strong>.
+              <strong>&lt;labs.waterdata.usgs.gov/visualizations/{{ title }}&gt;</strong>.
             </p>
             <p>
-              Visit our homepage for helpful tools and resources, or contact us
+              Visit the main page for this data visualization, or contact us
               and we’ll point you in the right direction.
             </p>
             <div class="margin-y-5">
@@ -52,16 +40,31 @@
 </template>
 
 <script setup>
+  const title = import.meta.env.VITE_APP_TITLE;
   const long_title = import.meta.env.VITE_APP_LONG_TITLE;
 </script>
 
 <style scoped lang="scss">
   @import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
-  .main-content {
-    height: max(700px, calc(100vh - 85.7px - 40px - 95px)); /* page height - USGS header - prefooter code links - USGS footer */
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-    padding: 2em;
+  .usa-section {
+    height: max(500px, calc(100vh - 15.4px - 85.7px - 32px - 105px - 5px)); /* page height - USWDS banner - USGS header - prefooter code links - USGS footer - 5px extra? */
+  }
+  .usa-prose h1 {
+    font-size: 3.9rem;
+  }
+  .usa-prose p {
+    font-size: 1.7rem;
+  }
+  
+  .usa-intro {
+    font-size: 2rem !important;
+  }
+  .usa-button {
+    font-size: 1.7rem;
+  }
+  .grid-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 87.5rem !important;
   }
 </style>
