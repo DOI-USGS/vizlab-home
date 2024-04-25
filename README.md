@@ -12,7 +12,7 @@ The environment variable `VITE_APP_TITLE` (set in `'.env'`) is a key variable. *
 
 The value for `name` in `'package.json'` should be set to match `VITE_APP_TITLE`. 
 
-This `VITE_APP_TITLE` parameter also needs to be set up as a parameter in the Jenkins configuration (in the `'jenkins/Jenkinsfile.build'` file). Once set up, it will be used to set all of the build paths used in `'Jenkinsfile.build'` and `'Dockerfile'`, including the rep url (`"https://github.com/usgs-vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`) and website extension (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). 
+This `VITE_APP_TITLE` parameter also needs to be set up as a parameter in the Jenkins configuration (in the `'jenkins/Jenkinsfile.build'` file). Once set up, it will be used to set all of the build paths used in `'Jenkinsfile.build'` and `'Dockerfile'`, including the repo url (`"https://code.usgs.gov/wma/vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`) and website extension (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). 
 
 `VITE_APP_TITLE` is also used to set the base path for the vite build in `'vite.config.mjs'`. 
 
@@ -41,12 +41,78 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Update `"name"` in `'package.json'`
     * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
     * [ ] Update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`
-2. Delete example components
-    * [ ] Delete `'src/components/BarChartExample.vue'`
-    * [ ] Delete `'src/components/RegionalViolins.vue'`
+    * [ ] Update the `{project-name}` variable in the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{project_name}`
+2. Delete example components and remove them from the site
+    * [ ] Delete `'src/components/BarChartExample.vue'` and `'public/state_facility_type_summmary.csv'`
+    * [ ] Delete `'src/components/RegionalViolins.vue'`, the 16 associated `'.png'` files in `'src/assets/images'`, and the two `'.svg'` files in `'src/assets/svgs'`
+    * [ ] In `'src/views/VisualizationView.vue'` delete the import statements for both components in the `<script setup>` section and the references to the components in the html `<template>`
 3. Update project-specific attributions and references
-    * [ ] Update `'src/text/authors.js'` to list project authors
-    * [ ] Update `'src/text/references.js'` to list project references
-6. Update README.md for project
-7. 
+    * [ ] Update content of `'src/text/authors.js'` to list project authors. Do not edit the structure of this file
+    * [ ] Update content of `'src/text/references.js'` to list project references. Do not edit the structure of this file
+    * [ ] List contributors in `index.html`
+4. Update README.md for project - Be sure that it is presentable to the public - minimally include project overview and build instructions.
+5. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. 
  
+## Notes for development when using this template
+1. Please do not delete or make any modifications to the following components/files:
+    * The `node_modules` directory
+    * `'public/favicon.ico'`
+    * In `'src/assets'`
+      * The USGS Viz ID Stylesheets in `'src/assets/css'`:
+        * `'common.css'`
+        * `'custom.css'` 
+      * The contents of the `'src/assets/usgsHeaderAndFooter'` directory
+    * In `'src/components/'`
+        * `'AuthorshipSection.vue'`
+        * `'FooterUSGS.vue'`
+        * `'HeaderUSGS.vue'`
+        * `'HeaderUSWDSBanner.vue'`
+        * `'PreFooterCodeLinks.vue'`
+        * `'ReferencesSection.vue'`
+        * `'WindowSize.vue'`
+        * `'WorkInProgressWarning.vue'`
+    * `'src/router/index.js'`
+    * `'src/stores/WindowSizeStore.js'`
+    * `'src/views/Error404Page.vue'`
+    * `'src/App.vue'`
+    * `'.env.beta_tier'`
+    * `'.env.prod_tier'`
+    * `'.env.test_tier'`
+    * `'.eslintrc.cjs'`
+    * `'.prettierrc.json'`
+    * `'build.sh'`
+    * `'CODE_OF_CONDUCT.md'`
+    * `'DISCLAIMER.md`'
+    * `'Dockerfile'`
+    * `'LICENSE.md'`
+    * `'package-lock.json'` _Note: will be modified indirectly by edits to `'package.json'`, and should be committed and pushed, but should not be edited directly_
+2. The following files should have only limited edits, as specified in [Steps when using as template for new project](#steps-when-using-as-template-for-new-project), above:
+    * `'jenkins/Jenkinsfile.build'`
+    * In `'src/assets/text'`:
+      * `'authors.js'`
+      * `'references.js'`
+    * `'.env'`
+    * `'code.json'`
+    * `'contributing.md'`
+    * `'index.html'` (will also need to edit to modify analytics setup, per the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1))
+    * `'package.json'` (may need additional edits if more packages are needed, see 3., below) 
+3. Depending on what visualization tools you are using, you may need to add additional packages, which will require edits to some or all of the following files (reach out to Hayley with questions):
+    * `'package.json'`
+    * `'src/main.js'` 
+    * `'vite.config.mjs'`. 
+
+4.  Any edits to `'package.json'` will require re-running `npm install`, which will update `'package-lock.json'`. **Be sure to commit and push any changes to `'package-lock.json'`**.
+5.  Development conventions/best practices
+    * Use existing folder structure for assets - e.g., images in `'src/assets/images'`, svgs in `'src/assets/svgs'`.
+    * Page styling with `css`
+      * Import all fonts and set global css color variables and body and html element styling (including global font sizing) in `'src/assets/css/base.css'`
+        * Note that we use a [fixed `:root` font size of `62.5%`](https://blog.hubspot.com/website/css-rem#:~:text=By%20setting%20the%20root%20font,%2C%20and%202.0rem%2C%20respectively.), and all css font sizes should be specified in units of `rem`, where `1 rem` is equivalent `10 px`.
+      * Use `'main.css'` for global page content styling that is exclusive of the USGS header and footer and is not component-specific (e.g., defining styles for standard text or figure container `<div>` elements, styling all section titles, etc.). For all colors, remember to reference color variables set in `'src/assets/css/base.css'`, e.g., `color: var(--color-title-text);`
+      * Put component-specific styling in the `<style>` tags of specific components. 
+    * Page text setup
+      * TBD 
+    * Class and ID naming conventions
+      * TBD
+    * JavaScript conventions
+      * TBD  
+6.  Import and use any new components in `src/views/VisualizationView.vue`, and import subcomponents directly in components.
