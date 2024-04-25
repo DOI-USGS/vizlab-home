@@ -50,6 +50,7 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Update content of `'src/text/authors.js'` to list project authors. Do not edit the structure of this file
     * [ ] Update content of `'src/text/references.js'` to list project references. Do not edit the structure of this file
     * [ ] List contributors in `index.html`
+    * [ ] Update keywords in `index.html`
 4. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
 5. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. 
  
