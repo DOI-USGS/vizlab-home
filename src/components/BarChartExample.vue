@@ -387,6 +387,7 @@
 </style>
 
 <style lang="scss">
+/* styling for elements added with d3 */
     .dropdown {
         transition: width 1s, transform 1s;
     }
