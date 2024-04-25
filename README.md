@@ -26,7 +26,7 @@ When preparing to migrate a repo built from this template to DGEC, the name of t
 Vue syntax has changed with the shift to Vue 3. We can now use the `<script setup>` composition API syntax to build our components, which requires less boilerplate. See the [`<script setup>` guide](https://vuejs.org/api/sfc-script-setup.html). Any top-level defined variables or imported components are directly available for use in the `<template>`. Components now no longer need to be explicitly named, and can be imported directly by name using the filename, e.g. `import HeaderUSWDSBanner from "./components/HeaderUSWDSBanner.vue"`.
 
 ## Jenkins setup
-The Jenkins setup has been adjusted slightly to use the new `VITE_{}` environment variables. Note that the website extension template set up in `'jenkins/Jenkinsfile.build'` points to GitLab (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). This works with our new development workflow, where repos are developed on GitLab and mirrored to GitHub (e.g., ['vizlab-bottled-water'](https://github.com/DOI-USGS/vizlab-bottled-water)) once reviewed, but for old products that are hosted entirely on GitHub (e.g., [what-is-drought](https://github.com/DOI-USGS/what-is-drought)) and must be built from the GitHub repo, the beginning of this url needs to be revised to point to GitHub instead of GitLab (e.g., `"https://github.com/usgs-vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`).
+The Jenkins setup has been adjusted slightly to use the new `VITE_{}` environment variables. Note that the website extension template set up in `'jenkins/Jenkinsfile.build'` points to GitLab (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). This works with our new development workflow, where repos are developed on GitLab and mirrored to GitHub (e.g., ['vizlab-bottled-water'](https://github.com/DOI-USGS/vizlab-bottled-water)) once reviewed, but for old products that are hosted entirely on GitHub (e.g., [what-is-drought](https://github.com/DOI-USGS/what-is-drought)) and must be built from the GitHub repo, the beginning of this url needs to be revised to point to GitHub instead of GitLab (e.g., `"https://github.com/usgs-vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`). Instructions for setting up the website build on Jenkins are [here](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/Shared%20Documents/Function%20-%20Vizlab/Process%20Guides/Jenkins_GitLab_WebsiteBuild.docx?d=w8fea5277ecbc40579de24656284bc3e8&csf=1&web=1&e=7w38oB). Hayley or Cee should complete this step.
 
 ## Example components
 At the moment this repo contains two example components, both of which use `D3`. 
@@ -50,14 +50,14 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Update content of `'src/text/authors.js'` to list project authors. Do not edit the structure of this file
     * [ ] Update content of `'src/text/references.js'` to list project references. Do not edit the structure of this file
     * [ ] List contributors in `index.html`
-4. Update README.md for project - Be sure that it is presentable to the public - minimally include project overview and build instructions.
+4. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
 5. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. 
  
 ## Notes for development when using this template
 1. Please do not delete or make any modifications to the following components/files:
     * The `node_modules` directory
     * `'public/favicon.ico'`
-    * In `'src/assets'`
+    * In `'src/assets'`:
       * The USGS Viz ID Stylesheets in `'src/assets/css'`:
         * `'common.css'`
         * `'custom.css'` 
@@ -82,7 +82,7 @@ When setting up a new project you'll need to take the following steps:
     * `'.prettierrc.json'`
     * `'build.sh'`
     * `'CODE_OF_CONDUCT.md'`
-    * `'DISCLAIMER.md`'
+    * `'DISCLAIMER.md'`
     * `'Dockerfile'`
     * `'LICENSE.md'`
     * `'package-lock.json'` _Note: will be modified indirectly by edits to `'package.json'`, and should be committed and pushed, but should not be edited directly_
@@ -105,10 +105,10 @@ When setting up a new project you'll need to take the following steps:
 5.  Development conventions/best practices
     * Use existing folder structure for assets - e.g., images in `'src/assets/images'`, svgs in `'src/assets/svgs'`.
     * Page styling with `css`
-      * Import all fonts and set global css color variables and body and html element styling (including global font sizing) in `'src/assets/css/base.css'`
-        * Note that we use a [fixed `:root` font size of `62.5%`](https://blog.hubspot.com/website/css-rem#:~:text=By%20setting%20the%20root%20font,%2C%20and%202.0rem%2C%20respectively.), and all css font sizes should be specified in units of `rem`, where `1 rem` is equivalent `10 px`.
+      * Import all fonts and set **global css color variables** and body and html element styling (including **global font sizing**) in `'src/assets/css/base.css'`
+        * Note that we use a [fixed `:root` font size of `62.5%`](https://blog.hubspot.com/website/css-rem#:~:text=By%20setting%20the%20root%20font,%2C%20and%202.0rem%2C%20respectively.), and all `css` font sizes should be specified in units of `rem`, where `1 rem` is equivalent `10 px`.
       * Use `'main.css'` for global page content styling that is exclusive of the USGS header and footer and is not component-specific (e.g., defining styles for standard text or figure container `<div>` elements, styling all section titles, etc.). For all colors, remember to reference color variables set in `'src/assets/css/base.css'`, e.g., `color: var(--color-title-text);`
-      * Put component-specific styling in the `<style>` tags of specific components. 
+      * Put component-specific styling in the `<style>` tags of specific components. Again, for all colors, remember to reference color variables set in `'src/assets/css/base.css'`, e.g., `color: var(--color-title-text);`
     * Page text setup
       * TBD 
     * Class and ID naming conventions
