@@ -375,9 +375,9 @@
         grid-template-areas:
             "dropdown"
             "chart";
-        justify-items: start;
+        justify-items: center;
         margin: 3rem auto 5rem auto;
-        width: 95vw;
+        width: 100%;
     }
     #chart-container {
         grid-area: chart;
