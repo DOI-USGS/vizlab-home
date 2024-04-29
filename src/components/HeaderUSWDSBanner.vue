@@ -43,7 +43,7 @@
           <div class="usa-banner__guidance tablet:grid-col-6">
             <img
               class="usa-banner__icon usa-media-block__img"
-              src="../../node_modules/@uswds/uswds/dist/img/icon-dot-gov.svg"
+              src="../../node_modules/@uswds/uswds/dist/img/icon-dot-gov.svg?url"
               role="img"
               alt=""
               aria-hidden="true"
@@ -59,7 +59,7 @@
           <div class="usa-banner__guidance tablet:grid-col-6">
             <img
               class="usa-banner__icon usa-media-block__img"
-              src="../../node_modules/@uswds/uswds/dist/img/icon-https.svg"
+              src="../../node_modules/@uswds/uswds/dist/img/icon-https.svg?url"
               role="img"
               alt=""
               aria-hidden="true"
@@ -116,14 +116,15 @@
     margin-left: 1rem;
     padding-left: 0.5rem;
   }
-  .usa-banner__header-flag[data-v-e71764b8] {
+  .usa-banner__header-flag {
     width: 1.6rem;
+    margin-right: 0.75rem;
   }
   .usa-banner__header-text {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .usa-banner__button {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #78B4E8;
   }
   .usa-banner__button::after {
@@ -144,15 +145,18 @@
   .usa-banner__button[aria-expanded=true]:hover::after {
     background-color: #A2CCF1;
   }
-  .usa-banner .grid-row.grid-gap-lg > *[data-v-e71764b8] {
-      padding-left: 2rem;
-      padding-right: 2rem;
+  .usa-banner .grid-row.grid-gap-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .usa-media-block__img {
+    margin-right: 0.75rem;
   }
   .usa-banner__content {
-    font-size: 2rem;
-    max-width: 105rem;
+    font-size: 1.6rem;
+    max-width: 100rem;
   }
-  .usa-banner__icon[data-v-e71764b8] {
-    width: 6rem;
+  .usa-banner__icon {
+    width: 4rem;
   }
 </style>
