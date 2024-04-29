@@ -16,7 +16,7 @@ This `VITE_APP_TITLE` parameter also needs to be set up as a parameter in the Je
 
 `VITE_APP_TITLE` is also used to set the base path for the vite build in `'vite.config.mjs'`. 
 
-It is also used to configure the metadata in `'index.html'`. 
+It is also used to configure the metadata and to set the path for the meta tag image in `'index.html'`. 
 
 The environment variables `VITE_APP_LONG_TITLE` and `VITE_APP_DESCRIPTION` are also used to configure the metadata.
 
@@ -37,11 +37,12 @@ At the moment this repo contains two example components, both of which use `D3`.
 When setting up a new project you'll need to take the following steps:
  
 1. Update project-specific environment variables, titles, and paths
-    * [ ] Update `VITE_APP_TITLE`, `VITE_APP_LONG_TITLE`, `VITE_APP_DESCRIPTION`, and `VITE_APP_GITHUB_REPOSITORY_LINK`, in `'.env'`
-    * [ ] Update `"name"` in `'package.json'`
+    * [ ] Update `VITE_APP_TITLE`, `VITE_APP_LONG_TITLE`, `VITE_APP_DESCRIPTION`, and `VITE_APP_GITHUB_REPOSITORY_LINK`, in `'.env'`. Be sure to read [the section on project name handling](#project-name-handling), above.
+    * [ ] Update `"name"` in `'package.json'`.
     * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
     * [ ] Update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`
-    * [ ] Update the `{project-name}` variable in the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{project_name}`
+    * [ ] Update the `{project-name}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{project_name}`
+      * [ ] Note that the template repo urls provided in these files follow the convention we use when repos are mirrored from GitLab to GitHub, where the GitLab repo name (identical to `%VITE_APP_TITLE%`) is prefixed with `vizlab-`, e.g., `"https://github.com/DOI-USGS/vizlab-{project_name}.git"`.
 2. Delete example components and remove them from the site
     * [ ] Delete `'src/components/BarChartExample.vue'` and `'public/state_facility_type_summmary.csv'`
     * [ ] Delete `'src/components/RegionalViolins.vue'`, the 16 associated `'.png'` files in `'src/assets/images'`, and the two `'.svg'` files in `'src/assets/svgs'`
@@ -49,10 +50,14 @@ When setting up a new project you'll need to take the following steps:
 3. Update project-specific attributions and references
     * [ ] Update content of `'src/text/authors.js'` to list project authors. Do not edit the structure of this file
     * [ ] Update content of `'src/text/references.js'` to list project references. Do not edit the structure of this file
-    * [ ] List contributors in `index.html`
-    * [ ] Update keywords in `index.html`
+    * [ ] List contributors in `'index.html'`
+    * [ ] Update keywords in `'index.html'`
 4. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
-5. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. 
+5. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. Key steps that relate to template content include:
+    * [ ] To work with the template set up in `'index.html'`, the meta card image for the site must be saved as a `.webp` image to the _prod_ `S3` bucket in the following location: `visualizations/images/%VITE_APP_TITLE%_metacard.webp`, e.g., `visualizations/images/vue3-template_metacard.webp`.
+    * [ ] Once known, be sure to add the release date to `'index.html'` - the `datePublished` attribute in the metadata.
+    * [ ] Before migration to DGEC, update `'code.json'` to have `"status": "Production"` and to specify the `"metadataLastUpdated"` date.
+    * [ ] After migration to DGEC, update the `version` attribute in `'package.json'` to match the release version on _GitHub_. Push the change to the repo on _GitLab_. The change will be mirrored to the repo on GitHub.
  
 ## Notes for development when using this template
 1. Please do not delete or make any modifications to the following components/files:
