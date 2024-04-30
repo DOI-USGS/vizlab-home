@@ -4,8 +4,15 @@
   <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
   <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USGS" id="_fed_an_ua_tag"></script>
     <!-- VIZLAB GTM CODE -->
-    <!-- Google Tag Manager -->
-    <!-- Place GTM script here -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V443MQ3V1S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V443MQ3V1S');
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
@@ -57,11 +64,6 @@
     </script>
   </head>
   <body>
-    <!-- VIZLAB GTM CODE -->
-    <!-- Google Tag Manager (noscript) -->
-    <!-- Place GTM noscript here -->
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- USGS VIZ ID GTM CODE -->
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
     <!-- USDWS js -->
