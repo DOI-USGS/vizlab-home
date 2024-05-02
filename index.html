@@ -2,16 +2,15 @@
 <html lang="en">
   <head>
     <!-- VIZLAB GTM CODE -->
-    <!-- Google Tag Manager -->
-    <!-- Place GTM script here -->
-    <!-- End Google Tag Manager -->
-    <!-- USGS VIZ ID GTM CODE -->
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TKQR8KP');</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V443MQ3V1S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-V443MQ3V1S');
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
@@ -61,20 +60,12 @@
       "publisher": { "@context": "http://schema.org", "@type": "Organization", "legalName": "U.S. Geological Survey" },
       "keywords": { "water, data viz, data visualization" }
     </script>
+    <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+    <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USGS" id="_fed_an_ua_tag"></script>
   </head>
   <body>
-    <!-- VIZLAB GTM CODE -->
-    <!-- Google Tag Manager (noscript) -->
-    <!-- Place GTM noscript here -->
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- USGS VIZ ID GTM CODE -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe sandbox src="https://www.googletagmanager.com/ns.html?id=GTM-TKQR8KP"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
-    <!-- End Google Tag Manager (noscript) -->
     <!-- USDWS js -->
     <script type="module" src="/node_modules/@uswds/uswds/dist/js/uswds.js"></script>
   </body>
