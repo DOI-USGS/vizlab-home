@@ -8,6 +8,10 @@
 
   --black-soft: #151515;
   --dodger-blue: #1e90ff;
+  --medium-grey: #B5B5B5;
+  --medium-purple: #8F00DB;
+  --medium-blue: #4365A8;
+  --medium-orange: #E48951;
 
   font-size: 62.5%;
 }
@@ -16,7 +20,13 @@
 :root {
   --color-background: var(--white);
   --color-text: var(--black-soft);
-  --color-title-text: var(--dodger-blue)
+  --color-title-text: var(--dodger-blue);
+  --color-code-links-background: var(--medium-grey);
+  --color-link: var(--medium-purple);
+  --color-bar-focal: var(--medium-blue);
+  --color-bar-default: var(--medium-grey);
+  --color-map-focal: var(--medium-orange);
+  --color-map-default: var(--white);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -37,6 +47,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
+  fill: var(--color-text); /* Needed for text added w/ d3 */
   background: var(--color-background);
   transition:
     color 0.5s,
@@ -49,6 +60,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
 }
 h1 {
   font-size: 4.5rem;
