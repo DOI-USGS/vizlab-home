@@ -1,16 +1,39 @@
 <template>
-    <div
-      id="grid-container-interactive"
+    <VizSection
+        id="bar-chart"
+        :figures="true"
+        :fig-caption="false"
     >
-        <div id="state-dropdown-container" />
-        <div id="chart-container">
-        </div>
-    </div>
+        <!-- TAKEAWAY TITLE -->
+        <template #takeAway>
+            <h2>
+                d3 bar chart from data
+            </h2>
+        </template>
+        <!-- FIGURES -->
+        <template #aboveExplanation>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, esse nisi! Iusto nobis fugiat unde repellat doloremque maiores dolorum odio corporis nulla, odit id, harum magni ullam ipsa hic deserunt.</p>
+        </template>
+        <template #figures>
+            <div
+            id="grid-container-interactive"
+            >
+                <div id="state-dropdown-container" />
+                <div id="chart-container">
+                </div>
+            </div>
+        </template>
+        <!-- EXPLANATION -->
+        <template #belowExplanation>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus cum dicta, quaerat accusantium et architecto doloremque aspernatur dolorem eius veniam, accusamus, necessitatibus beatae itaque. Praesentium vitae sequi aut minus.</p>
+        </template>
+    </VizSection>
 </template>
   
 <script setup>
     import { onMounted, ref } from "vue";
     import * as d3 from 'd3';
+    import VizSection from '@/components/VizSection.vue';
 
     // global variables 
     // Maybe variables defined w/ 'let' and later updated should be refs?
@@ -21,8 +44,9 @@
     let chartBounds;
     let yScale;
     const nationalViewName = 'all states and territories'
-    const focalColor = "#4365A8";
-    const defaultColor = "#B5B5B5";
+    const bodyCSS = window.getComputedStyle(document.body)
+    const focalColor = bodyCSS.getPropertyValue('--color-bar-focal');
+    const defaultColor = bodyCSS.getPropertyValue('--color-bar-default');
     
     // Set up dynamically updating variables as refs
     const currentType = ref();
@@ -387,6 +411,7 @@
 </style>
 
 <style lang="scss">
+/* css for elements added and classed w/ d3 */
     .dropdown {
         transition: width 1s, transform 1s;
     }
