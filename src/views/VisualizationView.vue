@@ -26,7 +26,7 @@
       id="section2"
       height="50"
       image="section2_banner"
-      suffix="png"
+      suffix="jpg"
       alt="An overhead view of a river flowing through a snow-covered decidious forest."
       overlay="true"
       overlayOpacity=0.7
