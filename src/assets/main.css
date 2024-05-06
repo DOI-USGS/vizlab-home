@@ -14,8 +14,11 @@
   margin: 5rem 0 5rem 0;
 }
 .title {
+  font-family: sans-serif; /* This is fallback font for old browsers */
+  font-family: var(--title-font);
   color: var(--color-title-text);
 }
+/* set color of links throughout */
 a {
   color: var(--color-link);
 }

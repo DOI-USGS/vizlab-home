@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 /* semantic color variables for this project */
 /* Define colors */
@@ -14,6 +15,9 @@
   --medium-orange: #E48951;
 
   font-size: 62.5%;
+
+  --title-font: Roboto Slab;
+  --default-font: Source Sans Pro;
 }
 
 /* Declare color variables */
@@ -21,6 +25,8 @@
   --color-background: var(--white);
   --color-text: var(--black-soft);
   --color-title-text: var(--dodger-blue);
+  --color-overlay: var(--black-soft);
+  --color-overlay-text: var(--white-soft);
   --color-code-links-background: var(--medium-grey);
   --color-link: var(--medium-purple);
   --color-bar-focal: var(--medium-blue);
@@ -53,9 +59,8 @@ body {
     color 0.5s,
     background-color 0.5s;
   line-height: 1.2;
-  font-family:
-    Source Sans Pro,
-    sans-serif;
+  font-family: sans-serif; /* This is fallback font for old browsers */
+  font-family: var(--default-font);
   font-size: 2rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -63,8 +68,8 @@ body {
   overscroll-behavior: none;
 }
 h1 {
-  font-size: 4.5rem;
-  font-weight: 700;
+  font-size: 5rem;
+  font-weight: 800;
   padding: 0rem 0 1rem 0;
 }
 h2 {
