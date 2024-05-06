@@ -1,7 +1,16 @@
 <template>
-  <section id="references">       
-    <div class="text-content">
-      <h2>References</h2>
+  <VizSection
+    id="references"
+    :figures="false"
+    :fig-caption="false"
+  >
+    <!-- TAKEAWAY TITLE -->
+    <template #takeAway>
+      <h2>
+        References
+      </h2>
+    </template>
+    <template #aboveExplanation>
       <div>
         <div
           v-for="reference in references.references"
@@ -22,11 +31,12 @@
           </p>
         </div>
       </div>
-    </div>
-  </section>
+    </template>
+  </VizSection>
 </template>
 
 <script setup>
+  import VizSection from '@/components/VizSection.vue';
   import references from "@/assets/text/references";
 </script>
 
