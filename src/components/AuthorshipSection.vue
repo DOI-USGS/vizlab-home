@@ -1,85 +1,99 @@
 <template>
-  <div
-    v-if="showAuthors"
-    id="author-container"
-    class="text-content"
+  <VizSection
+    id="references"
+    :figures="false"
+    :fig-caption="false"
   >
-    <h2>Authors</h2>
-    <p>
-      <span id="primary-author-statment">
-        The development of {{ appTitle }} was led by 
-        <span
-          v-for="(author, index) in primaryAuthors" 
-          :id="`initial-${author.initials}`"
-          :key="`${author.initials}-attribution`"
-          :class="'author first'"
-        >
-          <a
-            :href="author.profile_link"
-            target="_blank"
-            v-text="author.fullName"
-          />
-          <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">, </span>
-          <span v-if="index == Object.keys(primaryAuthors).length - 2"> and </span>
-        </span>.
-      </span>
-      <span
-        v-if="showAdditionalAuthors"
-        id="additional-author-statement"
+    <!-- TAKEAWAY TITLE -->
+    <template #takeAway>
+      <h2>
+        Authors
+      </h2>
+    </template>
+    <template #aboveExplanation>
+      <div
+        v-if="showAuthors"
+        id="author-container"
+        class="text-content"
       >
-        <span
-          v-for="(author, index) in additionalAuthors" 
-          :id="`author-${author.initials}`"
-          :key="`${author.initials}-attribution`"
-          :class="'author'"
-        >
-          <a
-            :href="author.profile_link"
-            target="_blank"
-            v-text="author.fullName"
-          />
-          <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">, </span>
-          <span v-if="index == Object.keys(additionalAuthors).length - 2"> and </span>
-        </span>
-        <span>
-          also contributed to the site.
-        </span>
-      </span>
-      <span
-        v-if="showContributionStatements"
-        id="contribution-statements"
-      >
-        <span id="primary-author-contribution">
-          <span
-            v-for="author in primaryAuthors" 
-            :id="`author-${author.initials}`"
-            :key="`${author.initials}-contribution`"
-            :class="'author'"
-          >
-            <span v-text="author.firstName" /> <span v-text="author.contribution" />. 
+        <p>
+          <span id="primary-author-statment">
+            The development of {{ appTitle }} was led by 
+            <span
+              v-for="(author, index) in primaryAuthors" 
+              :id="`initial-${author.initials}`"
+              :key="`${author.initials}-attribution`"
+              :class="'author first'"
+            >
+              <a
+                :href="author.profile_link"
+                target="_blank"
+                v-text="author.fullName"
+              />
+              <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">, </span>
+              <span v-if="index == Object.keys(primaryAuthors).length - 2"> and </span>
+            </span>.
           </span>
-        </span>
-        <span
-          v-if="showAdditionalContributionStatement"
-          id="additional-author-contribution"
-        >
           <span
-            v-for="author in additionalAuthors" 
-            :id="`author-${author.initials}`"
-            :key="`${author.initials}-contribution`"
-            :class="'author'"
+            v-if="showAdditionalAuthors"
+            id="additional-author-statement"
           >
-            <span v-text="author.firstName" /> <span v-text="author.contribution" />. 
+            <span
+              v-for="(author, index) in additionalAuthors" 
+              :id="`author-${author.initials}`"
+              :key="`${author.initials}-attribution`"
+              :class="'author'"
+            >
+              <a
+                :href="author.profile_link"
+                target="_blank"
+                v-text="author.fullName"
+              />
+              <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">, </span>
+              <span v-if="index == Object.keys(additionalAuthors).length - 2"> and </span>
+            </span>
+            <span>
+              also contributed to the site.
+            </span>
           </span>
-        </span>
-      </span>
-    </p>
-  </div>
+          <span
+            v-if="showContributionStatements"
+            id="contribution-statements"
+          >
+            <span id="primary-author-contribution">
+              <span
+                v-for="author in primaryAuthors" 
+                :id="`author-${author.initials}`"
+                :key="`${author.initials}-contribution`"
+                :class="'author'"
+              >
+                <span v-text="author.firstName" /> <span v-text="author.contribution" />. 
+              </span>
+            </span>
+            <span
+              v-if="showAdditionalContributionStatement"
+              id="additional-author-contribution"
+            >
+              <span
+                v-for="author in additionalAuthors" 
+                :id="`author-${author.initials}`"
+                :key="`${author.initials}-contribution`"
+                :class="'author'"
+              >
+                <span v-text="author.firstName" /> <span v-text="author.contribution" />. 
+              </span>
+            </span>
+          </span>
+        </p>
+      </div>
+    </template>
+  </VizSection>
 </template>
 
 <script setup>
-  import authors from "@/assets/text/authors";
   import { ref, onMounted } from 'vue';
+  import VizSection from '@/components/VizSection.vue';
+  import authors from "@/assets/text/authors";
 
   // Pull in title of page from Vue environment (set in .env)
   const appTitle = import.meta.env.VITE_APP_TITLE;
