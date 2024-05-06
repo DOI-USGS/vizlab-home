@@ -14,25 +14,11 @@
         class="bg"
         :style="overlayVars"
       >
-        <picture>
-          <!-- Media size suggestions https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images -->
-          <source
-            type="image/webp"
-            media="(max-width: 799px)"
-            :srcset="getImageUrl(image, 'webp')"
-            :data-srcset="getImageUrl(image, 'webp')"
-          >
-          <!--BACKUP IF BROWSER DOESN'T ACCEPT WEBP (TESTED AND WORKING ON SAFARI)-->
-          <source
-            media="(max-width: 799px)"
-            :type="imageType"
-            :data-srcset="getImageUrl(image, suffix)"
-          >
-          <img 
-            :srcset="getImageUrl(image, suffix)"
-            :alt="alt"
-          >
-        </picture>
+        <img 
+          :class="{ mobile: mobileView}"
+          :srcset="getImageUrl(image, suffix)"
+          :alt="alt"
+        >
         <div
           v-if="overlay"
           class="overlay"
@@ -43,7 +29,11 @@
 </template>
 
 <script setup>
-  import {computed} from 'vue'
+  import {computed} from 'vue';
+  import { isMobile } from 'mobile-device-detect';
+
+  // global variables
+  const mobileView = isMobile;
 
   const props = defineProps({
     height: {
@@ -80,30 +70,6 @@
     return { "--overlay-opacity": `${props.overlayOpacity}` }
   })
 
-  const imageType = computed(() => {
-    let imageType;
-    switch(props.suffix) {
-        case 'png':
-          imageType = 'image/png';
-          break;
-        case 'jpg':
-          imageType = 'image/jpeg';
-          break;
-        case 'gif':
-          imageType = 'image/gif';
-          break;
-        case 'svg':
-          imageType = 'image/svg';
-          break;
-        case 'webp':
-          imageType = 'image/webp';
-          break;
-        default:
-          imageType = 'image/png';
-      }
-    return imageType;
-  })
-
   function getImageUrl(image, suffix) {
     return new URL(`../assets/images/${image}.${suffix}`, import.meta.url).href
   }
@@ -127,6 +93,9 @@
     top: 0;
     width: 100%;
     height: 100%;
+  }
+  .mobile {
+    scale: 1.5;
   }
   .overlay {
     position: absolute;

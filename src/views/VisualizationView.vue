@@ -11,7 +11,7 @@
       image="section1_banner"
       suffix="png"
       alt="An overhead view of a braided river, surrounded by snow-covered ground."
-      :height=50
+      :height=sectionTitleHeight
       :overlay=true
       :overlayOpacity=0.7
     >
@@ -27,7 +27,7 @@
       image="section2_banner"
       suffix="jpg"
       alt="An overhead view of a river flowing through a snow-covered decidious forest."
-      :height=50
+      :height=sectionTitleHeight
       :overlay=true
       :overlayOpacity=0.7
     >
@@ -44,12 +44,18 @@
 </template>
 
 <script setup>
+  import { isMobile } from 'mobile-device-detect';
+
   import IntroSection from '@/components/IntroSection.vue'
   import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
   import AuthorshipSection from '@/components/AuthorshipSection.vue';
   import RegionalViolins from '.././components/RegionalViolins.vue';
   import BarChartExample from '.././components/BarChartExample.vue';
+
+  // global variables
+  const mobileView = isMobile;
+  const sectionTitleHeight = mobileView ? 25 : 50;
 </script>
 
 <style scoped>
