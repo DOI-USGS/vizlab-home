@@ -16,10 +16,15 @@
 .title {
   color: var(--color-title-text);
 }
+a {
+  color: var(--color-link);
+}
+/* sets width of text column throughout components */
 .text-container {
   max-width: 70rem;
   margin: 0 auto 0 auto;
 }
+/* sets max-width of figure elements throughout components */
 .figure-container {
   max-width: 80vw;
   margin: 0 auto 0 auto;
