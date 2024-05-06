@@ -8,12 +8,12 @@
     <IntroSection/>
     <SectionTitle
       id="section1"
-      height="50"
       image="section1_banner"
       suffix="png"
       alt="An overhead view of a braided river, surrounded by snow-covered ground."
-      overlay="true"
-      overlayOpacity=0.7
+      :height=50
+      :overlay=true
+      :overlayOpacity=0.7
     >
       <template #sectionTitle>
         <h1>
@@ -24,12 +24,12 @@
     <RegionalViolins />
     <SectionTitle
       id="section2"
-      height="50"
       image="section2_banner"
       suffix="jpg"
       alt="An overhead view of a river flowing through a snow-covered decidious forest."
-      overlay="true"
-      overlayOpacity=0.7
+      :height=50
+      :overlay=true
+      :overlayOpacity=0.7
     >
       <template #sectionTitle>
         <h1>
