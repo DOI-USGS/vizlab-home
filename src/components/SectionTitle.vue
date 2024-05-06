@@ -15,6 +15,7 @@
         :style="overlayVars"
       >
         <img 
+          class="bg-image"
           :class="{ mobile: mobileView}"
           :srcset="getImageUrl(image, suffix)"
           :alt="alt"
@@ -94,9 +95,7 @@
     width: 100%;
     height: 100%;
   }
-  .mobile {
-    scale: 1.5;
-  }
+  
   .overlay {
     position: absolute;
     width: 100%;
@@ -113,11 +112,14 @@
     width:100%;
     height:100%;
     overflow: hidden;
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
+  }
+  .bg-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .bg-image.mobile {
+    scale: 1.5;
   }
   .sectionTitle {
     position: relative;
