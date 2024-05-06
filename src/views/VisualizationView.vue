@@ -1,6 +1,6 @@
 <template>
   <section id="visualization-container">
-    <div class="text-container">
+    <div class="text-container" :class="{ mobile: mobileView}">
       <h1 class = 'title'>
         Vue3 template
       </h1>

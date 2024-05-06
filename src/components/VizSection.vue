@@ -4,12 +4,13 @@
       <div
         v-if="takeAway"
         class="text-container"
+        :class="{ mobile: mobileView}"
       >
         <slot name="takeAway">
           <!-- Take Away Title -->
         </slot>
       </div>
-      <div class="text-container">
+      <div class="text-container" :class="{ mobile: mobileView}">
         <slot name="aboveExplanation">
           <!-- Above Explanation -->
         </slot>
@@ -17,6 +18,7 @@
       <div
         v-if="figures"
         class="figures figure-container"
+        :class="{ mobile: mobileView}"
       >
         <slot name="figures">
           <!-- Figure -->
@@ -25,12 +27,13 @@
       <div
         v-if="figCaption"
         class="figureCaption text-container"
+        :class="{ mobile: mobileView}"
       >
         <slot name="figureCaption">
           <!-- Figure Caption -->
         </slot>
       </div>
-      <div class="text-container">
+      <div class="text-container" :class="{ mobile: mobileView}">
         <slot name="belowExplanation">
           <!-- Below Explanation -->
         </slot>
@@ -40,6 +43,11 @@
 </template>
 
 <script setup>
+  import { isMobile } from 'mobile-device-detect';
+
+  // global variables
+  const mobileView = isMobile;
+
   defineProps({
     takeAway:{
       type: Boolean,
