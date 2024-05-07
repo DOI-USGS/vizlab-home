@@ -78,6 +78,9 @@
 <style scoped lang="scss">
 /* USGS Viz ID default css in src/assets/common.css and src/assets/custom.csss */
 /* custom edit to style font-awesome icons like template <i> elements */
+footer p, text, li {
+  padding: 0;
+}
 .fa {
   color:#fff;
 	font-size: 24px;
@@ -85,5 +88,8 @@
 /* custom edit to get margins to match example */
 ul {
   margin-top: 15px;
+}
+ul.social {
+  margin-bottom: 1rem;
 }
 </style>
