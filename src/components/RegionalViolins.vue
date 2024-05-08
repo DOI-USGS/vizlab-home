@@ -5,8 +5,8 @@
         :figures="true"
         :fig-caption="false"
     >
-        <!-- TAKEAWAY TITLE -->
-        <template #takeAway>
+        <!-- TITLE -->
+        <template #title>
             <h2>
                 svg import w/ d3-added interaction + v-for
             </h2>

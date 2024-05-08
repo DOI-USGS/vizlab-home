@@ -4,8 +4,8 @@
         :figures="true"
         :fig-caption="false"
     >
-        <!-- TAKEAWAY TITLE -->
-        <template #takeAway>
+        <!-- TITLE -->
+        <template #title>
             <h2>
                 d3 bar chart from data
             </h2>

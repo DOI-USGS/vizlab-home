@@ -5,8 +5,8 @@
     :figures="true"
     :fig-caption="true"
   >
-    <!-- TAKEAWAY TITLE -->
-    <template #takeAway>
+    <!-- TITLE -->
+    <template #title>
       <h2>
         Introduction
       </h2>

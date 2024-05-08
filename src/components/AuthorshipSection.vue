@@ -4,8 +4,8 @@
     :figures="false"
     :fig-caption="false"
   >
-    <!-- TAKEAWAY TITLE -->
-    <template #takeAway>
+    <!-- TITLE -->
+    <template #title>
       <h2>
         Authors
       </h2>

@@ -2,12 +2,12 @@
   <section class="vizSection">
     <div class="vizSectionContent">
       <div
-        v-if="takeAway"
+        v-if="title"
         class="text-container"
         :class="{ mobile: mobileView}"
       >
-        <slot name="takeAway">
-          <!-- Take Away Title -->
+        <slot name="title">
+          <!-- Title -->
         </slot>
       </div>
       <div class="text-container" :class="{ mobile: mobileView}">
@@ -49,7 +49,7 @@
   const mobileView = isMobile;
 
   defineProps({
-    takeAway:{
+    title:{
       type: Boolean,
       default: true
     },
