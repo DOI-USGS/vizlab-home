@@ -33,7 +33,7 @@
     p {
       max-width: 60em;
       text-align: center;
-      margin: 0 auto 5px 0;
+      margin: 0 auto 5px auto;
     }
     button {
       display: block;
