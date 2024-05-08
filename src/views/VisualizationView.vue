@@ -6,7 +6,7 @@
       </h1>
     </div>
     <IntroSection
-      :text="text.IntroSection"
+      :text="text.components.IntroSection"
     />
     <SectionTitle
       :content="text.sections.A"
@@ -15,7 +15,7 @@
       :overlayOpacity=sectionTitleOverlayOpacity
     />
     <RegionalViolins 
-      :text="text.RegionalViolins"
+      :text="text.components.RegionalViolins"
     />
     <SectionTitle
       :content="text.sections.B"
@@ -24,7 +24,7 @@
       :overlayOpacity=sectionTitleOverlayOpacity
     />
     <BarChartExample 
-      :text="text.BarChartExample"
+      :text="text.components.BarChartExample"
     />
     <ReferencesSection />
     <AuthorshipSection />
