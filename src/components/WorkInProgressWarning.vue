@@ -38,7 +38,7 @@
     button {
       display: block;
       margin: 0 auto;
-      background: #003366;
+      background: var(--color-USGS-header-footer);
       color: #ffffff;
       border: none;
       outline: none;

@@ -13,6 +13,7 @@
   --medium-purple: #8F00DB;
   --medium-blue: #4365A8;
   --medium-orange: #E48951;
+  --usgs-blue: #00264c;
 
   font-size: 62.5%;
 
@@ -33,6 +34,7 @@
   --color-bar-default: var(--medium-grey);
   --color-map-focal: var(--medium-orange);
   --color-map-default: var(--white);
+  --color-USGS-header-footer: var(--usgs-blue);
 }
 
 /* @media (prefers-color-scheme: dark) {
