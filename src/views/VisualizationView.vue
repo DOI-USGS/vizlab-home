@@ -9,38 +9,20 @@
       :text="text.IntroSection"
     />
     <SectionTitle
-      id="sectionA"
-      image="sectionA_banner"
-      suffix="png"
-      alt="An overhead view of a braided river, surrounded by snow-covered ground."
+      :content="text.sections.A"
       :height=sectionTitleHeight
       :overlay=true
       :overlayOpacity=sectionTitleOverlayOpacity
-    >
-      <template #sectionTitle>
-        <h1>
-          {{ text.sectionTitles.A }}
-        </h1>
-      </template>
-    </SectionTitle>
+    />
     <RegionalViolins 
       :text="text.RegionalViolins"
     />
     <SectionTitle
-      id="sectionB"
-      image="sectionB_banner"
-      suffix="jpg"
-      alt="An overhead view of a river flowing through a snow-covered decidious forest."
+      :content="text.sections.B"
       :height=sectionTitleHeight
       :overlay=true
       :overlayOpacity=sectionTitleOverlayOpacity
-    >
-      <template #sectionTitle>
-        <h1>
-          {{ text.sectionTitles.B }}
-        </h1>
-      </template>
-    </SectionTitle>
+    />
     <BarChartExample 
       :text="text.BarChartExample"
     />

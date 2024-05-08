@@ -1,8 +1,18 @@
 export default {
     pageTitle: "Vue3 template",
-    sectionTitles: {
-        A: "Section A",
-        B: "Section B"
+    sections: {
+        A: {
+            title: "Section A",
+            id: "sectionA",
+            image: "sectionA_banner.png",
+            alt: "An overhead view of a braided river, surrounded by snow-covered ground."
+        },
+        B: {
+            title: "Section B",
+            id: "sectionB",
+            image: "sectionB_banner.jpg",
+            alt: "An overhead view of a river flowing through a snow-covered decidious forest."
+        }
     },
     IntroSection: {
         title: "Introduction",
