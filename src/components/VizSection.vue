@@ -45,9 +45,7 @@
 <script setup>
   import { isMobile } from 'mobile-device-detect';
 
-  // global variables
-  const mobileView = isMobile;
-
+  // define props
   defineProps({
     title:{
       type: Boolean,
@@ -62,6 +60,9 @@
       default: true
     }
   })
+
+  // global variables
+  const mobileView = isMobile;
 </script>
 
 <style lang="scss">

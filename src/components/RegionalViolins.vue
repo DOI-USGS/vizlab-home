@@ -8,12 +8,12 @@
         <!-- TITLE -->
         <template #title>
             <h2>
-                svg import w/ d3-added interaction + v-for
+                {{ text.title }}
             </h2>
         </template>
         <!-- FIGURES -->
         <template #aboveExplanation>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, esse nisi! Iusto nobis fugiat unde repellat doloremque maiores dolorum odio corporis nulla, odit id, harum magni ullam ipsa hic deserunt.</p>
+            <p v-html="text.paragraph1" />
         </template>
         <template #figures>
             <div id="region-grid-container" :class="{ mobile: mobileView}">
@@ -61,7 +61,7 @@
         </template>
         <!-- EXPLANATION -->
         <template #belowExplanation>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus cum dicta, quaerat accusantium et architecto doloremque aspernatur dolorem eius veniam, accusamus, necessitatibus beatae itaque. Praesentium vitae sequi aut minus.</p>
+            <p v-html="text.paragraph2" />
         </template>
     </VizSection>
 </template>
@@ -74,13 +74,18 @@
     import polarWedges from "@/assets/svgs/polar_wedges.svg";
     import cascMap from "@/assets/svgs/casc_regions_map.svg";
 
+    // define props
+    defineProps({
+        text: { type: Object }
+    })
+
     // global variables
     const mobileView = isMobile;
     const regions = ['Midwest', 'Northeast', 'Southeast', 'South-Central', 'Southwest', 'Northwest', 'North-Central']
     const bodyCSS = window.getComputedStyle(document.body)
     const focalColor = bodyCSS.getPropertyValue('--color-map-focal');
     const defaultColor = bodyCSS.getPropertyValue('--color-map-default');
-    
+   
     // Declare behavior on mounted
     // functions called here
     onMounted(() => {

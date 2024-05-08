@@ -2,10 +2,12 @@
   <section id="visualization-container">
     <div class="text-container" :class="{ mobile: mobileView}">
       <h1 class = 'title'>
-        Vue3 template
+        {{ text.pageTitle }}
       </h1>
     </div>
-    <IntroSection/>
+    <IntroSection
+      :text="text.IntroSection"
+    />
     <SectionTitle
       id="sectionA"
       image="sectionA_banner"
@@ -13,15 +15,17 @@
       alt="An overhead view of a braided river, surrounded by snow-covered ground."
       :height=sectionTitleHeight
       :overlay=true
-      :overlayOpacity=0.7
+      :overlayOpacity=sectionTitleOverlayOpacity
     >
       <template #sectionTitle>
         <h1>
-          Section A
+          {{ text.sectionTitles.A }}
         </h1>
       </template>
     </SectionTitle>
-    <RegionalViolins />
+    <RegionalViolins 
+      :text="text.RegionalViolins"
+    />
     <SectionTitle
       id="sectionB"
       image="sectionB_banner"
@@ -29,15 +33,17 @@
       alt="An overhead view of a river flowing through a snow-covered decidious forest."
       :height=sectionTitleHeight
       :overlay=true
-      :overlayOpacity=0.7
+      :overlayOpacity=sectionTitleOverlayOpacity
     >
       <template #sectionTitle>
         <h1>
-          Section B
+          {{ text.sectionTitles.B }}
         </h1>
       </template>
     </SectionTitle>
-    <BarChartExample />
+    <BarChartExample 
+      :text="text.BarChartExample"
+    />
     <ReferencesSection />
     <AuthorshipSection />
   </section>
@@ -46,6 +52,7 @@
 <script setup>
   import { isMobile } from 'mobile-device-detect';
 
+  import text from "./../assets/text/text.js";
   import IntroSection from '@/components/IntroSection.vue'
   import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
@@ -56,6 +63,7 @@
   // global variables
   const mobileView = isMobile;
   const sectionTitleHeight = mobileView ? 25 : 50;
+  const sectionTitleOverlayOpacity = 0.7;
 </script>
 
 <style scoped>
