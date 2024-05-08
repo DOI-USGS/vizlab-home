@@ -4,10 +4,10 @@
         :figures="true"
         :fig-caption="false"
     >
-        <!-- TITLE -->
-        <template #title>
+        <!-- HEADING -->
+        <template #heading>
             <h2>
-                {{ text.title }}
+                {{ text.heading }}
             </h2>
         </template>
         <!-- FIGURES -->

@@ -2,12 +2,12 @@
   <section class="vizSection">
     <div class="vizSectionContent">
       <div
-        v-if="title"
+        v-if="heading"
         class="text-container"
         :class="{ mobile: mobileView}"
       >
-        <slot name="title">
-          <!-- Title -->
+        <slot name="heading">
+          <!-- Heading -->
         </slot>
       </div>
       <div class="text-container" :class="{ mobile: mobileView}">
@@ -47,7 +47,7 @@
 
   // define props
   defineProps({
-    title:{
+    heading:{
       type: Boolean,
       default: true
     },
