@@ -40,7 +40,7 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Update `VITE_APP_TITLE`, `VITE_APP_LONG_TITLE`, `VITE_APP_DESCRIPTION`, and `VITE_APP_GITHUB_REPOSITORY_LINK`, in `'.env'`. Be sure to read [the section on project name handling](#project-name-handling), above.
     * [ ] Update `"name"` in `'package.json'`.
     * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
-    * [ ] Update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`
+    * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{project-name}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{project_name}`
       * [ ] Note that the template repo urls provided in these files follow the convention we use when repos are mirrored from GitLab to GitHub, where the GitLab repo name (identical to `%VITE_APP_TITLE%`) is prefixed with `vizlab-`, e.g., `"https://github.com/DOI-USGS/vizlab-{project_name}.git"`.
 2. Delete example components and remove them from the site
