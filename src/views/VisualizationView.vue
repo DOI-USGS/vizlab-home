@@ -7,8 +7,8 @@
     </div>
     <IntroSection/>
     <SectionTitle
-      id="section1"
-      image="section1_banner"
+      id="sectionA"
+      image="sectionA_banner"
       suffix="png"
       alt="An overhead view of a braided river, surrounded by snow-covered ground."
       :height=sectionTitleHeight
@@ -17,14 +17,14 @@
     >
       <template #sectionTitle>
         <h1>
-          Section 1
+          Section A
         </h1>
       </template>
     </SectionTitle>
     <RegionalViolins />
     <SectionTitle
-      id="section2"
-      image="section2_banner"
+      id="sectionB"
+      image="sectionB_banner"
       suffix="jpg"
       alt="An overhead view of a river flowing through a snow-covered decidious forest."
       :height=sectionTitleHeight
@@ -33,7 +33,7 @@
     >
       <template #sectionTitle>
         <h1>
-          Section 2
+          Section B
         </h1>
       </template>
     </SectionTitle>
