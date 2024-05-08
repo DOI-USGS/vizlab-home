@@ -34,7 +34,7 @@
 <script setup>
   import { isMobile } from 'mobile-device-detect';
 
-  import text from "./../assets/text/text.js";
+  import text from "@/assets/text/text.js";
   import IntroSection from '@/components/IntroSection.vue'
   import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
