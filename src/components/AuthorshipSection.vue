@@ -1,6 +1,6 @@
 <template>
   <VizSection
-    id="references"
+    id="authors"
     :figures="false"
     :fig-caption="false"
   >
