@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import VisualizationView from '../views/VisualizationView.vue'
+import VisualizationView from '@/views/VisualizationView.vue'
 
 function lazyLoad(view){
   return() => import(`@/views/${view}.vue`)
