@@ -4,8 +4,8 @@
     :figures="false"
     :fig-caption="false"
   >
-    <!-- TAKEAWAY TITLE -->
-    <template #takeAway>
+    <!-- HEADING -->
+    <template #heading>
       <h2>
         Authors
       </h2>
@@ -45,8 +45,13 @@
               :class="'author'"
             >
               <a
+                v-if="author.profile_link"
                 :href="author.profile_link"
                 target="_blank"
+                v-text="author.fullName"
+              />
+              <span
+                v-if="!author.profile_link"
                 v-text="author.fullName"
               />
               <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">, </span>

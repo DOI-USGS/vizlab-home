@@ -5,18 +5,15 @@
     :figures="true"
     :fig-caption="true"
   >
-    <!-- TAKEAWAY TITLE -->
-    <template #takeAway>
+    <!-- HEADING -->
+    <template #heading>
       <h2>
-        Introduction
+        {{ text.heading }}
       </h2>
     </template>
     <!-- FIGURES -->
     <template #aboveExplanation>
-      <p>
-        Here is some introductory context for this viz
-      </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, esse nisi! Iusto nobis fugiat unde repellat doloremque maiores dolorum odio corporis nulla, odit id, harum magni ullam ipsa hic deserunt.</p>
+      <p v-html="text.paragraph1" />
     </template>
     <template #figures>
       <!-- examples using custom layout class configurations set up in VizSection.vue -->
@@ -50,25 +47,25 @@
     </template>
     <!-- FIGURE CAPTION -->
     <template #figureCaption>
-      <p>
-        Here is a caption for this figure
-      </p>
+      <p v-html="text.caption" />
     </template>
     <!-- EXPLANATION -->
     <template #belowExplanation>
-      <p>
-        Here is some additional explanation of the figure
-      </p>
+      <p v-html="text.paragraph2" />
       <ul>
-        <li>Here is a bullet</li>
+        <li v-html="text.paragraph3_bullet1" />
       </ul>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus cum dicta, quaerat accusantium et architecto doloremque aspernatur dolorem eius veniam, accusamus, necessitatibus beatae itaque. Praesentium vitae sequi aut minus.</p>
     </template>
   </VizSection>
 </template>
 
 <script setup>
   import VizSection from '@/components/VizSection.vue';
+
+  // define props
+  defineProps({
+    text: { type: Object }
+  })
 </script>
 
 <style lang="scss" scoped>

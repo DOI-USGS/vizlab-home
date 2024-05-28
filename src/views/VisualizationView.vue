@@ -2,42 +2,30 @@
   <section id="visualization-container">
     <div class="text-container" :class="{ mobile: mobileView}">
       <h1 class = 'title'>
-        Vue3 template
+        {{ text.pageTitle }}
       </h1>
     </div>
-    <IntroSection/>
+    <IntroSection
+      :text="text.components.IntroSection"
+    />
     <SectionTitle
-      id="section1"
-      image="section1_banner"
-      suffix="png"
-      alt="An overhead view of a braided river, surrounded by snow-covered ground."
+      :content="text.sections.A"
       :height=sectionTitleHeight
       :overlay=true
-      :overlayOpacity=0.7
-    >
-      <template #sectionTitle>
-        <h1>
-          Section 1
-        </h1>
-      </template>
-    </SectionTitle>
-    <RegionalViolins />
+      :overlayOpacity=sectionTitleOverlayOpacity
+    />
+    <RegionalViolins 
+      :text="text.components.RegionalViolins"
+    />
     <SectionTitle
-      id="section2"
-      image="section2_banner"
-      suffix="jpg"
-      alt="An overhead view of a river flowing through a snow-covered decidious forest."
+      :content="text.sections.B"
       :height=sectionTitleHeight
       :overlay=true
-      :overlayOpacity=0.7
-    >
-      <template #sectionTitle>
-        <h1>
-          Section 2
-        </h1>
-      </template>
-    </SectionTitle>
-    <BarChartExample />
+      :overlayOpacity=sectionTitleOverlayOpacity
+    />
+    <BarChartExample 
+      :text="text.components.BarChartExample"
+    />
     <ReferencesSection />
     <AuthorshipSection />
   </section>
@@ -46,6 +34,7 @@
 <script setup>
   import { isMobile } from 'mobile-device-detect';
 
+  import text from "@/assets/text/text.js";
   import IntroSection from '@/components/IntroSection.vue'
   import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
@@ -56,6 +45,7 @@
   // global variables
   const mobileView = isMobile;
   const sectionTitleHeight = mobileView ? 25 : 50;
+  const sectionTitleOverlayOpacity = 0.7;
 </script>
 
 <style scoped>

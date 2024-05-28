@@ -2,12 +2,12 @@
   <section class="vizSection">
     <div class="vizSectionContent">
       <div
-        v-if="takeAway"
+        v-if="heading"
         class="text-container"
         :class="{ mobile: mobileView}"
       >
-        <slot name="takeAway">
-          <!-- Take Away Title -->
+        <slot name="heading">
+          <!-- Heading -->
         </slot>
       </div>
       <div class="text-container" :class="{ mobile: mobileView}">
@@ -45,11 +45,9 @@
 <script setup>
   import { isMobile } from 'mobile-device-detect';
 
-  // global variables
-  const mobileView = isMobile;
-
+  // define props
   defineProps({
-    takeAway:{
+    heading:{
       type: Boolean,
       default: true
     },
@@ -62,6 +60,9 @@
       default: true
     }
   })
+
+  // global variables
+  const mobileView = isMobile;
 </script>
 
 <style lang="scss">

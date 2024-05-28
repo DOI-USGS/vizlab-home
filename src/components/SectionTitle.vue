@@ -1,14 +1,14 @@
 <template>
-  <div class="section-title-container">
+  <div class="section-title-container" :id="content.id">
     <div
       class="title-container"
       :height="height"
       :style="sectionVars"
     >
       <div class="sectionTitle title">
-        <slot name="sectionTitle">
-          Section Title
-        </slot>
+        <h1>
+          {{ content.title }}
+        </h1>
       </div>
       <div
         class="bg"
@@ -17,8 +17,8 @@
         <img 
           class="bg-image"
           :class="{ mobile: mobileView}"
-          :srcset="getImageUrl(image, suffix)"
-          :alt="alt"
+          :srcset="getImageUrl(content.image)"
+          :alt="content.alt"
         >
         <div
           v-if="overlay"
@@ -41,17 +41,8 @@
       type: Number,
       default: 100
     },
-    image: {
-      type: String,
-      default: `section1`
-    },
-    suffix: {
-      type: String,
-      default: `png`
-    },
-    alt: {
-      type: String,
-      default: ''
+    content: {
+      type: Object
     },
     overlay: {
       type: Boolean,
@@ -71,8 +62,8 @@
     return { "--overlay-opacity": `${props.overlayOpacity}` }
   })
 
-  function getImageUrl(image, suffix) {
-    return new URL(`../assets/images/${image}.${suffix}`, import.meta.url).href
+  function getImageUrl(image) {
+    return new URL(`../assets/images/${image}`, import.meta.url).href
   }
 </script>
 

@@ -4,8 +4,8 @@
     :figures="false"
     :fig-caption="false"
   >
-    <!-- TAKEAWAY TITLE -->
-    <template #takeAway>
+    <!-- HEADING -->
+    <template #heading>
       <h2>
         References
       </h2>

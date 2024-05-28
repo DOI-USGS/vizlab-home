@@ -4,15 +4,15 @@
         :figures="true"
         :fig-caption="false"
     >
-        <!-- TAKEAWAY TITLE -->
-        <template #takeAway>
+        <!-- HEADING -->
+        <template #heading>
             <h2>
-                d3 bar chart from data
+                {{ text.heading }}
             </h2>
         </template>
         <!-- FIGURES -->
         <template #aboveExplanation>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, esse nisi! Iusto nobis fugiat unde repellat doloremque maiores dolorum odio corporis nulla, odit id, harum magni ullam ipsa hic deserunt.</p>
+            <p v-html="text.paragraph1" />
         </template>
         <template #figures>
             <div
@@ -25,7 +25,8 @@
         </template>
         <!-- EXPLANATION -->
         <template #belowExplanation>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus cum dicta, quaerat accusantium et architecto doloremque aspernatur dolorem eius veniam, accusamus, necessitatibus beatae itaque. Praesentium vitae sequi aut minus.</p>
+            <p v-html="text.paragraph2" />
+            <p v-html="text.paragraph3" />
         </template>
     </VizSection>
 </template>
@@ -34,6 +35,11 @@
     import { onMounted, ref } from "vue";
     import * as d3 from 'd3';
     import VizSection from '@/components/VizSection.vue';
+
+    // define props
+    defineProps({
+        text: { type: Object }
+    })
 
     // global variables 
     // Maybe variables defined w/ 'let' and later updated should be refs?
