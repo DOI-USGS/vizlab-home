@@ -110,7 +110,6 @@
   const showAdditionalContributionStatement = ref(null);
 
   onMounted(() => {
-    console.log(appTitle);
     showAuthors.value = primaryAuthors.length > 0;
     showAdditionalAuthors.value = additionalAuthors.length > 0;
     showAdditionalContributionStatement.value = additionalAuthors.length > 0;
