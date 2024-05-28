@@ -14,7 +14,6 @@
     <!-- FIGURES -->
     <template #aboveExplanation>
       <p v-html="text.paragraph1" />
-      <p v-html="text.paragraph2" />
     </template>
     <template #figures>
       <!-- examples using custom layout class configurations set up in VizSection.vue -->
@@ -52,11 +51,10 @@
     </template>
     <!-- EXPLANATION -->
     <template #belowExplanation>
-      <p v-html="text.paragraph3" />
+      <p v-html="text.paragraph2" />
       <ul>
         <li v-html="text.paragraph3_bullet1" />
       </ul>
-      <p v-html="text.paragraph4" />
     </template>
   </VizSection>
 </template>
