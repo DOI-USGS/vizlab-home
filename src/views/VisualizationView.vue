@@ -1,35 +1,61 @@
 <template>
   <section id="visualization-container">
-    <div class="text-container">
-      <h1 class="title">Vue3 template</h1>
-      <h2>svg import w/ d3-added interaction + v-for</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem eum quod. Facere ratione optio ipsa quaerat, animi aliquid harum quia unde et, labore, architecto veniam cumque temporibus voluptatem repellat!</p>
+    <div class="text-container" :class="{ mobile: mobileView}">
+      <h1 class = 'title'>
+        Vue3 template
+      </h1>
     </div>
-    <div class="figure-container">
-      <RegionalViolins />
-    </div>
-    <div class="text-container">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit facere odio porro adipisci esse culpa. Maiores distinctio architecto nesciunt quos in deserunt ipsa nemo odit! Unde iste cupiditate amet nisi.</p>
-      <h2>d3 bar chart from data</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolor tenetur cumque deleniti provident. Officia dignissimos eveniet quos, quibusdam praesentium perspiciatis dolorum voluptate magni. At, voluptas dolorem. Voluptatum, natus explicabo.</p>
-    </div>
-    <div class="figure-container">
-      <BarChartExample />
-    </div>
-    <div class="text-container">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed aliquid a blanditiis debitis quasi mollitia molestias labore provident optio consequuntur. Odio iure adipisci magnam esse quis, minus commodi enim. Maxime.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero harum in ipsa voluptatum quas quia quod dolores illo animi doloribus. Soluta ea, necessitatibus quos officia id blanditiis ab quisquam optio.</p>
-      <ReferencesSection />
-      <AuthorshipSection />
-    </div>
+    <IntroSection/>
+    <SectionTitle
+      id="section1"
+      image="section1_banner"
+      suffix="png"
+      alt="An overhead view of a braided river, surrounded by snow-covered ground."
+      :height=sectionTitleHeight
+      :overlay=true
+      :overlayOpacity=0.7
+    >
+      <template #sectionTitle>
+        <h1>
+          Section 1
+        </h1>
+      </template>
+    </SectionTitle>
+    <RegionalViolins />
+    <SectionTitle
+      id="section2"
+      image="section2_banner"
+      suffix="jpg"
+      alt="An overhead view of a river flowing through a snow-covered decidious forest."
+      :height=sectionTitleHeight
+      :overlay=true
+      :overlayOpacity=0.7
+    >
+      <template #sectionTitle>
+        <h1>
+          Section 2
+        </h1>
+      </template>
+    </SectionTitle>
+    <BarChartExample />
+    <ReferencesSection />
+    <AuthorshipSection />
   </section>
 </template>
 
 <script setup>
+  import { isMobile } from 'mobile-device-detect';
+
+  import IntroSection from '@/components/IntroSection.vue'
+  import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
   import AuthorshipSection from '@/components/AuthorshipSection.vue';
   import RegionalViolins from '@/components/RegionalViolins.vue';
   import BarChartExample from '@/components/BarChartExample.vue';
+
+  // global variables
+  const mobileView = isMobile;
+  const sectionTitleHeight = mobileView ? 25 : 50;
 </script>
 
 <style scoped>

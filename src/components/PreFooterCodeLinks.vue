@@ -14,20 +14,19 @@
   const gitHubRepositoryLink = import.meta.env.VITE_APP_GITHUB_REPOSITORY_LINK;
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 
   #code-repository-link-container {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     width: 100%;
-    background-color: #c2c4c5;
+    background-color: var(--color-code-links-background);
     margin: 0 auto;
-    padding: 0.4rem;
+    padding: 0.4rem 1.5rem;
     a {
-      color: #090211;
+      color: var(--color-text);
       margin-left: 10px;
-      font-family: 'Source Sans Pro',sans-serif;
-      text-decoration: none
+      text-decoration: none;
     }
   }
 

@@ -107,6 +107,7 @@
   }
   .usa-banner p, text {
     color: #F0F0F0;
+    padding: 0;
   }
   .usa-banner__inner {
     margin-left: 1rem;

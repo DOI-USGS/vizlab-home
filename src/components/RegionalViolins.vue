@@ -1,58 +1,85 @@
 <template>
-    <div id="region-grid-container" :class="{ mobile: mobileView}">
-        <cascMap
-            v-if="mobileView"
-            id="casc-svg"
-        />
-        <img
-            v-if="!mobileView"
-            id="radial-chart"
-            src="@/assets/images/polar_background_plot.png"
-            alt=""
-        >
-        <polarWedges
-            v-if="!mobileView"
-            id="wedges-svg"
-        />
-        <div id="map-container" v-if="!mobileView">
-            <img    
-                id="region-map-default"
-                class="region-map"
-                src="@/assets/images/casc_regions_map.png"
-                alt=""
-            >
-            <img    
-                v-for="region in regions"
-                :id="`region-map-${region}`"
-                :key="`map-${region}`" 
-                class="region-map hide"
-                :src="getMapImageUrl(region)"
-                alt=""
-            >
-        </div>
-        <div id="violin-container" :class="{ mobile: mobileView}">
-          <img
-                v-for="region in regions"
-                :id="`region-violin-${region}`"
-                :key="`violin-${region}`"
-                class="violin-chart hide"
-                :src=getViolinImageUrl(region)
-                alt=""
-          >
-        </div>
-    </div>
+    <!---VizSection-->
+    <VizSection
+        id="violins"
+        :figures="true"
+        :fig-caption="false"
+    >
+        <!-- TAKEAWAY TITLE -->
+        <template #takeAway>
+            <h2>
+                svg import w/ d3-added interaction + v-for
+            </h2>
+        </template>
+        <!-- FIGURES -->
+        <template #aboveExplanation>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, esse nisi! Iusto nobis fugiat unde repellat doloremque maiores dolorum odio corporis nulla, odit id, harum magni ullam ipsa hic deserunt.</p>
+        </template>
+        <template #figures>
+            <div id="region-grid-container" :class="{ mobile: mobileView}">
+                <cascMap
+                    v-if="mobileView"
+                    id="casc-svg"
+                />
+                <img
+                    v-if="!mobileView"
+                    id="radial-chart"
+                    src="@/assets/images/polar_background_plot.png"
+                    alt=""
+                >
+                <polarWedges
+                    v-if="!mobileView"
+                    id="wedges-svg"
+                />
+                <div id="map-container" v-if="!mobileView">
+                    <img    
+                        id="region-map-default"
+                        class="region-map"
+                        src="@/assets/images/casc_regions_map.png"
+                        alt=""
+                    >
+                    <img    
+                        v-for="region in regions"
+                        :id="`region-map-${region}`"
+                        :key="`map-${region}`" 
+                        class="region-map hide"
+                        :src="getMapImageUrl(region)"
+                        alt=""
+                    >
+                </div>
+                <div id="violin-container" :class="{ mobile: mobileView}">
+                    <img
+                        v-for="region in regions"
+                        :id="`region-violin-${region}`"
+                        :key="`violin-${region}`"
+                        class="violin-chart hide"
+                        :src=getViolinImageUrl(region)
+                        alt=""
+                    >
+                </div>
+            </div>
+        </template>
+        <!-- EXPLANATION -->
+        <template #belowExplanation>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus cum dicta, quaerat accusantium et architecto doloremque aspernatur dolorem eius veniam, accusamus, necessitatibus beatae itaque. Praesentium vitae sequi aut minus.</p>
+        </template>
+    </VizSection>
 </template>
   
 <script setup>
     import { onMounted } from "vue";
     import { isMobile } from 'mobile-device-detect';
     import * as d3 from 'd3';
+    import VizSection from '@/components/VizSection.vue';
     import polarWedges from "@/assets/svgs/polar_wedges.svg";
     import cascMap from "@/assets/svgs/casc_regions_map.svg";
 
     // global variables
     const mobileView = isMobile;
     const regions = ['Midwest', 'Northeast', 'Southeast', 'South-Central', 'Southwest', 'Northwest', 'North-Central']
+    const bodyCSS = window.getComputedStyle(document.body)
+    const focalColor = bodyCSS.getPropertyValue('--color-map-focal');
+    const defaultColor = bodyCSS.getPropertyValue('--color-map-default');
     
     // Declare behavior on mounted
     // functions called here
@@ -90,7 +117,8 @@
         // Show the regional violin chart
         const regionalViolin = document.querySelector('#region-violin-' + regionID);
         regionalViolin.classList.add("show");
-      }
+    }
+
     function mouseoutWedge(event) {
         // Pull the region identifier
         let regionID = event.target.parentElement.id
@@ -103,6 +131,7 @@
         const regionalViolin = document.querySelector('#region-violin-' + regionID);
         regionalViolin.classList.remove("show"); 
     }
+
     function mouseleaveWrapper() {
         // Show the default map
         const defaultMap = document.querySelector('#region-map-default');
@@ -112,6 +141,7 @@
         d3.selectAll(".wedge").selectAll('polygon')
             .style("fill-opacity", 0)
     }
+
     function addInteractions() {
         // set viewbox for svg with wedges
         const wedgesSVG = d3.select("#wedges-svg")
@@ -151,10 +181,10 @@
 
     function showSelectedRegion(svg, region) {
         svg.selectAll(".CASC_region")
-            .style("fill", "#ffffff")
+            .style("fill", defaultColor)
             .style("opacity", 1)
         svg.select("#" + region)
-            .style("fill", "#E48951")
+            .style("fill", focalColor)
             .style("fill-opacity", 0.5)
 
         // Show the regional violin chart
@@ -169,10 +199,10 @@
         // Highlight that region on the map while dehighlighting other regions
         const cascSVG = d3.select("#casc-svg")
         cascSVG.selectAll(".CASC_region")
-            .style("fill", "#ffffff")
+            .style("fill", defaultColor)
             .style("opacity", 1)
         cascSVG.selectAll("#" + regionID)
-            .style("fill", "#E48951")
+            .style("fill", focalColor)
             .style("fill-opacity", 0.5)
 
         // Show the regional violin chart while hiding other violin charts
@@ -190,7 +220,7 @@
         max-width: 1200px;
         margin: 0 auto 0 auto;
         grid-template-columns: 80% 20%;
-        grid-template-rows:  70vh;
+        grid-template-rows:  90vh;
         grid-template-areas:
             "radial violin";
     }
@@ -255,10 +285,15 @@
         display: inline;
     }
 </style>
+
 <style lang="scss">
+/* css for elements added/classed w/ d3 */
     .wedge polygon {
         fill: var(--color-background);
         stroke: none;
+    }
+    .polarAxisText {
+        pointer-events: none;
     }
 </style>
   
