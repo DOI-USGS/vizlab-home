@@ -17,16 +17,20 @@
       <p v-html="text.paragraph2" />
     </template>
     <template #figures>
+      <!-- examples using custom layout class configurations set up in VizSection.vue -->
+      <!-- single, full-width centered image -->
       <div class="single">
         <figure>
           <img src="@/assets/images/casc_regions_map.png">
         </figure>
       </div>
-      <div class="group single maxWidth">
+      <!-- single, full-width centered image with max width of 1500 pixels -->
+      <div class="single maxWidth">
         <figure>
           <img src="@/assets/images/casc_regions_map.png">
         </figure>
       </div>
+      <!-- images placed in css grid with two columns -->
       <div class="group two">
         <figure>
           <img src="@/assets/images/casc_regions_map.png">

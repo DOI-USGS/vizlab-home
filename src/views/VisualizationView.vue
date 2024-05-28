@@ -39,8 +39,8 @@
   import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
   import AuthorshipSection from '@/components/AuthorshipSection.vue';
-  import RegionalViolins from '.././components/RegionalViolins.vue';
-  import BarChartExample from '.././components/BarChartExample.vue';
+  import RegionalViolins from '@/components/RegionalViolins.vue';
+  import BarChartExample from '@/components/BarChartExample.vue';
 
   // global variables
   const mobileView = isMobile;
