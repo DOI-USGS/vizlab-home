@@ -18,7 +18,13 @@ Include any extra information or considerations for reviewers.
 - [ ] Ensure that code changes adhere to best practices documented in `README.md`
 - [ ] Clean the code the way Vue likes it - run `npm run lint --fix`
 - [ ] Document which browsers the site has been tested on:
-  - [ ] Chrome
-  - [ ] Safari
-  - [ ] Edge
-  - [ ] Firefox
+  - Desktop/laptop
+    - [ ] Chrome
+    - [ ] Safari
+    - [ ] Edge
+    - [ ] Firefox
+  - Mobile device
+    - [ ] Chrome
+    - [ ] Safari
+    - [ ] Edge
+    - [ ] Firefox
