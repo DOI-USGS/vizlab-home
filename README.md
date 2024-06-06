@@ -55,15 +55,14 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Delete `'src/components/RegionalViolins.vue'`, the 16 associated `'.png'` files in `'src/assets/images'`, and the two `'.svg'` files in `'src/assets/svgs'`
     * [ ] In `'src/views/VisualizationView.vue'` delete the import statements for both components in the `<script setup>` section and the references to the components in the html `<template>`
     * [ ] Also delete the two example banner images in `'src/assets/images'` used as placeholders in the example section titles
-3. Update project-specific attributions and references
+3. If not using, delete the section title template component from the site
+    * [ ] `'src/components/SectionTitle.vue'`
+4. Update project-specific attributions and references
     * [ ] Update content of `'src/text/authors.js'` to list project authors. Do not edit the structure of this file
     * [ ] Update content of `'src/text/references.js'` to list project references. Do not edit the structure of this file
     * [ ] List contributors in `'index.html'`
     * [ ] Update keywords in `'index.html'`
-4. Update text in `'src/assets/text/text.js'`. The `sections` nested object is set up with the attributes needed to to populate section titles adding using the `'src/components/VizSection.vue'` template, but could also be used without that template. Text for each component that will be added to `'src/views/VisualizationView.vue'` should be added as a named object to the `components` nested object. It will be passed dynamically to each component (see current setup where text is passed to each of the three example components). Delete unused placeholder text.
-5. If not using, delete template components from the site
-    * [ ] `'src/components/VizSection.vue'`
-    * [ ] `'src/components/SectionTitle.vue'`
+5. Update text in `'src/assets/text/text.js'`. The `sections` nested object is set up with the attributes needed to to populate section titles adding using the `'src/components/VizSection.vue'` template, but could also be used without that template. Text for each component that will be added to `'src/views/VisualizationView.vue'` should be added as a named object to the `components` nested object. It will be passed dynamically to each component (see current setup where text is passed to each of the three example components). Delete unused placeholder text.
 6. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
 7. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. Key steps that relate to template content include:
     * [ ] To work with the template set up in `'index.html'`, the meta card image for the site must be saved as a `.webp` image to the _prod_ `S3` bucket in the following location: `visualizations/images/%VITE_APP_TITLE%_metacard.webp`, e.g., `visualizations/images/vue3-template_metacard.webp`.
@@ -87,6 +86,7 @@ When setting up a new project you'll need to take the following steps:
         * `'HeaderUSWDSBanner.vue'`
         * `'PreFooterCodeLinks.vue'`
         * `'ReferencesSection.vue'`
+        * `'VizSection.vue'` _(see caveat in 4., below)_
         * `'WindowSize.vue'`
         * `'WorkInProgressWarning.vue'`
     * `'src/router/index.js'`
@@ -119,7 +119,7 @@ When setting up a new project you'll need to take the following steps:
       * Any edits to `'package.json'` will require re-running `npm install`, which will update `'package-lock.json'`. **Be sure to commit and push any changes to `'package-lock.json'`**.
     * `'src/main.js'` 
     * `'vite.config.mjs'`. 
-4. The template components `'src/components/SectionTitle.vue'` and `'src/components/VizSection.vue'` are designed to be flexible, but may require additional customization to work in your site. Editing them is fine. If you think your edits could be useful in other sites, please submit a MR to the `vue3-template` repo.
+4. The template components `'src/components/SectionTitle.vue'` and `'src/components/VizSection.vue'` are designed to be flexible, but may require additional customization to work in your site. Editing them is fine, but note that `'src/components/ReferencesSection.vue'` and `'src/components/AuthorshipSection.vue'` make use of the `'VizSection.vue'` template, so please do not make breaking changes. If you think your edits could be useful in other sites, please submit a MR to the `vue3-template` repo.
 5. Import and use any new components in `src/views/VisualizationView.vue`, and import subcomponents (e.g., `'src/components/VizSection.vue'`) directly in components.
 6. Development conventions/best practices
     * Use existing folder structure for assets - e.g., images in `'src/assets/images'`, svgs in `'src/assets/svgs'`.
