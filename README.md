@@ -5,7 +5,7 @@ This project serves as a template for our site builds. It uses Vue 3 and Vite (c
 ## To build the website locally
 Clone the repo. In the directory, run `npm install` to install the required modules. This repository requires `npm v20` to run. If you are using a later version of `npm`, you may [try using `nvm` to manage multiple versions of npm](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e).
 
-Once the dependencies have been installed, run `npm run dev` to run locally from your browser.
+Once the dependencies have been installed, run `npm run dev` to run the site locally from your browser.
 
 ## Project name handling
 The environment variable `VITE_APP_TITLE` (set in `'.env'`) is a key variable. **The value for `VITE_APP_TITLE` must match the repo name** (here `vue3-template`). Note that our repo naming convention is to use dashes ('-') instead of underscores ('_') to separate words, as it looks better in the final url. 
@@ -28,10 +28,16 @@ This website template uses Vue 3 and the `<script setup>` composition API syntax
 ## Jenkins setup
 The Jenkins setup has been adjusted slightly to use the new `VITE_{}` environment variables. Note that the website extension template set up in `'jenkins/Jenkinsfile.build'` points to GitLab (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). This works with our new development workflow, where repos are developed on GitLab and mirrored to GitHub (e.g., ['vizlab-bottled-water'](https://github.com/DOI-USGS/vizlab-bottled-water)) once reviewed, but for old products that are hosted entirely on GitHub (e.g., [what-is-drought](https://github.com/DOI-USGS/what-is-drought)) and must be built from the GitHub repo, the beginning of this url needs to be revised to point to GitHub instead of GitLab (e.g., `"https://github.com/usgs-vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`). Instructions for setting up the website build on Jenkins are [here](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/Shared%20Documents/Function%20-%20Vizlab/Process%20Guides/Jenkins_GitLab_WebsiteBuild.docx?d=w8fea5277ecbc40579de24656284bc3e8&csf=1&web=1&e=7w38oB). Hayley or Cee should complete this step.
 
+## Template components
+This repo contains two template components, which can be used to structure page content. Template components can be used repeatedly and can easily be customized by passing content into the templates:
+  * `'SectionTitle.vue'` adds full-width banner section titles with background images. It is imported in `'VisualizationView.vue'` and is used multiple times to add section titles. The content for the titles is specified in `'src/assets/text/text.js'` and is dynamically passed to the `'SectionTitle.vue'` template in `'VisualizationView.vue'`.
+  * `'VizSection.vue'` sets up a simple structure for a page section, with template slots for a heading, text paragraphs, a figure, and a figure caption. The template is designed to be flexible - each element is optional. A fully custom figure can be inserted into the figure slot (as in the `'BarChartExample.vue'` and `'RegionalViolins.vue'` example components), or you can make use of existing custom classes to place figures or images (as in the `'IntroSection.vue'` example component). Note that `'VizSection.vue'` is imported directly in the components that make use of it, and is not imported directly in `'VisualizationView.vue'`.
+
 ## Example components
-At the moment this repo contains two example components, both of which use `D3`. 
-  * `RegionalViolins.vue` pulls in part of the regional section from [Drought timeline](https://labs.waterdata.usgs.gov/visualizations/drought-timeline/index.html#/). Here, a R-generated svg is loaded into the component, and `D3` is used to layer on interaction, showing and hiding map images and violin charts for different regions. The images were added using a `v-for` pattern and dynamic filepath urls. This component also has a mobile-specific layout.
-  * `BarChartExample.vue` pulls in the water bottling facility bar chart and state dropdown from [Bottled water](https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html). It loads in a csv and uses it to build an updating `D3` bar chart.
+At the moment this repo contains three example components, two of which use `D3`. 
+  * `'IntroSection.vue'` is a simple example component that demonstrates how to make use of the `'VizSection.vue'` and `'SectionTitle.vue'` template components.
+  * `'RegionalViolins.vue'` pulls in part of the regional section from [Drought timeline](https://labs.waterdata.usgs.gov/visualizations/drought-timeline/index.html#/). Here, a R-generated svg is loaded into the component, and `D3` is used to layer on interaction, showing and hiding map images and violin charts for different regions. The images were added using a `v-for` pattern and dynamic filepath urls. This component also has a mobile-specific layout. It makes use of the `'VizSection.vue'` template to structure the content.
+  * `'BarChartExample.vue'` pulls in the water bottling facility bar chart and state dropdown from [Bottled water](https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html). It loads in a csv and uses it to build an updating `D3` bar chart. It makes use of the `'VizSection.vue'` template to structure the content.
 
 ## Steps when using as template for new project
 When setting up a new project you'll need to take the following steps:
@@ -43,17 +49,23 @@ When setting up a new project you'll need to take the following steps:
     * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{project-name}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{project_name}`
       * Note that the template repo urls provided in these files follow the convention we use when repos are mirrored from GitLab to GitHub, where the GitLab repo name (identical to `%VITE_APP_TITLE%`) is prefixed with `vizlab-`, e.g., `"https://github.com/DOI-USGS/vizlab-{project_name}.git"`.
-2. Delete example components and remove them from the site
+2. Delete example components and content and remove them from the site
+    * [ ] Delete `'src/components/IntroSection.vue'`
     * [ ] Delete `'src/components/BarChartExample.vue'` and `'public/state_facility_type_summmary.csv'`
     * [ ] Delete `'src/components/RegionalViolins.vue'`, the 16 associated `'.png'` files in `'src/assets/images'`, and the two `'.svg'` files in `'src/assets/svgs'`
     * [ ] In `'src/views/VisualizationView.vue'` delete the import statements for both components in the `<script setup>` section and the references to the components in the html `<template>`
+    * [ ] Also delete the two example banner images in `'src/assets/images'` used as placeholders in the example section titles
 3. Update project-specific attributions and references
     * [ ] Update content of `'src/text/authors.js'` to list project authors. Do not edit the structure of this file
     * [ ] Update content of `'src/text/references.js'` to list project references. Do not edit the structure of this file
     * [ ] List contributors in `'index.html'`
     * [ ] Update keywords in `'index.html'`
-4. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
-5. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. Key steps that relate to template content include:
+4. Update text in `'src/assets/text/text.js'`. The `sections` nested object is set up with the attributes needed to to populate section titles adding using the `'src/components/VizSection.vue'` template, but could also be used without that template. Text for each component that will be added to `'src/views/VisualizationView.vue'` should be added as a named object to the `components` nested object. It will be passed dynamically to each component (see current setup where text is passed to each of the three example components). Delete unused placeholder text.
+5. If not using, delete template components from the site
+    * [ ] `'src/components/VizSection.vue'`
+    * [ ] `'src/components/SectionTitle.vue'`
+6. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
+7. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. Key steps that relate to template content include:
     * [ ] To work with the template set up in `'index.html'`, the meta card image for the site must be saved as a `.webp` image to the _prod_ `S3` bucket in the following location: `visualizations/images/%VITE_APP_TITLE%_metacard.webp`, e.g., `visualizations/images/vue3-template_metacard.webp`.
     * [ ] Once known, be sure to add the release date to `'index.html'` - the `datePublished` attribute in the metadata.
     * [ ] Before migration to DGEC, update `'code.json'` to have `"status": "Production"` and to specify the `"metadataLastUpdated"` date.
@@ -104,11 +116,12 @@ When setting up a new project you'll need to take the following steps:
     * `'package.json'` (may need additional edits if more packages are needed, see 3., below) 
 3. Depending on what visualization tools you are using, you may need to add additional packages, which will require edits to some or all of the following files (reach out to Hayley with questions):
     * `'package.json'`
+      * Any edits to `'package.json'` will require re-running `npm install`, which will update `'package-lock.json'`. **Be sure to commit and push any changes to `'package-lock.json'`**.
     * `'src/main.js'` 
     * `'vite.config.mjs'`. 
-
-4.  Any edits to `'package.json'` will require re-running `npm install`, which will update `'package-lock.json'`. **Be sure to commit and push any changes to `'package-lock.json'`**.
-5.  Development conventions/best practices
+4. The template components `'src/components/SectionTitle.vue'` and `'src/components/VizSection.vue'` are designed to be flexible, but may require additional customization to work in your site. Editing them is fine. If you think your edits could be useful in other sites, please submit a MR to the `vue3-template` repo.
+5. Import and use any new components in `src/views/VisualizationView.vue`, and import subcomponents (e.g., `'src/components/VizSection.vue'`) directly in components.
+6. Development conventions/best practices
     * Use existing folder structure for assets - e.g., images in `'src/assets/images'`, svgs in `'src/assets/svgs'`.
     * Place data files (e.g., `.csv` or `.json` files) in the `public` directory.
     * Page styling with `css`
@@ -117,9 +130,9 @@ When setting up a new project you'll need to take the following steps:
       * Use `'main.css'` for global page content styling that is exclusive of the USGS header and footer and is not component-specific (e.g., defining styles for standard text or figure container `<div>` elements, styling all section titles, etc.). For all colors, remember to reference color variables set in `'src/assets/css/base.css'`, e.g., `color: var(--color-title-text);`
       * Put component-specific styling in the `<style>` tags of specific components. Again, for all colors, remember to reference color variables set in `'src/assets/css/base.css'`, e.g., `color: var(--color-title-text);`
     * Page text setup
-      * TBD 
+      * All page text should be added directly to `'src/assets/text/text.js'`. The master text object from that file is automatically imported in `'src/views/VisualizationView.vue'` and used to set the page title and pass content to populate the section titles (which make use of the 'SectionTitle.vue' template). In addition, nested objects containing text for each component are passed to each component as a prop, and then accessed in each component to place the text into the `'VizSection.vue'` template component, or directly into the component, if not using the `'VizSection.vue'` template. With this set up, all of the page text, including titles, section title image alt text, and page text is in a single .js file, which makes it easier to edit, particularly by a team member who is not familiar with Vue.
     * Class and ID naming conventions
       * TBD
+      * Do not use spaces in class or ID names
     * JavaScript conventions
       * TBD  
-6.  Import and use any new components in `src/views/VisualizationView.vue`, and import subcomponents directly in components.
