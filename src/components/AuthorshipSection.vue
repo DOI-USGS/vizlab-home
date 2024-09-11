@@ -17,8 +17,8 @@
         class="text-content"
       >
         <p>
+          This site was created by the <a href='https://labs.waterdata.usgs.gov/visualizations/' target='_blank'>USGS Vizlab</a>.
           <span id="primary-author-statment">
-            The development of {{ appTitle }} was led by 
             <span
               v-for="(author, index) in primaryAuthors" 
               :id="`initial-${author.initials}`"
@@ -32,12 +32,16 @@
               />
               <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">, </span>
               <span v-if="index == Object.keys(primaryAuthors).length - 2"> and </span>
-            </span>.
+            </span>
+            <span> led the project</span>
+            <span v-if="!showAdditionalAuthors">.</span>
+            <span v-else>,</span>
           </span>
           <span
             v-if="showAdditionalAuthors"
             id="additional-author-statement"
           >
+            with contributions from
             <span
               v-for="(author, index) in additionalAuthors" 
               :id="`author-${author.initials}`"
@@ -57,9 +61,7 @@
               <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">, </span>
               <span v-if="index == Object.keys(additionalAuthors).length - 2"> and </span>
             </span>
-            <span>
-              also contributed to the site.
-            </span>
+            <span>.</span>
           </span>
           <span
             v-if="showContributionStatements"
@@ -100,9 +102,7 @@
   import VizSection from '@/components/VizSection.vue';
   import authors from "@/assets/text/authors";
 
-  // Pull in title of page from Vue environment (set in .env)
-  const appTitle = import.meta.env.VITE_APP_TITLE;
-
+  // global variables
   const primaryAuthors = authors.primaryAuthors;
   const additionalAuthors = authors.additionalAuthors;
   // Turn on or off attribution for all authors
@@ -110,7 +110,7 @@
   // If showAuthors is true, turn on or off attribution for additional authors
   const showAdditionalAuthors = ref(null);
   // If showAuthors is true, turn on or off contribution statements for ALL authors
-  const showContributionStatements = ref(true);
+  const showContributionStatements = ref(false);
   // If showAuthors is true and if showContributionStatements is true, turn on or off contribution statements for ADDITIONAL authors
   const showAdditionalContributionStatement = ref(null);
 
