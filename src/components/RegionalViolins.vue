@@ -3,7 +3,7 @@
     <VizSection
         id="violins"
         :figures="true"
-        :fig-caption="false"
+        :fig-caption="true"
     >
         <!-- HEADING -->
         <template #heading>
@@ -59,6 +59,10 @@
                 </div>
             </div>
         </template>
+        <!-- CAPTION -->
+        <template #figureCaption>
+            <p v-html="text.chartAttribution" />
+         </template>
         <!-- EXPLANATION -->
         <template #belowExplanation>
             <p v-html="text.paragraph2" />
