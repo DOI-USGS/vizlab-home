@@ -5,7 +5,7 @@
       class="warning-open"
     >
       ATTENTION! - You are viewing a prototype application that is in active development.
-      Contents seen here are for place holding and development only. <strong>DO NOT USE</strong> information
+      Contents seen here are for placeholding and development only. <strong>DO NOT USE</strong> information
       contained in this application for ANY purpose.
     </p>
     <button @click="toggleWarning">
