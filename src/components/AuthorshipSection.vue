@@ -6,9 +6,9 @@
   >
     <!-- HEADING -->
     <template #heading>
-      <h2>
-        Authors
-      </h2>
+      <h1 v-if="titleLevel === '1'" v-html="authors.title" />
+      <h2 v-if="titleLevel === '2'" v-html="authors.title" />
+      <h3 v-if="titleLevel === '3'" v-html="authors.title" />
     </template>
     <template #aboveExplanation>
       <div
@@ -17,7 +17,7 @@
         class="text-content"
       >
         <p>
-          This site was created by the <a href='https://labs.waterdata.usgs.gov/visualizations/' target='_blank'>USGS Vizlab</a>.
+          <span v-html="authors.leadText" />
           <span id="primary-author-statment">
             <span
               v-for="(author, index) in primaryAuthors" 
@@ -30,8 +30,9 @@
                 target="_blank"
                 v-text="author.fullName"
               />
-              <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">, </span>
-              <span v-if="index == Object.keys(primaryAuthors).length - 2"> and </span>
+              <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">,</span>
+              <span v-if="index != Object.keys(primaryAuthors).length - 1">&nbsp;</span>
+              <span v-if="index == Object.keys(primaryAuthors).length - 2">{{ authors.conjunctionWord }}&nbsp;</span>
             </span>
             <span> led the project</span>
             <span v-if="!showAdditionalAuthors">.</span>
@@ -58,8 +59,9 @@
                 v-if="!author.profile_link"
                 v-text="author.fullName"
               />
-              <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">, </span>
-              <span v-if="index == Object.keys(additionalAuthors).length - 2"> and </span>
+              <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">,</span>
+              <span v-if="index != Object.keys(additionalAuthors).length - 1">&nbsp;</span>
+              <span v-if="index == Object.keys(additionalAuthors).length - 2">{{ authors.conjunctionWord }}&nbsp;</span>
             </span>
             <span>.</span>
           </span>
@@ -100,11 +102,20 @@
 <script setup>
   import { ref, onMounted } from 'vue';
   import VizSection from '@/components/VizSection.vue';
-  import authors from "@/assets/text/authors";
+
+  // define props
+  const props = defineProps({
+    titleLevel: {
+      type: String,
+    },
+    authors:{
+      type: Object,
+    },
+  })
 
   // global variables
-  const primaryAuthors = authors.primaryAuthors;
-  const additionalAuthors = authors.additionalAuthors;
+  const primaryAuthors = props.authors.primaryAuthors;
+  const additionalAuthors = props.authors.additionalAuthors;
   // Turn on or off attribution for all authors
   const showAuthors = ref(null);
   // If showAuthors is true, turn on or off attribution for additional authors

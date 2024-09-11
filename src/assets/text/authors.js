@@ -1,4 +1,7 @@
 export default {
+    title: "Authors",
+    leadText: "This site was created by the <a href='https://labs.waterdata.usgs.gov/visualizations/' target='_blank'>USGS Vizlab</a>. ",
+    conjunctionWord: "and",
     // do not delete section. delete individuals as needed. modify content as needed
     // currently only 'fullName', 'firstName', 'initials', 'profile_link', and 'contribution' are used
     primaryAuthors: [

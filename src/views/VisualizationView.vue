@@ -26,8 +26,8 @@
     <BarChartExample 
       :text="text.components.BarChartExample"
     />
-    <ReferencesSection />
-    <AuthorshipSection />
+    <ReferencesSection titleLevel="2" :references="references"/>
+    <AuthorshipSection titleLevel="2" :authors="authors"/>
   </section>
 </template>
 
@@ -35,6 +35,8 @@
   import { isMobile } from 'mobile-device-detect';
 
   import text from "@/assets/text/text.js";
+  import references from "@/assets/text/references";
+  import authors from "@/assets/text/authors";
   import IntroSection from '@/components/IntroSection.vue'
   import SectionTitle from '@/components/SectionTitle.vue';
   import ReferencesSection from '@/components/ReferencesSection.vue';
