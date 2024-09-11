@@ -68,7 +68,7 @@ When setting up a new project you'll need to take the following steps:
     * [ ] To work with the template set up in `'index.html'`, the meta card image for the site must be saved as a `.webp` image to the _prod_ `S3` bucket in the following location: `visualizations/images/%VITE_APP_TITLE%_metacard.webp`, e.g., `visualizations/images/vue3-template_metacard.webp`.
     * [ ] Once known, be sure to add the release date to `'index.html'` - the `datePublished` attribute in the metadata.
     * [ ] Before migration to DGEC, update `'code.json'` to have `"status": "Production"` and to specify the `"version"` (e.g.,`1.0.0`) and `"metadataLastUpdated"` date.
-    * [ ] After migration to DGEC, update the `version` attribute in `'package.json'` to match the release version on _GitHub_. Push the change to the repo on _GitLab_. The change will be mirrored to the repo on GitHub.
+    * [ ] After migration to DGEC, update the `version` attribute in `'package.json'` to match the release version on _GitHub_. Re-run `npm install`, which will regenerate `'package-lock.json'`. Push the changed `'package.json'` and `'package-lock.json'` to the repo on _GitLab_ and open a MR. The changes will be mirrored to the repo on GitHub.
  
 ## Notes for development when using this template
 1. Please do not delete or make any modifications to the following components/files:
