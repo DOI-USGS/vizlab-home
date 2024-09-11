@@ -48,6 +48,7 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
     * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{app_title}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{app_title}`
+    * [ ] Update the `{project_description}` in `'code.json'` to match the `VITE_APP_DESCRIPTION`
 2. Delete example components and content and remove them from the site
     * [ ] Delete `'src/components/IntroSection.vue'`
     * [ ] Delete `'src/components/BarChartExample.vue'` and `'public/state_facility_type_summmary.csv'`
@@ -66,8 +67,8 @@ When setting up a new project you'll need to take the following steps:
 7. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. Key steps that relate to template content include:
     * [ ] To work with the template set up in `'index.html'`, the meta card image for the site must be saved as a `.webp` image to the _prod_ `S3` bucket in the following location: `visualizations/images/%VITE_APP_TITLE%_metacard.webp`, e.g., `visualizations/images/vue3-template_metacard.webp`.
     * [ ] Once known, be sure to add the release date to `'index.html'` - the `datePublished` attribute in the metadata.
-    * [ ] Before migration to DGEC, update `'code.json'` to have `"status": "Production"` and to specify the `"metadataLastUpdated"` date.
-    * [ ] After migration to DGEC, update the `version` attribute in `'package.json'` to match the release version on _GitHub_. Push the change to the repo on _GitLab_. The change will be mirrored to the repo on GitHub.
+    * [ ] Before migration to DGEC, update `'code.json'` to have `"status": "Production"` and to specify the `"version"` (e.g.,`1.0.0`) and `"metadataLastUpdated"` date.
+    * [ ] After migration to DGEC, update the `version` attribute in `'package.json'` to match the release version on _GitHub_. Re-run `npm install`, which will regenerate `'package-lock.json'`. Push the changed `'package.json'` and `'package-lock.json'` to the repo on _GitLab_ and open a MR. The changes will be mirrored to the repo on GitHub.
  
 ## Notes for development when using this template
 1. Please do not delete or make any modifications to the following components/files:
