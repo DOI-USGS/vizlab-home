@@ -84,6 +84,7 @@
     display: flex;
     justify-content: center;
     font-style: italic;
+    margin-bottom: $spacing;
   }
 
   /*#####CUSTOMIZATION CLASSES#####*/

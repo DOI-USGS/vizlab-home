@@ -2,7 +2,7 @@
     <VizSection
         id="bar-chart"
         :figures="true"
-        :fig-caption="false"
+        :fig-caption="treemapSquarify"
     >
         <!-- HEADING -->
         <template #heading>
@@ -23,10 +23,13 @@
                 </div>
             </div>
         </template>
+        <!-- CAPTION -->
+         <template #figureCaption>
+            <p v-html="text.chartAttribution" />
+         </template>
         <!-- EXPLANATION -->
         <template #belowExplanation>
             <p v-html="text.paragraph2" />
-            <p v-html="text.paragraph3" />
         </template>
     </VizSection>
 </template>

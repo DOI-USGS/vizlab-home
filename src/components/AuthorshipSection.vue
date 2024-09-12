@@ -6,9 +6,9 @@
   >
     <!-- HEADING -->
     <template #heading>
-      <h2>
-        Authors
-      </h2>
+      <h1 v-if="titleLevel === '1'" v-html="authors.title" />
+      <h2 v-if="titleLevel === '2'" v-html="authors.title" />
+      <h3 v-if="titleLevel === '3'" v-html="authors.title" />
     </template>
     <template #aboveExplanation>
       <div
@@ -17,8 +17,8 @@
         class="text-content"
       >
         <p>
+          <span v-html="authors.leadText" />
           <span id="primary-author-statment">
-            The development of {{ appTitle }} was led by 
             <span
               v-for="(author, index) in primaryAuthors" 
               :id="`initial-${author.initials}`"
@@ -30,14 +30,19 @@
                 target="_blank"
                 v-text="author.fullName"
               />
-              <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">, </span>
-              <span v-if="index == Object.keys(primaryAuthors).length - 2"> and </span>
-            </span>.
+              <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">,</span>
+              <span v-if="index != Object.keys(primaryAuthors).length - 1">&nbsp;</span>
+              <span v-if="index == Object.keys(primaryAuthors).length - 2">{{ authors.conjunctionWord }}&nbsp;</span>
+            </span>
+            <span> led the project</span>
+            <span v-if="!showAdditionalAuthors">.</span>
+            <span v-else>,</span>
           </span>
           <span
             v-if="showAdditionalAuthors"
             id="additional-author-statement"
           >
+            with contributions from
             <span
               v-for="(author, index) in additionalAuthors" 
               :id="`author-${author.initials}`"
@@ -54,12 +59,11 @@
                 v-if="!author.profile_link"
                 v-text="author.fullName"
               />
-              <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">, </span>
-              <span v-if="index == Object.keys(additionalAuthors).length - 2"> and </span>
+              <span v-if="index != Object.keys(additionalAuthors).length - 1 && Object.keys(additionalAuthors).length > 2">,</span>
+              <span v-if="index != Object.keys(additionalAuthors).length - 1">&nbsp;</span>
+              <span v-if="index == Object.keys(additionalAuthors).length - 2">{{ authors.conjunctionWord }}&nbsp;</span>
             </span>
-            <span>
-              also contributed to the site.
-            </span>
+            <span>.</span>
           </span>
           <span
             v-if="showContributionStatements"
@@ -98,19 +102,26 @@
 <script setup>
   import { ref, onMounted } from 'vue';
   import VizSection from '@/components/VizSection.vue';
-  import authors from "@/assets/text/authors";
 
-  // Pull in title of page from Vue environment (set in .env)
-  const appTitle = import.meta.env.VITE_APP_TITLE;
+  // define props
+  const props = defineProps({
+    titleLevel: {
+      type: String,
+    },
+    authors:{
+      type: Object,
+    },
+  })
 
-  const primaryAuthors = authors.primaryAuthors;
-  const additionalAuthors = authors.additionalAuthors;
+  // global variables
+  const primaryAuthors = props.authors.primaryAuthors;
+  const additionalAuthors = props.authors.additionalAuthors;
   // Turn on or off attribution for all authors
   const showAuthors = ref(null);
   // If showAuthors is true, turn on or off attribution for additional authors
   const showAdditionalAuthors = ref(null);
   // If showAuthors is true, turn on or off contribution statements for ALL authors
-  const showContributionStatements = ref(true);
+  const showContributionStatements = ref(false);
   // If showAuthors is true and if showContributionStatements is true, turn on or off contribution statements for ADDITIONAL authors
   const showAdditionalContributionStatement = ref(null);
 

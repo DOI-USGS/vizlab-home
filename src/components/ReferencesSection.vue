@@ -6,9 +6,9 @@
   >
     <!-- HEADING -->
     <template #heading>
-      <h2>
-        References
-      </h2>
+      <h1 v-if="titleLevel === '1'" v-html="references.title" />
+      <h2 v-if="titleLevel === '2'" v-html="references.title" />
+      <h3 v-if="titleLevel === '3'" v-html="references.title" />
     </template>
     <template #aboveExplanation>
       <div>
@@ -37,7 +37,16 @@
 
 <script setup>
   import VizSection from '@/components/VizSection.vue';
-  import references from "@/assets/text/references";
+
+  // define props
+  defineProps({
+    titleLevel: {
+      type: String,
+    },
+    references: {
+      type: Object,
+    },
+  })
 </script>
 
 <style scoped lang="scss">

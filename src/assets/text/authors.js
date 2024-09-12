@@ -1,4 +1,7 @@
 export default {
+    title: "Authors",
+    leadText: "This site was created by the <a href='https://labs.waterdata.usgs.gov/visualizations/' target='_blank'>USGS Vizlab</a>. ",
+    conjunctionWord: "and",
     // do not delete section. delete individuals as needed. modify content as needed
     // currently only 'fullName', 'firstName', 'initials', 'profile_link', and 'contribution' are used
     primaryAuthors: [
@@ -44,33 +47,6 @@ export default {
         contribution: 'wrote the narrative for the site'
       },
       {
-        firstName: 'Aileen',
-        lastName: 'Clarke',
-        fullName: 'Aileen Clarke',
-        initials: 'AC',
-        profile_link: 'https://www.usgs.gov/staff-profiles/aileen-m-clarke',
-        role: 'contributor',
-        contribution: 'contributed to website development'
-      },
-      {
-        firstName: 'Leo',
-        lastName: 'Ivey',
-        fullName: 'Leo Ivey',
-        initials: 'LI',
-        profile_link: null,
-        role: 'contributor',
-        contribution: 'created data visualizations'
-      },
-      {
-        firstName: 'Maggie',
-        lastName: 'Jaenicke',
-        fullName: 'Maggie Jaenicke',
-        initials: 'MJ',
-        profile_link: 'https://www.usgs.gov/staff-profiles/margaret-maggie-jaenicke',
-        role: 'contributor',
-        contribution: 'contributed to website development'
-      },
-      {
         firstName: 'Jeffrey',
         lastName: 'Kwang',
         fullName: 'Jeffrey Kwang',
@@ -89,15 +65,6 @@ export default {
         contribution: 'created data visualizations'
       },
       {
-        firstName: 'Cee',
-        lastName: 'Nell',
-        fullName: 'Cee Nell',
-        initials: 'CN',
-        profile_link: 'https://www.usgs.gov/staff-profiles/cee-nell',
-        role: 'team lead',
-        contribution: 'acted in an advisory role, contributed to website development, and reviewed code'
-      },
-      {
         firstName: 'Kaysa',
         lastName: 'Vaarre-Lamoureux',
         fullName: 'Kaysa Vaarre-Lamoureux',
@@ -105,6 +72,15 @@ export default {
         profile_link: null,
         role: 'contributor',
         contribution: 'created data visualizations'
+      },
+      {
+        firstName: 'Cee',
+        lastName: 'Nell',
+        fullName: 'Cee Nell',
+        initials: 'CN',
+        profile_link: 'https://www.usgs.gov/staff-profiles/cee-nell',
+        role: 'team lead',
+        contribution: 'acted in an advisory role, contributed to website development, and reviewed code'
       }
     ]
 };

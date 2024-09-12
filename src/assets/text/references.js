@@ -1,4 +1,5 @@
 export default {
+  title: "References",
   references: [
     {
       reference: "Reference 1.",
