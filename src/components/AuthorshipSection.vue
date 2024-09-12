@@ -33,16 +33,17 @@
               <span v-if="index != Object.keys(primaryAuthors).length - 1 && Object.keys(primaryAuthors).length > 2">,</span>
               <span v-if="index != Object.keys(primaryAuthors).length - 1">&nbsp;</span>
               <span v-if="index == Object.keys(primaryAuthors).length - 2">{{ authors.conjunctionWord }}&nbsp;</span>
+              <span v-if="index == Object.keys(primaryAuthors).length - 1">&nbsp;</span>
             </span>
-            <span> led the project</span>
+            <span v-text="authors.leadPhrase" />
             <span v-if="!showAdditionalAuthors">.</span>
-            <span v-else>,</span>
+            <span v-else>, </span>
           </span>
           <span
             v-if="showAdditionalAuthors"
             id="additional-author-statement"
           >
-            with contributions from
+            {{ authors.contributionsPhrase }}
             <span
               v-for="(author, index) in additionalAuthors" 
               :id="`author-${author.initials}`"
@@ -114,6 +115,7 @@
   })
 
   // global variables
+  console.log(props)
   const primaryAuthors = props.authors.primaryAuthors;
   const additionalAuthors = props.authors.additionalAuthors;
   // Turn on or off attribution for all authors
