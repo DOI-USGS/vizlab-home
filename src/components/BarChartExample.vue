@@ -30,7 +30,6 @@
         <!-- EXPLANATION -->
         <template #belowExplanation>
             <p v-html="text.paragraph2" />
-            <p v-html="text.paragraph3" />
         </template>
     </VizSection>
 </template>

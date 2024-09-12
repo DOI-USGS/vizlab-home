@@ -32,7 +32,6 @@ export default {
             heading: "d3 bar chart from data",
             paragraph1: "First paragraph of text.",
             paragraph2: "Second paragraph of text.",
-            paragraph3: "Third paragraph of text.",
             chartAttribution: "Chart by Hayley Corson-Dosch"
         }
     }
