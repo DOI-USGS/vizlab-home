@@ -115,7 +115,6 @@
   })
 
   // global variables
-  console.log(props)
   const primaryAuthors = props.authors.primaryAuthors;
   const additionalAuthors = props.authors.additionalAuthors;
   // Turn on or off attribution for all authors
