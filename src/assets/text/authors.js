@@ -1,91 +1,54 @@
 export default {
     // Do not update title w/o checking with Cee/Hayley - we want this to be consistent across sites
     title: "USGS Vizlab",
-    // Do not update lead text w/o checking with Cee/Hayley - we want this to be consistent across sites
-    leadText: "This site was created by the <a href='https://labs.waterdata.usgs.gov/visualizations/' target='_blank'>USGS Vizlab</a>. ",
-    // in-between text elements specified here, to avoid hard-coding in `AuthorshipSection.vue`
-    conjunctionWord: "and",
-    leadPhrase: "led the project",
-    contributionsPhrase: "with contributions from",
+    // Do not update author text w/o checking with Cee/Hayley - we want this to be consistent across sites
+    authorText: "This site was created by the {projectTeam}. {leadAuthors} led the project with contributions from {additionalAuthors}, and {lastAuthor}.",
     // do not delete section. delete individuals as needed. modify content as needed
     // currently only 'fullName', 'firstName', 'initials', 'profile_link', and 'contribution' are used
-    primaryAuthors: [
+    projectTeam: [
       {
-        firstName: 'Hayley',
-        lastName: 'Corson-Dosch',
-        fullName: 'Hayley Corson-Dosch',
-        initials: 'HCD',
-        profile_link: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch',
-        
-        role: 'lead developer',
-        contribution: 'led the design and development of the website'
+        name: 'USGS Vizlab',
+        link: 'https://labs.waterdata.usgs.gov/visualizations/'
+      }
+    ],
+    leadAuthors: [
+      {
+        name: 'Hayley Corson-Dosch',
+        link: 'https://www.usgs.gov/staff-profiles/hayley-corson-dosch'
       }
     ],
     // do not delete section. delete any or all individuals as needed. modify content as needed
-    // currently only 'fullName', 'firstName', 'initials', 'profile_link', and 'contribution' are used
     additionalAuthors: [
       {
-        firstName: 'Althea',
-        lastName: 'Archer',
-        fullName: 'Althea A. Archer',
-        initials: 'AAA',
-        profile_link: 'https://www.usgs.gov/staff-profiles/althea-archer',
-        role: 'contributor',
-        contribution: 'contributed to website development, created data visualizations and reviewed code'
+        name: 'Althea A. Archer',
+        link: 'https://www.usgs.gov/staff-profiles/althea-archer'
       },
       {
-        firstName: 'Elmera',
-        lastName: 'Azadpour',
-        fullName: 'Elmera Azadpour',
-        initials: 'EA',
-        profile_link: 'https://www.usgs.gov/staff-profiles/elmera-azadpour',
-        role: 'contributor',
-        contribution: 'created data visualizations'
+        name: 'Elmera Azadpour',
+        link: 'https://www.usgs.gov/staff-profiles/elmera-azadpour'
       },
       {
-        firstName: 'Mandie',
-        lastName: 'Carr',
-        fullName: 'Mandie Carr',
-        initials: 'MC',
-        profile_link: 'https://www.usgs.gov/staff-profiles/amanda-carr',
-        role: 'contributor',
-        contribution: 'wrote the narrative for the site'
+        name: 'Mandie Carr',
+        link: 'https://www.usgs.gov/staff-profiles/amanda-carr'
       },
       {
-        firstName: 'Jeffrey',
-        lastName: 'Kwang',
-        fullName: 'Jeffrey Kwang',
-        initials: 'JK',
-        profile_link: 'https://www.usgs.gov/staff-profiles/jeffrey-kwang',
-        role: 'contributor',
-        contribution: 'created data visualizations'
+        name: 'Jeffrey Kwang',
+        link: 'https://www.usgs.gov/staff-profiles/jeffrey-kwang'
       },
       {
-        firstName: 'Anthony',
-        lastName: 'Martinez',
-        fullName: 'Anthony Martinez',
-        initials: 'AM',
-        profile_link: 'https://www.usgs.gov/staff-profiles/anthony-martinez',
-        role: 'contributor',
-        contribution: 'created data visualizations'
+        name: 'Anthony Martinez',
+        link: 'https://www.usgs.gov/staff-profiles/anthony-martinez'
       },
       {
-        firstName: 'Kaysa',
-        lastName: 'Vaarre-Lamoureux',
-        fullName: 'Kaysa Vaarre-Lamoureux',
-        initials: 'KVL',
-        profile_link: null,
-        role: 'contributor',
-        contribution: 'created data visualizations'
-      },
+        name: 'Kaysa Vaarre-Lamoureux',
+        link: null
+      }
+    ],
+    lastAuthor: [
       {
-        firstName: 'Cee',
-        lastName: 'Nell',
-        fullName: 'Cee Nell',
-        initials: 'CN',
-        profile_link: 'https://www.usgs.gov/staff-profiles/cee-nell',
-        role: 'team lead',
-        contribution: 'acted in an advisory role, contributed to website development, and reviewed code'
+        name: 'Cee Nell',
+        link: 'https://www.usgs.gov/staff-profiles/cee-nell'
       }
     ]
+
 };
