@@ -41,7 +41,7 @@
       "{additionalAuthors}": data.additionalAuthors.map(createLink).join(', '),
       "{lastAuthor}": createLink(data.lastAuthor[0])
     };
-    console.log(replacements)
+    
     // Replace placeholders in the authorText
     return data.authorText.replace(/{\w+}/g, (match) => {
       return replacements[match] || match; // Return the replacement or the original text if not found
