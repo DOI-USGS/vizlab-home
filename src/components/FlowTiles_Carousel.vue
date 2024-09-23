@@ -1,46 +1,46 @@
 <template v-slot:figures>
-    <div class="maxWidth carouselContainer">
-        <carousel 
-            class="image-slider"
-            :autoplay="false"
-            :autoplay-hover-pause="true"
-            :per-page="3"
-            navigation-enabled
-            :speed="800"
-        >
-            <slide
-                v-for="chart in charts"
-                :id="`flow-tiles-${chart.id}`"
-                :key="chart.id"
-                class="slide"
-                >
-                <div class="slider-image-container">
-                    <picture>
-                    <source
-                    :srcset="getImgUrl(chart.folder, chart.image_basename, 'png')"
-                    type="image/png"
-                    >
-                    <source
-                    :srcset="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
-                    type="image/jpg"
-                    >
-                    <img 
-                        :id="`flow-tiles-${chart.id}`"
-                        v-img="{
-                        thumbnails: true,
-                        group: 'flow-tiles', 
-                        title: chart.caption
-                        }"
-                    class="sliderImage"
-                    :src="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
-                    :alt="chart.image_alt"
-                    loading="lazy"
-                    >
-                    </picture>
-                </div>
-            </slide>
-        </carousel>
-    </div>
+  <div class="maxWidth carouselContainer">
+    <carousel 
+      class="image-slider"
+      :autoplay="false"
+      :autoplay-hover-pause="true"
+      :per-page="3"
+      navigation-enabled
+      :speed="800"
+    >
+      <slide
+        v-for="chart in charts"
+        :id="`flow-tiles-${chart.id}`"
+        :key="chart.id"
+        class="slide"
+      >
+        <div class="slider-image-container">
+          <picture>
+            <source
+              :srcset="getImgUrl(chart.folder, chart.image_basename, 'png')"
+              type="image/png"
+            >
+            <source
+              :srcset="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
+              type="image/jpg"
+            >
+            <img 
+              :id="`flow-tiles-${chart.id}`"
+              v-img="{
+                thumbnails: true,
+                group: 'flow-tiles', 
+                title: chart.caption
+              }"
+              class="sliderImage"
+              :src="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
+              :alt="chart.image_alt"
+              loading="lazy"
+            >
+          </picture>
+        </div>
+      </slide>
+    </carousel>
+  </div>
 </template>
 
 <script>

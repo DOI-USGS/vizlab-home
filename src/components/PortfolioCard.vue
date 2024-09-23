@@ -54,7 +54,8 @@
                 default: process.env.VUE_APP_TITLE
             },
             viz: { 
-              type: Object
+              type: Object,
+              default: null
             } 
         },
         data() {

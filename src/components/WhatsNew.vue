@@ -29,13 +29,22 @@
         <div id="viz-text">
           <div class="text-container">
             <!-- begin blog items -->
-            <li v-for="item in blogItems" :key="item.id">
+            <li
+              v-for="item in blogItems"
+              :key="item.id"
+            >
               <span class="date-text">{{ item.date }}</span>
               {{ item.title }}
-              <a :href="item.url" target="_blank">
+              <a
+                :href="item.url"
+                target="_blank"
+              >
                 <span class="arrow">Read &#8594;</span>
               </a>
-              <div class="thumbnail-container" v-if="item.img_src">
+              <div
+                v-if="item.img_src"
+                class="thumbnail-container"
+              >
                 <img 
                   class="blog-thumbnail"
                   :src="item.img_src"
