@@ -53,14 +53,14 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/bottled_water_barplot.gif"
-          alt="Map showing the counts of bottled water facilities in all states and territories, by county. The counts are showed as scaled proportional symbols."
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/unequal_access_to_water-vizlab_banner.gif"
+          alt="Animation showing interaction with a dendrogram chart of demographic characteristics relating to water insecurity in the western United States. A cursor is clicking the node of the dendrogram showing the leaves can be expanded to see the various levels of social indicators studied."
         >
         <h3 id="title-new">
-          Water bottling across the U.S.
+          Unequal access to water
         </h3> <a
           id="twitter-link"
-          href="https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html#/"
+          href="https://labs.waterdata.usgs.gov/visualizations/vulnerability-indicators/index.html#/"
           target="_blank"
         >Check out the interactive data viz<span class="arrow">&#8594;</span></a> 
       </div>

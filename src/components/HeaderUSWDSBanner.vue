@@ -110,15 +110,29 @@
 
 <style scoped lang="scss">
   @import '~uswds/dist/css/uswds.css';
+  $nearBlack: #212222;
+  .usa-banner {
+    background-color: $nearBlack;
+  }
+  .usa-banner p, text {
+    color: #F0F0F0;
+    padding: 0;
+  }
   .usa-banner__inner {
     margin-left: 10px;
     padding-left: 5px;
   }
+  .usa-banner__button {
+    color: #78B4E8;
+  }
   .usa-banner__button::after {
     content: none;
   }
+  .usa-banner__button:hover {
+    color: #A2CCF1;
+  }
   .usa-banner__button::after:hover {
-    content: none;
+    background-color: #A2CCF1;
   }
   .usa-banner__button::after:hover [aria-expanded="true"] {
     content: none;
