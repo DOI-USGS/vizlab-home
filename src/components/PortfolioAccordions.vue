@@ -76,10 +76,10 @@
           id="head-river-conditions"
         >
           U.S. River Conditions (quarterly) <a
-          href="https://github.com/DOI-USGS/gage-conditions-gif"
-          target="_blank"
-          style="font-style: italic; font-size: 0.9em"
-        >View Code<span class="arrow">&#8594;</span></a> 
+            href="https://github.com/DOI-USGS/gage-conditions-gif"
+            target="_blank"
+            style="font-style: italic; font-size: 0.9em"
+          >View Code<span class="arrow">&#8594;</span></a> 
         </h4>
         <RiverConditionsCarousel />
         <h4
@@ -87,7 +87,7 @@
         >
           Monthly Streamflow
         </h4>
-        <FlowTilesCarousel/>
+        <FlowTilesCarousel />
         <h4
           id="head-chart-challenge"
         >

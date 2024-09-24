@@ -1,33 +1,47 @@
 <template v-slot:figures>
-    <div class="maxWidth carouselContainer">
-        <carousel 
-            class="image-slider"
-            :autoplay="false"
-            :autoplay-hover-pause="true"
-            :per-page="3"
-            :center-mode="true"
-            navigation-enabled
-            :speed="800"        >
-            <slide
-                v-for="(chart, index) in charts"
-                :id="`river-conditions-${chart.id}`"
-                :key="chart.id"
-                class="slide"
-                @slideclick="handleSlideClick(index)">
-                <div class="slider-video-container">
-                    <div class="video-border">
-                        <center>
-                            <a :href="chart.drupal_url" target="_blank" class="video-title">{{ chart.name }}</a>
-                        </center>
-                        <video class="video" width="100%" :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)" controls> 
-                        <source :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)" type="video/mp4">
-                        Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </slide>
-        </carousel>
-    </div>
+  <div class="maxWidth carouselContainer">
+    <carousel 
+      class="image-slider"
+      :autoplay="false"
+      :autoplay-hover-pause="true"
+      :per-page="3"
+      :center-mode="true"
+      navigation-enabled
+      :speed="800"
+    >
+      <slide
+        v-for="(chart, index) in charts"
+        :id="`river-conditions-${chart.id}`"
+        :key="chart.id"
+        class="slide"
+        @slideclick="handleSlideClick(index)"
+      >
+        <div class="slider-video-container">
+          <div class="video-border">
+            <center>
+              <a
+                :href="chart.drupal_url"
+                target="_blank"
+                class="video-title"
+              >{{ chart.name }}</a>
+            </center>
+            <video
+              class="video"
+              width="100%"
+              :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)"
+              controls
+            > 
+              <source
+                :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)"
+                type="video/mp4"
+              >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </slide>
+    </carousel>
+  </div>
 </template>
 
 <script>
