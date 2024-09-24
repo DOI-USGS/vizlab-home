@@ -3,7 +3,7 @@
     "name": "vizlab-home",
     "organization": "U.S. Geological Survey",
     "description": "Landing page for the USGS Vizlab",
-    "version": "0.12.0",
+    "version": "0.12.1",
     "status": "Production",
     "permissions": {
       "usageType": "openSource",
