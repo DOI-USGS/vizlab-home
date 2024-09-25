@@ -1,4 +1,21 @@
-# vue3-template
+# {app_long_title}
+
+A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases.
+
+This repo...
+
+## Building the website locally
+
+Clone the repo. In the directory, run `npm install` to install the required modules. Once the dependencies have been installed, run `npm run dev` to run locally from your browser.
+
+To build the website locally you'll need `npm v20` and `node v8.1` or higher installed. To manage multiple versions of `npm`, you may [try using `nvm`](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e).
+
+## Citation
+
+{Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi of official software release}](https://doi.org/{doi of official software release})
+
+
+# vue3-template [DELETE THIS SECTION AND ALL BELOW CONTENT BEFORE RELEASE]
 
 This project serves as a template for our site builds. It uses Vue 3 and Vite (currently version 5), and is configured to be built from GitLab using Jenkins.
 
@@ -49,6 +66,8 @@ When setting up a new project you'll need to take the following steps:
     * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{app_title}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{app_title}`
     * [ ] Update the `{project_description}` in `'code.json'` to match the `VITE_APP_DESCRIPTION`
+    * [ ] Update `{app_long_title}` in the first heading at the top of the the `'README.md'` to match the `VITE_APP_LONG_TITLE` 
+    * [ ] Update the `{app_title}` in the releases statement at the top of `'README.md'` to match `VITE_APP_TITLE`
 2. Delete example components and content and remove them from the site
     * [ ] Delete `'src/components/IntroSection.vue'`
     * [ ] Delete `'src/components/BarChartExample.vue'` and `'public/state_facility_type_summmary.csv'`
@@ -64,11 +83,10 @@ When setting up a new project you'll need to take the following steps:
     * [ ] Update keywords in `'index.html'`
 5. Update text in `'src/assets/text/text.js'`. The `sections` nested object is set up with the attributes needed to to populate section titles adding using the `'src/components/VizSection.vue'` template, but could also be used without that template. Text for each component that will be added to `'src/views/VisualizationView.vue'` should be added as a named object to the `components` nested object. It will be passed dynamically to each component (see current setup where text is passed to each of the three example components). Delete unused placeholder text.
 6. Update README.md for project. Be sure that it is presentable to the public - minimally include project overview and build instructions.
-7. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release. Key steps that relate to template content include:
+7. Consult the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for more development guidelines related to compliance, performance testing, analytics, and public release, including releasing the repository as an official software release. Key steps that relate to template content include:
     * [ ] To work with the template set up in `'index.html'`, the meta card image for the site must be saved as a `.webp` image to the _prod_ `S3` bucket in the following location: `visualizations/images/%VITE_APP_TITLE%_metacard.webp`, e.g., `visualizations/images/vue3-template_metacard.webp`.
     * [ ] Once known, be sure to add the release date to `'index.html'` - the `datePublished` attribute in the metadata.
-    * [ ] Before migration to DGEC, update `'code.json'` to have `"status": "Production"` and to specify the `"version"` (e.g.,`1.0.0`) and `"metadataLastUpdated"` date.
-    * [ ] After migration to DGEC, update the `version` attribute in `'package.json'` to match the release version on _GitHub_. Re-run `npm install`, which will regenerate `'package-lock.json'`. Push the changed `'package.json'` and `'package-lock.json'` to the repo on _GitLab_ and open a MR. The changes will be mirrored to the repo on GitHub.
+    * [ ] The official software release process will require changes to `'disclaimer.md'`, `'code.json'`, and `'package.json'`. Refer to the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1) for detailed instructions.
  
 ## Notes for development when using this template
 1. Please do not delete or make any modifications to the following components/files:
@@ -112,7 +130,7 @@ When setting up a new project you'll need to take the following steps:
     * `'.env'`
     * `'code.json'`
     * `'contributing.md'`
-    * `'index.html'` (will also need to edit to modify analytics setup, per the [Vizlab website release checklist](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B3c0899c4-cc87-4c82-a7e2-3f8e78439083%7D&wdOrigin=TEAMS-MAGLEV.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1714053079214&web=1))
+    * `'index.html'` 
     * `'package.json'` (may need additional edits if more packages are needed, see 3., below) 
 3. Depending on what visualization tools you are using, you may need to add additional packages, which will require edits to some or all of the following files (reach out to Hayley with questions):
     * `'package.json'`
