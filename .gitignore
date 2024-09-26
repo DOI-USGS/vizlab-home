@@ -17,8 +17,11 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+# R files
+.Rhistory
+
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
 .idea
 *.suo

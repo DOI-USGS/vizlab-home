@@ -3,7 +3,7 @@
     "name": "{app_title}",
     "organization": "U.S. Geological Survey",
     "description": "{project_description}",
-    "version": "{version}",
+    "version": "main",
     "status": "Development",
     "permissions": {
       "usageType": "openSource",
@@ -34,7 +34,7 @@
       "email": "hcorson-dosch@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2023-11-30"
+      "metadataLastUpdated": "2024-09-25"
     }
   }
 ]
