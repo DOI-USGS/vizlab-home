@@ -1,8 +1,10 @@
 # {app_long_title}
 
-A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases.
+> _A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases._
 
-This repo...
+This repo uses ... to build a data visualization website about ...
+
+**The data visualization website can be viewed at [https://labs.waterdata.usgs.gov/visualizations/{app_title}](https://labs.waterdata.usgs.gov/visualizations/{app_title}).**
 
 ## Building the website locally
 
@@ -12,8 +14,12 @@ To build the website locally you'll need `npm v20` and `node v8.1` or higher ins
 
 ## Citation
 
-{Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi of official software release}](https://doi.org/{doi of official software release})
+{Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
+## Additional information
+* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/{app_title}/) to this repository on GitHub.
+* [Disclaimer](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/DISCLAIMER.md)
+* [License](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/LICENSE.md)
 
 # vue3-template [DELETE THIS SECTION AND ALL BELOW CONTENT BEFORE RELEASE]
 
