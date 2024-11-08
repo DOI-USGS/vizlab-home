@@ -16,6 +16,9 @@ To build the website locally you'll need `npm v20` and `node v8.1` or higher ins
 
 {Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
+## Consulting subject matter experts
+Person X, person Y, and person Z consulted on the development of this website as subject matter experts.
+
 ## Additional information
 * We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/{app_title}/) to this repository on GitHub.
 * [Disclaimer](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/DISCLAIMER.md)
