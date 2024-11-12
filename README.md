@@ -70,7 +70,7 @@ When setting up a new project you'll need to take the following steps:
  
 1. Update project-specific environment variables, titles, and paths
     * [ ] Update `VITE_APP_TITLE`, `VITE_APP_LONG_TITLE`, `VITE_APP_DESCRIPTION`, and `VITE_APP_GITHUB_REPOSITORY_LINK`, in `'.env'`. Be sure to read [the section on project name handling](#project-name-handling), above.
-    * [ ] Update `"name"` in `'package.json'`.
+    * [ ] Update `"name"` and `"description"` in `'package.json'`, using value of `VITE_APP_TITLE` for `"name"` and the value of `VITE_APP_DESCRIPTION` for `"description"`.
     * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
     * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{app_title}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{app_title}`

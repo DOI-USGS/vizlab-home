@@ -1,6 +1,10 @@
 {
   "name": "vue3-template",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Website template using Vue3 and Vite",
+  "main": "index.html",
+  "author": "USGS Vizlab",
+  "license": "CC0 1.0 Universal",
   "private": true,
   "scripts": {
     "dev": "vite --mode test_tier",
