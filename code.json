@@ -3,7 +3,7 @@
     "name": "{app_title}",
     "organization": "U.S. Geological Survey",
     "description": "{project_description}",
-    "version": "main",
+    "version": "0.1.0",
     "status": "Development",
     "permissions": {
       "usageType": "openSource",

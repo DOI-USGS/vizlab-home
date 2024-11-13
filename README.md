@@ -1,8 +1,10 @@
 # {app_long_title}
 
-A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases.
+> _A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases._
 
-This repo...
+This repo uses ... to build a data visualization website about ...
+
+**The data visualization website can be viewed at [https://labs.waterdata.usgs.gov/visualizations/{app_title}](https://labs.waterdata.usgs.gov/visualizations/{app_title}).**
 
 ## Building the website locally
 
@@ -12,8 +14,15 @@ To build the website locally you'll need `npm v20` and `node v8.1` or higher ins
 
 ## Citation
 
-{Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi of official software release}](https://doi.org/{doi of official software release})
+{Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
+## Consulting subject matter experts
+Person X, person Y, and person Z consulted on the development of this website as subject matter experts.
+
+## Additional information
+* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/{app_title}/) to this repository on GitHub.
+* [Disclaimer](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/DISCLAIMER.md)
+* [License](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/LICENSE.md)
 
 # vue3-template [DELETE THIS SECTION AND ALL BELOW CONTENT BEFORE RELEASE]
 
@@ -61,7 +70,7 @@ When setting up a new project you'll need to take the following steps:
  
 1. Update project-specific environment variables, titles, and paths
     * [ ] Update `VITE_APP_TITLE`, `VITE_APP_LONG_TITLE`, `VITE_APP_DESCRIPTION`, and `VITE_APP_GITHUB_REPOSITORY_LINK`, in `'.env'`. Be sure to read [the section on project name handling](#project-name-handling), above.
-    * [ ] Update `"name"` in `'package.json'`.
+    * [ ] Update `"name"` and `"description"` in `'package.json'`, using value of `VITE_APP_TITLE` for `"name"` and the value of `VITE_APP_DESCRIPTION` for `"description"`.
     * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
     * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{app_title}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{app_title}`

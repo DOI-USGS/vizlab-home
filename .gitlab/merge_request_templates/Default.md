@@ -8,6 +8,19 @@ Provide code snippets or screenshots as needed.
 ### How to Test
 Provide instructions and/or code necessary to test the changes.
 
+### MR t-shirt size
+- [ ] extra-small (e.g., update color scheme)
+- [ ] small (e.g., add tooltip to chart)
+- [ ] medium (e.g., add new static chart, add new pipeline output)
+- [ ] large (e.g., initial data processing pipeline, interactive chart)
+
+### Timeline for review
+- [ ] ASAP - blocker for deployment
+- [ ] Today - blocker for ongoing work
+- [ ] Next couple of days
+- [ ] This week
+- [ ] When reviewer has availability
+
 ### Review Needs
 Does this MR include data processing, modeling, or visualization code that will require domain review prior to release?
 - [ ] Yes, and I have opened an issue to document the need for review, using the `DomainReview` issue template
