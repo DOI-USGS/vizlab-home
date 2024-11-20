@@ -3,7 +3,7 @@
     "name": "vizlab-home",
     "organization": "U.S. Geological Survey",
     "description": "Landing page for the USGS Vizlab",
-    "version": "0.12.1",
+    "version": "0.13.0",
     "status": "Production",
     "permissions": {
       "usageType": "openSource",
@@ -33,7 +33,7 @@
       "email": "cnell@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2024-09-23"
+      "metadataLastUpdated": "2024-11-19"
     }
   }
 ]

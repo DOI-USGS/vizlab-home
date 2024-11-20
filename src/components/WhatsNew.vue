@@ -62,14 +62,14 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/unequal_access_to_water-vizlab_banner.gif"
-          alt="Animation showing interaction with a dendrogram chart of demographic characteristics relating to water insecurity in the western United States. A cursor is clicking the node of the dendrogram showing the leaves can be expanded to see the various levels of social indicators studied."
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/trout-and-climate_banner.webp"
+          alt="Illustrated river landscape with two cartoon redband trout swimming in the river. Near the bank are three cartoon land managers who are monitoring the fish and river health. The background also has a data visualization that shows how cold- and warm-adapted redband trout are affected by water temperature. The visualization demonstrates that cold-adapted redband trout suffer from thermal stress at lower overall temperatures than warm-adapted redband trout. Text on the visualization includes labels for each line: 'cold-adapted redband trout' and 'warm-adapted redband trout' and a label for 'thermal stress.'"
         >
         <h3 id="title-new">
-          Unequal access to water
+          Managing redband trout for climate resilience
         </h3> <a
           id="twitter-link"
-          href="https://labs.waterdata.usgs.gov/visualizations/vulnerability-indicators/index.html#/"
+          href="https://labs.waterdata.usgs.gov/visualizations/trout-and-climate/"
           target="_blank"
         >Check out the interactive data viz<span class="arrow">&#8594;</span></a> 
       </div>
