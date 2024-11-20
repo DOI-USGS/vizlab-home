@@ -1,6 +1,6 @@
 {
   "name": "vizlab-home",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "private": true,
   "scripts": {
     "serve": "env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve --mode test_tier",
