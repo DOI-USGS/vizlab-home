@@ -2,10 +2,6 @@
 
 ---------------
 
-# Administrative security review of {app_long_title} for official software release
-
-Date completed: XXXX-XX-XX
-
 ## Project overview
 
 Provide a description of the project and code repository - What data processing steps are included? What is the final product? 
