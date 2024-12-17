@@ -14,7 +14,7 @@
         }
       ]
     },
-    "homepageURL": "https://github.com/DOI-USGS/{app_title}/",
+    "homepageURL": "https://labs.waterdata.usgs.gov/visualizations/{app_title}/",
     "downloadURL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/archive/main/{app_title}-main.zip",
     "disclaimerURL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/raw/main/DISCLAIMER.md",
     "repositoryURL": "https://code.usgs.gov/wma/vizlab/{app_title}.git",
@@ -34,7 +34,7 @@
       "email": "hcorson-dosch@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2024-09-25"
+      "metadataLastUpdated": "2024-12-16"
     }
   }
 ]
