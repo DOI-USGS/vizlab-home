@@ -62,16 +62,16 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/trout-and-climate_banner.webp"
-          alt="Illustrated river landscape with two cartoon redband trout swimming in the river. Near the bank are three cartoon land managers who are monitoring the fish and river health. The background also has a data visualization that shows how cold- and warm-adapted redband trout are affected by water temperature. The visualization demonstrates that cold-adapted redband trout suffer from thermal stress at lower overall temperatures than warm-adapted redband trout. Text on the visualization includes labels for each line: 'cold-adapted redband trout' and 'warm-adapted redband trout' and a label for 'thermal stress.'"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/earth-in-flux_banner.webp"
+          alt="Six tiles arranged in a grid of 3 columns and 2 rows show thumbnails for visualizations in the USGS Land Change Chart Gallery"
         >
         <h3 id="title-new">
-          Managing redband trout for climate resilience
+          USGS Land Change Chart Gallery
         </h3> <a
           id="twitter-link"
-          href="https://labs.waterdata.usgs.gov/visualizations/trout-and-climate/"
+          href="https://labs.waterdata.usgs.gov/visualizations/earth-in-flux/"
           target="_blank"
-        >Check out the interactive data viz<span class="arrow">&#8594;</span></a> 
+        >Check out the interactive gallery<span class="arrow">&#8594;</span></a> 
       </div>
     </div>
     <!-- <div class="river-container">
