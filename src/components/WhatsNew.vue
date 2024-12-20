@@ -63,15 +63,15 @@
         <img
           class="recent-image"
           src="https://labs.waterdata.usgs.gov/visualizations/banners/earth-in-flux_banner.webp"
-          alt="Six tiles arranged in a grid of 3 columns and 2 rows show thumbnails for visualizations in the USGS Land Change Chart Gallery"
+          alt="Six tiles arranged in a grid of 3 columns and 2 rows show thumbnails for visualizations in the Earth in Flux chart gallery"
         >
         <h3 id="title-new">
-          USGS Land Change Chart Gallery
+          Earth is in Flux
         </h3> <a
           id="twitter-link"
           href="https://labs.waterdata.usgs.gov/visualizations/earth-in-flux/"
           target="_blank"
-        >Check out the interactive gallery<span class="arrow">&#8594;</span></a> 
+        >Check out the interactive chart gallery<span class="arrow">&#8594;</span></a> 
       </div>
     </div>
     <!-- <div class="river-container">
