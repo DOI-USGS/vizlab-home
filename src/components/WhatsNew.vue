@@ -62,7 +62,7 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/water-availability_banner.webp"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/water-availability_banner.png"
           alt="Map showing water limitation in the lower 48 United States by watershed. The background visualization shows monthly dynamics in water limitation from 2010 to 2020."
         >
         <h3 id="title-new">
