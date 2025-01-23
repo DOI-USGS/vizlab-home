@@ -3,7 +3,7 @@
     "name": "{app_title}",
     "organization": "U.S. Geological Survey",
     "description": "{project_description}",
-    "version": "0.1.0",
+    "version": "main",
     "status": "Development",
     "permissions": {
       "usageType": "openSource",
@@ -14,7 +14,7 @@
         }
       ]
     },
-    "homepageURL": "https://labs.waterdata.usgs.gov/visualizations/{app_title}/",
+    "homepageURL": "https://water.usgs.gov/vizlab/{app_title}/",
     "downloadURL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/archive/main/{app_title}-main.zip",
     "disclaimerURL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/raw/main/DISCLAIMER.md",
     "repositoryURL": "https://code.usgs.gov/wma/vizlab/{app_title}.git",
@@ -34,7 +34,7 @@
       "email": "hcorson-dosch@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2024-12-16"
+      "metadataLastUpdated": "2025-01-23"
     }
   }
 ]
