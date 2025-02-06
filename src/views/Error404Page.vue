@@ -13,7 +13,7 @@
             <p>
               If you typed the URL directly, check your spelling and
               capitalization. Our URLs look like this:
-              <strong>&lt;labs.waterdata.usgs.gov/visualizations/{{ title }}&gt;</strong>.
+              <strong>&lt;water.usgs.gov/vizlab/{{ title }}&gt;</strong>.
             </p>
             <p>
               Visit the main page for this data visualization, or contact us

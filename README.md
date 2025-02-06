@@ -4,7 +4,7 @@
 
 This repo uses ... to build a data visualization website about ...
 
-**The data visualization website can be viewed at [https://labs.waterdata.usgs.gov/visualizations/{app_title}](https://labs.waterdata.usgs.gov/visualizations/{app_title}).**
+**The data visualization website can be viewed at [https://water.usgs.gov/vizlab/{app_title}](https://water.usgs.gov/vizlab/{app_title}).**
 
 ## Building the website locally
 
@@ -26,7 +26,7 @@ Person X, person Y, and person Z consulted on the development of this website as
 
 # vue3-template [DELETE THIS SECTION AND ALL BELOW CONTENT BEFORE RELEASE]
 
-This project serves as a template for our site builds. It uses Vue 3 and Vite (currently version 5), and is configured to be built from GitLab using Jenkins.
+This project serves as a template for our site builds. It uses Vue 3 and Vite (currently version 5), and is configured to be built locally.
 
 ## To build the website locally
 Clone the repo. In the directory, run `npm install` to install the required modules. This repository requires `npm v20` to run. If you are using a later version of `npm`, you may [try using `nvm` to manage multiple versions of npm](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e).
@@ -34,11 +34,9 @@ Clone the repo. In the directory, run `npm install` to install the required modu
 Once the dependencies have been installed, run `npm run dev` to run the site locally from your browser.
 
 ## Project name handling
-The environment variable `VITE_APP_TITLE` (set in `'.env'`) is a key variable. **The value for `VITE_APP_TITLE` must match the repo name** (here `vue3-template`). Note that our repo naming convention is to use dashes ('-') instead of underscores ('_') to separate words, as it looks better in the final url. 
+The environment variable `VITE_APP_TITLE` (set in `'.env'`) is a key variable. **The value for `VITE_APP_TITLE` must match the repo name** (here `vue3-template`). Note that our repo naming convention is to use dashes ('-') instead of underscores ('_') to separate words, as it looks better in the final url. Note that the value of `VITE_APP_TITLE` will determine the website extension (`water.usgs.gov/vizlab/{VITE_APP_TITLE}`).
 
 The value for `name` in `'package.json'` should be set to match `VITE_APP_TITLE`. 
-
-This `VITE_APP_TITLE` parameter also needs to be set up as a parameter in the Jenkins configuration (in the `'jenkins/Jenkinsfile.build'` file). Once set up, it will be used to set all of the build paths used in `'Jenkinsfile.build'` and `'Dockerfile'`, including the repo url (`"https://code.usgs.gov/wma/vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`) and website extension (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). 
 
 `VITE_APP_TITLE` is also used to set the base path for the vite build in `'vite.config.mjs'`. 
 
@@ -50,9 +48,6 @@ When preparing to migrate a repo built from this template to DGEC, the name of t
 
 ## New Vue syntax for components
 This website template uses Vue 3 and the `<script setup>` composition API syntax to build components, which requires less boilerplate. See the [`<script setup>` guide](https://vuejs.org/api/sfc-script-setup.html). Any top-level defined variables or imported components are directly available for use in the `<template>`. Components now no longer need to be explicitly named, and can be imported directly by name using the filename, e.g. `import HeaderUSWDSBanner from "./components/HeaderUSWDSBanner.vue"`.
-
-## Jenkins setup
-The Jenkins setup has been adjusted slightly to use the new `VITE_{}` environment variables. Note that the website extension template set up in `'jenkins/Jenkinsfile.build'` (the `url` parameter specified for `userRemoteConfigs`) points to GitLab (`labs.waterdata.usgs.gov/visualizations/{VITE_APP_TITLE}`). This works with our new development workflow, where repos are developed on GitLab and mirrored to GitHub (e.g., ['vizlab-bottled-water'](https://github.com/DOI-USGS/vizlab-bottled-water)) once reviewed, but for old products that are hosted entirely on GitHub (e.g., [what-is-drought](https://github.com/DOI-USGS/what-is-drought)) and must be built from the GitHub repo, the beginning of this url needs to be revised to point to GitHub instead of GitLab (e.g., `"https://github.com/usgs-vizlab/${params.VITE_APP_TITLE}.git"`, or `"https://github.com/DOI-USGS/${params.VITE_APP_TITLE}.git"`) AND the `credentialsId` parameter to `userRemoteConfigs` should be deleted. Instructions for setting up the website build on Jenkins are [here](https://doimspp.sharepoint.com/:w:/r/sites/IIDDStaff/Shared%20Documents/Function%20-%20Vizlab/Process%20Guides/Jenkins_GitLab_WebsiteBuild.docx?d=w8fea5277ecbc40579de24656284bc3e8&csf=1&web=1&e=7w38oB). Hayley or Cee should complete this step.
 
 ## Template components
 This repo contains two template components, which can be used to structure page content. Template components can be used repeatedly and can easily be customized by passing content into the templates:
@@ -71,8 +66,6 @@ When setting up a new project you'll need to take the following steps:
 1. Update project-specific environment variables, titles, and paths
     * [ ] Update `VITE_APP_TITLE`, `VITE_APP_LONG_TITLE`, `VITE_APP_DESCRIPTION`, and `VITE_APP_GITHUB_REPOSITORY_LINK`, in `'.env'`. Be sure to read [the section on project name handling](#project-name-handling), above.
     * [ ] Update `"name"` and `"description"` in `'package.json'`, using value of `VITE_APP_TITLE` for `"name"` and the value of `VITE_APP_DESCRIPTION` for `"description"`.
-    * [ ] Update project name parameter (line 11) in `'jenkins/Jenkinsfile.build'`
-    * [ ] If necessary (see the section on [Jenkins setup](#jenkins-setup), above), update `userRemoteConfigs` repo `url` in `'jenkins/Jenkinsfile.build'`. _Note: only necessary if using this template to migrate an existing public GitHub repo to vue3. Not necessary if using new approach of developing on GitLab and mirroring to GitHub._
     * [ ] Update the `{app_title}` variable throughout the DGEC required files `'code.json'` and `'CONTRIBUTING.md'`, using the value of `VITE_APP_TITLE` to replace `{app_title}`
     * [ ] Update the `{project_description}` in `'code.json'` to match the `VITE_APP_DESCRIPTION`
     * [ ] Update `{app_long_title}` in the first heading at the top of the the `'README.md'` to match the `VITE_APP_LONG_TITLE` 
@@ -132,7 +125,6 @@ When setting up a new project you'll need to take the following steps:
     * `'LICENSE.md'`
     * `'package-lock.json'` _Note: will be modified indirectly by edits to `'package.json'`, and should be committed and pushed, but should not be edited directly_
 2. The following files should have only limited edits, as specified in [Steps when using as template for new project](#steps-when-using-as-template-for-new-project), above:
-    * `'jenkins/Jenkinsfile.build'`
     * In `'src/assets/text'`:
       * `'authors.js'`
       * `'references.js'`
