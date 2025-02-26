@@ -35,7 +35,7 @@ Include any extra information or considerations for reviewers.
 
 ### Merge Request Checklists
 - [ ] Code changes adhere to best practices documented in `README.md`
-- [ ] Code has been cleaned the way Vue likes it - run `npm run lint --fix`
+- [ ] Code has been cleaned the way Vue likes it - run `npm run lint`
 - [ ] If applicable, the need for future domain review has been documented in an issue
 - [ ] Below section documents which browsers the site has been tested on:
   - Desktop/laptop
