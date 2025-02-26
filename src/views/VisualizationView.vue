@@ -1,7 +1,10 @@
 <template>
   <section id="visualization-container">
-    <div class="text-container" :class="{ mobile: mobileView}">
-      <h1 class = 'title'>
+    <div
+      class="text-container"
+      :class="{ mobile: mobileView}"
+    >
+      <h1 class="title">
         {{ text.pageTitle }}
       </h1>
     </div>
@@ -10,24 +13,30 @@
     />
     <SectionTitle
       :content="text.sections.A"
-      :height=sectionTitleHeight
-      :overlay=true
-      :overlayOpacity=sectionTitleOverlayOpacity
+      :height="sectionTitleHeight"
+      :overlay="true"
+      :overlay-opacity="sectionTitleOverlayOpacity"
     />
     <RegionalViolins 
       :text="text.components.RegionalViolins"
     />
     <SectionTitle
       :content="text.sections.B"
-      :height=sectionTitleHeight
-      :overlay=true
-      :overlayOpacity=sectionTitleOverlayOpacity
+      :height="sectionTitleHeight"
+      :overlay="true"
+      :overlay-opacity="sectionTitleOverlayOpacity"
     />
     <BarChartExample 
       :text="text.components.BarChartExample"
     />
-    <ReferencesSection titleLevel="2" :references="references"/>
-    <AuthorshipSection titleLevel="2" :authors="authors"/>
+    <ReferencesSection
+      title-level="2"
+      :references="references"
+    />
+    <AuthorshipSection
+      title-level="2"
+      :authors="authors"
+    />
   </section>
 </template>
 

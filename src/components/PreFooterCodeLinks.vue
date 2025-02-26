@@ -1,7 +1,7 @@
 <template>
   <div id="code-repository-link-container">
     <a
-      :href=gitHubRepositoryLink
+      :href="gitHubRepositoryLink"
       target="_blank"
       aria-label="github link"
     >See the code behind this visualization

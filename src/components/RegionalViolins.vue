@@ -1,73 +1,82 @@
 <template>
-    <!---VizSection-->
-    <VizSection
-        id="violins"
-        :figures="true"
-        :fig-caption="true"
-    >
-        <!-- HEADING -->
-        <template #heading>
-            <h2>
-                {{ text.heading }}
-            </h2>
-        </template>
-        <!-- FIGURES -->
-        <template #aboveExplanation>
-            <p v-html="text.paragraph1" />
-        </template>
-        <template #figures>
-            <div id="region-grid-container" :class="{ mobile: mobileView}">
-                <cascMap
-                    v-if="mobileView"
-                    id="casc-svg"
-                />
-                <img
-                    v-if="!mobileView"
-                    id="radial-chart"
-                    src="@/assets/images/polar_background_plot.png"
-                    alt=""
-                >
-                <polarWedges
-                    v-if="!mobileView"
-                    id="wedges-svg"
-                />
-                <div id="map-container" v-if="!mobileView">
-                    <img    
-                        id="region-map-default"
-                        class="region-map"
-                        src="@/assets/images/casc_regions_map.png"
-                        alt=""
-                    >
-                    <img    
-                        v-for="region in regions"
-                        :id="`region-map-${region}`"
-                        :key="`map-${region}`" 
-                        class="region-map hide"
-                        :src="getMapImageUrl(region)"
-                        alt=""
-                    >
-                </div>
-                <div id="violin-container" :class="{ mobile: mobileView}">
-                    <img
-                        v-for="region in regions"
-                        :id="`region-violin-${region}`"
-                        :key="`violin-${region}`"
-                        class="violin-chart hide"
-                        :src=getViolinImageUrl(region)
-                        alt=""
-                    >
-                </div>
-            </div>
-        </template>
-        <!-- CAPTION -->
-        <template #figureCaption>
-            <p v-html="text.chartAttribution" />
-         </template>
-        <!-- EXPLANATION -->
-        <template #belowExplanation>
-            <p v-html="text.paragraph2" />
-        </template>
-    </VizSection>
+  <!---VizSection-->
+  <VizSection
+    id="violins"
+    :figures="true"
+    :fig-caption="true"
+  >
+    <!-- HEADING -->
+    <template #heading>
+      <h2>
+        {{ text.heading }}
+      </h2>
+    </template>
+    <!-- FIGURES -->
+    <template #aboveExplanation>
+      <p v-html="text.paragraph1" />
+    </template>
+    <template #figures>
+      <div
+        id="region-grid-container"
+        :class="{ mobile: mobileView}"
+      >
+        <cascMap
+          v-if="mobileView"
+          id="casc-svg"
+        />
+        <img
+          v-if="!mobileView"
+          id="radial-chart"
+          src="@/assets/images/polar_background_plot.png"
+          alt=""
+        >
+        <polarWedges
+          v-if="!mobileView"
+          id="wedges-svg"
+        />
+        <div
+          v-if="!mobileView"
+          id="map-container"
+        >
+          <img    
+            id="region-map-default"
+            class="region-map"
+            src="@/assets/images/casc_regions_map.png"
+            alt=""
+          >
+          <img    
+            v-for="region in regions"
+            :id="`region-map-${region}`"
+            :key="`map-${region}`" 
+            class="region-map hide"
+            :src="getMapImageUrl(region)"
+            alt=""
+          >
+        </div>
+        <div
+          id="violin-container"
+          :class="{ mobile: mobileView}"
+        >
+          <img
+            v-for="region in regions"
+            :id="`region-violin-${region}`"
+            :key="`violin-${region}`"
+            class="violin-chart hide"
+            :src="getViolinImageUrl(region)"
+            alt=""
+          >
+        </div>
+      </div>
+    </template>
+    <!-- CAPTION -->
+    <template #figureCaption>
+      <p v-html="text.chartAttribution" />
+    </template>
+    <!-- EXPLANATION -->
+    <template #belowExplanation>
+      <p v-html="text.paragraph2" />
+    </template>
+  </VizSection>
 </template>
   
 <script setup>
@@ -80,7 +89,12 @@
 
     // define props
     defineProps({
-        text: { type: Object }
+        text: { 
+          type: Object,
+          default() {
+            return {}
+          } 
+        }
     })
 
     // global variables

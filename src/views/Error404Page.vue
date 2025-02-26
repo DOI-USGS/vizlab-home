@@ -2,7 +2,10 @@
   <div class="usa-section">
     <div class="grid-container">
       <div class="grid-row grid-gap">
-        <main class="" id="main-content">
+        <main
+          id="main-content"
+          class=""
+        >
           <div class="usa-prose">
             <h1>Page not found</h1>
             <p class="usa-intro">
@@ -22,16 +25,23 @@
             <div class="margin-y-5">
               <ul class="usa-button-group">
                 <li class="usa-button-group__item">
-                  <a href="/" class="usa-button"
-                    >Visit {{ long_title }} main page</a
-                  >
+                  <a
+                    href="/"
+                    class="usa-button"
+                  >Visit {{ long_title }} main page</a>
                 </li>
                 <li class="usa-button-group__item">
-                  <a href="mailto:gs-w_vizlab@usgs.gov" target="_blank" class="usa-button usa-button--outline" >Contact us</a>
+                  <a
+                    href="mailto:gs-w_vizlab@usgs.gov"
+                    target="_blank"
+                    class="usa-button usa-button--outline"
+                  >Contact us</a>
                 </li>
               </ul>
             </div>
-            <p class="text-base"><strong>Error code:</strong> 404</p>
+            <p class="text-base">
+              <strong>Error code:</strong> 404
+            </p>
           </div>
         </main>
       </div>

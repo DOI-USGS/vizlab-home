@@ -10,7 +10,10 @@
           <!-- Heading -->
         </slot>
       </div>
-      <div class="text-container" :class="{ mobile: mobileView}">
+      <div
+        class="text-container"
+        :class="{ mobile: mobileView}"
+      >
         <slot name="aboveExplanation">
           <!-- Above Explanation -->
         </slot>
@@ -33,7 +36,10 @@
           <!-- Figure Caption -->
         </slot>
       </div>
-      <div class="text-container" :class="{ mobile: mobileView}">
+      <div
+        class="text-container"
+        :class="{ mobile: mobileView}"
+      >
         <slot name="belowExplanation">
           <!-- Below Explanation -->
         </slot>

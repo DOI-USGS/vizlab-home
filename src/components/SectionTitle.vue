@@ -1,5 +1,8 @@
 <template>
-  <div class="section-title-container" :id="content.id">
+  <div
+    :id="content.id"
+    class="section-title-container"
+  >
     <div
       class="title-container"
       :height="height"
@@ -42,7 +45,10 @@
       default: 100
     },
     content: {
-      type: Object
+      type: Object,
+      default() {
+        return {}
+      }
     },
     overlay: {
       type: Boolean,
