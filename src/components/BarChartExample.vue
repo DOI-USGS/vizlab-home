@@ -1,37 +1,36 @@
 <template>
-    <VizSection
-        id="bar-chart"
-        :figures="true"
-        :fig-caption="treemapSquarify"
-    >
-        <!-- HEADING -->
-        <template #heading>
-            <h2>
-                {{ text.heading }}
-            </h2>
-        </template>
-        <!-- FIGURES -->
-        <template #aboveExplanation>
-            <p v-html="text.paragraph1" />
-        </template>
-        <template #figures>
-            <div
-            id="grid-container-interactive"
-            >
-                <div id="state-dropdown-container" />
-                <div id="chart-container">
-                </div>
-            </div>
-        </template>
-        <!-- CAPTION -->
-         <template #figureCaption>
-            <p v-html="text.chartAttribution" />
-         </template>
-        <!-- EXPLANATION -->
-        <template #belowExplanation>
-            <p v-html="text.paragraph2" />
-        </template>
-    </VizSection>
+  <VizSection
+    id="bar-chart"
+    :figures="true"
+    :fig-caption="treemapSquarify"
+  >
+    <!-- HEADING -->
+    <template #heading>
+      <h2>
+        {{ text.heading }}
+      </h2>
+    </template>
+    <!-- FIGURES -->
+    <template #aboveExplanation>
+      <p v-html="text.paragraph1" />
+    </template>
+    <template #figures>
+      <div
+        id="grid-container-interactive"
+      >
+        <div id="state-dropdown-container" />
+        <div id="chart-container" />
+      </div>
+    </template>
+    <!-- CAPTION -->
+    <template #figureCaption>
+      <p v-html="text.chartAttribution" />
+    </template>
+    <!-- EXPLANATION -->
+    <template #belowExplanation>
+      <p v-html="text.paragraph2" />
+    </template>
+  </VizSection>
 </template>
   
 <script setup>
@@ -41,7 +40,12 @@
 
     // define props
     defineProps({
-        text: { type: Object }
+        text: { 
+          type: Object,
+          default() {
+            return {}
+          } 
+        }
     })
 
     // global variables 

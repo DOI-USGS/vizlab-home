@@ -6,12 +6,21 @@
   >
     <!-- HEADING -->
     <template #heading>
-      <h1 v-if="titleLevel === '1'" v-html="authors.title" />
-      <h2 v-if="titleLevel === '2'" v-html="authors.title" />
-      <h3 v-if="titleLevel === '3'" v-html="authors.title" />
+      <h1
+        v-if="titleLevel === '1'"
+        v-html="authors.title"
+      />
+      <h2
+        v-if="titleLevel === '2'"
+        v-html="authors.title"
+      />
+      <h3
+        v-if="titleLevel === '3'"
+        v-html="authors.title"
+      />
     </template>
     <template #aboveExplanation>
-      <p v-html="formatAuthorText(authors)"></p>
+      <p v-html="formatAuthorText(authors)" />
     </template>
   </VizSection>
 </template>
@@ -23,11 +32,25 @@
   defineProps({
     titleLevel: {
       type: String,
+      default: "2"
     },
-    authors:{
+    authors: {
       type: Object,
+      // Object or array defaults must be returned from
+      // a factory function.
+      default() {
+        return {
+          title: "USGS Vizlab",
+          authorText: "",
+          projectTeam: [],
+          leadAuthors: [],
+          additionalAuthors: [],
+          lastAuthor: []
+        }
+      }
     },
   })
+
 
   function createLink(data) {
     return data.link ? `<a href="${data.link}" target="_blank">${data.name}</a>` : data.name;

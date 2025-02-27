@@ -64,7 +64,12 @@
 
   // define props
   defineProps({
-    text: { type: Object }
+    text: { 
+      type: Object,
+      default() {
+        return {}
+      } 
+    }
   })
 </script>
 
