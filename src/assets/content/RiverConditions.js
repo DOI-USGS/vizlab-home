@@ -1,6 +1,36 @@
 export default {
     riverConditionsCharts: [
         {
+            id: '17',
+            name: 'October 1 - December 31, 2024',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-october-december-2024',
+            folder: 'FY25_Q1/',
+            video_basename: 'river_conditions_oct_dec_2024_insta',
+            image_thumbnail: 'river_conditions_oct_dec_2024_square_thumbnail.png',
+            video_type: 'mp4',
+            image_alt: 'U.S. River Conditions from October 1, 2024 to December 31, 2024 at USGS streamgages.'
+        },
+        {
+            id: '16',
+            name: 'July 1 - September 30, 2024',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-july-september-2024',
+            folder: 'FY24_Q4/',
+            video_basename: 'river_conditions_jul_sep_2024_insta',
+            image_thumbnail: 'river_conditions_jul_sep_2024_square_thumbnail.png',
+            video_type: 'mp4',
+            image_alt: 'U.S. River Conditions from July 1, 2024 to September 30, 2024 at USGS streamgages.'
+        },
+        {
+            id: '15',
+            name: 'April 1 - June 30, 2024',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2024',
+            folder: 'FY24_Q3/',
+            video_basename: 'river_conditions_apr_jun_2024_insta',
+            image_thumbnail: 'river_conditions_apr_jun_2024_square_thumbnail.png',
+            video_type: 'mp4',
+            image_alt: 'U.S. River Conditions from April 1, 2024 to June 30, 2024 at USGS streamgages.'
+        },
+        {
             id: '14',
             name: 'January 1 - March 31, 2024',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2024',
