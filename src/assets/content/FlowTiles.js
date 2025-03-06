@@ -1,6 +1,94 @@
 export default {
     flowTilesCharts: [
         {
+            id: '26',
+            folder: '2025_02/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1897692959404925333',
+            image_basename: 'flow_cartogram-feb-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of February 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of February, parts of the Northern Rockies saw dry conditions for states such as Montana, Wyoming, and Idaho. Concurrently, winter storms brought wet conditions to parts of the Southeast for states such as Kentucky, Tennessee, Mississippi and Louisiana.'
+        },
+        {
+            id: '25',
+            folder: '2025_01/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1887542318607016062',
+            image_basename: 'flow_cartogram-jan-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of January 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of January, much of the Mountain West and Southwest saw dry conditions for states such as Montana, Wyoming, Arizona, and New Mexico. Concurrently, winter storms brought wet conditions to parts of the Northwest, such as Oregon, and the Southeast, such as Louisiana, Arkansas, Tennessee, and Kentucky.'
+        },
+        {
+            id: '24',
+            folder: '2024_12/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1878845021585326208',
+            image_basename: 'flow_cartogram-dec-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of December 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of December, much of the Mountain West and Southwest saw dry conditions for states such as Montana, Wyoming, Arizona, and New Mexico. Concurrently, parts of the Pacific Coast saw wet conditions for states such as California, Oregon and Washington.'
+        },
+        {
+            id: '23',
+            folder: '2024_11/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1864727535558529440',
+            image_basename: 'flow_cartogram-nov-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of November 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of November, much of the Eastern U.S. saw dry conditions for states such as Delaware, Rhode Island, Connecticut, and New Jersey. Concurrently, Missouri, Oklahoma, and Kansas saw wet conditions.'
+        },
+        {
+            id: '22',
+            folder: '2024_10/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1854197399323136262',
+            image_basename: 'flow_cartogram-oct-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of October 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of October, much of the Eastern and Central U.S. saw dry conditions for states such as Delaware, Rhode Island, Connecticut, Kansas, Oklahoma, and Iowa. Concurrently, Florida and Puerto Rico saw wet conditions as tropical storms and Hurricane Helene made landfall.'
+        },
+        {
+            id: '21',
+            folder: '2024_09/',
+            twitter_url: '',
+            image_basename: 'flow_cartogram-sep-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of September 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of September, much of the Central and Northeastern U.S saw dry conditions for states such as Oklahoma, Kansas, Nebraska, New York, Massachusetts, New Hampshire. While others such as Alaska, Florida, and Puerto Rico saw wet conditions.'
+        },
+        {
+            id: '20',
+            folder: '2024_08/',
+            twitter_url: '',
+            image_basename: 'flow_cartogram-aug-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of August 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of August, much of the Midwest and Southern U.S. saw dry conditions for states such as Kansas Nebraska, Missouri, Louisiana, Mississippi, and Tennessee. While others such as Alaska, Florida, and Puerto Rico saw wet conditions.'
+        },
+        {
+            id: '19',
+            folder: '2024_07/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1819432041152422303',
+            image_basename: 'flow_cartogram-july-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of July 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, wet conditions persisted for much of the Upper Midwest for states such as Minnesota and Wisconsin, while parts of the Eastern U.S. saw dry conditions for states such as West Virginia, Virginia, Massachusetts, and New Hampshire.'
+        },
+        {
+            id: '18',
+            folder: '2024_06/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1813278914149818523',
+            image_basename: 'flow_cartogram-june-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of June 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, severe weather brought wet conditions to states such as North Dakota, Minnesota, Iowa, and Wisconsin, while dry conditions occurred for states such as Georgia, Alabama, North Carolina, and South Carolina.'
+        },
+        {
+            id: '17',
+            folder: '2024_05/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1798030050576761140',
+            image_basename: 'flow_cartogram-may-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of May 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of May, severe weather brought wet conditions to states such as Minnesota, Iowa, and Missouri, while dry conditions occurred for states such as Arizona, New Mexico and Kansas.'
+        },
+        {
+            id: '16',
+            folder: '2024_04/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1787946014797951150',
+            image_basename: 'flow_cartogram-apr-2024',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of April 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of April, storm systems brought wet conditions to much of the Midwestern and Northeastern U.S. for states such as Indiana, Ohio, Pennsylvania, Massachusetts, and Rhode Island.'
+        },
+        {
             id: '15',
             folder: '2024_03/',
             twitter_url: 'https://twitter.com/USGS_DataSci/status/1775549094259511449',
