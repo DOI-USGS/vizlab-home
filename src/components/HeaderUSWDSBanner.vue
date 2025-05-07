@@ -122,20 +122,19 @@
     width: 1.6rem;
     margin-right: 0.75rem;
   }
-  .usa-banner__header-text {
-    font-size: 1.4rem;
-  }
   .usa-banner__button {
-    font-size: 1.4rem;
     color: #78B4E8;
   }
   .usa-accordion__button[aria-expanded=false] {
     background-size: 2.4rem;
   }
-  .usa-banner__button::after {
-    background-color: #78B4E8;
-  }
-  @media (min-width: 40em) {
+  @media (min-width: 600px) {
+    .usa-banner__header-text {
+      font-size: 1.5rem;
+    }
+    .usa-banner__button {
+      font-size: 1.5rem;
+    }
     .usa-banner__button::after {
       background-size:1.6rem 1.6rem;
       height: 1.6rem;
@@ -168,7 +167,13 @@
       background-color:#78B4E8;
     }
   }
-  @media (max-width: 39.99em) {
+  @media screen and (max-width: 600px) {
+    .usa-banner__header-text {
+      font-size: 1.4rem;
+    }
+    .usa-banner__header-action {
+      font-size: 1.4rem;
+    }
     .usa-banner__button[aria-expanded=true]::before {
       background-color: #e6e6e6;
       height: 4.8rem;
@@ -189,8 +194,11 @@
       }
     }
   }
+  .usa-banner__button::after {
+    background-color: #78B4E8;
+  }
   .usa-banner__button[aria-expanded=true]::before {
-    background-color: #00264C;
+    background-color: transparent; /* #00264C;*/
   }
   .usa-banner__button[aria-expanded=true]::after {
     background-color: #78B4E8;
@@ -215,6 +223,10 @@
     font-size: 1.6rem;
     max-width: 100rem;
   }
+  .usa-banner__content p {
+    font-size: 1.6rem;
+}
+
   .usa-banner__icon {
     width: 4rem;
   }
