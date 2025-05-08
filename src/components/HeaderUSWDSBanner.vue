@@ -131,6 +131,7 @@
   @media (min-width: 600px) {
     .usa-banner__header {
       padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
     }
     .usa-banner__header-text {
       font-size: 1.4rem;
@@ -173,6 +174,7 @@
   @media screen and (max-width: 600px) {
     .usa-banner__header {
       padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
     }
     .usa-banner__header-text {
       font-size: 1.35rem;
