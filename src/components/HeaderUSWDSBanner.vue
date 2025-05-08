@@ -130,10 +130,10 @@
   }
   @media (min-width: 600px) {
     .usa-banner__header-text {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
     .usa-banner__button {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
     .usa-banner__button::after {
       background-size:1.6rem 1.6rem;
@@ -168,11 +168,14 @@
     }
   }
   @media screen and (max-width: 600px) {
+    .usa-banner__header {
+      padding-top: 0.8rem;
+    }
     .usa-banner__header-text {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
     }
     .usa-banner__header-action {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
     }
     .usa-banner__button[aria-expanded=true]::before {
       background-color: #e6e6e6;
