@@ -129,6 +129,9 @@
     background-size: 2.4rem;
   }
   @media (min-width: 600px) {
+    .usa-banner__header {
+      padding-top: 0.4rem;
+    }
     .usa-banner__header-text {
       font-size: 1.4rem;
     }
