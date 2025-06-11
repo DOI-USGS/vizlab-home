@@ -1,6 +1,22 @@
 export default {
     flowTilesCharts: [
         {
+            id: '29',
+            folder: '2025_05/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1929924020004147635',
+            image_basename: 'flow_cartogram-may-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of May 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of May, wet conditions persisted in the Northeast and Mid-Atlantic states like New York, Pennsylvania, and Vermont. In contrast, dry conditions persisted in Florida, Arizona, and New Mexico.'
+        },
+        {
+            id: '28',
+            folder: '2025_04/',
+            twitter_url: 'https://x.com/USGS_DataSci/status/1919446545654489325',
+            image_basename: 'flow_cartogram-apr-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of April 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of April, wet conditions were prevalent in the Midwest and Northeast, including states like Wisconsin, Indiana, Vermont, and Maine. Meanwhile, dry conditions dominated parts of the Southeast and Southwest, especially in Florida, New Mexico, and Arizona.'
+        },
+        {
             id: '27',
             folder: '2025_03/',
             twitter_url: 'https://x.com/USGS_DataSci/status/1907870314681221497',
