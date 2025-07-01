@@ -15,7 +15,7 @@
       name: 'PreFooterCodeLinks',
       data() {
           return {
-              gitHubRepositoryLink: process.env.VUE_APP_GITHUB_REPOSITORY_LINK
+              gitHubRepositoryLink: import.meta.env.VUE_APP_GITHUB_REPOSITORY_LINK
           }
       }
   }

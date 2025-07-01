@@ -59,7 +59,7 @@
                 target="_blank"
                 aria-label="twitter link"
               >
-                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">Twitter</span></font-awesome-icon>
+                <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'square-x-twitter' }"><span class="only">Twitter</span></font-awesome-icon>
               </a>
             </li>
           </ul>

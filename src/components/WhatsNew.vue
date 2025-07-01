@@ -90,12 +90,12 @@ import WhatsNew from "@/assets/content/WhatsNew.js";
         props: {
             title: {
                 type: String,
-                default: process.env.VUE_APP_TITLE
+                default: import.meta.env.VITE_APP_TITLE
             }
         },
         data() {
           return {
-            publicPath: process.env.BASE_URL, 
+            publicPath: import.meta.env.VITE_APP_S3_PROD_URL, 
             blogItems: WhatsNew.blogListItems
           }
         }

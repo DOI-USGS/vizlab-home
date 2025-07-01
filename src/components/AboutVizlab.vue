@@ -54,16 +54,16 @@
           Follow us
         </h3>
         <div id="about-text-follow">
-          <p>
+<!--           <p>
             <a
               id="twitter-bird"
               href="https://twitter.com/usgs_datasci"
               target="_blank"
               aria-label="twitter link"
             >
-              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Data Science</span></font-awesome-icon>
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'square-x-twitter' }"><span class="only">USGS Data Science</span></font-awesome-icon>
               USGS Data Science</a>
-          </p>
+          </p> -->
           <p>
             <a
               id="twitter-bird"
@@ -71,43 +71,22 @@
               target="_blank"
               aria-label="twitter link"
             >
-              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'twitter-square' }"><span class="only">USGS Water</span></font-awesome-icon>
+              <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'square-x-twitter' }"><span class="only">USGS Water</span></font-awesome-icon>
               USGS Water</a>
           </p>
 
           <p>
             <a
               id="insta"
-              href="https://instagram.com/usgs_streamgages"
+              href="https://instagram.com/usgs_water"
               target="_blank"
               aria-label="instagram link"
             >
               <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'instagram' }"><span class="only">USGS streamgages</span></font-awesome-icon>
-              USGS streamgages</a>
+              USGS Waters</a>
           </p>
         </div>
       </div>
-      <!-- <div id="email-grp">
-        <h3 id="about-title-email">
-          Get email notifications
-        </h3>
-        <div id="about-text-email">
-          <div id="mc_embed_signup">
-            <form action="https://usgs.us5.list-manage.com/subscribe/post?u=54239c191d60c957fecb1eda9&amp;id=b1922dda68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <div id="mc_embed_signup_scroll">
-                <label for="mce-EMAIL">Subscribe</label>
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-  
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_54239c191d60c957fecb1eda9_b1922dda68" tabindex="-1" value=""></div>
-                    <div class="clear foot">
-                      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                    </div>
-                 </div>
-            </form>
-            </div>
-          <p>Provide your email address to receive notifications when new data visualizations are published. Email frequency is low.</p>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -118,12 +97,12 @@
         props: {
             title: {
                 type: String,
-                default: process.env.VUE_APP_TITLE
+                default: import.meta.env.VUE_APP_TITLE
             }
         },
         data() {
           return {
-            publicPath: process.env.BASE_URL, // allows app to find the files when on different deployment roots
+            publicPath: import.meta.env.BASE_URL, // allows app to find the files when on different deployment roots
           }
         }
         
