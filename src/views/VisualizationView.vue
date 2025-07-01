@@ -7,12 +7,12 @@
       <NavBar id="sticky-header" />
     </section>
     <div id="sticky-body">
-     <!--  <section id="viz-new">
+     <section id="viz-new">
         <WhatsNew />
       </section>
       <section id="viz-cards">
         <PortfolioAccordions />
-      </section> -->
+      </section> 
       <section id="viz-about">
         <About />
       </section>

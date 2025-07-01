@@ -1,16 +1,16 @@
-<template v-slot:figures>
+<template>
   <div class="maxWidth carouselContainer">
-    <carousel 
+    <Carousel
       class="image-slider"
       :autoplay="false"
-      :autoplay-hover-pause="true"
-      :per-page="3"
-      navigation-enabled
-      :speed="800"
+      :pauseAutoplayOnHover="true"
+      :itemsToShow="3"
+      :wrapAround="true"
+      :transition="800"
+      navigation
     >
-      <slide
+      <Slide
         v-for="chart in charts"
-        :id="`flow-tiles-${chart.id}`"
         :key="chart.id"
         class="slide"
       >
@@ -19,148 +19,83 @@
             <source
               :srcset="getImgUrl(chart.folder, chart.image_basename, 'png')"
               type="image/png"
-            >
+            />
             <source
               :srcset="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
               type="image/jpg"
-            >
-            <img 
-              :id="`flow-tiles-${chart.id}`"
-              v-img="{
-                thumbnails: true,
-                group: 'flow-tiles', 
-                title: chart.caption
-              }"
+            />
+            <img
               class="sliderImage"
               :src="getImgUrl(chart.folder, chart.image_basename, chart.image_type)"
               :alt="chart.image_alt"
               loading="lazy"
-            >
+              v-img="{
+                thumbnails: true,
+                group: 'flow-tiles',
+                title: chart.caption
+              }"
+            />
           </picture>
         </div>
-      </slide>
-    </carousel>
+      </Slide>
+    </Carousel>
   </div>
 </template>
 
-<script>
-    import { Carousel, Slide } from 'vue-carousel';
-    import FlowTiles from "@/assets/content/FlowTiles.js";
-    export default {
-        name: 'FlowTilesCarousel',
-        components:{
-            Carousel,
-            Slide
-        },
-        data() {
-            return {
-                charts: FlowTiles.flowTilesCharts
-            }
-        },
-        mounted(){
-            // sort charts
-            this.charts.sort((a,b) => new Date(a.date) - new Date(b.date))
-            // for each chart, build caption for use w/ v-img
-            this.charts.forEach(chart => {
-                chart.caption = 'Released on <a href=' + chart.twitter_url + ' target="_blank">Twitter</a>. View code <a href=https://github.com/DOI-USGS/flow-tiles target="_blank">here</a>.'
-            })
-        },
-        methods: {
-            getImgUrl(folder, pic, extension) {
-              // TODO: alternative if image is not given or broken
-                return 'https://labs.waterdata.usgs.gov/visualizations/flow/' + folder + pic + '.' + extension
-            }
-        }
-    }
+<script setup>
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide } from 'vue3-carousel'
+import { ref, onMounted } from 'vue'
+import FlowTiles from '@/assets/content/FlowTiles.js'
+
+const charts = ref([...FlowTiles.flowTilesCharts])
+
+function getImgUrl(folder, pic, extension) {
+  return `https://labs.waterdata.usgs.gov/visualizations/flow/${folder}${pic}.${extension}`
+}
+
+onMounted(() => {
+  charts.value.sort((a, b) => new Date(a.date) - new Date(b.date))
+  charts.value.forEach(chart => {
+    chart.caption = 'Released on <a href=' + chart.twitter_url + ' target="_blank">Twitter</a>. View code <a href=https://github.com/DOI-USGS/flow-tiles target="_blank">here</a>.'
+  })
+})
 </script>
 
 <style scoped lang="scss">
-    .carouselContainer {
-        max-width: 98%;
-    }
-    .image-slider {
-        margin: auto;
-        max-width: 70rem;
-      *:focus{
-        outline: none;
-        }
-    }
-    .slide {
-        margin: 0;
-        padding: 0;
-        select:focus{
-        outline: none;
-        }
-    }
-
-    .slide:hover {
-        transform: translate3D(0,-0.5px,0) scale(1.05);
-        transition: all .3s ease; 
-    }
-    .slider-image-container {
-        padding: 10px;
-        display: grid;
-        grid-template-columns: max-content;
-        height: 200px;
-        max-width: 375px;
-        align-content: center;
-        justify-content: center;
-        img {
-            max-width: 320px;
-            max-height: 250px;
-                border-width: 2px;
-                border-color: #dfe1e2;
-                border-style: solid;
-                border-radius: 7px;
-        }
-    }
-    </style>
-    <style lang="scss">
-    .VueCarousel-dot-container {
-        margin-top: 0px !important;
-    }
-    .VueCarousel-dot {
-        margin-top: 0px !important;
-    }
-    .VueCarousel-navigation {
-        @media (max-width: 600px) {
-            display: none;
-        }
-    }
-    //Hides v-img title element
-    .title-v-img{
-        display: none;
-    }
-    .fullscreen-v-img{
-        position: relative;
-    }
-    .footer-v-img {
-        justify-content: start !important;
-    }
-    .footer-v-img img {
-        width: auto !important;
-        height: 40px !important;
-    }
-    #captionArea{
-        background: rgba(255,255,255,1);
-        position: absolute;
-        width: 100%;
-        bottom: 0px;
-        z-index: 9000;
-        text-align: left;
-        padding: 20px 10px;
-        color: black;
-        font-size: 1em;
-        display: flex;
-        justify-content: center;
-        @media screen and (max-width: 600px) {
-            padding: 20px 10px;
-            font-size: .8em;
-        }
-        .caption{
-            margin: 0 auto 70px auto;
-            max-width: 900px;
-            line-height: 1.5em;
-        }
-    }
+.carouselContainer {
+  max-width: 98%;
+}
+.image-slider {
+  margin: auto;
+  max-width: 70rem;
+  *:focus {
+    outline: none;
+  }
+}
+.slide {
+  margin: 0;
+  padding: 0;
+}
+.slide:hover {
+  transform: translate3D(0, -0.5px, 0) scale(1.05);
+  transition: all 0.3s ease;
+}
+.slider-image-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: max-content;
+  height: 200px;
+  max-width: 375px;
+  align-content: center;
+  justify-content: center;
+  img {
+    max-width: 320px;
+    max-height: 250px;
+    border-width: 2px;
+    border-color: #dfe1e2;
+    border-style: solid;
+    border-radius: 7px;
+  }
+}
 </style>

@@ -55,7 +55,6 @@
 </script>
 
 <style scoped lang="scss">
-  @import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
   .usa-section {
     height: max(500px, calc(100vh - 20.4px - 85.7px - 32px - 92.3px)); /* page height - USWDS banner - USGS header - prefooter code links - USGS footer */
   }

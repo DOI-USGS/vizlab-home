@@ -1,20 +1,20 @@
-<template v-slot:figures>
+<template>
   <div class="maxWidth carouselContainer">
-    <carousel 
+    <Carousel
       class="image-slider"
       :autoplay="false"
-      :autoplay-hover-pause="true"
-      :per-page="3"
-      :center-mode="true"
-      navigation-enabled
-      :speed="800"
+      :pauseAutoplayOnHover="true"
+      :itemsToShow="3"
+      :centerMode="true"
+      :wrapAround="true"
+      :transition="800"
+      navigation
     >
-      <slide
+      <Slide
         v-for="(chart, index) in charts"
-        :id="`river-conditions-${chart.id}`"
         :key="chart.id"
         class="slide"
-        @slideclick="handleSlideClick(index)"
+        @click="handleSlideClick(index)"
       >
         <div class="slider-video-container">
           <div class="video-border">
@@ -30,116 +30,94 @@
               width="100%"
               :poster="getThumbnailUrl(chart.folder, chart.image_thumbnail)"
               controls
-            > 
+            >
               <source
                 :src="getVideoUrl(chart.folder, chart.video_basename, chart.video_type)"
                 type="video/mp4"
-              >
+              />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
-      </slide>
-    </carousel>
+      </Slide>
+    </Carousel>
   </div>
 </template>
 
-<script>
-    import { Carousel, Slide } from 'vue-carousel';
-    import RiverConditions from "@/assets/content/RiverConditions.js";
-    export default {
-        name: 'RiverConditionsCarousel',
-        components:{
-            Carousel,
-            Slide
-        },
-        data() {
-            return {
-                charts: RiverConditions.riverConditionsCharts
-            }
-        },
-        mounted(){
-            // sort charts
-            this.charts.sort((a,b) => new Date(a.date) - new Date(b.date))
-            // for each chart, build caption for use w/ v-img
-            this.charts.forEach(chart => {
-                chart.caption = 'Animation available <a href=' + chart.drupal_url + ' target="_blank">here</a>. View code <a href=' + chart.drupal_url + ' target="_blank">here</a>.'
-            })
-        },
-        methods: {
-            getVideoUrl(folder, video, extension) {
-                return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + video + '.' + extension;
-            },
-            getThumbnailUrl(folder, thumbnail) {
-                return 'https://labs.waterdata.usgs.gov/visualizations/river-conditions/' + folder + thumbnail;
-            },
-            handleSlideClick (index) {
-                window.open(this.charts[index].drupal_url, "_blank");
-            }
-        }
-    }
+<script setup>
+import { Carousel, Slide } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
+import { ref, onMounted } from 'vue'
+import RiverConditions from '@/assets/content/RiverConditions.js'
+
+const charts = ref([...RiverConditions.riverConditionsCharts])
+
+function getVideoUrl(folder, video, extension) {
+  return `https://labs.waterdata.usgs.gov/visualizations/river-conditions/${folder}${video}.${extension}`
+}
+
+function getThumbnailUrl(folder, thumbnail) {
+  return `https://labs.waterdata.usgs.gov/visualizations/river-conditions/${folder}${thumbnail}`
+}
+
+function handleSlideClick(index) {
+  window.open(charts.value[index].drupal_url, '_blank')
+}
+
+onMounted(() => {
+  charts.value.sort((a, b) => new Date(a.date) - new Date(b.date))
+  charts.value.forEach(chart => {
+    chart.caption = `Animation available <a href='${chart.drupal_url}' target="_blank">here</a>. View code <a href='${chart.drupal_url}' target="_blank">here</a>.`
+  })
+})
 </script>
 
 <style scoped lang="scss">
-    .carouselContainer {
-        max-width: 98%;
-    }
-    .image-slider {
-        margin: auto;
-        max-width: 70rem;
-        *:focus{
-            outline: none;
-        }
-    }
-    .VueCarousel-slide {
-        flex-basis: inherit;
-        flex-grow: 0;
-        flex-shrink: 0;
-        user-select: none;
-        backface-visibility: hidden;
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
-    .slide {
-        margin: 0;
-        padding: 0;
-        select:focus{
-        outline: none;
-        }
-    }
-    .slide:hover {
-        transform: translate3D(0,-0.5px,0) scale(1.05);
-        transition: all .3s ease; 
-    }
-
-    .slider-video-container {
-        padding-left: 10px;
-        padding-right: 10px;
-        display: grid;
-        grid-template-columns: max-content;
-        height: 380px;
-        max-width: 400px;
-        align-content: center;
-        justify-content: center;
-    }
-
-    .video-border {
-        border-width: 2px;
-        border-color: #dfe1e2;
-        border-style: solid;
-        border-radius: 7px;
-    }
-
-    .video {
-        max-width: 430px;
-        max-height: 300px;
-        margin-bottom: -7px;
-        border-radius: 7px;
-    }
-
-    .video-title {
-        margin-top: 5px;
-        margin-bottom: -5px;
-    }
-
+.carouselContainer {
+  max-width: 98%;
+}
+.image-slider {
+  margin: auto;
+  max-width: 70rem;
+  *:focus {
+    outline: none;
+  }
+}
+.slide {
+  margin: 0;
+  padding: 0;
+  select:focus {
+    outline: none;
+  }
+}
+.slide:hover {
+  transform: translate3D(0, -0.5px, 0) scale(1.05);
+  transition: all 0.3s ease;
+}
+.slider-video-container {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  grid-template-columns: max-content;
+  height: 380px;
+  max-width: 400px;
+  align-content: center;
+  justify-content: center;
+}
+.video-border {
+  border-width: 2px;
+  border-color: #dfe1e2;
+  border-style: solid;
+  border-radius: 7px;
+}
+.video {
+  max-width: 430px;
+  max-height: 300px;
+  margin-bottom: -7px;
+  border-radius: 7px;
+}
+.video-title {
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
 </style>

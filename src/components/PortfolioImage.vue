@@ -28,7 +28,7 @@
         props: {
             title: {
                 type: String,
-                default: process.env.VUE_APP_TITLE
+                default: import.meta.env.VUE_APP_TITLE
             },
             viz: { 
               type: Object,
@@ -45,10 +45,7 @@
 </script>
 
 <style lang="scss" >
-  /* import USWDS styling */
-  @import '~uswds/dist/css/uswds.css'; 
-
-  /* style card appearance */ 
+ /* style card appearance */ 
 .usa-card__container {
   overflow: hidden;
   padding: 0px;

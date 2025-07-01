@@ -102,7 +102,6 @@
 </script>
 
 <style scoped lang="scss">
-  @import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
   .usa-banner {
     background-color: #00264c;
   }

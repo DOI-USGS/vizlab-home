@@ -1,10 +1,6 @@
 <template>
-  <li 
-    class="card"
-  >
-    <div
-      class="usa-card__container main"
-    >
+  <li class="card">
+    <div class="usa-card__container main">
       <header class="usa-card__header">
         <h2 class="usa-card__heading">
           {{ viz.title }}
@@ -14,13 +10,12 @@
         <div class="usa-card__img">
           <img
             :src="getThumb(viz.img)"
-            :alt="viz.alt" 
+            :alt="viz.alt"
           >
         </div>
       </div>
       <div class="usa-card__body">
-        <!--  <p>{{ viz.released }}
-        </p> -->
+        <!-- <p>{{ viz.released }}</p> -->
       </div>
       <div class="usa-card__footer">
         <ul class="usa-button-group">
@@ -44,68 +39,35 @@
   </li>
 </template>
 
-<script>
+<script setup>
+defineProps({
+  viz: {
+    type: Object,
+    default: null
+  }
+})
 
-   export default {
-        name: 'PortfolioCard',
-        props: {
-            title: {
-                type: String,
-                default: process.env.VUE_APP_TITLE
-            },
-            viz: { 
-              type: Object,
-              default: null
-            } 
-        },
-        data() {
-          return {
-            mainLink: null
-          }
-        },
-        mounted(){
-          const card = document.querySelector(".card")
-          this.mainLink = document.querySelector(".main-link")
-
-          //card.addEventListener("click", this.handleClick)
-
-        },
-        methods: {
-          getGif(pic) {
-            return 'https://labs.waterdata.usgs.gov/visualizations/gifs/'+pic
-          },
-          getThumb(pic) {
-            return 'https://labs.waterdata.usgs.gov/visualizations/thumbnails/'+pic
-          },
-          handleClick(event){
-            this.mainLink.click();
-          }
-        }
-    }
+function getThumb(pic) {
+  return `https://labs.waterdata.usgs.gov/visualizations/thumbnails/${pic}`
+}
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 $nearBlack: #181a1a;
 $lightGrey: rgb(145, 146, 145);
 $coolBlue: rgb(66, 145, 235);
 $sourceSans: 'Source Sans Pro', sans-serif;
 
-  /* style card appearance */ 
 .usa-card__container.main:hover {
   transform: translate3D(0,-0.5px,0) scale(1.02); 
   box-shadow: 4px 8px 4px rgba(39,44,49,.07), 1px 4px 4px rgba(39,44,49,.04);
   transition: all .3s ease; 
 }
 .usa-button-group a:focus {
-    outline: None;
-}
-a.usa-button {
-  //background-color: $nearBlack;
+  outline: none;
 }
 a.usa-button.usa-button--outline {
   background-color: white;
-  //color: $nearBlack;
-  //box-shadow: inset 0 0 0 2px $nearBlack;
 }
 h2 {
   color: $nearBlack;
@@ -119,17 +81,13 @@ h2.usa-card__heading {
   font-weight: 600;
 }
 .sticky {
-    position: sticky;
-  position: -webkit-sticky;
-  top:0;
+  position: sticky;
+  top: 0;
   left: 0;
   width: 100vw;
-  z-index:50;
+  z-index: 50;
 }
 .usa-card {
   max-width: 300px;
-}
-a.usa-button {
-  //background-color: $coolBlue;
 }
 </style>
