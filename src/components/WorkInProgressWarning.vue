@@ -5,7 +5,7 @@
       class="warning-open"
     >
       ATTENTION! - You are viewing a prototype application that is in active development.
-      Contents seen here are for place holding and development only. <strong>DO NOT USE</strong> information
+      Contents seen here are for placeholding and development only. <strong>DO NOT USE</strong> information
       contained in this application for ANY purpose.
     </p>
     <button @click="toggleWarning">
@@ -14,20 +14,15 @@
   </div>
 </template>
 
-<script>
-    export default {
-        name: 'WorkInProgressWarning',
-        data() {
-            return {
-                buttonText: 'I understand'
-            }
-        },
-        methods: {
-            toggleWarning() {
-                this.buttonText === 'I understand' ? this.buttonText = 'read in progress warning' : this.buttonText = 'I understand';
-            }
-        }
-    }
+<script setup>
+  import { ref } from "vue";
+
+  const buttonText = ref();
+  buttonText.value = 'I understand';
+
+  function toggleWarning() {
+    buttonText.value === 'I understand' ? buttonText.value = 'read in progress warning' : buttonText.value = 'I understand';
+  }
 </script>
 
 <style scoped lang="scss">
@@ -38,16 +33,16 @@
     p {
       max-width: 60em;
       text-align: center;
-      margin: 0 auto;
+      margin: 0 auto 5px auto;
     }
     button {
       display: block;
       margin: 0 auto;
-      background: #003366;
+      background: var(--color-USGS-header-footer);
       color: #ffffff;
       border: none;
       outline: none;
-      padding: 2px 10px;
+      padding: 6px 10px;
       border-radius: 5px;
       font-weight: bold;
       font-size: small;

@@ -16,9 +16,6 @@
       <section id="viz-about">
         <About />
       </section>
-      <!--     <section id="viz-follow">
-      <FollowUs />
-    </section> -->
     </div>
   </div>
 </template>
