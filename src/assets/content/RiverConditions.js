@@ -1,6 +1,16 @@
 export default {
     riverConditionsCharts: [
         {
+            id: '19',
+            name: ' April 1, 2025 - June 30, 2025',
+            drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-april-june-2025',
+            folder: 'FY25_Q3/',
+            video_basename: 'river_conditions_apr_jun_2025_insta',
+            image_thumbnail: 'river_conditions_apr_jun_2025_square_thumbnail.png',
+            video_type: 'mp4',
+            image_alt: 'U.S. River Conditions from April 1, 2025 to June 30, 2025 at USGS streamgages.'
+        },
+        {
             id: '18',
             name: ' January 1, 2025 - March 31, 2025',
             drupal_url: 'https://www.usgs.gov/media/videos/us-river-conditions-january-march-2025',
