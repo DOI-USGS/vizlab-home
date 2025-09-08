@@ -1,6 +1,14 @@
 export default {
     flowTilesCharts: [
         {
+            id: '30',
+            folder: '2025_06/',
+            twitter_url: 'https://x.com/USGS_Water/status/1942234704234627072',
+            image_basename: 'flow_cartogram-june-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of June 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, dry conditions expanded across parts of the West, Southwest, and Mid-Atlantic, while wet conditions persisted across much of the central U.S. and Midwest.'
+        },
+        {
             id: '29',
             folder: '2025_05/',
             twitter_url: 'https://x.com/USGS_DataSci/status/1929924020004147635',
