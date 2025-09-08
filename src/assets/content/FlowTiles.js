@@ -1,6 +1,22 @@
 export default {
     flowTilesCharts: [
         {
+            id: '32',
+            folder: '2025_08/',
+            twitter_url: 'https://x.com/USGS_Water/status/1965102031225700461',
+            image_basename: 'flow_cartogram-aug-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of August 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of August, dry conditions expanded across the Northeast, Southeast and Southwest, while parts of the Midwest and South Atlantic saw wet conditions.'
+        },
+        {
+            id: '31',
+            folder: '2025_07/',
+            twitter_url: 'https://x.com/USGS_Water/status/1957505329102508491',
+            image_basename: 'flow_cartogram-july-2025',
+            image_type: 'png',
+            image_alt: 'A tile map of the U.S. showing streamgages by flow levels through the month of July 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of July, dry conditions persisted across parts of the Northeast, Mid-Atlantic, and Southwest, while wet conditions expanded across parts of the Upper Midwest.'
+        },
+        {
             id: '30',
             folder: '2025_06/',
             twitter_url: 'https://x.com/USGS_Water/status/1942234704234627072',
