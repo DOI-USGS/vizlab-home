@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <WindowSize v-if="checkTypeOfEnv === '-test build-'" /> -->
+    <ShutdownBanner />
     <GovSite />
     <HeaderUSGS />
     <InternetExplorerPage v-if="isInternetExplorer" />
@@ -15,6 +16,7 @@
 
 <script>
     // import WindowSize from "./components/WindowSize";
+    import ShutdownBanner from './components/ShutdownBanner.vue';
     import HeaderUSGS from './components/HeaderUSGS';
     import { isMobile } from 'mobile-device-detect';
   
@@ -23,6 +25,7 @@
         name: 'App',
         components: {
             // WindowSize,
+            ShutdownBanner,
             HeaderUSGS,
             GovSite: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./components/HeaderUSWDSBanner"),
             InternetExplorerPage: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "internet-explorer-page"*/ "./components/InternetExplorerPage"),
