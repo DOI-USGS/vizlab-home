@@ -25,8 +25,8 @@
 
 <style scoped lang="scss">
   .usa-prose {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #9c3d10;
+    color: #ffffff;
     padding-bottom: 0.3em;
     padding-top: 0.3em;
     p {
