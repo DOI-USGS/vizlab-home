@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <WindowSize v-if="checkTypeOfEnv === '-test build-'" /> -->
-    <ShutdownBanner />
+    <!-- ShutdownBanner /> -->
     <GovSite />
     <HeaderUSGS />
     <InternetExplorerPage v-if="isInternetExplorer" />
@@ -16,7 +16,7 @@
 
 <script>
     // import WindowSize from "./components/WindowSize";
-    import ShutdownBanner from './components/ShutdownBanner.vue';
+    // import ShutdownBanner from './components/ShutdownBanner.vue';
     import HeaderUSGS from './components/HeaderUSGS';
     import { isMobile } from 'mobile-device-detect';
   
