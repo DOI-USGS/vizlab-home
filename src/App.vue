@@ -25,7 +25,7 @@
         name: 'App',
         components: {
             // WindowSize,
-            ShutdownBanner,
+            // ShutdownBanner,
             HeaderUSGS,
             GovSite: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "follow-us"*/ "./components/HeaderUSWDSBanner"),
             InternetExplorerPage: () => import( /* webpackPrefetch: true */ /*webpackChunkName: "internet-explorer-page"*/ "./components/InternetExplorerPage"),
