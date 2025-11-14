@@ -1,11 +1,19 @@
 export default {
     blogListItems: [
         {
+            id: '7',
+            date: '11/14/2025:',
+            title: "Charting 'tidycensus' data with R ",
+            url: 'https://waterdata.usgs.gov/blog/tidycensus-viz/',
+            img_src: 'https://waterdata.usgs.gov/blog/static/tidycensus-viz/thumbnail.png',
+            img_alt: 'Census data viz with the USGS Vizlab. Large text filled with colorful census data visualizations on a dark background.'
+        }, 
+        {
             id: '6',
             date: '12/09/2024:',
             title: 'Mapping water insecurity in R with tidycensus',
             url: 'https://waterdata.usgs.gov/blog/acs-maps/',
-            img_src: 'https://waterdata.usgs.gov/blog/static/acs-maps/tidycensus-thumbnail.png',
+            /*  img_src: 'https://waterdata.usgs.gov/blog/static/acs-maps/tidycensus-thumbnail.png', */
             img_alt: 'Mapping water insecurity in R with tidycensus. A map of the western US showing median gross rent in 2022 with highest rent in southern CA and the Bay area.'
         },  
         {
