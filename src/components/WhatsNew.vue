@@ -62,7 +62,7 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/water-availability_banner.png"
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/streamflow-drought-forecasts_banner.webp"
           alt=""
         >
         <h3 id="title-new">
