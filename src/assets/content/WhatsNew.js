@@ -21,8 +21,6 @@ export default {
             date: '07/21/2023:',
             title: 'Jazz up your ggplots!',
             url: 'https://waterdata.usgs.gov/blog/ggplot-jazz/',
-            /* img_src: 'https://waterdata.usgs.gov/blog/static/ggplot-extensions/ggplot-extensions-banner.png', */
-            img_alt: 'Musical notes drawn with the center of the notes containing data viz example'
         },        
         {
             id: '3',

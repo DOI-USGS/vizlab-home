@@ -62,16 +62,16 @@
       <div class="img-container">
         <img
           class="recent-image"
-          src="https://labs.waterdata.usgs.gov/visualizations/banners/water-availability_banner.png"
-          alt="Map showing water limitation in the lower 48 United States by watershed. The background visualization shows monthly dynamics in water limitation from 2010 to 2020."
+          src="https://labs.waterdata.usgs.gov/visualizations/banners/streamflow-drought-forecasts_banner.webp"
+          alt=""
         >
         <h3 id="title-new">
-          Water availability in the United States
+          Streamflow drought assessment and forecasting tool
         </h3> <a
           id="twitter-link"
-          href="https://water.usgs.gov/vizlab/water-availability"
+          href="https://water.usgs.gov/vizlab/streamflow-drought-forecasts"
           target="_blank"
-        >Check out the interactive website<span class="arrow">&#8594;</span></a> 
+        >Check out the interactive map<span class="arrow">&#8594;</span></a> 
       </div>
     </div>
     <!-- <div class="river-container">
