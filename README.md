@@ -1,10 +1,10 @@
-# {app_long_title}
+# Water data visualizations
 
-> _A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases._
+> _A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/-/releases to view all releases._
 
 This repo uses Vue3 to build a portfolio website showcasing data visualization and graphical products made by the USGS Vizlab. The "see code" links on the portfolio cards will take you to the code repositories behind the visual products featured here.
 
-**The data visualization website can be viewed at [https://water.usgs.gov/{app_title}](https://water.usgs.gov/{app_title}).**
+**The data visualization website can be viewed at [https://water.usgs.gov/vizlab](https://water.usgs.gov/vizlab).**
 
 ## Building the website locally
 
@@ -17,9 +17,9 @@ To build the website locally you'll need `node.js` `v22.14.0` and `npm` `v10.9.2
 {Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
 ## Additional information
-* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/{app_title}/) to this repository on GitHub.
-* [Disclaimer](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/DISCLAIMER.md)
-* [License](https://code.usgs.gov/wma/vizlab/{app_title}/-/blob/main/LICENSE.md)
+* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/vizlab/) to this repository on GitHub.
+* [Disclaimer](https://code.usgs.gov/wma/vizlab/vizlab/-/blob/main/DISCLAIMER.md)
+* [License](https://code.usgs.gov/wma/vizlab/vizlab/-/blob/main/LICENSE.md)
 
 # vue3-template [DELETE THIS SECTION AND ALL BELOW CONTENT BEFORE RELEASE]
 
@@ -31,7 +31,7 @@ It is also used to configure the metadata and to set the path for the meta tag i
 
 The environment variables `VITE_APP_LONG_TITLE` and `VITE_APP_DESCRIPTION` are also used to configure the metadata.
 
-When preparing to migrate a repo built from this template to DGEC, the name of the GitHub repo (`{app_title}`) in the DGEC required files `'code.json'` and `'CONTRIBUTING.md'` will need to be updated, so that the value of `VITE_APP_TITLE` is used to replace `{app_title}`. The `VITE_APP_GITHUB_REPOSITORY_LINK` environment variable specified in `.env` must reflect the name of the GitHub repo, e.g., `'https://github.com/DOI-USGS/vue3-template'`.
+When preparing to migrate a repo built from this template to DGEC, the name of the GitHub repo (`vizlab`) in the DGEC required files `'code.json'` and `'CONTRIBUTING.md'` will need to be updated, so that the value of `VITE_APP_TITLE` is used to replace `vizlab`. The `VITE_APP_GITHUB_REPOSITORY_LINK` environment variable specified in `.env` must reflect the name of the GitHub repo, e.g., `'https://github.com/DOI-USGS/vue3-template'`.
 
 ## New Vue syntax for components
 This website template uses Vue 3 and the `<script setup>` composition API syntax to build components, which requires less boilerplate. See the [`<script setup>` guide](https://vuejs.org/api/sfc-script-setup.html). Any top-level defined variables or imported components are directly available for use in the `<template>`. Components now no longer need to be explicitly named, and can be imported directly by name using the filename, e.g. `import HeaderUSWDSBanner from "./components/HeaderUSWDSBanner.vue"`.
