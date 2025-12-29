@@ -1,17 +1,15 @@
 <template>
   <section id="websites" class="viz-section">
     <div class="section-header">
-      <h2 class="section-title">
-        {{ title }}
-      </h2>
-      <p v-if="summary" class="section-summary">
-        {{ summary }}
+      <h2>stories</h2>
+      <p class="section-summary">
+        Stories told by water data.
       </p>
     </div>
 
     <ul class="cards-grid">
       <PortfolioCard
-        v-for="viz in items"
+        v-for="viz in visibleItems"
         :key="viz.id ?? viz.title"
         :viz="viz"
       />
@@ -20,6 +18,7 @@
 </template>
 
 <script setup>
+import { computed } from "vue"
 import PortfolioCard from "@/components/PortfolioCard.vue"
 
 const props = defineProps({
@@ -29,13 +28,18 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "visualizations"
+    default: "stories"
   },
   summary: {
     type: String,
     default: ""
   }
 })
+
+// filter out vizzies with "archive": true
+const visibleItems = computed(() =>
+  (props.items || []).filter((item) => !item?.archive)
+)
 </script>
 
 <style scoped>

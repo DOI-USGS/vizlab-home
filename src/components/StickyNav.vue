@@ -42,8 +42,9 @@ import { onBeforeUnmount, onMounted, ref } from "vue"
 import viz from "@/assets/content/viz-list.json"
 
 const navItems = [
-  { id: "websites", label: "visualizations" },
+  { id: "websites", label: "stories" },
   { id: "series", label: "series" },
+  { id: "illustration", label: "sketches" },
   { id: "blog", label: "blog" },
   { id: "about", label: "about" }
 ]
@@ -107,7 +108,7 @@ function scrollTo(id) {
   z-index: 15;
   background: var(--color-background);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 1rem 1.5rem;
+  padding: 1rem 0;
 }
 
 .nav-inner {
@@ -115,21 +116,24 @@ function scrollTo(id) {
   align-items: center;
   justify-content: space-between;
   gap: 1.6rem;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .nav-subtitle {
   margin: 0;
-  font-size: 3.2rem;
+  font-size: clamp(3.4rem, 3vw, 5.2rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  white-space: nowrap;
+  max-width: min(60vw, 600px);
 }
 
 .nav-links {
   margin-left: auto;
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
 }
@@ -209,10 +213,15 @@ function scrollTo(id) {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
+    padding: 0 1.5rem;
+    width: 100%;
   }
 
   .nav-subtitle {
-    font-size: 1.8rem;
+    font-size: clamp(2.1rem, 6vw, 3.2rem);
+    letter-spacing: 0.05em;
+    width: 100%;
+    white-space: nowrap;
   }
 
   .nav-links {
