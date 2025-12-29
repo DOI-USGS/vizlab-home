@@ -1,5 +1,4 @@
 export default {
-    pageTitle: "Water data visualizations",
     sections: {
         A: {
             title: "Section A",

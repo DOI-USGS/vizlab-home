@@ -7,7 +7,7 @@
   "websites": [
     {
       "id": "streamflow-drought-forecasts",
-      "released": "12/16/25",
+      "released": "12/16/2025",
       "title": "Streamflow drought assessment and forecasting tool",
       "description": null,
       "thumb": "streamflow-drought-forecasts_thumbnail.webp",
@@ -17,7 +17,7 @@
     },
     {
       "id": "modeling-drought",
-      "released": "12/16/25",
+      "released": "12/16/2025",
       "title": "Modeling streamflow drought",
       "description": null,
       "thumb": "modeling-drought_thumbnail.png",
@@ -27,7 +27,7 @@
     },
     {
       "id": "water-availability",
-      "released": "1/16/25",
+      "released": "1/16/2025",
       "title": "Water availability in the United States",
       "description": null,
       "thumb": "water-availability_thumbnail.png",
@@ -47,7 +47,7 @@
     },
     {
       "id": "trout-and-climate",
-      "released": "11/20/24",
+      "released": "11/20/2024",
       "title": "Managing redband trout for climate resilience",
       "description": null,
       "thumb": "trout-and-climate_thumbnail.webp",
@@ -57,7 +57,7 @@
     },
     {
       "id": "vulnerability-indicators",
-      "released": "9/23/24",
+      "released": "9/23/2024",
       "title": "Unequal access to water",
       "description": null,
       "thumb": "vulnerability_thumbnail_not_stylized_square.png",
@@ -67,7 +67,7 @@
     },
     {
       "id": "bottled-water",
-      "released": "11/21/23",
+      "released": "11/21/2023",
       "title": "Water bottling across the U.S.",
       "description": null,
       "thumb": "bottled_water_thumbnail.webp",
@@ -77,7 +77,7 @@
     },
     {
       "id": "drought-timeline",
-      "released": "9/20/23",
+      "released": "9/20/2023",
       "title": "Five droughts that changed history",
       "description": null,
       "thumb": "drought_timeline_thumbnail.webp",
@@ -87,7 +87,7 @@
     },
     {
       "id": "what-is-drought",
-      "released": "6/22/23",
+      "released": "6/22/2023",
       "title": "What is streamflow drought?",
       "description": null,
       "thumb": "WhatIsDrought-thumbnail.webp",
@@ -97,7 +97,7 @@
     },
     {
       "id": "water-cycle",
-      "released": "10/13/22",
+      "released": "10/13/2022",
       "title": "The Water Cycle",
       "description": "Zoomable version of the water cycle diagram",
       "thumb": "water-cycle-thumbnail.png",
@@ -107,7 +107,7 @@
     },
     {
       "id": "pools-and-fluxes",
-      "released": "10/13/22",
+      "released": "10/13/2022",
       "title": "Pools and Fluxes in the Water Cycle",
       "description": "All of the water on Earth",
       "thumb": "pnf-thumbnail.png",
@@ -116,8 +116,18 @@
       "codeUrl": "https://github.com/USGS-VIZLAB/pools-and-fluxes"
     },
     {
+      "id": "temperature-prediction-modeling",
+      "released": "6/2/2021",
+      "title": "How we Model Stream Temperature in the Delaware River Basin",
+      "description": null,
+      "thumb": "temp-modeling-physics-01.png",
+      "alt": "An illustration of a stream showing icons for factors that affect stream temperature: solar radiation, precipitation, and shade.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling",
+      "codeUrl": "https://github.com/usgs-makerspace/temperature-prediction"
+    },
+    {
       "id": "temperature-prediction-monitoring",
-      "released": "6/2/21",
+      "released": "6/2/2021",
       "title": "How we Monitor Stream Temperature in the Delaware River Basin",
       "description": null,
       "thumb": "temp-monitor.jpg",
@@ -127,7 +137,7 @@
     },
     {
       "id": "snow-to-flow",
-      "released": "4/16/21",
+      "released": "4/16/2021",
       "title": "From Snow to Flow",
       "description": "What changing snowmelt means for water in the Western U.S.",
       "thumb": "snow-to-flow.jpg",
@@ -137,7 +147,7 @@
     },
     {
       "id": "fire-hydro",
-      "released": "11/5/20",
+      "released": "11/5/2020",
       "title": "How wildfires threaten U.S. water supplies",
       "description": "Communities across the United States and the globe rely on clean water flowing from forested watersheds. But these water source areas are impacted by the effects of wildfire.",
       "thumb": "fire-hydro.jpg",
@@ -146,8 +156,18 @@
       "codeUrl": "https://github.com/usgs-makerspace/fire-hydro"
     },
     {
+      "id": "delaware-basin-story",
+      "released": "12/1/2020",
+      "title": "Water science and management in the Delaware River Basin",
+      "description": "How water quality and quantity are intertwined",
+      "thumb": "DRBthumb.png",
+      "alt": "A watercolor image of the Delaware River Basin showing the locations of reservoirs, NGWOS sensors, and stream reaches.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/delaware-basin-story/index.html#/",
+      "codeUrl": "https://github.com/usgs-makerspace/delaware-basin-story"
+    },
+    {
       "id": "gages-through-the-ages",
-      "released": "7/1/20",
+      "released": "7/1/2020",
       "title": "Gages Through the Ages",
       "description": "How the history of streamgaging reflects the evolving water needs of the nation",
       "thumb": "gages-cartogram-01.png",
@@ -167,7 +187,7 @@
     },
     {
       "id": "water-use-15-state",
-      "released": "1/1/18",
+      "released": "1/1/2018",
       "title": "U.S. Water Use from 1950-2015",
       "description": "How much water do we use?",
       "thumb": "water-use-time-01.png",
@@ -177,7 +197,7 @@
     },
     {
       "id": "climate-change-walleye-bass",
-      "released": "1/1/17",
+      "released": "1/1/2017",
       "title": "Shifts in Fish Habitat Under Climate Change",
       "description": "Lakes in Wisconsin are getting warmer, and fish communities are changing as a result.",
       "thumb": "climate-change-fish-01.png",
@@ -187,7 +207,7 @@
     },
     {
       "id": "microplastics",
-      "released": "1/1/17",
+      "released": "1/1/2017",
       "title": "Microplastics in the Great Lakes",
       "description": "Where in our waterways are microplastics found?",
       "thumb": "microplastics.png",
@@ -197,23 +217,25 @@
     },
     {
       "id": "owdi-cr-drought",
-      "released": "1/1/16",
+      "released": "1/1/2016",
       "title": "OWDI Lower Colorado Drought",
       "description": "Insights using open data",
       "thumb": "co-drought-lakemead.png",
       "alt": "A sankey chart showing how much of the water stored in Lake Mead is distributed among California, Nevada, Arizona, and Mexico.",
       "productUrl": "https://labs.waterdata.usgs.gov/visualizations/OWDI-drought/",
-      "codeUrl": "https://github.com/USGS-VIZLAB/OWDI-Lower-Colorado-Drought-Vis"
+      "codeUrl": "https://github.com/USGS-VIZLAB/OWDI-Lower-Colorado-Drought-Vis",
+      "archive": true
     },
     {
       "id": "ca-drought",
-      "released": "1/1/16",
+      "released": "1/1/2016",
       "title": "California Drought",
       "description": "Visualized with open data",
       "thumb": "ca-drought-map.png",
       "alt": "A heatmap of California showing drought intensity throughout the central valley.",
       "productUrl": "https://labs.waterdata.usgs.gov/visualizations/ca_drought/index.html",
-      "codeUrl": "https://github.com/USGS-VIZLAB/CIDA-Viz"
+      "codeUrl": "https://github.com/USGS-VIZLAB/CIDA-Viz",
+      "archive": true
     }
   ]
 }
