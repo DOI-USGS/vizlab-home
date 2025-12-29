@@ -1,7 +1,7 @@
 {
-  "name": "vue3-template",
-  "version": "0.1.0",
-  "description": "Website template using Vue3 and Vite",
+  "name": "vizlab",
+  "version": "1.0.0",
+  "description": "Water data visualizations by the USGS Vizlab",
   "main": "index.html",
   "author": "USGS Vizlab",
   "license": "Public Domain, CC0-1.0",

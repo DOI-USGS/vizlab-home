@@ -21,8 +21,8 @@
     "vcs": "git",
     "laborHours": 50,
     "tags": [
-      "R",
-      "USGS"
+      "USGS",
+      "Vizlab"
     ],
     "languages": [
       "R",
@@ -30,11 +30,11 @@
       "JavaScript"
     ],
     "contact": {
-      "name": "Hayley Corson-Dosch",
-      "email": "hcorson-dosch@usgs.gov"
+      "name": "Cee Nell",
+      "email": "cnell@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2025-01-23"
+      "metadataLastUpdated": "2026-01-02"
     }
   }
 ]

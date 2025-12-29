@@ -1,7 +1,7 @@
 <template>
   <div>
-    <WindowSize v-if="typeOfEnv === '-test build-'" />
-    <HeaderUSWDSBanner v-if="typeOfEnv !== '-test build-'" />
+    <WindowSize v-if="typeOfEnv === '-test build-'" /> 
+    <HeaderUSWDSBanner />
     <HeaderUSGS />
     <WorkInProgressWarning v-if="typeOfEnv !== ''" />
     <RouterView />

@@ -1,0 +1,334 @@
+{
+  "snapshots": [
+    {
+      "id": "river-conditions-202307-202309",
+      "released": "1/16/24",
+      "title": "River Conditions: Oct 1 to Dec 31, 2023",
+      "description": null,
+      "thumb": "river_conditions_oct_dec_2022_square_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "snow-tiles-hex",
+      "released": "1/3/23",
+      "title": "Tis the season to be snowy",
+      "description": null,
+      "thumb": "snow-tiles-hex.png",
+      "alt": "A map of the contiguous U.S. using a snowflake hex pattern to show snow persistence over a 20-year period. Snow persistence is measured as the snow cover index, or the average fraction of time snow was on the ground from Jan 1 to. July 3 from 2001-2020. Snowier places are white with snow, emphasizing the Rocky Mountains and Sierra range in the western U.S., and Maine in the northeast. The majority of the southern half of the country is within a 0-10% snow cover index. Data from: https://doi.org/10.5066/P9U7U5FP",
+      "productUrl": "https://www.usgs.gov/media/images/tis-season-be-snowy-data-viz",
+      "codeUrl": null
+    },
+    {
+      "id": "river-conditions-202210-202212",
+      "released": "1/19/23",
+      "title": "River Conditions: Oct 1 to Dec 31, 2022",
+      "description": null,
+      "thumb": "river_conditions_oct_dec_2022_square_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202110-202209",
+      "released": "1/19/23",
+      "title": "River Conditions: Oct 2021 to Sept 2022",
+      "description": null,
+      "thumb": "river_conditions_oct_sep_2022_square_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-september-2021-october-2022",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202207-202209",
+      "released": "10/12/22",
+      "title": "River Conditions: July 1 to Sept 30, 2022",
+      "description": null,
+      "thumb": "river_conditions_jul_sep_2022_square_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2022",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202204-202206",
+      "released": "7/1/22",
+      "title": "River Conditions: Apr 1 to June 30, 2022",
+      "description": null,
+      "thumb": "river_conditions_apr_jun_2022_thumbnail_0.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2022",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202201-202203",
+      "released": "4/5/22",
+      "title": "River Conditions: Jan 1 to Mar 31, 2022",
+      "description": null,
+      "thumb": "river_conditions_jan_mar_2022.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2022",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "gw-conditions",
+      "released": "1/12/22",
+      "title": "U.S. Groundwater Conditions",
+      "description": null,
+      "thumb": "gw-conditions-thumbnail-peak.png",
+      "alt": "A map of the US using arrow-like gylphs to indicate temporal change in groundwater levels.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/gw-conditions",
+      "codeUrl": "https://github.com/usgs-vizlab/gw-conditions"
+    },
+    {
+      "id": "river-conditions-202110-202112",
+      "released": "1/6/22",
+      "title": "River Conditions: Oct 1 to Dec 31, 2021",
+      "description": null,
+      "thumb": "river_conditions_oct_dec_2021_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2021",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-wy21",
+      "released": "1/5/22",
+      "title": "River Conditions: Water Year 2021",
+      "description": null,
+      "thumb": "us_river_conditions_water_year_2021_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-water-year-2021",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202107-202109",
+      "released": "10/1/21",
+      "title": "River Conditions: July 1 to Sept 30, 2021",
+      "description": null,
+      "thumb": "river_conditions_apr_jun_2021_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2021",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "flow-cartogram-202212",
+      "released": "1/1/23",
+      "title": "Flow cartogram December 2022",
+      "description": null,
+      "thumb": "flow-cartogram-202212.png",
+      "alt": "A cartogram map showing streamflow levels comapred to the historic record for a year, using a proportional area chart. There are temporal fluctuations in the proportion of streamgages in wet and dry conditions.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1611415629768298496",
+      "codeUrl": null
+    },
+    {
+      "id": "hurricane-ida-2020",
+      "released": "9/28/21",
+      "title": "Hurricane Ida",
+      "description": "Hurricane Ida's Water Footprint",
+      "thumb": "water-viz-hurricane-ida-thumbnail.png",
+      "alt": "A map showing the path of Hurricane Ida, and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://www.usgs.gov/media/images/hurricane-ida-water-footprint-data-visualization",
+      "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Ida-2021"
+    },
+    {
+      "id": "hurricane-henri-2020",
+      "released": "9/23/21",
+      "title": "Hurricane Henri",
+      "description": "Hurricane Henri's Water Footprint",
+      "thumb": "water-viz-hurricane-henri-thumbnail.png",
+      "alt": "A map showing the path of Tropical Storm Henri, and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://www.usgs.gov/media/images/hurricane-henri-water-footprint-data-visualization",
+      "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Henri-2021"
+    },
+    {
+      "id": "flow-cartogram-202108",
+      "released": "9/2/21",
+      "title": "Flow cartogram August 2021",
+      "description": null,
+      "thumb": "flow-cartogram-202108.jpeg",
+      "alt": "A cartogram map showing August streamflow levels comapred to the historic record for each state.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1433873850475950080",
+      "codeUrl": null
+    },
+    {
+      "id": "flow-area",
+      "released": "8/1/21",
+      "title": "US streamflow 2021 - 2021",
+      "description": null,
+      "thumb": "flow-area-202008-202108.jpeg",
+      "alt": "A cartogram map showing July streamflow levels comapred to the historic record for each state.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1427737134702731274",
+      "codeUrl": null
+    },
+    {
+      "id": "flow-cartogram-202107",
+      "released": "8/1/21",
+      "title": "Flow cartogram July 2021",
+      "description": null,
+      "thumb": "flow-cartogram-202107.jpeg",
+      "alt": "A cartogram map showing streamflow levels comapred to the historic record for a year, using a proportional area chart. There are temporal fluctuations in the proportion of streamgages in wet and dry conditions.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1425867811042308102",
+      "codeUrl": null
+    },
+    {
+      "id": "river-conditions-202104-202106",
+      "released": "7/1/21",
+      "title": "River Conditions: April 1 to June 31, 2021",
+      "description": null,
+      "thumb": "river_conditions_apr_jun_2021_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "temperature-prediction-modeling",
+      "released": "6/21/21",
+      "title": "How we Model Stream Temperature in the Delaware River Basin",
+      "description": null,
+      "thumb": "temp-modeling-physics-01.png",
+      "alt": "An illustration of a stream showing icons for factors that affect stream temperature: solar radiation, precipitation, and shade.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling",
+      "codeUrl": "https://github.com/usgs-makerspace/temperature-prediction"
+    },
+    {
+      "id": "river-conditions-202101-202103",
+      "released": "4/1/21",
+      "title": "River Conditions: January 1 to March 31, 2021",
+      "description": null,
+      "thumb": "river_conditions_jan_mar_2021_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202010-202012",
+      "released": "1/1/21",
+      "title": "River Conditions: October 1 to December 31, 2020",
+      "description": null,
+      "thumb": "river_conditions_oct_dec_2020_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2020",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "delaware-basin-story",
+      "released": "12/1/20",
+      "title": "Water science and management in the Delaware River Basin",
+      "description": "How water quality and quantity are intertwined",
+      "thumb": "DRBthumb.png",
+      "alt": "A watercolor image of the Delaware River Basin showing the locations of reservoirs, NGWOS sensors, and stream reaches.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/delaware-basin-story/index.html#/",
+      "codeUrl": "https://github.com/usgs-makerspace/delaware-basin-story"
+    },
+    {
+      "id": "river-conditions-202007-202009",
+      "released": "10/1/20",
+      "title": "July 1 to Sept 30, 2020",
+      "description": null,
+      "thumb": "river_conditions_jul_sep_2020_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2020",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "hurricane-sally-2020",
+      "released": "9/23/20",
+      "title": "Hurricane Sally",
+      "description": "Hurricane Sally's Water Footprint",
+      "thumb": "water-viz-hurricane-sally-thumb.png",
+      "alt": "A map showing the path of Hurricane Sally, and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://www.usgs.gov/media/images/hurricane-sally-water-footprint-data-visualization",
+      "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Sally-2020"
+    },
+    {
+      "id": "river-conditions-202004-202006",
+      "released": "7/1/20",
+      "title": "April 1 to June 1, 2020",
+      "description": null,
+      "thumb": "river_conditions_apr_jun_2020_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2020",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-202001-202003",
+      "released": "4/1/20",
+      "title": "January 1 to March 31, 2020",
+      "description": null,
+      "thumb": "river_conditions_apr_jun_2020_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2020",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-201910-201912",
+      "released": "1/1/20",
+      "title": "October 1 to December 31, 2019",
+      "description": null,
+      "thumb": null,
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2019",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-201901-201906",
+      "released": "7/1/19",
+      "title": "January to June, 2019",
+      "description": null,
+      "thumb": null,
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-january-june-2019-data-visualization",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "river-conditions-WY2018",
+      "released": "10/1/18",
+      "title": "Water Year 2018",
+      "description": null,
+      "thumb": null,
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-water-year-2018",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "hurricane-irma-2017",
+      "released": "9/20/17",
+      "title": "Hurricane Irma",
+      "description": "Hurricane Irma's Water Footprint",
+      "thumb": "water-viz-hurricane-irma-thumbnail.png",
+      "alt": "A map showing the path of Hurricane Irma, and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-irma/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/hurricane-irma"
+    },
+    {
+      "id": "hurricane-maria-2017",
+      "released": "9/10/17",
+      "title": "Hurricane Maria",
+      "description": "Hurricane Maria's Water Footprint",
+      "thumb": "water-viz-hurricane-maria-thumbnail.png",
+      "alt": "A map showing the path of Hurricane Maria and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-maria/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/hurricane-maria"
+    },
+    {
+      "id": "hurricane-harvey-2017",
+      "released": "8/25/17",
+      "title": "Hurricane Harvey",
+      "description": "Hurricane Harvey's Water Footprint",
+      "thumb": "water-viz-hurricane-harvey-thumbnail.png",
+      "alt": "A map showing the path of Hurricane Harvey, and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-harvey/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Harvey-2017"
+    },
+    {
+      "id": "hurricane-matthew-2016",
+      "released": "10/7/16",
+      "title": "Hurricane Matthew",
+      "description": "Hurricane Matthew's Water Footprint",
+      "thumb": "water-viz-hurricane-matthew-thumbnail.png",
+      "alt": "A map showing the path of Hurricane Matthew, and subsequent precipitation and flooding in the area.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-matthew/index.html",
+      "codeUrl": "hurricane, animation, r"
+    }
+  ]
+}

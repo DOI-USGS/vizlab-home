@@ -1,0 +1,364 @@
+{
+  "websites": [
+    {
+      "id": "streamflow-drought-forecasts",
+      "released": "12/16/25",
+      "title": "Streamflow drought assessment and forecasting tool",
+      "description": null,
+      "thumb": "streamflow-drought-forecasts_thumbnail.webp",
+      "alt": "A map of Florida showing the streamflow drought status at streamgage locations. One gage is selected, and a window in the bottom left shows a timeseries of observed and forecast streamflow conditions at that site",
+      "productUrl": "https://water.usgs.gov/vizlab/streamflow-drought-forecasts",
+      "codeUrl": "https://github.com/DOI-USGS/streamflow-drought-forecasts"
+    },
+    {
+      "id": "modeling-drought",
+      "released": "12/16/25",
+      "title": "Modeling streamflow drought",
+      "description": null,
+      "thumb": "modeling-drought_thumbnail.png",
+      "alt": "An abstract compilation of snippets from charts that illustrate how streamflow drought is forecast",
+      "productUrl": "https://water.usgs.gov/vizlab/modeling-drought",
+      "codeUrl": "https://github.com/DOI-USGS/modeling-drought"
+    },
+    {
+      "id": "water-availability",
+      "released": "1/16/25",
+      "title": "Water availability in the United States",
+      "description": null,
+      "thumb": "water-availability_thumbnail.png",
+      "alt": "Map showing water limitation in the lower 48 United States by watershed. The background visualization shows monthly dynamics in water limitation from 2010 to 2020.",
+      "productUrl": "https://water.usgs.gov/vizlab/water-availability",
+      "codeUrl": "https://github.com/DOI-USGS/water-availability"
+    },
+    {
+      "id": "earth-in-flux",
+      "released": "12/18/24",
+      "title": "Earth is in Flux",
+      "description": null,
+      "thumb": "earth-in-flux_thumbnail.webp",
+      "alt": "Six tiles arranged in a grid of 3 columns and 2 rows show thumbnails for visualizations in the Earth in Flux chart gallery",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/earth-in-flux/",
+      "codeUrl": "https://github.com/DOI-USGS/earth-in-flux"
+    },
+    {
+      "id": "trout-and-climate",
+      "released": "11/20/24",
+      "title": "Managing redband trout for climate resilience",
+      "description": null,
+      "thumb": "trout-and-climate_thumbnail.webp",
+      "alt": "Illustrated river with two cartoon redband trout swimming in it in front of a data visualization that shows how cold- and warm-adapted redband trout are affected by water temperature. The visualization demonstrates that cold-adapted redband trout suffer from thermal stress at lower overall temperatures than warm-adapted redband trout. Text on the visualization includes labels for each line: \"cold-adapted redband trout\" and \"warm-adapted redband trout\" and a label for \"thermal stress.\"",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/trout-and-climate/",
+      "codeUrl": "https://github.com/DOI-USGS/trout_and_climate"
+    },
+    {
+      "id": "vulnerability-indicators",
+      "released": "9/23/24",
+      "title": "Unequal access to water",
+      "description": null,
+      "thumb": "vulnerability_thumbnail_not_stylized_square.png",
+      "alt": "Two contrasting images of water sources with the top image showing a close-up of a hand holding a clear glass being filled with water from a kitchen faucet. The bottom image shows a rustic landscape with a blue well tank labeled WELL-X-TROL with a wired fence and dry grass in the background.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/vulnerability-indicators/index.html#/",
+      "codeUrl": "https://github.com/DOI-USGS/vulnerability-indicators"
+    },
+    {
+      "id": "bottled-water",
+      "released": "11/21/23",
+      "title": "Water bottling across the U.S.",
+      "description": null,
+      "thumb": "bottled_water_thumbnail.webp",
+      "alt": "A map of Texas showing the count of bottled water facilities in each county.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html#/",
+      "codeUrl": "https://github.com/DOI-USGS/vizlab-bottled-water"
+    },
+    {
+      "id": "drought-timeline",
+      "released": "9/20/23",
+      "title": "Five droughts that changed history",
+      "description": null,
+      "thumb": "drought_timeline_thumbnail.webp",
+      "alt": "An image of dried, cracked mud overlain by a chart with long vertical bands representing drought events",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/drought-timeline/index.html#/",
+      "codeUrl": "https://github.com/DOI-USGS/drought-timeline"
+    },
+    {
+      "id": "what-is-drought",
+      "released": "6/22/23",
+      "title": "What is streamflow drought?",
+      "description": null,
+      "thumb": "WhatIsDrought-thumbnail.webp",
+      "alt": "An illustration of a partially dried-up streambed, wilted sunflower, and brown landscape depicting streamflow drought, which follows after meteorological and agricultural drought.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/what-is-drought/index.html#/",
+      "codeUrl": "https://github.com/DOI-USGS/what-is-drought"
+    },
+    {
+      "id": "water-cycle",
+      "released": "10/13/22",
+      "title": "The Water Cycle",
+      "description": "Zoomable version of the water cycle diagram",
+      "thumb": "water-cycle-thumbnail.png",
+      "alt": "A zoomed out view of a water cycle diagram",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/water-cycle/index.html#/",
+      "codeUrl": "https://github.com/USGS-VIZLAB/water-cycle"
+    },
+    {
+      "id": "pools-and-fluxes",
+      "released": "10/13/22",
+      "title": "Pools and Fluxes in the Water Cycle",
+      "description": "All of the water on Earth",
+      "thumb": "pnf-thumbnail.png",
+      "alt": "An illustration of the water cycle showing precipitation and runoff.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/pools-and-fluxes/index.html#/",
+      "codeUrl": "https://github.com/USGS-VIZLAB/pools-and-fluxes"
+    },
+    {
+      "id": null,
+      "released": "10/1/21",
+      "title": "River Conditions: July 1 to Sept 30, 2021",
+      "description": null,
+      "thumb": "river_conditions_apr_jun_2021_thumbnail.png",
+      "alt": "A map of all USGS streamflow gages in the U.S. with a color scale from red to blue to indicate dry to wet flow conditions.",
+      "productUrl": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2021",
+      "codeUrl": "https://github.com/USGS-VIZLAB/gage-conditions-gif"
+    },
+    {
+      "id": "volume-flows",
+      "released": "9/30/21",
+      "title": "Global flows",
+      "description": null,
+      "thumb": "volume-flows.jpeg",
+      "alt": "A pictogram chart depicting the volume of all water fluxes on earth. Drippy, a water droplet cartoon, represents 3,100 km3 of water and is drawn show scale differences in the largest water flow, ocean circulation with 7,100,000 km3 per year, to ice discharge which is a single Drippy.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1443655682134269954",
+      "codeUrl": null
+    },
+    {
+      "id": "forecast-gradient",
+      "released": "8/15/21",
+      "title": "Stream temperature forecast",
+      "description": null,
+      "thumb": "forecast-gradient.jpeg",
+      "alt": "A chart of 7-day-ahead forecasts of maximum stream temperature at 5 sites in the Delaware River Basin. For each site, a week of temperature forecasts are shown using gradient intervals to illustrate the 90% ci. Predictions exceeding a 75F temperature threshold are highlighted. In. most cases, the observed temperature is within the 90% ci of the predicted.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1430976331190317062",
+      "codeUrl": null
+    },
+    {
+      "id": "jobs-donut-chart",
+      "released": "8/5/21",
+      "title": "Where heard about job",
+      "description": null,
+      "thumb": "jobs-donut-connex.jpeg",
+      "alt": "An annotated donut chart with the title \u201cHow did you hear about the Product Owner position?\u201d The biggest category is USAJobs, which represents about half of the total. The second biggest category is unknown, taking up about a quarter of the total. Twitter and Colleague references make up less than a quarter of the donut chart. Small slivers show that Slack, Google, Internal candidates, Listservs, Universities, Job Boards, and LinkedIn make up one or two candidates each. Green arrows circle groups of dots in some groups and link them to other groups, showing when candidates heard about the position from more than one place. The biggest connection is that three candidates who said they heard from a colleague also mentioned USA Jobs.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1423343558946435076",
+      "codeUrl": null
+    },
+    {
+      "id": "dreamsicle",
+      "released": "6/21/21",
+      "title": "Dream(sicl)ing of ice-affected gages",
+      "description": null,
+      "thumb": "iceflag_dreamsicle_viz_lplatt_twitter.png",
+      "alt": "A cartogram map of the U.S. made of plots that look like dreamsicles showing the proportion of data points affected by ice flags.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1413579318010122242",
+      "codeUrl": null
+    },
+    {
+      "id": "temperature-prediction-monitoring",
+      "released": "6/2/21",
+      "title": "How we Monitor Stream Temperature in the Delaware River Basin",
+      "description": null,
+      "thumb": "temp-monitor.jpg",
+      "alt": "A map of stream reaches in the Delaware River Basin artistically embedded in a line chart showing stream temperature throughtout the year.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/monitoring",
+      "codeUrl": "https://github.com/usgs-makerspace/temperature-prediction"
+    },
+    {
+      "id": "hex-map",
+      "released": "6/1/21",
+      "title": "Temperature observations hex map",
+      "description": null,
+      "thumb": "hex-map_large.png",
+      "alt": "A hex map of the U.S. showing the frequency of stream temperature observations. The Delaware River Basin and PNW have bright spots, indicating the highest number of observations.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling",
+      "codeUrl": null
+    },
+    {
+      "id": "rmse-bees",
+      "released": "5/21/21",
+      "title": "RGCN beeswarm",
+      "description": null,
+      "thumb": "rmse_bees_twitter-01.png",
+      "alt": "Beeswarm charts stacked along the horizontal axis, showing RMSE for stream temperature predictions under defferent models. The ANN has the widest distribution of RMSEs, whereas the process-guided machine learning model has the lowest RMSEs overall.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling",
+      "codeUrl": null
+    },
+    {
+      "id": "snow-to-flow-linechart",
+      "released": "5/1/21",
+      "title": "From Snow to Flow linechart",
+      "description": null,
+      "thumb": "snow-to-flow-linechart.png",
+      "alt": "A line chart of snow water equivalent and streamflow through a high snow year and a low snow year. In the high snow year",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1388869132356030464",
+      "codeUrl": null
+    },
+    {
+      "id": "snow-to-flow-map",
+      "released": "4/28/21",
+      "title": "Are snowy places getting snowier?",
+      "description": null,
+      "thumb": "getting-snowier.jpeg",
+      "alt": "A map of SNOTEL sites across the western U.S. that uses a bivariate color ramp to show two variables: how much snow a site receives in a typical year (mean peak SWE for the historic record) and how much snow it received in April 2021 (SWE percentile). It asks \"Are snowy places getting snowier?\". A number of sites that typically get a lot of snow received more snow than on record, but a  greater nmber of sites had less snow than the historic record, and a third falling within a typical range.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1387450575772606467/photo/1",
+      "codeUrl": null
+    },
+    {
+      "id": "snow-to-flow",
+      "released": "4/16/21",
+      "title": "From Snow to Flow",
+      "description": "What changing snowmelt means for water in the Western U.S.",
+      "thumb": "snow-to-flow.jpg",
+      "alt": "An image of mountains near a lake covered in snow, with peak-like line charts artistically placed in the background.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/snow-to-flow/index.html#/",
+      "codeUrl": "https://github.com/USGS-VIZLAB/snow-to-flow"
+    },
+    {
+      "id": "fire-cost",
+      "released": "4/16/21",
+      "title": "Fire cost",
+      "description": null,
+      "thumb": "firechart-01.png",
+      "alt": "A bubble chart showing the relationship between the \"Millions of acres burned & millions of dollars spent suppressing wildfires\". In recent yearsthe number of acres burned and fire suppression costs have been the highest on record.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1382392034724564993",
+      "codeUrl": null
+    },
+    {
+      "id": "snowmelt-timing",
+      "released": "4/10/21",
+      "title": "Snowment timing",
+      "description": null,
+      "thumb": "snowmelt-timing-2020.png",
+      "alt": "A dot plot showing the timing of snowmelt from 1981-2020 for all SNOTEL sites. There is a large amount of variation within and among years, with timing occurring as early or late as 50 days from the median snowmelt date in some years.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1381726113488117762",
+      "codeUrl": null
+    },
+    {
+      "id": "magic-reservoir",
+      "released": "4/2/21",
+      "title": "Magic reservoir",
+      "description": null,
+      "thumb": "magic.png",
+      "alt": "A three panel chart showing (1) a silhouette map of the Magic Reservoir, (2) the median streamflow throughout the year upstream and downstream from the reservoir, and (3) the difference between upstream and downstream flow. This illustrates that prior to the summer, streamflow is higher upstream and after it is higher downstream due to reservoir releases.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1378722525895528458",
+      "codeUrl": null
+    },
+    {
+      "id": "the-534-day-flood",
+      "released": "4/1/21",
+      "title": "The 534-day flood",
+      "description": "A look at the longest flood over the last 20 years at site 06472000 on the James River, SD",
+      "thumb": "the-534-day-flood.png",
+      "alt": "A streamgraph showing the max flood duration at streamgages over the last 20 years. One site on the James River in South Dakota was flooding for 534 days continuously, greatly exceeding the flood duration at any other site.",
+      "productUrl": "https://www.usgs.gov/media/images/534-day-flood-site-06472000-james-river-sd",
+      "codeUrl": "https://github.com/USGS-VIZLAB/viz-scratch/tree/main/500_days_of_flooding"
+    },
+    {
+      "id": "pictogram-pools",
+      "released": "4/1/21",
+      "title": "Pictogram pools",
+      "description": null,
+      "thumb": "pictogram-volume.jpg",
+      "alt": "A pictogram of the volume of all water on Earth. Drippy, a cartoon water droplet, represents 500,000 km3 of water and is used to compare volume across oceans, ice, groundwater, and all other ocmponents of the water cycle. The volume of oceans (1,340,000,000 km3 greatly exceeds all other water pools, followed by ice (25,800,000 km3), groundwater (22,600,000 km3), and everything else (495,000 km3).",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1378070227670327296",
+      "codeUrl": null
+    },
+    {
+      "id": "fire-hydro",
+      "released": "11/5/20",
+      "title": "How wildfires threaten U.S. water supplies",
+      "description": "Communities across the United States and the globe rely on clean water flowing from forested watersheds. But these water source areas are impacted by the effects of wildfire.",
+      "thumb": "fire-hydro.jpg",
+      "alt": "A thumbnail showing a burn scar from a wildfire, with a line chart of the total acres burned by wildfires abstractly in the background.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/fire-hydro/index.html#/",
+      "codeUrl": "https://github.com/usgs-makerspace/fire-hydro"
+    },
+    {
+      "id": "gages-through-the-ages",
+      "released": "7/1/20",
+      "title": "Gages Through the Ages",
+      "description": "How the history of streamgaging reflects the evolving water needs of the nation",
+      "thumb": "gages-cartogram-01.png",
+      "alt": "A cartogram map of the U.S. made from area charts depicting the total number of USGS streamgages in each state over time.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/gages-through-the-ages/index.html#/",
+      "codeUrl": "https://github.com/usgs-makerspace/gages-through-the-ages"
+    },
+    {
+      "id": "flow-rainbows",
+      "released": "6/15/20",
+      "title": "Flow rainbows",
+      "description": null,
+      "thumb": "flow-rainbows.png",
+      "alt": "A collection of \"Streamflow rainbows\", showing 100 years of streamflow data at USGS streamgage locations. Each rainbow has 5 color bands representing 5 20-year time periods of streamflow data. The bands show the 95% CI of 7-day streamflow throughout the year. Separation between the rainbow bands indicate change through time.",
+      "productUrl": "https://twitter.com/USGS_DataSci/status/1337449986339041281",
+      "codeUrl": null
+    },
+    {
+      "id": "water-use-15",
+      "released": "1/1/18",
+      "title": "Water use in the U.S., 2015",
+      "description": "We all depend on water every day, ranging from the water from our faucets, to the food we eat, to much of the electricity we use.",
+      "thumb": "water-use-2015-01.png",
+      "alt": "A bubble map with bubbles for each U.S. county, showing total water use in 2015.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/water-use-15/index.html#view=USA&category=total",
+      "codeUrl": "https://github.com/USGS-VIZLAB/water-use-15"
+    },
+    {
+      "id": "water-use-15-state",
+      "released": "1/1/18",
+      "title": "U.S. Water Use from 1950-2015",
+      "description": "How much water do we use?",
+      "thumb": "water-use-time-01.png",
+      "alt": "A map of the U.S. with each state area scaled to total water use in 2015",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/water-use/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/water-use"
+    },
+    {
+      "id": "climate-change-walleye-bass",
+      "released": "1/1/17",
+      "title": "Shifts in Fish Habitat Under Climate Change",
+      "description": "Lakes in Wisconsin are getting warmer, and fish communities are changing as a result.",
+      "thumb": "climate-change-fish-01.png",
+      "alt": "An image of two fish silhouettes with a line chart overlaid artistically.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/climate-change-walleye-bass/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/climate-fish-habitat"
+    },
+    {
+      "id": "microplastics",
+      "released": "1/1/17",
+      "title": "Microplastics in the Great Lakes",
+      "description": "Where in our waterways are microplastics found?",
+      "thumb": "microplastics.png",
+      "alt": "A sankey chart showing how much of the water stored in Lake Mead is distributed among California, Nevada, Arizona, and Mexico.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/microplastics/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/great-lakes-microplastics"
+    },
+    {
+      "id": "owdi-cr-drought",
+      "released": "1/1/16",
+      "title": "OWDI Lower Colorado Drought",
+      "description": "Insights using open data",
+      "thumb": "co-drought-lakemead.png",
+      "alt": "A sankey chart showing how much of the water stored in Lake Mead is distributed among California, Nevada, Arizona, and Mexico.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/OWDI-drought/",
+      "codeUrl": "https://github.com/USGS-VIZLAB/OWDI-Lower-Colorado-Drought-Vis"
+    },
+    {
+      "id": "ca-drought",
+      "released": "1/1/16",
+      "title": "California Drought",
+      "description": "Visualized with open data",
+      "thumb": "ca-drought-map.png",
+      "alt": "A heatmap of California showing drought intensity throughout the central valley.",
+      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/ca_drought/index.html",
+      "codeUrl": "https://github.com/USGS-VIZLAB/CIDA-Viz"
+    }
+  ]
+}

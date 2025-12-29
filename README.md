@@ -2,9 +2,9 @@
 
 > _A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/{app_title}/-/releases to view all releases._
 
-This repo uses ... to build a data visualization website about ...
+This repo uses Vue3 to build a portfolio website showcasing data visualization and graphical products made by the USGS Vizlab. The "see code" links on the portfolio cards will take you to the code repositories behind the visual products featured here.
 
-**The data visualization website can be viewed at [https://water.usgs.gov/vizlab/{app_title}](https://water.usgs.gov/vizlab/{app_title}).**
+**The data visualization website can be viewed at [https://water.usgs.gov/{app_title}](https://water.usgs.gov/{app_title}).**
 
 ## Building the website locally
 
@@ -15,9 +15,6 @@ To build the website locally you'll need `node.js` `v22.14.0` and `npm` `v10.9.2
 ## Citation
 
 {Authors}. {Year}. {Website title}. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
-
-## Consulting subject matter experts
-Person X, person Y, and person Z consulted on the development of this website as subject matter experts.
 
 ## Additional information
 * We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/{app_title}/) to this repository on GitHub.
