@@ -53,7 +53,7 @@ hr {
 
 /* header (only) nav */
 .header-nav {
-	background: #00264c;
+	background: var(--black-soft);
 }
 
 .logo-header img {
@@ -118,7 +118,7 @@ input,button{font-family:inherit;font-size:inherit;line-height:inherit}
    content: none;
 }
 footer.footer {
-	background: #00264c;
+	background: var(--black-soft);
 	padding-bottom: 0px;
 	position: relative;
 	width: 100%;
