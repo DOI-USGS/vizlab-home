@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/univers-condensed-2');
 
 /* semantic color variables for this project */
 /* Define colors */
@@ -18,7 +19,7 @@
 
   font-size: 62.5%;
 
-  --title-font: Roboto Slab;
+  --title-font: Source Sans Pro;
   --default-font: Source Sans Pro;
 }
 
@@ -26,7 +27,7 @@
 :root {
   --color-background: var(--white);
   --color-text: var(--black-soft);
-  --color-title-text: var(--dodger-blue);
+  --color-title-text: var(--black-soft);
   --color-overlay: var(--black-soft);
   --color-overlay-text: var(--white-soft);
   --color-code-links-background: var(--medium-grey);
@@ -53,6 +54,13 @@
   /* font-weight: normal; */
 }
 
+.title {
+  font-family: 'Univers Condensed', var(--title-font), sans-serif;
+}
+
+.title-strong { font-weight: 700; }
+.title-light  { font-weight: 300; }
+
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -71,14 +79,14 @@ body {
   overscroll-behavior: none;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 7rem;
   font-weight: 800;
-  padding: 0rem 0 1rem 0;
+  padding: 0rem 0 0rem 0;
 }
 h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  padding: 3rem 0 1rem 0;
+  padding: 0rem 0 1rem 0;
 }
 p, text, li {
   padding: 0 0 1rem 0;
