@@ -15,15 +15,18 @@ Here we track upcoming changes.
  
 ### Fixed
  
-## [1.0.0] - 2024-11-07
+## [1.0.0] - 2026-01-02
  
 ### Added
 
-- Description of new feature
+- Added a changelog
+- Added merge request templates
  
 ### Changed
   
-- Description of change
+- Cleaned up portfolio cards. src/assets/content/viz-list.json drives the content
+- Added organization to current conditions collections based on release date
+
  
 ### Fixed
  

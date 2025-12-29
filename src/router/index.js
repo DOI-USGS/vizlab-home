@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import VisualizationView from '@/views/VisualizationView.vue'
+import HomePage from '@/views/HomePage.vue'
 
 function lazyLoad(view){
   return() => import(`@/views/${view}.vue`)
@@ -11,12 +11,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'VisualizationContent',
-      component: VisualizationView
+      component: HomePage
     },
     {
       path: '/index.html',
       name: 'Index',
-      component: VisualizationView
+      component: HomePage
     },
     {
       path: "/404",

@@ -23,16 +23,6 @@ To build the website locally you'll need `node.js` `v22.14.0` and `npm` `v10.9.2
 
 # vue3-template [DELETE THIS SECTION AND ALL BELOW CONTENT BEFORE RELEASE]
 
-This project serves as a template for our site builds. It uses Vue 3 and Vite (currently version 5), and is configured to be built locally.
-
-## To build the website locally
-Clone the repo. In the directory, run `npm install` to install the required modules. This repository requires `npm v20` to run. If you are using a later version of `npm`, you may [try using `nvm` to manage multiple versions of npm](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e).
-
-Once the dependencies have been installed, run `npm run dev` to run the site locally from your browser.
-
-## Project name handling
-The environment variable `VITE_APP_TITLE` (set in `'.env'`) is a key variable. **The value for `VITE_APP_TITLE` must match the repo name** (here `vue3-template`). Note that our repo naming convention is to use dashes ('-') instead of underscores ('_') to separate words, as it looks better in the final url. Note that the value of `VITE_APP_TITLE` will determine the website extension (`water.usgs.gov/vizlab/{VITE_APP_TITLE}`).
-
 The value for `name` in `'package.json'` should be set to match `VITE_APP_TITLE`. 
 
 `VITE_APP_TITLE` is also used to set the base path for the vite build in `'vite.config.mjs'`. 
