@@ -10,7 +10,7 @@
       <VizSection :items="websites" id="stories" />
       <SketchesSection :items="sketches" id="sketches" />
       <BlogSection :items="blogs" id="blogs" />
-      <AboutSection :items="team" id="team" />
+      <AboutSection :text="team" id="team" />
     </main>
   </section>
 </template>
@@ -28,9 +28,11 @@ import viz from "@/assets/content/viz-list.json"
 import snapshots from "@/assets/content/series-list.json"
 import sketchesData from "@/assets/content/sketches.json"
 import blogsData from "@/assets/content/blogs.json"
+import teamData from "@/assets/content/team.json"
 
 const websites = viz.items 
 const sketches = sketchesData.items 
 const blogs = blogsData.items 
 const series = snapshots.collections 
+const team = teamData
 </script>

@@ -8,10 +8,15 @@ const join = (...parts) =>
     )
     .join("/")
 
+const isAbsoluteUrl = (value = "") => /^https?:\/\//i.test(value)
+
 export const useAssetPathStore = defineStore("AssetPathStore", () => {
   const s3Base = join(import.meta.env.VITE_APP_S3_PROD_URL)
 
-  const buildThumbUrl = (path = "") => join(s3Base, "thumbnails", path)
+  const buildThumbUrl = (path = "") => {
+    if (isAbsoluteUrl(path)) return path
+    return join(s3Base, "thumbnails", path)
+  }
   const buildIllustrationUrl = (filename = "") => join(s3Base, "illustration", filename)
 
   const buildSeriesUrl = (folder = "", filename = "") => {
