@@ -16,9 +16,9 @@
         </div>
         <div class="card-content">
           <div class="card-meta-row">
-            <p v-if="released" class="card-meta">
+<!--             <p v-if="released" class="card-meta">
               {{ released }}
-            </p>
+            </p> -->
 
             <!-- <a
               v-if="codeHref"
@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-const base_url = (import.meta.env.VITE_APP_S3_PROD_URL)
+import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
   viz: {
@@ -52,15 +52,14 @@ const props = defineProps({
   }
 })
 
-const { title, released, alt, productUrl, codeUrl, thumb } = props.viz
+const { title, released, alt, productUrl, thumb } = props.viz
+
+const assetStore = useAssetPathStore()
 
 const productHref = productUrl ?? "#"
-const codeHref = codeUrl ?? ""
 const altText = alt ?? title
 
-const thumbnail = (() => {
-  return `${base_url}thumbnails/${thumb}`
-})()
+const thumbnail = assetStore.buildThumbUrl(thumb)
 </script>
 
 <style scoped>

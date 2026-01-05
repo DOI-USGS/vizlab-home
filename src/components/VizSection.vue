@@ -1,9 +1,9 @@
 <template>
   <section id="websites" class="viz-section">
     <div class="section-header">
-      <h2>stories</h2>
+      <h2>science stories</h2>
       <p class="section-summary">
-        Stories told by water data.
+        Told by water data.
       </p>
     </div>
 
@@ -38,7 +38,7 @@ const props = defineProps({
 
 // filter out vizzies with "archive": true
 const visibleItems = computed(() =>
-  (props.items || []).filter((item) => !item?.archive)
+  (props.items).filter((item) => !item.archive)
 )
 </script>
 
@@ -49,21 +49,6 @@ const visibleItems = computed(() =>
   max-width: 1200px;
 }
 
-.section-header {
-  margin-bottom: 2rem;
-}
-
-.section-title {
-  font-size: clamp(2.8rem, 4vw, 4rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.section-summary {
-  font-size: 1.8rem;
-  color: rgba(0, 0, 0, 0.7);
-  max-width: 70ch;
-}
 
 .cards-grid {
   list-style: none;
@@ -74,13 +59,4 @@ const visibleItems = computed(() =>
   gap: clamp(1.2rem, 2vw, 2.4rem);
 }
 
-@media (max-width: 600px) {
-  .viz-section {
-    padding: 3rem 1.5rem 4rem;
-  }
-
-  .section-title {
-    font-size: 2.4rem;
-  }
-}
 </style>
