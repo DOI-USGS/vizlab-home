@@ -1,28 +1,23 @@
 <template>
-  <li class="blog-card">
+  <li class="content-card">
     <article class="card">
       <a
         class="card-main"
-        :href="blog.url"
+        :href="externalHref"
         target="_blank"
         rel="noopener noreferrer"
       >
         <div class="card-image" aria-hidden="true">
           <img
-            :src="blog.img_src"
+            :src="thumbnailSrc"
             :alt="imageAlt"
             loading="lazy"
           >
         </div>
 
         <div class="card-content">
-          <div class="card-meta-row">
-            <p v-if="blog.date" class="card-meta">
-              {{ blog.date }}
-            </p>
-          </div>
           <h3 class="card-title">
-            {{ blog.title }}
+            {{ title }}
           </h3>
         </div>
       </a>
@@ -31,20 +26,33 @@
 </template>
 
 <script setup>
-import { computed } from "vue"
+import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
-  blog: {
+  item: {
     type: Object,
     required: true
+  },
+  imageRatio: {
+    type: Number,
+    default: 90
   }
 })
 
-const imageAlt = computed(() => props.blog?.img_alt || props.blog?.title)
+const assetStore = useAssetPathStore()
+
+const title = props.item.title
+const externalHref = props.item.links.external
+
+const thumbnail = props.item.image.thumbnail
+const thumbnailSrc = assetStore.buildThumbUrl(thumbnail)
+const imageAlt = props.item.image.alt
+
+const imagePadding = `${props.imageRatio}%`
 </script>
 
 <style scoped>
-.blog-card {
+.content-card {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -67,8 +75,8 @@ const imageAlt = computed(() => props.blog?.img_alt || props.blog?.title)
   overflow: hidden;
   background: var(--color-background, #fff);
   transition:
-    transform 20ms ease,
-    box-shadow 20ms ease;
+    transform 200ms ease,
+    box-shadow 200ms ease;
   min-height: 100%;
 }
 
@@ -81,7 +89,7 @@ const imageAlt = computed(() => props.blog?.img_alt || props.blog?.title)
 .card-image {
   position: relative;
   width: 100%;
-  padding-top: 100%;
+  padding-top: v-bind(imagePadding);
   overflow: hidden;
   background: var(--light-grey);
 }
@@ -100,9 +108,9 @@ const imageAlt = computed(() => props.blog?.img_alt || props.blog?.title)
 }
 
 .card-title {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .card-meta-row {

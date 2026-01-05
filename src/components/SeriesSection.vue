@@ -28,7 +28,6 @@
           >
             <SeriesCard
               :series="slide.data"
-              :thumb-base="thumbBase"
             />
           </div>
         </div>
@@ -40,7 +39,6 @@
 <script setup>
 import { computed, ref } from "vue"
 import SeriesCard from "@/components/SeriesCard.vue"
-import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
   series: {
@@ -51,8 +49,7 @@ const props = defineProps({
 
 // carousel navigation
 const index = ref(0)
-const seriesList = props.series
-const assetPaths = useAssetPathStore()
+const seriesList = (props.series || []).filter((collection) => !collection.archive)
 
 // show part of the series on either side of the focal one in the carousel
 const displaySeries = computed(() => {
@@ -69,9 +66,6 @@ const displaySeries = computed(() => {
     }
   })
 })
-
-/* find thumbnails in s3 */
-const thumbBase = computed(() => assetPaths.s3Base ? `${assetPaths.s3Base}/thumbnails` : "")
 
 /* nagivate carousel slides */
 function move(step) {

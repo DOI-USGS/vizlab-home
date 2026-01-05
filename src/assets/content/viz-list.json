@@ -271,7 +271,8 @@
       "links": {
         "code": "https://github.com/USGS-VIZLAB/OWDI-Lower-Colorado-Drought-Vis",
         "external": "https://labs.waterdata.usgs.gov/visualizations/OWDI-drought/"
-      }
+      },
+      "archive": true
     },
     {
       "id": "ca-drought",
@@ -284,7 +285,8 @@
       "links": {
         "code": "https://github.com/USGS-VIZLAB/CIDA-Viz",
         "external": "https://labs.waterdata.usgs.gov/visualizations/ca_drought/index.html"
-      }
+      },
+      "archive": true
     }
   ]
 }

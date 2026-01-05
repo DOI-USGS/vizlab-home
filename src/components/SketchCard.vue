@@ -1,18 +1,18 @@
 <template>
   <article
     class="sketch-card"
-    :class="{ 'sketch-card--wide': card.size === 'wide' }"
+    :class="{ 'sketch-card--wide': isWide }"
   >
     <a
       class="sketch-card__link"
-      :href="card.targetUrl || '#'"
+      :href="targetUrl"
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
         class="sketch-card__thumb"
-        :src="card.thumbUrl"
-        :alt="card.alt || card.title"
+        :src="thumbnailSrc"
+        :alt="altText"
         loading="lazy"
       >
       <div class="sketch-card__overlay">
@@ -25,11 +25,36 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue"
+import { useAssetPathStore } from "@/stores/AssetPathStore.js"
+
+const props = defineProps({
   card: {
     type: Object,
     required: true
   }
+})
+
+const assetStore = useAssetPathStore()
+
+const isWide = computed(() => props.card?.meta?.size === "wide")
+
+const thumbnailSrc = computed(() => {
+  const src = props.card?.image?.thumbnail || ""
+  if (!src) return ""
+  if (/^https?:\/\//i.test(src)) return src
+  return assetStore.buildThumbUrl(src)
+})
+
+const altText = computed(() => props.card?.image?.alt || props.card?.title || "")
+
+const targetUrl = computed(() => {
+  const primary = props.card?.links?.external
+  if (primary) return primary
+  const asset = props.card?.links?.asset || ""
+  if (!asset) return "#"
+  if (/^https?:\/\//i.test(asset)) return asset
+  return assetStore.buildIllustrationUrl(asset)
 })
 </script>
 

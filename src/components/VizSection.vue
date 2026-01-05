@@ -8,10 +8,10 @@
     </div>
 
     <ul class="cards-grid">
-      <PortfolioCard
+      <ContentCard
         v-for="viz in visibleItems"
         :key="viz.id ?? viz.title"
-        :viz="viz"
+        :item="viz"
       />
     </ul>
   </section>
@@ -19,7 +19,7 @@
 
 <script setup>
 import { computed } from "vue"
-import PortfolioCard from "@/components/PortfolioCard.vue"
+import ContentCard from "@/components/ContentCard.vue"
 
 const props = defineProps({
   items: {
@@ -28,7 +28,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "stories"
+    default: "interactive"
   },
   summary: {
     type: String,

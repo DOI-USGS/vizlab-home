@@ -10,10 +10,11 @@
     </div>
 
     <ul v-if="blogItems.length" class="cards-grid">
-      <BlogCard
+      <ContentCard
         v-for="blog in blogItems"
         :key="blog.id"
-        :blog="blog"
+        :item="blog"
+        :image-ratio="100"
       />
     </ul>
   </section>
@@ -21,7 +22,7 @@
 
 <script setup>
 import { computed } from "vue"
-import BlogCard from "@/components/BlogCard.vue"
+import ContentCard from "@/components/ContentCard.vue"
 
 const props = defineProps({
   items: {
@@ -30,7 +31,7 @@ const props = defineProps({
   }
 })
 
-const blogItems = computed(() => props.items || [])
+const blogItems = computed(() => (props.items || []).filter((item) => !item.archive))
 </script>
 
 <style scoped>

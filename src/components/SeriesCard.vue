@@ -22,20 +22,20 @@
 
     <a
       class="series-card__image"
-      :href="latestEntry.productUrl || '#'"
+      :href="latestPrimaryLink"
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
         :src="latestThumb"
-        :alt="latestEntry.alt"
+        :alt="latestAlt"
         loading="lazy"
       >
     </a>
 
     <div class="series-card__body">
       <p class="series-card__meta">
-        {{ latestEntry.released }}
+        {{ latestReleaseLabel }}
       </p>
       <p v-if="series?.description" class="series-card__description">
         {{ series.description }}
@@ -43,7 +43,7 @@
       <div class="series-card__actions">
         <a
           class="series-link"
-          :href="latestEntry.productUrl || '#'"
+          :href="latestPrimaryLink"
           target="_blank"
           rel="noopener noreferrer"
         >View latest release</a>
@@ -63,9 +63,9 @@
           </svg>
         </button>
         <a
-          v-if="latestEntry.codeUrl"
+          v-if="latestCodeLink"
           class="series-link ghost"
-          :href="latestEntry.codeUrl"
+          :href="latestCodeLink"
           target="_blank"
           rel="noopener noreferrer"
         >View code</a>
@@ -89,11 +89,11 @@
             v-for="entry in history"
             :key="entry.id"
             class="history-link"
-            :href="entry.productUrl || '#'"
+            :href="resolvePrimaryLink(entry) || '#'"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {{ entry.released }}
+            {{ entry.title || entry.released }}
           </a>
         </div>
       </transition>
@@ -103,20 +103,26 @@
 
 <script setup>
 import { computed, ref } from "vue"
+import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
   series: {
     type: Object,
     required: true
-  },
-  thumbBase: {
-    type: String,
-    default: ""
   }
 })
 
-const latestEntry = computed(() => props.series?.entries?.[0] ?? {})
-const history = computed(() => props.series?.entries?.slice(1) ?? [])
+const assetStore = useAssetPathStore()
+
+const SERIES_BUCKET_MAP = {
+  flowTiles: "flow",
+  riverConditions: "river-conditions"
+}
+
+const seriesBucket = computed(() => SERIES_BUCKET_MAP[props.series?.id] || "")
+
+const latestEntry = computed(() => props.series?.items?.[0] ?? {})
+const history = computed(() => props.series?.items?.slice(1) ?? [])
 const expanded = ref(false)
 
 // add share to social media buttons
@@ -135,9 +141,10 @@ function extractTweetId(url = "") {
   }
 }
 
-// retweet on twitter
+const isAbsolute = (value = "") => /^https?:\/\//i.test(value)
+
 const shareUrl = computed(() => {
-  const url = latestEntry.value?.shareUrl || latestEntry.value?.productUrl
+  const url = latestEntry.value?.links?.x || latestEntry.value?.links?.external || ""
   const tweetId = extractTweetId(url)
   if (!tweetId) return ""
   const intentBase = "https://twitter.com/intent/retweet"
@@ -149,19 +156,34 @@ function shareOnX() {
   window.open(shareUrl.value, "_blank", "noopener,noreferrer")
 }
 
-const resolvedBase = computed(() => {
-  const override = props.series?.thumbBase
-  const base = override || props.thumbBase || ""
-  return base.replace(/\/+$/, "")
-})
+const resolveThumbnail = (src = "") => {
+  if (!src) return ""
+  if (isAbsolute(src)) return src
+  const bucket = seriesBucket.value
+  if (bucket) {
+    return assetStore.buildSeriesUrl(bucket, src)
+  }
+  return assetStore.buildThumbUrl(src)
+}
 
-const latestThumb = computed(() => {
-  const thumb = latestEntry.value?.thumb
-  if (!thumb) return props.placeholder
-  if (/^https?:\/\//i.test(thumb)) return thumb
-  const base = resolvedBase.value
-  return base ? `${base}/${thumb.replace(/^\//, "")}` : props.placeholder
-})
+const latestThumb = computed(() => resolveThumbnail(latestEntry.value?.image?.thumbnail || ""))
+
+const latestAlt = computed(() => latestEntry.value?.image?.alt || props.series?.title || "")
+const latestReleaseLabel = computed(() => latestEntry.value?.title || latestEntry.value?.released || "")
+
+const resolvePrimaryLink = (entry) => {
+  const raw = entry?.links?.external || ""
+  if (!raw) return ""
+  if (isAbsolute(raw)) return raw
+  const bucket = seriesBucket.value
+  if (bucket) {
+    return assetStore.buildSeriesUrl(bucket, raw)
+  }
+  return assetStore.buildSeriesUrl("", raw)
+}
+
+const latestPrimaryLink = computed(() => resolvePrimaryLink(latestEntry.value) || "#")
+const latestCodeLink = computed(() => latestEntry.value?.links?.code || "")
 </script>
 
 <style scoped>

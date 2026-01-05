@@ -34,7 +34,6 @@
           </div>
         </nav>
 
-        <ThemeToggle />
       </div>
     </div>
   </div>
@@ -42,7 +41,6 @@
 
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from "vue"
-import ThemeToggle from "@/components/ThemeToggle.vue"
 
 import viz from "@/assets/content/viz-list.json"
 

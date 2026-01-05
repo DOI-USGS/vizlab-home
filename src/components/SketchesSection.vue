@@ -42,7 +42,6 @@
 
 <script setup>
 import { computed, ref } from "vue"
-import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 import SketchCard from "@/components/SketchCard.vue"
 
 const props = defineProps({
@@ -52,27 +51,7 @@ const props = defineProps({
   }
 })
 
-const assetStore = useAssetPathStore()
-
-const cards = computed(() =>
-  (props.items || []).map((item) => {
-    const id = item.id
-    const title = item.title || id
-    const thumbUrl = assetStore.buildThumbUrl(`${id}_thumbnail.png`)
-    // fallback to S3 illustration file when no product link exists
-    const productUrl = item.productUrl || (item.filename ? assetStore.buildIllustrationUrl(item.filename) : "")
-    const tags = Array.isArray(item.tags) ? item.tags.filter(Boolean) : []
-
-    return {
-      ...item,
-      id,
-      title,
-      thumbUrl,
-      tags,
-      targetUrl: productUrl
-    }
-  })
-)
+const cards = computed(() => (props.items || []).filter((item) => !item.archive))
 
 // filtering the cards using button tags
 const selectedTag = ref(null)
