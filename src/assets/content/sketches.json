@@ -139,7 +139,9 @@
         "asset": "usgs-water-strong_infographic.png",
         "external": ""
       },
-      "tags": []
+      "tags": [
+        "flood"
+      ]
     },
     {
       "id": "usgs-water-alert_infographic",
