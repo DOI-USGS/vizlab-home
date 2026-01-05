@@ -1,477 +1,793 @@
 {
-  "series": {
-    "meta": {
-      "flowTiles": {
-        "title": "Flow tiles",
-        "interval": "Monthly",
-        "description": "Monthly tile maps summarizing streamflow conditions by state."
-      },
-      "riverConditions": {
-        "title": "River conditions",
-        "interval": "Quarterly, Annual",
-        "description": "Animations of streamflow conditions at USGS monitoring locations."
-      },
-      "gwConditions": {
-        "title": "Groundwater conditions",
-        "interval": "Annual",
-        "description": "Animations of groundwater conditions at USGS monitoring locations."
-      },
-      "hurricaneFootprint": {
-        "title": "Hurricane footprint",
-        "interval": "Event-based",
-        "description": "Animations of hurricane rainfall, flooding, and impacts."
-      }
+  "collections": [
+    {
+      "id": "flowTiles",
+      "title": "Flow tiles",
+      "description": "Monthly tile maps summarizing streamflow conditions by state.",
+      "intervals": [
+        "Monthly"
+      ],
+      "items": [
+        {
+          "id": "flow_cartogram-aug-2025",
+          "title": "August 2025",
+          "released": "2025-08-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of August 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of August, dry conditions expanded across the Northeast, Southeast and Southwest, while parts of the Midwest and South Atlantic saw wet conditions.",
+            "thumbnail": "2025_08/flow_cartogram-aug-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_Water/status/1965102031225700461",
+            "external": "2025_08/flow_cartogram-aug-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-july-2025",
+          "title": "July 2025",
+          "released": "2025-07-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of July 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of July, dry conditions persisted across parts of the Northeast, Mid-Atlantic, and Southwest, while wet conditions expanded across parts of the Upper Midwest.",
+            "thumbnail": "2025_07/flow_cartogram-july-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_Water/status/1957505329102508491",
+            "external": "2025_07/flow_cartogram-july-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-june-2025",
+          "title": "June 2025",
+          "released": "2025-06-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of June 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, dry conditions expanded across parts of the West, Southwest, and Mid-Atlantic, while wet conditions persisted across much of the central U.S. and Midwest.",
+            "thumbnail": "2025_06/flow_cartogram-june-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_Water/status/1942234704234627072",
+            "external": "2025_06/flow_cartogram-june-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-may-2025",
+          "title": "May 2025",
+          "released": "2025-05-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of May 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of May, wet conditions persisted in the Northeast and Mid-Atlantic states like New York, Pennsylvania, and Vermont. In contrast, dry conditions persisted in Florida, Arizona, and New Mexico.",
+            "thumbnail": "2025_05/flow_cartogram-may-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1929924020004147635",
+            "external": "2025_05/flow_cartogram-may-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-apr-2025",
+          "title": "April 2025",
+          "released": "2025-04-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of April 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of April, wet conditions were prevalent in the Midwest and Northeast, including states like Wisconsin, Indiana, Vermont, and Maine. Meanwhile, dry conditions dominated parts of the Southeast and Southwest, especially in Florida, New Mexico, and Arizona.",
+            "thumbnail": "2025_04/flow_cartogram-apr-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1919446545654489325",
+            "external": "2025_04/flow_cartogram-apr-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-mar-2025",
+          "title": "March 2025",
+          "released": "2025-03-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of March 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of March, wet conditions dominated much of the West Coast and Northeast, for states such as California, Oregon, Vermont, and New Hampshire, while near normal conditions persisted for much of the Central U.S for states such as Oklahoma, Kansas, and Nebraska.",
+            "thumbnail": "2025_03/flow_cartogram-mar-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1907870314681221497",
+            "external": "2025_03/flow_cartogram-mar-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-feb-2025",
+          "title": "February 2025",
+          "released": "2025-02-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of February 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of February, parts of the Northern Rockies saw dry conditions for states such as Montana, Wyoming, and Idaho. Concurrently, winter storms brought wet conditions to parts of the Southeast for states such as Kentucky, Tennessee, Mississippi and Louisiana.",
+            "thumbnail": "2025_02/flow_cartogram-feb-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1897692959404925333",
+            "external": "2025_02/flow_cartogram-feb-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-jan-2025",
+          "title": "January 2025",
+          "released": "2025-01-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of January 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of January, much of the Mountain West and Southwest saw dry conditions for states such as Montana, Wyoming, Arizona, and New Mexico. Concurrently, winter storms brought wet conditions to parts of the Northwest, such as Oregon, and the Southeast, such as Louisiana, Arkansas, Tennessee, and Kentucky.",
+            "thumbnail": "2025_01/flow_cartogram-jan-2025.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1887542318607016062",
+            "external": "2025_01/flow_cartogram-jan-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-dec-2024",
+          "title": "December 2024",
+          "released": "2024-12-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of December 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of December, much of the Mountain West and Southwest saw dry conditions for states such as Montana, Wyoming, Arizona, and New Mexico. Concurrently, parts of the Pacific Coast saw wet conditions for states such as California, Oregon and Washington.",
+            "thumbnail": "2024_12/flow_cartogram-dec-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1878845021585326208",
+            "external": "2024_12/flow_cartogram-dec-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-nov-2024",
+          "title": "November 2024",
+          "released": "2024-11-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of November 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of November, much of the Eastern U.S. saw dry conditions for states such as Delaware, Rhode Island, Connecticut, and New Jersey. Concurrently, Missouri, Oklahoma, and Kansas saw wet conditions.",
+            "thumbnail": "2024_11/flow_cartogram-nov-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1864727535558529440",
+            "external": "2024_11/flow_cartogram-nov-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-oct-2024",
+          "title": "October 2024",
+          "released": "2024-10-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of October 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of October, much of the Eastern and Central U.S. saw dry conditions for states such as Delaware, Rhode Island, Connecticut, Kansas, Oklahoma, and Iowa. Concurrently, Florida and Puerto Rico saw wet conditions as tropical storms and Hurricane Helene made landfall.",
+            "thumbnail": "2024_10/flow_cartogram-oct-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1854197399323136262",
+            "external": "2024_10/flow_cartogram-oct-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-sep-2024",
+          "title": "September 2024",
+          "released": "2024-09-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of September 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of September, much of the Central and Northeastern U.S saw dry conditions for states such as Oklahoma, Kansas, Nebraska, New York, Massachusetts, New Hampshire. While others such as Alaska, Florida, and Puerto Rico saw wet conditions.",
+            "thumbnail": "2024_09/flow_cartogram-sep-2024.png"
+          },
+          "links": {
+            "x": "",
+            "external": "2024_09/flow_cartogram-sep-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-aug-2024",
+          "title": "August 2024",
+          "released": "2024-08-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of August 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of August, much of the Midwest and Southern U.S. saw dry conditions for states such as Kansas Nebraska, Missouri, Louisiana, Mississippi, and Tennessee. While others such as Alaska, Florida, and Puerto Rico saw wet conditions.",
+            "thumbnail": "2024_08/flow_cartogram-aug-2024.png"
+          },
+          "links": {
+            "x": "",
+            "external": "2024_08/flow_cartogram-aug-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-july-2024",
+          "title": "July 2024",
+          "released": "2024-07-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of July 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, wet conditions persisted for much of the Upper Midwest for states such as Minnesota and Wisconsin, while parts of the Eastern U.S. saw dry conditions for states such as West Virginia, Virginia, Massachusetts, and New Hampshire.",
+            "thumbnail": "2024_07/flow_cartogram-july-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1819432041152422303",
+            "external": "2024_07/flow_cartogram-july-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-june-2024",
+          "title": "June 2024",
+          "released": "2024-06-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of June 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, severe weather brought wet conditions to states such as North Dakota, Minnesota, Iowa, and Wisconsin, while dry conditions occurred for states such as Georgia, Alabama, North Carolina, and South Carolina.",
+            "thumbnail": "2024_06/flow_cartogram-june-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1813278914149818523",
+            "external": "2024_06/flow_cartogram-june-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-may-2024",
+          "title": "May 2024",
+          "released": "2024-05-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of May 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of May, severe weather brought wet conditions to states such as Minnesota, Iowa, and Missouri, while dry conditions occurred for states such as Arizona, New Mexico and Kansas.",
+            "thumbnail": "2024_05/flow_cartogram-may-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1798030050576761140",
+            "external": "2024_05/flow_cartogram-may-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-apr-2024",
+          "title": "April 2024",
+          "released": "2024-04-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of April 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of April, storm systems brought wet conditions to much of the Midwestern and Northeastern U.S. for states such as Indiana, Ohio, Pennsylvania, Massachusetts, and Rhode Island.",
+            "thumbnail": "2024_04/flow_cartogram-apr-2024.png"
+          },
+          "links": {
+            "x": "https://x.com/USGS_DataSci/status/1787946014797951150",
+            "external": "2024_04/flow_cartogram-apr-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-mar-2024",
+          "title": "March 2024",
+          "released": "2024-03-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of March 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of March, a low pressure system brought wet conditions to much of the Mid-Atlantic and Northeastern U.S. for states such as Connecticut, Rhode Island, Delaware, Massachusetts, and New Hampshire.",
+            "thumbnail": "2024_03/flow_cartogram-mar-2024.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1775549094259511449",
+            "external": "2024_03/flow_cartogram-mar-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-feb-2024",
+          "title": "February 2024",
+          "released": "2024-02-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of February 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of February, wet conditions persisted across much of California as an atmospheric river approached. Wet conditions persisted for states such as Mississippi, Alabama, Georgia, and Tennesse as severe weather and heavy rain brought wet conditions. ",
+            "thumbnail": "2024_02/flow_cartogram-feb-2024.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1765078810725413349",
+            "external": "2024_02/flow_cartogram-feb-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-jan-2024",
+          "title": "January 2024",
+          "released": "2024-01-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of January 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of January, wet conditions persisted across much of the Eastern U.S. and Pacific Coast as a storm system and low-pressure system approached, respectively. Wet conditions persisted for states such as Connecticut, Rhode Island, Vermont, New Hampshire, Massachusetts, New Jersey, New York, Oregon, Washington, and California. States such as Iowa, Nebraska, and Colorado saw relatively dry conditions.",
+            "thumbnail": "2024_01/flow_cartogram-jan-2024.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1754552632742752744",
+            "external": "2024_01/flow_cartogram-jan-2024.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-dec-2023",
+          "title": "December 2023",
+          "released": "2023-12-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of December 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of December, much of the Northeastern U.S. and Pacific Northwest saw wet conditions for stats such as Connecticut, Rhode Island, Vermont, New Hampshire, Massachusetts, New Jersey, New York, Oregon, and Washington, while states such as Louisiana, Mississippi, and Alabama in the Southern U.S. saw relatively dry conditions.",
+            "thumbnail": "2023_12/flow_cartogram-dec-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1742622815944356338",
+            "external": "2023_12/flow_cartogram-dec-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-nov-2023",
+          "title": "November 2023",
+          "released": "2023-11-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of November 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of November, much of the Northeastern U.S. saw wet conditions for stats such as Connecticut, Rhode Island, Vermont, New Hampshire and Maine, while states such as Louisiana, Mississippi, and Alabama in the Southern U.S. saw dry conditions.",
+            "thumbnail": "2023_11/flow_cartogram-nov-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1731718693686563238",
+            "external": "2023_11/flow_cartogram-nov-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-oct-2023",
+          "title": "October 2023",
+          "released": "2023-10-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of October 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of October, much of the Central and Southern U.S. saw dry conditions, while regions such as New England and Puerto Rico saw wet conditions.",
+            "thumbnail": "2023_10/flow_cartogram-oct-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1721583036540538940",
+            "external": "2023_10/flow_cartogram-oct-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-sep-2023",
+          "title": "September 2023",
+          "released": "2023-09-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of September 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of September, much of the Central U.S. and parts of the Pacific Northwest, such as Oregon and Washington, saw dry conditions. Later in the month, parts of New England experienced wet conditions for states such as Maine, Massachusetts, Connecticut, Rhode Island and Delaware.",
+            "thumbnail": "2023_09/flow_cartogram-sep-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1711856031322538063",
+            "external": "2023_09/flow_cartogram-sep-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-aug-2023",
+          "title": "August 2023",
+          "released": "2023-08-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of August 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of August, wetter than normal conditions persisted for part of New England in states such as Vermont, New Hampshire, and Maine. Concurrently, much of the U.S. saw dry conditions, namely, states in the Pacific Northwest, such as Washington and Oregon, as well as South Central U.S. such as Texas and Louisiana. ",
+            "thumbnail": "2023_08/flow_cartogram-aug-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1700176429202506152",
+            "external": "2023_08/flow_cartogram-aug-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-jul-2023",
+          "title": "July 2023",
+          "released": "2023-07-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of July 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of July, wetter than normal conditions persisted for much of New England for states such as Vermont, New Hampshire, Massachusetts, and Connecticut. Concurrently, states in the Pacific Northwest, such as Washington and Oregon, saw dry conditions.",
+            "thumbnail": "2023_07/flow_cartogram-jul-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1687206598052302851",
+            "external": "2023_07/flow_cartogram-jul-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-june-2023",
+          "title": "June 2023",
+          "released": "2023-06-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of June 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of June, wetter than normal conditions persisted for much of the Intermountain West for states such as Utah, Colorado, Nevada, and Wyoming, while the Eastern U.S. saw dry conditions.",
+            "thumbnail": "2023_06/flow_cartogram-june-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1678795881225781248",
+            "external": "2023_06/flow_cartogram-june-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-may-2023",
+          "title": "May 2023",
+          "released": "2023-05-01",
+          "image": {
+            "alt": "May 2023 Streamflow",
+            "thumbnail": "2023_05/flow_cartogram-may-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1666168500283645953",
+            "external": "2023_05/flow_cartogram-may-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-apr-2023",
+          "title": "April 2023",
+          "released": "2023-04-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of May 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of May, wetter than normal conditions persisted for much of the Western U.S., while the Southern Plains, such as Nebraska and Kansas, and parts of the Eastern U.S., such as the Mid-Atlantic and Florida, saw drought conditions.",
+            "thumbnail": "2023_04/flow_cartogram-apr-2023.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1653869069429522432",
+            "external": "2023_04/flow_cartogram-apr-2023.png"
+          }
+        },
+        {
+          "id": "flow_cartogram_2023-03",
+          "title": "March 2023",
+          "released": "2023-03-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of March 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of March, storms brought wetter than normal conditions for much of the U.S. Concurrently, large parts of California, the Southwest and the Mississippi River Basin saw heightened precipitation, while much of the Northwest and Northern Plaines remain dry.",
+            "thumbnail": "2023_03/flow_cartogram_2023-03.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1643383570965184514",
+            "external": "2023_03/flow_cartogram_2023-03.png"
+          }
+        },
+        {
+          "id": "flow_cartogram_2023-02",
+          "title": "February 2023",
+          "released": "2023-02-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of February 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of January, winter storms brought wetter than normal conditions for much of the U.S. Concurrently, California saw wetter than normal conditions as winter storms brought heightened precipitation. At the national scale, many sites experienced wetter than normal conditions as winter storms conditions persisted across the West Coast and Eastern U.S.",
+            "thumbnail": "2023_02/flow_cartogram_2023-02.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1632802669906518018",
+            "external": "2023_02/flow_cartogram_2023-02.png"
+          }
+        },
+        {
+          "id": "flow_cartogram_2023_jan-01",
+          "title": "January 2023",
+          "released": "2023-01-01",
+          "image": {
+            "alt": "A tile map of the US showing streamgages by flow levels through the month of January 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage. During the month of January, Winter storms Jimenez and Kassandra brought wetter than normal conditions for much of the U.S. Concurrently, California saw wetter than normal conditions when a series of atmospheric rivers brought snow and rain. At the national scale, many sites experienced wetter than normal conditions as winter storms conditions persisted across much of the U.S., with a series of atmospheric rivers on the west coast.",
+            "thumbnail": "2023_01/flow_cartogram_2023_jan-01.png"
+          },
+          "links": {
+            "x": "https://twitter.com/USGS_DataSci/status/1622635541073387520",
+            "external": "2023_01/flow_cartogram_2023_jan-01.png"
+          }
+        }
+      ]
     },
-    "flowTiles": [
-      {
-        "folder": "2025_08/",
-        "twitter_url": "https://x.com/USGS_Water/status/1965102031225700461",
-        "image_basename": "flow_cartogram-aug-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of August 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of August, dry conditions expanded across the Northeast, Southeast and Southwest, while parts of the Midwest and South Atlantic saw wet conditions."
-      },
-      {
-        "folder": "2025_07/",
-        "twitter_url": "https://x.com/USGS_Water/status/1957505329102508491",
-        "image_basename": "flow_cartogram-july-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of July 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of July, dry conditions persisted across parts of the Northeast, Mid-Atlantic, and Southwest, while wet conditions expanded across parts of the Upper Midwest."
-      },
-      {
-        "folder": "2025_06/",
-        "twitter_url": "https://x.com/USGS_Water/status/1942234704234627072",
-        "image_basename": "flow_cartogram-june-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of June 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of June, dry conditions expanded across parts of the West, Southwest, and Mid-Atlantic, while wet conditions persisted across much of the central U.S. and Midwest."
-      },
-      {
-        "folder": "2025_05/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1929924020004147635",
-        "image_basename": "flow_cartogram-may-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of May 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of May, wet conditions persisted in the Northeast and Mid-Atlantic states like New York, Pennsylvania, and Vermont. In contrast, dry conditions persisted in Florida, Arizona, and New Mexico."
-      },
-      {
-        "folder": "2025_04/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1919446545654489325",
-        "image_basename": "flow_cartogram-apr-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of April 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of April, wet conditions were prevalent in the Midwest and Northeast, including states like Wisconsin, Indiana, Vermont, and Maine. Meanwhile, dry conditions dominated parts of the Southeast and Southwest, especially in Florida, New Mexico, and Arizona."
-      },
-      {
-        "folder": "2025_03/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1907870314681221497",
-        "image_basename": "flow_cartogram-mar-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of March 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of March, wet conditions dominated much of the West Coast and Northeast, for states such as California, Oregon, Vermont, and New Hampshire, while near normal conditions persisted for much of the Central U.S for states such as Oklahoma, Kansas, and Nebraska."
-      },
-      {
-        "folder": "2025_02/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1897692959404925333",
-        "image_basename": "flow_cartogram-feb-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of February 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of February, parts of the Northern Rockies saw dry conditions for states such as Montana, Wyoming, and Idaho. Concurrently, winter storms brought wet conditions to parts of the Southeast for states such as Kentucky, Tennessee, Mississippi and Louisiana."
-      },
-      {
-        "folder": "2025_01/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1887542318607016062",
-        "image_basename": "flow_cartogram-jan-2025.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of January 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of January, much of the Mountain West and Southwest saw dry conditions for states such as Montana, Wyoming, Arizona, and New Mexico. Concurrently, winter storms brought wet conditions to parts of the Northwest, such as Oregon, and the Southeast, such as Louisiana, Arkansas, Tennessee, and Kentucky."
-      },
-      {
-        "folder": "2024_12/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1878845021585326208",
-        "image_basename": "flow_cartogram-dec-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of December 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of December, much of the Mountain West and Southwest saw dry conditions for states such as Montana, Wyoming, Arizona, and New Mexico. Concurrently, parts of the Pacific Coast saw wet conditions for states such as California, Oregon and Washington."
-      },
-      {
-        "folder": "2024_11/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1864727535558529440",
-        "image_basename": "flow_cartogram-nov-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of November 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of November, much of the Eastern U.S. saw dry conditions for states such as Delaware, Rhode Island, Connecticut, and New Jersey. Concurrently, Missouri, Oklahoma, and Kansas saw wet conditions."
-      },
-      {
-        "folder": "2024_10/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1854197399323136262",
-        "image_basename": "flow_cartogram-oct-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of October 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of October, much of the Eastern and Central U.S. saw dry conditions for states such as Delaware, Rhode Island, Connecticut, Kansas, Oklahoma, and Iowa. Concurrently, Florida and Puerto Rico saw wet conditions as tropical storms and Hurricane Helene made landfall."
-      },
-      {
-        "folder": "2024_09/",
-        "twitter_url": "",
-        "image_basename": "flow_cartogram-sep-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of September 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of September, much of the Central and Northeastern U.S saw dry conditions for states such as Oklahoma, Kansas, Nebraska, New York, Massachusetts, New Hampshire. While others such as Alaska, Florida, and Puerto Rico saw wet conditions."
-      },
-      {
-        "folder": "2024_08/",
-        "twitter_url": "",
-        "image_basename": "flow_cartogram-aug-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of August 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of August, much of the Midwest and Southern U.S. saw dry conditions for states such as Kansas Nebraska, Missouri, Louisiana, Mississippi, and Tennessee. While others such as Alaska, Florida, and Puerto Rico saw wet conditions."
-      },
-      {
-        "folder": "2024_07/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1819432041152422303",
-        "image_basename": "flow_cartogram-july-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of July 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of June, wet conditions persisted for much of the Upper Midwest for states such as Minnesota and Wisconsin, while parts of the Eastern U.S. saw dry conditions for states such as West Virginia, Virginia, Massachusetts, and New Hampshire."
-      },
-      {
-        "folder": "2024_06/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1813278914149818523",
-        "image_basename": "flow_cartogram-june-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of June 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of June, severe weather brought wet conditions to states such as North Dakota, Minnesota, Iowa, and Wisconsin, while dry conditions occurred for states such as Georgia, Alabama, North Carolina, and South Carolina."
-      },
-      {
-        "folder": "2024_05/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1798030050576761140",
-        "image_basename": "flow_cartogram-may-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of May 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of May, severe weather brought wet conditions to states such as Minnesota, Iowa, and Missouri, while dry conditions occurred for states such as Arizona, New Mexico and Kansas."
-      },
-      {
-        "folder": "2024_04/",
-        "twitter_url": "https://x.com/USGS_DataSci/status/1787946014797951150",
-        "image_basename": "flow_cartogram-apr-2024.png",
-        "image_alt": "A tile map of the U.S. showing streamgages by flow levels through the month of April 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of April, storm systems brought wet conditions to much of the Midwestern and Northeastern U.S. for states such as Indiana, Ohio, Pennsylvania, Massachusetts, and Rhode Island."
-      },
-      {
-        "folder": "2024_03/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1775549094259511449",
-        "image_basename": "flow_cartogram-mar-2024.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of March 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of March, a low pressure system brought wet conditions to much of the Mid-Atlantic and Northeastern U.S. for states such as Connecticut, Rhode Island, Delaware, Massachusetts, and New Hampshire."
-      },
-      {
-        "folder": "2024_02/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1765078810725413349",
-        "image_basename": "flow_cartogram-feb-2024.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of February 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of February, wet conditions persisted across much of California as an atmospheric river approached. Wet conditions persisted for states such as Mississippi, Alabama, Georgia, and Tennesse as severe weather and heavy rain brought wet conditions. "
-      },
-      {
-        "folder": "2024_01/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1754552632742752744",
-        "image_basename": "flow_cartogram-jan-2024.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of January 2024. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of January, wet conditions persisted across much of the Eastern U.S. and Pacific Coast as a storm system and low-pressure system approached, respectively. Wet conditions persisted for states such as Connecticut, Rhode Island, Vermont, New Hampshire, Massachusetts, New Jersey, New York, Oregon, Washington, and California. States such as Iowa, Nebraska, and Colorado saw relatively dry conditions."
-      },
-      {
-        "folder": "2023_12/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1742622815944356338",
-        "image_basename": "flow_cartogram-dec-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of December 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of December, much of the Northeastern U.S. and Pacific Northwest saw wet conditions for stats such as Connecticut, Rhode Island, Vermont, New Hampshire, Massachusetts, New Jersey, New York, Oregon, and Washington, while states such as Louisiana, Mississippi, and Alabama in the Southern U.S. saw relatively dry conditions."
-      },
-      {
-        "folder": "2023_11/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1731718693686563238",
-        "image_basename": "flow_cartogram-nov-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of November 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of November, much of the Northeastern U.S. saw wet conditions for stats such as Connecticut, Rhode Island, Vermont, New Hampshire and Maine, while states such as Louisiana, Mississippi, and Alabama in the Southern U.S. saw dry conditions."
-      },
-      {
-        "folder": "2023_10/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1721583036540538940",
-        "image_basename": "flow_cartogram-oct-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of October 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of October, much of the Central and Southern U.S. saw dry conditions, while regions such as New England and Puerto Rico saw wet conditions."
-      },
-      {
-        "folder": "2023_09/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1711856031322538063",
-        "image_basename": "flow_cartogram-sep-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of September 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of September, much of the Central U.S. and parts of the Pacific Northwest, such as Oregon and Washington, saw dry conditions. Later in the month, parts of New England experienced wet conditions for states such as Maine, Massachusetts, Connecticut, Rhode Island and Delaware."
-      },
-      {
-        "folder": "2023_08/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1700176429202506152",
-        "image_basename": "flow_cartogram-aug-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of August 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of August, wetter than normal conditions persisted for part of New England in states such as Vermont, New Hampshire, and Maine. Concurrently, much of the U.S. saw dry conditions, namely, states in the Pacific Northwest, such as Washington and Oregon, as well as South Central U.S. such as Texas and Louisiana. "
-      },
-      {
-        "folder": "2023_07/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1687206598052302851",
-        "image_basename": "flow_cartogram-jul-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of July 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of July, wetter than normal conditions persisted for much of New England for states such as Vermont, New Hampshire, Massachusetts, and Connecticut. Concurrently, states in the Pacific Northwest, such as Washington and Oregon, saw dry conditions."
-      },
-      {
-        "folder": "2023_06/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1678795881225781248",
-        "image_basename": "flow_cartogram-june-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of June 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of June, wetter than normal conditions persisted for much of the Intermountain West for states such as Utah, Colorado, Nevada, and Wyoming, while the Eastern U.S. saw dry conditions."
-      },
-      {
-        "folder": "2023_05/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1666168500283645953",
-        "image_basename": "flow_cartogram-may-2023.png",
-        "image_alt": "May 2023 Streamflow"
-      },
-      {
-        "folder": "2023_04/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1653869069429522432",
-        "image_basename": "flow_cartogram-apr-2023.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of May 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of May, wetter than normal conditions persisted for much of the Western U.S., while the Southern Plains, such as Nebraska and Kansas, and parts of the Eastern U.S., such as the Mid-Atlantic and Florida, saw drought conditions."
-      },
-      {
-        "folder": "2023_03/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1643383570965184514",
-        "image_basename": "flow_cartogram_2023-03.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of March 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of March, storms brought wetter than normal conditions for much of the U.S. Concurrently, large parts of California, the Southwest and the Mississippi River Basin saw heightened precipitation, while much of the Northwest and Northern Plaines remain dry."
-      },
-      {
-        "folder": "2023_02/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1632802669906518018",
-        "image_basename": "flow_cartogram_2023-02.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of February 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of January, winter storms brought wetter than normal conditions for much of the U.S. Concurrently, California saw wetter than normal conditions as winter storms brought heightened precipitation. At the national scale, many sites experienced wetter than normal conditions as winter storms conditions persisted across the West Coast and Eastern U.S."
-      },
-      {
-        "folder": "2023_01/",
-        "twitter_url": "https://twitter.com/USGS_DataSci/status/1622635541073387520",
-        "image_basename": "flow_cartogram_2023_jan-01.png",
-        "image_alt": "A tile map of the US showing streamgages by flow levels through the month of January 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\u2019s flow levels to the historic record for each streamgage. During the month of January, Winter storms Jimenez and Kassandra brought wetter than normal conditions for much of the U.S. Concurrently, California saw wetter than normal conditions when a series of atmospheric rivers brought snow and rain. At the national scale, many sites experienced wetter than normal conditions as winter storms conditions persisted across much of the U.S., with a series of atmospheric rivers on the west coast."
-      }
-    ],
-    "riverConditions": [
-      {
-        "name": " April 1, 2025 - June 30, 2025",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2025",
-        "folder": "FY25_Q3/",
-        "video_basename": "river_conditions_apr_jun_2025_insta",
-        "image_thumbnail": "river_conditions_apr_jun_2025_square_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from April 1, 2025 to June 30, 2025 at USGS streamgages."
-      },
-      {
-        "name": " January 1, 2025 - March 31, 2025",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2025",
-        "folder": "FY25_Q2/",
-        "video_basename": "river_conditions_jan_mar_2025_insta",
-        "image_thumbnail": "river_conditions_jan_mar_2025_square_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from January 1, 2025 to  March 31, 2025 at USGS streamgages."
-      },
-      {
-        "name": "October 1 - December 31, 2024",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2024",
-        "folder": "FY25_Q1/",
-        "video_basename": "river_conditions_oct_dec_2024_insta",
-        "image_thumbnail": "river_conditions_oct_dec_2024_square_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from October 1, 2024 to December 31, 2024 at USGS streamgages."
-      },
-      {
-        "name": "July 1 - September 30, 2024",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2024",
-        "folder": "FY24_Q4/",
-        "video_basename": "river_conditions_jul_sep_2024_insta",
-        "image_thumbnail": "river_conditions_jul_sep_2024_square_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from July 1, 2024 to September 30, 2024 at USGS streamgages."
-      },
-      {
-        "name": "April 1 - June 30, 2024",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2024",
-        "folder": "FY24_Q3/",
-        "video_basename": "river_conditions_apr_jun_2024_insta",
-        "image_thumbnail": "river_conditions_apr_jun_2024_square_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from April 1, 2024 to June 30, 2024 at USGS streamgages."
-      },
-      {
-        "name": "January 1 - March 31, 2024",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2024",
-        "folder": "FY24_Q2/",
-        "video_basename": "river_conditions_jan_mar_2024_insta",
-        "image_thumbnail": "river_conditions_jan_mar_2024_square_thumbnail_color.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from January 1, 2024 to March 31, 2024 at USGS streamgages."
-      },
-      {
-        "name": "October 1 - December 31, 2023",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023",
-        "folder": "FY24_Q1/",
-        "video_basename": "river_conditions_oct_dec_2023_insta",
-        "image_thumbnail": "river_conditions_oct_dec_2023_square_thumbnail_color.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from October 1, 2023 to December 31, 2023 at USGS streamgages."
-      },
-      {
-        "name": "July 1 - September 30, 2023",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2023",
-        "folder": "FY23_Q4/",
-        "video_basename": "river_conditions_jul_sep_2023_insta",
-        "image_thumbnail": "river_conditions_jul_sep_2023_square_thumbnail_colorized.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from July 1, 2023 to September 30, 2023 at USGS streamgages."
-      },
-      {
-        "name": "April 1 - June 30, 2023",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2023",
-        "folder": "FY23_Q3/",
-        "video_basename": "river_conditions_apr_jun_2023_insta",
-        "image_thumbnail": "river_conditions_apr_jun_2023_square_thumbnail_colorized.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from April 1, 2023 to June 30, 2023 at USGS streamgages."
-      },
-      {
-        "name": "January 1 - March 31, 2023",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2023",
-        "folder": "FY23_Q2/",
-        "video_basename": "river_conditions_jan_mar_2023_insta",
-        "image_thumbnail": "river_conditions_jan_mar_2023_square_thumbnail_color.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from January 1, 2023 to March 31, 2023 at USGS streamgages."
-      },
-      {
-        "name": "October 1 - December 31, 2022",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022",
-        "folder": "FY23_Q1/",
-        "video_basename": "river_conditions_oct_dec_2022_insta",
-        "image_thumbnail": "river_conditions_oct_dec_2022_square_thumbnail_colorized.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from October 1, 2022 to December 31, 2022 at USGS streamgages."
-      },
-      {
-        "name": "July 1 - September 30, 2022",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2022",
-        "folder": "FY22_Q4/",
-        "video_basename": "river_conditions_jul_sep_2022_insta",
-        "image_thumbnail": "river_conditions_jul_sep_2022_square_thumbnail_colorized.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from July 1, 2022 to September 30, 2022 at USGS streamgages."
-      },
-      {
-        "name": "April 1 - June 30, 2022",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2022",
-        "folder": "FY22_Q3/",
-        "video_basename": "river_conditions_apr_jun_2022_insta",
-        "image_thumbnail": "river_conditions_apr_jun_2022_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from April 1, 2022 to June 30, 2022 at USGS streamgages."
-      },
-      {
-        "name": "January 1 - March 31, 2022",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2022",
-        "folder": "FY22_Q2/",
-        "video_basename": "river_conditions_jan_mar_2022_insta",
-        "image_thumbnail": "river_conditions_jan_mar_2022_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from January 1, 2022 to March 31, 2022 at USGS streamgages."
-      },
-      {
-        "name": "October 1 - December 31, 2021",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2021",
-        "folder": "FY22_Q1/",
-        "video_basename": "river_conditions_oct_dec_2021_insta",
-        "image_thumbnail": "river_conditions_oct_dec_2021_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from October 1, 2021 to December 31, 2021 at USGS streamgages."
-      },
-      {
-        "name": "July 1 - September 30, 2021",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2021",
-        "folder": "FY21_Q4/",
-        "video_basename": "river_conditions_jul_sep_2021_insta",
-        "image_thumbnail": "river_conditions_jul_sep_2021_square_thumbnail_colorized.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from July 1, 2021 to September 30, 2021 at USGS streamgages."
-      },
-      {
-        "name": "April 1 - June 30, 2021",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021",
-        "folder": "FY21_Q3/",
-        "video_basename": "river_conditions_apr_jun_2021_insta",
-        "image_thumbnail": "river_conditions_apr_jun_2021_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from April 1, 2021 to June 30, 2021 at USGS streamgages."
-      },
-      {
-        "name": "January 1 - March 31, 2021",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021",
-        "folder": "FY21_Q2/",
-        "video_basename": "river_conditions_jan_mar_2021_insta",
-        "image_thumbnail": "river_conditions_jan_mar_2021_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from January 1, 2021 to March 31, 2021 at USGS streamgages."
-      },
-      {
-        "name": "October 1 - December 31, 2020",
-        "drupal_url": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2020",
-        "folder": "FY21_Q1/",
-        "video_basename": "river_conditions_oct_dec_2020_insta",
-        "image_thumbnail": "river_conditions_oct_dec_2020_thumbnail.png",
-        "video_type": "mp4",
-        "image_alt": "U.S. River Conditions from October 1, 2020 to December 31, 2020 at USGS streamgages."
-      }
-    ],
-    "gwConditions": [
-      {
-        "id": "gw-conditions",
-        "lastUpdated": "1/12/2022",
-        "title": "U.S. Groundwater Conditions",
-        "description": null,
-        "thumb": "gw-conditions-thumbnail-peak.png",
-        "alt": "A map of the US using arrow-like gylphs to indicate temporal change in groundwater levels.",
-        "productUrl": "https://labs.waterdata.usgs.gov/visualizations/gw-conditions",
-        "codeUrl": "https://github.com/usgs-vizlab/gw-conditions"
-      }
-    ],
-    "hurricaneFootprint": [
-      {
-        "id": "hurricane-ida-2020",
-        "released": "9/28/2021",
-        "title": "Hurricane Ida",
-        "description": "Hurricane Ida's Water Footprint",
-        "thumb": "water-viz-hurricane-ida-thumbnail.png",
-        "alt": "A map showing the path of Hurricane Ida, and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://www.usgs.gov/media/images/hurricane-ida-water-footprint-data-visualization",
-        "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Ida-2021"
-      },
-      {
-        "id": "hurricane-henri-2020",
-        "released": "9/23/2021",
-        "title": "Hurricane Henri",
-        "description": "Hurricane Henri's Water Footprint",
-        "thumb": "water-viz-hurricane-henri-thumbnail.png",
-        "alt": "A map showing the path of Tropical Storm Henri, and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://www.usgs.gov/media/images/hurricane-henri-water-footprint-data-visualization",
-        "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Henri-2021"
-      },
-      {
-        "id": "hurricane-sally-2020",
-        "released": "9/23/2020",
-        "title": "Hurricane Sally",
-        "description": "Hurricane Sally's Water Footprint",
-        "thumb": "water-viz-hurricane-sally-thumb.png",
-        "alt": "A map showing the path of Hurricane Sally, and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://www.usgs.gov/media/images/hurricane-sally-water-footprint-data-visualization",
-        "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Sally-2020"
-      },
-      {
-        "id": "hurricane-irma-2017",
-        "released": "9/20/2017",
-        "title": "Hurricane Irma",
-        "description": "Hurricane Irma's Water Footprint",
-        "thumb": "water-viz-hurricane-irma-thumbnail.png",
-        "alt": "A map showing the path of Hurricane Irma, and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-irma/index.html",
-        "codeUrl": "https://github.com/USGS-VIZLAB/hurricane-irma"
-      },
-      {
-        "id": "hurricane-maria-2017",
-        "released": "9/10/2017",
-        "title": "Hurricane Maria",
-        "description": "Hurricane Maria's Water Footprint",
-        "thumb": "water-viz-hurricane-maria-thumbnail.png",
-        "alt": "A map showing the path of Hurricane Maria and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-maria/index.html",
-        "codeUrl": "https://github.com/USGS-VIZLAB/hurricane-maria"
-      },
-      {
-        "id": "hurricane-harvey-2017",
-        "released": "8/25/2017",
-        "title": "Hurricane Harvey",
-        "description": "Hurricane Harvey's Water Footprint",
-        "thumb": "water-viz-hurricane-harvey-thumbnail.png",
-        "alt": "A map showing the path of Hurricane Harvey, and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-harvey/index.html",
-        "codeUrl": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Harvey-2017"
-      },
-      {
-        "id": "hurricane-matthew-2016",
-        "released": "10/7/2016",
-        "title": "Hurricane Matthew",
-        "description": "Hurricane Matthew's Water Footprint",
-        "thumb": "water-viz-hurricane-matthew-thumbnail.png",
-        "alt": "A map showing the path of Hurricane Matthew, and subsequent precipitation and flooding in the area.",
-        "productUrl": "https://labs.waterdata.usgs.gov/visualizations/hurricane-matthew/index.html",
-        "codeUrl": ""
-      }
-    ]
-  }
+    {
+      "id": "riverConditions",
+      "title": "River conditions",
+      "description": "Animations of streamflow conditions at USGS monitoring locations.",
+      "intervals": [
+        "Quarterly",
+        "Annual"
+      ],
+      "items": [
+        {
+          "id": "river_conditions_apr_jun_2025_insta",
+          "title": " April 1, 2025 - June 30, 2025",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from April 1, 2025 to June 30, 2025 at USGS streamgages.",
+            "thumbnail": "FY25_Q3/river_conditions_apr_jun_2025_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2025"
+          }
+        },
+        {
+          "id": "river_conditions_jan_mar_2025_insta",
+          "title": " January 1, 2025 - March 31, 2025",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from January 1, 2025 to  March 31, 2025 at USGS streamgages.",
+            "thumbnail": "FY25_Q2/river_conditions_jan_mar_2025_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2025"
+          }
+        },
+        {
+          "id": "river_conditions_oct_dec_2024_insta",
+          "title": "October 1 - December 31, 2024",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from October 1, 2024 to December 31, 2024 at USGS streamgages.",
+            "thumbnail": "FY25_Q1/river_conditions_oct_dec_2024_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2024"
+          }
+        },
+        {
+          "id": "river_conditions_jul_sep_2024_insta",
+          "title": "July 1 - September 30, 2024",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from July 1, 2024 to September 30, 2024 at USGS streamgages.",
+            "thumbnail": "FY24_Q4/river_conditions_jul_sep_2024_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2024"
+          }
+        },
+        {
+          "id": "river_conditions_apr_jun_2024_insta",
+          "title": "April 1 - June 30, 2024",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from April 1, 2024 to June 30, 2024 at USGS streamgages.",
+            "thumbnail": "FY24_Q3/river_conditions_apr_jun_2024_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2024"
+          }
+        },
+        {
+          "id": "river_conditions_jan_mar_2024_insta",
+          "title": "January 1 - March 31, 2024",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from January 1, 2024 to March 31, 2024 at USGS streamgages.",
+            "thumbnail": "FY24_Q2/river_conditions_jan_mar_2024_square_thumbnail_color.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2024"
+          }
+        },
+        {
+          "id": "river_conditions_oct_dec_2023_insta",
+          "title": "October 1 - December 31, 2023",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from October 1, 2023 to December 31, 2023 at USGS streamgages.",
+            "thumbnail": "FY24_Q1/river_conditions_oct_dec_2023_square_thumbnail_color.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2023"
+          }
+        },
+        {
+          "id": "river_conditions_jul_sep_2023_insta",
+          "title": "July 1 - September 30, 2023",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from July 1, 2023 to September 30, 2023 at USGS streamgages.",
+            "thumbnail": "FY23_Q4/river_conditions_jul_sep_2023_square_thumbnail_colorized.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2023"
+          }
+        },
+        {
+          "id": "river_conditions_apr_jun_2023_insta",
+          "title": "April 1 - June 30, 2023",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from April 1, 2023 to June 30, 2023 at USGS streamgages.",
+            "thumbnail": "FY23_Q3/river_conditions_apr_jun_2023_square_thumbnail_colorized.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2023"
+          }
+        },
+        {
+          "id": "river_conditions_jan_mar_2023_insta",
+          "title": "January 1 - March 31, 2023",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from January 1, 2023 to March 31, 2023 at USGS streamgages.",
+            "thumbnail": "FY23_Q2/river_conditions_jan_mar_2023_square_thumbnail_color.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2023"
+          }
+        },
+        {
+          "id": "river_conditions_oct_dec_2022_insta",
+          "title": "October 1 - December 31, 2022",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from October 1, 2022 to December 31, 2022 at USGS streamgages.",
+            "thumbnail": "FY23_Q1/river_conditions_oct_dec_2022_square_thumbnail_colorized.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2022"
+          }
+        },
+        {
+          "id": "river_conditions_jul_sep_2022_insta",
+          "title": "July 1 - September 30, 2022",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from July 1, 2022 to September 30, 2022 at USGS streamgages.",
+            "thumbnail": "FY22_Q4/river_conditions_jul_sep_2022_square_thumbnail_colorized.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2022"
+          }
+        },
+        {
+          "id": "river_conditions_apr_jun_2022_insta",
+          "title": "April 1 - June 30, 2022",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from April 1, 2022 to June 30, 2022 at USGS streamgages.",
+            "thumbnail": "FY22_Q3/river_conditions_apr_jun_2022_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2022"
+          }
+        },
+        {
+          "id": "river_conditions_jan_mar_2022_insta",
+          "title": "January 1 - March 31, 2022",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from January 1, 2022 to March 31, 2022 at USGS streamgages.",
+            "thumbnail": "FY22_Q2/river_conditions_jan_mar_2022_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2022"
+          }
+        },
+        {
+          "id": "river_conditions_oct_dec_2021_insta",
+          "title": "October 1 - December 31, 2021",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from October 1, 2021 to December 31, 2021 at USGS streamgages.",
+            "thumbnail": "FY22_Q1/river_conditions_oct_dec_2021_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2021"
+          }
+        },
+        {
+          "id": "river_conditions_jul_sep_2021_insta",
+          "title": "July 1 - September 30, 2021",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from July 1, 2021 to September 30, 2021 at USGS streamgages.",
+            "thumbnail": "FY21_Q4/river_conditions_jul_sep_2021_square_thumbnail_colorized.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2021"
+          }
+        },
+        {
+          "id": "river_conditions_apr_jun_2021_insta",
+          "title": "April 1 - June 30, 2021",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from April 1, 2021 to June 30, 2021 at USGS streamgages.",
+            "thumbnail": "FY21_Q3/river_conditions_apr_jun_2021_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-april-june-2021"
+          }
+        },
+        {
+          "id": "river_conditions_jan_mar_2021_insta",
+          "title": "January 1 - March 31, 2021",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from January 1, 2021 to March 31, 2021 at USGS streamgages.",
+            "thumbnail": "FY21_Q2/river_conditions_jan_mar_2021_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2021"
+          }
+        },
+        {
+          "id": "river_conditions_oct_dec_2020_insta",
+          "title": "October 1 - December 31, 2020",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from October 1, 2020 to December 31, 2020 at USGS streamgages.",
+            "thumbnail": "FY21_Q1/river_conditions_oct_dec_2020_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2020"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gwConditions",
+      "title": "Groundwater conditions",
+      "description": "Animations of groundwater conditions at USGS monitoring locations.",
+      "intervals": [
+        "Annual"
+      ],
+      "items": [
+        {
+          "id": "gw-conditions",
+          "title": "1/12/2022",
+          "released": "1/12/2022",
+          "image": {
+            "alt": "A map of the US using arrow-like gylphs to indicate temporal change in groundwater levels.",
+            "thumbnail": "gw-conditions-thumbnail-peak.png"
+          },
+          "links": {
+            "code": "https://github.com/usgs-vizlab/gw-conditions",
+            "external": "https://labs.waterdata.usgs.gov/visualizations/gw-conditions"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hurricaneFootprint",
+      "title": "Hurricane footprint",
+      "description": "Animations of hurricane rainfall, flooding, and impacts.",
+      "intervals": [
+        "Event-based"
+      ],
+      "items": [
+        {
+          "id": "hurricane-ida-2020",
+          "title": "Hurricane Ida, 2021",
+          "released": "9/28/2021",
+          "image": {
+            "alt": "A map showing the path of Hurricane Ida, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-ida-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Ida-2021",
+            "external": "https://www.usgs.gov/media/images/hurricane-ida-water-footprint-data-visualization"
+          }
+        },
+        {
+          "id": "hurricane-henri-2020",
+          "title": "Hurricane Henri, 2021",
+          "released": "9/23/2021",
+          "image": {
+            "alt": "A map showing the path of Tropical Storm Henri, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-henri-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Henri-2021",
+            "external": "https://www.usgs.gov/media/images/hurricane-henri-water-footprint-data-visualization"
+          }
+        },
+        {
+          "id": "hurricane-sally-2020",
+          "title": "Hurricane Sally, 2020",
+          "released": "9/23/2020",
+          "image": {
+            "alt": "A map showing the path of Hurricane Sally, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-sally-thumb.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Sally-2020",
+            "external": "https://www.usgs.gov/media/images/hurricane-sally-water-footprint-data-visualization"
+          }
+        },
+        {
+          "id": "hurricane-irma-2017",
+          "title": "Hurricane Irma, 2017",
+          "released": "9/20/2017",
+          "image": {
+            "alt": "A map showing the path of Hurricane Irma, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-irma-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/hurricane-irma",
+            "external": "https://labs.waterdata.usgs.gov/visualizations/hurricane-irma/index.html"
+          }
+        },
+        {
+          "id": "hurricane-maria-2017",
+          "title": "Hurricane Maria, 2017",
+          "released": "9/10/2017",
+          "image": {
+            "alt": "A map showing the path of Hurricane Maria and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-maria-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/hurricane-maria",
+            "external": "https://labs.waterdata.usgs.gov/visualizations/hurricane-maria/index.html"
+          }
+        },
+        {
+          "id": "hurricane-harvey-2017",
+          "title": "Hurricane Harvey, 2017",
+          "released": "8/25/2017",
+          "image": {
+            "alt": "A map showing the path of Hurricane Harvey, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-harvey-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Harvey-2017",
+            "external": "https://labs.waterdata.usgs.gov/visualizations/hurricane-harvey/index.html"
+          }
+        },
+        {
+          "id": "hurricane-matthew-2016",
+          "title": "Hurricane Matthew, 2016",
+          "released": "10/7/2016",
+          "image": {
+            "alt": "A map showing the path of Hurricane Matthew, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-matthew-thumbnail.png"
+          },
+          "links": {
+            "code": "",
+            "external": "https://labs.waterdata.usgs.gov/visualizations/hurricane-matthew/index.html"
+          }
+        }
+      ]
+    }
+  ]
 }
