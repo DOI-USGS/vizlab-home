@@ -8,76 +8,107 @@
         {{ subtitle }}
       </h1>
 
-      <nav class="nav-links" aria-label="Primary navigation">
-        <div class="nav-scroller">
-          <span class="fade left" aria-hidden="true"></span>
-          <ul
-            id="nav-menu"
-            class="nav-list"
-          >
-            <li
-              v-for="item in navItems"
-              :key="item.id"
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <div class="nav-scroller">
+            <span class="fade left" aria-hidden="true"></span>
+            <ul
+              id="nav-menu"
+              class="nav-list"
             >
-              <button
-                class="nav-link"
-                :class="{ active: activeSection === item.id }"
-                type="button"
-                @click="scrollTo(item.id)"
+              <li
+                v-for="item in navItems"
+                :key="item.id"
               >
-                {{ item.label }}
-              </button>
-            </li>
-          </ul>
-          <span class="fade right" aria-hidden="true"></span>
-        </div>
-      </nav>
+                <button
+                  class="nav-link"
+                  :class="{ active: activeSection === item.id }"
+                  type="button"
+                  @click="scrollTo(item.id)"
+                >
+                  {{ item.label }}
+                </button>
+              </li>
+            </ul>
+            <span class="fade right" aria-hidden="true"></span>
+          </div>
+        </nav>
+
+        <ThemeToggle />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from "vue"
+import ThemeToggle from "@/components/ThemeToggle.vue"
 
 import viz from "@/assets/content/viz-list.json"
 
 const navItems = [
-  { id: "websites", label: "stories" },
+  { id: "stories", label: "stories" },
   { id: "series", label: "series" },
-  { id: "illustration", label: "sketches" },
-  { id: "blog", label: "blog" },
-  { id: "about", label: "about" }
+  { id: "sketches", label: "sketches" },
+  { id: "blogs", label: "blog" },
+  { id: "team", label: "about" }
 ]
 
 const subtitle = viz?.site?.tagline || "water data visualizations"
 
-const activeSection = ref(navItems[0]?.id ?? "")
+const activeSection = ref(navItems[0].id)
 const shell = ref(null)
 
 let observer
 
-onMounted(() => {
+const setupObserver = () => {
+  observer?.disconnect()
   if (typeof window === "undefined") return
 
+  const shellHeight = shell.value?.offsetHeight ?? 0
   observer = new IntersectionObserver(handleIntersect, {
     root: null,
-    threshold: 0.4,
-    rootMargin: "-20% 0px -50% 0px"
+    threshold: [0.15, 0.35, 0.6],
+    rootMargin: `-${shellHeight}px 0px -60% 0px`
   })
 
   navItems.forEach((item) => {
     const el = document.getElementById(item.id)
-    if (el) {
-      observer.observe(el)
-    }
+    if (el) observer.observe(el)
   })
+}
+
+const handleResize = () => {
+  setupObserver()
+}
+
+const handleScroll = () => {
+  const shellHeight = shell.value?.offsetHeight ?? 0
+  if (window.scrollY <= shellHeight + 4) {
+    activeSection.value = navItems[0].id
+  }
+}
+
+onMounted(() => {
+  setupObserver()
+  window.addEventListener("resize", handleResize)
+  window.addEventListener("scroll", handleScroll, { passive: true })
+  handleScroll()
 })
 
 onBeforeUnmount(() => {
+  window.removeEventListener("resize", handleResize)
+  window.removeEventListener("scroll", handleScroll)
   observer?.disconnect()
 })
 
 function handleIntersect(entries) {
+  const shellHeight = shell.value?.offsetHeight ?? 0
+  if (window.scrollY <= shellHeight + 4) {
+    activeSection.value = navItems[0].id
+    return
+  }
+
   const visible = entries
     .filter((entry) => entry.isIntersecting)
     .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
@@ -91,8 +122,10 @@ function scrollTo(id) {
   const target = document.getElementById(id)
   if (!target) return
 
+  activeSection.value = id
+
   const shellHeight = shell.value?.offsetHeight ?? 0
-  const offset = target.getBoundingClientRect().top + window.scrollY - shellHeight - 16
+  const offset = target.getBoundingClientRect().top + window.scrollY - shellHeight + 2
 
   window.scrollTo({
     top: offset,
@@ -107,7 +140,7 @@ function scrollTo(id) {
   top: 0;
   z-index: 15;
   background: var(--color-background);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--color-border);
   padding: 1rem 0;
 }
 
@@ -115,10 +148,19 @@ function scrollTo(id) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.6rem;
+  gap: 1.2rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .nav-subtitle {
@@ -141,7 +183,7 @@ function scrollTo(id) {
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 0.8rem;
+  gap: 0.5rem;
   padding: 0;
   margin: 0;
   overflow-x: auto;
@@ -158,29 +200,42 @@ function scrollTo(id) {
 }
 
 .nav-link {
-  border: none;
-  background: none;
+  border: 1px solid currentColor;
+  background: transparent;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
-  font-size: 1.4rem;
-  padding: 0.6rem 0.8rem;
+  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  padding: 0.4rem 1.2rem;
   cursor: pointer;
   color: inherit;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.1s ease;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: var(--color-link);
+  color: #fff;
+  background: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.nav-link:active {
+  transform: translateY(1px);
 }
 
 .nav-link.active {
+  background: var(--color-link);
+  color: #fff;
   border-color: var(--color-link);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0em;
 }
 
+/* on mobile the navigation bar scrolls horizontally if it doesn't fit on one lin */
 .nav-scroller {
   position: relative;
   display: flex;
@@ -189,23 +244,24 @@ function scrollTo(id) {
   overflow: hidden;
 }
 
+/* using a slight fade appearance to indicate horizontal scroll */
 .fade {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 14px;
   pointer-events: none;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, var(--color-background), transparent);
 }
 
 .fade.left {
   left: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, var(--color-background), transparent);
 }
 
 .fade.right {
   right: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, var(--color-background), transparent);
 }
 
 @media (max-width: 700px) {
@@ -215,6 +271,13 @@ function scrollTo(id) {
     gap: 0.8rem;
     padding: 0 1.5rem;
     width: 100%;
+  }
+
+  .nav-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .nav-subtitle {
