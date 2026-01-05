@@ -34,7 +34,7 @@
     </a>
 
     <div class="series-card__body">
-      <p class="series-card__meta">
+      <p v-if="latestReleaseLabel" class="series-card__meta">
         {{ latestReleaseLabel }}
       </p>
       <p v-if="series?.description" class="series-card__description">
@@ -49,18 +49,14 @@
         >View latest release</a>
 
         <button
-          v-if="isFlowSeries"
-          class="series-link ghost x-share"
+          v-for="share in shareLinks"
+          :key="share.label"
+          class="series-link"
           type="button"
-          @click="shareOnX"
-          :aria-label="`Share ${latestEntry.title} on X`"
+          @click="() => openShare(share.url)"
+          :aria-label="`Share on ${share.label}`"
         >
-          <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M18.6 3h3.1l-6.7 7.7L23 21h-5.9l-4.6-6-5 6H4.5l7.1-8.4L2 3h6.1l4.2 5.5L18.6 3z"
-            />
-          </svg>
+          Share on {{ share.label }}
         </button>
         <a
           v-if="latestCodeLink"
@@ -72,7 +68,7 @@
       </div>
     </div>
 
-    <footer v-if="history.length" class="series-card__footer">
+    <footer v-if="hasHistory" class="series-card__footer">
       <button
         class="history-toggle"
         type="button"
@@ -86,14 +82,14 @@
       <transition name="history-collapse">
         <div v-if="expanded" class="history-list">
           <a
-            v-for="entry in history"
+            v-for="entry in historyEntries"
             :key="entry.id"
             class="history-link"
-            :href="resolvePrimaryLink(entry) || '#'"
+            :href="entry.href"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {{ entry.title || entry.released }}
+            {{ entry.displayLabel }}
           </a>
         </div>
       </transition>
@@ -102,7 +98,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue"
+import { ref } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
@@ -114,76 +110,103 @@ const props = defineProps({
 
 const assetStore = useAssetPathStore()
 
-const SERIES_BUCKET_MAP = {
-  flowTiles: "flow",
-  riverConditions: "river-conditions"
+// directory that contains each edition ( flowtiles and river conditions)
+const seriesBucket = props.series.bucket
+
+const toTimestamp = (value = '') => {
+  const date = new Date(value)
+  return date instanceof Date && !Number.isNaN(date) ? date.getTime() : 0
 }
 
-const seriesBucket = computed(() => SERIES_BUCKET_MAP[props.series?.id] || "")
+// sort items by release dates
+const items = props.series.items
+  .filter((entry) => !entry.archive)
+  .sort((a, b) => toTimestamp(b.released) - toTimestamp(a.released))
 
-const latestEntry = computed(() => props.series?.items?.[0] ?? {})
-const history = computed(() => props.series?.items?.slice(1) ?? [])
+const latestEntry = items[0] 
 const expanded = ref(false)
 
-// add share to social media buttons
-const isFlowSeries = computed(() => props.series?.id === "flowTiles")
-function extractTweetId(url = "") {
-  try {
-    const parsed = new URL(url)
-    const segments = parsed.pathname.split("/").filter(Boolean)
-    const statusIndex = segments.findIndex((seg) => seg === "status")
-    if (statusIndex !== -1 && segments[statusIndex + 1]) {
-      return segments[statusIndex + 1]
-    }
-    return segments[segments.length - 1] || ""
-  } catch (err) {
-    return ""
-  }
-}
-
+// test for complete url
 const isAbsolute = (value = "") => /^https?:\/\//i.test(value)
 
-const shareUrl = computed(() => {
-  const url = latestEntry.value?.links?.x || latestEntry.value?.links?.external || ""
-  const tweetId = extractTweetId(url)
-  if (!tweetId) return ""
-  const intentBase = "https://twitter.com/intent/retweet"
-  return `${intentBase}?tweet_id=${encodeURIComponent(tweetId)}`
-})
+const buildDisplayLabel = (entry) =>
+  entry?.title || entry.released 
 
-function shareOnX() {
-  if (!shareUrl.value) return
-  window.open(shareUrl.value, "_blank", "noopener,noreferrer")
+const buildXShareUrl = (value) => {
+  if (!value) return ""
+  const id = typeof value === "object" ? value.id || "" : value
+  if (!id) return ""
+  return `https://twitter.com/intent/retweet?tweet_id=${encodeURIComponent(id)}`
 }
 
+const buildInstagramShareUrl = (value) => {
+  return typeof value === "string" ? value : ""
+}
+
+const buildFacebookShareUrl = (value) => {
+  if (!value) return ""
+  const url = typeof value === "object" ? value.url : value
+  if (!url) return ""
+  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+}
+
+// build links to share out on social media plaftorms
+const shareLinks = [
+  {
+    label: "X",
+    url: buildXShareUrl(latestEntry.links?.x)
+  },
+  {
+    label: "Instagram",
+    url: buildInstagramShareUrl(latestEntry.links?.instagram)
+  },
+  {
+    label: "Facebook",
+    url: buildFacebookShareUrl(latestEntry.links?.facebook)
+  }
+].filter((entry) => entry.url)
+
+function openShare(url) {
+  if (!url) return
+  window.open(url, "_blank", "noopener,noreferrer")
+}
+
+// assume is in thumbnails in s3 unless a full url is provided
 const resolveThumbnail = (src = "") => {
   if (!src) return ""
   if (isAbsolute(src)) return src
-  const bucket = seriesBucket.value
+  const bucket = seriesBucket
   if (bucket) {
     return assetStore.buildSeriesUrl(bucket, src)
   }
   return assetStore.buildThumbUrl(src)
 }
 
-const latestThumb = computed(() => resolveThumbnail(latestEntry.value?.image?.thumbnail || ""))
-
-const latestAlt = computed(() => latestEntry.value?.image?.alt || props.series?.title || "")
-const latestReleaseLabel = computed(() => latestEntry.value?.title || latestEntry.value?.released || "")
+const latestThumb = resolveThumbnail(latestEntry.image?.thumbnail || "")
+const latestAlt = latestEntry.image?.alt || buildDisplayLabel(latestEntry, props.series?.title || "")
+const latestReleaseLabel = buildDisplayLabel(latestEntry, "")
 
 const resolvePrimaryLink = (entry) => {
-  const raw = entry?.links?.external || ""
+  const raw = entry?.links?.external
   if (!raw) return ""
-  if (isAbsolute(raw)) return raw
-  const bucket = seriesBucket.value
-  if (bucket) {
-    return assetStore.buildSeriesUrl(bucket, raw)
-  }
-  return assetStore.buildSeriesUrl("", raw)
+  return isAbsolute(raw)
+    ? raw
+    : assetStore.buildSeriesUrl(seriesBucket || "", raw)
 }
 
-const latestPrimaryLink = computed(() => resolvePrimaryLink(latestEntry.value) || "#")
-const latestCodeLink = computed(() => latestEntry.value?.links?.code || "")
+// links are provided add them, otherwise don't
+const latestPrimaryLink = resolvePrimaryLink(latestEntry) || "#"
+const latestCodeLink = latestEntry.links?.code || ""
+
+const historyEntries = items
+  .slice(1)
+  .map((entry) => ({
+    id: entry.id,
+    displayLabel: buildDisplayLabel(entry, entry.id),
+    href: resolvePrimaryLink(entry)
+  }))
+  .filter((entry) => entry.displayLabel)
+const hasHistory = historyEntries.length > 0
 </script>
 
 <style scoped>
@@ -285,18 +308,32 @@ const latestCodeLink = computed(() => latestEntry.value?.links?.code || "")
 }
 
 .series-link {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 1.2rem;
-  padding: 0.6rem 1rem;
   border: 1px solid currentColor;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  color: inherit;
   border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.1s ease;
   text-decoration: none;
 }
 
-.series-link.ghost {
-  opacity: 0.65;
+.series-link:hover,
+.series-link:focus-visible {
+  color: #fff;
+  background: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.series-link:active {
+  transform: translateY(1px);
 }
 
 .series-card__footer {

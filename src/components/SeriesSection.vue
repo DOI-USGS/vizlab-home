@@ -67,7 +67,7 @@ const displaySeries = computed(() => {
   })
 })
 
-/* nagivate carousel slides */
+// nagivate carousel slides
 function move(step) {
   const len = seriesList.length
   index.value = (index.value + step + len) % len

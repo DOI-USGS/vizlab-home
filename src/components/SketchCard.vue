@@ -1,7 +1,6 @@
 <template>
   <article
     class="sketch-card"
-    :class="{ 'sketch-card--wide': isWide }"
   >
     <a
       class="sketch-card__link"
@@ -37,19 +36,15 @@ const props = defineProps({
 
 const assetStore = useAssetPathStore()
 
-const isWide = computed(() => props.card?.meta?.size === "wide")
-
 const thumbnailSrc = computed(() => {
-  const src = props.card?.image?.thumbnail || ""
-  if (!src) return ""
-  if (/^https?:\/\//i.test(src)) return src
+  const src = props.card.image.thumbnail 
   return assetStore.buildThumbUrl(src)
 })
 
-const altText = computed(() => props.card?.image?.alt || props.card?.title || "")
+const altText = computed(() => props.card?.image?.alt || props.card.title)
 
 const targetUrl = computed(() => {
-  const primary = props.card?.links?.external
+  const primary = props.card.links.external
   if (primary) return primary
   const asset = props.card?.links?.asset || ""
   if (!asset) return "#"

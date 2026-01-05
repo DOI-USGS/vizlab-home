@@ -10,8 +10,8 @@
 
       <div v-if="availableTags.length" class="tag-filter">
         <button
-          class="tag-chip"
-          :class="{ active: !selectedTag }"
+          class="pill-button tag-chip"
+          :class="{ 'pill-button--active': !selectedTag }"
           type="button"
           @click="selectTag(null)"
         >
@@ -20,8 +20,8 @@
         <button
           v-for="tag in availableTags"
           :key="tag"
-          class="tag-chip"
-          :class="{ active: selectedTag === tag }"
+          class="pill-button tag-chip"
+          :class="{ 'pill-button--active': selectedTag === tag }"
           type="button"
           @click="selectTag(tag)"
         >
@@ -98,30 +98,6 @@ const selectTag = (tag) => {
   flex-wrap: wrap;
   gap: 0.6rem;
   justify-content: flex-end;
-}
-
-.tag-chip {
-  border: 1px solid var(--black-soft);
-  background: transparent;
-  color: var(--black-soft);
-  padding: 0.3rem 1.1rem;
-  border-radius: 999px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.tag-chip.active,
-.tag-chip:hover,
-.tag-chip:focus-visible {
-  background: var(--black-soft);
-  color: #fff;
-  border-color: var(--black-soft);
 }
 
 @media (max-width: 960px) {

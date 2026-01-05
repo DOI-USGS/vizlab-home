@@ -46,7 +46,7 @@ const externalHref = props.item.links.external
 
 const thumbnail = props.item.image.thumbnail
 const thumbnailSrc = assetStore.buildThumbUrl(thumbnail)
-const imageAlt = props.item.image.alt
+const imageAlt = props.item.image.alt || title
 
 const imagePadding = `${props.imageRatio}%`
 </script>
@@ -113,16 +113,4 @@ const imagePadding = `${props.imageRatio}%`
   line-height: 1.3;
 }
 
-.card-meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.card-meta {
-  font-size: 1.4rem;
-  color: var(--medium-grey);
-  margin-bottom: 0.4rem;
-}
 </style>
