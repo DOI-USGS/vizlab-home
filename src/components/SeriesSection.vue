@@ -1,17 +1,23 @@
 <template>
   <section id="series" class="series-section">
-    <div class="section-header">
-      <h2>series</h2>
-      <p class="section-summary">
-        Your regular digest of water conditions.
-      </p>
+    <div class="section-intro">
+      <div class="section-header series-header">
+        <h2>series</h2>
+        <div class="carousel-controls carousel-controls--mobile">
+          <button class="nav-btn" @click="move(-1)">‹</button>
+          <button class="nav-btn" @click="move(1)">›</button>
+        </div>
+      </div>
+      <div class="section-summary">
+        <p>Your regular digest of water conditions.</p>
+      </div>
     </div>
 
-    <div v-if="hasSeries" class="carousel">
-      <button class="nav-btn" type="button" @click="move(-1)" aria-label="Previous series">
-        ‹
-      </button>
-
+    <div class="carousel">
+      <div class="carousel-controls carousel-controls--desktop">
+        <button class="nav-btn" @click="move(-1)">‹</button>
+        <button class="nav-btn" @click="move(1)">›</button>
+      </div>
       <div class="carousel-window" aria-live="polite">
         <div class="carousel-track">
           <div
@@ -22,28 +28,19 @@
           >
             <SeriesCard
               :series="slide.data"
-              :placeholder="PLACEHOLDER_IMG"
               :thumb-base="thumbBase"
             />
           </div>
         </div>
       </div>
-
-      <button class="nav-btn" type="button" @click="move(1)" aria-label="Next series">
-        ›
-      </button>
     </div>
-
-    <p v-else class="empty-copy">We are assembling series for this portfolio.</p>
   </section>
 </template>
 
 <script setup>
-import { computed, ref, watch } from "vue"
+import { computed, ref } from "vue"
 import SeriesCard from "@/components/SeriesCard.vue"
-
-const PLACEHOLDER_IMG =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23edf0f2'/%3E%3Cpath fill='%23c8ced3' d='M0 300h640v60H0z'/%3E%3Cpath fill='%23b0b7bc' d='M0 0h640v140H0z' opacity='.6'/%3E%3C/svg%3E"
+import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
   series: {
@@ -52,69 +49,19 @@ const props = defineProps({
   }
 })
 
+// carousel navigation
 const index = ref(0)
+const seriesList = props.series
+const assetPaths = useAssetPathStore()
 
-function formatSeriesLabel(value = "") {
-  if (!value) return ""
-  return value
-    .replace(/[-_]+/g, " ")
-    .replace(/([a-z])([A-Z])/g, "$1 $2")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\b\w/g, (char) => char.toUpperCase())
-}
-
-const seriesList = computed(() => {
-  const value = props.series
-  if (Array.isArray(value)) {
-    return value
-  }
-  if (value && typeof value === "object") {
-    return Object.entries(value).map(([key, entry]) => {
-      if (Array.isArray(entry)) {
-        return {
-          id: key,
-          title: formatSeriesLabel(key),
-          description: "",
-          entries: entry
-        }
-      }
-      return {
-        ...entry,
-        id: entry?.id || key,
-        title: entry?.title || formatSeriesLabel(entry?.id || key),
-        description: entry?.description ?? entry?.summary ?? "",
-        entries: Array.isArray(entry?.entries) ? entry.entries : []
-      }
-    })
-  }
-  return []
-})
-
-watch(
-  () => seriesList.value.length,
-  (len) => {
-    if (!len) {
-      index.value = 0
-    } else if (index.value > len - 1) {
-      index.value = 0
-    }
-  }
-)
-
-const hasSeries = computed(() => seriesList.value.length > 0)
-
-const currentSeries = computed(() => seriesList.value?.[index.value] ?? null)
-
+// show part of the series on either side of the focal one in the carousel
 const displaySeries = computed(() => {
-  const list = seriesList.value
-  const len = list.length
-  if (!len) return []
-  const offsets = [-1, 0, 1]
+  const len = seriesList.length
+  const offsets = [-1, 0, 1] 
   return offsets.map((offset) => {
     const role = offset === 0 ? "center" : "side"
     const idx = ((index.value + offset) % len + len) % len
-    const data = list[idx]
+    const data = seriesList[idx]
     return {
       role,
       data,
@@ -123,14 +70,12 @@ const displaySeries = computed(() => {
   })
 })
 
-const thumbBase = computed(() => {
-  const base = (import.meta.env.VITE_APP_S3_PROD_URL || "").replace(/\/+$/, "")
-  return base ? `${base}/thumbnails` : ""
-})
+/* find thumbnails in s3 */
+const thumbBase = computed(() => assetPaths.s3Base ? `${assetPaths.s3Base}/thumbnails` : "")
 
+/* nagivate carousel slides */
 function move(step) {
-  if (!hasSeries.value) return
-  const len = seriesList.value.length
+  const len = seriesList.length
   index.value = (index.value + step + len) % len
 }
 </script>
@@ -141,42 +86,72 @@ function move(step) {
   margin: 0 auto;
   max-width: 1200px;
 }
+.section-intro {
+  margin-bottom: 1rem;
+  padding: 0px 15px;
+}
 
 .carousel {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 .carousel-window {
   flex: 1;
-  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 3rem);
-  padding: 2rem 0;
+  gap: 1rem; /* gap between slides */
+  padding: 1rem 0;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.carousel-controls--desktop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -2rem;
+  right: -2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carousel-controls--mobile {
+  display: none;
+}
+
+.carousel-controls--desktop .nav-btn {
+  pointer-events: auto;
 }
 
 .carousel-slide {
-  flex: 0 0 min(70vw, 420px);
+  flex: 0 0 28%;
   transition:
     transform 250ms ease,
     opacity 250ms ease;
-  will-change: transform;
 }
 
 .carousel-slide--center {
-  transform: scale(1);
+  flex-basis: 38%;
+  transform: scale(1.02);
   opacity: 1;
 }
 
 .carousel-slide--side {
-  transform: scale(0.94);
-  opacity: 0.6;
+  flex-basis: 28%;
+  transform: scale(0.9);
+  opacity: 0.55;
 }
 
 .nav-btn {
@@ -200,12 +175,69 @@ function move(step) {
 }
 
 @media (max-width: 700px) {
+
+  .series-section {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  .series-header {
+    margin-bottom: 0px;
+  }
+
   .carousel {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carousel-track {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.2rem; /* gap between slides */
+    padding: 0.2rem 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-controls {
+    flex-direction: row;
+    justify-content: flex-end;
+    order: 1;
+  }
+
+  .carousel-window {
+    order: 2;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-slide {
+    flex: 0 0 calc(100% - 10rem); /* leaves a small portion of side slides visible */
   }
 
   .nav-btn {
     order: 2;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .carousel-controls--mobile {
+    display: flex;
+    order: 2;
+  }
+
+  .carousel-controls--desktop {
+    display: none;
+    position: static;
+    pointer-events: auto;
   }
 
 }

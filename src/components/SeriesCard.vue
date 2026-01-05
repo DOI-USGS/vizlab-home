@@ -47,6 +47,21 @@
           target="_blank"
           rel="noopener noreferrer"
         >View latest release</a>
+
+        <button
+          v-if="isFlowSeries"
+          class="series-link ghost x-share"
+          type="button"
+          @click="shareOnX"
+          :aria-label="`Share ${latestEntry.title} on X`"
+        >
+          <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M18.6 3h3.1l-6.7 7.7L23 21h-5.9l-4.6-6-5 6H4.5l7.1-8.4L2 3h6.1l4.2 5.5L18.6 3z"
+            />
+          </svg>
+        </button>
         <a
           v-if="latestEntry.codeUrl"
           class="series-link ghost"
@@ -94,10 +109,6 @@ const props = defineProps({
     type: Object,
     required: true
   },
-  placeholder: {
-    type: String,
-    required: true
-  },
   thumbBase: {
     type: String,
     default: ""
@@ -108,12 +119,40 @@ const latestEntry = computed(() => props.series?.entries?.[0] ?? {})
 const history = computed(() => props.series?.entries?.slice(1) ?? [])
 const expanded = ref(false)
 
+// add share to social media buttons
+const isFlowSeries = computed(() => props.series?.id === "flowTiles")
+function extractTweetId(url = "") {
+  try {
+    const parsed = new URL(url)
+    const segments = parsed.pathname.split("/").filter(Boolean)
+    const statusIndex = segments.findIndex((seg) => seg === "status")
+    if (statusIndex !== -1 && segments[statusIndex + 1]) {
+      return segments[statusIndex + 1]
+    }
+    return segments[segments.length - 1] || ""
+  } catch (err) {
+    return ""
+  }
+}
+
+// retweet on twitter
+const shareUrl = computed(() => {
+  const url = latestEntry.value?.shareUrl || latestEntry.value?.productUrl
+  const tweetId = extractTweetId(url)
+  if (!tweetId) return ""
+  const intentBase = "https://twitter.com/intent/retweet"
+  return `${intentBase}?tweet_id=${encodeURIComponent(tweetId)}`
+})
+
+function shareOnX() {
+  if (!shareUrl.value) return
+  window.open(shareUrl.value, "_blank", "noopener,noreferrer")
+}
+
 const resolvedBase = computed(() => {
   const override = props.series?.thumbBase
-  if (override) {
-    return override.replace(/\/+$/, "")
-  }
-  return props.thumbBase.replace(/\/+$/, "")
+  const base = override || props.thumbBase || ""
+  return base.replace(/\/+$/, "")
 })
 
 const latestThumb = computed(() => {
@@ -142,10 +181,9 @@ const latestThumb = computed(() => {
 
 .series-card__eyebrow-row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.8rem;
 }
 
 .series-card__eyebrow {
@@ -155,6 +193,7 @@ const latestThumb = computed(() => {
   font-size: 1.7rem;
   color: var(--black-soft);
   margin: 0;
+  line-height: 1;
 }
 
 .series-card__badges {
@@ -167,12 +206,15 @@ const latestThumb = computed(() => {
 }
 
 .series-card__badge {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   border: 1px solid currentColor;
   border-radius: 999px;
-  padding: 0.15rem 0.8rem;
+  padding: 0.1rem 0.8rem;
+  line-height: 1;
 }
 
 .series-card__title {
@@ -271,6 +313,10 @@ const latestThumb = computed(() => {
   color: inherit;
 }
 
+.x-share {
+  cursor: pointer;
+}
+
 .history-collapse-enter-active,
 .history-collapse-leave-active {
   transition: all 200ms ease;
@@ -282,9 +328,38 @@ const latestThumb = computed(() => {
   transform: translateY(-0.4rem);
 }
 
+.x-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 @media (max-width: 700px) {
   .series-card {
     width: 100%;
+  }
+
+  /* move interval badges to second lin on mobile */
+  .series-card__eyebrow-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    margin: 0px 0px 15px;
+  }
+
+  .series-card__badges {
+    width: 100%;
+    justify-content: flex-start;
   }
 }
 </style>
