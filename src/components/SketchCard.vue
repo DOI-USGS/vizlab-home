@@ -43,6 +43,7 @@ const thumbnailSrc = computed(() => {
 
 const altText = computed(() => props.card?.image?.alt || props.card.title)
 
+// if an external link is not provided, use the image hosted in s3
 const targetUrl = computed(() => {
   const primary = props.card.links.external
   if (primary) return primary
