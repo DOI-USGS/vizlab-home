@@ -14,7 +14,7 @@ library.add(faSquareXTwitter, faFacebookSquare, faGithub, faFlickr, faYoutubeSqu
 library.add(faCode);
 
 import App from './App.vue'
-import router from './router'
+import router from "./router/index.js"
 
 const app = createApp(App)
 

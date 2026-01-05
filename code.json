@@ -1,6 +1,6 @@
 [
   {
-    "name": "{app_title}",
+    "name": "vizlab",
     "organization": "U.S. Geological Survey",
     "description": "{project_description}",
     "version": "main",
@@ -10,14 +10,14 @@
       "licenses": [
         {
           "name": "Public Domain, CC0-1.0",
-          "URL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/raw/main/LICENSE.md"
+          "URL": "https://code.usgs.gov/wma/vizlab/-/raw/main/LICENSE.md"
         }
       ]
     },
-    "homepageURL": "https://water.usgs.gov/vizlab/{app_title}/",
-    "downloadURL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/archive/main/{app_title}-main.zip",
-    "disclaimerURL": "https://code.usgs.gov/wma/vizlab/{app_title}/-/raw/main/DISCLAIMER.md",
-    "repositoryURL": "https://code.usgs.gov/wma/vizlab/{app_title}.git",
+    "homepageURL": "https://water.usgs.gov/vizlab",
+    "downloadURL": "https://code.usgs.gov/wma/vizlab/vizlab-home/-/archive/main/vizlab-home-main.zip",
+    "disclaimerURL": "https://code.usgs.gov/wma/vizlab/vizlab-home/-/raw/main/DISCLAIMER.md",
+    "repositoryURL": "https://code.usgs.gov/wma/vizlab/vizlab-home.git",
     "vcs": "git",
     "laborHours": 50,
     "tags": [
@@ -34,7 +34,7 @@
       "email": "cnell@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2026-01-02"
+      "metadataLastUpdated": "2026-01-05"
     }
   }
 ]
