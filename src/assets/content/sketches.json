@@ -1,0 +1,118 @@
+{
+  "sketches": [
+    {
+      "id": "water-cycle", 
+      "released": "10/13/2022",
+      "title": "The Water Cycle",
+      "description": "Zoomable version of the water cycle diagram",
+      "filename": "water-cycle.png",
+      "alt": "A zoomed out view of a water cycle diagram",
+      "productUrl": "https://water.usgs.gov/vizlab/water-cycle/",
+      "tags": ["water cycle", "water use"],
+      "size": "wide"
+    },
+    {
+      "id": "social_science_infographic",
+      "released": "12/13/2025",
+      "title": "Social science is science",
+      "description": "",
+      "filename": "social_science_infographic.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": []
+    },
+    {
+      "id": "riverine",
+      "released": "12/13/2025",
+      "title": "Riverine Floodplain",
+      "description": "",
+      "filename": "riverine.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["flood"],
+      "size": "wide"
+    },
+    {
+      "id": "coastal",
+      "released": "12/13/2025",
+      "title": "Coastal floodplain",
+      "description": "",
+      "filename": "coastal.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["flood"]
+    },
+    {
+      "id": "20230401a_part-to-whole_mcarr",
+      "released": "04/01/2023",
+      "title": "All the water on Earth (chart)",
+      "description": "",
+      "filename": "20230401a_part-to-whole_mcarr.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["water cycle"]
+    },
+    {
+      "id": "20230401b_part-to-whole_mcarr",
+      "released": "04/01/2023",
+      "title": "All the water on Earth (diagram)",
+      "description": "",
+      "filename": "20230401b_part-to-whole_mcarr.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["water cycle"]
+    },
+    {
+      "id": "water-supply",
+      "released": "01/13/2025",
+      "title": "U.S. water supply",
+      "description": "",
+      "filename": "water-supply.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["water cycle"]
+    },
+    {
+      "id": "water_use_diagram",
+      "released": "01/13/2025",
+      "title": "Water loss diagram",
+      "description": "",
+      "filename": "water_use_diagram.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["water use"],
+      "size": "wide"
+    },
+    {
+      "id": "usgs-water-strong_infographic",
+      "released": "03/13/2025",
+      "title": "Water Data Keep Us Strong",
+      "description": "",
+      "filename": "usgs-water-strong_infographic.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": []
+    },
+    {
+      "id": "usgs-water-alert_infographic",
+      "released": "04/10/2025",
+      "title": "Water safety at your fingertips",
+      "description": "",
+      "filename": "usgs-water-alert_infographic.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["flood"]
+    },
+    {
+      "id": "consumptive-use",
+      "released": "01/13/2025",
+      "title": "Consumptive water use",
+      "description": "",
+      "filename": "consumptive-use.png",
+      "alt": "",
+      "productUrl": "",
+      "tags": ["water use"],
+      "size": "wide"
+    }
+  ]
+}

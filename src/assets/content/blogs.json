@@ -1,0 +1,67 @@
+{
+  "blogListItems": [
+    {
+      "date": "11/28/2025",
+      "title": "Easy hydrology mapping with nhdplusTools, geoconnex, and ggplot2",
+      "url": "https://waterdata.usgs.gov/blog/nhd-viz-demo/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/nhd-viz-demo/03b_huc8_refined.png",
+      "img_alt": ""
+    },
+    {
+      "date": "09/18/2025",
+      "title": "TopoRivBlender - Create custom 3D images of Topography and Hydrography",
+      "url": "https://waterdata.usgs.gov/blog/topo-riv-blender/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/topo-riv-blender/toporivblender-thumbnail_resized.png",
+      "img_alt": ""
+    },
+    {
+      "date": "05/20/2025",
+      "title": "Duplicating Quarto elements with code templates to reduce copy and paste errors",
+      "url": "https://waterdata.usgs.gov/blog/quarto-template-demo/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/quarto-template-demo/thumbnail.png",
+      "img_alt": ""
+    },
+    {
+      "date": "11/14/2025",
+      "title": "Charting 'tidycensus' data with R",
+      "url": "https://waterdata.usgs.gov/blog/tidycensus-viz/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/tidycensus-viz/thumbnail.png",
+      "img_alt": "Census data viz with the USGS Vizlab. Large text filled with colorful census data visualizations on a dark background."
+    },
+    {
+      "date": "12/09/2024",
+      "title": "Mapping water insecurity in R with tidycensus",
+      "url": "https://waterdata.usgs.gov/blog/acs-maps/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/acs-maps/tidycensus-thumbnail.png",
+      "img_alt": "Mapping water insecurity in R with tidycensus. A map of the western US showing median gross rent in 2022 with highest rent in southern CA and the Bay area."
+    },
+    {
+      "date": "07/21/2023",
+      "title": "Jazz up your ggplots!",
+      "url": "https://waterdata.usgs.gov/blog/ggplot-jazz/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/ggplot-extensions/ggplot-extensions-banner.png",
+      "img_alt": ""
+    },
+    {
+      "date": "01/11/2023",
+      "title": "Origin and development of a Snowflake Map",
+      "url": "https://waterdata.usgs.gov/blog/snow-tiles-demo/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/2023_snowtiles_demo/snowtilesInstagram.png",
+      "img_alt": ""
+    },
+    {
+      "date": "01/04/2023",
+      "title": "A New Take on the Water Cycle",
+      "url": "https://waterdata.usgs.gov/blog/water-cycle-release/",
+      "img_src": "https://waterdata.usgs.gov/blog/WCD-release/thumbnail.png",
+      "img_alt": ""
+    },
+    {
+      "date": "11/10/2021",
+      "title": "What is Vizlab?",
+      "url": "https://waterdata.usgs.gov/blog/what-is-vizlab/",
+      "img_src": "https://waterdata.usgs.gov/blog/static/what-is-vizlab/what-is-vizlab-thumb.png",
+      "img_alt": ""
+    }
+  ]
+}

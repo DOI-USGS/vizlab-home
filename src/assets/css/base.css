@@ -39,6 +39,26 @@
   --color-map-focal: var(--medium-orange);
   --color-map-default: var(--white);
   --color-USGS-header-footer: var(--usgs-blue);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-muted-text: rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme="dark"] {
+  --color-background: var(--black-soft);
+  --color-text: #f5f7fb;
+  --color-title-text: #fdfdfd;
+  --color-overlay: rgba(255, 255, 255, 0.85);
+  --color-overlay-text: #0f1117;
+  --color-code-links-background: var(--black-soft);
+  --color-link: var(--dodger-blue);
+  --color-bar-focal: var(--dodger-blue);
+  --color-bar-default: rgba(255, 255, 255, 0.5);
+  --color-map-focal: var(--medium-orange);
+  --color-map-default: var(--black-soft);
+  --light-grey: rgba(255, 255, 255, 0.14);
+  --medium-grey: #9ca3af;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-muted-text: rgba(255, 255, 255, 0.75);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -95,15 +115,33 @@ h2 {
   font-size: clamp(2.8rem, 4vw, 4rem);
   text-transform: uppercase;
 }
+
 .section-header {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .section-summary {
-  color: rgba(0, 0, 0, 0.65);
+  font-size: 1.8rem;
+  color: var(--color-muted-text);
   max-width: 70ch;
 }
 
 p, text, li {
   padding: 0 0 1rem 0;
+}
+
+@media (max-width: 700px) {
+  .viz-section {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
 }

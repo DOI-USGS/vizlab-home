@@ -1,9 +1,4 @@
 {
-  "site": 
-    {
-      "title": "USGS Vizlab",
-      "tagline": "water data visualizations"
-    },
   "websites": [
     {
       "id": "streamflow-drought-forecasts",
@@ -60,7 +55,7 @@
       "released": "9/23/2024",
       "title": "Unequal access to water",
       "description": null,
-      "thumb": "vulnerability_thumbnail_not_stylized_square.png",
+      "thumb": "vulnerability_thumbnail_no_text.png",
       "alt": "Two contrasting images of water sources with the top image showing a close-up of a hand holding a clear glass being filled with water from a kitchen faucet. The bottom image shows a rustic landscape with a blue well tank labeled WELL-X-TROL with a wired fence and dry grass in the background.",
       "productUrl": "https://labs.waterdata.usgs.gov/visualizations/vulnerability-indicators/index.html#/",
       "codeUrl": "https://github.com/DOI-USGS/vulnerability-indicators"
@@ -94,16 +89,6 @@
       "alt": "An illustration of a partially dried-up streambed, wilted sunflower, and brown landscape depicting streamflow drought, which follows after meteorological and agricultural drought.",
       "productUrl": "https://labs.waterdata.usgs.gov/visualizations/what-is-drought/index.html#/",
       "codeUrl": "https://github.com/DOI-USGS/what-is-drought"
-    },
-    {
-      "id": "water-cycle",
-      "released": "10/13/2022",
-      "title": "The Water Cycle",
-      "description": "Zoomable version of the water cycle diagram",
-      "thumb": "water-cycle-thumbnail.png",
-      "alt": "A zoomed out view of a water cycle diagram",
-      "productUrl": "https://labs.waterdata.usgs.gov/visualizations/water-cycle/index.html#/",
-      "codeUrl": "https://github.com/USGS-VIZLAB/water-cycle"
     },
     {
       "id": "pools-and-fluxes",
