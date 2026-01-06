@@ -6,10 +6,6 @@
 
     <div class="about-copy">
       <p v-html="text.paragraph1" />
-<!--       <p
-        class="extra-line-spacing"
-        v-html="text.paragraph2"
-      /> -->
     </div>
 
     <div class="about-figure">
