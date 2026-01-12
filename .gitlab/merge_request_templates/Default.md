@@ -18,7 +18,8 @@ Provide instructions and/or code necessary to test the changes.
 - [ ] ASAP - blocker for deployment
 - [ ] Today - blocker for ongoing work
 - [ ] Next couple of days
-- [ ] This week
+- [ ] In the next week
+- [ ] By XX/XX/XX
 - [ ] When reviewer has availability
 
 ### Review Needs
