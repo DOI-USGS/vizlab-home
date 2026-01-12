@@ -17,13 +17,17 @@
           aria-label="Primary navigation"
         >
           <div class="nav-scroller">
+            <!-- show left fade if nav bar is scrolled to the right -->
             <span
               class="fade left"
+              v-show="showLeftFade" 
               aria-hidden="true"
             />
             <ul
               id="nav-menu"
               class="nav-list"
+              ref="navList"
+              @scroll.passive="updateFadeVisibility"
             >
               <li
                 v-for="item in navItems"
@@ -41,6 +45,7 @@
             </ul>
             <span
               class="fade right"
+              v-show="showRightFade"
               aria-hidden="true"
             />
           </div>
@@ -51,7 +56,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue"
+import { onBeforeUnmount, onMounted, ref, watchEffect } from "vue"
 
 import viz from "@/assets/content/viz-list.json"
 
@@ -67,6 +72,11 @@ const subtitle = viz?.site?.tagline || "water data visualizations"
 
 const activeSection = ref(navItems[0].id)
 const shell = ref(null)
+const navList = ref(null)
+
+// track visibility of nav bar items when scrolled
+const showLeftFade = ref(false)
+const showRightFade = ref(false)
 
 let observer
 
@@ -87,10 +97,13 @@ const setupObserver = () => {
   })
 }
 
+// reset component when viewport changes or nav bar is scrolled
 const handleResize = () => {
   setupObserver()
+  updateFadeVisibility()
 }
 
+// triggers active tab in nav bar
 const handleScroll = () => {
   const shellHeight = shell.value?.offsetHeight ?? 0
   if (window.scrollY <= shellHeight + 4) {
@@ -98,11 +111,27 @@ const handleScroll = () => {
   }
 }
 
+// track horizontal scroll to apply face
+const updateFadeVisibility = () => {
+  const list = navList.value
+  const { scrollLeft, scrollWidth, clientWidth } = list
+
+  showLeftFade.value = scrollLeft > 1
+  showRightFade.value = scrollLeft + clientWidth < scrollWidth - 1
+}
+
+watchEffect(() => {
+  if (navList.value) {
+    updateFadeVisibility()
+  }
+})
+
 onMounted(() => {
   setupObserver()
   window.addEventListener("resize", handleResize)
   window.addEventListener("scroll", handleScroll, { passive: true })
   handleScroll()
+  updateFadeVisibility()
 })
 
 onBeforeUnmount(() => {
@@ -127,6 +156,7 @@ function handleIntersect(entries) {
   }
 }
 
+// scroll to button sections
 function scrollTo(id) {
   const target = document.getElementById(id)
   if (!target) return
@@ -161,13 +191,14 @@ function scrollTo(id) {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  flex-wrap: wrap;
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex: 1;
+ /*  flex: 1; */
   justify-content: flex-end;
   flex-wrap: wrap;
 }
@@ -244,7 +275,7 @@ function scrollTo(id) {
   letter-spacing: 0em;
 }
 
-/* on mobile the navigation bar scrolls horizontally if it doesn't fit on one lin */
+/* on mobile the navigation bar scrolls horizontally if it doesn't fit on one line */
 .nav-scroller {
   position: relative;
   display: flex;
@@ -259,6 +290,7 @@ function scrollTo(id) {
   top: 0;
   bottom: 0;
   width: 14px;
+  display: none;
   pointer-events: none;
   background: linear-gradient(to right, var(--color-background), transparent);
 }
@@ -299,6 +331,10 @@ function scrollTo(id) {
   .nav-links {
     width: 100%;
     margin-left: 0;
+  }
+
+  .fade {
+    display: block;
   }
 }
 </style>
