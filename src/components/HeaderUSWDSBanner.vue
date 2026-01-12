@@ -104,7 +104,7 @@
 <style scoped lang="scss">
   @import '../../node_modules/@uswds/uswds/dist/css/uswds.css';
   .usa-banner {
-    background-color: var(--black-soft);
+    background-color: var(--usgs-blue);
   }
   .usa-banner p, text {
     color: #F0F0F0;

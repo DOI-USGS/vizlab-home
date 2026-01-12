@@ -180,9 +180,13 @@
 footer p, text, li {
   padding: 0;
 }
+footer.footer .footer-social-links li {
+  margin-right: 0px;
+}
 .fa {
   color:#fff;
 	font-size: 24px;
+  width: 24px;
 }
 /* custom edit to get margins to match example */
 ul {

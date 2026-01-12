@@ -1,8 +1,8 @@
 # Water data visualizations
 
-> _A newer version of the software may be available. See https://code.usgs.gov/wma/vizlab/-/releases to view all releases._
+> _A newer version of the software may be available. See https://github.com/DOI-USGS/vizlab-home/releases to view all releases._
 
-This repo uses Vue3 to build a portfolio website showcasing data visualization and graphical products made by the USGS Vizlab. The "see code" links on the portfolio cards will take you to the code repositories behind the visual products featured here.
+This repo uses Vue3 to build a portfolio website showcasing data visualization and graphical products made by the USGS Vizlab.
 
 **The data visualization website can be viewed at [https://water.usgs.gov/vizlab](https://water.usgs.gov/vizlab).**
 
@@ -10,16 +10,16 @@ This repo uses Vue3 to build a portfolio website showcasing data visualization a
 
 Clone the repo. In the directory, run `npm install` to install the required modules. Once the dependencies have been installed, run `npm run dev` to run locally from your browser.
 
-To build the website locally you'll need `node.js` `v22.14.0` and `npm` `v10.9.2` or higher installed. To manage multiple versions of `npm`, you may [try using `nvm`](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e).
+To build the website locally you'll need `node.js` `v24` and `npm` `v111` or higher installed. To manage multiple versions of `npm`, you may [try using `nvm`](https://betterprogramming.pub/how-to-change-node-js-version-between-projects-using-nvm-3ad2416bda7e).
 
 ## Citation
 
 Nell, C. 2026. USGS Vizlab. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
 ## Additional information
-* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/vizlab/) to this repository on GitHub.
-* [Disclaimer](https://code.usgs.gov/wma/vizlab/vizlab/-/blob/main/DISCLAIMER.md)
-* [License](https://code.usgs.gov/wma/vizlab/vizlab/-/blob/main/LICENSE.md)
+* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/vizlab-home/) to this repository on GitHub.
+* [Disclaimer](https://github.com/DOI-USGS/vizlab-home/blob/main/DISCLAIMER.md)
+* [License](https://github.com/DOI-USGS/vizlab-home/blob/main/LICENSE.md)
 
 ## Adding new items
 

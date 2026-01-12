@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Here we track upcoming changes.
  
 ### Added
-- Added a change log
  
 ### Changed
  
@@ -26,8 +25,3 @@ Here we track upcoming changes.
   
 - Cleaned up portfolio cards. src/assets/content/viz-list.json drives the content
 - Added organization to current conditions collections based on release date
-
- 
-### Fixed
- 
-- Description of fix
