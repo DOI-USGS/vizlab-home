@@ -34,10 +34,16 @@
     </a>
 
     <div class="series-card__body">
-      <p v-if="latestReleaseLabel" class="series-card__meta">
+      <p
+        v-if="latestReleaseLabel"
+        class="series-card__meta"
+      >
         {{ latestReleaseLabel }}
       </p>
-      <p v-if="series?.description" class="series-card__description">
+      <p
+        v-if="series?.description"
+        class="series-card__description"
+      >
         {{ series.description }}
       </p>
       <div class="series-card__actions">
@@ -53,8 +59,8 @@
           :key="share.label"
           class="series-link"
           type="button"
-          @click="() => openShare(share.url)"
           :aria-label="`Share on ${share.label}`"
+          @click="() => openShare(share.url)"
         >
           Share on {{ share.label }}
         </button>
@@ -68,19 +74,25 @@
       </div>
     </div>
 
-    <footer v-if="hasHistory" class="series-card__footer">
+    <footer
+      v-if="hasHistory"
+      class="series-card__footer"
+    >
       <button
         class="history-toggle"
         type="button"
-        @click="expanded = !expanded"
         :aria-expanded="expanded.toString()"
+        @click="expanded = !expanded"
       >
         <span>Past versions</span>
         <span aria-hidden="true">{{ expanded ? "−" : "+" }}</span>
       </button>
 
       <transition name="history-collapse">
-        <div v-if="expanded" class="history-list">
+        <div
+          v-if="expanded"
+          class="history-list"
+        >
           <a
             v-for="entry in historyEntries"
             :key="entry.id"

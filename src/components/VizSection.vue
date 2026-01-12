@@ -1,5 +1,8 @@
 <template>
-  <section id="websites" class="viz-section">
+  <section
+    id="websites"
+    class="viz-section"
+  >
     <div class="section-header">
       <h2>science stories</h2>
       <p class="section-summary">

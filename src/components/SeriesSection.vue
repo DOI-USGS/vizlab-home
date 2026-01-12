@@ -1,11 +1,24 @@
 <template>
-  <section id="series" class="series-section">
+  <section
+    id="series"
+    class="series-section"
+  >
     <div class="section-intro">
       <div class="section-header series-header">
         <h2>series</h2>
         <div class="carousel-controls carousel-controls--mobile">
-          <button class="nav-btn" @click="move(-1)">‹</button>
-          <button class="nav-btn" @click="move(1)">›</button>
+          <button
+            class="nav-btn"
+            @click="move(-1)"
+          >
+            ‹
+          </button>
+          <button
+            class="nav-btn"
+            @click="move(1)"
+          >
+            ›
+          </button>
         </div>
       </div>
       <div class="section-summary">
@@ -15,10 +28,23 @@
 
     <div class="carousel">
       <div class="carousel-controls carousel-controls--desktop">
-        <button class="nav-btn" @click="move(-1)">‹</button>
-        <button class="nav-btn" @click="move(1)">›</button>
+        <button
+          class="nav-btn"
+          @click="move(-1)"
+        >
+          ‹
+        </button>
+        <button
+          class="nav-btn"
+          @click="move(1)"
+        >
+          ›
+        </button>
       </div>
-      <div class="carousel-window" aria-live="polite">
+      <div
+        class="carousel-window"
+        aria-live="polite"
+      >
         <div class="carousel-track">
           <div
             v-for="slide in displaySeries"

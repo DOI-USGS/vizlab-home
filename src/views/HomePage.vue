@@ -6,11 +6,26 @@
 
     <!-- main -->
     <main class="content">
-      <SeriesSection :series="series" id="series" />
-      <VizSection :items="websites" id="stories" />
-      <SketchesSection :items="sketches" id="sketches" />
-      <BlogSection :items="blogs" id="blogs" />
-      <AboutSection :text="team" id="team" />
+      <SeriesSection
+        id="series"
+        :series="series"
+      />
+      <VizSection
+        id="stories"
+        :items="websites"
+      />
+      <SketchesSection
+        id="sketches"
+        :items="sketches"
+      />
+      <BlogSection
+        id="blogs"
+        :items="blogs"
+      />
+      <AboutSection
+        id="team"
+        :text="team"
+      />
     </main>
   </section>
 </template>

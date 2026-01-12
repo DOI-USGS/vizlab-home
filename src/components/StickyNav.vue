@@ -4,14 +4,23 @@
     class="nav-shell"
   >
     <div class="nav-inner">
-      <h1 v-if="subtitle" class="nav-subtitle">
+      <h1
+        v-if="subtitle"
+        class="nav-subtitle"
+      >
         {{ subtitle }}
       </h1>
 
       <div class="nav-actions">
-        <nav class="nav-links" aria-label="Primary navigation">
+        <nav
+          class="nav-links"
+          aria-label="Primary navigation"
+        >
           <div class="nav-scroller">
-            <span class="fade left" aria-hidden="true"></span>
+            <span
+              class="fade left"
+              aria-hidden="true"
+            />
             <ul
               id="nav-menu"
               class="nav-list"
@@ -30,10 +39,12 @@
                 </button>
               </li>
             </ul>
-            <span class="fade right" aria-hidden="true"></span>
+            <span
+              class="fade right"
+              aria-hidden="true"
+            />
           </div>
         </nav>
-
       </div>
     </div>
   </div>

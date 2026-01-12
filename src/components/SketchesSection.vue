@@ -1,5 +1,8 @@
 <template>
-  <section id="sketches" class="sketches-section">
+  <section
+    id="sketches"
+    class="sketches-section"
+  >
     <div class="section-header">
       <div>
         <h2>sketches</h2>
@@ -8,7 +11,10 @@
         </p>
       </div>
 
-      <div v-if="availableTags.length" class="tag-filter">
+      <div
+        v-if="availableTags.length"
+        class="tag-filter"
+      >
         <button
           class="pill-button tag-chip"
           :class="{ 'pill-button--active': !selectedTag }"
@@ -30,7 +36,10 @@
       </div>
     </div>
 
-    <div v-if="filteredCards.length" class="sketch-grid">
+    <div
+      v-if="filteredCards.length"
+      class="sketch-grid"
+    >
       <SketchCard
         v-for="item in filteredCards"
         :key="item.id"

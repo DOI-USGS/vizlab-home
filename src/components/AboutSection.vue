@@ -1,5 +1,8 @@
 <template>
-  <section id="the-team" class="about-section">
+  <section
+    id="the-team"
+    class="about-section"
+  >
     <div class="section-header">
       <h2>{{ text.heading }}</h2>
     </div>

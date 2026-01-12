@@ -7,7 +7,10 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div class="card-image" aria-hidden="true">
+        <div
+          class="card-image"
+          aria-hidden="true"
+        >
           <img
             :src="thumbnailSrc"
             :alt="imageAlt"

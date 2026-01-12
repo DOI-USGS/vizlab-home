@@ -1,5 +1,8 @@
 <template>
-  <section id="blog" class="blog-section">
+  <section
+    id="blog"
+    class="blog-section"
+  >
     <div class="section-header">
       <div>
         <h2>water data blog</h2>
@@ -9,7 +12,10 @@
       </div>
     </div>
 
-    <ul v-if="blogItems.length" class="cards-grid">
+    <ul
+      v-if="blogItems.length"
+      class="cards-grid"
+    >
       <ContentCard
         v-for="blog in blogItems"
         :key="blog.id"

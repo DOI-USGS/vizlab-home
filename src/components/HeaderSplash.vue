@@ -1,9 +1,16 @@
 <template>
   <div class="header-section">
-<!-- splash / banner -->
-    <header id="top" class="splash" :class="{ mobile: mobileView }">
+    <!-- splash / banner -->
+    <header
+      id="top"
+      class="splash"
+      :class="{ mobile: mobileView }"
+    >
       <div class="splash-inner">
-        <div class="title-overlay" :style="{ opacity: sectionTitleOverlayOpacity }"></div>
+        <div
+          class="title-overlay"
+          :style="{ opacity: sectionTitleOverlayOpacity }"
+        />
 
         <div
           :class="{ mobile: mobileView }"
@@ -11,12 +18,15 @@
         >
           <h1 class="title">
             <span class="title-strong">{{ brandStrong }}</span>
-            <span v-if="brandLight" class="title-light">{{ brandLight }}</span>
+            <span
+              v-if="brandLight"
+              class="title-light"
+            >{{ brandLight }}</span>
           </h1>
         </div>
       </div>
     </header>
-    </div>
+  </div>
 </template>
 
 <script setup>
