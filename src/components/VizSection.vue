@@ -1,6 +1,6 @@
 <template>
   <section
-    id="websites"
+    :id="sectionId"
     class="viz-section"
   >
     <div class="section-header">
@@ -25,6 +25,10 @@ import { computed } from "vue"
 import ContentCard from "@/components/ContentCard.vue"
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: ""
+  },
   items: {
     type: Array,
     default: () => []
@@ -38,6 +42,8 @@ const props = defineProps({
     default: ""
   }
 })
+
+const sectionId = computed(() => props.id || "stories")
 
 // filter out vizzies with "archive": true
 const visibleItems = computed(() =>
