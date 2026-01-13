@@ -237,6 +237,7 @@ function scrollTo(id) {
 .nav-list li {
   flex: 0 0 auto;
   display: flex;
+  padding: 0;
 }
 
 .nav-link {
