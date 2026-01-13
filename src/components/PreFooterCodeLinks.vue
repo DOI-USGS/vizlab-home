@@ -25,6 +25,7 @@
     padding: 0.4rem 1.5rem;
     a {
       color: var(--color-text);
+      font-weight: 300;
       margin-left: 10px;
       text-decoration: none;
     }
