@@ -61,8 +61,8 @@ import { onBeforeUnmount, onMounted, ref, watchEffect } from "vue"
 import viz from "@/assets/content/viz-list.json"
 
 const navItems = [
-  { id: "stories", label: "stories" },
   { id: "series", label: "series" },
+  { id: "stories", label: "stories" },
   { id: "sketches", label: "sketches" },
   { id: "blogs", label: "blog" },
   { id: "team", label: "about" }
@@ -108,12 +108,38 @@ const handleScroll = () => {
   const shellHeight = shell.value?.offsetHeight ?? 0
   if (window.scrollY <= shellHeight + 4) {
     activeSection.value = navItems[0].id
+    return
   }
+
+  updateActiveSectionByScrollPosition()
+}
+
+const updateActiveSectionByScrollPosition = () => {
+  if (typeof window === "undefined") return
+
+  const shellHeight = shell.value?.offsetHeight ?? 0
+  const scrollPosition = window.scrollY + shellHeight + 16
+
+  let currentSectionId = navItems[0].id
+  for (const item of navItems) {
+    const el = document.getElementById(item.id)
+    if (!el) continue
+    const elementTop = el.getBoundingClientRect().top + window.scrollY
+    if (scrollPosition >= elementTop) {
+      currentSectionId = item.id
+    } else {
+      break
+    }
+  }
+
+  activeSection.value = currentSectionId
 }
 
 // track horizontal scroll to apply face
 const updateFadeVisibility = () => {
   const list = navList.value
+  if (!list) return
+
   const { scrollLeft, scrollWidth, clientWidth } = list
 
   showLeftFade.value = scrollLeft > 1
@@ -153,7 +179,10 @@ function handleIntersect(entries) {
 
   if (visible.length) {
     activeSection.value = visible[0].target.id
+    return
   }
+
+  updateActiveSectionByScrollPosition()
 }
 
 // scroll to button sections
