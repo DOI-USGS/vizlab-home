@@ -79,14 +79,19 @@ onBeforeUnmount(() => {
 
 // adjust the cluster space based on svg and screen 
 function resizeAndDraw() {
-  if (!svg.value) return;
 
   const bounds = svg.value.getBoundingClientRect();
   width = bounds.width;
   height = bounds.height;  
+
   // edit multipliers here to change desktop node size
-  nodeRadius = window.innerHeight < 700 ? Math.min(width, height) * 0.28 : Math.min(width, height) * 0.15;
-  nodeRadius = mobileView ? Math.min(width, height) * 0.1 : nodeRadius;
+  nodeRadius = window.innerHeight < 700 
+    ? Math.min(width, height) * 0.28 
+    : Math.min(width, height) * 0.15;
+    
+  nodeRadius = mobileView 
+    ? Math.min(width, height) * 0.18 
+    : nodeRadius;
   
   d3.select(svg.value).selectAll('*').remove();
   drawGraph();
