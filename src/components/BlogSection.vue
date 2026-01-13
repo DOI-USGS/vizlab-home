@@ -1,6 +1,6 @@
 <template>
   <section
-    id="blog"
+    :id="sectionId"
     class="blog-section"
   >
     <div class="section-header">
@@ -31,12 +31,17 @@ import { computed } from "vue"
 import ContentCard from "@/components/ContentCard.vue"
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: ""
+  },
   items: {
     type: Array,
     default: () => []
   }
 })
 
+const sectionId = computed(() => props.id || "blogs")
 const blogItems = computed(() => (props.items || []).filter((item) => !item.archive))
 </script>
 

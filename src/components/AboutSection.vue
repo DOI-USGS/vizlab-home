@@ -1,6 +1,6 @@
 <template>
   <section
-    id="the-team"
+    :id="sectionId"
     class="about-section"
   >
     <div class="section-header">
@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watch } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch, computed } from "vue";
 import { isMobile } from "mobile-device-detect";
 import * as d3 from "d3";
 
@@ -40,8 +40,14 @@ const props = defineProps({
       default() {
         return {}
       } 
+    },
+    id: {
+      type: String,
+      default: ""
     }
 });
+
+const sectionId = computed(() => props.id || "team")
 
 const cloneNodes = (source = []) => {
     if (!Array.isArray(source)) return []
