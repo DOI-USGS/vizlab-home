@@ -64,13 +64,34 @@
         >
           Share on {{ share.label }}
         </button>
-        <a
-          v-if="latestCodeLink"
-          class="series-link ghost"
-          :href="latestCodeLink"
-          target="_blank"
-          rel="noopener noreferrer"
-        >View code</a>
+
+        <div
+          v-if="hasCodeIcon"
+          class="series-card__code-icons"
+        >
+          <a
+            v-if="seriesCodeLink"
+            class="series-card__code-button"
+            :href="seriesCodeLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`View ${series?.title} code on GitHub`"
+          >
+            <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'github' }" />
+            <span class="sr-only">Series GitHub link</span>
+          </a>
+          <a
+            v-if="latestCodeLink"
+            class="series-card__code-button"
+            :href="latestCodeLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`View ${latestEntry.title || series?.title} code on GitHub`"
+          >
+            <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'github' }" />
+            <span class="sr-only">Latest release GitHub link</span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -110,7 +131,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
@@ -209,6 +230,8 @@ const resolvePrimaryLink = (entry) => {
 // links are provided add them, otherwise don't
 const latestPrimaryLink = resolvePrimaryLink(latestEntry) || "#"
 const latestCodeLink = latestEntry.links?.code || ""
+const seriesCodeLink = props.series?.links?.code || ""
+const hasCodeIcon = computed(() => Boolean(seriesCodeLink || latestCodeLink))
 
 const historyEntries = items
   .slice(1)
@@ -226,14 +249,40 @@ const hasHistory = historyEntries.length > 0
   flex: 1;
   border: 1px solid var(--light-grey);
   border-radius: 1.2rem;
-  overflow: hidden;
+  overflow: visible;
   background: #fff;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .series-card__header {
   padding: 1.5rem 1.5rem 0;
+}
+
+.series-card__code-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.series-card__code-button {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.series-card__code-button:hover,
+.series-card__code-button:focus-visible {
+  color: var(--color-link);
 }
 
 .series-card__eyebrow-row {
@@ -284,6 +333,8 @@ const hasHistory = historyEntries.length > 0
   position: relative;
   padding-top: 56%;
   overflow: hidden;
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
 }
 
 .series-card__image img {
@@ -299,6 +350,7 @@ const hasHistory = historyEntries.length > 0
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  position: relative;
 }
 
 .series-card__meta {

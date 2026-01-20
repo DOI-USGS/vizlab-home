@@ -82,7 +82,7 @@ const targetUrl = computed(() => {
 
 .sketch-card__title {
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--black-soft);
   padding: 1rem 1.5rem;
   text-align: center;
@@ -95,9 +95,9 @@ const targetUrl = computed(() => {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(251, 250, 250, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.1s ease;
 }
 
 .sketch-card__link:hover .sketch-card__overlay,
