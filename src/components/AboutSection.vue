@@ -92,8 +92,8 @@ function resizeAndDraw() {
 
   // edit multipliers here to change desktop node size
   nodeRadius = window.innerHeight < 700 
-    ? Math.min(width, height) * 0.28 
-    : Math.min(width, height) * 0.15;
+    ? Math.min(width, height) * 0.3 
+    : Math.min(width, height) * 0.18;
     
   nodeRadius = mobileView 
     ? Math.min(width, height) * 0.18 
@@ -122,10 +122,10 @@ function drawGraph() {
     // force simulation to control positioning
     const simulation = d3.forceSimulation(nodes.value)
         .force('charge', d3.forceManyBody().strength(d => -200 - Math.random() * 100))
-        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.05))
         .force('collision', d3.forceCollide().radius(nodeRadius*1.1))
         // custom clustering force that pulls each node towards its' group center
-        .force('cluster', forceCluster(0.1));
+        .force('cluster', forceCluster(0.025));
 
     // build the svg
     const svgElement = d3.select(svg.value);
