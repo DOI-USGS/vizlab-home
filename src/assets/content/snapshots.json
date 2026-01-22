@@ -1,6 +1,54 @@
 {
   "items": [
     {
+      "id": "great-salt-lake-landsat",
+      "title": "Great Salt Lake Landsat animation",
+      "released": "04/30/2025",
+      "image": {
+        "alt": "Tracking five decades of change from space, pixel by pixel. Satellite imagery of Great Salt Lake, which goes from 2000 to 2022. Stylized to look similar to a magazine cover, with a black background and yellow border. ",
+        "thumbnail": "landsat-gsl-eazadpour.gif"
+      },
+      "links": {
+        "asset": "landsat-gsl-eazadpour.gif",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+        {
+      "id": "bw-distribution-source",
+      "title": "Distribution of water sources for bottled water facilities",
+      "released": "11/27/2023",
+      "image": {
+        "alt": "A tile map of the U.S. showing percentages of water source types for bottled water facilities.",
+        "thumbnail": "bw-distrubution-eazadpour_thumbnail.jpeg"
+      },
+      "links": {
+        "asset": "bw-distrubution-eazadpour.jpeg",
+        "external": ""
+      },
+      "tags": [
+        "geofacet"
+      ]
+    },
+    {
+      "id": "rio-grande-ridgelines",
+      "title": "Rio Grande River, NM streamflow",
+      "released": "04/13/2023",
+      "image": {
+        "alt": "Mean daily streamflow (cfs) of the Rio Grande at Embudo, New Mexico from 1991 to 2022. The chart has a black background and the 30 years of mean daily streamflow data are plotted as stacked white ridge lines that emulate the aesthetics of a classic rock album. In each year there is a peak of streamflow mid-year, with tapering streamflow levels during winter months.",
+        "thumbnail": "rio-grande-ridgelines-eazadpour_thumbnail.png"
+      },
+      "links": {
+        "asset": "rio-grande-ridgelines-eazadpour.png",
+        "external": ""
+      },
+      "tags": [
+        "timeseries"
+      ]
+    },
+    {
       "id": "getting-snowier",
       "title": "Are snowy places getting snowier?",
       "released": "04/13/2021",

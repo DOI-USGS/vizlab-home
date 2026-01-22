@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "id": "unequal-access-to-water-eazadpour-infographic",
+      "title": "Unequal access to water",
+      "released": "11/13/2024",
+      "image": {
+        "alt": "Unequal access to water (infographic)",
+        "thumbnail": "unequal-access-to-water-eazadpour-infographic_thumbnail.png"
+      },
+      "links": {
+        "asset": "unequal-access-to-water-eazadpour-infographic.png",
+        "external": "https://water.usgs.gov/vizlab/vulnerability-indicators/index.html#/en"
+      },
+      "tags": []
+    },
+    {
       "id": "water-cycle",
       "title": "The Water Cycle",
       "released": "10/13/2022",
