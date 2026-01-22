@@ -5,9 +5,9 @@
   >
     <div class="section-header">
       <div>
-        <h2>snapshot</h2>
+        <h2>snapshots</h2>
         <p class="section-summary">
-          Illustrations, diagrams, and infographics.
+          One-off charts and maps.
         </p>
       </div>
 

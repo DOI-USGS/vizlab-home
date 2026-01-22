@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": "getting-snowier",
+      "title": "Are snowy places getting snowier?",
+      "released": "04/13/2021",
+      "image": {
+        "alt": "A bivariate map of the western U.S. showing the relationship between snow water equivalent and historic snowfall",
+        "thumbnail": "getting-snowier_thumbnail.jpeg"
+      },
+      "links": {
+        "asset": "getting-snowier.jpeg",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "",
+      "title": "",
+      "released": "",
+      "image": {
+        "alt": "",
+        "thumbnail": ""
+      },
+      "links": {
+        "asset": "",
+        "external": ""
+      },
+      "tags": [
+        
+      ]
+    }
+  ]
+}

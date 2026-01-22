@@ -38,7 +38,7 @@ Each section on the portfolio is populated by a similarly named file in `src/ass
       },
       "links": {
         "external": "https://water.usgs.gov/vizlab/streamflow-drought-forecasts", // opens in new window when card is clicked
-        "asset": "" // image filename in s3
+        "asset": "" // image filename in s3 for standalone files
       },
       "archive": "true" // hide from portfolio
     }
@@ -47,12 +47,13 @@ Each section on the portfolio is populated by a similarly named file in `src/ass
 ```
 
 **File-specific notes**
+Not all of the sections require exactly the same data to populate the cards. Refer to the json files to see what is used for the different type. 
 
-* `viz-list.json` – interactive websites. 
-* `blogs.json` –  `released` date is shown on card. 
-* `sketches.json` – use `links.asset` to open direct ifiles from s3. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood". 
-* `series-list.json` – contains a `collections` array, where each collection represents a series card. The most recent item within is displayed on the card. Other items are linked in collapsable menu.  Can archive entire series or items within. `intervals` adds badges to the series card. s
-
+* `viz-list.json` – interactive websites. These use the same card style as blogs with a link to the code on github.  
+* `blogs.json` –  `released` date is shown on card. These use the same card style as viz-list with the date shown on the card.  
+* `sketches.json` – use `links.asset` to open direct ifiles from s3. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood". These use the same card style as snapshots.  
+* `snapshots.json` – use `links.asset` to open direct ifiles from s3. optional `tags` that can be filtered on. right now, only includes "maps".  These use the same card style as sketches.  
+* `series-list.json` – contains a `collections` array, where each collection represents a series card. The most recent item within is displayed on the card. Other items are linked in collapsable menu.  Can archive entire series or items within. `intervals` adds badges to the series card. See the example below for series:
 
   ```jsonc
   {
@@ -84,7 +85,7 @@ Each section on the portfolio is populated by a similarly named file in `src/ass
   ```
   Flow Tiles and River Conditions use relative paths (e.g., `2025_08/...`) that the app resolves against their S3 folders. Hurricanes and groundwater typically use absolute URLs.
 
-* `charts.json` – currently unused
+* `charts.json` – contains past charts that are not currently featured anywhere in the portfolio
 
 Whenever you add a new entry, make sure the referenced thumbnail (and any assets) exist in S3 and that `links.external` points to the public destination you want users to reach.
 

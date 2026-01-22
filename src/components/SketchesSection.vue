@@ -7,7 +7,7 @@
       <div>
         <h2>sketches</h2>
         <p class="section-summary">
-          One-off charts and maps.
+          Illustrations, diagrams, and infographics.
         </p>
       </div>
 

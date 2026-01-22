@@ -44,6 +44,7 @@ import SnapshotSection from "@/components/SnapshotSection.vue"
 import BlogSection from "@/components/BlogSection.vue"
 import AboutSection from "@/components/AboutSection.vue"
 
+import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 import viz from "@/assets/content/viz-list.json"
 import seriesData from "@/assets/content/series-list.json"
 import sketchesData from "@/assets/content/sketches.json"
@@ -51,9 +52,26 @@ import snapshotsData from "@/assets/content/snapshots.json"
 import blogsData from "@/assets/content/blogs.json"
 import teamData from "@/assets/content/team.json"
 
+const assetStore = useAssetPathStore()
+
+const buildSnapshotItems = (items = []) => {
+  return items.map((item) => {
+    const assetFilename = item?.links?.asset
+    const chartAsset = assetFilename ? assetStore.buildChartUrl(assetFilename) : ""
+    return {
+      ...item,
+      links: {
+        ...item.links,
+        asset: chartAsset
+      }
+    }
+  })
+}
+
 const websites = viz.items 
 const sketches = sketchesData.items 
 const blogs = blogsData.items 
 const series = seriesData.collections 
+const snapshots = buildSnapshotItems(snapshotsData.items || [])
 const team = teamData
 </script>

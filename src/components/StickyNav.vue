@@ -64,6 +64,7 @@ const navItems = [
   { id: "series", label: "series" },
   { id: "stories", label: "stories" },
   { id: "sketches", label: "sketches" },
+  { id: "snapshots", label: "snapshots" },
   { id: "blogs", label: "blog" },
   { id: "team", label: "about" }
 ]

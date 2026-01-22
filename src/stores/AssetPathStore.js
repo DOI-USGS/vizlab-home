@@ -18,6 +18,7 @@ export const useAssetPathStore = defineStore("AssetPathStore", () => {
     return join(s3Base, "thumbnails", path)
   }
   const buildIllustrationUrl = (filename = "") => join(s3Base, "illustration", filename)
+  const buildChartUrl = (filename = "") => join(s3Base, "charts", filename)
 
   const buildSeriesUrl = (folder = "", filename = "") => {
     if (folder && filename) return join(s3Base, folder, filename)
@@ -30,6 +31,7 @@ export const useAssetPathStore = defineStore("AssetPathStore", () => {
     s3Base,
     buildThumbUrl,
     buildIllustrationUrl,
+    buildChartUrl,
     buildSeriesUrl
   }
 })

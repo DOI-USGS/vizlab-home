@@ -20,6 +20,7 @@
         v-for="blog in blogItems"
         :key="blog.id"
         :item="blog"
+        show-release-date
       />
     </ul>
   </section>

@@ -22,6 +22,12 @@
           <h3 class="card-title">
             {{ title }}
           </h3>
+          <p
+            v-if="showReleaseDate && releaseDate"
+            class="card-meta"
+          >
+            {{ releaseDate }}
+          </p>
         </div>
       </a>
       <a
@@ -49,6 +55,10 @@ const props = defineProps({
   imageRatio: {
     type: Number,
     default: 90
+  },
+  showReleaseDate: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -57,6 +67,8 @@ const assetStore = useAssetPathStore()
 const title = props.item.title
 const externalHref = props.item.links.external
 const codeHref = props.item.links?.code
+const releaseDate = props.item.released
+const showReleaseDate = props.showReleaseDate
 
 const thumbnail = props.item.image.thumbnail
 const thumbnailSrc = assetStore.buildThumbUrl(thumbnail)
@@ -128,6 +140,12 @@ const imagePadding = `${props.imageRatio}%`
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
+}
+
+.card-meta {
+  margin: 0.4rem 0 0;
+  color: var(--black-400);
+  font-size: 1.4rem;
 }
 
 .card-action {
