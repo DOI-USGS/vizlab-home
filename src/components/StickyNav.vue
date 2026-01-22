@@ -68,7 +68,7 @@ const navItems = [
   { id: "team", label: "about" }
 ]
 
-const subtitle = viz?.site?.tagline || "water data visualizations"
+const subtitle = viz?.site?.tagline || "USGS VizLab"
 
 const activeSection = ref(navItems[0].id)
 const shell = ref(null)

@@ -174,6 +174,22 @@
       "tags": [
         "water use"
       ]
+    },
+    {
+      "id": "all-the-water",
+      "title": "All the water on Earth (pictogram)",
+      "released": "04/01/2021",
+      "image": {
+        "alt": "A pictogram chart depicting the volume of all water fluxes on earth. Drippy, a water droplet cartoon, represents 3,100 km3 of water and is drawn show scale differences in the largest water flow, ocean circulation with 7,100,000 km3 per year, to ice discharge which is a single Drippy.",
+        "thumbnail": "volume-flows.jpeg"
+      },
+      "links": {
+        "asset": "volume-flows.jpeg",
+        "external": ""
+      },
+      "tags": [
+        "water cycle"
+      ]
     }
   ]
 }

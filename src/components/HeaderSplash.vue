@@ -32,7 +32,7 @@
 <script setup>
 
 // style title
-const pageTitle = "USGS Vizlab"
+const pageTitle = "USGS VizLab"
 const [brandStrong = pageTitle, ...tailWords] = (pageTitle || "").split(" ")
 const brandLight = tailWords.join(" ")
 

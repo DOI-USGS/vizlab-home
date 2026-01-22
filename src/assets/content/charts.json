@@ -1,16 +1,6 @@
 {
   "websites": [
     {
-      "id": "volume-flows",
-      "released": "9/30/21",
-      "title": "Global flows",
-      "description": null,
-      "thumb": "volume-flows.jpeg",
-      "alt": "A pictogram chart depicting the volume of all water fluxes on earth. Drippy, a water droplet cartoon, represents 3,100 km3 of water and is drawn show scale differences in the largest water flow, ocean circulation with 7,100,000 km3 per year, to ice discharge which is a single Drippy.",
-      "productUrl": "https://twitter.com/USGS_DataSci/status/1443655682134269954",
-      "codeUrl": null
-    },
-    {
       "id": "forecast-gradient",
       "released": "8/15/21",
       "title": "Stream temperature forecast",

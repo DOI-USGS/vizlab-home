@@ -1,17 +1,6 @@
 export default {
     chartChallengeCharts: [
-        {
-            id: '2',
-            date: '2023-04-01',
-            cc_prompt: 'Comparisons: part-to-whole',
-            author: 'Mandie Carr',
-            profile_url: 'https://www.usgs.gov/staff-profiles/amanda-carr',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1642168132013027328?cxt=HHwWgMDToeXNk8otAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-part-whole-image-2',
-            image_basename: '20230401b_part-to-whole_mcarr',
-            image_type: 'png',
-            image_alt: 'Where is Earth\'s water? Series of 3 landscapes depicting where water is in blue for all Earth\'s water, all freshwater, and surface & other freshwater. All Earth\'s landscape denotes regions of freshwater, other saline water, and oceans; All freshwater landscape denotes regions of glaciers & ice caps, surface & other freshwater, and groundwater; surface & other freshwater landscape denotes regions of swaps & marches, ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.'
-        },
+        
         {
             id: '3',
             date: '2023-04-02',
@@ -36,18 +25,7 @@ export default {
             image_type: 'png',
             image_alt: 'In 2015, water use in the U.S. totaled 322 billion gallons/day. Total water use is broken out into 8 categories using different colors. The categories, in ranked order for 2015, followed by their water use, in units of billion gallons/day, are: thermoelectric power (133), Irrigation (118), public supply (39), self-supplied industrial (14.8), aquaculture (7.6), mining (4), self-supplied domestic (3.3) and livestock (2).'
         },
-        {
-            id: '5',
-            date: '2023-04-03',
-            cc_prompt: 'Comparisons: fauna/flora',
-            author: 'Althea Archer',
-            profile_url: 'https://www.usgs.gov/staff-profiles/althea-a-archer',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1643008373439471617?cxt=HHwWgoDR3aPakc0tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/comparisons-faunaflora-urban-trees',
-            image_basename: '20230403_flora-fauna-aaarcher',
-            image_type: 'png',
-            image_alt: 'Six panel data visualization in the graphical form of a comic. The first panel is of a bright sun with trees lining a street that has tall buildings on either side. The second panel shows a squirrel sitting on a park bench under a tree; the squirrel\'s thought bubble reads: \'it\'s so hot today, glad I can shelter under this tree.\' The third panel depicts a chart of a tree with flowers of varying size which depicts the magnitude of energy savings for 744 major US cities. The fourth panel shows a skyline with a storm; the text reads: \'Later that day...\' The fifth panel depicts a chart where the length and size of the water droplets indicate the average water savings by state. The sixth panel says, \'Learn more about how urban trees reduce energy costs and increase rain infiltration across the United States.\' with the USGS logo and DOI link for data.'
-        },
+        
         {
             id: '6',
             date: '2023-04-03',
@@ -73,18 +51,6 @@ export default {
             image_alt: 'A data visualization showing how Minimum Annual Streamflow has changed from generation to generation over the past 100 years. Across the contiguous United States, streamflow has increased by 22% when comparing the baseline “Silent generation” (1920-1946) against the Gen Z years (1997-2020). Regionally, streamflow has increased on average for every area of the U.S. other than the Southwest (excluding California) and Southeast, which both have decreased 10-14% since the silent generation. The largest increase was in the south central region, which was an increase of 81%.'
         },
         {
-            id: '8',
-            date: '2023-04-04',
-            cc_prompt: 'Comparisons: historical',
-            author: 'Elmera Azadpour and Cee Nell',
-            profile_url: '',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1643383570965184514?cxt=HHwWhIC-kdOpvM4tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/march-2023-streamflow',
-            image_basename: '20230404_historical_eazadpour_cnell',
-            image_type: 'png',
-            image_alt: 'A tile map of the US showing streamgages by flow levels through the month of March 2023. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month\'s flow levels to the historic record for each streamgage. During the month of March, storms brought wetter than normal conditions for much of the U.S. Concurrently, large parts of California, the Southwest and the Mississippi River Basin saw heightened precipitation, while much of the Northwest and Northern Plains remain dry.'
-        },
-        {
             id: '9',
             date: '2023-04-06',
             cc_prompt: 'Comparisons: data day: OWID',
@@ -95,18 +61,6 @@ export default {
             image_basename: '20230406_OWID_hcorson-dosch',
             image_type: 'png',
             image_alt: 'An alluvial diagram showing the number of deaths due to natural disasters in the United States over the past 50 years (1972 - 2022). The data include deaths due to eight types of natural disasters: wildfires, drought, extreme temperatures, landslides, volcanic activity, earthquakes, storms, and floods. In most years, the largest cause of deaths are storms (hurricanes, tornadoes, and cyclones). Some individual events stand out, for example deaths due to the eruption of Mt. Saint Helens and to the 2018 Camp Fire in California. For each type of disaster, a timeseries of deaths is plotted as a horizontal band of varying height. The height corresponds to the number of deaths caused by that type of disaster. The bands are stacked, and total height equals total deaths across all disaster types. The stacking order varies by year, so that the band with the most deaths is on top. The bands therefore cross one another, showing changes in deaths over time and the top causes of deaths in each year.'
-        },
-        {
-            id: '10',
-            date: '2023-04-07',
-            cc_prompt: 'Distributions: hazards',
-            author: 'Matthew Conlon and James Colgin',
-            profile_url: '',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1644410199711842304?cxt=HHwWgIDUraeXj9ItAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/distributions-hazards-flooding-norriston-pa-during-hurricane-ida-september-2021',
-            image_basename: '20230407_hazards_conlon_colgin',
-            image_type: 'gif',
-            image_alt: 'A 3D aerial view of Norristown, Pennsylvania shows where the Schuylkill River passes through the city. The water in the river is shown in bright blue, while the surrounding city is shown in natural color. The view animates through time, showing how the water level in the river rose rapidly during Hurricane Ida in September 2021, eclipsing an island in the center of the river, two bridges, and much of the lower reaches of the city.'
         },
         {
             id: '11',
@@ -131,18 +85,6 @@ export default {
             image_basename: '20230409_high-low_aaarcher',
             image_type: 'png',
             image_alt: 'A Tale of two winters. A map of CONUS and lollipop style charts show the difference in percent snow covered area for February 2023 compared to the 20-year mean (2003-2022). Paired charts show the relationships between latitude, longitude, and difference in percent snow covered area, depicting two very different winters between the coasts. High snow conditions were mainly in the west and lower snow to the east.'
-        },
-        {
-            id: '13',
-            date: '2023-04-11',
-            cc_prompt: 'Distributions: circular',
-            author: 'Jay Hariharan',
-            profile_url: 'https://www.usgs.gov/staff-profiles/jayaram-hariharan',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1645908291300765696?cxt=HHwWgMDRvdu3uNctAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/distributions-circular-circularity-named-lakes-united-states',
-            image_basename: '20230411_circular_jhariharan',
-            image_type: 'png',
-            image_alt: 'Circularity of named lakes in the U.S. A histogram shows circularity for lakes and reservoirs in the United States, defined as 4π * Area / perimeter squared. The distribution is skewed left, as most lakes and reservoirs aren\'t very circular. Specific lakes are highlighted, such as sinuous Lake Cumberland, in Kentucky, which has low circularity, and Lower Van Norman Lake, California which has high circularity. Non-lake examples of shapes such as a rhombus and circle that include circularity, area, and perimeter values are shown for comparison.'
         },
         {
             id: '14',
@@ -325,30 +267,6 @@ export default {
             image_alt: 'Circular calendar charts showing the projected effects of climate change on the onset and end of spawning for the American Shad and the Striped Bass in the Hudson River Estuary, during two modeling periods: 1950 to 2012 and 2012 to 2099.  Representative Concentration Pathways (RCP) scenarios 2.6, 4.5, 6.0, and 8.5 were used to model spawning for each species in each period. RCP are scenarios constructed to represent how well we can curb and contain greenhouse gas emissions. RCP 2.6 implements the most aggressive strategies, while RCP 8.5 is "business-as-usual". The model results show increasing effects on spawning onset and end dates with less aggressive RCP. For the 2012 to 2099 model period, spawning is projected to start 15 days earlier on average than during the 1950 to 2012 period. The magnitude of the shift ranges from approximately 4 days for RCP 2.6 to over 20 days early for RCP 8.5.'
         },
         {
-            id: '29',
-            date: '2023-04-26',
-            cc_prompt: 'Uncertainties: local change',
-            author: 'Ellie White',
-            profile_url: '',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1651336691838504962?cxt=HHwWhMDSmZv-3OotAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/uncertainties-local-change-how-will-climate-change-affect-timing-fish-spawning-image-2',
-            image_basename: '20230426b_local-change_ewhite',
-            image_type: 'png',
-            image_alt: 'Under the Representative Concentration Pathways (RCP) 8.5 climate scenario (termed "business-as-usual"), the spawning period for American Shad and Striped Bass in the Hudson River Estuary is projected to start earlier and to be shorter overall. Circular calendar charts show the projected start, duration, and end of spawning for each species in each year from 1950-2099. For the 2012-2099 modeling period, spawning is projected to start 20 days earlier and end 26 days earlier on average compared to the 1950-2012 period.'
-        },
-        {
-            id: '30',
-            date: '2023-04-28',
-            cc_prompt: 'Uncertainties: trend',
-            author: 'Julie Padilla',
-            profile_url: '',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1652051986827874305?cxt=HHwWgsDUle6hou0tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/uncertainties-trend-maximum-percent-ice-cover-great-lakes-difference-50-year-mean-1973',
-            image_basename: '20230428_trends_greatlakesice',
-            image_type: 'png',
-            image_alt: 'Six lollipop charts highlight deviations in maximum percent ice cover on the five Great Lakes (Lake Michigan, Lake Erie, Lake Superior, Lake Huron, and Lake Ontario) from 1973-2023. The difference in lake ice cover is shown for each lake and across the entire system compared to the 50-year mean (1973-2023).  Positive oriented lollipops are shown in shades of blue, and negative oriented lollipop are shown in shades of purple. Across all five of the great lakes, 2023 maximum percent ice coverage was below the 50 year average, with basin wide ice coverage being 59% below average in 2023. Most lakes show a general pattern of lower ice coverage through time, although ice cover is highly variable from year to year.'
-        },
-        {
             id: '31',
             date: '2023-04-28',
             cc_prompt: 'Uncertainties: trend',
@@ -383,18 +301,6 @@ export default {
             image_basename: '20230429_monochrome_mharlan',
             image_type: 'gif',
             image_alt: 'Animation of five satellite images of the Tanana River in Alaska. The imagery is colored in shades of blue to show the degree of confidence that water is present. Two scatter plots show positive pairwise relationships between satellite river elevation and satellite river width and satellite streamflow. A timeseries chart shows that satellite streamflow captures the dynamics of observed streamflow at a gaged site.'
-        },
-        {
-            id: '34',
-            date: '2023-04-30',
-            cc_prompt: 'Uncertainties: ',
-            author: 'Jay Hariharan',
-            profile_url: 'https://www.usgs.gov/staff-profiles/jayaram-hariharan',
-            tweet_url: 'https://twitter.com/USGS_DataSci/status/1652659322373931009?cxt=HHwWgoCwzbi5tu8tAAAA',
-            drupal_url: 'https://www.usgs.gov/media/images/uncertainties-data-day-annual-freshwater-withdrawals-united-states-1990-2019',
-            image_basename: '20230430_worldbank_jhariharan',
-            image_type: 'gif',
-            image_alt: 'Stacked bar chart of 1990-2019 agriculture, domestic, and industry freshwater withdrawals in the U.S., estimated by the World Bank. In all years, industry withdraws the most freshwater, followed by agriculture and domestic. From 2006 to 2010, industrial water dropped 5,000 cubic kilometers, then remained low. From 2010 to 2015 agriculture water use grew by 3,000 cubic kilometers. The chart is animated through time.'
         }
     ]
 };

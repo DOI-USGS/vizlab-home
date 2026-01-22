@@ -24,6 +24,16 @@
           </h3>
         </div>
       </a>
+      <a
+        v-if="codeHref"
+        class="card-action"
+        :href="codeHref"
+        target="_blank"
+        rel="noopener noreferrer"
+        :aria-label="`View ${title} code on GitHub`"
+      >
+        <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'github' }" />
+      </a>
     </article>
   </li>
 </template>
@@ -46,6 +56,7 @@ const assetStore = useAssetPathStore()
 
 const title = props.item.title
 const externalHref = props.item.links.external
+const codeHref = props.item.links?.code
 
 const thumbnail = props.item.image.thumbnail
 const thumbnailSrc = assetStore.buildThumbUrl(thumbnail)
@@ -65,6 +76,7 @@ const imagePadding = `${props.imageRatio}%`
 .card {
   position: relative;
   height: 100%;
+  overflow: visible;
 }
 
 .card-main {
@@ -84,7 +96,9 @@ const imagePadding = `${props.imageRatio}%`
 }
 
 .card-main:hover,
-.card-main:focus-visible {
+.card-main:focus-visible,
+.card:hover .card-main,
+.card:focus-within .card-main {
   transform: translateY(-2px);
   box-shadow: 0 12px 20px var(--light-grey);
 }
@@ -114,6 +128,48 @@ const imagePadding = `${props.imageRatio}%`
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
+}
+
+.card-action {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 150ms ease;
+  box-shadow: none;
+}
+
+.card-action :deep(svg) {
+  transition: color 0.2s ease, fill 0.2s ease;
+}
+
+.card-action:hover,
+.card-action:focus-visible {
+  color: var(--color-link);
+}
+
+.card-action:hover :deep(svg),
+.card-action:focus-visible :deep(svg) {
+  color: currentColor;
+  fill: currentColor;
+}
+
+.card-main:hover + .card-action,
+.card-main:focus-visible + .card-action,
+.card:hover .card-action,
+.card:focus-within .card-action {
+  transform: translateY(-2px);
 }
 
 </style>

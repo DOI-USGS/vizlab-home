@@ -1,13 +1,13 @@
 <template>
   <section
-    id="sketches"
-    class="sketches-section"
+    id="snapshot"
+    class="snapshot-section"
   >
     <div class="section-header">
       <div>
-        <h2>sketches</h2>
+        <h2>snapshot</h2>
         <p class="section-summary">
-          One-off charts and maps.
+          Illustrations, diagrams, and infographics.
         </p>
       </div>
 
@@ -84,7 +84,7 @@ const selectTag = (tag) => {
 </script>
 
 <style scoped>
-.sketches-section {
+.snapshot-section {
   padding: 4rem 2rem 5rem;
   margin: 0 auto;
   max-width: 1200px;

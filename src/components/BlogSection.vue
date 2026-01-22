@@ -20,7 +20,6 @@
         v-for="blog in blogItems"
         :key="blog.id"
         :item="blog"
-        :image-ratio="100"
       />
     </ul>
   </section>
@@ -55,7 +54,7 @@ const blogItems = computed(() => (props.items || []).filter((item) => !item.arch
 .cards-grid {
   list-style: none;
   padding: 0;
-  margin: 3rem 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: clamp(1.2rem, 2vw, 2.4rem);
