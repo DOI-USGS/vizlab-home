@@ -14,7 +14,7 @@ To build the website locally you'll need `node.js` `v24` and `npm` `v111` or hig
 
 ## Citation
 
-Nell, C. 2026. USGS Vizlab. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
+Nell, C., Kwang, J.S. 2026. USGS Vizlab. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
 ## Additional information
 * We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/vizlab-home/) to this repository on GitHub.

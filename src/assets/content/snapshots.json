@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "id": "earths-water",
+      "title": "How much water is there on Earth?",
+      "released": "04/03/2025",
+      "image": {
+        "alt": "A 3D image of the Earth compared to different spheres and cubes representing different pools of water. Four different sized water-spheres represent the total water, oceanic water, groundwater, and lake and river water on Earth. An ice-cube represents the total amount of frozen water on Earth.",
+        "thumbnail": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/masonry/public/media/images/03_comparisons_circular_Rectangle.png?itok=79Ks4wns"
+      },
+      "links": {
+        "asset": "",
+        "external": "https://www.usgs.gov/media/images/how-much-water-there-earth-1"
+      },
+      "tags": [
+        
+      ]
+    },
+    {
       "id": "getting-snowier",
       "title": "Are snowy places getting snowier?",
       "released": "04/13/2021",
