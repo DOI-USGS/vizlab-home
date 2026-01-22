@@ -29,7 +29,7 @@
         "external": ""
       },
       "tags": [
-        "water use"
+        "geofacet"
       ]
     },
     {
@@ -45,7 +45,7 @@
         "external": ""
       },
       "tags": [
-        "streamflow"
+        "timeseries"
       ]
     },
     {
