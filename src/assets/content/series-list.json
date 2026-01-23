@@ -9,10 +9,41 @@
       ],
       "items": [
         {
+          "id": "flow_cartogram-dec-2025",
+          "title": "December 2025",
+          "released": "2025-12-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of December 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage.",
+            "thumbnail": "2025_12/flow_cartogram-dec-2025.png"
+          },
+          "links": {
+            "x": {
+              "account": "USGS_Water",
+              "id": "1965102031225700461"
+            },
+            "external": "2025_12/flow_cartogram-dec-2025.png"
+          }
+        },
+        {
+          "id": "flow_cartogram-nov-2025",
+          "title": "November 2025",
+          "released": "2025-11-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of November 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage.",
+            "thumbnail": "2025_11/flow_cartogram-nov-2025.png"
+          },
+          "links": {
+            "x": {
+              "account": "USGS_Water",
+              "id": "1965102031225700461"
+            },
+            "external": "2025_11/flow_cartogram-nov-2025.png"
+          }
+        },
+        {
           "id": "flow_cartogram-oct-2025",
           "title": "October 2025",
           "released": "2025-10-01",
-          "archive": "true",
           "image": {
             "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of October 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage.",
             "thumbnail": "2025_10/flow_cartogram-oct-2025.png"
@@ -29,7 +60,6 @@
           "id": "flow_cartogram-sep-2025",
           "title": "September 2025",
           "released": "2025-09-01",
-          "archive": "true",
           "image": {
             "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of September 2025. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage.",
             "thumbnail": "2025_09/flow_cartogram-sep-2025.png"
@@ -560,6 +590,30 @@
         "Annual"
       ],
       "items": [
+        {
+          "id": "river_conditions_oct_dec_2025_insta",
+          "title": " October 1, 2025 - December 31, 2025",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from October 1, 2025 to December 30, 2025 at USGS streamgages.",
+            "thumbnail": "FY26_Q1/river_conditions_oct_dec_2025_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-october-december-2025"
+          }
+        },
+        {
+          "id": "river_conditions_jul_sep_2025_insta",
+          "title": " July 1, 2025 - September 30, 2025",
+          "released": "",
+          "image": {
+            "alt": "U.S. River Conditions from July 1, 2025 to September 30, 2025 at USGS streamgages.",
+            "thumbnail": "FY25_Q4/river_conditions_jul_sep_2025_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-july-september-2025"
+          }
+        },
         {
           "id": "river_conditions_apr_jun_2025_insta",
           "title": " April 1, 2025 - June 30, 2025",
