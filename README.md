@@ -14,12 +14,13 @@ To build the website locally you'll need `node.js` `v24` and `npm` `v11` or high
 
 ## Citation
 
-Nell, C. 2026. USGS Vizlab. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
+Nell, C. Azadpour, E. 2026. USGS Vizlab. U.S. Geological Survey software release. Reston, VA. [https://doi.org/{doi_of official_software_release}](https://doi.org/{doi_of_official_software_release})
 
 ## Additional information
-* We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/vizlab-home/) to this repository on GitHub.
-* [Disclaimer](https://github.com/DOI-USGS/vizlab-home/blob/main/DISCLAIMER.md)
-* [License](https://github.com/DOI-USGS/vizlab-home/blob/main/LICENSE.md)
+
+- We welcome contributions from the community. See the [guidelines for contributing](https://github.com/DOI-USGS/vizlab-home/) to this repository on GitHub.
+- [Disclaimer](https://github.com/DOI-USGS/vizlab-home/blob/main/DISCLAIMER.md)
+- [License](https://github.com/DOI-USGS/vizlab-home/blob/main/LICENSE.md)
 
 ## Adding new items
 
@@ -47,13 +48,13 @@ Each section on the portfolio is populated by a similarly named file in `src/ass
 ```
 
 **File-specific notes**
-Not all of the sections require exactly the same data to populate the cards. Refer to the json files to see what is used for the different type. 
+Not all of the sections require exactly the same data to populate the cards. Refer to the json files to see what is used for the different type.
 
-* `viz-list.json` – interactive websites. These use the same card style as blogs with a link to the code on github.  
-* `blogs.json` –  `released` date is shown on card. These use the same card style as viz-list with the date shown on the card.  
-* `sketches.json` – use `links.asset` to open direct ifiles from s3. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood" from the `illustrations` directory in the wma-prod > water-visualizations-prod-website s3 bucket. These use the same card style as snapshots.  
-* `snapshots.json` – use `links.asset` to open direct ifiles from the `charts` directory in the wma-prod > water-visualizations-prod-website s3 bucket. optional `tags` that can be filtered on. right now, only includes "maps".  These use the same card style as sketches.  
-* `series-list.json` – contains a `collections` array, where each collection represents a series card. The most recent item within is displayed on the card. Other items are linked in collapsable menu.  Can archive entire series or items within. `intervals` adds badges to the series card. See the example below for series:
+- `viz-list.json` – interactive websites. These use the same card style as blogs with a link to the code on github.
+- `blogs.json` – `released` date is shown on card. These use the same card style as viz-list with the date shown on the card.
+- `sketches.json` – use `links.asset` to open direct ifiles from s3. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood" from the `illustrations` directory in the wma-prod > water-visualizations-prod-website s3 bucket. These use the same card style as snapshots.
+- `snapshots.json` – use `links.asset` to open direct ifiles from the `charts` directory in the wma-prod > water-visualizations-prod-website s3 bucket. optional `tags` that can be filtered on. right now, only includes "maps". These use the same card style as sketches.
+- `series-list.json` – contains a `collections` array, where each collection represents a series card. The most recent item within is displayed on the card. Other items are linked in collapsable menu. Can archive entire series or items within. `intervals` adds badges to the series card. See the example below for series:
 
   ```jsonc
   {
@@ -83,20 +84,20 @@ Not all of the sections require exactly the same data to populate the cards. Ref
     ]
   }
   ```
+
   Flow Tiles and River Conditions use relative paths (e.g., `2025_08/...`) that the app resolves against their S3 folders. Hurricanes and groundwater typically use absolute URLs.
 
-* `charts.json` – contains past charts that are not currently featured anywhere in the portfolio
+- `charts.json` – contains past charts that are not currently featured anywhere in the portfolio
 
 Whenever you add a new entry, make sure the referenced thumbnail (and any assets) exist in S3 and that `links.external` points to the public destination you want users to reach.
-
 
 ### Generating thumbnails
 
 Thumbnails should be very small file sizes to avoid slowing down the site. You can generate thumbnails using the `create_thumbnails.sh` script. This script requires `ImageMagick` to be installed locally.
 
-To use this script run: `chmod +x create_thumbnails.sh` 
-followed by: `./create_thumbnails.sh ./[input folder] ./[output folder]`. 
+To use this script run: `chmod +x create_thumbnails.sh`
+followed by: `./create_thumbnails.sh ./[input folder] ./[output folder]`.
 
-This will take all image files in the [input folder] and save thumbnail versions of them in the [output folder], and append `_thumbnail` to the end of the file name. Upload these to the `thumbnails` folder on s3. 
+This will take all image files in the [input folder] and save thumbnail versions of them in the [output folder], and append `_thumbnail` to the end of the file name. Upload these to the `thumbnails` folder on s3.
 
-To adjust the thumbnail dimensions, edit this command at the end: `magick "$file" -resize 600x600\> -quality 80 "$out"` 
+To adjust the thumbnail dimensions, edit this command at the end: `magick "$file" -resize 600x600\> -quality 80 "$out"`
