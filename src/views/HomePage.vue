@@ -45,6 +45,7 @@ import BlogSection from "@/components/BlogSection.vue"
 import AboutSection from "@/components/AboutSection.vue"
 
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
+import { useDateStore } from "@/stores/DateStore.js"
 import viz from "@/assets/content/viz-list.json"
 import seriesData from "@/assets/content/series-list.json"
 import sketchesData from "@/assets/content/sketches.json"
@@ -52,7 +53,8 @@ import snapshotsData from "@/assets/content/snapshots.json"
 import blogsData from "@/assets/content/blogs.json"
 import teamData from "@/assets/content/team.json"
 
-const assetStore = useAssetPathStore()
+const assetStore = useAssetPathStore();
+const dateStore = useDateStore();
 
 const buildSnapshotItems = (items = []) => {
   return items.map((item) => {
@@ -68,10 +70,11 @@ const buildSnapshotItems = (items = []) => {
   })
 }
 
-const websites = viz.items 
-const sketches = sketchesData.items 
-const blogs = blogsData.items 
-const series = seriesData.collections 
-const snapshots = buildSnapshotItems(snapshotsData.items || [])
+// define content for site sections and sort by release date, where appropriate
+const websites = viz.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+const sketches = sketchesData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+const blogs = blogsData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+const series = seriesData.collections // not sorted here, b/c content for each card sorted in `SeriesCard.vue`
+const snapshots = buildSnapshotItems(snapshotsData.items || []).sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const team = teamData
 </script>

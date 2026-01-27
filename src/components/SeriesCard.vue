@@ -133,6 +133,7 @@
 <script setup>
 import { ref, computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
+import { useDateStore } from "@/stores/DateStore.js"
 
 const props = defineProps({
   series: {
@@ -141,20 +142,16 @@ const props = defineProps({
   }
 })
 
-const assetStore = useAssetPathStore()
+const assetStore = useAssetPathStore();
+const dateStore = useDateStore();
 
 // directory that contains each edition ( flowtiles and river conditions)
 const seriesBucket = props.series.bucket
 
-const toTimestamp = (value = '') => {
-  const date = new Date(value)
-  return date instanceof Date && !Number.isNaN(date) ? date.getTime() : 0
-}
-
 // sort items by release dates
 const items = props.series.items
   .filter((entry) => !entry.archive)
-  .sort((a, b) => toTimestamp(b.released) - toTimestamp(a.released))
+  .sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 
 const latestEntry = items[0] 
 const expanded = ref(false)
