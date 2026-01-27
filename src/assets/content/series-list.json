@@ -855,11 +855,11 @@
       "items": [
         {
           "id": "gw-conditions",
-          "title": "1/12/2022",
+          "title": "January 1 - December 31, 2024",
           "released": "1/12/2022",
           "image": {
             "alt": "A map of the US using arrow-like gylphs to indicate temporal change in groundwater levels.",
-            "thumbnail": "gw-conditions-thumbnail-peak.png"
+            "thumbnail": "gw-conditions_thumbnail.png"
           },
           "links": {
             "code": "https://github.com/usgs-vizlab/gw-conditions",
