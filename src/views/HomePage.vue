@@ -1,7 +1,7 @@
 <template>
   <section id="visualization-container">
     <!-- header -->
-<!--     <HeaderSplash /> -->
+    <!--     <HeaderSplash /> -->
     <StickyNav />
 
     <!-- main -->
