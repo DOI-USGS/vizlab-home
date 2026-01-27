@@ -1,6 +1,87 @@
 {
   "items": [
     {
+	      "id": "water-use-small-multiples",
+	      "title": "How are we using water?",
+	      "released": "04/08/2023",
+	      "image": {
+	        "alt": "8 maps of the continental U.S. show county-level water use for 8 categories of use – thermoelectric, irrigation, public supply, industrial, aquaculture, mining, domestic, and livestock. Use in each category is shown as a percent of total water use, by county. In the northern plains, most water is used for livestock. In west Texas, most water is used for mining. In northern Maine, most water is used for industry.",
+	        "thumbnail": "20230408_humans_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "20230408_humans_hcorson-dosch.png",
+	        "external": ""
+	      },
+	      "tags": [
+          "maps"
+	      ]
+    },
+    {
+	      "id": "stream-order-map",
+	      "title": "Which stream order covers the most distance?",
+	      "released": "04/17/2023",
+	      "image": {
+	        "alt": "A map of the Potomac River stream network is colored by Strahler stream order, where higher order represents a larger stream. Next to the map is a donut chart, showing that small headwater streams (order 1) make up 57% of the river network, by length. The first three orders of streams, together, make up 87% of the network by length. The eighth-order Potomac River makes up less than 1% of the river network, by length. Data for the plot are USGS National Hydrography Dataset High Resolution.",
+	        "thumbnail": "20230417_networks_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "20230417_networks_hcorson-dosch.png",
+	        "external": ""
+	      },
+	      "tags": [
+          "maps"
+	      ]
+    },
+
+    {
+	      "id": "water-use-geofacet",
+	      "title": "Changes in U.S. water use - 1985 to 2015",
+	      "released": "04/23/2023",
+	      "image": {
+	        "alt": "A tile map of the U.S. with alluvial charts for each state and the nation that show changes in the total volume of water use from 1985-2015 across eight categories (thermoelectric, irrigation, public supply, industrial, aquaculture, mining, domestic, and livestock). There is change in how much water is used (like the decline in Massachusetts) and in the categories of use (growth of irrigation in Arkansas).",
+	        "thumbnail": "20230423_tiles_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "20230423_tiles_hcorson-dosch.png",
+	        "external": ""
+	      },
+	      "tags": [
+          "geofacet"
+	      ]
+    },
+    {
+	      "id": "water-use-waffle",
+	      "title": "U.S. water use - 2015",
+	      "released": "04/02/2023",
+	      "image": {
+	        "alt": "In 2015, water use in the U.S. totaled 322 billion gallons/day. Total water use is broken out into 8 categories using different colors. The categories, in ranked order for 2015, followed by their water use, in units of billion gallons/day, are: thermoelectric power (133), Irrigation (118), public supply (39), self-supplied industrial (14.8), aquaculture (7.6), mining (4), self-supplied domestic (3.3) & livestock (2).",
+	        "thumbnail": "20230402_waffle_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "20230402_waffle_hcorson-dosch.png",
+	        "external": ""
+	      },
+	      "tags": [
+	      ]
+    },
+    {
+	      "id": "magic-reservoir",
+	      "title": "Magic Reservoir upstream/downstream comparison",
+	      "released": "04/04/2021",
+	      "image": {
+	        "alt": "On the left, there is a map of the Magic Reservoir with a blue dot of the upstream and a purple dot downstream of the reservoir. In the middle is  a line chart with a line for each water year from 1997 to 2020 for annual daily discharge. A blue and purple line show the upstream and downstream median daily flows, respectively. On the right, the space between the upstream and downstream median lines is filled to show that from about November to May, water is stored by the reservoir because the upstream flow is greater than downstream flow, and from about May to November, the reservoir is releasing water because the downstream flow is greater than the upstream flow.",
+	        "thumbnail": "magic_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "magic_hcorson-dosch.png",
+	        "external": ""
+	      },
+	      "tags": [
+	        "maps",
+	        "timeseries"
+	      ]
+    },
+    {
       "id": "great-salt-lake-landsat",
       "title": "Great Salt Lake Landsat animation",
       "released": "04/30/2025",
@@ -16,7 +97,7 @@
         "maps"
       ]
     },
-        {
+    {
       "id": "bw-distribution-source",
       "title": "Distribution of water sources for bottled water facilities",
       "released": "11/27/2023",

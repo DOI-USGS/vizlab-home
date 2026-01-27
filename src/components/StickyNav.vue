@@ -19,14 +19,14 @@
           <div class="nav-scroller">
             <!-- show left fade if nav bar is scrolled to the right -->
             <span
-              class="fade left"
-              v-show="showLeftFade" 
+              v-show="showLeftFade"
+              class="fade left" 
               aria-hidden="true"
             />
             <ul
               id="nav-menu"
-              class="nav-list"
               ref="navList"
+              class="nav-list"
               @scroll.passive="updateFadeVisibility"
             >
               <li
@@ -44,8 +44,8 @@
               </li>
             </ul>
             <span
-              class="fade right"
               v-show="showRightFade"
+              class="fade right"
               aria-hidden="true"
             />
           </div>

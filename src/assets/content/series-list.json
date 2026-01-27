@@ -593,7 +593,7 @@
         {
           "id": "river_conditions_oct_dec_2025_insta",
           "title": " October 1, 2025 - December 31, 2025",
-          "released": "",
+          "released": "2026-01-01",
           "image": {
             "alt": "U.S. River Conditions from October 1, 2025 to December 30, 2025 at USGS streamgages.",
             "thumbnail": "FY26_Q1/river_conditions_oct_dec_2025_square_thumbnail.png"
@@ -605,7 +605,7 @@
         {
           "id": "river_conditions_jul_sep_2025_insta",
           "title": " July 1, 2025 - September 30, 2025",
-          "released": "",
+          "released": "2025-10-01",
           "image": {
             "alt": "U.S. River Conditions from July 1, 2025 to September 30, 2025 at USGS streamgages.",
             "thumbnail": "FY25_Q4/river_conditions_jul_sep_2025_square_thumbnail.png"
@@ -617,7 +617,7 @@
         {
           "id": "river_conditions_apr_jun_2025_insta",
           "title": " April 1, 2025 - June 30, 2025",
-          "released": "",
+          "released": "2025-07-01",
           "image": {
             "alt": "U.S. River Conditions from April 1, 2025 to June 30, 2025 at USGS streamgages.",
             "thumbnail": "FY25_Q3/river_conditions_apr_jun_2025_square_thumbnail.png"
@@ -629,7 +629,7 @@
         {
           "id": "river_conditions_jan_mar_2025_insta",
           "title": " January 1, 2025 - March 31, 2025",
-          "released": "",
+          "released": "2025-04-01",
           "image": {
             "alt": "U.S. River Conditions from January 1, 2025 to  March 31, 2025 at USGS streamgages.",
             "thumbnail": "FY25_Q2/river_conditions_jan_mar_2025_square_thumbnail.png"
@@ -641,7 +641,7 @@
         {
           "id": "river_conditions_oct_dec_2024_insta",
           "title": "October 1 - December 31, 2024",
-          "released": "",
+          "released": "2025-01-01",
           "image": {
             "alt": "U.S. River Conditions from October 1, 2024 to December 31, 2024 at USGS streamgages.",
             "thumbnail": "FY25_Q1/river_conditions_oct_dec_2024_square_thumbnail.png"
@@ -653,7 +653,7 @@
         {
           "id": "river_conditions_jul_sep_2024_insta",
           "title": "July 1 - September 30, 2024",
-          "released": "",
+          "released": "2024-10-01",
           "image": {
             "alt": "U.S. River Conditions from July 1, 2024 to September 30, 2024 at USGS streamgages.",
             "thumbnail": "FY24_Q4/river_conditions_jul_sep_2024_square_thumbnail.png"
@@ -665,7 +665,7 @@
         {
           "id": "river_conditions_apr_jun_2024_insta",
           "title": "April 1 - June 30, 2024",
-          "released": "",
+          "released": "2024-07-01",
           "image": {
             "alt": "U.S. River Conditions from April 1, 2024 to June 30, 2024 at USGS streamgages.",
             "thumbnail": "FY24_Q3/river_conditions_apr_jun_2024_square_thumbnail.png"
@@ -677,7 +677,7 @@
         {
           "id": "river_conditions_jan_mar_2024_insta",
           "title": "January 1 - March 31, 2024",
-          "released": "",
+          "released": "2024-04-01",
           "image": {
             "alt": "U.S. River Conditions from January 1, 2024 to March 31, 2024 at USGS streamgages.",
             "thumbnail": "FY24_Q2/river_conditions_jan_mar_2024_square_thumbnail_color.png"
@@ -689,7 +689,7 @@
         {
           "id": "river_conditions_oct_dec_2023_insta",
           "title": "October 1 - December 31, 2023",
-          "released": "",
+          "released": "2024-01-01",
           "image": {
             "alt": "U.S. River Conditions from October 1, 2023 to December 31, 2023 at USGS streamgages.",
             "thumbnail": "FY24_Q1/river_conditions_oct_dec_2023_square_thumbnail_color.png"
@@ -701,7 +701,7 @@
         {
           "id": "river_conditions_jul_sep_2023_insta",
           "title": "July 1 - September 30, 2023",
-          "released": "",
+          "released": "2023-10-01",
           "image": {
             "alt": "U.S. River Conditions from July 1, 2023 to September 30, 2023 at USGS streamgages.",
             "thumbnail": "FY23_Q4/river_conditions_jul_sep_2023_square_thumbnail_colorized.png"
@@ -713,7 +713,7 @@
         {
           "id": "river_conditions_apr_jun_2023_insta",
           "title": "April 1 - June 30, 2023",
-          "released": "",
+          "released": "2023-07-01",
           "image": {
             "alt": "U.S. River Conditions from April 1, 2023 to June 30, 2023 at USGS streamgages.",
             "thumbnail": "FY23_Q3/river_conditions_apr_jun_2023_square_thumbnail_colorized.png"
@@ -725,7 +725,7 @@
         {
           "id": "river_conditions_jan_mar_2023_insta",
           "title": "January 1 - March 31, 2023",
-          "released": "",
+          "released": "2023-04-01",
           "image": {
             "alt": "U.S. River Conditions from January 1, 2023 to March 31, 2023 at USGS streamgages.",
             "thumbnail": "FY23_Q2/river_conditions_jan_mar_2023_square_thumbnail_color.png"
@@ -737,7 +737,7 @@
         {
           "id": "river_conditions_oct_dec_2022_insta",
           "title": "October 1 - December 31, 2022",
-          "released": "",
+          "released": "2023-01-01",
           "image": {
             "alt": "U.S. River Conditions from October 1, 2022 to December 31, 2022 at USGS streamgages.",
             "thumbnail": "FY23_Q1/river_conditions_oct_dec_2022_square_thumbnail_colorized.png"
@@ -749,7 +749,7 @@
         {
           "id": "river_conditions_jul_sep_2022_insta",
           "title": "July 1 - September 30, 2022",
-          "released": "",
+          "released": "2022-10-01",
           "image": {
             "alt": "U.S. River Conditions from July 1, 2022 to September 30, 2022 at USGS streamgages.",
             "thumbnail": "FY22_Q4/river_conditions_jul_sep_2022_square_thumbnail_colorized.png"
@@ -761,7 +761,7 @@
         {
           "id": "river_conditions_apr_jun_2022_insta",
           "title": "April 1 - June 30, 2022",
-          "released": "",
+          "released": "2022-07-01",
           "image": {
             "alt": "U.S. River Conditions from April 1, 2022 to June 30, 2022 at USGS streamgages.",
             "thumbnail": "FY22_Q3/river_conditions_apr_jun_2022_thumbnail.png"
@@ -773,7 +773,7 @@
         {
           "id": "river_conditions_jan_mar_2022_insta",
           "title": "January 1 - March 31, 2022",
-          "released": "",
+          "released": "2022-04-01",
           "image": {
             "alt": "U.S. River Conditions from January 1, 2022 to March 31, 2022 at USGS streamgages.",
             "thumbnail": "FY22_Q2/river_conditions_jan_mar_2022_thumbnail.png"
@@ -785,7 +785,7 @@
         {
           "id": "river_conditions_oct_dec_2021_insta",
           "title": "October 1 - December 31, 2021",
-          "released": "",
+          "released": "2022-01-01",
           "image": {
             "alt": "U.S. River Conditions from October 1, 2021 to December 31, 2021 at USGS streamgages.",
             "thumbnail": "FY22_Q1/river_conditions_oct_dec_2021_thumbnail.png"
@@ -797,7 +797,7 @@
         {
           "id": "river_conditions_jul_sep_2021_insta",
           "title": "July 1 - September 30, 2021",
-          "released": "",
+          "released": "2021-10-01",
           "image": {
             "alt": "U.S. River Conditions from July 1, 2021 to September 30, 2021 at USGS streamgages.",
             "thumbnail": "FY21_Q4/river_conditions_jul_sep_2021_square_thumbnail_colorized.png"
@@ -809,7 +809,7 @@
         {
           "id": "river_conditions_apr_jun_2021_insta",
           "title": "April 1 - June 30, 2021",
-          "released": "",
+          "released": "2021-07-01",
           "image": {
             "alt": "U.S. River Conditions from April 1, 2021 to June 30, 2021 at USGS streamgages.",
             "thumbnail": "FY21_Q3/river_conditions_apr_jun_2021_thumbnail.png"
@@ -821,7 +821,7 @@
         {
           "id": "river_conditions_jan_mar_2021_insta",
           "title": "January 1 - March 31, 2021",
-          "released": "",
+          "released": "2021-04-01",
           "image": {
             "alt": "U.S. River Conditions from January 1, 2021 to March 31, 2021 at USGS streamgages.",
             "thumbnail": "FY21_Q2/river_conditions_jan_mar_2021_thumbnail.png"
@@ -833,7 +833,7 @@
         {
           "id": "river_conditions_oct_dec_2020_insta",
           "title": "October 1 - December 31, 2020",
-          "released": "",
+          "released": "2021-01-01",
           "image": {
             "alt": "U.S. River Conditions from October 1, 2020 to December 31, 2020 at USGS streamgages.",
             "thumbnail": "FY21_Q1/river_conditions_oct_dec_2020_thumbnail.png"
@@ -855,11 +855,11 @@
       "items": [
         {
           "id": "gw-conditions",
-          "title": "1/12/2022",
+          "title": "January 1 - December 31, 2024",
           "released": "1/12/2022",
           "image": {
             "alt": "A map of the US using arrow-like gylphs to indicate temporal change in groundwater levels.",
-            "thumbnail": "gw-conditions-thumbnail-peak.png"
+            "thumbnail": "gw-conditions_thumbnail.png"
           },
           "links": {
             "code": "https://github.com/usgs-vizlab/gw-conditions",
