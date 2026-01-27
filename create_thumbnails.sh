@@ -35,7 +35,7 @@ for file in "$src_dir"/*.{jpg,jpeg,png,JPG,JPEG,PNG}; do
   filename=$(basename "$file")
   ext="${filename##*.}"
   name="${filename%.*}"
-  out="$dest_dir/${name}_thumbnail.${ext,,}"
+  out="$dest_dir/${name}_thumbnail.${ext}"
 
   if command -v magick >/dev/null; then
     magick "$file" -resize 600x600\> -quality 80 "$out"
