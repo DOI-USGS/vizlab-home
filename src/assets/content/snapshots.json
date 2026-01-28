@@ -9,8 +9,8 @@
 	        "thumbnail": "20230408_humans_hcorson-dosch_thumbnail.png"
 	      },
 	      "links": {
-	        "asset": "20230408_humans_hcorson-dosch.png",
-	        "external": ""
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/distributions-humans-how-are-we-using-water"
 	      },
 	      "tags": [
           "maps"
@@ -25,8 +25,8 @@
 	        "thumbnail": "20230417_networks_hcorson-dosch_thumbnail.png"
 	      },
 	      "links": {
-	        "asset": "20230417_networks_hcorson-dosch.png",
-	        "external": ""
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/relationships-network-which-stream-order-covers-most-distance"
 	      },
 	      "tags": [
           "maps"
@@ -42,8 +42,8 @@
 	        "thumbnail": "20230423_tiles_hcorson-dosch_thumbnail.png"
 	      },
 	      "links": {
-	        "asset": "20230423_tiles_hcorson-dosch.png",
-	        "external": ""
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/timeseries-tiles-changes-us-water-use-1985-2015"
 	      },
 	      "tags": [
           "geofacet"
@@ -58,8 +58,8 @@
 	        "thumbnail": "20230402_waffle_hcorson-dosch_thumbnail.png"
 	      },
 	      "links": {
-	        "asset": "20230402_waffle_hcorson-dosch.png",
-	        "external": ""
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/comparisons-waffle-2015-daily-water-use"
 	      },
 	      "tags": [
 	      ]
