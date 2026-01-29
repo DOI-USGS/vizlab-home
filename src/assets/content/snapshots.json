@@ -14,6 +14,34 @@
       },
       "tags": []
     },
+    {
+      "id": "blender-grand-canyon",
+      "title": "The Grand Canyon made with TopoRivBlender",
+      "released": "01/29/2025",
+      "image": {
+        "alt": "A 3D image of the Grand Canyon in Northern Arizona, USA made using the TopoRivBlender software. Darker colors represent lower elevations, and lighter colors represent higher elevations. The topography has been contours to give an abstract feel.",
+        "thumbnail": "blender_grand_canyon_thumbnail.webp"
+      },
+      "links": {
+        "asset": "blender_grand_canyon.png",
+        "external": ""
+      },
+      "tags": []
+    },
+    {
+      "id": "blender-huc-1711000507",
+      "title": "Ross Lake National Recreation Area made with TopoRivBlender",
+      "released": "01/29/2025",
+      "image": {
+        "alt": "A 3D image of the Ross Lake National Recreation Area in Washington, USA made using the TopoRivBlender software. Land is represented with a tan color, rivers and lake by blue, and snow with white. The extent of the landscape is bounded by the geometry of the Hydrologic Unit Code (HUC): 1711000507.",
+        "thumbnail": "blender_huc1711000507_thumbnail.webp"
+      },
+      "links": {
+        "asset": "blender_huc1711000507.png",
+        "external": ""
+      },
+      "tags": []
+    },
     {   
       "id": "great-salt-lake-landsat",
       "title": "Great Salt Lake Landsat animation",
