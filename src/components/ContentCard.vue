@@ -54,7 +54,7 @@ const props = defineProps({
   },
   imageRatio: {
     type: Number,
-    default: 90
+    default: 100
   },
   showReleaseDate: {
     type: Boolean,

@@ -20,6 +20,7 @@
         v-for="blog in blogItems"
         :key="blog.id"
         :item="blog"
+        :image-ratio="100"
         show-release-date
       />
     </ul>

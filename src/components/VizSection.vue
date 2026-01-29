@@ -15,6 +15,7 @@
         v-for="viz in visibleItems"
         :key="viz.id ?? viz.title"
         :item="viz"
+        :image-ratio="100"
       />
     </ul>
   </section>

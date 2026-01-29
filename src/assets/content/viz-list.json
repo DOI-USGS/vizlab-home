@@ -2,11 +2,11 @@
   "items": [
     {
       "id": "streamflow-drought-forecasts",
-      "title": "Streamflow drought assessment and forecasting tool",
-      "released": "12/16/2025",
+      "title": "River DroughtCast",
+      "released": "12/10/2025",
       "image": {
         "alt": "A map of Florida showing the streamflow drought status at streamgage locations. One gage is selected, and a window in the bottom left shows a timeseries of observed and forecast streamflow conditions at that site",
-        "thumbnail": "streamflow-drought-forecasts_thumbnail.webp"
+        "thumbnail": "streamflow-drought-forecasts_thumbnail.png"
       },
       "links": {
         "code": "https://github.com/DOI-USGS/streamflow-drought-forecasts",
@@ -16,7 +16,7 @@
     {
       "id": "modeling-drought",
       "title": "Modeling streamflow drought",
-      "released": "12/16/2025",
+      "released": "12/10/2025",
       "image": {
         "alt": "An abstract compilation of snippets from charts that illustrate how streamflow drought is forecast",
         "thumbnail": "modeling-drought_thumbnail.png"
