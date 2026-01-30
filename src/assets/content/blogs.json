@@ -49,6 +49,30 @@
       }
     },
     {
+      "id": "rds-assertions",
+      "title": "Reproducible Data Science with R: Say the quiet part out loud with assertion tests",
+      "released": "09/02/2025",
+      "image": {
+        "alt": "A smiling raindrop in a hardhat works on a pipe assembly line beneath the blog series title, Reproducible Data Science with R and to the left of the blog post title, Say the quiet part out loud with assertion tests.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/RDS-assertions/rds_05thumbnail.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/rds-assertions/"
+      }
+    },
+    {
+      "id": "rds-function-evaluation",
+      "title": "Reproducible Data Science with R: Flexible functions using tidy evaluation",
+      "released": "12/17/2024",
+      "image": {
+        "alt": "A smiling raindrop in a hardhat works on a pipe assembly line beneath the blog series title, Reproducible Data Science with R and to the left of the blog post title, Flexible functions using tidy evaluation.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/RDS-function-evaluation/rds_04thumbnail.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/rds-function-evaluation/"
+      }
+    },
+    {
       "id": "acs-maps",
       "title": "Mapping water insecurity in R with tidycensus",
       "released": "12/09/2024",
@@ -58,6 +82,42 @@
       },
       "links": {
         "external": "https://waterdata.usgs.gov/blog/acs-maps/"
+      }
+    },
+    {
+      "id": "rds-iterate",
+      "title": "Reproducible Data Science with R: Iterate, don't duplicate",
+      "released": "07/18/2024",
+      "image": {
+        "alt": "A smiling raindrop in a hardhat works on a pipe assembly line beneath the blog series title, Reproducible Data Science with R and to the left of the blog post title, Iterate, don't duplicate.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/RDS-iterate/rds_03thumbnail.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/rds-iterate/"
+      }
+    },
+    {
+      "id": "rds-better-functions",
+      "title": "Reproducible Data Science with R: Writing better functions",
+      "released": "06/17/2024",
+      "image": {
+        "alt": "A smiling raindrop in a hardhat works on a pipe assembly line beneath the blog series title, Reproducible Data Science with R and to the left of the blog post title, Writing better functions.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/RDS-writing-better-functions/rds_02thumbnail.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/rds-better-functions/"
+      }
+    },
+    {
+      "id": "rds-function-that-work",
+      "title": "Reproducible Data Science with R: Writing functions that work for you",
+      "released": "05/14/2024",
+      "image": {
+        "alt": "A smiling raindrop in a hardhat works on a pipe assembly line beneath the blog series title, Reproducible Data Science with R and to the left of the blog post title, Writing functions that work for you.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/RDS-functions_that_work_for_you/rds_thumbnail_static1.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/rds-functions-that-work-for-you/"
       }
     },
     {
