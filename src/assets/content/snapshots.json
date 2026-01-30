@@ -12,7 +12,9 @@
         "asset": "",
         "external": "https://www.usgs.gov/media/images/how-much-water-there-earth-1"
       },
-      "tags": []
+      "tags": [
+        "maps"
+      ]
     },
     {
       "id": "blender-grand-canyon",
@@ -26,7 +28,9 @@
         "asset": "blender_grand_canyon.png",
         "external": ""
       },
-      "tags": []
+      "tags": [
+        "maps"
+      ]
     },
     {
       "id": "blender-huc-1711000507",
