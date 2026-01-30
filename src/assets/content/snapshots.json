@@ -167,7 +167,7 @@
       "released": "04/13/2023",
       "image": {
         "alt": "Animated map of the continental U.S. and paired line chart. For each month from 2000 to 2020, the map shows burned areas within water supply watersheds, and the chart displays the total number of affected water users. In 2003, 2005, 2014, and 2017, wildfires burned key water supply watersheds that together supply water to over 1.5 million consumers.",
-        "thumbnail": "wildfire-water-thumbnail.png"
+        "thumbnail": "fire_water.webp"
       },
       "links": {
         "asset": "https://www.usgs.gov/media/images/relationships-pop-culture-water-uses-affected-wildfire-2000-2020",
