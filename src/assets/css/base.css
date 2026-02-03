@@ -149,7 +149,8 @@ html {
 .section-title-link:hover,
 .section-title-link:focus-visible {
   color: var(--color-link);
-  text-decoration: underline;
+  text-decoration: none;
+  box-shadow: inset 0 -0.4em rgba(0, 0, 0, 0.08);
 }
 
 .section-title {
