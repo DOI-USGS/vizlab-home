@@ -31,6 +31,11 @@ const props = defineProps({
   card: {
     type: Object,
     required: true
+  },
+  assetSource: {
+    type: String,
+    default: "illustration",
+    validator: (value) => ["illustration", "chart"].includes(value)
   }
 })
 
@@ -43,14 +48,17 @@ const thumbnailSrc = computed(() => {
 
 const altText = computed(() => props.card?.image?.alt || props.card.title)
 
-// if an external link is not provided, use the image hosted in s3
+const resolveAssetBySource = (path = "") => {
+  if (props.assetSource === "chart") return assetStore.resolveChartAsset(path)
+  return assetStore.resolveIllustrationAsset(path)
+}
+
+// if an external link is not provided, use the hosted asset for the section
 const targetUrl = computed(() => {
   const primary = props.card.links.external
   if (primary) return primary
-  const asset = props.card?.links?.asset || ""
-  if (!asset) return "#"
-  if (/^https?:\/\//i.test(asset)) return asset
-  return assetStore.buildIllustrationUrl(asset)
+  const asset = resolveAssetBySource(props.card?.links?.asset || "")
+  return asset || "#"
 })
 </script>
 

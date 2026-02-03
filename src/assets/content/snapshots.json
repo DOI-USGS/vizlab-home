@@ -192,6 +192,39 @@
       ]
     },
     {
+      "id": "rem-beaver-creek",
+      "title": "Relative elevation model (REM) of Beaver Creek, Liberty County, MT",
+      "released": "06/05/2024",
+      "image": {
+        "alt": "A relative elevation model showing the intricate fluvial landforms (e.g., meanders, relic stream channels, meander cutoffs) of Beaver Creek, Liberty County, MT. Relative elevation models show elevation of a landscape relative to the elevation of an adjacent river.",
+        "thumbnail": "rem_beaver_creek_thumbnail.png"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/relative-elevation-model-rem-beaver-creek-liberty-county-mt",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "wildfire-water-animation",
+      "title": "Water uses affected by wildfire (2000-2020)",
+      "released": "04/13/2023",
+      "image": {
+        "alt": "Animated map of the continental U.S. and paired line chart. For each month from 2000 to 2020, the map shows burned areas within water supply watersheds, and the chart displays the total number of affected water users. In 2003, 2005, 2014, and 2017, wildfires burned key water supply watersheds that together supply water to over 1.5 million consumers.",
+        "thumbnail": "fire_water.webp"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/relationships-pop-culture-water-uses-affected-wildfire-2000-2020",
+        "external": ""
+      },
+      "tags": [
+        "maps",
+        "timeseries"
+      ]
+    },
+    {
       "id": "",
       "title": "",
       "released": "",
