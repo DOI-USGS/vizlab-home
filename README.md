@@ -48,12 +48,12 @@ Each section on the portfolio is populated by a similarly named file in `src/ass
 ```
 
 **File-specific notes**
-Not all of the sections require exactly the same data to populate the cards. Refer to the json files to see what is used for the different type.
+Not all of the sections require exactly the same data to populate the cards. Refer to the json files to see what is used for the different type. All thumbnails (except blogs) should be stored in the s3 prod under `thumbnails`. 
 
 - `viz-list.json` – interactive websites. These use the same card style as blogs with a link to the code on github.
-- `blogs.json` – `released` date is shown on card. These use the same card style as viz-list with the date shown on the card.
-- `sketches.json` – use `links.asset` to open direct ifiles from s3. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood" from the `illustrations` directory in the wma-prod > water-visualizations-prod-website s3 bucket. These use the same card style as snapshots.
-- `snapshots.json` – use `links.asset` to open direct ifiles from the `charts` directory in the wma-prod > water-visualizations-prod-website s3 bucket. optional `tags` that can be filtered on. right now, only includes "maps". These use the same card style as sketches.
+- `blogs.json` – `released` date is shown on card. These use the same card style as viz-list with the date shown on the card. Use the link for the thumbnail used on the blog. 
+- `sketches.json` – use `links.asset` to open direct files stored in s3 under wma-prod > water-visualizations-prod-website > illustrations. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood" from the `illustrations` directory in the wma-prod > water-visualizations-prod-website s3 bucket. These use the same card style as snapshots.
+- `snapshots.json` – use `links.asset` to open direct files from the `charts` directory in the wma-prod > water-visualizations-prod-website s3 bucket. optional `tags` that can be filtered on. right now, only includes "maps". These use the same card style as sketches.
 - `series-list.json` – contains a `collections` array, where each collection represents a series card. The most recent item within is displayed on the card. Other items are linked in collapsable menu. Can archive entire series or items within. `intervals` adds badges to the series card. See the example below for series:
 
   ```jsonc

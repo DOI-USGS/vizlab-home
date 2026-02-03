@@ -5,7 +5,19 @@
   >
     <div class="section-header">
       <div>
-        <h2>water data blog</h2>
+        <div class="section-title-row">
+          <h2
+            :id="titleId"
+            :data-section-anchor="sectionId"
+          >
+            <a
+              class="section-title-link"
+              :href="`#${titleId}`"
+            >
+              water data blog
+            </a>
+          </h2>
+        </div>
         <p class="section-summary">
           Tools, process, and reproducible examples.
         </p>
@@ -43,6 +55,7 @@ const props = defineProps({
 })
 
 const sectionId = computed(() => props.id || "blogs")
+const titleId = computed(() => `${sectionId.value}-title`)
 const blogItems = computed(() => (props.items || []).filter((item) => !item.archive))
 </script>
 

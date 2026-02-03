@@ -4,7 +4,19 @@
     class="viz-section"
   >
     <div class="section-header">
-      <h2>science stories</h2>
+      <div class="section-title-row">
+        <h2
+          :id="titleId"
+          :data-section-anchor="sectionId"
+        >
+          <a
+            class="section-title-link"
+            :href="`#${titleId}`"
+          >
+            {{ headingText }}
+          </a>
+        </h2>
+      </div>
       <p class="section-summary">
         Told by water data.
       </p>
@@ -36,7 +48,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "interactive"
+    default: "science stories"
   },
   summary: {
     type: String,
@@ -45,6 +57,8 @@ const props = defineProps({
 })
 
 const sectionId = computed(() => props.id || "stories")
+const headingText = computed(() => props.title?.trim() || "science stories")
+const titleId = computed(() => `${sectionId.value}-title`)
 
 // filter out vizzies with "archive": true
 const visibleItems = computed(() =>
