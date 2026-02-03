@@ -81,11 +81,23 @@ const showRightFade = ref(false)
 
 let observer
 
+const getShellHeight = () => shell.value?.offsetHeight ?? 0
+const getAnchorElement = (id) =>
+  document.querySelector(`[data-section-anchor='${id}']`)
+
+const updateStickyOffset = () => {
+  if (typeof document === "undefined") return
+  const offset = getShellHeight()
+  document.documentElement.style.setProperty("--sticky-nav-offset", `${offset}px`)
+}
+
 const setupObserver = () => {
   observer?.disconnect()
   if (typeof window === "undefined") return
 
-  const shellHeight = shell.value?.offsetHeight ?? 0
+  updateStickyOffset()
+
+  const shellHeight = getShellHeight()
   observer = new IntersectionObserver(handleIntersect, {
     root: null,
     threshold: [0.15, 0.35, 0.6],
@@ -106,7 +118,7 @@ const handleResize = () => {
 
 // triggers active tab in nav bar
 const handleScroll = () => {
-  const shellHeight = shell.value?.offsetHeight ?? 0
+  const shellHeight = getShellHeight()
   if (window.scrollY <= shellHeight + 4) {
     activeSection.value = navItems[0].id
     return
@@ -118,8 +130,8 @@ const handleScroll = () => {
 const updateActiveSectionByScrollPosition = () => {
   if (typeof window === "undefined") return
 
-  const shellHeight = shell.value?.offsetHeight ?? 0
-  const scrollPosition = window.scrollY + shellHeight + 16
+  const shellHeight = getShellHeight()
+  const scrollPosition = window.scrollY + shellHeight
 
   let currentSectionId = navItems[0].id
   for (const item of navItems) {
@@ -168,7 +180,7 @@ onBeforeUnmount(() => {
 })
 
 function handleIntersect(entries) {
-  const shellHeight = shell.value?.offsetHeight ?? 0
+  const shellHeight = getShellHeight()
   if (window.scrollY <= shellHeight + 4) {
     activeSection.value = navItems[0].id
     return
@@ -188,13 +200,13 @@ function handleIntersect(entries) {
 
 // scroll to button sections
 function scrollTo(id) {
-  const target = document.getElementById(id)
+  const target = getAnchorElement(id) || document.getElementById(id)
   if (!target) return
 
   activeSection.value = id
 
-  const shellHeight = shell.value?.offsetHeight ?? 0
-  const offset = target.getBoundingClientRect().top + window.scrollY - shellHeight + 2
+  const shellHeight = getShellHeight()
+  const offset = target.getBoundingClientRect().top + window.scrollY - shellHeight
 
   window.scrollTo({
     top: offset,

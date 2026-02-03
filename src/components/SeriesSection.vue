@@ -1,11 +1,23 @@
 <template>
   <section
-    id="series"
+    :id="sectionId"
     class="series-section"
   >
     <div class="section-intro">
       <div class="section-header series-header">
-        <h2>series</h2>
+        <div class="section-title-row">
+          <h2
+            :id="titleId"
+            :data-section-anchor="sectionId"
+          >
+            <a
+              class="section-title-link"
+              :href="`#${titleId}`"
+            >
+              series
+            </a>
+          </h2>
+        </div>
         <div class="carousel-controls carousel-controls--mobile">
           <button
             class="nav-btn"
@@ -72,6 +84,9 @@ const props = defineProps({
     default: () => []
   }
 })
+
+const sectionId = "series"
+const titleId = "series-title"
 
 // carousel navigation
 const index = ref(0)

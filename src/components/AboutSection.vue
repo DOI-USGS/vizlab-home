@@ -4,7 +4,19 @@
     class="about-section"
   >
     <div class="section-header">
-      <h2>{{ text.heading }}</h2>
+      <div class="section-title-row">
+        <h2
+          :id="titleId"
+          :data-section-anchor="sectionId"
+        >
+          <a
+            class="section-title-link"
+            :href="`#${titleId}`"
+          >
+            {{ headingText }}
+          </a>
+        </h2>
+      </div>
     </div>
 
     <div class="about-copy">
@@ -48,6 +60,8 @@ const props = defineProps({
 });
 
 const sectionId = computed(() => props.id || "team")
+const headingText = computed(() => props.text?.heading || "team")
+const titleId = computed(() => `${sectionId.value}-title`)
 
 const cloneNodes = (source = []) => {
     if (!Array.isArray(source)) return []

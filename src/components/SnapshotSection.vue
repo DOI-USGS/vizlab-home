@@ -1,11 +1,23 @@
 <template>
   <section
-    id="snapshot"
+    :id="sectionId"
     class="snapshot-section"
   >
     <div class="section-header">
       <div>
-        <h2>snapshots</h2>
+        <div class="section-title-row">
+          <h2
+            :id="titleId"
+            :data-section-anchor="sectionId"
+          >
+            <a
+              class="section-title-link"
+              :href="`#${titleId}`"
+            >
+              snapshots
+            </a>
+          </h2>
+        </div>
         <p class="section-summary">
           One-off charts and maps.
         </p>
@@ -44,6 +56,7 @@
         v-for="item in filteredCards"
         :key="item.id"
         :card="item"
+        asset-source="chart"
       />
     </div>
   </section>
@@ -57,8 +70,15 @@ const props = defineProps({
   items: {
     type: Array,
     default: () => []
+  },
+  id: {
+    type: String,
+    default: ""
   }
 })
+
+const sectionId = computed(() => props.id || "snapshots")
+const titleId = computed(() => `${sectionId.value}-title`)
 
 const cards = computed(() => (props.items || []).filter((item) => !item.archive))
 
