@@ -44,6 +44,7 @@
         v-for="item in filteredCards"
         :key="item.id"
         :card="item"
+        asset-source="chart"
       />
     </div>
   </section>
