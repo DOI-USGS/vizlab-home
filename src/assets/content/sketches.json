@@ -220,6 +220,22 @@
       "tags": [
         "water cycle"
       ]
+    },
+    {
+      "id": "flora-fauna",
+      "title": "Urban Trees Comic",
+      "released": "04/03/2023",
+      "image": {
+        "alt": "Comic showing the water and energy savings from urban trees. Begins with hot urban scene with squirrel taking shade on a bench under a magnolia tree. Data visualization of the tree shows total savings in 744 urban areas (each flower) scaled to the total energy savings. The top city's savings were in Los Angeles with $16 million. The second scene shows it raining, with the scale of each raindrop matching the water savings for each state from urban tress.",
+        "thumbnail": "04_flora-fauna-aaarcher_thumbnail.png"
+      },
+      "links": {
+        "asset": "04_flora-fauna-aaarcher.png",
+        "external": ""
+      },
+      "tags": [
+        "illustrations"
+      ]
     }
   ]
 }

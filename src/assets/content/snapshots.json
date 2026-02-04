@@ -225,6 +225,39 @@
       ]
     },
     {
+      "id": "myanmar-earthquake",
+      "title": "Groundwater signal from Myanmar Earthquake (March 2025)",
+      "released": "04/16/2025",
+      "image": {
+        "alt": "Map of the Myanmar Earthquake epicenter in Asia, showing three U.S. groundwater sites across the globe. In response to the earthquake, these three groundwater monitoring sites showed a disturbance, which is displayed on a time series graph.",
+        "thumbnail": "16_relationships_negative_thumbnail.png"
+      },
+      "links": {
+        "asset": "16_relationships_negative.png",
+        "external": ""
+      },
+      "tags": [
+        "maps",
+        "timeseries"
+      ]
+    },
+    {
+      "id": "tale-two-winters",
+      "title": "A tale of two winters",
+      "released": "04/09/2023",
+      "image": {
+        "alt": "Hexmap of the U.S. showing anomaly from average snow conditions for February 2023 compared to 20-year-mean by percent difference. Marginal distribution plots show the anomaly from east-to-west and north-to-south directions. The eastern U.S. had a much more snow-free February compared to average than the western U.S.",
+        "thumbnail": "20230409_high-low_aaarcher_thumbnail.webp"
+      },
+      "links": {
+        "asset": "20230409_high-low_aaarcher.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
       "id": "",
       "title": "",
       "released": "",
