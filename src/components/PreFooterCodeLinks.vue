@@ -28,6 +28,7 @@
       font-weight: 300;
       margin-left: 10px;
       text-decoration: none;
+      font-family: 'Source Sans Pro', var(--default-font), sans-serif;
     }
   }
 
