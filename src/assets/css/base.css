@@ -24,7 +24,7 @@
 
   font-size: 62.5%;
 
-  --title-font: Doto; 
+  --title-font: Source Sans Pro; 
   --default-font: Source Code Pro;
 
 }
@@ -110,8 +110,7 @@ h1 {
   padding: 0rem 0 0rem 0;
   font-family: var(--title-font);
   font-style: normal;
-  color: red;
-  stroke: blue;
+
 }
 h2 {
   font-size: 3.5rem;
