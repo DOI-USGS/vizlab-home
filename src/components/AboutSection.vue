@@ -61,7 +61,7 @@ const props = defineProps({
 
 const sectionId = computed(() => props.id || "team")
 const headingText = computed(() => props.text?.heading || "team")
-const titleId = computed(() => `${sectionId.value}-title`)
+const titleId = computed(() => `${sectionId.value}`)
 
 const cloneNodes = (source = []) => {
     if (!Array.isArray(source)) return []

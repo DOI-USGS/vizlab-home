@@ -85,12 +85,12 @@ const props = defineProps({
   },
   initialSeriesId: {
     type: String,
-    default: "riverConditions"
+    default: "riverConditions" // set which series is shown in middle card on pagge load. ordering is based on order in json
   }
 })
 
 const sectionId = "series"
-const titleId = "series-title"
+const titleId = "series"
 
 // carousel navigation
 const index = ref(0)

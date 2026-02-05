@@ -55,7 +55,7 @@ const props = defineProps({
 })
 
 const sectionId = computed(() => props.id || "blogs")
-const titleId = computed(() => `${sectionId.value}-title`)
+const titleId = computed(() => `${sectionId.value}`)
 const blogItems = computed(() => (props.items || []).filter((item) => !item.archive))
 </script>
 

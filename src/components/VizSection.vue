@@ -58,7 +58,7 @@ const props = defineProps({
 
 const sectionId = computed(() => props.id || "stories")
 const headingText = computed(() => props.title?.trim() || "science stories")
-const titleId = computed(() => `${sectionId.value}-title`)
+const titleId = computed(() => `${sectionId.value}`)
 
 // filter out vizzies with "archive": true
 const visibleItems = computed(() =>

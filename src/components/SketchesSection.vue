@@ -78,7 +78,7 @@ const props = defineProps({
 })
 
 const sectionId = computed(() => props.id || "sketches")
-const titleId = computed(() => `${sectionId.value}-title`)
+const titleId = computed(() => `${sectionId.value}`)
 
 const cards = computed(() => (props.items || []).filter((item) => !item.archive))
 
