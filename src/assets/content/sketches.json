@@ -78,32 +78,16 @@
       ]
     },
     {
-      "id": "20230401a_part-to-whole_mcarr",
-      "title": "All the water on Earth (chart)",
-      "released": "04/01/2023",
-      "image": {
-        "alt": "All the water on Earth (chart)",
-        "thumbnail": "20230401a_part-to-whole_mcarr_thumbnail.png"
-      },
-      "links": {
-        "asset": "20230401a_part-to-whole_mcarr.png",
-        "external": ""
-      },
-      "tags": [
-        "water cycle"
-      ]
-    },
-    {
       "id": "20230401b_part-to-whole_mcarr",
       "title": "All the water on Earth (diagram)",
       "released": "04/01/2023",
       "image": {
-        "alt": "All the water on Earth (diagram)",
+        "alt": "Series of 3 landscapes depicting where water is in blue for all water on Earth, all freshwater, and surface & other freshwater. First landscape denotes regions of freshwater, other saline water, and oceans; All freshwater landscape denotes regions of glaciers & ice caps, surface & other freshwater, and groundwater; surface & other freshwater landscape denotes regions of swaps & marches, ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.",
         "thumbnail": "20230401b_part-to-whole_mcarr_thumbnail.png"
       },
       "links": {
         "asset": "20230401b_part-to-whole_mcarr.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/comparisons-part-whole-image-2"
       },
       "tags": [
         "water cycle"
@@ -144,14 +128,14 @@
     {
       "id": "usgs-water-strong_infographic",
       "title": "Water Data Keep Us Strong",
-      "released": "03/13/2025",
+      "released": "04/23/2025",
       "image": {
-        "alt": "Water Data Keep Us Strong",
+        "alt": "Water is one of America's greatest assets, providing energy, irrigation for crops, and water for homes and businesses. But water isn't always safe or reliable, and damages are costly. To protect lives and keep our country prosperous, we need information on the state of our water resources. USGS collects and delivers the water data our nation needs. Water data keep us strong.",
         "thumbnail": "usgs-water-strong_infographic_thumbnail.png"
       },
       "links": {
         "asset": "usgs-water-strong_infographic.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/water-data-keep-us-strong"
       },
       "tags": [
         "flood"
@@ -160,14 +144,14 @@
     {
       "id": "usgs-water-alert_infographic",
       "title": "Water safety at your fingertips",
-      "released": "04/10/2025",
+      "released": "04/25/2025",
       "image": {
-        "alt": "Water safety at your fingertips",
+        "alt": "USGS WaterAlert is a free service that notifies subscribers of changing water conditions. Alerts can identify potentially dangerous situations like flows that are too high or too low to safely fish or kayak. When water conditions at a USGS streamgage change in a way that meets user-set thresholds, USGS WaterAlert sends a notification to the subscriber via text or email.",
         "thumbnail": "usgs-water-alert_infographic_thumbnail.png"
       },
       "links": {
         "asset": "usgs-water-alert_infographic.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/usgs-wateralert-water-safety-your-fingertips"
       },
       "tags": [
         "flood"
@@ -178,12 +162,12 @@
       "title": "Consumptive water use",
       "released": "01/13/2025",
       "image": {
-        "alt": "Consumptive water use",
+        "alt": "Series of three illustrations showing sources of consumptive water use for public supply, crop irrigation, and thermoelectric power. Crop irrigation accounted for 90% of all the consumptive losses during 2010 to 2020, whereas thermoelectric and public supply each accounted for a small fraction of consumptive water use.",
         "thumbnail": "consumptive-use_thumbnail.png"
       },
       "links": {
         "asset": "consumptive-use.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/consumptive-water-use"
       },
       "tags": [
         "water use"
@@ -219,6 +203,72 @@
       },
       "tags": [
         "water cycle"
+      ]
+    },
+    {
+      "id": "sketches_crwua_booth_backdrop",
+      "title": "Taking the guesswork out of water management",
+      "released": "12/16/2025",
+      "image": {
+        "alt": "USGS science and data take the guesswork out of water management. Map of the lower 48 United States is divided into four sections. The first shows the westernmost portion of the supply and use index map. The second shows an aerial photo of the Colorado River. The third shows a time series chart from the River DroughtCast tool. The fourth shows a map of water use categories for the eastern United States. QR code takes the viewer to https://usgs.gov/wma",
+        "thumbnail": "sketches_crwua_booth_backdrop_thumbnail.png"
+      },
+      "links": {
+        "asset": "sketches_crwua_booth_backdrop.png",
+        "external": ""
+      },
+      "tags": [
+        "water use"
+      ]
+    },
+    {
+      "id": "iwaas_wateruse_fig01_concepts",
+      "title": "Water use concepts",
+      "released": "01/15/2025",
+      "image": {
+        "alt": "Water use concepts",
+        "thumbnail": "iwaas_wateruse_fig01_concepts_thumbnail.png"
+      },
+      "links": {
+        "asset": "iwaas_wateruse_fig01_concepts.png",
+        "external": "https://pubs.usgs.gov/pp/1894/d/images/pp1894D_fig01.png"
+      },
+      "tags": [
+        "water cycle",
+        "water use"
+      ]
+    },
+    {
+      "id": "iwaas_waterquality_fig18_groundwaternitrate",
+      "title": "Flow of nitrate in groundwater",
+      "released": "01/15/2025",
+      "image": {
+        "alt": "An example of how groundwater geochemical conditions and flow paths (arrows) influence nitrate concentration distributions in shallow oxic and deeper anoxic groundwater and resulting contaminant contributions to streamflow. Flow paths through anoxic conditions foster denitrification to lower nitrate concentrations, but flow paths in oxic conditions allow nitrate to remain unchanged. Nitrate (NO3-) shown in milligrams per liter (mg/L) as nitrogen (N). Modified by Amanda Carr, U.S. Geological Survey, from Winter and others (1998).",
+        "thumbnail": "iwaas_waterquality_fig18_groundwaternitrate_thumbnail.png"
+      },
+      "links": {
+        "asset": "iwaas_waterquality_fig18_groundwaternitrate.png",
+        "external": "https://pubs.usgs.gov/pp/1894/c/images2/pp1894C_fig18.png"
+      },
+      "tags": [
+        "water cycle"
+      ]
+    },
+    {
+      "id": "iwaas_waterquality_fig17_geogenicmobilization",
+      "title": "Geogenic contaminant mobilization",
+      "released": "01/15/2025",
+      "image": {
+        "alt": "Managed aquifer-recharge methods and processes. Managed recharge—which uses water of dissimilar geochemistry from groundwater through infiltration into shallow aquifers or injection into deep aquifers—can alter hydrologic and geochemical aquifer conditions such that arsenic and other geogenic contaminants are mobilized from sediment to aqueous phase. Modified by Amanda Carr, U.S. Geological Survey, from Fakhreddine and others (2021) graphical abstract.",
+        "thumbnail": "iwaas_waterquality_fig17_geogenicmobilization_thumbnail.png"
+      },
+      "links": {
+        "asset": "iwaas_waterquality_fig17_geogenicmobilization.png",
+        "external": "https://www.usgs.gov/media/images/geogenic-contaminant-mobilization-illustration"
+      },
+      "tags": [
+        "water cycle",
+        "water use"
       ]
     }
   ]
