@@ -30,7 +30,15 @@
         :src="latestThumb"
         :alt="latestAlt"
         loading="lazy"
+        @load="handleLatestThumbLoad"
+        @error="handleLatestThumbError"
       >
+      <span
+        v-if="latestThumbError"
+        class="series-card__image-fallback"
+      >
+        Image unavailable
+      </span>
     </a>
 
     <div class="series-card__body">
@@ -134,6 +142,7 @@
 import { ref, computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 import { useDateStore } from "@/stores/DateStore.js"
+import { useImageLoader } from "@/composables/useImageLoader.js"
 
 const props = defineProps({
   series: {
@@ -212,7 +221,17 @@ const resolveThumbnail = (src = "") => {
   return assetStore.buildThumbUrl(src)
 }
 
-const latestThumb = resolveThumbnail(latestEntry.image?.thumbnail || "")
+const latestThumbSource = computed(() => resolveThumbnail(latestEntry.image?.thumbnail || ""))
+const {
+  imageSrc: latestThumb,
+  isLoaded: latestThumbLoaded,
+  hasError: latestThumbError,
+  handleLoad: handleLatestThumbLoad,
+  handleError: handleLatestThumbError
+} = useImageLoader(latestThumbSource, {
+  maxRetries: 2,
+  retryDelay: 1200
+})
 const latestAlt = latestEntry.image?.alt || buildDisplayLabel(latestEntry, props.series?.title || "")
 const latestReleaseLabel = buildDisplayLabel(latestEntry, "")
 
@@ -340,6 +359,18 @@ const hasHistory = historyEntries.length > 0
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.series-card__image-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--black-400);
 }
 
 .series-card__body {
