@@ -192,6 +192,35 @@
       ]
     },
     {
+      "id": "20230401a_part-to-whole_mcarr",
+      "title": "All the water on Earth (chart)",
+      "released": "04/01/2023",
+      "image": {
+        "alt": "Series of 3 interconnected tree maps for all the water on Earh, all freshwater, and surface & other freshwater. First tree map is broken down in size order displaying oceans, other saline water, and freshwater. Second tree map displays all freshwater broken down in size order by glaciers & ice caps, groundwater, and surface & other freshwater. Third tree map breaks down surface & other freshwater in size order by ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.",
+        "thumbnail": "20230401a_part-to-whole_mcarr_thumbnail.png"
+      },
+      "links": {
+        "asset": "20230401a_part-to-whole_mcarr.png",
+        "external": "https://www.usgs.gov/media/images/comparisons-part-whole-image-1"
+      },
+      "tags": [
+        
+      ]
+    },
+    {
+      "id": "snapshot_irrigation_water_use",
+      "title": "Monthly irrigation by region",
+      "released": "04/05/2025",
+      "image": {
+        "alt": "Radial bar charts stylized to look like center-pivot fields show water withdrawals for irrigation across four regions of the United States. In the Columbia-Snake region, peak crop irrigation month is July, and peak withdrawals are over 53,000 millions of gallons per day (mgd). In the Midwest, peak crop irrigation month is July, and peak withdrawals are over 25,000 mgd. In the Mississippi Embayment, peak crop irrigation month is August, and peak withdrawals are over 31,000 mgd. In the Southwest Desert, peak crop irrigation month is June, and peak withdrawals are over 12,500 mgd.",
+        "thumbnail": "snapshot_irrigation_water_use_thumbnail.png"
+      },
+      "links": {
+        "asset": "snapshot_irrigation_water_use.png",
+        "external": "https://www.usgs.gov/media/images/when-water-used-irrigation"
+      },
+      "tags": [
+        
       "id": "rem-beaver-creek",
       "title": "Relative elevation model (REM) of Beaver Creek, Liberty County, MT",
       "released": "06/05/2024",
