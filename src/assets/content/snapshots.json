@@ -220,7 +220,10 @@
         "external": "https://www.usgs.gov/media/images/when-water-used-irrigation"
       },
       "tags": [
-        
+        "maps"
+      ]
+    },
+    {
       "id": "rem-beaver-creek",
       "title": "Relative elevation model (REM) of Beaver Creek, Liberty County, MT",
       "released": "06/05/2024",
@@ -284,22 +287,6 @@
       },
       "tags": [
         "maps"
-      ]
-    },
-    {
-      "id": "",
-      "title": "",
-      "released": "",
-      "image": {
-        "alt": "",
-        "thumbnail": ""
-      },
-      "links": {
-        "asset": "",
-        "external": ""
-      },
-      "tags": [
-        
       ]
     }
   ]
