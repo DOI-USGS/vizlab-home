@@ -1,11 +1,23 @@
 <template>
   <section
-    id="series"
+    :id="sectionId"
     class="series-section"
   >
     <div class="section-intro">
       <div class="section-header series-header">
-        <h2>series</h2>
+        <div class="section-title-row">
+          <h2
+            :id="titleId"
+            :data-section-anchor="sectionId"
+          >
+            <a
+              class="section-title-link"
+              :href="`#${titleId}`"
+            >
+              series
+            </a>
+          </h2>
+        </div>
         <div class="carousel-controls carousel-controls--mobile">
           <button
             class="nav-btn"
@@ -63,28 +75,38 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue"
+import { computed, ref, watch } from "vue"
 import SeriesCard from "@/components/SeriesCard.vue"
 
 const props = defineProps({
   series: {
     type: [Array, Object],
     default: () => []
+  },
+  initialSeriesId: {
+    type: String,
+    default: "riverConditions" // set which series is shown in middle card on pagge load. ordering is based on order in json
   }
 })
 
+const sectionId = "series"
+const titleId = "series"
+
 // carousel navigation
 const index = ref(0)
-const seriesList = (props.series || []).filter((collection) => !collection.archive)
+const initialized = ref(false)
+const seriesList = computed(() => (props.series || []).filter((collection) => !collection.archive))
 
 // show part of the series on either side of the focal one in the carousel
 const displaySeries = computed(() => {
-  const len = seriesList.length
+  const list = seriesList.value
+  const len = list.length
+  if (!len) return []
   const offsets = [-1, 0, 1] 
   return offsets.map((offset) => {
     const role = offset === 0 ? "center" : "side"
     const idx = ((index.value + offset) % len + len) % len
-    const data = seriesList[idx]
+    const data = list[idx]
     return {
       role,
       data,
@@ -95,9 +117,37 @@ const displaySeries = computed(() => {
 
 // nagivate carousel slides
 function move(step) {
-  const len = seriesList.length
+  const list = seriesList.value
+  const len = list.length
+  if (!len) return
   index.value = (index.value + step + len) % len
 }
+
+watch(
+  () => [props.initialSeriesId, seriesList.value],
+  () => {
+    const list = seriesList.value
+    const len = list.length
+    if (!len) {
+      index.value = 0
+      return
+    }
+
+    if (!initialized.value) {
+      const preferredId = props.initialSeriesId
+      if (preferredId) {
+        const targetIndex = list.findIndex((collection) => collection.id === preferredId)
+        index.value = targetIndex >= 0 ? targetIndex : 0
+      } else {
+        index.value = 0
+      }
+      initialized.value = true
+    } else if (index.value >= len) {
+      index.value = index.value % len
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <style scoped>

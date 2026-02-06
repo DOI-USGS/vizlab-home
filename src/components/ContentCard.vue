@@ -146,6 +146,7 @@ const imagePadding = `${props.imageRatio}%`
   margin: 0.4rem 0 0;
   color: var(--black-400);
   font-size: 1.4rem;
+  padding-bottom: 0;
 }
 
 .card-action {

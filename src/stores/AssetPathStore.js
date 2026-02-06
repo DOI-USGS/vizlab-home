@@ -20,6 +20,19 @@ export const useAssetPathStore = defineStore("AssetPathStore", () => {
   const buildIllustrationUrl = (filename = "") => join(s3Base, "illustration", filename)
   const buildChartUrl = (filename = "") => join(s3Base, "charts", filename)
 
+  const resolveAssetPath = (path = "", builder = () => "") => {
+    const normalizedPath = (path ?? "").toString().trim()
+    if (!normalizedPath) return ""
+    if (isAbsoluteUrl(normalizedPath)) return normalizedPath
+    return builder(normalizedPath)
+  }
+
+  const resolveIllustrationAsset = (path = "") =>
+    resolveAssetPath(path, (value) => buildIllustrationUrl(value))
+
+  const resolveChartAsset = (path = "") =>
+    resolveAssetPath(path, (value) => buildChartUrl(value))
+
   const buildSeriesUrl = (folder = "", filename = "") => {
     if (folder && filename) return join(s3Base, folder, filename)
     if (folder) return join(s3Base, folder)
@@ -32,6 +45,8 @@ export const useAssetPathStore = defineStore("AssetPathStore", () => {
     buildThumbUrl,
     buildIllustrationUrl,
     buildChartUrl,
-    buildSeriesUrl
+    buildSeriesUrl,
+    resolveIllustrationAsset,
+    resolveChartAsset
   }
 })

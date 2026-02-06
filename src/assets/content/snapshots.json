@@ -1,6 +1,52 @@
 {
   "items": [
     {
+      "id": "earths-water",
+      "title": "How much water is there on Earth?",
+      "released": "04/03/2025",
+      "image": {
+        "alt": "A 3D image of the Earth compared to different spheres and cubes representing different pools of water. Four different sized water-spheres from largest to smallest represent the total water, oceanic water, groundwater, and lake and river water on Earth. An ice-cube between oceanic water and ground water represents the total amount of frozen water on Earth. The size of the spheres and cubes are realistically scaled to directly compare each pool's volume on Earth.",
+        "thumbnail": "earths-water-thumbnail.webp"
+      },
+      "links": {
+        "asset": "",
+        "external": "https://www.usgs.gov/media/images/how-much-water-there-earth-1"
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "blender-grand-canyon",
+      "title": "The Grand Canyon made with TopoRivBlender",
+      "released": "01/29/2025",
+      "image": {
+        "alt": "A 3D image of the Grand Canyon in Northern Arizona, USA made using the TopoRivBlender software. Darker colors represent lower elevations, and lighter colors represent higher elevations. The topography has been contours to give an abstract feel.",
+        "thumbnail": "blender_grand_canyon_thumbnail.webp"
+      },
+      "links": {
+        "asset": "blender_grand_canyon.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "blender-huc-1711000507",
+      "title": "Ross Lake National Recreation Area made with TopoRivBlender",
+      "released": "01/29/2025",
+      "image": {
+        "alt": "A 3D image of the Ross Lake National Recreation Area in Washington, USA made using the TopoRivBlender software. Land is represented with a tan color, rivers and lake by blue, and snow with white. The extent of the landscape is bounded by the geometry of the Hydrologic Unit Code (HUC): 1711000507.",
+        "thumbnail": "blender_huc1711000507_thumbnail.webp"
+      },
+      "links": {
+        "asset": "blender_huc1711000507.png",
+        "external": ""
+      },
+      "tags": []
+    },
+    {   
 	      "id": "water-use-small-multiples",
 	      "title": "How are we using water?",
 	      "released": "04/08/2023",
@@ -175,6 +221,69 @@
       },
       "tags": [
         
+      "id": "rem-beaver-creek",
+      "title": "Relative elevation model (REM) of Beaver Creek, Liberty County, MT",
+      "released": "06/05/2024",
+      "image": {
+        "alt": "A relative elevation model showing the intricate fluvial landforms (e.g., meanders, relic stream channels, meander cutoffs) of Beaver Creek, Liberty County, MT. Relative elevation models show elevation of a landscape relative to the elevation of an adjacent river.",
+        "thumbnail": "rem_beaver_creek_thumbnail.png"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/relative-elevation-model-rem-beaver-creek-liberty-county-mt",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "wildfire-water-animation",
+      "title": "Water uses affected by wildfire (2000-2020)",
+      "released": "04/13/2023",
+      "image": {
+        "alt": "Animated map of the continental U.S. and paired line chart. For each month from 2000 to 2020, the map shows burned areas within water supply watersheds, and the chart displays the total number of affected water users. In 2003, 2005, 2014, and 2017, wildfires burned key water supply watersheds that together supply water to over 1.5 million consumers.",
+        "thumbnail": "fire_water.webp"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/relationships-pop-culture-water-uses-affected-wildfire-2000-2020",
+        "external": ""
+      },
+      "tags": [
+        "maps",
+        "timeseries"
+      ]
+    },
+    {
+      "id": "myanmar-earthquake",
+      "title": "Groundwater signal from Myanmar Earthquake (March 2025)",
+      "released": "04/16/2025",
+      "image": {
+        "alt": "Map of the Myanmar Earthquake epicenter in Asia, showing three U.S. groundwater sites across the globe. In response to the earthquake, these three groundwater monitoring sites showed a disturbance, which is displayed on a time series graph.",
+        "thumbnail": "16_relationships_negative_thumbnail.png"
+      },
+      "links": {
+        "asset": "16_relationships_negative.png",
+        "external": ""
+      },
+      "tags": [
+        "maps",
+        "timeseries"
+      ]
+    },
+    {
+      "id": "tale-two-winters",
+      "title": "A tale of two winters",
+      "released": "04/09/2023",
+      "image": {
+        "alt": "Hexmap of the U.S. showing anomaly from average snow conditions for February 2023 compared to 20-year-mean by percent difference. Marginal distribution plots show the anomaly from east-to-west and north-to-south directions. The eastern U.S. had a much more snow-free February compared to average than the western U.S.",
+        "thumbnail": "20230409_high-low_aaarcher_thumbnail.webp"
+      },
+      "links": {
+        "asset": "20230409_high-low_aaarcher.png",
+        "external": "https://www.usgs.gov/media/images/distributions-highlow-a-tale-two-winters"
+      },
+      "tags": [
+        "maps"
       ]
     },
     {
