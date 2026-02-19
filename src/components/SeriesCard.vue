@@ -1,5 +1,5 @@
 <template>
-  <article class="series-card">
+  <article class="series-card card-shell">
     <header class="series-card__header">
       <div class="series-card__eyebrow-row">
         <p class="series-card__eyebrow">
@@ -48,7 +48,7 @@
       </p>
       <div class="series-card__actions">
         <a
-          class="series-link"
+          class="pill-button pill-button--outline"
           :href="latestPrimaryLink"
           target="_blank"
           rel="noopener noreferrer"
@@ -57,7 +57,7 @@
         <button
           v-for="share in shareLinks"
           :key="share.label"
-          class="series-link"
+          class="pill-button pill-button--outline"
           type="button"
           :aria-label="`Share on ${share.label}`"
           @click="() => openShare(share.url)"
@@ -245,13 +245,10 @@ const hasHistory = historyEntries.length > 0
 .series-card {
   flex: 1;
   border: 1px solid var(--light-grey);
-  border-radius: 1.2rem;
   overflow: visible;
-  background: var(--color-surface, #fff);
   display: flex;
   flex-direction: column;
   position: relative;
-  font-family: "Source Sans Pro", var(--default-font), sans-serif;
 }
 
 .series-card__header {
@@ -371,33 +368,10 @@ const hasHistory = historyEntries.length > 0
   gap: 0.8rem;
 }
 
-.series-link {
-  border: 1px solid currentColor;
-  background: transparent;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 1.3rem;
-  padding: 0.4rem 1.2rem;
-  cursor: pointer;
-  color: inherit;
-  border-radius: 999px;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease,
-    transform 0.1s ease;
-  text-decoration: none;
-}
-
-.series-link:hover,
-.series-link:focus-visible {
-  color: #fff;
-  background: var(--color-link);
-  border-color: var(--color-link);
-}
-
-.series-link:active {
-  transform: translateY(1px);
+.series-card__actions .pill-button {
+  --pill-letter-spacing: 0.02em;
+  --pill-font-size: 1.3rem;
+  --pill-padding: 0.4rem 1.2rem;
 }
 
 .series-card__footer {
@@ -467,7 +441,7 @@ const hasHistory = historyEntries.length > 0
   border: 0;
 }
 
-@media (max-width: 700px) {
+@media (--bp-sm) {
   .series-card {
     width: 100%;
   }

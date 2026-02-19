@@ -377,7 +377,7 @@ onBeforeUnmount(() => {
   background: var(--color-accent);
 }
 
-@media (max-width: 960px) {
+@media (--bp-md) {
   .hero-panel {
     position: static;
     height: auto;

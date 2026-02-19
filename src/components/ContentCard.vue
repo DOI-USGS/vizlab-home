@@ -2,7 +2,7 @@
   <li class="content-card">
     <article class="card">
       <a
-        class="card-main"
+        class="card-main card-shell"
         :href="externalHref"
         target="_blank"
         rel="noopener noreferrer"
@@ -92,16 +92,14 @@ const imagePadding = `${props.imageRatio}%`
 }
 
 .card-main {
+  --card-border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   text-decoration: none;
   color: inherit;
-  font-family: "Source Sans Pro", var(--default-font), sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 0.8rem;
   overflow: hidden;
-  background: var(--color-surface, #fff);
   transition:
     transform 200ms ease,
     box-shadow 200ms ease;

@@ -19,46 +19,42 @@
           </h2>
         </div>
         <div class="section-controls series-nav-controls">
-          <div class="series-nav-row">
-            <div
-              v-if="!hintDismissed"
-              class="series-nav-hint"
+          <div
+            v-if="!hintDismissed"
+            class="series-nav-hint"
+          >
+            <span class="series-nav-hint__text">but wait, there's more!</span>
+            <svg
+              class="hint-arrow"
+              viewBox="0 0 120 40"
+              aria-hidden="true"
             >
-              <span class="series-nav-hint__text">but wait, there's more!</span>
-              <svg
-                class="series-nav-hint__arrow"
-                viewBox="0 0 120 40"
-                aria-hidden="true"
+              <path d="M8 20 C38 20, 68 20, 92 20" />
+              <g
+                class="series-nav-hint__arrow-head"
+                transform="translate(92 20) rotate(180)"
               >
-                <path d="M8 20 C38 20, 68 20, 92 20" />
-                <g
-                  class="series-nav-hint__arrow-head"
-                  transform="translate(92 20) rotate(180)"
-                >
-                  <path d="M0 0 L8 -4" />
-                  <path d="M0 0 L8 4" />
-                </g>
-              </svg>
-            </div>
-            <div class="series-nav-buttons">
-              <button
-                class="carousel-nav-btn carousel-nav-btn--lg"
-                type="button"
-                @click="move(-1)"
-                aria-label="Show previous series"
-              >
-                ‹
-              </button>
-              <button
-                class="carousel-nav-btn carousel-nav-btn--lg"
-                type="button"
-                @click="move(1)"
-                aria-label="Show next series"
-              >
-                ›
-              </button>
-            </div>
+                <path d="M0 0 L8 -4" />
+                <path d="M0 0 L8 4" />
+              </g>
+            </svg>
           </div>
+          <button
+            class="carousel-nav-btn"
+            type="button"
+            @click="move(-1)"
+            aria-label="Show previous series"
+          >
+            ‹
+          </button>
+          <button
+            class="carousel-nav-btn"
+            type="button"
+            @click="move(1)"
+            aria-label="Show next series"
+          >
+            ›
+          </button>
         </div>
       </div>
       <div class="section-summary">
@@ -173,22 +169,11 @@ watch(
 }
 
 .series-nav-controls {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.4rem;
-}
-
-.series-nav-row {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-}
-
-.series-nav-buttons {
-  display: inline-flex;
-  gap: 0.8rem;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .series-nav-hint {
@@ -201,23 +186,6 @@ watch(
   gap: 0.6rem;
   transform: rotate(-2deg);
   filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
-}
-
-.series-nav-hint__arrow {
-  width: 7rem;
-  height: 3.8rem;
-}
-
-.series-nav-hint__arrow path {
-  stroke: currentColor;
-  stroke-width: 2.5;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.series-nav-hint__arrow path:last-child {
-  stroke-width: 2;
 }
 
 .carousel {

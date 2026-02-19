@@ -1,6 +1,6 @@
 <template>
   <article
-    class="sketch-card"
+    class="sketch-card card-shell"
   >
     <a
       class="sketch-card__link"
@@ -64,11 +64,10 @@ const targetUrl = computed(() => {
 
 <style scoped>
 .sketch-card {
+  --card-border-radius: 1.2rem;
   break-inside: avoid;
   margin: 0 0 1.5rem;
-  border-radius: 1.2rem;
   display: block;
-  font-family: "Source Sans Pro", var(--default-font), sans-serif;
 }
 
 .sketch-card--wide {

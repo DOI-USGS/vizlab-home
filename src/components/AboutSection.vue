@@ -374,7 +374,7 @@ function drawGraph() {
   margin-top: 2rem;
 }
 
-@media (min-width: 960px) {
+@media (--bp-md-up) {
   .about-copy {
     max-width: 70%;
   }

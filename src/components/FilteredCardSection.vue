@@ -31,7 +31,7 @@
         class="section-controls section-controls--wrap"
       >
         <button
-          class="pill-button tag-chip"
+          class="pill-button pill-button--tag"
           :class="{ 'pill-button--active': !selectedTag }"
           type="button"
           @click="selectTag(null)"
@@ -41,7 +41,7 @@
         <button
           v-for="tag in availableTags"
           :key="tag"
-          class="pill-button tag-chip"
+          class="pill-button pill-button--tag"
           :class="{ 'pill-button--active': selectedTag === tag }"
           type="button"
           @click="selectTag(tag)"
@@ -119,37 +119,18 @@ const selectTag = (tag) => {
 </script>
 
 <style scoped>
-.tag-chip {
-  background: rgba(10, 77, 104, 0.18);
-  border-color: rgba(10, 77, 104, 0.45);
-  color: rgba(10, 77, 104, 0.85);
-}
-
-.tag-chip:hover,
-.tag-chip:focus-visible {
-  border-color: rgba(10, 77, 104, 0.75);
-  color: rgba(10, 77, 104, 1);
-}
-
-.tag-chip.pill-button--active,
-.tag-chip.pill-button.active {
-  background: #0a4d68;
-  border-color: #0a4d68;
-  color: #fff;
-}
-
 .sketch-grid {
   column-count: 4;
   column-gap: 1.5rem;
 }
 
-@media (max-width: 960px) {
+@media (--bp-md) {
   .sketch-grid {
     column-count: 2;
   }
 }
 
-@media (max-width: 640px) {
+@media (--bp-xs) {
   .sketch-grid {
     column-count: 1;
   }
