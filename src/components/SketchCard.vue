@@ -8,22 +8,12 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div class="sketch-card__thumb-wrapper">
-        <img
-          class="sketch-card__thumb"
-          :src="resolvedThumbnail"
-          :alt="altText"
-          loading="lazy"
-          @load="handleThumbLoad"
-          @error="handleThumbError"
-        >
-        <span
-          v-if="thumbError"
-          class="sketch-card__thumb-fallback"
-        >
-          Image unavailable
-        </span>
-      </div>
+      <img
+        class="sketch-card__thumb"
+        :src="thumbnailSrc"
+        :alt="altText"
+        loading="lazy"
+      >
       <div class="sketch-card__overlay">
         <p class="sketch-card__title">
           {{ card.title }}
@@ -36,7 +26,6 @@
 <script setup>
 import { computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
-import { useImageLoader } from "@/composables/useImageLoader.js"
 
 const props = defineProps({
   card: {
@@ -52,17 +41,9 @@ const props = defineProps({
 
 const assetStore = useAssetPathStore()
 
-const thumbnailSrc = computed(() => assetStore.buildThumbUrl(props.card.image.thumbnail))
-
-const {
-  imageSrc: resolvedThumbnail,
-  isLoaded: thumbLoaded,
-  hasError: thumbError,
-  handleLoad: handleThumbLoad,
-  handleError: handleThumbError
-} = useImageLoader(thumbnailSrc, {
-  maxRetries: 2,
-  retryDelay: 1200
+const thumbnailSrc = computed(() => {
+  const src = props.card.image.thumbnail 
+  return assetStore.buildThumbUrl(src)
 })
 
 const altText = computed(() => props.card?.image?.alt || props.card.title)
@@ -101,32 +82,10 @@ const targetUrl = computed(() => {
   background: var(--light-grey);
 }
 
-.sketch-card__thumb-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: var(--light-grey);
-}
-
 .sketch-card__thumb {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
-}
-
-.sketch-card__thumb-fallback {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: var(--black-400);
-  padding: 1rem;
-  text-align: center;
 }
 
 .sketch-card__title {

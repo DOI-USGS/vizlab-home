@@ -12,18 +12,10 @@
           aria-hidden="true"
         >
           <img
-            :src="resolvedThumbnail"
+            :src="thumbnailSrc"
             :alt="imageAlt"
             loading="lazy"
-            @load="handleThumbLoad"
-            @error="handleThumbError"
           >
-          <span
-            v-if="thumbError"
-            class="card-image__fallback"
-          >
-            Image unavailable
-          </span>
         </div>
 
         <div class="card-content">
@@ -53,9 +45,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
-import { useImageLoader } from "@/composables/useImageLoader.js"
 
 const props = defineProps({
   item: {
@@ -80,17 +70,8 @@ const codeHref = props.item.links?.code
 const releaseDate = props.item.released
 const showReleaseDate = props.showReleaseDate
 
-const thumbnailSrc = computed(() => assetStore.buildThumbUrl(props.item.image.thumbnail))
-const {
-  imageSrc: resolvedThumbnail,
-  isLoaded: thumbLoaded,
-  hasError: thumbError,
-  handleLoad: handleThumbLoad,
-  handleError: handleThumbError
-} = useImageLoader(thumbnailSrc, {
-  maxRetries: 2,
-  retryDelay: 1200
-})
+const thumbnail = props.item.image.thumbnail
+const thumbnailSrc = assetStore.buildThumbUrl(thumbnail)
 const imageAlt = props.item.image.alt || title
 
 const imagePadding = `${props.imageRatio}%`
@@ -149,19 +130,6 @@ const imagePadding = `${props.imageRatio}%`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-}
-
-.card-image__fallback {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  text-align: center;
-  color: var(--black-400);
-  padding: 1rem;
 }
 
 .card-content {
