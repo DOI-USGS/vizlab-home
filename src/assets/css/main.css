@@ -11,7 +11,7 @@
 /* css styles specific to page content exclusive of header and footer*/
 /* NOT component-specific */
 #visualization-container {
-  margin: 5rem 0 5rem 0;
+  margin: 0 0 5rem 0;
 }
 .title {
   font-family: sans-serif; /* This is fallback font for old browsers */

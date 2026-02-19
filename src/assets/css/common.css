@@ -28,9 +28,10 @@ footer, #navbar {
 .tmp-container a {
 	text-decoration: none;
     background: transparent;
+    cursor: pointer;
 }
 .tmp-container a:-webkit-any-link {
-    cursor: auto;
+    cursor: pointer;
 }
 .tmp-container:before, .tmp-container:after {
     content: " ";
