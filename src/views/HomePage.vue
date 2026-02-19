@@ -15,10 +15,14 @@
         <SketchesSection
           id="sketches"
           :items="sketches"
+          title="Illustrations & Infographics"
+          asset-source="illustration"
         />
         <SnapshotSection
           id="snapshots"
           :items="snapshots"
+          title="Charts & Maps"
+          asset-source="chart"
         />
         <BlogSection
           id="blogs"
@@ -42,8 +46,8 @@ import SeriesSection from "@/components/SeriesSection.vue"
 
 // lazy load of later sections
 const VizSection = defineAsyncComponent(() => import("@/components/VizSection.vue"))
-const SketchesSection = defineAsyncComponent(() => import("@/components/SketchesSection.vue"))
-const SnapshotSection = defineAsyncComponent(() => import("@/components/SnapshotSection.vue"))
+const SketchesSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
+const SnapshotSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
 const BlogSection = defineAsyncComponent(() => import("@/components/BlogSection.vue"))
 const AboutSection = defineAsyncComponent(() => import("@/components/AboutSection.vue"))
 
