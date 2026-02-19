@@ -68,6 +68,7 @@ const targetUrl = computed(() => {
   margin: 0 0 1.5rem;
   border-radius: 1.2rem;
   display: block;
+  font-family: "Source Sans Pro", var(--default-font), sans-serif;
 }
 
 .sketch-card--wide {
