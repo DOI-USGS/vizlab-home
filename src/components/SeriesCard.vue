@@ -249,6 +249,7 @@ const hasHistory = historyEntries.length > 0
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 100%;
 }
 
 .series-card__header {
@@ -348,6 +349,7 @@ const hasHistory = historyEntries.length > 0
   flex-direction: column;
   gap: 0.8rem;
   position: relative;
+  flex: 1 1 auto;
 }
 
 .series-card__meta {
@@ -366,6 +368,7 @@ const hasHistory = historyEntries.length > 0
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  margin-top: auto;
 }
 
 .series-card__actions .pill-button {
