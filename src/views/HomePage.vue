@@ -87,7 +87,7 @@ const team = teamData
   padding-top: clamp(1rem, 2vw, 2rem);
 }
 
-@media (max-width: 960px) {
+@media (--bp-md) {
   .visualization-layout {
     grid-template-columns: 1fr;
     padding: 0;
