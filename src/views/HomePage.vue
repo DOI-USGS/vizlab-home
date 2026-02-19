@@ -12,17 +12,17 @@
           id="stories"
           :items="websites"
         />
-        <SketchesSection
+        <FilteredCardSection
           id="sketches"
-          :items="sketches"
           title="Illustrations & Infographics"
           asset-source="illustration"
+          :items="sketches"
         />
-        <SnapshotSection
+        <FilteredCardSection
           id="snapshots"
-          :items="snapshots"
           title="Charts & Maps"
           asset-source="chart"
+          :items="snapshots"
         />
         <BlogSection
           id="blogs"
@@ -46,12 +46,13 @@ import SeriesSection from "@/components/SeriesSection.vue"
 
 // lazy load of later sections
 const VizSection = defineAsyncComponent(() => import("@/components/VizSection.vue"))
-const SketchesSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
-const SnapshotSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
+const FilteredCardSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
 const BlogSection = defineAsyncComponent(() => import("@/components/BlogSection.vue"))
 const AboutSection = defineAsyncComponent(() => import("@/components/AboutSection.vue"))
 
 import { useDateStore } from "@/stores/DateStore.js"
+
+// read in portofolio items for each section
 import viz from "@/assets/content/viz-list.json"
 import seriesData from "@/assets/content/series-list.json"
 import sketchesData from "@/assets/content/sketches.json"
