@@ -18,7 +18,7 @@
 /* semantic color variables for this project */
 /* Define colors */
 :root {
-  --white: #ffffff;
+  --white-bright: #ffffff;
   --white-soft: #F0F0F0;
 
   --black-soft: #1b1b1b;
@@ -53,30 +53,28 @@
   --color-bar-focal: var(--medium-blue);
   --color-bar-default: var(--medium-grey);
   --color-map-focal: var(--medium-orange);
-  --color-map-default: var(--white);
+  --color-map-default: var(--white-bright);
   --color-USGS-header-footer: var(--usgs-blue);
   --color-border: rgba(0, 0, 0, 0.1);
   --color-muted-text: rgba(0, 0, 0, 0.7);
   --color-accent: #ff9505;
-  --pill-text-color: rgba(255, 255, 255, 0.92);
-  --pill-border-color: rgba(255, 255, 255, 0.35);
+  --pill-text-color: var(--hero-text-primary);
+  --pill-border-color: color-mix(in srgb, var(--hero-text-primary) 35%, transparent);
   --pill-bg-color: rgba(2, 8, 17, 0.35);
-  --pill-hover-bg-color: rgba(255, 255, 255, 0.22);
-  --pill-hover-border-color: rgba(255, 255, 255, 0.65);
-  --hero-text-color: #f8f9fb;
-  --hero-text-strong: rgba(255, 255, 255, 0.9);
-  --hero-text-muted: rgba(255, 255, 255, 0.78);
-  --hero-text-subtle: rgba(255, 255, 255, 0.85);
-  --hero-nav-link-color: rgba(255, 255, 255, 0.65);
-  --hero-divider-color: rgba(255, 255, 255, 0.25);
+  --pill-hover-bg-color: color-mix(in srgb, var(--white-bright) 22%, transparent);
+  --pill-hover-border-color: color-mix(in srgb, var(--white-bright) 65%, transparent);
+  --hero-text-primary: var(--white-bright);
+  --hero-text-muted: color-mix(in srgb, var(--white-bright) 78%, transparent);
+  --hero-nav-link-color: var(--hero-text-muted);
+  --hero-divider-color: color-mix(in srgb, var(--hero-text-primary) 25%, transparent);
   --hero-letter-spacing-wide: 0.3em;
   --hero-letter-spacing-tight: -0.025em;
   --hero-external-letter-spacing: 0.05em;
   --hero-glow-primary: rgba(0, 193, 212, 0.35);
-  --hero-glow-secondary: color-mix(in srgb, var(--color-accent, #ff9505) 70%, transparent);
-  --hero-gradient-start: #040b1a;
-  --hero-gradient-mid: #082b45;
-  --hero-gradient-end: #008ead;
+  --hero-glow-secondary: rgba(58, 234, 158, 0.28);
+  --hero-gradient-start: rgba(4, 11, 26, 0.98);
+  --hero-gradient-mid: rgba(8, 43, 69, 0.95);
+  --hero-gradient-end: rgba(0, 142, 173, 0.8);
 }
 
 :root[data-theme="dark"] {
@@ -97,25 +95,23 @@
   --color-border: rgba(255, 255, 255, 0.2);
   --color-muted-text: rgba(255, 255, 255, 0.75);
   --color-accent: #ff9505;
-  --pill-text-color: rgba(255, 255, 255, 0.92);
-  --pill-border-color: rgba(255, 255, 255, 0.35);
+  --pill-text-color: var(--hero-text-primary);
+  --pill-border-color: color-mix(in srgb, var(--hero-text-primary) 35%, transparent);
   --pill-bg-color: rgba(2, 8, 17, 0.35);
-  --pill-hover-bg-color: rgba(255, 255, 255, 0.22);
-  --pill-hover-border-color: rgba(255, 255, 255, 0.65);
-  --hero-text-color: #f8f9fb;
-  --hero-text-strong: rgba(255, 255, 255, 0.9);
-  --hero-text-muted: rgba(255, 255, 255, 0.78);
-  --hero-text-subtle: rgba(255, 255, 255, 0.85);
-  --hero-nav-link-color: rgba(255, 255, 255, 0.65);
-  --hero-divider-color: rgba(255, 255, 255, 0.25);
+  --pill-hover-bg-color: color-mix(in srgb, var(--white-bright) 22%, transparent);
+  --pill-hover-border-color: color-mix(in srgb, var(--white-bright) 65%, transparent);
+  --hero-text-primary: var(--white-bright);
+  --hero-text-muted: color-mix(in srgb, var(--white-bright) 78%, transparent);
+  --hero-nav-link-color: var(--hero-text-muted);
+  --hero-divider-color: color-mix(in srgb, var(--hero-text-primary) 25%, transparent);
   --hero-letter-spacing-wide: 0.3em;
   --hero-letter-spacing-tight: -0.025em;
   --hero-external-letter-spacing: 0.05em;
   --hero-glow-primary: rgba(0, 193, 212, 0.35);
-  --hero-glow-secondary: color-mix(in srgb, var(--color-accent, #ff9505) 70%, transparent);
-  --hero-gradient-start: #040b1a;
-  --hero-gradient-mid: #082b45;
-  --hero-gradient-end: #008ead;
+  --hero-glow-secondary: rgba(255, 149, 5, 0.35);
+  --hero-gradient-start: rgba(4, 11, 26, 0.98);
+  --hero-gradient-mid: rgba(8, 43, 69, 0.95);
+  --hero-gradient-end: rgba(0, 142, 173, 0.8);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -381,10 +377,10 @@ p, text, li {
 
 .pill-button--outline {
   --pill-bg: transparent;
-  --pill-border: currentColor;
-  --pill-text: currentColor;
-  --pill-hover-bg: currentColor;
-  --pill-hover-border: currentColor;
+  --pill-border: var(--color-link);
+  --pill-text: var(--color-link);
+  --pill-hover-bg: var(--color-link);
+  --pill-hover-border: var(--color-link);
   --pill-hover-text: #fff;
   backdrop-filter: none;
 }

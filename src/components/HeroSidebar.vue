@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
   position: sticky;
   top: clamp(1.5rem, 4vw, 4rem);
   height: calc(100vh - clamp(1.5rem, 4vw, 8rem));
-  color: var(--hero-text-color, #f8f9fb);
+  color: var(--hero-text-primary, #f8f9fb);
   border-radius: 2.4rem;
   padding: clamp(1.8rem, 3vw, 3rem);
   padding-bottom: clamp(2.6rem, 4vw, 4.2rem);
@@ -213,9 +213,9 @@ onBeforeUnmount(() => {
   justify-content: space-between;
   gap: 2rem;
   box-shadow: 0 25px 80px rgba(2, 8, 17, 0.45);
-  background: radial-gradient(circle at 15% 20%, rgba(0, 193, 212, 0.35), transparent 45%),
-    radial-gradient(circle at 60% 10%, rgba(255, 149, 5, 0.35), transparent 42%),
-    linear-gradient(140deg, rgba(4, 11, 26, 0.98), rgba(8, 43, 69, 0.95), rgba(0, 142, 173, 0.8));
+  background: radial-gradient(circle at 15% 20%, var(--hero-glow-primary), transparent 45%),
+    radial-gradient(circle at 60% 10%, var(--hero-glow-secondary), transparent 42%),
+    linear-gradient(140deg, var(--hero-gradient-start), var(--hero-gradient-mid), var(--hero-gradient-end));
 }
 
 .hero-panel__content {
@@ -248,13 +248,13 @@ onBeforeUnmount(() => {
 .hero-panel__title-light {
   display: block;
   font-weight: 200;
-  color: var(--hero-text-subtle, rgba(255, 255, 255, 0.85));
+  color: var(--hero-text-muted, rgba(255, 255, 255, 0.78));
 }
 
 .hero-panel__intro {
   font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.6;
-  color: var(--hero-text-strong, rgba(255, 255, 255, 0.9));
+  color: var(--hero-text-primary, #f8f9fb);
   margin: 0 0 0.5rem;
 }
 
