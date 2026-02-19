@@ -97,10 +97,11 @@ const imagePadding = `${props.imageRatio}%`
   gap: 0.8rem;
   text-decoration: none;
   color: inherit;
+  font-family: "Source Sans Pro", var(--default-font), sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0.8rem;
   overflow: hidden;
-  background: var(--color-background, #fff);
+  background: var(--color-surface, #fff);
   transition:
     transform 200ms ease,
     box-shadow 200ms ease;
