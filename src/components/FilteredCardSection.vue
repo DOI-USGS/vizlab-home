@@ -3,7 +3,7 @@
     :id="computedSectionId"
     class="content-section"
   >
-    <div class="section-header section-header--with-controls section-header--filters">
+    <div class="section-header section-header--with-controls">
       <div>
         <div class="section-title-row">
           <h2
@@ -28,7 +28,7 @@
 
       <div
         v-if="availableTags.length"
-        class="tag-filter"
+        class="section-controls section-controls--wrap"
       >
         <button
           class="pill-button tag-chip"
@@ -119,6 +119,25 @@ const selectTag = (tag) => {
 </script>
 
 <style scoped>
+.tag-chip {
+  background: rgba(10, 77, 104, 0.18);
+  border-color: rgba(10, 77, 104, 0.45);
+  color: rgba(10, 77, 104, 0.85);
+}
+
+.tag-chip:hover,
+.tag-chip:focus-visible {
+  border-color: rgba(10, 77, 104, 0.75);
+  color: rgba(10, 77, 104, 1);
+}
+
+.tag-chip.pill-button--active,
+.tag-chip.pill-button.active {
+  background: #0a4d68;
+  border-color: #0a4d68;
+  color: #fff;
+}
+
 .sketch-grid {
   column-count: 4;
   column-gap: 1.5rem;

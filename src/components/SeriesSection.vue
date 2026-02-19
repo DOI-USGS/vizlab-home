@@ -255,11 +255,6 @@ watch(
   .series-section {
     overflow: hidden;
   }
-  .series-header {
-    margin-bottom: 0px;
-    padding-right: 0;
-    flex-direction: column;
-  }
 
   .series-nav-hint {
     display: none;

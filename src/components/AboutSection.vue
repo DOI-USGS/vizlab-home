@@ -117,6 +117,7 @@ function resizeAndDraw() {
   drawGraph();
 }
 
+// make the bubble viz
 function drawGraph() {
 
     if (!nodes.value.length) {

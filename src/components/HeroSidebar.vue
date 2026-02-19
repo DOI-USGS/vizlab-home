@@ -57,6 +57,19 @@
               Water Data for the Nation
             </a>
           </li>
+           <li
+            v-if="item.id === 'team'"
+            class="hero-panel__nav-external"
+          >
+            <a
+              class="hero-panel__external-link"
+              href="https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Computational Tools
+            </a>
+          </li>
         </template>
       </ul>
     </nav>
@@ -78,15 +91,11 @@ const props = defineProps({
   introText: {
     type: String,
     default: "We make visualizations for open and reproducible water science. Explore our portfolio of work:"
-  },
-  scrollTarget: {
-    type: String,
-    default: "#series"
   }
 })
 
 const navItems = [
-  { id: "series", label: "Animated Series" },
+  { id: "series", label: "Series" },
   { id: "stories", label: "Interactive Stories" },
   { id: "sketches", label: "Illustrations & Infographics" },
   { id: "snapshots", label: "Charts & Maps" },
@@ -111,18 +120,7 @@ let observer
 
 const SCROLL_OFFSET = 32
 
-const scrollToContent = () => {
-  const defaultTarget = document.querySelector(props.scrollTarget)
-  if (defaultTarget) {
-    window.scrollTo({
-      top: defaultTarget.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET,
-      behavior: "smooth"
-    })
-    return
-  }
-  scrollTo(navItems[0].id)
-}
-
+// set up srolling navigation
 const scrollTo = (id) => {
   const target = document.getElementById(id)
   if (!target) return
@@ -132,6 +130,7 @@ const scrollTo = (id) => {
   })
 }
 
+// observe scrolling distance on the page
 const setupObserver = () => {
   observer?.disconnect()
   if (typeof window === "undefined") return
@@ -148,6 +147,7 @@ const setupObserver = () => {
   })
 }
 
+// use scrolling distance to know which section is active
 const updateActiveSectionByScrollPosition = () => {
   if (typeof window === "undefined") return
 
@@ -225,10 +225,10 @@ onBeforeUnmount(() => {
 }
 
 .hero-panel__eyebrow {
-  letter-spacing: 0.3em;
+  letter-spacing: var(--hero-letter-spacing-wide, 0.3em);
   text-transform: uppercase;
   font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--hero-text-muted, rgba(255, 255, 255, 0.78));
   font-weight: 600;
 }
 
@@ -236,9 +236,8 @@ onBeforeUnmount(() => {
   font-size: clamp(8.6rem, 6vw, 6rem);
   line-height: 1.05;
   margin: 0;
-  font-family: var(--title-font, "Source Sans 3"), "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--hero-letter-spacing-tight, -0.025em);
 }
 
 .hero-panel__title-strong {
@@ -249,13 +248,13 @@ onBeforeUnmount(() => {
 .hero-panel__title-light {
   display: block;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--hero-text-subtle, rgba(255, 255, 255, 0.85));
 }
 
 .hero-panel__intro {
   font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--hero-text-strong, rgba(255, 255, 255, 0.9));
   margin: 0 0 0.5rem;
 }
 
@@ -295,7 +294,7 @@ onBeforeUnmount(() => {
   content: "";
   display: block;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid var(--hero-divider-color, rgba(255, 255, 255, 0.25));
   margin-bottom: 1rem;
 }
 
@@ -308,9 +307,9 @@ onBeforeUnmount(() => {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--hero-text-subtle, rgba(255, 255, 255, 0.85));
   text-transform: none;
-  letter-spacing: 0.05em;
+  letter-spacing: var(--hero-external-letter-spacing, 0.05em);
   font-size: clamp(1rem, 1.4vw, 1.3rem);
   font-weight: 500;
   text-decoration: none;
@@ -338,9 +337,9 @@ onBeforeUnmount(() => {
   border: none;
   padding: 0.35rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--hero-letter-spacing-wide, 0.3em);
   font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--hero-nav-link-color, rgba(255, 255, 255, 0.65));
   transition:
     color 0.2s ease,
     transform 0.15s ease;
