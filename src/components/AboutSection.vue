@@ -1,7 +1,7 @@
 <template>
   <section
     :id="sectionId"
-    class="about-section"
+    class="about-section content-section"
   >
     <div class="section-header">
       <div class="section-title-row">
@@ -357,19 +357,16 @@ function drawGraph() {
 </script>
 
 <style lang="scss" scoped>
-.about-section {
-  padding: 4rem 2rem 5rem;
-  margin: 0 auto;
-  max-width: 1200px;
-}
 
 .about-copy {
-  max-width: 65ch;
+  max-width: 80ch;
   margin-bottom: 2rem;
 }
 
 .about-copy p {
   padding-bottom: 0.8rem;
+  word-break: keep-all;
+  hyphens: none;
 }
 
 .about-figure {
@@ -378,7 +375,7 @@ function drawGraph() {
 
 @media (min-width: 960px) {
   .about-copy {
-    max-width: 50%;
+    max-width: 70%;
   }
 }
 
