@@ -26,6 +26,12 @@ const router = createRouter({
     { 
       path: '/:pathMatch(.*)*', 
       redirect: { name: "Error404" }
+    },
+    {
+      path: "/collections/:sectionId",
+      name: "SectionDetail",
+      component: () => import("@/views/SectionDetailPage.vue"),
+      props: true
     }
   ]
 })
