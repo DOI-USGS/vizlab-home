@@ -1,25 +1,28 @@
 <template>
   <section
-    :id="sectionId"
-    class="sketches-section"
+    :id="computedSectionId"
+    class="content-section"
   >
-    <div class="section-header">
+    <div class="section-header section-header--with-controls section-header--filters">
       <div>
         <div class="section-title-row">
           <h2
             :id="titleId"
-            :data-section-anchor="sectionId"
+            :data-section-anchor="computedSectionId"
           >
             <a
               class="section-title-link"
               :href="`#${titleId}`"
             >
-              sketches
+              {{ titleText }}
             </a>
           </h2>
         </div>
-        <p class="section-summary">
-          Illustrations, diagrams, and infographics.
+        <p
+          v-if="summary"
+          class="section-summary"
+        >
+          {{ summary }}
         </p>
       </div>
 
@@ -56,7 +59,7 @@
         v-for="item in filteredCards"
         :key="item.id"
         :card="item"
-        asset-source="illustration"
+        :asset-source="assetSource"
       />
     </div>
   </section>
@@ -67,30 +70,42 @@ import { computed, ref } from "vue"
 import SketchCard from "@/components/SketchCard.vue"
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: ""
+  },
+  title: {
+    type: String,
+    default: ""
+  },
+  summary: {
+    type: String,
+    default: ""
+  },
   items: {
     type: Array,
     default: () => []
   },
-  id: {
+  assetSource: {
     type: String,
-    default: ""
+    default: "illustration"
   }
 })
 
-const sectionId = computed(() => props.id || "sketches")
-const titleId = computed(() => `${sectionId.value}`)
+const computedSectionId = computed(() => props.id || "sketches")
+const titleId = computed(() => `${computedSectionId.value}`)
+const titleText = computed(() => props.title || "")
+const summary = computed(() => props.summary)
 
-const cards = computed(() => (props.items || []).filter((item) => !item.archive))
-
-// filtering the cards using button tags
+const cards = computed(() => (props.items || []).filter((item) => !item?.archive))
 const selectedTag = ref(null)
 
 const availableTags = computed(() => {
-  const allTags = new Set()
+  const tags = new Set()
   cards.value.forEach((item) => {
-    item.tags?.forEach((tag) => allTags.add(tag))
+    item.tags?.forEach((tag) => tags.add(tag))
   })
-  return Array.from(allTags).sort()
+  return Array.from(tags).sort()
 })
 
 const filteredCards = computed(() => {
@@ -104,43 +119,14 @@ const selectTag = (tag) => {
 </script>
 
 <style scoped>
-.sketches-section {
-  padding: 4rem 2rem 5rem;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-.section-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
 .sketch-grid {
   column-count: 4;
   column-gap: 1.5rem;
 }
 
-.tag-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: flex-end;
-}
-
 @media (max-width: 960px) {
   .sketch-grid {
     column-count: 2;
-  }
-
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .tag-filter {
-    justify-content: flex-start;
   }
 }
 
