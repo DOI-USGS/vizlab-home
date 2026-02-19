@@ -247,10 +247,11 @@ const hasHistory = historyEntries.length > 0
   border: 1px solid var(--light-grey);
   border-radius: 1.2rem;
   overflow: visible;
-  background: #fff;
+  background: var(--color-surface, #fff);
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: "Source Sans Pro", var(--default-font), sans-serif;
 }
 
 .series-card__header {
@@ -278,7 +279,8 @@ const hasHistory = historyEntries.length > 0
 }
 
 .series-card__code-button:hover,
-.series-card__code-button:focus-visible {
+.series-card__code-button:focus-visible,
+.series-card__code-button:active {
   color: var(--color-link);
 }
 
@@ -297,6 +299,7 @@ const hasHistory = historyEntries.length > 0
   color: var(--black-soft);
   margin: 0;
   line-height: 1;
+  font-weight: 700;
 }
 
 .series-card__badges {
