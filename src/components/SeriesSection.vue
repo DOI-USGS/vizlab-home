@@ -14,48 +14,50 @@
               class="section-title-link"
               :href="`#${titleId}`"
             >
-              Animated Series
+              Series
             </a>
           </h2>
         </div>
         <div class="section-controls series-nav-controls">
-          <div class="series-nav-buttons">
-            <button
-              class="carousel-nav-btn carousel-nav-btn--lg"
-              type="button"
-              @click="move(-1)"
-              aria-label="Show previous series"
+          <div class="series-nav-row">
+            <div
+              v-if="!hintDismissed"
+              class="series-nav-hint"
             >
-              ‹
-            </button>
-            <button
-              class="carousel-nav-btn carousel-nav-btn--lg"
-              type="button"
-              @click="move(1)"
-              aria-label="Show next series"
-            >
-              ›
-            </button>
-          </div>
-          <div
-            v-if="!hintDismissed"
-            class="series-nav-hint"
-          >
-            <svg
-              class="series-nav-hint__arrow"
-              viewBox="0 0 110 40"
-              aria-hidden="true"
-            >
-              <path d="M10 12 C46 32, 78 32, 98 18" />
-              <g
-                class="series-nav-hint__arrow-head"
-                transform="rotate(-36 97 16)"
+              <span class="series-nav-hint__text">but wait, there's more!</span>
+              <svg
+                class="series-nav-hint__arrow"
+                viewBox="0 0 120 40"
+                aria-hidden="true"
               >
-                <path d="M86 8 L97 16" />
-                <path d="M86 24 L97 16" />
-              </g>
-            </svg>
-            <span class="series-nav-hint__text">but wait, there's more!</span>
+                <path d="M8 20 C38 20, 68 20, 92 20" />
+                <g
+                  class="series-nav-hint__arrow-head"
+                  transform="translate(92 20) rotate(180)"
+                >
+                  <path d="M0 0 L8 -4" />
+                  <path d="M0 0 L8 4" />
+                </g>
+              </svg>
+            </div>
+            <div class="series-nav-buttons">
+              <button
+                class="carousel-nav-btn carousel-nav-btn--lg"
+                type="button"
+                @click="move(-1)"
+                aria-label="Show previous series"
+              >
+                ‹
+              </button>
+              <button
+                class="carousel-nav-btn carousel-nav-btn--lg"
+                type="button"
+                @click="move(1)"
+                aria-label="Show next series"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -171,27 +173,32 @@ watch(
 }
 
 .series-nav-controls {
-  gap: 0.4rem;
-  align-items: flex-end;
+  display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.series-nav-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .series-nav-buttons {
-  display: flex;
+  display: inline-flex;
   gap: 0.8rem;
   align-items: center;
 }
 
 .series-nav-hint {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  display: inline-flex;
+  align-items: center;
   color: var(--color-link, #0a4d68);
   font-family: 'Caveat', 'Faster One', 'Source Sans Pro', cursive;
   font-size: 1.8rem;
   letter-spacing: 0.04em;
-  margin-right: 0.2rem;
-  margin-top: 0.4rem;
+  gap: 0.6rem;
   transform: rotate(-2deg);
   filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
 }
@@ -199,8 +206,6 @@ watch(
 .series-nav-hint__arrow {
   width: 7rem;
   height: 3.8rem;
-  margin-top: 0.2rem;
-  transform: rotate(-48deg);
 }
 
 .series-nav-hint__arrow path {
@@ -250,7 +255,7 @@ watch(
   color: rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 700px) {
+@media (--bp-sm) {
 
   .series-section {
     overflow: hidden;
