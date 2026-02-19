@@ -1,0 +1,27 @@
+{
+  "sketches": {
+    "id": "sketches",
+    "title": "Illustrations & Infographics",
+    "summary": "Diagrams, comics, and explainers, oh my!"
+  },
+  "snapshots": {
+    "id": "snapshots",
+    "title": "Charts & Maps",
+    "summary": "Reproducible visualizations."
+  },
+  "stories": {
+    "id": "stories",
+    "title": "Interactive Stories",
+    "summary": "Told with USGS water data."
+  },
+  "series": {
+    "id": "series",
+    "title": "Animated Series",
+    "summary": "Recurring visualizations of current conditions and events."
+  },
+  "blogs": {
+    "id": "blogs",
+    "title": "Water Data Blog",
+    "summary": "Catch up on every Water Data Blog post."
+  }
+}
