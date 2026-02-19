@@ -1,8 +1,8 @@
 {
   "heading": "meet the team",
-  "paragraph1": "The Vizlab is a team of designers, data scientists, developers, and communicators working with water data.",
+  "paragraph1": "The USGS Vizlab is a team of designers, data scientists, and science communicators working with water data. Email us at gs-w_vizlab@usgs.gov",
   "ariaLabel": "Vizlab team members represented as circles connected in a force layout",
-  "ariaDesc": "Animated bubbles showing the Vizlab team clustered by focus area.",
+  "ariaDesc": "Animated bubbles showing the Vizlab team in a cluster.",
   "nodes": [
     {
       "id": "Althea",
