@@ -3,7 +3,7 @@
     <div class="visualization-layout">
       <HeroSidebar class="visualization-layout__sidebar" />
 
-      <main class="content visualization-layout__content">
+      <main class="visualization-layout__content">
         <SeriesSection
           id="series"
           :series="series"
@@ -11,16 +11,20 @@
         <VizSection
           id="stories"
           :items="websites"
+          :title="sectionsMeta.stories.title"
+          :summary="sectionsMeta.stories.summary"
         />
         <FilteredCardSection
           id="sketches"
-          title="Illustrations & Infographics"
+          :title="sectionsMeta.sketches.title"
+          :summary="sectionsMeta.sketches.summary"
           asset-source="illustration"
           :items="sketches"
         />
         <FilteredCardSection
           id="snapshots"
-          title="Charts & Maps"
+          :title="sectionsMeta.snapshots.title"
+          :summary="sectionsMeta.snapshots.summary"
           asset-source="chart"
           :items="snapshots"
         />
@@ -43,9 +47,9 @@ import { defineAsyncComponent } from "vue"
 // load sections at top of the page first
 import HeroSidebar from "@/components/HeroSidebar.vue"
 import SeriesSection from "@/components/SeriesSection.vue"
+import VizSection from "@/components/VizSection.vue"
 
 // lazy load of later sections
-const VizSection = defineAsyncComponent(() => import("@/components/VizSection.vue"))
 const FilteredCardSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
 const BlogSection = defineAsyncComponent(() => import("@/components/BlogSection.vue"))
 const AboutSection = defineAsyncComponent(() => import("@/components/AboutSection.vue"))
@@ -59,8 +63,10 @@ import sketchesData from "@/assets/content/sketches.json"
 import snapshotsData from "@/assets/content/snapshots.json"
 import blogsData from "@/assets/content/blogs.json"
 import teamData from "@/assets/content/team.json"
+import sectionMetadata from "@/assets/content/section-metadata.json"
 
 const dateStore = useDateStore();
+const sectionsMeta = sectionMetadata
 
 // define content for site sections and sort by release date, where appropriate
 const websites = viz.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
