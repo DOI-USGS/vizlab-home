@@ -23,5 +23,10 @@
     "id": "blogs",
     "title": "Water Data Blog",
     "summary": "Catch up on every Water Data Blog post."
+  },
+  "team": {
+    "id": "team",
+    "title": "Meet the Team",
+    "summary": "Connect with the VizLab designers, developers, and data scientists."
   }
 }

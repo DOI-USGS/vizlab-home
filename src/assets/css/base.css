@@ -12,8 +12,6 @@
 @custom-media --bp-xs (max-width: 640px);
 @custom-media --bp-600 (max-width: 600px);
 @custom-media --bp-600-up (min-width: 600px);
-@custom-media --bp-500 (max-width: 500px);
-@custom-media --bp-490 (only screen and (max-width: 490px));
 
 /* semantic color variables for this project */
 /* Define colors */
@@ -63,54 +61,12 @@
   --pill-bg-color: rgba(2, 8, 17, 0.35);
   --pill-hover-bg-color: color-mix(in srgb, var(--white-bright) 22%, transparent);
   --pill-hover-border-color: color-mix(in srgb, var(--white-bright) 65%, transparent);
-  --hero-text-primary: var(--white-bright);
-  --hero-text-muted: color-mix(in srgb, var(--white-bright) 78%, transparent);
-  --hero-nav-link-color: var(--hero-text-muted);
+
   --hero-divider-color: color-mix(in srgb, var(--hero-text-primary) 25%, transparent);
-  --hero-letter-spacing-wide: 0.3em;
-  --hero-letter-spacing-tight: -0.025em;
-  --hero-external-letter-spacing: 0.05em;
   --hero-glow-primary: rgba(0, 193, 212, 0.35);
   --hero-glow-secondary: rgba(58, 234, 158, 0.28);
-  --hero-gradient-start: rgba(4, 11, 26, 0.98);
-  --hero-gradient-mid: rgba(8, 43, 69, 0.95);
-  --hero-gradient-end: rgba(0, 142, 173, 0.8);
-}
-
-:root[data-theme="dark"] {
-  --color-background: var(--black-soft);
-  --color-surface: #1f1f1f;
-  --color-text: #f5f7fb;
-  --color-title-text: #fdfdfd;
-  --color-overlay: rgba(255, 255, 255, 0.85);
-  --color-overlay-text: #0f1117;
-  --color-code-links-background: var(--black-soft);
-  --color-link: var(--dodger-blue);
-  --color-bar-focal: var(--dodger-blue);
-  --color-bar-default: rgba(255, 255, 255, 0.5);
-  --color-map-focal: var(--medium-orange);
-  --color-map-default: var(--black-soft);
-  --light-grey: rgba(255, 255, 255, 0.14);
-  --medium-grey: #9ca3af;
-  --color-border: rgba(255, 255, 255, 0.2);
-  --color-muted-text: rgba(255, 255, 255, 0.75);
-  --color-accent: #ff9505;
-  --pill-text-color: var(--hero-text-primary);
-  --pill-border-color: color-mix(in srgb, var(--hero-text-primary) 35%, transparent);
-  --pill-bg-color: rgba(2, 8, 17, 0.35);
-  --pill-hover-bg-color: color-mix(in srgb, var(--white-bright) 22%, transparent);
-  --pill-hover-border-color: color-mix(in srgb, var(--white-bright) 65%, transparent);
-  --hero-text-primary: var(--white-bright);
-  --hero-text-muted: color-mix(in srgb, var(--white-bright) 78%, transparent);
-  --hero-nav-link-color: var(--hero-text-muted);
-  --hero-divider-color: color-mix(in srgb, var(--hero-text-primary) 25%, transparent);
-  --hero-letter-spacing-wide: 0.3em;
-  --hero-letter-spacing-tight: -0.025em;
-  --hero-external-letter-spacing: 0.05em;
-  --hero-glow-primary: rgba(0, 193, 212, 0.35);
-  --hero-glow-secondary: rgba(255, 149, 5, 0.35);
-  --hero-gradient-start: rgba(4, 11, 26, 0.98);
-  --hero-gradient-mid: rgba(8, 43, 69, 0.95);
+  --hero-gradient-start: var(--usgs-blue);
+  --hero-gradient-mid: var(--usgs-blue);
   --hero-gradient-end: rgba(0, 142, 173, 0.8);
 }
 
@@ -133,7 +89,7 @@
   font-family: 'Univers Condensed', var(--title-font), sans-serif;
 }
 
-.title-strong { font-weight: 700; }
+.title-strong { font-weight: 800; }
 .title-light  { font-weight: 300; }
 
 body {
@@ -174,7 +130,6 @@ html {
 
 .section-header h2 {
   font-size: clamp(2.8rem, 4vw, 4rem);
-  text-transform: uppercase;
 }
 
 .section-header {
@@ -291,14 +246,6 @@ html {
   stroke-width: 2;
 }
 
-.section-title {
-  font-size: clamp(2.8rem, 4vw, 4rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-}
-
 .section-summary {
   font-size: 1.8rem;
   color: var(--color-muted-text);
@@ -334,12 +281,9 @@ p, text, li {
   --pill-hover-bg: var(--pill-hover-bg-color);
   --pill-hover-border: var(--pill-hover-border-color);
   --pill-hover-text: #fff;
-  --pill-letter-spacing-value: var(--pill-letter-spacing, 0.14em);
   --pill-font-size-value: var(--pill-font-size, 1.2rem);
   --pill-padding-value: var(--pill-padding, 0.55rem 1.65rem);
   --pill-radius-value: var(--pill-radius, 999px);
-  text-transform: uppercase;
-  letter-spacing: var(--pill-letter-spacing-value);
   font-size: var(--pill-font-size-value);
   padding: var(--pill-padding-value);
   cursor: pointer;
@@ -383,15 +327,6 @@ p, text, li {
   --pill-hover-border: var(--color-link);
   --pill-hover-text: #fff;
   backdrop-filter: none;
-}
-
-.pill-button--accent {
-  --pill-bg: var(--color-link);
-  --pill-border: var(--color-link);
-  --pill-text: #fff;
-  --pill-hover-bg: var(--color-link);
-  --pill-hover-border: var(--color-link);
-  --pill-hover-text: #fff;
 }
 
 .pill-button--tag {
