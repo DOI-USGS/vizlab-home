@@ -4,7 +4,7 @@
         class="pill-button pill-button--outline section-detail__back"
         :to="{ name: 'VisualizationContent' }"
       >
-        ← Back to portfolio
+        ← Back to Portfolio
     </RouterLink>
     <component
       v-if="currentSection"
@@ -114,4 +114,5 @@ function buildSeries(meta, series) {
 .section-detail__back {
   align-self: flex-start;
 }
+
 </style>

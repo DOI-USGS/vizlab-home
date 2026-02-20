@@ -6,6 +6,8 @@
       <main class="visualization-layout__content">
         <SeriesSection
           id="series"
+          :title="sectionsMeta.series.title"
+          :summary="sectionsMeta.series.summary"
           :series="series"
         />
         <VizSection
@@ -30,6 +32,8 @@
         />
         <BlogSection
           id="blogs"
+          :title="sectionsMeta.blogs.title"
+          :summary="sectionsMeta.blogs.summary"
           :items="blogs"
         />
         <AboutSection
