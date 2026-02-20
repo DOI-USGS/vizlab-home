@@ -95,11 +95,9 @@
       </div>
     </div>
 
-    <footer
-      v-if="hasHistory"
-      class="series-card__footer"
-    >
+    <footer class="series-card__footer">
       <button
+        v-if="hasHistory"
         class="history-toggle"
         type="button"
         :aria-expanded="expanded.toString()"
@@ -111,7 +109,7 @@
 
       <transition name="history-collapse">
         <div
-          v-if="expanded"
+          v-if="expanded && hasHistory"
           class="history-list"
         >
           <a
@@ -291,8 +289,6 @@ const hasHistory = historyEntries.length > 0
 
 .series-card__eyebrow {
   flex: 1 1 auto;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   font-size: 1.7rem;
   color: var(--black-soft);
   margin: 0;
@@ -313,18 +309,12 @@ const hasHistory = historyEntries.length > 0
   display: inline-flex;
   align-items: center;
   font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   border: 1px solid currentColor;
   border-radius: 999px;
   padding: 0.1rem 0.8rem;
   line-height: 1;
 }
 
-.series-card__title {
-  font-size: 2.4rem;
-  margin: 0;
-}
 
 .series-card__image {
   display: block;
@@ -372,7 +362,6 @@ const hasHistory = historyEntries.length > 0
 }
 
 .series-card__actions .pill-button {
-  --pill-letter-spacing: 0.02em;
   --pill-font-size: 1.3rem;
   --pill-padding: 0.4rem 1.2rem;
 }
@@ -380,6 +369,10 @@ const hasHistory = historyEntries.length > 0
 .series-card__footer {
   padding: 1.5rem;
   border-top: 1px solid var(--light-grey);
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .history-toggle {
@@ -392,8 +385,6 @@ const hasHistory = historyEntries.length > 0
   padding: 0.4rem 0;
   font-size: 1.4rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   cursor: pointer;
 }
 
@@ -413,10 +404,6 @@ const hasHistory = historyEntries.length > 0
   color: inherit;
 }
 
-.x-share {
-  cursor: pointer;
-}
-
 .history-collapse-enter-active,
 .history-collapse-leave-active {
   transition: all 200ms ease;
@@ -428,10 +415,6 @@ const hasHistory = historyEntries.length > 0
   transform: translateY(-0.4rem);
 }
 
-.x-icon {
-  width: 1.6rem;
-  height: 1.6rem;
-}
 
 .sr-only {
   position: absolute;

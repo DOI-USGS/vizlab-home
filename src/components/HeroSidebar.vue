@@ -11,13 +11,12 @@
       >
         <span class="hero-panel__title-strong">{{ heroTitleStrong }}</span>
         <span
-          v-if="heroTitleLight"
           class="hero-panel__title-light"
         >
           {{ heroTitleLight }}
         </span>
       </h1>
-      <p class="hero-panel__eyebrow">
+      <p class="hero-slogan">
         {{ eyebrowText }}
       </p>
       <p class="hero-panel__intro">
@@ -30,54 +29,52 @@
       aria-label="Section navigation"
     >
       <ul class="hero-panel__nav-list">
-        <template
+        <li
           v-for="item in navItems"
           :key="item.id"
         >
-          <li>
-            <button
-              class="hero-panel__nav-link"
-              :class="{ active: activeSection === item.id }"
-              type="button"
-              @click="scrollTo(item.id)"
-            >
-              {{ item.label }}
-            </button>
-          </li>
-          <li
-            v-if="item.id === 'team'"
-            class="hero-panel__nav-divider hero-panel__nav-external"
+          <button
+            class="hero-panel__nav-link"
+            :class="{ active: activeSection === item.id }"
+            type="button"
+            @click="scrollTo(item.id)"
           >
-            <a
-              class="hero-panel__external-link"
-              href="https://waterdata.usgs.gov"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Water Data for the Nation
-            </a>
-          </li>
-           <li
-            v-if="item.id === 'team'"
-            class="hero-panel__nav-external"
-          >
-            <a
-              class="hero-panel__external-link"
-              href="https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Computational Tools
-            </a>
-          </li>
-        </template>
+            {{ item.label }}
+          </button>
+        </li>
       </ul>
+      <div class="hero-panel__nav-external-group">
+        <div
+          class="hero-panel__nav-divider"
+          aria-hidden="true"
+        ></div>
+        <p class="hero-panel__nav-link hero-panel__external-heading">
+          Get USGS Water Data:
+        </p>
+        <a
+          class="hero-panel__nav-link hero-panel__external-link"
+          href="https://waterdata.usgs.gov"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Water Data for the Nation
+        </a>
+        <a
+          class="hero-panel__nav-link hero-panel__external-link"
+          href="https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Computational Tools
+        </a>
+      </div>
     </nav>
   </aside>
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, ref } from "vue"
+import { onBeforeUnmount, onMounted, ref } from "vue"
+import sectionMetadata from "@/assets/content/section-metadata.json"
 
 const props = defineProps({
   title: {
@@ -86,7 +83,7 @@ const props = defineProps({
   },
   eyebrow: {
     type: String,
-    default: "Data + Design Studio"
+    default: "data + design studio"
   },
   introText: {
     type: String,
@@ -94,26 +91,21 @@ const props = defineProps({
   }
 })
 
-const navItems = [
-  { id: "series", label: "Series" },
-  { id: "stories", label: "Interactive Stories" },
-  { id: "sketches", label: "Illustrations & Infographics" },
-  { id: "snapshots", label: "Charts & Maps" },
-  { id: "blogs", label: "Water Data Blog" },
-  { id: "team", label: "Meet the Team" }
-]
-
-const eyebrowText = computed(() => props.eyebrow)
-const heroTitleParts = computed(() => {
-  const [strong = props.title, ...rest] = (props.title || "").split(" ")
+const sectionOrder = ["series", "stories", "sketches", "snapshots", "blogs", "team"]
+const navItems = sectionOrder.map((sectionId) => {
+  const meta = sectionMetadata[sectionId]
   return {
-    strong,
-    light: rest.join(" ")
+    id: meta.id,
+    label: meta.title
   }
 })
-const heroTitleStrong = computed(() => heroTitleParts.value.strong)
-const heroTitleLight = computed(() => heroTitleParts.value.light)
-const introText = computed(() => props.introText)
+
+const eyebrowText = props.eyebrow
+const introText = props.introText
+const [heroTitleStrong, heroTitleLight] = (() => {
+  const [strong = props.title, ...rest] = (props.title || "").split(" ")
+  return [strong, rest.join(" ")]
+})()
 
 const activeSection = ref(navItems[0].id)
 let observer
@@ -204,13 +196,14 @@ onBeforeUnmount(() => {
   position: sticky;
   top: clamp(1.5rem, 4vw, 4rem);
   height: calc(100vh - clamp(1.5rem, 4vw, 8rem));
-  color: var(--hero-text-primary, #f8f9fb);
+  margin-top: clamp(1.5rem, 3vw, 3rem);
+  color: var(--white-bright);
   border-radius: 2.4rem;
   padding: clamp(1.8rem, 3vw, 3rem);
   padding-bottom: clamp(2.6rem, 4vw, 4.2rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 2rem;
   box-shadow: 0 25px 80px rgba(2, 8, 17, 0.45);
   background: radial-gradient(circle at 15% 20%, var(--hero-glow-primary), transparent 45%),
@@ -224,46 +217,29 @@ onBeforeUnmount(() => {
   gap: 1rem;
 }
 
-.hero-panel__eyebrow {
-  letter-spacing: var(--hero-letter-spacing-wide, 0.3em);
-  text-transform: uppercase;
-  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-  color: var(--hero-text-muted, rgba(255, 255, 255, 0.78));
-  font-weight: 600;
-}
-
 .hero-panel__title {
   font-size: clamp(8.6rem, 6vw, 6rem);
   line-height: 1.05;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: var(--hero-letter-spacing-tight, -0.025em);
 }
 
 .hero-panel__title-strong {
   display: block;
   font-weight: 800;
+  font-family: 'Univers Condensed', var(--title-font), sans-serif;
 }
 
 .hero-panel__title-light {
   display: block;
   font-weight: 200;
-  color: var(--hero-text-muted, rgba(255, 255, 255, 0.78));
+  color: var(--white-bright);
 }
 
 .hero-panel__intro {
-  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
   line-height: 1.6;
-  color: var(--hero-text-primary, #f8f9fb);
+  color: var(--white-bright);
   margin: 0 0 0.5rem;
-}
-
-.hero-panel__cta {
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.18em;
-  font-size: 1rem;
 }
 
 .hero-panel__nav {
@@ -271,6 +247,8 @@ onBeforeUnmount(() => {
   flex-direction: column;
   gap: 0.6rem;
   align-items: flex-start;
+  flex: 1 1 auto;
+  width: 100%;
 }
 
 .hero-panel__nav-list {
@@ -282,47 +260,42 @@ onBeforeUnmount(() => {
   gap: 1rem;
   width: 100%;
   align-items: flex-start;
+  height: 100%;
+}
+
+.hero-panel__nav-external-group {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .hero-panel__nav-divider {
   width: 100%;
-  padding-top: 1.4rem;
-  margin-top: 0.6rem;
+  border-top: 1px solid var(--white-soft);
+  margin-bottom: 0.6rem;
 }
 
-.hero-panel__nav-divider::before {
-  content: "";
-  display: block;
-  width: 100%;
-  border-top: 1px solid var(--hero-divider-color, rgba(255, 255, 255, 0.25));
-  margin-bottom: 1rem;
+.hero-panel__external-heading {
+  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
+  font-weight: 600;
+  color: var(--white-bright);
 }
 
-.hero-panel__nav-external {
-  width: 100%;
-  margin-top: 0.4rem;
+.hero-panel__external-heading::after {
+  content: none;
 }
 
 .hero-panel__external-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--hero-text-subtle, rgba(255, 255, 255, 0.85));
-  text-transform: none;
-  letter-spacing: var(--hero-external-letter-spacing, 0.05em);
+  color: var(--white-bright);
   font-size: clamp(1rem, 1.4vw, 1.3rem);
   font-weight: 500;
   text-decoration: none;
-}
-
-.hero-panel__external-link::after {
-  content: "";
-  width: 0.8rem;
-  height: 0.8rem;
-  border: 1px solid currentColor;
-  border-left: none;
-  border-bottom: none;
-  transform: rotate(45deg);
 }
 
 .hero-panel__external-link:hover,
@@ -336,10 +309,8 @@ onBeforeUnmount(() => {
   background: transparent;
   border: none;
   padding: 0.35rem 0;
-  text-transform: uppercase;
-  letter-spacing: var(--hero-letter-spacing-wide, 0.3em);
   font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-  color: var(--hero-nav-link-color, rgba(255, 255, 255, 0.65));
+  color: var(--white-bright);
   transition:
     color 0.2s ease,
     transform 0.15s ease;
@@ -364,7 +335,19 @@ onBeforeUnmount(() => {
 .hero-panel__nav-link:hover::after,
 .hero-panel__nav-link:focus-visible::after {
   transform: scaleX(0.35);
-  background: rgba(255, 149, 5, 0.7);
+  background: var(--color-accent);
+}
+
+.hero-panel__external-link.hero-panel__nav-link::after {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1px solid currentColor;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+  margin-top: 0;
+  background: none;
 }
 
 .hero-panel__nav-link.active {

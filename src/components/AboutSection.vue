@@ -1,7 +1,7 @@
 <template>
   <section
     :id="sectionId"
-    class="about-section content-section"
+    class="content-section"
   >
     <div class="section-header">
       <div class="section-title-row">

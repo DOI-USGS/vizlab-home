@@ -10,12 +10,19 @@
             :id="titleId"
             :data-section-anchor="computedSectionId"
           >
-            <a
-              class="section-title-link"
-              :href="`#${titleId}`"
-            >
-              {{ titleText }}
-            </a>
+            <template v-if="linkTitle">
+              <a
+                class="section-title-link"
+                :href="`#${titleId}`"
+              >
+                {{ titleText }}
+              </a>
+            </template>
+            <template v-else>
+              <span class="section-title-link section-title-link--static">
+                {{ titleText }}
+              </span>
+            </template>
           </h2>
         </div>
         <p
@@ -26,29 +33,39 @@
         </p>
       </div>
 
-      <div
-        v-if="availableTags.length"
-        class="section-controls section-controls--wrap"
-      >
-        <button
-          class="pill-button pill-button--tag"
-          :class="{ 'pill-button--active': !selectedTag }"
-          type="button"
-          @click="selectTag(null)"
+      <div class="section-controls section-controls--wrap">
+        <RouterLink
+          v-if="showDetailLink"
+          class="pill-button pill-button--outline"
+          :to="{ name: 'SectionDetail', params: { sectionId: computedSectionId } }"
         >
-          All
-        </button>
-        <button
-          v-for="tag in availableTags"
-          :key="tag"
-          class="pill-button pill-button--tag"
-          :class="{ 'pill-button--active': selectedTag === tag }"
-          type="button"
-          @click="selectTag(tag)"
+          View Full Gallery
+        </RouterLink>
+        <div
+          v-if="availableTags.length"
+          class="tag-filter"
         >
-          {{ tag }}
-        </button>
+          <button
+            class="pill-button pill-button--tag"
+            :class="{ 'pill-button--active': !selectedTag }"
+            type="button"
+            @click="selectTag(null)"
+          >
+            All
+          </button>
+          <button
+            v-for="tag in availableTags"
+            :key="tag"
+            class="pill-button pill-button--tag"
+            :class="{ 'pill-button--active': selectedTag === tag }"
+            type="button"
+            @click="selectTag(tag)"
+          >
+            {{ tag }}
+          </button>
+        </div>
       </div>
+
     </div>
 
     <div
@@ -67,6 +84,7 @@
 
 <script setup>
 import { computed, ref } from "vue"
+import { RouterLink } from "vue-router"
 import SketchCard from "@/components/SketchCard.vue"
 
 const props = defineProps({
@@ -89,6 +107,14 @@ const props = defineProps({
   assetSource: {
     type: String,
     default: "illustration"
+  },
+  showDetailLink: {
+    type: Boolean,
+    default: true
+  },
+  linkTitle: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -122,6 +148,19 @@ const selectTag = (tag) => {
 .sketch-grid {
   column-count: 4;
   column-gap: 1.5rem;
+}
+
+.section-title-link--static {
+  color: var(--color-link);
+  cursor: default;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.tag-filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 @media (--bp-md) {

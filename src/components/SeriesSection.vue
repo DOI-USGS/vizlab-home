@@ -14,7 +14,7 @@
               class="section-title-link"
               :href="`#${titleId}`"
             >
-              Series
+              {{ titleText }}
             </a>
           </h2>
         </div>
@@ -23,7 +23,7 @@
             v-if="!hintDismissed"
             class="series-nav-hint"
           >
-            <span class="series-nav-hint__text">but wait, there's more!</span>
+            <span >but wait, there's more!</span>
             <svg
               class="hint-arrow"
               viewBox="0 0 120 40"
@@ -31,7 +31,6 @@
             >
               <path d="M8 20 C38 20, 68 20, 92 20" />
               <g
-                class="series-nav-hint__arrow-head"
                 transform="translate(92 20) rotate(180)"
               >
                 <path d="M0 0 L8 -4" />
@@ -58,7 +57,7 @@
         </div>
       </div>
       <div class="section-summary">
-        <p>Recurring visualizations of current conditions and events.</p>
+        <p>{{ summaryText }}</p>
       </div>
     </div>
 
@@ -87,20 +86,36 @@
 <script setup>
 import { computed, ref, watch } from "vue"
 import SeriesCard from "@/components/SeriesCard.vue"
+import sectionMetadata from "@/assets/content/section-metadata.json"
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: ""
+  },
+  title: {
+    type: String,
+    default: ""
+  },
+  summary: {
+    type: String,
+    default: ""
+  },
   series: {
     type: [Array, Object],
     default: () => []
   },
   initialSeriesId: {
     type: String,
-    default: "riverConditions" // set which series is shown in middle card on pagge load. ordering is based on order in json
+    default: "riverConditions" // set which series is shown in middle card on page load
   }
 })
 
-const sectionId = "Series"
-const titleId = "series"
+const seriesMeta = sectionMetadata.series
+const sectionId = computed(() => props.id || seriesMeta.id)
+const titleId = computed(() => `${sectionId.value}`)
+const titleText = computed(() => props.title || seriesMeta.title)
+const summaryText = computed(() => props.summary || seriesMeta.summary)
 
 // carousel navigation
 const index = ref(0)
@@ -217,10 +232,6 @@ watch(
 .carousel-slide--side {
   opacity: 1;
   transform: none;
-}
-
-.empty-copy {
-  color: rgba(0, 0, 0, 0.6);
 }
 
 @media (--bp-sm) {

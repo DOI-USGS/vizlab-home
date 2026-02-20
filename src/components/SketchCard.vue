@@ -70,10 +70,6 @@ const targetUrl = computed(() => {
   display: block;
 }
 
-.sketch-card--wide {
-  break-inside: avoid;
-}
-
 .sketch-card__link {
   display: block;
   position: relative;

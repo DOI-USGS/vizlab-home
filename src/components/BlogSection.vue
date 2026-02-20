@@ -1,8 +1,8 @@
 <template>
   <CarouselCardSection
     :section-id="computedSectionId"
-    title="water data blog"
-    :summary="summaryText"
+    :title="titleText"
+    :summary="metadataSummary"
     :items="items"
     show-release-date
     prev-aria-label="Show previous blog posts"
@@ -10,6 +10,8 @@
   >
     <template #summary>
       <p class="section-summary">
+        {{ metadataSummary }}
+        <br>
         Read more at
         <a
           href="https://waterdata.usgs.gov/blog"
@@ -24,9 +26,18 @@
 <script setup>
 import { computed } from "vue"
 import CarouselCardSection from "@/components/CarouselCardSection.vue"
+import sectionMetadata from "@/assets/content/section-metadata.json"
 
 const props = defineProps({
   id: {
+    type: String,
+    default: ""
+  },
+  title: {
+    type: String,
+    default: ""
+  },
+  summary: {
     type: String,
     default: ""
   },
@@ -36,6 +47,8 @@ const props = defineProps({
   }
 })
 
-const computedSectionId = computed(() => props.id || "blogs")
-const summaryText = computed(() => "")
+const blogsMeta = sectionMetadata.blogs
+const computedSectionId = computed(() => props.id || blogsMeta.id)
+const titleText = computed(() => props.title || blogsMeta.title)
+const metadataSummary = computed(() => props.summary || blogsMeta.summary)
 </script>
