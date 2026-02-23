@@ -3,10 +3,10 @@
     <header class="series-card__header">
       <div class="series-card__eyebrow-row">
         <p class="series-card__eyebrow">
-          {{ series?.title }}
+          {{ series.title }}
         </p>
         <div
-          v-if="series?.intervals?.length"
+          v-if="series.intervals.length"
           class="series-card__badges"
         >
           <span
@@ -289,7 +289,7 @@ const hasHistory = historyEntries.length > 0
 
 .series-card__eyebrow {
   flex: 1 1 auto;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: var(--black-soft);
   margin: 0;
   line-height: 1;
@@ -383,7 +383,7 @@ const hasHistory = historyEntries.length > 0
   background: none;
   border: none;
   padding: 0.4rem 0;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
   cursor: pointer;
 }

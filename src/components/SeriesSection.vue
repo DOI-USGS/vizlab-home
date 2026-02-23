@@ -18,73 +18,24 @@
             </a>
           </h2>
         </div>
-        <div class="section-controls series-nav-controls">
-          <div
-            v-if="!hintDismissed"
-            class="series-nav-hint"
-          >
-            <span >but wait, there's more!</span>
-            <svg
-              class="hint-arrow"
-              viewBox="0 0 120 40"
-              aria-hidden="true"
-            >
-              <path d="M8 20 C38 20, 68 20, 92 20" />
-              <g
-                transform="translate(92 20) rotate(180)"
-              >
-                <path d="M0 0 L8 -4" />
-                <path d="M0 0 L8 4" />
-              </g>
-            </svg>
-          </div>
-          <button
-            class="carousel-nav-btn"
-            type="button"
-            @click="move(-1)"
-            aria-label="Show previous series"
-          >
-            ‹
-          </button>
-          <button
-            class="carousel-nav-btn"
-            type="button"
-            @click="move(1)"
-            aria-label="Show next series"
-          >
-            ›
-          </button>
-        </div>
       </div>
       <div class="section-summary">
         <p>{{ summaryText }}</p>
       </div>
     </div>
 
-    <div class="carousel">
-      <div
-        class="carousel-window"
-        aria-live="polite"
-      >
-        <div class="carousel-track">
-          <div
-            v-for="slide in displaySeries"
-            :key="slide.key"
-            class="carousel-slide"
-            :class="`carousel-slide--${slide.role}`"
-          >
-            <SeriesCard
-              :series="slide.data"
-            />
-          </div>
-        </div>
-      </div>
+    <div class="series-grid" aria-live="polite">
+      <SeriesCard
+        v-for="collection in seriesList"
+        :key="collection.id ?? collection.title"
+        :series="collection"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-import { computed, ref, watch } from "vue"
+import { computed } from "vue"
 import SeriesCard from "@/components/SeriesCard.vue"
 import sectionMetadata from "@/assets/content/section-metadata.json"
 
@@ -104,10 +55,6 @@ const props = defineProps({
   series: {
     type: [Array, Object],
     default: () => []
-  },
-  initialSeriesId: {
-    type: String,
-    default: "riverConditions" // set which series is shown in middle card on page load
   }
 })
 
@@ -116,65 +63,7 @@ const sectionId = computed(() => props.id || seriesMeta.id)
 const titleId = computed(() => `${sectionId.value}`)
 const titleText = computed(() => props.title || seriesMeta.title)
 const summaryText = computed(() => props.summary || seriesMeta.summary)
-
-// carousel navigation
-const index = ref(0)
-const initialized = ref(false)
 const seriesList = computed(() => (props.series || []).filter((collection) => !collection.archive))
-const hintDismissed = ref(false)
-
-// show part of the series on either side of the focal one in the carousel
-const displaySeries = computed(() => {
-  const list = seriesList.value
-  const len = list.length
-  if (!len) return []
-  const offsets = [-1, 0, 1] 
-  return offsets.map((offset) => {
-    const role = offset === 0 ? "center" : "side"
-    const idx = ((index.value + offset) % len + len) % len
-    const data = list[idx]
-    return {
-      role,
-      data,
-      key: `${data?.id ?? idx}-${role}-${idx}-${index.value}`
-    }
-  })
-})
-
-// nagivate carousel slides
-function move(step) {
-  hintDismissed.value = true
-  const list = seriesList.value
-  const len = list.length
-  if (!len) return
-  index.value = (index.value + step + len) % len
-}
-
-watch(
-  () => [props.initialSeriesId, seriesList.value],
-  () => {
-    const list = seriesList.value
-    const len = list.length
-    if (!len) {
-      index.value = 0
-      return
-    }
-
-    if (!initialized.value) {
-      const preferredId = props.initialSeriesId
-      if (preferredId) {
-        const targetIndex = list.findIndex((collection) => collection.id === preferredId)
-        index.value = targetIndex >= 0 ? targetIndex : 0
-      } else {
-        index.value = 0
-      }
-      initialized.value = true
-    } else if (index.value >= len) {
-      index.value = index.value % len
-    }
-  },
-  { immediate: true }
-)
 </script>
 
 <style scoped>
@@ -183,91 +72,24 @@ watch(
   padding: 0px 15px;
 }
 
-.series-nav-controls {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.series-nav-hint {
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-link, #0a4d68);
-  font-family: 'Caveat', 'Faster One', 'Source Sans Pro', cursive;
-  font-size: 1.8rem;
-  letter-spacing: 0.04em;
-  gap: 0.6rem;
-  transform: rotate(-2deg);
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
-}
-
-.carousel {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-}
-
-.carousel-window {
-  flex: 1;
-}
-
-.carousel-track {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 1rem; /* gap between slides */
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
   padding: 1rem 0;
 }
 
-.carousel-slide {
-  flex: 1 1 32%;
-  max-width: 32%;
-  transition: transform 200ms ease;
-}
-
-.carousel-slide--center,
-.carousel-slide--side {
-  opacity: 1;
-  transform: none;
+@media (--bp-md) {
+  .series-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (--bp-sm) {
-
-  .series-section {
-    overflow: hidden;
-  }
-
-  .series-nav-hint {
-    display: none;
-  }
-
-  .carousel {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .carousel-track {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 0.2rem; /* gap between slides */
+  .series-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
     padding: 0.2rem 0;
-    width: 100%;
-    margin: 0 auto;
   }
-
-  .carousel-window {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .carousel-slide {
-    flex: 0 0 calc(100% - 10rem); /* leaves a small portion of side slides visible */
-    max-width: none;
-  }
-
 }
 </style>
