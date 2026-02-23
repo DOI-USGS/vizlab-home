@@ -20,7 +20,22 @@
     </div>
 
     <div class="about-copy">
-      <p v-html="text.paragraph1" />
+      <p
+        v-if="text.paragraph1"
+        class="section-summary"
+        v-html="text.paragraph1"
+      ></p>
+      <p
+        v-if="contactText && contactEmail"
+        class="section-summary about-contact"
+      >
+        {{ contactText }}
+        <a
+          :href="`mailto:${contactEmail}`"
+        >
+          {{ contactLinkText }}
+        </a>
+      </p>
     </div>
 
     <div class="about-figure">
@@ -43,25 +58,47 @@
 import { ref, onMounted, onBeforeUnmount, watch, computed } from "vue";
 import { isMobile } from "mobile-device-detect";
 import * as d3 from "d3";
+import sectionMetadata from "@/assets/content/section-metadata.json"
 
 // Importing images from assets
 
 const props = defineProps({
-    text: { 
-      type: Object,
-      default() {
-        return {}
-      } 
-    },
-    id: {
-      type: String,
-      default: ""
+  text: {
+    type: Object,
+    default() {
+      return {}
     }
+  },
+  id: {
+    type: String,
+    default: ""
+  },
+  title: {
+    type: String,
+    default: ""
+  },
+  contactText: {
+    type: String,
+    default: ""
+  },
+  contactEmail: {
+    type: String,
+    default: ""
+  },
+  contactLinkText: {
+    type: String,
+    default: ""
+  }
 });
 
-const sectionId = computed(() => props.id || "team")
-const headingText = computed(() => props.text?.heading || "team")
+const teamMeta = sectionMetadata.team || {}
+
+const sectionId = computed(() => props.id || teamMeta.id || "team")
+const headingText = computed(() => props.title || teamMeta.title || props.text?.heading || "team")
 const titleId = computed(() => `${sectionId.value}`)
+const contactText = computed(() => props.contactText || teamMeta.contactText || "")
+const contactEmail = computed(() => props.contactEmail || teamMeta.contactEmail || "")
+const contactLinkText = computed(() => props.contactLinkText || teamMeta.contactLinkText || contactEmail.value)
 
 const cloneNodes = (source = []) => {
     if (!Array.isArray(source)) return []

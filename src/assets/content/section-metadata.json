@@ -16,17 +16,23 @@
   },
   "series": {
     "id": "series",
-    "title": "Animated Series",
+    "title": "Series",
     "summary": "Recurring visualizations of current conditions and events."
   },
   "blogs": {
     "id": "blogs",
     "title": "Water Data Blog",
-    "summary": "Catch up on every Water Data Blog post."
+    "summary": "",
+    "linkIntro": "Read more at",
+    "linkLabel": "waterdata.usgs.gov/blog",
+    "linkUrl": "https://waterdata.usgs.gov/blog"
   },
   "team": {
     "id": "team",
     "title": "Meet the Team",
-    "summary": "Connect with the VizLab designers, developers, and data scientists."
+    "summary": "Connect with the VizLab designers, developers, and data scientists.",
+    "contactText": "Email us at",
+    "contactLinkText": "gs-w_vizlab@usgs.gov",
+    "contactEmail": "gs-w_vizlab@usgs.gov"
   }
 }
