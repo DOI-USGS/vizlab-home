@@ -4,8 +4,11 @@
     :title="title"
     :summary="computedSummary"
     :items="items"
-    prev-aria-label="Show previous stories"
-    next-aria-label="Show next stories"
+    :step-size="1"
+    prev-aria-label="Show previous items"
+    next-aria-label="Show next items"
+    nav-hint-text="but wait, there's more!"
+    :column-flow-rows="2"
   />
 </template>
 
