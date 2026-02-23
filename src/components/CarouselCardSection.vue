@@ -85,6 +85,7 @@
         :show-release-date="showReleaseDate"
       />
     </ul>
+    <slot name="footer" />
   </section>
 </template>
 
@@ -141,6 +142,10 @@ const props = defineProps({
   columnFlowRows: {
     type: Number,
     default: 0
+  },
+  disableCarousel: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -164,21 +169,33 @@ const columnFlowStyle = computed(() => {
   return null
 })
 
-const {
-  windowItems: pagedItems,
-  showControls,
-  canPrev,
-  canNext,
-  move: carouselMove
-} = useCarouselWindow(visibleItems, {
+const carouselWindow = useCarouselWindow(visibleItems, {
   windowSize: props.windowSize,
   stepSize: props.stepSize ?? undefined
 })
 
+const shouldPaginate = computed(() => !props.disableCarousel)
+
+const pagedItems = computed(() =>
+  shouldPaginate.value ? carouselWindow.windowItems.value : visibleItems.value
+)
+
+const showControls = computed(
+  () => shouldPaginate.value && carouselWindow.showControls.value
+)
+
+const canPrev = computed(
+  () => showControls.value && carouselWindow.canPrev.value
+)
+
+const canNext = computed(
+  () => showControls.value && carouselWindow.canNext.value
+)
+
 const navHint = computed(() => props.navHintText?.trim() || "")
 const navHintDismissed = ref(false)
 const navHintVisible = computed(
-  () => Boolean(navHint.value) && !navHintDismissed.value
+  () => Boolean(navHint.value) && !navHintDismissed.value && showControls.value
 )
 
 watch(
@@ -189,8 +206,9 @@ watch(
 )
 
 function handleMove(step) {
+  if (!shouldPaginate.value) return
   navHintDismissed.value = true
-  carouselMove(step)
+  carouselWindow.move(step)
 }
 </script>
 

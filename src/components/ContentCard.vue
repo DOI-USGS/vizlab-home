@@ -19,7 +19,7 @@
         </div>
 
         <div class="card-content">
-          <h3 class="card-title">
+          <h3 class="card-heading">
             {{ title }}
           </h3>
           <p
@@ -133,19 +133,6 @@ const imagePadding = `${props.imageRatio}%`
 
 .card-content {
   padding: 0 1.6rem 1.6rem;
-}
-
-.card-title {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.card-meta {
-  margin: 0.4rem 0 0;
-  color: var(--black-400);
-  font-size: 1.4rem;
-  padding-bottom: 0;
 }
 
 .card-action {

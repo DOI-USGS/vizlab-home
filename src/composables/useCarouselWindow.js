@@ -10,51 +10,36 @@ export function useCarouselWindow(itemsSource, options = {}) {
     return Array.isArray(value) ? value : []
   })
 
-  const showControls = computed(() => items.value.length > windowSize)
-  const canPrev = computed(() => showControls.value)
-  const canNext = computed(() => showControls.value)
-
-  const windowItems = computed(() => {
-    const list = items.value
-    const len = list.length
-
-    if (!len) return []
-    if (len <= windowSize) return list.slice()
-
-    const start = ((startIndex.value % len) + len) % len
-    const selection = []
-
-    for (let i = 0; i < windowSize; i += 1) {
-      selection.push(list[(start + i) % len])
-    }
-
-    return selection
-  })
-
-  const move = (direction = 1) => {
-    const len = items.value.length
-    if (len <= windowSize) return
-    const delta = direction * stepSize
-    startIndex.value = (startIndex.value + delta + len) % len
-  }
+  const maxStartIndex = computed(() => Math.max(0, items.value.length - windowSize))
 
   watch(
-    () => items.value.length,
-    (len) => {
-      if (len <= 0) {
-        startIndex.value = 0
-        return
-      }
-
-      if (len <= windowSize) {
-        startIndex.value = 0
-        return
-      }
-
-      startIndex.value = ((startIndex.value % len) + len) % len
+    maxStartIndex,
+    (max) => {
+      startIndex.value = Math.min(startIndex.value, max)
     },
     { immediate: true }
   )
+
+  const showControls = computed(() => items.value.length > windowSize)
+  const canPrev = computed(() => showControls.value && startIndex.value > 0)
+  const canNext = computed(
+    () => showControls.value && startIndex.value < maxStartIndex.value
+  )
+
+  const windowItems = computed(() => {
+    if (!items.value.length) return []
+    if (!showControls.value) return items.value.slice()
+
+    const start = Math.min(startIndex.value, maxStartIndex.value)
+    const end = Math.min(start + windowSize, items.value.length)
+    return items.value.slice(start, end)
+  })
+
+  const move = (direction = 1) => {
+    if (!showControls.value) return
+    const nextIndex = startIndex.value + direction * stepSize
+    startIndex.value = Math.max(0, Math.min(nextIndex, maxStartIndex.value))
+  }
 
   return {
     windowItems,

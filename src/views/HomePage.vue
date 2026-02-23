@@ -72,12 +72,25 @@ import sectionMetadata from "@/assets/content/section-metadata.json"
 const dateStore = useDateStore();
 const sectionsMeta = sectionMetadata
 
+const PREVIEW_MAX = 18
+const shufflePreview = (items = [], limit = PREVIEW_MAX) => {
+  const clone = [...items]
+  for (let i = clone.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[clone[i], clone[j]] = [clone[j], clone[i]]
+  }
+  return limit > 0 ? clone.slice(0, limit) : clone
+}
+
 // define content for site sections and sort by release date, where appropriate
 const websites = viz.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
-const sketches = sketchesData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+const sortedSketches = sketchesData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+const sortedSnapshots = (snapshotsData.items || []).sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const blogs = blogsData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const series = seriesData.collections // not sorted here, b/c content for each card sorted in `SeriesCard.vue`
-const snapshots = (snapshotsData.items || []).sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+
+const sketches = shufflePreview(sortedSketches)
+const snapshots = shufflePreview(sortedSnapshots)
 const team = teamData
 </script>
 

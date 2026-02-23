@@ -2,7 +2,7 @@
   <article class="series-card card-shell">
     <header class="series-card__header">
       <div class="series-card__eyebrow-row">
-        <p class="series-card__eyebrow">
+        <p class="card-heading series-card__eyebrow">
           {{ series.title }}
         </p>
         <div
@@ -36,13 +36,13 @@
     <div class="series-card__body">
       <p
         v-if="latestReleaseLabel"
-        class="series-card__meta"
+        class="card-meta"
       >
         {{ latestReleaseLabel }}
       </p>
       <p
         v-if="series?.description"
-        class="series-card__description"
+        class="section-summary series-card__description"
       >
         {{ series.description }}
       </p>
@@ -289,11 +289,7 @@ const hasHistory = historyEntries.length > 0
 
 .series-card__eyebrow {
   flex: 1 1 auto;
-  font-size: 1.8rem;
   color: var(--black-soft);
-  margin: 0;
-  line-height: 1;
-  font-weight: 700;
 }
 
 .series-card__badges {
@@ -342,16 +338,9 @@ const hasHistory = historyEntries.length > 0
   flex: 1 1 auto;
 }
 
-.series-card__meta {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--black-soft);
-  margin: 0;
-}
-
 .series-card__description {
   margin: 0;
-  font-size: 1.8rem;
+  color: var(--black-soft);
 }
 
 .series-card__actions {

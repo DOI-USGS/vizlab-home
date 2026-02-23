@@ -19,9 +19,9 @@
           </h2>
         </div>
       </div>
-      <div class="section-summary">
-        <p>{{ summaryText }}</p>
-      </div>
+      <p class="section-summary">
+        {{ summaryText }}
+      </p>
     </div>
 
     <div class="series-grid" aria-live="polite">

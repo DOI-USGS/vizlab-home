@@ -15,7 +15,7 @@
         loading="lazy"
       >
       <div class="sketch-card__overlay">
-        <p class="sketch-card__title">
+        <p class="card-heading sketch-card__title">
           {{ card.title }}
         </p>
       </div>
@@ -85,8 +85,6 @@ const targetUrl = computed(() => {
 }
 
 .sketch-card__title {
-  margin: 0;
-  font-weight: 700;
   color: var(--black-soft);
   padding: 1rem 1.5rem;
   text-align: center;

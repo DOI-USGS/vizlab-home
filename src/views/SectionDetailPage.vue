@@ -1,10 +1,10 @@
 <template>
   <section class="section-detail content-section">
-      <RouterLink
-        class="pill-button pill-button--outline section-detail__back"
-        :to="{ name: 'VisualizationContent' }"
-      >
-        ← Back to Portfolio
+    <RouterLink
+      class="section-detail__back hero-panel__nav-link"
+      :to="{ name: 'VisualizationContent' }"
+    >
+      ← Back to Portfolio
     </RouterLink>
     <component
       v-if="currentSection"
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue"
+import { computed, nextTick, onMounted, watch } from "vue"
 import { RouterLink, useRoute } from "vue-router"
 import FilteredCardSection from "@/components/FilteredCardSection.vue"
 import CarouselCardSection from "@/components/CarouselCardSection.vue"
@@ -59,6 +59,20 @@ const currentSection = computed(() => {
   return build ? build() : null
 })
 
+const scrollToTop = () => {
+  if (typeof window === "undefined") return
+  window.scrollTo({ top: 0, behavior: "auto" })
+}
+
+onMounted(scrollToTop)
+
+watch(
+  () => route.params.sectionId,
+  () => {
+    nextTick().then(scrollToTop)
+  }
+)
+
 function buildFiltered(meta, items, assetSource) {
   if (!meta) return null
   return {
@@ -70,7 +84,8 @@ function buildFiltered(meta, items, assetSource) {
       items,
       assetSource,
       showDetailLink: false,
-      linkTitle: false
+      linkTitle: false,
+      disableFade: true
     }
   }
 }
@@ -84,6 +99,7 @@ function buildCarousel(meta, items, extraProps = {}) {
       title: meta.title,
       summary: meta.summary,
       items,
+      disableCarousel: true,
       ...extraProps
     }
   }
@@ -97,8 +113,7 @@ function buildSeries(meta, series) {
       id: meta.id,
       title: meta.title,
       summary: meta.summary,
-      series,
-      initialSeriesId: "riverConditions"
+      series
     }
   }
 }

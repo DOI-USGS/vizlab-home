@@ -19,7 +19,7 @@
       <p class="hero-slogan">
         {{ eyebrowText }}
       </p>
-      <p class="hero-panel__intro">
+      <p class="section-summary hero-panel__intro">
         {{ introText }}
       </p>
     </div>
@@ -34,7 +34,7 @@
           :key="item.id"
         >
           <button
-            class="hero-panel__nav-link"
+            class="hero-panel__nav-link hero-panel__nav-link--light"
             :class="{ active: activeSection === item.id }"
             type="button"
             @click="scrollTo(item.id)"
@@ -43,31 +43,30 @@
           </button>
         </li>
       </ul>
-      <div class="hero-panel__nav-external-group">
-        <div
-          class="hero-panel__nav-divider"
-          aria-hidden="true"
-        ></div>
-        <p class="hero-panel__nav-link hero-panel__external-heading">
-          Get USGS Water Data:
-        </p>
-        <a
-          class="hero-panel__nav-link hero-panel__external-link"
-          href="https://waterdata.usgs.gov"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Water Data for the Nation
-        </a>
-        <a
-          class="hero-panel__nav-link hero-panel__external-link"
-          href="https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Computational Tools
-        </a>
-      </div>
+      <div
+        class="section-divider"
+        aria-hidden="true"
+        style="margin-top: auto; --divider-color: rgba(255, 255, 255, 0.5);"
+      ></div>
+      <p class="section-summary hero-panel__nav-note">
+        Access USGS Water Data:
+      </p>
+      <a
+        class="hero-panel__nav-link hero-panel__nav-link--light"
+        href="https://waterdata.usgs.gov"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Water Data for the Nation
+      </a>
+      <a
+        class="hero-panel__nav-link hero-panel__nav-link--light"
+        href="https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Computational Tools
+      </a>
     </nav>
   </aside>
 </template>
@@ -217,28 +216,36 @@ onBeforeUnmount(() => {
   gap: 1rem;
 }
 
+.hero-slogan {
+  font-size: clamp(1.2rem, 1.8vw, 2.5rem);
+  font-weight: 800;
+  color: var(--white-bright);
+  margin: 0;
+  font-family: "Source Sans Pro", var(--default-font), sans-serif;
+}
+
 .hero-panel__title {
-  font-size: clamp(8.6rem, 6vw, 6rem);
+  font-size: clamp(7rem, 5vw, 5.4rem);
   line-height: 1.05;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: baseline;
 }
 
 .hero-panel__title-strong {
-  display: block;
   font-weight: 800;
   font-family: 'Univers Condensed', var(--title-font), sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .hero-panel__title-light {
-  display: block;
   font-weight: 200;
   color: var(--white-bright);
 }
 
 .hero-panel__intro {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  line-height: 1.6;
-  color: var(--white-bright);
   margin: 0 0 0.5rem;
 }
 
@@ -263,101 +270,18 @@ onBeforeUnmount(() => {
   height: 100%;
 }
 
-.hero-panel__nav-external-group {
+.hero-panel__nav-list .hero-panel__nav-link {
   width: 100%;
-  margin-top: auto;
-  padding-top: 2.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
 }
 
-.hero-panel__nav-divider {
-  width: 100%;
-  border-top: 1px solid var(--white-soft);
-  margin-bottom: 0.6rem;
+.hero-panel :is(.section-summary) {
+  color: var(--white-bright);
 }
 
-.hero-panel__external-heading {
+.hero-panel__nav-note {
   font-size: clamp(1.15rem, 1.8vw, 1.6rem);
   font-weight: 600;
-  color: var(--white-bright);
-}
-
-.hero-panel__external-heading::after {
-  content: none;
-}
-
-.hero-panel__external-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--white-bright);
-  font-size: clamp(1rem, 1.4vw, 1.3rem);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.hero-panel__external-link:hover,
-.hero-panel__external-link:focus-visible {
-  color: rgba(255, 255, 255, 1);
-}
-
-.hero-panel__nav-link {
-  width: 100%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  padding: 0.35rem 0;
-  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-  color: var(--white-bright);
-  transition:
-    color 0.2s ease,
-    transform 0.15s ease;
-}
-
-.hero-panel__nav-link::after {
-  content: "";
-  display: block;
-  height: 3px;
-  margin-top: 0.5rem;
-  background: rgba(255, 149, 5, 0.3);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease;
-}
-
-.hero-panel__nav-link:hover,
-.hero-panel__nav-link:focus-visible {
-  color: var(--color-accent);
-}
-
-.hero-panel__nav-link:hover::after,
-.hero-panel__nav-link:focus-visible::after {
-  transform: scaleX(0.35);
-  background: var(--color-accent);
-}
-
-.hero-panel__external-link.hero-panel__nav-link::after {
-  content: "";
-  width: 0.8rem;
-  height: 0.8rem;
-  border: 1px solid currentColor;
-  border-left: none;
-  border-bottom: none;
-  transform: rotate(45deg);
-  margin-top: 0;
-  background: none;
-}
-
-.hero-panel__nav-link.active {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
-.hero-panel__nav-link.active::after {
-  transform: scaleX(1);
-  background: var(--color-accent);
+  margin: 0;
 }
 
 @media (--bp-md) {

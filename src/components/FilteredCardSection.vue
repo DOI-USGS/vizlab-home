@@ -34,13 +34,6 @@
       </div>
 
       <div class="section-controls section-controls--wrap">
-        <RouterLink
-          v-if="showDetailLink"
-          class="pill-button pill-button--outline"
-          :to="{ name: 'SectionDetail', params: { sectionId: computedSectionId } }"
-        >
-          View Full Gallery
-        </RouterLink>
         <div
           v-if="availableTags.length"
           class="tag-filter"
@@ -70,14 +63,32 @@
 
     <div
       v-if="filteredCards.length"
-      class="sketch-grid"
+      class="sketch-grid-container"
+      :class="{
+        'sketch-grid-container--fade': shouldFade,
+        'sketch-grid-container--full': disableFade
+      }"
     >
-      <SketchCard
-        v-for="item in filteredCards"
-        :key="item.id"
-        :card="item"
-        :asset-source="assetSource"
-      />
+      <div class="sketch-grid">
+        <SketchCard
+          v-for="item in filteredCards"
+          :key="item.id"
+          :card="item"
+          :asset-source="assetSource"
+        />
+      </div>
+    </div>
+
+    <div
+      v-if="showDetailLink"
+      class="section-footer"
+    >
+      <RouterLink
+        class="hero-panel__nav-link section-footer__link"
+        :to="{ name: 'SectionDetail', params: { sectionId: computedSectionId } }"
+      >
+        View Full Gallery
+      </RouterLink>
     </div>
   </section>
 </template>
@@ -115,6 +126,10 @@ const props = defineProps({
   linkTitle: {
     type: Boolean,
     default: true
+  },
+  disableFade: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -139,22 +154,49 @@ const filteredCards = computed(() => {
   return cards.value.filter((card) => card.tags?.includes(selectedTag.value))
 })
 
+const shouldFade = computed(() => !props.disableFade && props.showDetailLink && filteredCards.value.length > 6)
+
 const selectTag = (tag) => {
   selectedTag.value = tag
 }
 </script>
 
 <style scoped>
+.sketch-grid-container {
+  position: relative;
+  max-height: 75rem;
+  overflow: hidden;
+}
+
 .sketch-grid {
   column-count: 4;
   column-gap: 1.5rem;
 }
 
-.section-title-link--static {
-  color: var(--color-link);
-  cursor: default;
+.sketch-grid-container--fade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 8rem;
   pointer-events: none;
-  box-shadow: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.85) 65%,
+      var(--color-background, #f5f6f8) 100%
+    );
+}
+
+.sketch-grid-container--full {
+  max-height: none;
+  overflow: visible;
+}
+
+.sketch-grid-container--full::after {
+  display: none;
 }
 
 .tag-filter {
@@ -164,6 +206,14 @@ const selectTag = (tag) => {
 }
 
 @media (--bp-md) {
+  .sketch-grid-container {
+    max-height: none;
+  }
+
+  .sketch-grid-container--fade::after {
+    display: none;
+  }
+
   .sketch-grid {
     column-count: 2;
   }
