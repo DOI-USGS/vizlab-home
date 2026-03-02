@@ -1,5 +1,29 @@
 {
   "items": [
+      {
+      "id": "vizlab-stream-names-map",
+      "title": "A map that glows with the vocabulary of water",
+      "released": "02/27/2026",
+      "image": {
+        "alt": "A map of glowing points within the conterminous Unites States on a darkened landscape basemap. The title reads 'What's in a name'.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/vizlab-stream-names-map/names_map_thumbnail_01.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/vizlab-stream-names-map/"
+      }
+    },
+    {
+      "id": "vizlab-stream-name-extraction",
+      "title": "Extracting the grammar of U.S. stream names",
+      "released": "02/27/2026",
+      "image": {
+        "alt": "A list of stream names with the stream name type highlighted, with a magnifying glass overtop. The title reads 'What's in a name'.",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/vizlab-stream-names-map/names_extraction_map_thumbnail.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/vizlab-stream-name-extraction/"
+      }
+    },
     {
       "id": "nhd-viz-demo",
       "title": "Easy hydrology mapping with nhdplusTools, geoconnex, and ggplot2",
@@ -150,7 +174,7 @@
       "released": "01/04/2023",
       "image": {
         "alt": "A New Take on the Water Cycle",
-        "thumbnail": "https://waterdata.usgs.gov/blog/WCD-release/thumbnail.png"
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/WCD-release/thumbnail.png"
       },
       "links": {
         "external": "https://waterdata.usgs.gov/blog/water-cycle-release/"
