@@ -9,6 +9,22 @@
       ],
       "items": [
         {
+          "id": "flow_cartogram-feb-2026",
+          "title": "February 2026",
+          "released": "2026-02-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of February 2026. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage.",
+            "thumbnail": "2026_02/flow_cartogram-feb-2026.png"
+          },
+          "links": {
+            "x": {
+              "account": "USGS_Water",
+              "id": "1965102031225700461"
+            },
+            "external": "2026_02/flow_cartogram-feb-2026.png"
+          }
+        },
+        {
           "id": "flow_cartogram-jan-2026",
           "title": "January 2026",
           "released": "2026-01-01",
