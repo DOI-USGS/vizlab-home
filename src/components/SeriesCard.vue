@@ -199,7 +199,7 @@ function openShare(url) {
   window.open(url, "_blank", "noopener,noreferrer")
 }
 
-// assume is in thumbnails in s3 unless a full url is provided
+// series entries can point to a bucketed release asset or a shared local thumbnail
 const resolveThumbnail = (src = "") => {
   if (!src) return ""
   if (isAbsolute(src)) return src

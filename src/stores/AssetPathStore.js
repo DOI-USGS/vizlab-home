@@ -14,8 +14,10 @@ export const useAssetPathStore = defineStore("AssetPathStore", () => {
   const s3Base = join(import.meta.env.VITE_APP_S3_PROD_URL)
 
   const buildThumbUrl = (path = "") => {
-    if (isAbsoluteUrl(path)) return path
-    return join(s3Base, "thumbnails", path)
+    const normalizedPath = (path ?? "").toString().trim()
+    if (!normalizedPath) return ""
+    if (isAbsoluteUrl(normalizedPath)) return normalizedPath
+    return new URL(`../assets/images/thumbnails/${normalizedPath}`, import.meta.url).href
   }
   const buildIllustrationUrl = (filename = "") => join(s3Base, "illustration", filename)
   const buildChartUrl = (filename = "") => join(s3Base, "charts", filename)
