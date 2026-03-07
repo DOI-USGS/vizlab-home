@@ -169,7 +169,7 @@ const selectTag = (tag) => {
 }
 
 .sketch-grid {
-  column-count: 1;
+  column-count: 2;
   column-gap: 1.5rem;
 }
 
@@ -214,12 +214,6 @@ const selectTag = (tag) => {
     display: none;
   }
 
-}
-
-@media (min-width: 700px) {
-  .sketch-grid {
-    column-count: 2;
-  }
 }
 
 @media (min-width: 961px) {
