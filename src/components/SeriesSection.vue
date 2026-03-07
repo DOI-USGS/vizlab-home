@@ -69,27 +69,26 @@ const seriesList = computed(() => (props.series || []).filter((collection) => !c
 <style scoped>
 .section-intro {
   margin-bottom: 1rem;
-  padding: 0px 15px;
 }
 
 .series-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-  padding: 1rem 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.2rem 0;
 }
 
-@media (--bp-md) {
+@media (min-width: 700px) {
   .series-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+    padding: 1rem 0;
   }
 }
 
-@media (--bp-sm) {
+@media (min-width: 961px) {
   .series-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1rem;
-    padding: 0.2rem 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 </style>

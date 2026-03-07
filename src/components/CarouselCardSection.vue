@@ -218,26 +218,35 @@ function handleMove(step) {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.2rem, 2vw, 2.4rem);
 }
 
 .cards-grid--column-flow {
-  grid-template-columns: none;
-  grid-auto-columns: minmax(240px, 1fr);
-  grid-auto-flow: column;
-  grid-template-rows: repeat(var(--carousel-grid-rows, 2), minmax(0, auto));
+  grid-auto-flow: row;
+  grid-template-rows: none;
 }
 
 .cards-grid--column-flow .content-card {
   height: 100%;
 }
 
-@media (--bp-md) {
-  .cards-grid--column-flow {
-    grid-auto-flow: row;
+@media (min-width: 700px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 961px) {
+  .cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-template-rows: none;
+  }
+
+  .cards-grid--column-flow {
+    grid-template-columns: none;
+    grid-auto-columns: minmax(240px, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(var(--carousel-grid-rows, 2), minmax(0, auto));
   }
 }
 

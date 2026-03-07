@@ -169,7 +169,7 @@ const selectTag = (tag) => {
 }
 
 .sketch-grid {
-  column-count: 4;
+  column-count: 1;
   column-gap: 1.5rem;
 }
 
@@ -205,7 +205,7 @@ const selectTag = (tag) => {
   gap: 0.6rem;
 }
 
-@media (--bp-md) {
+@media (max-width: 960px) {
   .sketch-grid-container {
     max-height: none;
   }
@@ -214,14 +214,17 @@ const selectTag = (tag) => {
     display: none;
   }
 
+}
+
+@media (min-width: 700px) {
   .sketch-grid {
     column-count: 2;
   }
 }
 
-@media (--bp-xs) {
+@media (min-width: 961px) {
   .sketch-grid {
-    column-count: 1;
+    column-count: 4;
   }
 }
 </style>

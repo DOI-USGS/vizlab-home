@@ -6,13 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 
-@custom-media --bp-md (max-width: 960px);
-@custom-media --bp-md-up (min-width: 960px);
-@custom-media --bp-sm (max-width: 700px);
-@custom-media --bp-xs (max-width: 640px);
-@custom-media --bp-600 (max-width: 600px);
-@custom-media --bp-600-up (min-width: 600px);
-
 /* semantic color variables for this project */
 /* Define colors */
 :root {
@@ -30,12 +23,19 @@
   --usgs-green: #006F41;
   --sticky-nav-offset: 0px;
   --layout-max-width: 1200px;
+  --page-gutter: clamp(1.2rem, 4vw, 1.8rem);
 
   font-size: 62.5%;
 
   --title-font: Source Sans Pro; 
   --default-font: Source Code Pro;
 
+}
+
+@media (min-width: 961px) {
+  :root {
+    --page-gutter: clamp(1.5rem, 4vw, 3rem);
+  }
 }
 
 /* Declare color variables */
@@ -86,7 +86,7 @@
 }
 
 .title {
-  font-family: 'Univers Condensed', var(--title-font), sans-serif;
+  font-family: 'Univers Condensed', sans-serif;
 }
 
 .title-strong { font-weight: 800; }
@@ -271,7 +271,7 @@ html {
   --nav-link-underline: rgba(255, 255, 255, 0.35);
 }
 
-@media (--bp-md) {
+@media (max-width: 960px) {
   .section-header--with-controls {
     flex-direction: column;
   }
@@ -378,7 +378,7 @@ html {
   width: min(var(--layout-max-width, 1200px), 100%);
 }
 
-@media (--bp-md) {
+@media (max-width: 960px) {
   .content-section {
     padding-left: clamp(1.2rem, 5vw, 1.8rem);
     padding-right: clamp(1.2rem, 5vw, 1.8rem);
@@ -389,7 +389,7 @@ p, text, li {
   padding: 0 0 1rem 0;
 }
 
-@media (--bp-sm) {
+@media (max-width: 700px) {
   .section-title {
     font-size: 2.4rem;
   }

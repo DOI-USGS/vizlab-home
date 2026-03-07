@@ -236,7 +236,6 @@ onBeforeUnmount(() => {
 
 .hero-panel__title-strong {
   font-weight: 800;
-  font-family: 'Univers Condensed', var(--title-font), sans-serif;
   letter-spacing: -0.02em;
 }
 
@@ -284,16 +283,32 @@ onBeforeUnmount(() => {
   margin: 0;
 }
 
-@media (--bp-md) {
+@media (max-width: 960px) {
   .hero-panel {
     position: static;
     height: auto;
     border-radius: 1.6rem;
     width: 100%;
+    margin-top: 0;
+    padding: clamp(1.6rem, 4vw, 2.4rem);
+    gap: 1.6rem;
   }
 
+  .hero-panel__nav {
+    gap: 1rem;
+  }
+
+  .hero-panel__nav-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    height: auto;
+  }
+
+  .hero-panel__nav-list .hero-panel__nav-link,
   .hero-panel__nav-link {
-    text-align: center;
+    width: auto;
+    text-align: left;
   }
 }
 </style>

@@ -1,48 +1,46 @@
 <template>
-  <section id="visualization-container">
-    <div class="visualization-layout">
-      <HeroSidebar class="visualization-layout__sidebar" />
+  <div class="layout">
+    <HeroSidebar class="sidebar" />
 
-      <main class="visualization-layout__content">
-        <SeriesSection
-          id="series"
-          :title="sectionsMeta.series.title"
-          :summary="sectionsMeta.series.summary"
-          :series="series"
-        />
-        <VizSection
-          id="stories"
-          :items="websites"
-          :title="sectionsMeta.stories.title"
-          :summary="sectionsMeta.stories.summary"
-        />
-        <FilteredCardSection
-          id="sketches"
-          :title="sectionsMeta.sketches.title"
-          :summary="sectionsMeta.sketches.summary"
-          asset-source="illustration"
-          :items="sketches"
-        />
-        <FilteredCardSection
-          id="snapshots"
-          :title="sectionsMeta.snapshots.title"
-          :summary="sectionsMeta.snapshots.summary"
-          asset-source="chart"
-          :items="snapshots"
-        />
-        <BlogSection
-          id="blogs"
-          :title="sectionsMeta.blogs.title"
-          :summary="sectionsMeta.blogs.summary"
-          :items="blogs"
-        />
-        <AboutSection
-          id="team"
-          :text="team"
-        />
-      </main>
-    </div>
-  </section>
+    <main>
+      <SeriesSection
+        id="series"
+        :title="sectionsMeta.series.title"
+        :summary="sectionsMeta.series.summary"
+        :series="series"
+      />
+      <VizSection
+        id="stories"
+        :items="websites"
+        :title="sectionsMeta.stories.title"
+        :summary="sectionsMeta.stories.summary"
+      />
+      <FilteredCardSection
+        id="sketches"
+        :title="sectionsMeta.sketches.title"
+        :summary="sectionsMeta.sketches.summary"
+        asset-source="illustration"
+        :items="sketches"
+      />
+      <FilteredCardSection
+        id="snapshots"
+        :title="sectionsMeta.snapshots.title"
+        :summary="sectionsMeta.snapshots.summary"
+        asset-source="chart"
+        :items="snapshots"
+      />
+      <BlogSection
+        id="blogs"
+        :title="sectionsMeta.blogs.title"
+        :summary="sectionsMeta.blogs.summary"
+        :items="blogs"
+      />
+      <AboutSection
+        id="team"
+        :text="team"
+      />
+    </main>
+  </div>
 </template>
 
 <script setup>
@@ -95,38 +93,32 @@ const team = teamData
 </script>
 
 <style scoped>
-.visualization-layout {
+.layout {
   display: grid;
-  grid-template-columns: minmax(240px, 28%) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 4rem);
-  padding: 0 clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(1.4rem, 4vw, 2.4rem);
+  padding: 0 var(--page-gutter) clamp(1.6rem, 5vw, 2.4rem);
 }
 
-.visualization-layout__sidebar {
-  min-width: 260px;
+.sidebar,
+main {
+  min-width: 0;
 }
 
-.visualization-layout__content {
-  padding-top: clamp(1rem, 2vw, 2rem);
+:deep(.content-section) {
+  width: 100%;
+  margin: 0;
+  padding-inline: 0;
 }
 
-@media (--bp-md) {
-  .visualization-layout {
-    grid-template-columns: 1fr;
-    padding: 0;
+@media (min-width: 961px) {
+  .layout {
+    grid-template-columns: minmax(260px, 28%) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-bottom: clamp(2rem, 5vw, 4rem);
   }
 
-  .visualization-layout__sidebar {
-    min-width: 0;
-    padding: clamp(1.6rem, 6vw, 2.4rem);
-  }
-
-  .visualization-layout__content {
-    padding: clamp(1.2rem, 5vw, 1.8rem) 0 0;
-  }
-
-  .visualization-layout__content > :first-child {
-    margin-top: clamp(1rem, 3vw, 1.8rem);
+  main {
+    padding-top: 0;
   }
 }
 </style>
