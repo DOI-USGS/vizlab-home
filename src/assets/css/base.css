@@ -86,9 +86,9 @@
   --color-overlay: var(--black-soft);
   --color-overlay-text: var(--white-soft);
   --color-code-links-background: var(--medium-grey);
-  --color-link: #0a4d68;
-  --color-bar-focal: var(--medium-blue);
-  --color-bar-default: var(--medium-grey);
+  --color-link: var(--usgs-blue);
+  --color-bar-focal: var(--usgs-blue);
+  --color-bar-default: var(--usgs-blue);
   --color-map-focal: var(--medium-orange);
   --color-map-default: var(--white-bright);
   --color-USGS-header-footer: var(--usgs-blue);
@@ -102,11 +102,6 @@
   --pill-hover-border-color: color-mix(in srgb, var(--white-bright) 65%, transparent);
 
   --hero-divider-color: color-mix(in srgb, var(--hero-text-primary) 25%, transparent);
-  --hero-glow-primary: rgba(0, 193, 212, 0.35);
-  --hero-glow-secondary: rgba(58, 234, 158, 0.28);
-  --hero-gradient-start: var(--usgs-blue);
-  --hero-gradient-mid: var(--usgs-blue);
-  --hero-gradient-end: rgba(0, 142, 173, 0.8);
 }
 
 /* @media (prefers-color-scheme: dark) {
