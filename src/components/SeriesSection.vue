@@ -4,7 +4,7 @@
     class="series-section content-section"
   >
     <div class="section-intro">
-      <div class="section-header section-header--with-controls">
+      <div class="section-header">
         <div class="section-title-row">
           <h2
             :id="titleId"
@@ -68,7 +68,7 @@ const seriesList = computed(() => (props.series || []).filter((collection) => !c
 
 <style scoped>
 .section-intro {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 
 .series-grid {

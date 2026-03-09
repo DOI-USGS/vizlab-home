@@ -3,7 +3,7 @@
     :id="computedSectionId"
     class="content-section"
   >
-    <div class="section-header section-header--with-controls">
+    <div class="section-header">
       <div>
         <div class="section-title-row">
           <h2
@@ -27,49 +27,6 @@
           </p>
         </slot>
       </div>
-
-      <div
-        v-if="showControls"
-        class="section-controls"
-      >
-        <div
-          v-if="navHintVisible"
-          class="section-nav-hint"
-        >
-          <span>{{ navHint }}</span>
-          <svg
-            class="hint-arrow"
-            viewBox="0 0 120 40"
-            aria-hidden="true"
-          >
-            <path d="M8 20 C38 20, 68 20, 92 20" />
-            <g
-              transform="translate(92 20) rotate(180)"
-            >
-              <path d="M0 0 L8 -4" />
-              <path d="M0 0 L8 4" />
-            </g>
-          </svg>
-        </div>
-        <button
-          class="carousel-nav-btn"
-          type="button"
-          :disabled="!canPrev"
-          @click="handleMove(-1)"
-          :aria-label="prevAriaLabel"
-        >
-          ‹
-        </button>
-        <button
-          class="carousel-nav-btn"
-          type="button"
-          :disabled="!canNext"
-          @click="handleMove(1)"
-          :aria-label="nextAriaLabel"
-        >
-          ›
-        </button>
-      </div>
     </div>
 
     <ul
@@ -90,9 +47,9 @@
 </template>
 
 <script setup>
-import { computed, ref, watch } from "vue"
+import { computed } from "vue"
 import ContentCard from "@/components/ContentCard.vue"
-import { useCarouselWindow } from "@/composables/useCarouselWindow.js"
+import { useWindowSizeStore } from "@/stores/WindowSizeStore.js"
 
 const props = defineProps({
   sectionId: {
@@ -115,10 +72,6 @@ const props = defineProps({
     type: Number,
     default: 8
   },
-  stepSize: {
-    type: Number,
-    default: 1
-  },
   cardImageRatio: {
     type: Number,
     default: 100
@@ -126,18 +79,6 @@ const props = defineProps({
   showReleaseDate: {
     type: Boolean,
     default: false
-  },
-  prevAriaLabel: {
-    type: String,
-    default: "Show previous items"
-  },
-  nextAriaLabel: {
-    type: String,
-    default: "Show next items"
-  },
-  navHintText: {
-    type: String,
-    default: ""
   },
   columnFlowRows: {
     type: Number,
@@ -149,6 +90,10 @@ const props = defineProps({
   }
 })
 
+const MOBILE_PREVIEW_COUNT = 6
+const MOBILE_BREAKPOINT = 700
+
+const windowSizeStore = useWindowSizeStore()
 const computedSectionId = computed(() => props.sectionId || "content-grid")
 const titleId = computed(() => `${computedSectionId.value}`)
 const headingText = computed(() => props.title?.trim() || "")
@@ -169,47 +114,14 @@ const columnFlowStyle = computed(() => {
   return null
 })
 
-const carouselWindow = useCarouselWindow(visibleItems, {
-  windowSize: props.windowSize,
-  stepSize: props.stepSize ?? undefined
+const isMobilePreview = computed(() => windowSizeStore.windowWidth > 0 && windowSizeStore.windowWidth < MOBILE_BREAKPOINT)
+
+const previewLimit = computed(() => {
+  if (props.disableCarousel) return Number.POSITIVE_INFINITY
+  return isMobilePreview.value ? MOBILE_PREVIEW_COUNT : props.windowSize
 })
 
-const shouldPaginate = computed(() => !props.disableCarousel)
-
-const pagedItems = computed(() =>
-  shouldPaginate.value ? carouselWindow.windowItems.value : visibleItems.value
-)
-
-const showControls = computed(
-  () => shouldPaginate.value && carouselWindow.showControls.value
-)
-
-const canPrev = computed(
-  () => showControls.value && carouselWindow.canPrev.value
-)
-
-const canNext = computed(
-  () => showControls.value && carouselWindow.canNext.value
-)
-
-const navHint = computed(() => props.navHintText?.trim() || "")
-const navHintDismissed = ref(false)
-const navHintVisible = computed(
-  () => Boolean(navHint.value) && !navHintDismissed.value && showControls.value
-)
-
-watch(
-  () => props.navHintText,
-  () => {
-    navHintDismissed.value = false
-  }
-)
-
-function handleMove(step) {
-  if (!shouldPaginate.value) return
-  navHintDismissed.value = true
-  carouselWindow.move(step)
-}
+const pagedItems = computed(() => visibleItems.value.slice(0, previewLimit.value))
 </script>
 
 <style scoped>

@@ -33,11 +33,11 @@
         </p>
       </div>
 
-      <div class="section-controls section-controls--wrap">
-        <div
-          v-if="availableTags.length"
-          class="tag-filter"
-        >
+      <div
+        v-if="availableTags.length"
+        class="section-controls section-controls--wrap"
+      >
+        <div class="tag-filter">
           <button
             class="pill-button pill-button--tag"
             :class="{ 'pill-button--active': !selectedTag }"
