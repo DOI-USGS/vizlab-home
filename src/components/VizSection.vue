@@ -4,10 +4,6 @@
     :title="title"
     :summary="computedSummary"
     :items="items"
-    :step-size="2"
-    prev-aria-label="Show previous stories"
-    next-aria-label="Show next stories"
-    nav-hint-text="but wait, there's more!"
     :column-flow-rows="2"
   >
     <template #footer>

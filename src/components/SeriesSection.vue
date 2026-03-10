@@ -18,10 +18,10 @@
             </a>
           </h2>
         </div>
+        <p class="section-summary">
+          {{ summaryText }}
+        </p>
       </div>
-      <p class="section-summary">
-        {{ summaryText }}
-      </p>
     </div>
 
     <div class="series-grid" aria-live="polite">

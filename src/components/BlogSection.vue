@@ -5,8 +5,6 @@
     :summary="metadataSummary"
     :items="items"
     show-release-date
-    prev-aria-label="Show previous blog posts"
-    next-aria-label="Show next blog posts"
   >
     <template #summary>
       <p class="section-summary">

@@ -46,7 +46,6 @@
       <div
         class="section-divider"
         aria-hidden="true"
-        style="margin-top: auto; --divider-color: rgba(255, 255, 255, 0.5);"
       ></div>
       <p class="section-summary hero-panel__nav-note">
         Access USGS Water Data:
@@ -204,10 +203,8 @@ onBeforeUnmount(() => {
   flex-direction: column;
   justify-content: flex-start;
   gap: 2rem;
-  box-shadow: 0 25px 80px rgba(2, 8, 17, 0.45);
-  background: radial-gradient(circle at 15% 20%, var(--hero-glow-primary), transparent 45%),
-    radial-gradient(circle at 60% 10%, var(--hero-glow-secondary), transparent 42%),
-    linear-gradient(140deg, var(--hero-gradient-start), var(--hero-gradient-mid), var(--hero-gradient-end));
+  box-shadow: 0 25px 50px rgba(2, 8, 17, 0.25);
+  background: var(--usgs-blue);
 }
 
 .hero-panel__content {
@@ -217,7 +214,7 @@ onBeforeUnmount(() => {
 }
 
 .hero-slogan {
-  font-size: clamp(1.2rem, 1.8vw, 2.5rem);
+  font-size: clamp(2.2rem, 1.8vw, 2.5rem);
   font-weight: 800;
   color: var(--white-bright);
   margin: 0;
@@ -235,17 +232,19 @@ onBeforeUnmount(() => {
 }
 
 .hero-panel__title-strong {
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: "Univers Condensed", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.075em;
 }
 
 .hero-panel__title-light {
   font-weight: 200;
   color: var(--white-bright);
+  letter-spacing: -0.02em;
 }
 
 .hero-panel__intro {
-  margin: 0 0 0.5rem;
+  margin: 0.5rem 0 0.5rem;
 }
 
 .hero-panel__nav {
@@ -282,6 +281,9 @@ onBeforeUnmount(() => {
   font-weight: 600;
   margin: 0;
 }
+.section-divider {
+  color: var(--white-soft);
+}
 
 @media (max-width: 960px) {
   .hero-panel {
@@ -289,7 +291,7 @@ onBeforeUnmount(() => {
     height: auto;
     border-radius: 1.6rem;
     width: 100%;
-    margin-top: 0;
+    margin-top: 1.6rem;
     padding: clamp(1.6rem, 4vw, 2.4rem);
     gap: 1.6rem;
   }
