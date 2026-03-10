@@ -102,6 +102,7 @@ const team = teamData
 .sidebar,
 main {
   min-width: 0;
+  width: 100%;
 }
 
 :deep(.content-section) {

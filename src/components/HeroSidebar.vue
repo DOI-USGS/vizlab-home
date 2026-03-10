@@ -28,50 +28,108 @@
       class="hero-panel__nav"
       aria-label="Section navigation"
     >
-      <ul class="hero-panel__nav-list">
-        <li
-          v-for="item in navItems"
-          :key="item.id"
+      <div class="hero-panel__nav-desktop">
+        <ul class="hero-panel__nav-list">
+          <li
+            v-for="item in desktopNavItems"
+            :key="item.id"
+          >
+            <button
+              class="hero-panel__nav-link hero-panel__nav-link--light"
+              :class="{ active: activeSection === item.id }"
+              type="button"
+              @click="scrollTo(item.id)"
+            >
+              {{ item.label }}
+            </button>
+          </li>
+        </ul>
+        <div
+          class="section-divider"
+          aria-hidden="true"
+        ></div>
+        <p class="section-summary hero-panel__nav-note">
+          Access USGS Water Data:
+        </p>
+        <a
+          v-for="link in otherLinks"
+          :key="link.href"
+          class="hero-panel__nav-link hero-panel__nav-link--light"
+          :href="link.href"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ link.label }}
+        </a>
+      </div>
+
+      <div class="hero-panel__nav-mobile">
+        <button
+          class="hero-panel__mobile-link hero-panel__mobile-link--toggle"
+          :class="{ active: isPortfolioActive }"
+          type="button"
+          :aria-expanded="mobilePortfolioOpen.toString()"
+          @click="toggleMobilePortfolio"
+        >
+          <span>Portfolio</span>
+          <span aria-hidden="true">{{ mobilePortfolioOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="mobilePortfolioOpen"
+          class="hero-panel__mobile-submenu"
         >
           <button
-            class="hero-panel__nav-link hero-panel__nav-link--light"
+            v-for="item in portfolioNavItems"
+            :key="item.id"
+            class="hero-panel__mobile-sublink"
             :class="{ active: activeSection === item.id }"
             type="button"
             @click="scrollTo(item.id)"
           >
             {{ item.label }}
           </button>
-        </li>
-      </ul>
-      <div
-        class="section-divider"
-        aria-hidden="true"
-      ></div>
-      <p class="section-summary hero-panel__nav-note">
-        Access USGS Water Data:
-      </p>
-      <a
-        class="hero-panel__nav-link hero-panel__nav-link--light"
-        href="https://waterdata.usgs.gov"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Water Data for the Nation
-      </a>
-      <a
-        class="hero-panel__nav-link hero-panel__nav-link--light"
-        href="https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Computational Tools
-      </a>
+        </div>
+
+        <button
+          class="hero-panel__mobile-link hero-panel__mobile-link--toggle"
+          :class="{ active: isAboutActive }"
+          type="button"
+          :aria-expanded="mobileOtherLinksOpen.toString()"
+          @click="toggleMobileOtherLinks"
+        >
+          <span>Other links</span>
+          <span aria-hidden="true">{{ mobileOtherLinksOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="mobileOtherLinksOpen"
+          class="hero-panel__mobile-submenu"
+        >
+          <a
+            v-for="link in otherLinks"
+            :key="link.href"
+            class="hero-panel__mobile-sublink"
+            :href="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ link.label }}
+          </a>
+          <button
+            class="hero-panel__mobile-sublink"
+            :class="{ active: isAboutActive }"
+            type="button"
+            @click="scrollTo(teamSectionId)"
+          >
+            About
+          </button>
+        </div>
+      </div>
     </nav>
   </aside>
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from "vue"
+import { computed, onBeforeUnmount, onMounted, ref } from "vue"
 import sectionMetadata from "@/assets/content/section-metadata.json"
 
 const props = defineProps({
@@ -85,18 +143,30 @@ const props = defineProps({
   },
   introText: {
     type: String,
-    default: "We make visualizations for open and reproducible water science. Explore our portfolio of work:"
+    default: "Visualizations for open and reproducible water science."
   }
 })
 
 const sectionOrder = ["series", "stories", "sketches", "snapshots", "blogs", "team"]
-const navItems = sectionOrder.map((sectionId) => {
+const desktopNavItems = sectionOrder.map((sectionId) => {
   const meta = sectionMetadata[sectionId]
   return {
     id: meta.id,
     label: meta.title
   }
 })
+const teamSectionId = sectionMetadata.team.id
+const portfolioNavItems = desktopNavItems.filter((item) => item.id !== teamSectionId)
+const otherLinks = [
+  {
+    label: "Water Data for the Nation",
+    href: "https://waterdata.usgs.gov"
+  },
+  {
+    label: "Computational Tools",
+    href: "https://www.usgs.gov/mission-areas/water-resources/science/computational-tools-water-data-users"
+  }
+]
 
 const eyebrowText = props.eyebrow
 const introText = props.introText
@@ -105,15 +175,39 @@ const [heroTitleStrong, heroTitleLight] = (() => {
   return [strong, rest.join(" ")]
 })()
 
-const activeSection = ref(navItems[0].id)
+const activeSection = ref(desktopNavItems[0].id)
+const mobilePortfolioOpen = ref(false)
+const mobileOtherLinksOpen = ref(false)
 let observer
 
 const SCROLL_OFFSET = 32
+const isPortfolioActive = computed(() => portfolioNavItems.some((item) => item.id === activeSection.value))
+const isAboutActive = computed(() => activeSection.value === teamSectionId)
+
+const closeMobileMenus = () => {
+  mobilePortfolioOpen.value = false
+  mobileOtherLinksOpen.value = false
+}
+
+const toggleMobilePortfolio = () => {
+  mobilePortfolioOpen.value = !mobilePortfolioOpen.value
+  if (mobilePortfolioOpen.value) {
+    mobileOtherLinksOpen.value = false
+  }
+}
+
+const toggleMobileOtherLinks = () => {
+  mobileOtherLinksOpen.value = !mobileOtherLinksOpen.value
+  if (mobileOtherLinksOpen.value) {
+    mobilePortfolioOpen.value = false
+  }
+}
 
 // set up srolling navigation
 const scrollTo = (id) => {
   const target = document.getElementById(id)
   if (!target) return
+  closeMobileMenus()
   window.scrollTo({
     top: target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET,
     behavior: "smooth"
@@ -131,7 +225,7 @@ const setupObserver = () => {
     rootMargin: "-35% 0px -40% 0px"
   })
 
-  navItems.forEach((item) => {
+  desktopNavItems.forEach((item) => {
     const el = document.getElementById(item.id)
     if (el) observer.observe(el)
   })
@@ -142,9 +236,9 @@ const updateActiveSectionByScrollPosition = () => {
   if (typeof window === "undefined") return
 
   const threshold = window.scrollY + window.innerHeight * 0.25
-  let current = navItems[0].id
+  let current = desktopNavItems[0].id
 
-  for (const item of navItems) {
+  for (const item of desktopNavItems) {
     const el = document.getElementById(item.id)
     if (!el) continue
     const elementTop = el.getBoundingClientRect().top + window.scrollY
@@ -195,6 +289,7 @@ onBeforeUnmount(() => {
   top: clamp(1.5rem, 4vw, 4rem);
   height: calc(100vh - clamp(1.5rem, 4vw, 8rem));
   margin-top: clamp(1.5rem, 3vw, 3rem);
+  width: 100%;
   color: var(--white-bright);
   border-radius: 2.4rem;
   padding: clamp(1.8rem, 3vw, 3rem);
@@ -256,6 +351,14 @@ onBeforeUnmount(() => {
   width: 100%;
 }
 
+.hero-panel__nav-desktop {
+  display: contents;
+}
+
+.hero-panel__nav-mobile {
+  display: none;
+}
+
 .hero-panel__nav-list {
   list-style: none;
   margin: 0;
@@ -281,6 +384,54 @@ onBeforeUnmount(() => {
   font-weight: 600;
   margin: 0;
 }
+
+.hero-panel__mobile-link,
+.hero-panel__mobile-sublink {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white-bright);
+  font-family: "Source Sans Pro", var(--default-font), sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+  padding: 1.1rem 1.4rem;
+}
+
+.hero-panel__mobile-link {
+  cursor: pointer;
+}
+
+.hero-panel__mobile-link.active,
+.hero-panel__mobile-sublink.active {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.hero-panel__mobile-submenu {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0.4rem 0 0.2rem 1.4rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.24);
+  width: 100%;
+}
+
+.hero-panel__mobile-sublink {
+  width: 100%;
+  justify-content: flex-start;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  padding-left: 1.2rem;
+}
+
 .section-divider {
   color: var(--white-soft);
 }
@@ -300,17 +451,22 @@ onBeforeUnmount(() => {
     gap: 1rem;
   }
 
-  .hero-panel__nav-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.8rem 1.2rem;
-    height: auto;
+  .hero-panel__nav-desktop {
+    display: none;
   }
 
-  .hero-panel__nav-list .hero-panel__nav-link,
-  .hero-panel__nav-link {
-    width: auto;
-    text-align: left;
+  .hero-panel__nav-mobile {
+    display: grid;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .hero-panel__mobile-link {
+    width: 100%;
+  }
+
+  .hero-panel__mobile-submenu {
+    padding: 0.4rem 0 0.2rem 1.2rem;
   }
 }
 </style>
