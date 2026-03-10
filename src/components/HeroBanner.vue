@@ -1,108 +1,71 @@
 <template>
   <aside
-    ref="panel"
     class="hero-panel"
     aria-labelledby="hero-title"
   >
-    <div class="hero-panel__content">
+    <div class="content">
       <h1
         id="hero-title"
-        class="hero-panel__title"
+        class="title"
       >
-        <span class="hero-panel__title-strong">{{ heroTitleStrong }}</span>
+        <span class="strong">{{ heroTitleStrong }}</span>
         <span
-          class="hero-panel__title-light"
+          class="light"
         >
           {{ heroTitleLight }}
         </span>
       </h1>
-      <p class="hero-slogan">
+      <p class="slogan">
         {{ eyebrowText }}
       </p>
     </div>
 
     <nav
-      class="hero-panel__nav"
+      class="nav"
       aria-label="Section navigation"
     >
-      <div class="hero-panel__group">
+      <div
+        v-for="group in navGroups"
+        :key="group.id"
+        class="group"
+      >
         <button
-          class="ui-button ui-button--disclosure hero-panel__disclosure"
-          :class="{ active: isPortfolioActive }"
+          class="ui-button ui-button--disclosure"
+          :class="{ active: group.active }"
           type="button"
-          :aria-expanded="portfolioOpen.toString()"
-          @click="togglePortfolio"
+          :aria-expanded="group.isOpen.toString()"
+          @click="toggleGroup(group.id)"
         >
-          <span>Visualization portfolio</span>
-          <span aria-hidden="true">{{ portfolioOpen ? "−" : "+" }}</span>
+          <span>{{ group.label }}</span>
+          <span aria-hidden="true">{{ group.isOpen ? "−" : "+" }}</span>
         </button>
         <div
-          v-if="portfolioOpen"
-          class="hero-panel__subnav"
+          v-if="group.isOpen"
+          class="subnav"
         >
-          <button
-            v-for="item in portfolioNavItems"
+          <template
+            v-for="item in group.items"
             :key="item.id"
-            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
-            :class="{ active: activeSection === item.id }"
-            type="button"
-            @click="scrollTo(item.id)"
           >
-            {{ item.label }}
-          </button>
-        </div>
-      </div>
-
-      <div class="hero-panel__group">
-        <button
-          class="ui-button ui-button--disclosure hero-panel__disclosure"
-          type="button"
-          :aria-expanded="otherLinksOpen.toString()"
-          @click="toggleOtherLinks"
-        >
-          <span>Access USGS Water Data</span>
-          <span aria-hidden="true">{{ otherLinksOpen ? "−" : "+" }}</span>
-        </button>
-        <div
-          v-if="otherLinksOpen"
-          class="hero-panel__subnav"
-        >
-          <a
-            v-for="link in otherLinks"
-            :key="link.href"
-            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
-            :href="link.href"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ link.label }}
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-panel__group">
-        <button
-          class="ui-button ui-button--disclosure hero-panel__disclosure"
-          :class="{ active: isAboutActive }"
-          type="button"
-          :aria-expanded="aboutOpen.toString()"
-          @click="toggleAbout"
-        >
-          <span>About</span>
-          <span aria-hidden="true">{{ aboutOpen ? "−" : "+" }}</span>
-        </button>
-        <div
-          v-if="aboutOpen"
-          class="hero-panel__subnav"
-        >
-          <button
-            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
-            :class="{ active: isAboutActive }"
-            type="button"
-            @click="scrollTo(teamSectionId)"
-          >
-            Meet the Team
-          </button>
+            <button
+              v-if="item.target"
+              class="ui-button ui-button--disclosure"
+              :class="{ active: item.active }"
+              type="button"
+              @click="scrollTo(item.target)"
+            >
+              {{ item.label }}
+            </button>
+            <a
+              v-else
+              class="ui-button ui-button--disclosure"
+              :href="item.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ item.label }}
+            </a>
+          </template>
         </div>
       </div>
     </nav>
@@ -152,46 +115,56 @@ const [heroTitleStrong, heroTitleLight] = (() => {
 })()
 
 const activeSection = ref(desktopNavItems[0].id)
-const portfolioOpen = ref(false)
-const otherLinksOpen = ref(false)
-const aboutOpen = ref(false)
+const openGroup = ref(null)
 let observer
 
 const SCROLL_OFFSET = 32
 const isPortfolioActive = computed(() => portfolioNavItems.some((item) => item.id === activeSection.value))
 const isAboutActive = computed(() => activeSection.value === teamSectionId)
+const navGroups = computed(() => [
+  {
+    id: "portfolio",
+    label: "Visualization portfolio",
+    active: isPortfolioActive.value,
+    isOpen: openGroup.value === "portfolio",
+    items: portfolioNavItems.map((item) => ({
+      ...item,
+      target: item.id,
+      active: activeSection.value === item.id
+    }))
+  },
+  {
+    id: "about",
+    label: "About",
+    active: isAboutActive.value,
+    isOpen: openGroup.value === "about",
+    items: [
+      {
+        id: teamSectionId,
+        label: "Meet the Team",
+        target: teamSectionId,
+        active: isAboutActive.value
+      }
+    ]
+  },
+  {
+    id: "links",
+    label: "Access USGS Water Data",
+    active: false,
+    isOpen: openGroup.value === "links",
+    items: otherLinks.map((link) => ({
+      ...link,
+      id: link.href
+    }))
+  }
+])
 
 const closeMenus = () => {
-  portfolioOpen.value = false
-  otherLinksOpen.value = false
-  aboutOpen.value = false
+  openGroup.value = null
 }
 
-const togglePortfolio = () => {
-  const nextValue = !portfolioOpen.value
-  portfolioOpen.value = nextValue
-  if (nextValue) {
-    otherLinksOpen.value = false
-    aboutOpen.value = false
-  }
-}
-
-const toggleOtherLinks = () => {
-  const nextValue = !otherLinksOpen.value
-  otherLinksOpen.value = nextValue
-  if (nextValue) {
-    portfolioOpen.value = false
-    aboutOpen.value = false
-  }
-}
-
-const toggleAbout = () => {
-  const nextValue = !aboutOpen.value
-  aboutOpen.value = nextValue
-  if (nextValue) {
-    portfolioOpen.value = false
-    otherLinksOpen.value = false
-  }
+const toggleGroup = (groupId) => {
+  openGroup.value = openGroup.value === groupId ? null : groupId
 }
 
 // set up srolling navigation
@@ -276,31 +249,24 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .hero-panel {
-  position: static;
-  margin-top: 0;
   width: 100%;
-  max-width: none;
-  margin-inline: 0;
   color: var(--white-bright);
-  border-radius: 0;
   padding: clamp(1.8rem, 3vw, 3rem);
   padding-bottom: clamp(2.6rem, 4vw, 4.2rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 2rem;
-  box-shadow: none;
   background: var(--usgs-blue);
 }
 
-.hero-panel__content {
+.content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-width: 78rem;
 }
 
-.hero-slogan {
+.slogan {
   font-size: clamp(2.4rem, 2vw, 3rem);
   font-weight: 800;
   color: var(--white-bright);
@@ -309,7 +275,7 @@ onBeforeUnmount(() => {
   white-space: nowrap;
 }
 
-.hero-panel__title {
+.title {
   font-size: clamp(5.8rem, 8vw, 8.6rem);
   line-height: 1.05;
   margin: 0;
@@ -319,19 +285,19 @@ onBeforeUnmount(() => {
   align-items: baseline;
 }
 
-.hero-panel__title-strong {
+.strong {
   font-family: "Univers Condensed", sans-serif;
   font-weight: 700;
   letter-spacing: -0.075em;
 }
 
-.hero-panel__title-light {
+.light {
   font-weight: 200;
   color: var(--white-bright);
   letter-spacing: -0.02em;
 }
 
-.hero-panel__nav {
+.nav {
   display: flex;
   flex-wrap: nowrap;
   gap: 0.8rem;
@@ -341,17 +307,12 @@ onBeforeUnmount(() => {
   max-width: 100%;
 }
 
-.hero-panel__group {
+.group {
   position: relative;
   flex: 0 0 auto;
 }
 
-.hero-panel :is(.section-summary) {
-  color: var(--white-bright);
-}
-
-.hero-panel__disclosure {
-  width: auto;
+.hero-panel .ui-button--disclosure {
   --button-bg: rgba(255, 255, 255, 0.08);
   --button-border: transparent;
   --button-text: var(--white-bright);
@@ -360,7 +321,7 @@ onBeforeUnmount(() => {
   --button-hover-text: var(--white-bright);
 }
 
-.hero-panel__subnav {
+.subnav {
   display: grid;
   gap: 0.8rem;
   position: absolute;
@@ -374,14 +335,14 @@ onBeforeUnmount(() => {
   z-index: 2;
 }
 
-.hero-panel__sub {
+.subnav > .ui-button--disclosure {
   --button-bg: rgba(255, 255, 255, 0.04);
   --button-border: transparent;
   --button-hover-bg: rgba(255, 255, 255, 0.12);
   --button-hover-border: transparent;
   --button-font-size: 1.6rem;
-  justify-content: flex-start;
-  padding-left: 1.2rem;
+  --button-justify: flex-start;
+  --button-padding: 0.9rem 1.3rem 0.9rem 1.2rem;
 }
 
 @media (max-width: 960px) {
@@ -390,30 +351,30 @@ onBeforeUnmount(() => {
     gap: 1.6rem;
   }
 
-  .hero-slogan {
+  .slogan {
     font-size: clamp(2.6rem, 6vw, 3.2rem);
   }
 
-  .hero-panel__title {
+  .title {
     font-size: clamp(5rem, 12vw, 7rem);
   }
 
-  .hero-panel__nav {
+  .nav {
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
     max-width: 62rem;
   }
 
-  .hero-panel__group {
+  .group {
     width: 100%;
   }
 
-  .hero-panel__disclosure {
+  .hero-panel .ui-button--disclosure {
     width: 100%;
   }
 
-  .hero-panel__subnav {
+  .subnav {
     position: static;
     min-width: 0;
     padding: 0.4rem 0 0.2rem 1.2rem;

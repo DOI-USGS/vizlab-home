@@ -3,19 +3,19 @@
     class="sketch-card card-shell"
   >
     <a
-      class="sketch-card__link"
+      class="main"
       :href="targetUrl"
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
-        class="sketch-card__thumb"
+        class="image"
         :src="thumbnailSrc"
         :alt="altText"
         loading="lazy"
       >
-      <div class="sketch-card__overlay">
-        <p class="card-heading sketch-card__title">
+      <div class="overlay">
+        <p class="card-heading title">
           {{ card.title }}
         </p>
       </div>
@@ -62,7 +62,7 @@ const targetUrl = primaryLink || assetLink || "#"
   display: block;
 }
 
-.sketch-card__link {
+.main {
   display: block;
   position: relative;
   border-radius: 1.2rem;
@@ -70,19 +70,19 @@ const targetUrl = primaryLink || assetLink || "#"
   background: var(--light-grey);
 }
 
-.sketch-card__thumb {
+.image {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.sketch-card__title {
+.title {
   color: var(--black-soft);
   padding: 1rem 1.5rem;
   text-align: center;
 }
 
-.sketch-card__overlay {
+.overlay {
   position: absolute;
   inset: 0;
   display: flex;
@@ -94,8 +94,8 @@ const targetUrl = primaryLink || assetLink || "#"
   transition: opacity 0.1s ease;
 }
 
-.sketch-card__link:hover .sketch-card__overlay,
-.sketch-card__link:focus-visible .sketch-card__overlay {
+.main:hover .overlay,
+.main:focus-visible .overlay {
   opacity: 1;
 }
 

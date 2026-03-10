@@ -1,18 +1,18 @@
 <template>
   <article class="series-card card-shell">
-    <header class="series-card__header">
-      <div class="series-card__eyebrow-row">
-        <p class="card-heading series-card__eyebrow">
+    <header class="header">
+      <div class="row">
+        <p class="card-heading eyebrow">
           {{ series.title }}
         </p>
         <div
           v-if="series.intervals.length"
-          class="series-card__badges"
+          class="badges"
         >
           <span
             v-for="interval in series.intervals"
             :key="interval"
-            class="series-card__badge"
+            class="badge"
           >
             {{ interval }}
           </span>
@@ -21,7 +21,7 @@
     </header>
 
     <a
-      class="series-card__image"
+      class="image"
       :href="latestPrimaryLink"
       target="_blank"
       rel="noopener noreferrer"
@@ -33,7 +33,7 @@
       >
     </a>
 
-    <div class="series-card__body">
+    <div class="body">
       <p
         v-if="latestReleaseLabel"
         class="card-meta"
@@ -42,11 +42,11 @@
       </p>
       <p
         v-if="series?.description"
-        class="section-summary series-card__description"
+        class="section-summary description"
       >
         {{ series.description }}
       </p>
-      <div class="series-card__actions">
+      <div class="actions">
         <a
           class="ui-button ui-button--chip"
           :href="latestPrimaryLink"
@@ -67,11 +67,11 @@
 
         <div
           v-if="hasCodeIcon"
-          class="series-card__code-icons"
+          class="code-icons"
         >
           <a
             v-if="seriesCodeLink"
-            class="series-card__code-button"
+            class="code-button"
             :href="seriesCodeLink"
             target="_blank"
             rel="noopener noreferrer"
@@ -82,7 +82,7 @@
           </a>
           <a
             v-if="latestCodeLink"
-            class="series-card__code-button"
+            class="code-button"
             :href="latestCodeLink"
             target="_blank"
             rel="noopener noreferrer"
@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <footer class="series-card__footer">
+    <footer class="footer">
       <button
         v-if="hasHistory"
         class="history-toggle"
@@ -218,17 +218,17 @@ const hasHistory = historyEntries.length > 0
   min-height: 100%;
 }
 
-.series-card__header {
+.header {
   padding: 1.5rem 1.5rem 0;
 }
 
-.series-card__code-icons {
+.code-icons {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-.series-card__code-button {
+.code-button {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 999px;
@@ -242,25 +242,25 @@ const hasHistory = historyEntries.length > 0
   transition: color 0.2s ease;
 }
 
-.series-card__code-button:hover,
-.series-card__code-button:focus-visible,
-.series-card__code-button:active {
+.code-button:hover,
+.code-button:focus-visible,
+.code-button:active {
   color: var(--color-link);
 }
 
-.series-card__eyebrow-row {
+.row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.series-card__eyebrow {
+.eyebrow {
   flex: 1 1 auto;
   color: var(--black-soft);
 }
 
-.series-card__badges {
+.badges {
   flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
@@ -269,7 +269,7 @@ const hasHistory = historyEntries.length > 0
   flex-wrap: wrap;
 }
 
-.series-card__badge {
+.badge {
   display: inline-flex;
   align-items: center;
   font-size: 1.4rem;
@@ -279,8 +279,7 @@ const hasHistory = historyEntries.length > 0
   line-height: 1;
 }
 
-
-.series-card__image {
+.image {
   display: block;
   position: relative;
   padding-top: 56%;
@@ -289,7 +288,7 @@ const hasHistory = historyEntries.length > 0
   border-top-right-radius: 1.2rem;
 }
 
-.series-card__image img {
+.image img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -297,7 +296,7 @@ const hasHistory = historyEntries.length > 0
   object-fit: cover;
 }
 
-.series-card__body {
+.body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -306,30 +305,41 @@ const hasHistory = historyEntries.length > 0
   flex: 1 1 auto;
 }
 
-.series-card__description {
+.description {
   margin: 0;
   color: var(--black-soft);
 }
 
-.series-card__actions {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: auto;
 }
 
-.series-card__actions .ui-button {
+.actions .ui-button {
   --pill-font-size: 1.4rem;
   --pill-padding: 0.4rem 1.2rem;
+  backdrop-filter: none;
 }
 
-.series-card__footer {
+.actions .ui-button--chip {
+  --pill-bg-color: transparent;
+  --pill-border-color: var(--color-link);
+  --pill-text-color: var(--color-link);
+  --pill-hover-bg-color: var(--color-link);
+  --pill-hover-border-color: var(--color-link);
+  --pill-hover-text: #fff;
+}
+
+.footer {
   padding: 1.5rem;
   border-top: 1px solid var(--light-grey);
   min-height: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: var(--color-surface);
 }
 
 .history-toggle {
@@ -337,11 +347,14 @@ const hasHistory = historyEntries.length > 0
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.2rem;
   background: none;
   border: none;
-  padding: 0.4rem 0;
+  padding: 0.2rem 0;
   font-size: 1.8rem;
   font-weight: 600;
+  line-height: 1.2;
+  color: var(--black-soft);
   cursor: pointer;
 }
 
@@ -377,14 +390,14 @@ const hasHistory = historyEntries.length > 0
   }
 
   /* move interval badges to second lin on mobile */
-  .series-card__eyebrow-row {
+  .row {
     flex-direction: column;
     align-items: flex-start;
     gap: 0px;
     margin: 0px 0px 15px;
   }
 
-  .series-card__badges {
+  .badges {
     width: 100%;
     justify-content: flex-start;
   }

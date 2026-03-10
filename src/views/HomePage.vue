@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <HeroSidebar class="sidebar" />
+    <HeroBanner class="sidebar" />
 
     <main>
       <SeriesSection
@@ -69,7 +69,7 @@ import { defineAsyncComponent } from "vue"
 
 // load sections at top of the page first
 import CardGridSection from "@/components/CardGridSection.vue"
-import HeroSidebar from "@/components/HeroSidebar.vue"
+import HeroBanner from "@/components/HeroBanner.vue"
 import SeriesSection from "@/components/SeriesSection.vue"
 
 // lazy load of later sections
@@ -126,19 +126,24 @@ main {
   width: 100%;
 }
 
+:deep(.content-section) {
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+
 main {
   padding-inline: var(--page-gutter);
 }
 
 @media (min-width: 961px) {
   main {
-    padding-inline: clamp(3rem, 6vw, 6rem);
+    padding-inline: clamp(4rem, 8vw, 9rem);
   }
-}
 
-:deep(.content-section) {
-  width: 100%;
-  margin: 0;
-  padding-inline: 0;
+  :deep(.content-section) {
+    max-width: min(1120px, 100%);
+    margin-inline: auto;
+  }
 }
 </style>
