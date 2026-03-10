@@ -36,6 +36,7 @@
         :title="sectionsMeta.blogs.title"
         :summary="sectionsMeta.blogs.summary"
         :items="blogs"
+        :preview-rows="2"
         show-date
         expandable
       >
@@ -116,7 +117,7 @@ const team = teamData
   display: grid;
   align-items: start;
   gap: clamp(1.4rem, 4vw, 2.4rem);
-  padding: 0 var(--page-gutter) clamp(1.6rem, 5vw, 2.4rem);
+  padding: 0 0 clamp(1.6rem, 5vw, 2.4rem);
 }
 
 .sidebar,
@@ -125,21 +126,19 @@ main {
   width: 100%;
 }
 
+main {
+  padding-inline: var(--page-gutter);
+}
+
+@media (min-width: 961px) {
+  main {
+    padding-inline: clamp(3rem, 6vw, 6rem);
+  }
+}
+
 :deep(.content-section) {
   width: 100%;
   margin: 0;
   padding-inline: 0;
-}
-
-@media (min-width: 961px) {
-  .layout {
-    grid-template-columns: minmax(260px, 28%) minmax(0, 1fr);
-    gap: clamp(2rem, 4vw, 4rem);
-    padding-bottom: clamp(2rem, 5vw, 4rem);
-  }
-
-  main {
-    padding-top: 0;
-  }
 }
 </style>

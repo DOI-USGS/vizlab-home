@@ -204,7 +204,7 @@ const toggleExpanded = () => {
 
 @media (min-width: 961px) {
   .masonry-grid {
-    column-count: 3;
+    column-count: 4;
   }
 }
 </style>

@@ -25,79 +25,85 @@
       class="hero-panel__nav"
       aria-label="Section navigation"
     >
-      <button
-        class="ui-button ui-button--disclosure hero-panel__disclosure"
-        :class="{ active: isPortfolioActive }"
-        type="button"
-        :aria-expanded="portfolioOpen.toString()"
-        @click="togglePortfolio"
-      >
-        <span>Visualization portfolio</span>
-        <span aria-hidden="true">{{ portfolioOpen ? "−" : "+" }}</span>
-      </button>
-      <div
-        v-if="portfolioOpen"
-        class="hero-panel__subnav"
-      >
+      <div class="hero-panel__group">
         <button
-          v-for="item in portfolioNavItems"
-          :key="item.id"
-          class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
-          :class="{ active: activeSection === item.id }"
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
+          :class="{ active: isPortfolioActive }"
           type="button"
-          @click="scrollTo(item.id)"
+          :aria-expanded="portfolioOpen.toString()"
+          @click="togglePortfolio"
         >
-          {{ item.label }}
+          <span>Visualization portfolio</span>
+          <span aria-hidden="true">{{ portfolioOpen ? "−" : "+" }}</span>
         </button>
-      </div>
-
-      <button
-        class="ui-button ui-button--disclosure hero-panel__disclosure"
-        type="button"
-        :aria-expanded="otherLinksOpen.toString()"
-        @click="toggleOtherLinks"
-      >
-        <span>Access USGS Water Data</span>
-        <span aria-hidden="true">{{ otherLinksOpen ? "−" : "+" }}</span>
-      </button>
-      <div
-        v-if="otherLinksOpen"
-        class="hero-panel__subnav"
-      >
-        <a
-          v-for="link in otherLinks"
-          :key="link.href"
-          class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
-          :href="link.href"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+          v-if="portfolioOpen"
+          class="hero-panel__subnav"
         >
-          {{ link.label }}
-        </a>
+          <button
+            v-for="item in portfolioNavItems"
+            :key="item.id"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
+            :class="{ active: activeSection === item.id }"
+            type="button"
+            @click="scrollTo(item.id)"
+          >
+            {{ item.label }}
+          </button>
+        </div>
       </div>
 
-      <button
-        class="ui-button ui-button--disclosure hero-panel__disclosure"
-        :class="{ active: isAboutActive }"
-        type="button"
-        :aria-expanded="aboutOpen.toString()"
-        @click="toggleAbout"
-      >
-        <span>About</span>
-        <span aria-hidden="true">{{ aboutOpen ? "−" : "+" }}</span>
-      </button>
-      <div
-        v-if="aboutOpen"
-        class="hero-panel__subnav"
-      >
+      <div class="hero-panel__group">
         <button
-          class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
+          type="button"
+          :aria-expanded="otherLinksOpen.toString()"
+          @click="toggleOtherLinks"
+        >
+          <span>Access USGS Water Data</span>
+          <span aria-hidden="true">{{ otherLinksOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="otherLinksOpen"
+          class="hero-panel__subnav"
+        >
+          <a
+            v-for="link in otherLinks"
+            :key="link.href"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
+            :href="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ link.label }}
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-panel__group">
+        <button
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
           :class="{ active: isAboutActive }"
           type="button"
-          @click="scrollTo(teamSectionId)"
+          :aria-expanded="aboutOpen.toString()"
+          @click="toggleAbout"
         >
-          Meet the Team
+          <span>About</span>
+          <span aria-hidden="true">{{ aboutOpen ? "−" : "+" }}</span>
         </button>
+        <div
+          v-if="aboutOpen"
+          class="hero-panel__subnav"
+        >
+          <button
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__sub"
+            :class="{ active: isAboutActive }"
+            type="button"
+            @click="scrollTo(teamSectionId)"
+          >
+            Meet the Team
+          </button>
+        </div>
       </div>
     </nav>
   </aside>
@@ -270,19 +276,20 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .hero-panel {
-  position: sticky;
-  top: clamp(1.5rem, 4vw, 4rem);
-  margin-top: clamp(1.5rem, 3vw, 3rem);
+  position: static;
+  margin-top: 0;
   width: 100%;
+  max-width: none;
+  margin-inline: 0;
   color: var(--white-bright);
-  border-radius: 2.4rem;
+  border-radius: 0;
   padding: clamp(1.8rem, 3vw, 3rem);
   padding-bottom: clamp(2.6rem, 4vw, 4.2rem);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 2rem;
-  box-shadow: 0 25px 50px rgba(2, 8, 17, 0.25);
+  box-shadow: none;
   background: var(--usgs-blue);
 }
 
@@ -290,10 +297,11 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 78rem;
 }
 
 .hero-slogan {
-  font-size: clamp(2.2rem, 1.8vw, 2.5rem);
+  font-size: clamp(2.4rem, 2vw, 3rem);
   font-weight: 800;
   color: var(--white-bright);
   margin: 0;
@@ -302,7 +310,7 @@ onBeforeUnmount(() => {
 }
 
 .hero-panel__title {
-  font-size: clamp(7rem, 5vw, 5.4rem);
+  font-size: clamp(5.8rem, 8vw, 8.6rem);
   line-height: 1.05;
   margin: 0;
   display: flex;
@@ -325,11 +333,17 @@ onBeforeUnmount(() => {
 
 .hero-panel__nav {
   display: flex;
-  flex-direction: column;
+  flex-wrap: nowrap;
   gap: 0.8rem;
   align-items: flex-start;
   flex: 0 0 auto;
   width: 100%;
+  max-width: 100%;
+}
+
+.hero-panel__group {
+  position: relative;
+  flex: 0 0 auto;
 }
 
 .hero-panel :is(.section-summary) {
@@ -337,7 +351,7 @@ onBeforeUnmount(() => {
 }
 
 .hero-panel__disclosure {
-  width: 100%;
+  width: auto;
   --button-bg: rgba(255, 255, 255, 0.08);
   --button-border: transparent;
   --button-text: var(--white-bright);
@@ -349,9 +363,15 @@ onBeforeUnmount(() => {
 .hero-panel__subnav {
   display: grid;
   gap: 0.8rem;
-  padding: 0.4rem 0 0.2rem 1.4rem;
-  border-left: 2px solid rgba(255, 255, 255, 0.24);
-  width: 100%;
+  position: absolute;
+  top: calc(100% + 0.8rem);
+  left: 0;
+  min-width: 100%;
+  padding: 0.8rem;
+  border-radius: 1.6rem;
+  background: rgba(4, 22, 44, 0.96);
+  box-shadow: 0 20px 40px rgba(2, 8, 17, 0.3);
+  z-index: 2;
 }
 
 .hero-panel__sub {
@@ -366,11 +386,6 @@ onBeforeUnmount(() => {
 
 @media (max-width: 960px) {
   .hero-panel {
-    position: static;
-    height: auto;
-    border-radius: 1.6rem;
-    width: 100%;
-    margin-top: 1.6rem;
     padding: clamp(1.6rem, 4vw, 2.4rem);
     gap: 1.6rem;
   }
@@ -379,12 +394,33 @@ onBeforeUnmount(() => {
     font-size: clamp(2.6rem, 6vw, 3.2rem);
   }
 
+  .hero-panel__title {
+    font-size: clamp(5rem, 12vw, 7rem);
+  }
+
+  .hero-panel__nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 62rem;
+  }
+
+  .hero-panel__group {
+    width: 100%;
+  }
+
   .hero-panel__disclosure {
     width: 100%;
   }
 
   .hero-panel__subnav {
+    position: static;
+    min-width: 0;
     padding: 0.4rem 0 0.2rem 1.2rem;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    border-left: 2px solid rgba(255, 255, 255, 0.24);
   }
 }
 </style>
