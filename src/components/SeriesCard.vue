@@ -304,7 +304,7 @@ const hasHistory = historyEntries.length > 0
 .series-card__badge {
   display: inline-flex;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   border: 1px solid currentColor;
   border-radius: 999px;
   padding: 0.1rem 0.8rem;
@@ -351,7 +351,7 @@ const hasHistory = historyEntries.length > 0
 }
 
 .series-card__actions .pill-button {
-  --pill-font-size: 1.3rem;
+  --pill-font-size: 1.4rem;
   --pill-padding: 0.4rem 1.2rem;
 }
 
