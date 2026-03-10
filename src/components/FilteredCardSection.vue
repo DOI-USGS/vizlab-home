@@ -5,7 +5,7 @@
   >
     <div class="section-header section-header--with-controls">
       <div>
-        <div class="section-title-row">
+        <div>
           <h2
             :id="titleId"
             :data-section-anchor="computedSectionId"
@@ -27,7 +27,6 @@
         </div>
         <p
           v-if="summary"
-          class="section-summary"
         >
           {{ summary }}
         </p>
@@ -58,7 +57,6 @@
           </button>
         </div>
       </div>
-
     </div>
 
     <div
@@ -162,15 +160,19 @@ const selectTag = (tag) => {
 </script>
 
 <style scoped>
+.section-header {
+  margin-bottom: 0;
+}
+
 .sketch-grid-container {
   position: relative;
-  max-height: 75rem;
+  max-height: 7rem;
   overflow: hidden;
 }
 
 .sketch-grid {
   column-count: 2;
-  column-gap: 1.5rem;
+  column-gap: 0.75rem;
 }
 
 .sketch-grid-container--fade::after {
@@ -181,13 +183,6 @@ const selectTag = (tag) => {
   bottom: 0;
   height: 8rem;
   pointer-events: none;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.85) 65%,
-      var(--color-background, #f5f6f8) 100%
-    );
 }
 
 .sketch-grid-container--full {
@@ -206,6 +201,10 @@ const selectTag = (tag) => {
 }
 
 @media (max-width: 960px) {
+  .section-header--with-controls {
+    gap: 0;
+  }
+
   .sketch-grid-container {
     max-height: none;
   }
@@ -218,7 +217,7 @@ const selectTag = (tag) => {
 
 @media (min-width: 961px) {
   .sketch-grid {
-    column-count: 4;
+    column-count: 3;
   }
 }
 </style>
