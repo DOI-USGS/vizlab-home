@@ -354,18 +354,17 @@ p, text, li {
 .ui-button {
   --button-bg: transparent;
   --button-border: transparent;
-  --button-text: currentColor;
+  --button-text: var(--usgs-blue);
   --button-hover-bg: var(--button-bg);
   --button-hover-border: var(--button-border);
   --button-hover-text: var(--button-text);
   --button-radius: 1.2rem;
   --button-font-size: 1.6rem;
   --button-padding: 0.9rem 1.3rem;
-  --button-justify: center;
   width: auto;
   display: inline-flex;
   align-items: center;
-  justify-content: var(--button-justify);
+  justify-content: center;
   gap: 1rem;
   font-family: "Source Sans Pro", var(--default-font), sans-serif;
   font-size: var(--button-font-size);
@@ -429,7 +428,7 @@ p, text, li {
   --pill-bg-color: rgba(10, 77, 104, 0.18);
   --pill-border-color: var(--usgs-blue);
   --pill-text-color: var(--usgs-blue);
-  --pill-hover-bg-color: #0a4d68;
+  --pill-hover-bg-color: var(--usgs-blue);
   --pill-hover-border-color: var(--usgs-blue);
   --pill-hover-text: #fff;
 }

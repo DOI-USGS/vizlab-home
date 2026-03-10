@@ -313,10 +313,10 @@ onBeforeUnmount(() => {
 }
 
 .hero-panel .ui-button--disclosure {
-  --button-bg: rgba(255, 255, 255, 0.08);
+  --button-bg: var(--usgs-blue);
   --button-border: transparent;
   --button-text: var(--white-bright);
-  --button-hover-bg: rgba(255, 255, 255, 0.16);
+  --button-hover-bg: var(--usgs-blue);
   --button-hover-border: transparent;
   --button-hover-text: var(--white-bright);
 }
@@ -330,15 +330,15 @@ onBeforeUnmount(() => {
   min-width: 100%;
   padding: 0.8rem;
   border-radius: 1.6rem;
-  background: rgba(4, 22, 44, 0.96);
+  background: var(--usgs-blue);
   box-shadow: 0 20px 40px rgba(2, 8, 17, 0.3);
   z-index: 2;
 }
 
 .subnav > .ui-button--disclosure {
-  --button-bg: rgba(255, 255, 255, 0.04);
+  --button-bg: var(--usgs-blue);
   --button-border: transparent;
-  --button-hover-bg: rgba(255, 255, 255, 0.12);
+  --button-hover-bg: var(--usgs-blue);
   --button-hover-border: transparent;
   --button-font-size: 1.6rem;
   --button-justify: flex-start;
