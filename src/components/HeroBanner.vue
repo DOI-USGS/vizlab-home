@@ -118,7 +118,6 @@ const activeSection = ref(desktopNavItems[0].id)
 const openGroup = ref(null)
 let observer
 
-const SCROLL_OFFSET = 32
 const isPortfolioActive = computed(() => portfolioNavItems.some((item) => item.id === activeSection.value))
 const isAboutActive = computed(() => activeSection.value === teamSectionId)
 const navGroups = computed(() => [
@@ -173,7 +172,7 @@ const scrollTo = (id) => {
   if (!target) return
   closeMenus()
   window.scrollTo({
-    top: target.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET,
+    top: target.getBoundingClientRect().top + window.scrollY,
     behavior: "smooth"
   })
 }
@@ -313,36 +312,41 @@ onBeforeUnmount(() => {
 }
 
 .hero-panel .ui-button--disclosure {
-  --button-bg: var(--usgs-blue);
-  --button-border: transparent;
+  --button-bg: rgba(255, 255, 255, 0.08);
+  --button-border: rgba(255, 255, 255, 0.14);
   --button-text: var(--white-bright);
-  --button-hover-bg: var(--usgs-blue);
-  --button-hover-border: transparent;
+  --button-hover-bg: rgba(255, 255, 255, 0.16);
+  --button-hover-border: rgba(255, 255, 255, 0.22);
   --button-hover-text: var(--white-bright);
+  text-align: left;
 }
 
 .subnav {
   display: grid;
   gap: 0.8rem;
+  justify-items: stretch;
   position: absolute;
   top: calc(100% + 0.8rem);
   left: 0;
   min-width: 100%;
   padding: 0.8rem;
   border-radius: 1.6rem;
-  background: var(--usgs-blue);
+  background: rgba(4, 22, 44, 0.96);
   box-shadow: 0 20px 40px rgba(2, 8, 17, 0.3);
   z-index: 2;
 }
 
 .subnav > .ui-button--disclosure {
-  --button-bg: var(--usgs-blue);
+  --button-bg: rgba(255, 255, 255, 0.04);
   --button-border: transparent;
-  --button-hover-bg: var(--usgs-blue);
+  --button-hover-bg: rgba(255, 255, 255, 0.12);
   --button-hover-border: transparent;
   --button-font-size: 1.6rem;
   --button-justify: flex-start;
   --button-padding: 0.9rem 1.3rem 0.9rem 1.2rem;
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 @media (max-width: 960px) {

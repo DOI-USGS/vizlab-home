@@ -5,16 +5,19 @@
 /* whole page except header fit within viewport - no scrolling */
 #app {
   /* height: calc(100vh + 87px); 87 is the height of the USGS header */
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  margin: 0 auto;
 }
 
-.tmp-container {
-  width: 100%;
-  max-width: none;
+/* css styles specific to page content exclusive of header and footer*/
+/* NOT component-specific */
+#visualization-container {
+  margin: 5rem 0 5rem 0;
 }
-
+.title {
+  font-family: sans-serif; /* This is fallback font for old browsers */
+  font-family: var(--title-font);
+  color: var(--color-title-text);
+}
 /* set color of links throughout */
 a {
   color: var(--color-link);
