@@ -5,28 +5,27 @@
   >
     <div class="section-header section-header--with-controls">
       <div>
-        <div>
-          <h2
-            :id="titleId"
-            :data-section-anchor="computedSectionId"
-          >
-            <template v-if="linkTitle">
-              <a
-                class="section-title-link"
-                :href="`#${titleId}`"
-              >
-                {{ titleText }}
-              </a>
-            </template>
-            <template v-else>
-              <span class="section-title-link section-title-link--static">
-                {{ titleText }}
-              </span>
-            </template>
-          </h2>
-        </div>
+        <h2
+          :id="titleId"
+          :data-section-anchor="computedSectionId"
+        >
+          <template v-if="linkTitle">
+            <a
+              class="section-title-link"
+              :href="`#${titleId}`"
+            >
+              {{ titleText }}
+            </a>
+          </template>
+          <template v-else>
+            <span class="section-title-link section-title-link--static">
+              {{ titleText }}
+            </span>
+          </template>
+        </h2>
         <p
           v-if="summary"
+          class="section-summary"
         >
           {{ summary }}
         </p>
@@ -172,10 +171,6 @@ const toggleExpanded = () => {
 </script>
 
 <style scoped>
-.section-header {
-  margin-bottom: 0;
-}
-
 .sketch-grid-container {
   position: relative;
   max-height: 75rem;
@@ -211,12 +206,6 @@ const toggleExpanded = () => {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-}
-
-@media (max-width: 960px) {
-  .section-header--with-controls {
-    gap: 0;
-  }
 }
 
 @media (min-width: 961px) {

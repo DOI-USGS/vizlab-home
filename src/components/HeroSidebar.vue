@@ -182,7 +182,7 @@
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from "vue"
-import sectionMetadata from "@/assets/content/section-metadata.json"
+import sections from "@/assets/content/sections.json"
 
 const props = defineProps({
   title: {
@@ -197,13 +197,13 @@ const props = defineProps({
 
 const sectionOrder = ["series", "stories", "sketches", "snapshots", "blogs", "team"]
 const desktopNavItems = sectionOrder.map((sectionId) => {
-  const meta = sectionMetadata[sectionId]
+  const meta = sections[sectionId]
   return {
     id: meta.id,
     label: meta.title
   }
 })
-const teamSectionId = sectionMetadata.team.id
+const teamSectionId = sections.team.id
 const portfolioNavItems = desktopNavItems.filter((item) => item.id !== teamSectionId)
 const otherLinks = [
   {
@@ -403,6 +403,7 @@ onBeforeUnmount(() => {
   color: var(--white-bright);
   margin: 0;
   font-family: "Source Sans Pro", var(--default-font), sans-serif;
+  white-space: nowrap;
 }
 
 .hero-panel__title {
@@ -448,30 +449,8 @@ onBeforeUnmount(() => {
   display: none;
 }
 
-.hero-panel__nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  align-items: flex-start;
-  height: 100%;
-}
-
-.hero-panel__nav-list .hero-panel__nav-link {
-  width: 100%;
-}
-
 .hero-panel :is(.section-summary) {
   color: var(--white-bright);
-}
-
-.hero-panel__nav-note {
-  font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-  font-weight: 600;
-  margin: 0;
 }
 
 .hero-panel__disclosure {
@@ -519,6 +498,10 @@ onBeforeUnmount(() => {
 
   .hero-panel__nav {
     gap: 1rem;
+  }
+
+  .hero-slogan {
+    font-size: clamp(2.6rem, 6vw, 3.2rem);
   }
 
   .hero-panel__nav-desktop {

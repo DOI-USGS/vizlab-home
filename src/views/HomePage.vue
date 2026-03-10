@@ -9,11 +9,13 @@
         :summary="sectionsMeta.series.summary"
         :series="series"
       />
-      <VizSection
+      <CardGridSection
         id="stories"
         :items="websites"
         :title="sectionsMeta.stories.title"
         :summary="sectionsMeta.stories.summary"
+        :preview-rows="2"
+        expandable
       />
       <FilteredCardSection
         id="sketches"
@@ -29,12 +31,30 @@
         asset-source="chart"
         :items="snapshots"
       />
-      <BlogSection
+      <CardGridSection
         id="blogs"
         :title="sectionsMeta.blogs.title"
         :summary="sectionsMeta.blogs.summary"
         :items="blogs"
-      />
+        show-date
+        expandable
+      >
+        <template #summary>
+          <p class="section-summary">
+            <span v-if="sectionsMeta.blogs.summary">{{ sectionsMeta.blogs.summary }}</span>
+            <span class="section-summary__link">
+              {{ sectionsMeta.blogs.link.intro }}
+              <a
+                :href="sectionsMeta.blogs.link.href"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ sectionsMeta.blogs.link.label }}
+              </a>
+            </span>
+          </p>
+        </template>
+      </CardGridSection>
       <AboutSection
         id="team"
         :text="team"
@@ -47,28 +67,27 @@
 import { defineAsyncComponent } from "vue"
 
 // load sections at top of the page first
+import CardGridSection from "@/components/CardGridSection.vue"
 import HeroSidebar from "@/components/HeroSidebar.vue"
 import SeriesSection from "@/components/SeriesSection.vue"
-import VizSection from "@/components/VizSection.vue"
 
 // lazy load of later sections
 const FilteredCardSection = defineAsyncComponent(() => import("@/components/FilteredCardSection.vue"))
-const BlogSection = defineAsyncComponent(() => import("@/components/BlogSection.vue"))
 const AboutSection = defineAsyncComponent(() => import("@/components/AboutSection.vue"))
 
 import { useDateStore } from "@/stores/DateStore.js"
 
 // read in portofolio items for each section
-import viz from "@/assets/content/viz-list.json"
-import seriesData from "@/assets/content/series-list.json"
+import storiesData from "@/assets/content/stories.json"
+import seriesData from "@/assets/content/series.json"
 import sketchesData from "@/assets/content/sketches.json"
 import snapshotsData from "@/assets/content/snapshots.json"
 import blogsData from "@/assets/content/blogs.json"
 import teamData from "@/assets/content/team.json"
-import sectionMetadata from "@/assets/content/section-metadata.json"
+import sections from "@/assets/content/sections.json"
 
 const dateStore = useDateStore();
-const sectionsMeta = sectionMetadata
+const sectionsMeta = sections
 
 const PREVIEW_MAX = 18
 const shufflePreview = (items = [], limit = PREVIEW_MAX) => {
@@ -81,11 +100,11 @@ const shufflePreview = (items = [], limit = PREVIEW_MAX) => {
 }
 
 // define content for site sections and sort by release date, where appropriate
-const websites = viz.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
+const websites = storiesData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const sortedSketches = sketchesData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const sortedSnapshots = (snapshotsData.items || []).sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const blogs = blogsData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
-const series = seriesData.collections // not sorted here, b/c content for each card sorted in `SeriesCard.vue`
+const series = seriesData.items // not sorted here, b/c content for each card sorted in `SeriesCard.vue`
 
 const sketches = shufflePreview(sortedSketches)
 const snapshots = shufflePreview(sortedSnapshots)
