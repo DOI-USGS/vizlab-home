@@ -1,5 +1,5 @@
 {
-  "collections": [
+  "items": [
     {
       "id": "flowTiles",
       "title": "Flow tiles",
@@ -17,10 +17,7 @@
             "thumbnail": "2026_01/flow_cartogram-jan-2026.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1965102031225700461"
-            },
+            "x": "1965102031225700461",
             "external": "2026_01/flow_cartogram-jan-2026.png"
           }
         },
@@ -33,10 +30,7 @@
             "thumbnail": "2025_12/flow_cartogram-dec-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1965102031225700461"
-            },
+            "x": "1965102031225700461",
             "external": "2025_12/flow_cartogram-dec-2025.png"
           }
         },
@@ -49,10 +43,7 @@
             "thumbnail": "2025_11/flow_cartogram-nov-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1965102031225700461"
-            },
+            "x": "1965102031225700461",
             "external": "2025_11/flow_cartogram-nov-2025.png"
           }
         },
@@ -65,10 +56,7 @@
             "thumbnail": "2025_10/flow_cartogram-oct-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1965102031225700461"
-            },
+            "x": "1965102031225700461",
             "external": "2025_10/flow_cartogram-oct-2025.png"
           }
         },
@@ -81,10 +69,7 @@
             "thumbnail": "2025_09/flow_cartogram-sep-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1965102031225700461"
-            },
+            "x": "1965102031225700461",
             "external": "2025_09/flow_cartogram-sep-2025.png"
           }
         },
@@ -97,10 +82,7 @@
             "thumbnail": "2025_08/flow_cartogram-aug-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1965102031225700461"
-            },
+            "x": "1965102031225700461",
             "external": "2025_08/flow_cartogram-aug-2025.png"
           }
         },
@@ -113,10 +95,7 @@
             "thumbnail": "2025_07/flow_cartogram-july-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1957505329102508491"
-            },
+            "x": "1957505329102508491",
             "external": "2025_07/flow_cartogram-july-2025.png"
           }
         },
@@ -129,10 +108,7 @@
             "thumbnail": "2025_06/flow_cartogram-june-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_Water",
-              "id": "1942234704234627072"
-            },
+            "x": "1942234704234627072",
             "external": "2025_06/flow_cartogram-june-2025.png"
           }
         },
@@ -145,10 +121,7 @@
             "thumbnail": "2025_05/flow_cartogram-may-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1929924020004147635"
-            },
+            "x": "1929924020004147635",
             "external": "2025_05/flow_cartogram-may-2025.png"
           }
         },
@@ -161,10 +134,7 @@
             "thumbnail": "2025_04/flow_cartogram-apr-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1919446545654489325"
-            },
+            "x": "1919446545654489325",
             "external": "2025_04/flow_cartogram-apr-2025.png"
           }
         },
@@ -177,10 +147,7 @@
             "thumbnail": "2025_03/flow_cartogram-mar-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1907870314681221497"
-            },
+            "x": "1907870314681221497",
             "external": "2025_03/flow_cartogram-mar-2025.png"
           }
         },
@@ -193,10 +160,7 @@
             "thumbnail": "2025_02/flow_cartogram-feb-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1897692959404925333"
-            },
+            "x": "1897692959404925333",
             "external": "2025_02/flow_cartogram-feb-2025.png"
           }
         },
@@ -209,10 +173,7 @@
             "thumbnail": "2025_01/flow_cartogram-jan-2025.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1887542318607016062"
-            },
+            "x": "1887542318607016062",
             "external": "2025_01/flow_cartogram-jan-2025.png"
           }
         },
@@ -225,10 +186,7 @@
             "thumbnail": "2024_12/flow_cartogram-dec-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1878845021585326208"
-            },
+            "x": "1878845021585326208",
             "external": "2024_12/flow_cartogram-dec-2024.png"
           }
         },
@@ -241,10 +199,7 @@
             "thumbnail": "2024_11/flow_cartogram-nov-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1864727535558529440"
-            },
+            "x": "1864727535558529440",
             "external": "2024_11/flow_cartogram-nov-2024.png"
           }
         },
@@ -257,10 +212,7 @@
             "thumbnail": "2024_10/flow_cartogram-oct-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1854197399323136262"
-            },
+            "x": "1854197399323136262",
             "external": "2024_10/flow_cartogram-oct-2024.png"
           }
         },
@@ -299,10 +251,7 @@
             "thumbnail": "2024_07/flow_cartogram-july-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1819432041152422303"
-            },
+            "x": "1819432041152422303",
             "external": "2024_07/flow_cartogram-july-2024.png"
           }
         },
@@ -315,10 +264,7 @@
             "thumbnail": "2024_06/flow_cartogram-june-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1813278914149818523"
-            },
+            "x": "1813278914149818523",
             "external": "2024_06/flow_cartogram-june-2024.png"
           }
         },
@@ -331,10 +277,7 @@
             "thumbnail": "2024_05/flow_cartogram-may-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1798030050576761140"
-            },
+            "x": "1798030050576761140",
             "external": "2024_05/flow_cartogram-may-2024.png"
           }
         },
@@ -347,10 +290,7 @@
             "thumbnail": "2024_04/flow_cartogram-apr-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1787946014797951150"
-            },
+            "x": "1787946014797951150",
             "external": "2024_04/flow_cartogram-apr-2024.png"
           }
         },
@@ -363,10 +303,7 @@
             "thumbnail": "2024_03/flow_cartogram-mar-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1775549094259511449"
-            },
+            "x": "1775549094259511449",
             "external": "2024_03/flow_cartogram-mar-2024.png"
           }
         },
@@ -379,10 +316,7 @@
             "thumbnail": "2024_02/flow_cartogram-feb-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1765078810725413349"
-            },
+            "x": "1765078810725413349",
             "external": "2024_02/flow_cartogram-feb-2024.png"
           }
         },
@@ -395,10 +329,7 @@
             "thumbnail": "2024_01/flow_cartogram-jan-2024.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1754552632742752744"
-            },
+            "x": "1754552632742752744",
             "external": "2024_01/flow_cartogram-jan-2024.png"
           }
         },
@@ -411,10 +342,7 @@
             "thumbnail": "2023_12/flow_cartogram-dec-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1742622815944356338"
-            },
+            "x": "1742622815944356338",
             "external": "2023_12/flow_cartogram-dec-2023.png"
           }
         },
@@ -427,10 +355,7 @@
             "thumbnail": "2023_11/flow_cartogram-nov-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1731718693686563238"
-            },
+            "x": "1731718693686563238",
             "external": "2023_11/flow_cartogram-nov-2023.png"
           }
         },
@@ -443,10 +368,7 @@
             "thumbnail": "2023_10/flow_cartogram-oct-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1721583036540538940"
-            },
+            "x": "1721583036540538940",
             "external": "2023_10/flow_cartogram-oct-2023.png"
           }
         },
@@ -459,10 +381,7 @@
             "thumbnail": "2023_09/flow_cartogram-sep-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1711856031322538063"
-            },
+            "x": "1711856031322538063",
             "external": "2023_09/flow_cartogram-sep-2023.png"
           }
         },
@@ -475,10 +394,7 @@
             "thumbnail": "2023_08/flow_cartogram-aug-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1700176429202506152"
-            },
+            "x": "1700176429202506152",
             "external": "2023_08/flow_cartogram-aug-2023.png"
           }
         },
@@ -491,10 +407,7 @@
             "thumbnail": "2023_07/flow_cartogram-jul-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1687206598052302851"
-            },
+            "x": "1687206598052302851",
             "external": "2023_07/flow_cartogram-jul-2023.png"
           }
         },
@@ -507,10 +420,7 @@
             "thumbnail": "2023_06/flow_cartogram-june-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1678795881225781248"
-            },
+            "x": "1678795881225781248",
             "external": "2023_06/flow_cartogram-june-2023.png"
           }
         },
@@ -523,10 +433,7 @@
             "thumbnail": "2023_05/flow_cartogram-may-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1666168500283645953"
-            },
+            "x": "1666168500283645953",
             "external": "2023_05/flow_cartogram-may-2023.png"
           }
         },
@@ -539,10 +446,7 @@
             "thumbnail": "2023_04/flow_cartogram-apr-2023.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1653869069429522432"
-            },
+            "x": "1653869069429522432",
             "external": "2023_04/flow_cartogram-apr-2023.png"
           }
         },
@@ -555,10 +459,7 @@
             "thumbnail": "2023_03/flow_cartogram_2023-03.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1643383570965184514"
-            },
+            "x": "1643383570965184514",
             "external": "2023_03/flow_cartogram_2023-03.png"
           }
         },
@@ -571,10 +472,7 @@
             "thumbnail": "2023_02/flow_cartogram_2023-02.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1632802669906518018"
-            },
+            "x": "1632802669906518018",
             "external": "2023_02/flow_cartogram_2023-02.png"
           }
         },
@@ -587,10 +485,7 @@
             "thumbnail": "2023_01/flow_cartogram_2023_jan-01.png"
           },
           "links": {
-            "x": {
-              "account": "USGS_DataSci",
-              "id": "1622635541073387520"
-            },
+            "x": "1622635541073387520",
             "external": "2023_01/flow_cartogram_2023_jan-01.png"
           }
         }

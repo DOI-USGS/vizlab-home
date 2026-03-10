@@ -22,15 +22,20 @@
   "blogs": {
     "id": "blogs",
     "title": "Water Data Blog",
-    "linkIntro": "Read more at",
-    "linkLabel": "waterdata.usgs.gov/blog",
-    "linkUrl": "https://waterdata.usgs.gov/blog"
+    "summary": "",
+    "link": {
+      "intro": "Read more at",
+      "label": "waterdata.usgs.gov/blog",
+      "href": "https://waterdata.usgs.gov/blog"
+    }
   },
   "team": {
     "id": "team",
     "title": "Meet the Team",
-    "contactText": "Email us at",
-    "contactLinkText": "gs-w_vizlab@usgs.gov",
-    "contactEmail": "gs-w_vizlab@usgs.gov"
+    "contact": {
+      "intro": "Email us at",
+      "label": "gs-w_vizlab@usgs.gov",
+      "href": "mailto:gs-w_vizlab@usgs.gov"
+    }
   }
 }
