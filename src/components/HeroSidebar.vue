@@ -48,19 +48,30 @@
           class="section-divider"
           aria-hidden="true"
         ></div>
-        <p class="section-summary hero-panel__nav-note">
-          Access USGS Water Data:
-        </p>
-        <a
-          v-for="link in otherLinks"
-          :key="link.href"
-          class="hero-panel__nav-link hero-panel__nav-link--light"
-          :href="link.href"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          class="hero-panel__mobile-link hero-panel__mobile-link--toggle"
+          type="button"
+          :aria-expanded="desktopOtherLinksOpen.toString()"
+          @click="toggleDesktopOtherLinks"
         >
-          {{ link.label }}
-        </a>
+          <span>Other links</span>
+          <span aria-hidden="true">{{ desktopOtherLinksOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="desktopOtherLinksOpen"
+          class="hero-panel__mobile-submenu"
+        >
+          <a
+            v-for="link in otherLinks"
+            :key="link.href"
+            class="hero-panel__mobile-sublink"
+            :href="link.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ link.label }}
+          </a>
+        </div>
       </div>
 
       <div class="hero-panel__nav-mobile">
@@ -176,6 +187,7 @@ const [heroTitleStrong, heroTitleLight] = (() => {
 })()
 
 const activeSection = ref(desktopNavItems[0].id)
+const desktopOtherLinksOpen = ref(false)
 const mobilePortfolioOpen = ref(false)
 const mobileOtherLinksOpen = ref(false)
 let observer
@@ -201,6 +213,10 @@ const toggleMobileOtherLinks = () => {
   if (mobileOtherLinksOpen.value) {
     mobilePortfolioOpen.value = false
   }
+}
+
+const toggleDesktopOtherLinks = () => {
+  desktopOtherLinksOpen.value = !desktopOtherLinksOpen.value
 }
 
 // set up srolling navigation
