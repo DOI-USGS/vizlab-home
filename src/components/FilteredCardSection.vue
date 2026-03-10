@@ -1,13 +1,13 @@
 <template>
   <section
-    :id="computedSectionId"
+    :id="sectionId"
     class="content-section"
   >
     <div class="section-header section-header--with-controls">
       <div>
         <h2
           :id="titleId"
-          :data-section-anchor="computedSectionId"
+          :data-section-anchor="sectionId"
         >
           <template v-if="linkTitle">
             <a
@@ -35,7 +35,7 @@
         v-if="availableTags.length"
         class="section-controls section-controls--wrap"
       >
-        <div class="tag-filter">
+        <div class="chip-row">
           <button
             class="ui-button ui-button--chip"
             :class="{ active: !selectedTag }"
@@ -60,13 +60,13 @@
 
     <div
       v-if="filteredCards.length"
-      class="sketch-grid-container"
+      class="masonry"
       :class="{
-        'sketch-grid-container--fade': shouldFade,
-        'sketch-grid-container--full': isExpanded
+        'is-faded': shouldFade,
+        'is-open': isExpanded
       }"
     >
-      <div class="sketch-grid">
+      <div class="masonry-grid">
         <SketchCard
           v-for="item in filteredCards"
           :key="item.id"
@@ -133,26 +133,26 @@ const props = defineProps({
   }
 })
 
-const computedSectionId = computed(() => props.id || "sketches")
-const titleId = computed(() => `${computedSectionId.value}`)
-const titleText = computed(() => props.title || "")
-const summary = computed(() => props.summary)
+const sectionId = props.id || "sketches"
+const titleId = sectionId
+const titleText = props.title || ""
+const summary = props.summary
 
-const cards = computed(() => (props.items || []).filter((item) => !item?.archive))
+const cards = (props.items || []).filter((item) => !item?.archive)
 const selectedTag = ref(null)
 const expanded = ref(false)
 
 const availableTags = computed(() => {
   const tags = new Set()
-  cards.value.forEach((item) => {
+  cards.forEach((item) => {
     item.tags?.forEach((tag) => tags.add(tag))
   })
   return Array.from(tags).sort()
 })
 
 const filteredCards = computed(() => {
-  if (!selectedTag.value) return cards.value
-  return cards.value.filter((card) => card.tags?.includes(selectedTag.value))
+  if (!selectedTag.value) return cards
+  return cards.filter((card) => card.tags?.includes(selectedTag.value))
 })
 
 const hasOverflow = computed(() => !props.disableFade && filteredCards.value.length > 6)
@@ -171,18 +171,18 @@ const toggleExpanded = () => {
 </script>
 
 <style scoped>
-.sketch-grid-container {
+.masonry {
   position: relative;
   max-height: 75rem;
   overflow: hidden;
 }
 
-.sketch-grid {
+.masonry-grid {
   column-count: 2;
   column-gap: 0.75rem;
 }
 
-.sketch-grid-container--fade::after {
+.masonry.is-faded::after {
   content: "";
   position: absolute;
   left: 0;
@@ -193,23 +193,17 @@ const toggleExpanded = () => {
   background: linear-gradient(to bottom, rgba(245, 246, 248, 0), var(--color-background));
 }
 
-.sketch-grid-container--full {
+.masonry.is-open {
   max-height: none;
   overflow: visible;
 }
 
-.sketch-grid-container--full::after {
+.masonry.is-open::after {
   display: none;
 }
 
-.tag-filter {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
 @media (min-width: 961px) {
-  .sketch-grid {
+  .masonry-grid {
     column-count: 3;
   }
 }

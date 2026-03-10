@@ -26,8 +26,8 @@
     </div>
 
     <ul
-      class="cards-grid"
-      :class="{ 'cards-grid--preview-rows': previewRows > 0 }"
+      class="card-grid card-grid--auto"
+      :class="{ 'card-grid--rows': normalizedPreviewRows > 0 }"
       :style="previewGridStyle"
     >
       <ContentCard
@@ -40,7 +40,9 @@
     </ul>
     <ul
       v-if="expanded && overflowItems.length"
-      class="cards-grid cards-grid--overflow"
+      class="card-grid card-grid--auto card-grid--overflow"
+      :class="{ 'card-grid--fixed': normalizedPreviewRows > 0 }"
+      :style="overflowGridStyle"
     >
       <ContentCard
         v-for="item in overflowItems"
@@ -125,22 +127,28 @@ const MOBILE_BREAKPOINT = 700
 
 const windowSizeStore = useWindowSizeStore()
 const expanded = ref(false)
-const sectionId = computed(() => props.id || "content-grid")
-const titleId = computed(() => `${sectionId.value}`)
-const titleText = computed(() => props.title?.trim() || "")
+const sectionId = props.id || "content-grid"
+const titleId = sectionId
+const titleText = props.title?.trim() || ""
+const normalizedPreviewRows = Math.max(0, Math.floor(Number(props.previewRows) || 0))
 
 const visibleItems = computed(() =>
   (props.items || []).filter((item) => !item?.archive)
 )
 
-const previewRows = computed(() => {
-  const value = Number(props.previewRows)
-  return Number.isFinite(value) && value > 0 ? Math.floor(value) : 0
+const previewGridStyle = computed(() => {
+  if (normalizedPreviewRows > 0) {
+    return {
+      "--card-grid-preview-rows": normalizedPreviewRows,
+      "--card-grid-columns": previewColumnCount.value
+    }
+  }
+  return null
 })
 
-const previewGridStyle = computed(() => {
-  if (previewRows.value > 0) {
-    return { "--card-grid-preview-rows": previewRows.value }
+const overflowGridStyle = computed(() => {
+  if (normalizedPreviewRows > 0) {
+    return { "--card-grid-columns": previewColumnCount.value }
   }
   return null
 })
@@ -149,6 +157,11 @@ const isMobilePreview = computed(() => windowSizeStore.windowWidth > 0 && window
 
 const basePreviewLimit = computed(() => {
   return isMobilePreview.value ? MOBILE_PREVIEW_COUNT : props.previewCount
+})
+
+const previewColumnCount = computed(() => {
+  if (normalizedPreviewRows <= 0) return 0
+  return Math.max(1, Math.ceil(basePreviewLimit.value / normalizedPreviewRows))
 })
 
 const hasOverflow = computed(() => visibleItems.value.length > basePreviewLimit.value)
@@ -166,44 +179,3 @@ const toggleExpanded = () => {
   expanded.value = !expanded.value
 }
 </script>
-
-<style scoped>
-.cards-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(1.2rem, 2vw, 2.4rem);
-  grid-auto-flow: row;
-  grid-template-rows: none;
-}
-
-.cards-grid--preview-rows .content-card {
-  height: 100%;
-}
-
-.cards-grid--overflow {
-  margin-top: clamp(1.2rem, 2vw, 2rem);
-}
-
-@media (min-width: 700px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 961px) {
-  .cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-
-  .cards-grid--preview-rows {
-    grid-template-columns: none;
-    grid-auto-columns: minmax(240px, 1fr);
-    grid-auto-flow: column;
-    grid-template-rows: repeat(var(--card-grid-preview-rows, 2), minmax(0, auto));
-  }
-}
-
-</style>

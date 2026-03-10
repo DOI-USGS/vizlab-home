@@ -24,7 +24,6 @@
 </template>
 
 <script setup>
-import { computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
@@ -41,12 +40,8 @@ const props = defineProps({
 
 const assetStore = useAssetPathStore()
 
-const thumbnailSrc = computed(() => {
-  const src = props.card.image.thumbnail 
-  return assetStore.buildThumbUrl(src)
-})
-
-const altText = computed(() => props.card?.image?.alt || props.card.title)
+const thumbnailSrc = assetStore.buildThumbUrl(props.card.image.thumbnail)
+const altText = props.card?.image?.alt || props.card.title
 
 const resolveAssetBySource = (path = "") => {
   if (props.assetSource === "chart") return assetStore.resolveChartAsset(path)
@@ -54,12 +49,9 @@ const resolveAssetBySource = (path = "") => {
 }
 
 // if an external link is not provided, use the hosted asset for the section
-const targetUrl = computed(() => {
-  const primary = props.card.links.external
-  if (primary) return primary
-  const asset = resolveAssetBySource(props.card?.links?.asset || "")
-  return asset || "#"
-})
+const primaryLink = props.card.links.external
+const assetLink = resolveAssetBySource(props.card?.links?.asset || "")
+const targetUrl = primaryLink || assetLink || "#"
 </script>
 
 <style scoped>

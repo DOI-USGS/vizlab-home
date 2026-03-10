@@ -207,21 +207,6 @@ html {
   border-top: none;
 }
 
-.section-divider {
-  --divider-color: var(--color-border);
-  width: 100%;
-  padding-top: 1.4rem;
-  margin: 0.6rem 0 1rem;
-  color: var(--divider-color);
-}
-
-.section-divider::before {
-  content: "";
-  display: block;
-  width: 100%;
-  border-top: 1px solid currentColor;
-}
-
 .card-heading {
   font-size: 2rem;
   font-weight: 600;
@@ -304,6 +289,46 @@ html {
   margin-left: 0.2rem;
 }
 
+.card-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: clamp(1.2rem, 2vw, 2.4rem);
+}
+
+.card-grid--auto {
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-flow: row;
+  grid-template-rows: none;
+}
+
+.card-grid--rows .content-card {
+  height: 100%;
+}
+
+.card-grid--overflow {
+  margin-top: clamp(1.2rem, 2vw, 2rem);
+}
+
+.chip-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .content-section {
   padding: clamp(3rem, 5vw, 4rem) clamp(1.6rem, 5vw, 2.4rem) clamp(4.5rem, 6vw, 5.5rem);
   margin: 0 auto;
@@ -324,6 +349,27 @@ p, text, li {
 @media (max-width: 700px) {
   .section-title {
     font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .card-grid--auto {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 961px) {
+  .card-grid--auto {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .card-grid--fixed {
+    grid-template-columns: repeat(var(--card-grid-columns, 1), minmax(0, 1fr));
+  }
+
+  .card-grid--rows {
+    grid-template-columns: repeat(var(--card-grid-columns, 1), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--card-grid-preview-rows, 2), minmax(0, auto));
   }
 }
 
@@ -416,7 +462,7 @@ p, text, li {
   --pill-hover-text: #fff;
 }
 
-.tag-filter .ui-button--chip {
+.chip-row .ui-button--chip {
   --pill-bg-color: rgba(10, 77, 104, 0.18);
   --pill-border-color: rgba(10, 77, 104, 0.45);
   --pill-text-color: rgba(10, 77, 104, 0.85);

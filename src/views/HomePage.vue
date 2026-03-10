@@ -114,6 +114,7 @@ const team = teamData
 <style scoped>
 .layout {
   display: grid;
+  align-items: start;
   gap: clamp(1.4rem, 4vw, 2.4rem);
   padding: 0 var(--page-gutter) clamp(1.6rem, 5vw, 2.4rem);
 }

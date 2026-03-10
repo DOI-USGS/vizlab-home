@@ -129,7 +129,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue"
+import { ref } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 import { useDateStore } from "@/stores/DateStore.js"
 
@@ -167,38 +167,6 @@ const buildXShareUrl = (value) => {
   return `https://twitter.com/intent/retweet?tweet_id=${encodeURIComponent(id)}`
 }
 
-const buildInstagramShareUrl = (value) => {
-  return typeof value === "string" ? value : ""
-}
-
-const buildFacebookShareUrl = (value) => {
-  if (!value) return ""
-  const url = typeof value === "object" ? value.url : value
-  if (!url) return ""
-  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
-}
-
-// build links to share out on social media plaftorms
-const shareLinks = [
-  {
-    label: "X",
-    url: buildXShareUrl(latestEntry.links?.x)
-  },
-  {
-    label: "Instagram",
-    url: buildInstagramShareUrl(latestEntry.links?.instagram)
-  },
-  {
-    label: "Facebook",
-    url: buildFacebookShareUrl(latestEntry.links?.facebook)
-  }
-].filter((entry) => entry.url)
-
-function openShare(url) {
-  if (!url) return
-  window.open(url, "_blank", "noopener,noreferrer")
-}
-
 // series entries can point to a bucketed release asset or a shared local thumbnail
 const resolveThumbnail = (src = "") => {
   if (!src) return ""
@@ -226,7 +194,7 @@ const resolvePrimaryLink = (entry) => {
 const latestPrimaryLink = resolvePrimaryLink(latestEntry) || "#"
 const latestCodeLink = latestEntry.links?.code || ""
 const seriesCodeLink = props.series?.links?.code || ""
-const hasCodeIcon = computed(() => Boolean(seriesCodeLink || latestCodeLink))
+const hasCodeIcon = Boolean(seriesCodeLink || latestCodeLink)
 
 const historyEntries = items
   .slice(1)
@@ -403,19 +371,6 @@ const hasHistory = historyEntries.length > 0
   opacity: 0;
   transform: translateY(-0.4rem);
 }
-
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 @media (--bp-sm) {
   .series-card {
     width: 100%;

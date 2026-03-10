@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watch, computed } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import { isMobile } from "mobile-device-detect";
 import * as d3 from "d3";
 import sections from "@/assets/content/sections.json"
@@ -73,12 +73,12 @@ const props = defineProps({
 
 const teamMeta = sections.team || {}
 
-const sectionId = computed(() => props.id || teamMeta.id || "team")
-const headingText = computed(() => props.title || teamMeta.title || "team")
-const titleId = computed(() => `${sectionId.value}`)
-const contactIntro = computed(() => teamMeta.contact?.intro || "")
-const contactHref = computed(() => teamMeta.contact?.href || "")
-const contactLabel = computed(() => teamMeta.contact?.label || "")
+const sectionId = props.id || teamMeta.id || "team"
+const headingText = props.title || teamMeta.title || "team"
+const titleId = sectionId
+const contactIntro = teamMeta.contact?.intro || ""
+const contactHref = teamMeta.contact?.href || ""
+const contactLabel = teamMeta.contact?.label || ""
 
 const cloneMembers = (source = []) => {
     if (!Array.isArray(source)) return []
