@@ -65,7 +65,7 @@
   font-size: 62.5%;
 
   --title-font: Source Sans Pro; 
-  --default-font: Source Code Pro;
+  --default-font: Source Sans Pro;
   --USGS-font: 'Univers Condensed', sans-serif;
                                                 
 
@@ -201,6 +201,11 @@ html {
   margin-top: clamp(1.2rem, 3vw, 1.8rem);
   padding-top: 1.2rem;
   border-top: 1px solid var(--color-border);
+}
+
+.section-footer--expand {
+  padding-top: 0;
+  border-top: none;
 }
 
 .section-footer__link {
@@ -389,66 +394,101 @@ p, text, li {
     font-size: 2.4rem;
   }
 }
-.pill-button {
-  --pill-bg: var(--pill-bg-color);
-  --pill-border: var(--pill-border-color);
-  --pill-text: var(--pill-text-color);
-  --pill-hover-bg: var(--pill-hover-bg-color);
-  --pill-hover-border: var(--pill-hover-border-color);
-  --pill-hover-text: #fff;
-  --pill-font-size-value: var(--pill-font-size, 1.2rem);
-  --pill-padding-value: var(--pill-padding, 0.55rem 1.65rem);
-  --pill-radius-value: var(--pill-radius, 999px);
-  font-size: var(--pill-font-size-value);
-  padding: var(--pill-padding-value);
+
+.ui-button {
+  --button-bg: transparent;
+  --button-border: transparent;
+  --button-text: currentColor;
+  --button-hover-bg: var(--button-bg);
+  --button-hover-border: var(--button-border);
+  --button-hover-text: var(--button-text);
+  --button-radius: 1.2rem;
+  --button-font-size: 1.6rem;
+  --button-padding: 0.9rem 1.3rem;
+  --button-justify: center;
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: var(--button-justify);
+  gap: 1rem;
+  font-family: "Source Sans Pro", var(--default-font), sans-serif;
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  text-decoration: none;
   cursor: pointer;
-  color: var(--pill-text);
-  border-radius: var(--pill-radius-value);
-  border: 1px solid var(--pill-border);
-  background: var(--pill-bg);
+  color: var(--button-text);
+  border-radius: var(--button-radius);
+  border: 1px solid var(--button-border);
+  background: var(--button-bg);
+  padding: var(--button-padding);
   transition:
     color 0.2s ease,
     border-color 0.2s ease,
     background 0.2s ease,
     transform 0.1s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-  background-clip: padding-box;
-  white-space: nowrap;
 }
 
-.pill-button--active,
-.pill-button.active,
-.pill-button:hover,
-.pill-button:focus-visible {
-  color: var(--pill-hover-text, #fff);
-  background: var(--pill-hover-bg);
-  border-color: var(--pill-hover-border);
+.ui-button:hover,
+.ui-button:focus-visible,
+.ui-button.active {
+  color: var(--button-hover-text);
+  background: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
 }
 
-.pill-button:active {
+.ui-button:active {
   transform: translateY(1px);
 }
 
-.pill-button--outline {
-  --pill-bg: transparent;
-  --pill-border: var(--color-link);
-  --pill-text: var(--color-link);
-  --pill-hover-bg: var(--color-link);
-  --pill-hover-border: var(--color-link);
-  --pill-hover-text: #fff;
+.ui-button--chip {
+  --button-bg: var(--pill-bg-color);
+  --button-border: var(--pill-border-color);
+  --button-text: var(--pill-text-color);
+  --button-hover-bg: var(--pill-hover-bg-color);
+  --button-hover-border: var(--pill-hover-border-color);
+  --button-hover-text: var(--pill-hover-text, #fff);
+  --button-font-size: var(--pill-font-size, 1.2rem);
+  --button-padding: var(--pill-padding, 0.55rem 1.65rem);
+  --button-radius: var(--pill-radius, 999px);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  background-clip: padding-box;
+}
+
+.ui-button--disclosure {
+  --button-bg: color-mix(in srgb, var(--color-link) 6%, var(--white-bright));
+  --button-border: color-mix(in srgb, var(--color-link) 18%, transparent);
+  --button-text: var(--color-link);
+  --button-hover-bg: color-mix(in srgb, var(--color-link) 10%, var(--white-bright));
+  --button-hover-border: color-mix(in srgb, var(--color-link) 32%, transparent);
+  --button-font-size: 1.8rem;
+  --button-padding: 1.1rem 1.4rem;
+  --button-radius: 1.2rem;
+  --button-justify: space-between;
+}
+
+.series-card__actions .ui-button {
+  --pill-font-size: 1.4rem;
+  --pill-padding: 0.4rem 1.2rem;
   backdrop-filter: none;
 }
 
-.pill-button--tag {
-  --pill-bg: rgba(10, 77, 104, 0.18);
-  --pill-border: rgba(10, 77, 104, 0.45);
-  --pill-text: rgba(10, 77, 104, 0.85);
-  --pill-hover-bg: #0a4d68;
-  --pill-hover-border: #0a4d68;
+.series-card__actions .ui-button--chip {
+  --pill-bg-color: transparent;
+  --pill-border-color: var(--color-link);
+  --pill-text-color: var(--color-link);
+  --pill-hover-bg-color: var(--color-link);
+  --pill-hover-border-color: var(--color-link);
+  --pill-hover-text: #fff;
+}
+
+.tag-filter .ui-button--chip {
+  --pill-bg-color: rgba(10, 77, 104, 0.18);
+  --pill-border-color: rgba(10, 77, 104, 0.45);
+  --pill-text-color: rgba(10, 77, 104, 0.85);
+  --pill-hover-bg-color: #0a4d68;
+  --pill-hover-border-color: #0a4d68;
   --pill-hover-text: #fff;
 }

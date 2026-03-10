@@ -33,19 +33,46 @@
       :style="columnFlowStyle"
     >
       <ContentCard
-        v-for="item in pagedItems"
+        v-for="item in previewItems"
         :key="item.id ?? item.title"
         :item="item"
         :image-ratio="cardImageRatio"
         :show-release-date="showReleaseDate"
       />
     </ul>
+    <ul
+      v-if="expanded && overflowItems.length"
+      class="cards-grid cards-grid--overflow"
+    >
+      <ContentCard
+        v-for="item in overflowItems"
+        :key="item.id ?? item.title"
+        :item="item"
+        :image-ratio="cardImageRatio"
+        :show-release-date="showReleaseDate"
+      />
+    </ul>
+    <div
+      v-if="expandable && hasOverflow"
+      class="section-footer section-footer--expand"
+    >
+      <button
+        class="ui-button ui-button--disclosure"
+        :class="{ active: expanded }"
+        type="button"
+        :aria-expanded="expanded.toString()"
+        @click="toggleExpanded"
+      >
+        <span>{{ expanded ? collapseLabel : expandLabel }}</span>
+        <span aria-hidden="true">{{ expanded ? "−" : "+" }}</span>
+      </button>
+    </div>
     <slot name="footer" />
   </section>
 </template>
 
 <script setup>
-import { computed } from "vue"
+import { computed, ref } from "vue"
 import ContentCard from "@/components/ContentCard.vue"
 import { useWindowSizeStore } from "@/stores/WindowSizeStore.js"
 
@@ -85,6 +112,18 @@ const props = defineProps({
   disableCarousel: {
     type: Boolean,
     default: false
+  },
+  expandable: {
+    type: Boolean,
+    default: false
+  },
+  expandLabel: {
+    type: String,
+    default: "Show more"
+  },
+  collapseLabel: {
+    type: String,
+    default: "Show Less"
   }
 })
 
@@ -92,6 +131,7 @@ const MOBILE_PREVIEW_COUNT = 6
 const MOBILE_BREAKPOINT = 700
 
 const windowSizeStore = useWindowSizeStore()
+const expanded = ref(false)
 const computedSectionId = computed(() => props.sectionId || "content-grid")
 const titleId = computed(() => `${computedSectionId.value}`)
 const headingText = computed(() => props.title?.trim() || "")
@@ -114,12 +154,26 @@ const columnFlowStyle = computed(() => {
 
 const isMobilePreview = computed(() => windowSizeStore.windowWidth > 0 && windowSizeStore.windowWidth < MOBILE_BREAKPOINT)
 
-const previewLimit = computed(() => {
+const basePreviewLimit = computed(() => {
   if (props.disableCarousel) return Number.POSITIVE_INFINITY
   return isMobilePreview.value ? MOBILE_PREVIEW_COUNT : props.windowSize
 })
 
-const pagedItems = computed(() => visibleItems.value.slice(0, previewLimit.value))
+const hasOverflow = computed(() => !props.disableCarousel && visibleItems.value.length > basePreviewLimit.value)
+
+const previewItems = computed(() => {
+  if (props.disableCarousel) return visibleItems.value
+  return visibleItems.value.slice(0, basePreviewLimit.value)
+})
+
+const overflowItems = computed(() => {
+  if (props.disableCarousel || !expanded.value) return []
+  return visibleItems.value.slice(basePreviewLimit.value)
+})
+
+const toggleExpanded = () => {
+  expanded.value = !expanded.value
+}
 </script>
 
 <style scoped>
@@ -139,6 +193,10 @@ const pagedItems = computed(() => visibleItems.value.slice(0, previewLimit.value
 
 .cards-grid--column-flow .content-card {
   height: 100%;
+}
+
+.cards-grid--overflow {
+  margin-top: clamp(1.2rem, 2vw, 2rem);
 }
 
 @media (min-width: 700px) {

@@ -5,6 +5,7 @@
     :summary="metadataSummary"
     :items="items"
     show-release-date
+    expandable
   >
     <template #summary>
       <p class="section-summary">
@@ -21,22 +22,11 @@
         </span>
       </p>
     </template>
-    <template #footer>
-      <div class="section-footer">
-        <RouterLink
-          class="hero-panel__nav-link section-footer__link"
-          :to="detailRoute"
-        >
-          View Full Gallery
-        </RouterLink>
-      </div>
-    </template>
   </CarouselCardSection>
 </template>
 
 <script setup>
 import { computed } from "vue"
-import { RouterLink } from "vue-router"
 import CarouselCardSection from "@/components/CarouselCardSection.vue"
 import sectionMetadata from "@/assets/content/section-metadata.json"
 
@@ -78,10 +68,6 @@ const metadataSummary = computed(() => props.summary || blogsMeta.summary)
 const linkIntroText = computed(() => props.linkIntro || blogsMeta.linkIntro || "")
 const linkLabel = computed(() => props.linkLabel || blogsMeta.linkLabel || "")
 const linkUrl = computed(() => props.linkUrl || blogsMeta.linkUrl || "https://waterdata.usgs.gov/blog")
-const detailRoute = computed(() => ({
-  name: "SectionDetail",
-  params: { sectionId: computedSectionId.value }
-}))
 </script>
 
 <style scoped>

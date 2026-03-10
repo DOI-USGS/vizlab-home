@@ -5,23 +5,12 @@
     :summary="computedSummary"
     :items="items"
     :column-flow-rows="2"
-  >
-    <template #footer>
-      <div class="section-footer">
-        <RouterLink
-          class="hero-panel__nav-link section-footer__link"
-          :to="detailRoute"
-        >
-          View Full Gallery
-        </RouterLink>
-      </div>
-    </template>
-  </CarouselCardSection>
+    expandable
+  />
 </template>
 
 <script setup>
 import { computed } from "vue"
-import { RouterLink } from "vue-router"
 import CarouselCardSection from "@/components/CarouselCardSection.vue"
 
 const props = defineProps({
@@ -45,8 +34,4 @@ const props = defineProps({
 
 const computedSectionId = computed(() => props.id || "stories")
 const computedSummary = computed(() => props.summary)
-const detailRoute = computed(() => ({
-  name: "SectionDetail",
-  params: { sectionId: computedSectionId.value }
-}))
 </script>

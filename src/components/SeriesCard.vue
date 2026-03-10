@@ -48,7 +48,7 @@
       </p>
       <div class="series-card__actions">
         <a
-          class="pill-button pill-button--outline"
+          class="ui-button ui-button--chip"
           :href="latestPrimaryLink"
           target="_blank"
           rel="noopener noreferrer"
@@ -57,7 +57,7 @@
         <button
           v-for="share in shareLinks"
           :key="share.label"
-          class="pill-button pill-button--outline"
+          class="ui-button ui-button--chip"
           type="button"
           :aria-label="`Share on ${share.label}`"
           @click="() => openShare(share.url)"
@@ -350,7 +350,7 @@ const hasHistory = historyEntries.length > 0
   margin-top: auto;
 }
 
-.series-card__actions .pill-button {
+.series-card__actions .ui-button {
   --pill-font-size: 1.4rem;
   --pill-padding: 0.4rem 1.2rem;
 }

@@ -19,9 +19,6 @@
       <p class="hero-slogan">
         {{ eyebrowText }}
       </p>
-      <p class="section-summary hero-panel__intro">
-        {{ introText }}
-      </p>
     </div>
 
     <nav
@@ -29,32 +26,61 @@
       aria-label="Section navigation"
     >
       <div class="hero-panel__nav-desktop">
-        <ul class="hero-panel__nav-list">
-          <li
-            v-for="item in desktopNavItems"
-            :key="item.id"
-          >
-            <button
-              class="hero-panel__nav-link hero-panel__nav-link--light"
-              :class="{ active: activeSection === item.id }"
-              type="button"
-              @click="scrollTo(item.id)"
-            >
-              {{ item.label }}
-            </button>
-          </li>
-        </ul>
-        <div
-          class="section-divider"
-          aria-hidden="true"
-        ></div>
         <button
-          class="hero-panel__mobile-link hero-panel__mobile-link--toggle"
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
+          :class="{ active: isPortfolioActive }"
+          type="button"
+          :aria-expanded="desktopPortfolioOpen.toString()"
+          @click="toggleDesktopPortfolio"
+        >
+          <span>Visualization portfolio</span>
+          <span aria-hidden="true">{{ desktopPortfolioOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="desktopPortfolioOpen"
+          class="hero-panel__mobile-submenu"
+        >
+          <button
+            v-for="item in portfolioNavItems"
+            :key="item.id"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__disclosure-sub"
+            :class="{ active: activeSection === item.id }"
+            type="button"
+            @click="scrollTo(item.id)"
+          >
+            {{ item.label }}
+          </button>
+        </div>
+        <button
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
+          :class="{ active: isAboutActive }"
+          type="button"
+          :aria-expanded="desktopAboutOpen.toString()"
+          @click="toggleDesktopAbout"
+        >
+          <span>About</span>
+          <span aria-hidden="true">{{ desktopAboutOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="desktopAboutOpen"
+          class="hero-panel__mobile-submenu"
+        >
+          <button
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__disclosure-sub"
+            :class="{ active: isAboutActive }"
+            type="button"
+            @click="scrollTo(teamSectionId)"
+          >
+            Meet the Team
+          </button>
+        </div>
+         <button
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
           type="button"
           :aria-expanded="desktopOtherLinksOpen.toString()"
           @click="toggleDesktopOtherLinks"
         >
-          <span>Other links</span>
+          <span>Access USGS Water Data</span>
           <span aria-hidden="true">{{ desktopOtherLinksOpen ? "−" : "+" }}</span>
         </button>
         <div
@@ -64,7 +90,7 @@
           <a
             v-for="link in otherLinks"
             :key="link.href"
-            class="hero-panel__mobile-sublink"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__disclosure-sub"
             :href="link.href"
             target="_blank"
             rel="noopener noreferrer"
@@ -76,13 +102,13 @@
 
       <div class="hero-panel__nav-mobile">
         <button
-          class="hero-panel__mobile-link hero-panel__mobile-link--toggle"
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
           :class="{ active: isPortfolioActive }"
           type="button"
           :aria-expanded="mobilePortfolioOpen.toString()"
           @click="toggleMobilePortfolio"
         >
-          <span>Portfolio</span>
+          <span>Visualization portfolio</span>
           <span aria-hidden="true">{{ mobilePortfolioOpen ? "−" : "+" }}</span>
         </button>
         <div
@@ -92,7 +118,7 @@
           <button
             v-for="item in portfolioNavItems"
             :key="item.id"
-            class="hero-panel__mobile-sublink"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__disclosure-sub"
             :class="{ active: activeSection === item.id }"
             type="button"
             @click="scrollTo(item.id)"
@@ -102,13 +128,12 @@
         </div>
 
         <button
-          class="hero-panel__mobile-link hero-panel__mobile-link--toggle"
-          :class="{ active: isAboutActive }"
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
           type="button"
           :aria-expanded="mobileOtherLinksOpen.toString()"
           @click="toggleMobileOtherLinks"
         >
-          <span>Other links</span>
+          <span>Access USGS Water Data</span>
           <span aria-hidden="true">{{ mobileOtherLinksOpen ? "−" : "+" }}</span>
         </button>
         <div
@@ -118,20 +143,36 @@
           <a
             v-for="link in otherLinks"
             :key="link.href"
-            class="hero-panel__mobile-sublink"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__disclosure-sub"
             :href="link.href"
             target="_blank"
             rel="noopener noreferrer"
           >
             {{ link.label }}
           </a>
+        </div>
+
+        <button
+          class="ui-button ui-button--disclosure hero-panel__disclosure"
+          :class="{ active: isAboutActive }"
+          type="button"
+          :aria-expanded="mobileAboutOpen.toString()"
+          @click="toggleMobileAbout"
+        >
+          <span>About</span>
+          <span aria-hidden="true">{{ mobileAboutOpen ? "−" : "+" }}</span>
+        </button>
+        <div
+          v-if="mobileAboutOpen"
+          class="hero-panel__mobile-submenu"
+        >
           <button
-            class="hero-panel__mobile-sublink"
+            class="ui-button ui-button--disclosure hero-panel__disclosure hero-panel__disclosure-sub"
             :class="{ active: isAboutActive }"
             type="button"
             @click="scrollTo(teamSectionId)"
           >
-            About
+            Meet the Team
           </button>
         </div>
       </div>
@@ -151,10 +192,6 @@ const props = defineProps({
   eyebrow: {
     type: String,
     default: "data + design studio"
-  },
-  introText: {
-    type: String,
-    default: "Visualizations for open and reproducible water science."
   }
 })
 
@@ -180,16 +217,18 @@ const otherLinks = [
 ]
 
 const eyebrowText = props.eyebrow
-const introText = props.introText
 const [heroTitleStrong, heroTitleLight] = (() => {
   const [strong = props.title, ...rest] = (props.title || "").split(" ")
   return [strong, rest.join(" ")]
 })()
 
 const activeSection = ref(desktopNavItems[0].id)
+const desktopPortfolioOpen = ref(true)
 const desktopOtherLinksOpen = ref(false)
+const desktopAboutOpen = ref(false)
 const mobilePortfolioOpen = ref(false)
 const mobileOtherLinksOpen = ref(false)
+const mobileAboutOpen = ref(false)
 let observer
 
 const SCROLL_OFFSET = 32
@@ -199,12 +238,23 @@ const isAboutActive = computed(() => activeSection.value === teamSectionId)
 const closeMobileMenus = () => {
   mobilePortfolioOpen.value = false
   mobileOtherLinksOpen.value = false
+  mobileAboutOpen.value = false
 }
 
 const toggleMobilePortfolio = () => {
   mobilePortfolioOpen.value = !mobilePortfolioOpen.value
   if (mobilePortfolioOpen.value) {
     mobileOtherLinksOpen.value = false
+    mobileAboutOpen.value = false
+  }
+}
+
+const toggleDesktopPortfolio = () => {
+  const nextValue = !desktopPortfolioOpen.value
+  desktopPortfolioOpen.value = nextValue
+  if (nextValue) {
+    desktopOtherLinksOpen.value = false
+    desktopAboutOpen.value = false
   }
 }
 
@@ -212,11 +262,34 @@ const toggleMobileOtherLinks = () => {
   mobileOtherLinksOpen.value = !mobileOtherLinksOpen.value
   if (mobileOtherLinksOpen.value) {
     mobilePortfolioOpen.value = false
+    mobileAboutOpen.value = false
   }
 }
 
 const toggleDesktopOtherLinks = () => {
-  desktopOtherLinksOpen.value = !desktopOtherLinksOpen.value
+  const nextValue = !desktopOtherLinksOpen.value
+  desktopOtherLinksOpen.value = nextValue
+  if (nextValue) {
+    desktopPortfolioOpen.value = false
+    desktopAboutOpen.value = false
+  }
+}
+
+const toggleMobileAbout = () => {
+  mobileAboutOpen.value = !mobileAboutOpen.value
+  if (mobileAboutOpen.value) {
+    mobilePortfolioOpen.value = false
+    mobileOtherLinksOpen.value = false
+  }
+}
+
+const toggleDesktopAbout = () => {
+  const nextValue = !desktopAboutOpen.value
+  desktopAboutOpen.value = nextValue
+  if (nextValue) {
+    desktopPortfolioOpen.value = false
+    desktopOtherLinksOpen.value = false
+  }
 }
 
 // set up srolling navigation
@@ -401,32 +474,14 @@ onBeforeUnmount(() => {
   margin: 0;
 }
 
-.hero-panel__mobile-link,
-.hero-panel__mobile-sublink {
+.hero-panel__disclosure {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--white-bright);
-  font-family: "Source Sans Pro", var(--default-font), sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-align: left;
-  text-decoration: none;
-  padding: 1.1rem 1.4rem;
-}
-
-.hero-panel__mobile-link {
-  cursor: pointer;
-}
-
-.hero-panel__mobile-link.active,
-.hero-panel__mobile-sublink.active {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.35);
+  --button-bg: rgba(255, 255, 255, 0.08);
+  --button-border: rgba(255, 255, 255, 0.22);
+  --button-text: var(--white-bright);
+  --button-hover-bg: rgba(255, 255, 255, 0.16);
+  --button-hover-border: rgba(255, 255, 255, 0.35);
+  --button-hover-text: var(--white-bright);
 }
 
 .hero-panel__mobile-submenu {
@@ -437,14 +492,13 @@ onBeforeUnmount(() => {
   width: 100%;
 }
 
-.hero-panel__mobile-sublink {
-  width: 100%;
+.hero-panel__disclosure-sub {
+  --button-bg: rgba(255, 255, 255, 0.04);
+  --button-border: rgba(255, 255, 255, 0.14);
+  --button-hover-bg: rgba(255, 255, 255, 0.12);
+  --button-hover-border: rgba(255, 255, 255, 0.28);
+  --button-font-size: 1.6rem;
   justify-content: flex-start;
-  font-size: 1.6rem;
-  font-weight: 600;
-  cursor: pointer;
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.04);
   padding-left: 1.2rem;
 }
 
@@ -477,7 +531,7 @@ onBeforeUnmount(() => {
     width: 100%;
   }
 
-  .hero-panel__mobile-link {
+  .hero-panel__disclosure {
     width: 100%;
   }
 

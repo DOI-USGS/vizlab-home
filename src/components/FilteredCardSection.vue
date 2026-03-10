@@ -38,8 +38,8 @@
       >
         <div class="tag-filter">
           <button
-            class="pill-button pill-button--tag"
-            :class="{ 'pill-button--active': !selectedTag }"
+            class="ui-button ui-button--chip"
+            :class="{ active: !selectedTag }"
             type="button"
             @click="selectTag(null)"
           >
@@ -48,8 +48,8 @@
           <button
             v-for="tag in availableTags"
             :key="tag"
-            class="pill-button pill-button--tag"
-            :class="{ 'pill-button--active': selectedTag === tag }"
+            class="ui-button ui-button--chip"
+            :class="{ active: selectedTag === tag }"
             type="button"
             @click="selectTag(tag)"
           >
@@ -64,7 +64,7 @@
       class="sketch-grid-container"
       :class="{
         'sketch-grid-container--fade': shouldFade,
-        'sketch-grid-container--full': disableFade
+        'sketch-grid-container--full': isExpanded
       }"
     >
       <div class="sketch-grid">
@@ -78,22 +78,25 @@
     </div>
 
     <div
-      v-if="showDetailLink"
-      class="section-footer"
+      v-if="showExpandToggle"
+      class="section-footer section-footer--expand"
     >
-      <RouterLink
-        class="hero-panel__nav-link section-footer__link"
-        :to="{ name: 'SectionDetail', params: { sectionId: computedSectionId } }"
+      <button
+        class="ui-button ui-button--disclosure"
+        :class="{ active: expanded }"
+        type="button"
+        :aria-expanded="expanded.toString()"
+        @click="toggleExpanded"
       >
-        View Full Gallery
-      </RouterLink>
+        <span>{{ expanded ? "Show Less" : "Show more" }}</span>
+        <span aria-hidden="true">{{ expanded ? "−" : "+" }}</span>
+      </button>
     </div>
   </section>
 </template>
 
 <script setup>
 import { computed, ref } from "vue"
-import { RouterLink } from "vue-router"
 import SketchCard from "@/components/SketchCard.vue"
 
 const props = defineProps({
@@ -138,6 +141,7 @@ const summary = computed(() => props.summary)
 
 const cards = computed(() => (props.items || []).filter((item) => !item?.archive))
 const selectedTag = ref(null)
+const expanded = ref(false)
 
 const availableTags = computed(() => {
   const tags = new Set()
@@ -152,10 +156,18 @@ const filteredCards = computed(() => {
   return cards.value.filter((card) => card.tags?.includes(selectedTag.value))
 })
 
-const shouldFade = computed(() => !props.disableFade && props.showDetailLink && filteredCards.value.length > 6)
+const hasOverflow = computed(() => !props.disableFade && filteredCards.value.length > 6)
+const isExpanded = computed(() => props.disableFade || expanded.value)
+const shouldFade = computed(() => hasOverflow.value && !isExpanded.value)
+const showExpandToggle = computed(() => props.showDetailLink && hasOverflow.value)
 
 const selectTag = (tag) => {
   selectedTag.value = tag
+  expanded.value = false
+}
+
+const toggleExpanded = () => {
+  expanded.value = !expanded.value
 }
 </script>
 
@@ -166,7 +178,7 @@ const selectTag = (tag) => {
 
 .sketch-grid-container {
   position: relative;
-  max-height: 7rem;
+  max-height: 75rem;
   overflow: hidden;
 }
 
@@ -183,6 +195,7 @@ const selectTag = (tag) => {
   bottom: 0;
   height: 8rem;
   pointer-events: none;
+  background: linear-gradient(to bottom, rgba(245, 246, 248, 0), var(--color-background));
 }
 
 .sketch-grid-container--full {
@@ -204,15 +217,6 @@ const selectTag = (tag) => {
   .section-header--with-controls {
     gap: 0;
   }
-
-  .sketch-grid-container {
-    max-height: none;
-  }
-
-  .sketch-grid-container--fade::after {
-    display: none;
-  }
-
 }
 
 @media (min-width: 961px) {
