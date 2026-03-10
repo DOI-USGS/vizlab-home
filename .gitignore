@@ -1,53 +1,35 @@
-# local image files
-visualizations/
-
-.DS_Store
-node_modules
-/dist
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+
+/cypress/videos/
+/cypress/screenshots/
+
+# R files
+.Rhistory
 
 # Editor directories and files
+.vscode/
+!.vscode/extensions.json
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# image files that correspond to aws files in water-visualizations-prod-website
-src/assets/images/charts/
-src/assets/images/thumbnails/
-src/assets/images/gifs/
-
-scratch/
-# RStudio files
-.Rproj.user/
-*.Rproj
-
-# History files
-.Rhistory
-.Rapp.history
-
-# Session Data files
-.RData
-
-# User-specific files
-.Ruserdata
-.Rproj.user
-
-# pipeline files
-_targets/
-in/*
-!in/.empty
-!/in/CC23/.empty
-tmp/*
-!tmp/.empty
+# image files generated locally
+/sketches
+/thumbnails

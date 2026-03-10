@@ -1,0 +1,293 @@
+{
+  "items": [
+    {
+      "id": "earths-water",
+      "title": "How much water is there on Earth?",
+      "released": "04/03/2025",
+      "image": {
+        "alt": "A 3D image of the Earth compared to different spheres and cubes representing different pools of water. Four different sized water-spheres from largest to smallest represent the total water, oceanic water, groundwater, and lake and river water on Earth. An ice-cube between oceanic water and ground water represents the total amount of frozen water on Earth. The size of the spheres and cubes are realistically scaled to directly compare each pool's volume on Earth.",
+        "thumbnail": "earths-water-thumbnail.webp"
+      },
+      "links": {
+        "asset": "",
+        "external": "https://www.usgs.gov/media/images/how-much-water-there-earth-1"
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "blender-grand-canyon",
+      "title": "The Grand Canyon made with TopoRivBlender",
+      "released": "01/29/2025",
+      "image": {
+        "alt": "A 3D image of the Grand Canyon in Northern Arizona, USA made using the TopoRivBlender software. Darker colors represent lower elevations, and lighter colors represent higher elevations. The topography has been contours to give an abstract feel.",
+        "thumbnail": "blender_grand_canyon_thumbnail.webp"
+      },
+      "links": {
+        "asset": "blender_grand_canyon.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "blender-huc-1711000507",
+      "title": "Ross Lake National Recreation Area made with TopoRivBlender",
+      "released": "01/29/2025",
+      "image": {
+        "alt": "A 3D image of the Ross Lake National Recreation Area in Washington, USA made using the TopoRivBlender software. Land is represented with a tan color, rivers and lake by blue, and snow with white. The extent of the landscape is bounded by the geometry of the Hydrologic Unit Code (HUC): 1711000507.",
+        "thumbnail": "blender_huc1711000507_thumbnail.webp"
+      },
+      "links": {
+        "asset": "blender_huc1711000507.png",
+        "external": ""
+      },
+      "tags": []
+    },
+    {   
+	      "id": "water-use-small-multiples",
+	      "title": "How are we using water?",
+	      "released": "04/08/2023",
+	      "image": {
+	        "alt": "8 maps of the continental U.S. show county-level water use for 8 categories of use – thermoelectric, irrigation, public supply, industrial, aquaculture, mining, domestic, and livestock. Use in each category is shown as a percent of total water use, by county. In the northern plains, most water is used for livestock. In west Texas, most water is used for mining. In northern Maine, most water is used for industry.",
+	        "thumbnail": "20230408_humans_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/distributions-humans-how-are-we-using-water"
+	      },
+	      "tags": [
+          "maps"
+	      ]
+    },
+    {
+	      "id": "stream-order-map",
+	      "title": "Which stream order covers the most distance?",
+	      "released": "04/17/2023",
+	      "image": {
+	        "alt": "A map of the Potomac River stream network is colored by Strahler stream order, where higher order represents a larger stream. Next to the map is a donut chart, showing that small headwater streams (order 1) make up 57% of the river network, by length. The first three orders of streams, together, make up 87% of the network by length. The eighth-order Potomac River makes up less than 1% of the river network, by length. Data for the plot are USGS National Hydrography Dataset High Resolution.",
+	        "thumbnail": "20230417_networks_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/relationships-network-which-stream-order-covers-most-distance"
+	      },
+	      "tags": [
+          "maps"
+	      ]
+    },
+
+    {
+	      "id": "water-use-geofacet",
+	      "title": "Changes in U.S. water use - 1985 to 2015",
+	      "released": "04/23/2023",
+	      "image": {
+	        "alt": "A tile map of the U.S. with alluvial charts for each state and the nation that show changes in the total volume of water use from 1985-2015 across eight categories (thermoelectric, irrigation, public supply, industrial, aquaculture, mining, domestic, and livestock). There is change in how much water is used (like the decline in Massachusetts) and in the categories of use (growth of irrigation in Arkansas).",
+	        "thumbnail": "20230423_tiles_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/timeseries-tiles-changes-us-water-use-1985-2015"
+	      },
+	      "tags": [
+          "geofacet"
+	      ]
+    },
+    {
+	      "id": "water-use-waffle",
+	      "title": "U.S. water use - 2015",
+	      "released": "04/02/2023",
+	      "image": {
+	        "alt": "In 2015, water use in the U.S. totaled 322 billion gallons/day. Total water use is broken out into 8 categories using different colors. The categories, in ranked order for 2015, followed by their water use, in units of billion gallons/day, are: thermoelectric power (133), Irrigation (118), public supply (39), self-supplied industrial (14.8), aquaculture (7.6), mining (4), self-supplied domestic (3.3) & livestock (2).",
+	        "thumbnail": "20230402_waffle_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "",
+	        "external": "https://www.usgs.gov/media/images/comparisons-waffle-2015-daily-water-use"
+	      },
+	      "tags": [
+	      ]
+    },
+    {
+	      "id": "magic-reservoir",
+	      "title": "Magic Reservoir upstream/downstream comparison",
+	      "released": "04/04/2021",
+	      "image": {
+	        "alt": "On the left, there is a map of the Magic Reservoir with a blue dot of the upstream and a purple dot downstream of the reservoir. In the middle is  a line chart with a line for each water year from 1997 to 2020 for annual daily discharge. A blue and purple line show the upstream and downstream median daily flows, respectively. On the right, the space between the upstream and downstream median lines is filled to show that from about November to May, water is stored by the reservoir because the upstream flow is greater than downstream flow, and from about May to November, the reservoir is releasing water because the downstream flow is greater than the upstream flow.",
+	        "thumbnail": "magic_hcorson-dosch_thumbnail.png"
+	      },
+	      "links": {
+	        "asset": "magic_hcorson-dosch.png",
+	        "external": ""
+	      },
+	      "tags": [
+	        "maps",
+	        "timeseries"
+	      ]
+    },
+    {
+      "id": "great-salt-lake-landsat",
+      "title": "Great Salt Lake Landsat animation",
+      "released": "04/30/2025",
+      "image": {
+        "alt": "Tracking five decades of change from space, pixel by pixel. Satellite imagery of Great Salt Lake, which goes from 2000 to 2022. Stylized to look similar to a magazine cover, with a black background and yellow border. ",
+        "thumbnail": "landsat-gsl-eazadpour.gif"
+      },
+      "links": {
+        "asset": "landsat-gsl-eazadpour.gif",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "bw-distribution-source",
+      "title": "Distribution of water sources for bottled water facilities",
+      "released": "11/27/2023",
+      "image": {
+        "alt": "A tile map of the U.S. showing percentages of water source types for bottled water facilities.",
+        "thumbnail": "bw-distrubution-eazadpour_thumbnail.jpeg"
+      },
+      "links": {
+        "asset": "bw-distrubution-eazadpour.jpeg",
+        "external": ""
+      },
+      "tags": [
+        "geofacet"
+      ]
+    },
+    {
+      "id": "rio-grande-ridgelines",
+      "title": "Rio Grande River, NM streamflow",
+      "released": "04/13/2023",
+      "image": {
+        "alt": "Mean daily streamflow (cfs) of the Rio Grande at Embudo, New Mexico from 1991 to 2022. The chart has a black background and the 30 years of mean daily streamflow data are plotted as stacked white ridge lines that emulate the aesthetics of a classic rock album. In each year there is a peak of streamflow mid-year, with tapering streamflow levels during winter months.",
+        "thumbnail": "rio-grande-ridgelines-eazadpour_thumbnail.png"
+      },
+      "links": {
+        "asset": "rio-grande-ridgelines-eazadpour.png",
+        "external": ""
+      },
+      "tags": [
+        "timeseries"
+      ]
+    },
+    {
+      "id": "getting-snowier",
+      "title": "Are snowy places getting snowier?",
+      "released": "04/13/2021",
+      "image": {
+        "alt": "A bivariate map of the western U.S. showing the relationship between snow water equivalent and historic snowfall",
+        "thumbnail": "getting-snowier_thumbnail.jpeg"
+      },
+      "links": {
+        "asset": "getting-snowier.jpeg",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "20230401a_part-to-whole_mcarr",
+      "title": "All the water on Earth (chart)",
+      "released": "04/01/2023",
+      "image": {
+        "alt": "Series of 3 interconnected tree maps for all the water on Earh, all freshwater, and surface & other freshwater. First tree map is broken down in size order displaying oceans, other saline water, and freshwater. Second tree map displays all freshwater broken down in size order by glaciers & ice caps, groundwater, and surface & other freshwater. Third tree map breaks down surface & other freshwater in size order by ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.",
+        "thumbnail": "20230401a_part-to-whole_mcarr_thumbnail.png"
+      },
+      "links": {
+        "asset": "20230401a_part-to-whole_mcarr.png",
+        "external": "https://www.usgs.gov/media/images/comparisons-part-whole-image-1"
+      },
+      "tags": [
+        
+      ]
+    },
+    {
+      "id": "snapshot_irrigation_water_use",
+      "title": "Monthly irrigation by region",
+      "released": "04/05/2025",
+      "image": {
+        "alt": "Radial bar charts stylized to look like center-pivot fields show water withdrawals for irrigation across four regions of the United States. In the Columbia-Snake region, peak crop irrigation month is July, and peak withdrawals are over 53,000 millions of gallons per day (mgd). In the Midwest, peak crop irrigation month is July, and peak withdrawals are over 25,000 mgd. In the Mississippi Embayment, peak crop irrigation month is August, and peak withdrawals are over 31,000 mgd. In the Southwest Desert, peak crop irrigation month is June, and peak withdrawals are over 12,500 mgd.",
+        "thumbnail": "snapshot_irrigation_water_use_thumbnail.png"
+      },
+      "links": {
+        "asset": "snapshot_irrigation_water_use.png",
+        "external": "https://www.usgs.gov/media/images/when-water-used-irrigation"
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "rem-beaver-creek",
+      "title": "Relative elevation model (REM) of Beaver Creek, Liberty County, MT",
+      "released": "06/05/2024",
+      "image": {
+        "alt": "A relative elevation model showing the intricate fluvial landforms (e.g., meanders, relic stream channels, meander cutoffs) of Beaver Creek, Liberty County, MT. Relative elevation models show elevation of a landscape relative to the elevation of an adjacent river.",
+        "thumbnail": "rem_beaver_creek_thumbnail.png"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/relative-elevation-model-rem-beaver-creek-liberty-county-mt",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "wildfire-water-animation",
+      "title": "Water uses affected by wildfire (2000-2020)",
+      "released": "04/13/2023",
+      "image": {
+        "alt": "Animated map of the continental U.S. and paired line chart. For each month from 2000 to 2020, the map shows burned areas within water supply watersheds, and the chart displays the total number of affected water users. In 2003, 2005, 2014, and 2017, wildfires burned key water supply watersheds that together supply water to over 1.5 million consumers.",
+        "thumbnail": "fire_water.webp"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/relationships-pop-culture-water-uses-affected-wildfire-2000-2020",
+        "external": ""
+      },
+      "tags": [
+        "maps",
+        "timeseries"
+      ]
+    },
+    {
+      "id": "myanmar-earthquake",
+      "title": "Groundwater signal from Myanmar Earthquake (March 2025)",
+      "released": "04/16/2025",
+      "image": {
+        "alt": "Map of the Myanmar Earthquake epicenter in Asia, showing three U.S. groundwater sites across the globe. In response to the earthquake, these three groundwater monitoring sites showed a disturbance, which is displayed on a time series graph.",
+        "thumbnail": "16_relationships_negative_thumbnail.png"
+      },
+      "links": {
+        "asset": "16_relationships_negative.png",
+        "external": ""
+      },
+      "tags": [
+        "maps",
+        "timeseries"
+      ]
+    },
+    {
+      "id": "tale-two-winters",
+      "title": "A tale of two winters",
+      "released": "04/09/2023",
+      "image": {
+        "alt": "Hexmap of the U.S. showing anomaly from average snow conditions for February 2023 compared to 20-year-mean by percent difference. Marginal distribution plots show the anomaly from east-to-west and north-to-south directions. The eastern U.S. had a much more snow-free February compared to average than the western U.S.",
+        "thumbnail": "20230409_high-low_aaarcher_thumbnail.webp"
+      },
+      "links": {
+        "asset": "20230409_high-low_aaarcher.png",
+        "external": "https://www.usgs.gov/media/images/distributions-highlow-a-tale-two-winters"
+      },
+      "tags": [
+        "maps"
+      ]
+    }
+  ]
+}

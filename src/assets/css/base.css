@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/univers-condensed-2');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+
+/* semantic color variables for this project */
+/* Define colors */
+:root {
+  --white: #ffffff;
+  --white-soft: #F0F0F0;
+
+  --black-soft: #1b1b1b;
+  --dodger-blue: #1e90ff;
+  --light-grey: rgba(0, 0, 0, 0.12);
+  --medium-grey: #B5B5B5;
+  --medium-purple: #8F00DB;
+  --medium-blue: #4365A8;
+  --medium-orange: #E48951;
+  --usgs-blue: #00264c;
+  --usgs-green: #006F41;
+  --sticky-nav-offset: 0px;
+
+  font-size: 62.5%;
+
+  --title-font: Source Sans Pro; 
+  --default-font: Source Code Pro;
+
+}
+
+/* Declare color variables */
+:root {
+  --color-background: var(--white);
+  --color-text: var(--black-soft);
+  --color-title-text: var(--black-soft);
+  --color-overlay: var(--black-soft);
+  --color-overlay-text: var(--white-soft);
+  --color-code-links-background: var(--medium-grey);
+  --color-link: var(--medium-purple);
+  --color-bar-focal: var(--medium-blue);
+  --color-bar-default: var(--medium-grey);
+  --color-map-focal: var(--medium-orange);
+  --color-map-default: var(--white);
+  --color-USGS-header-footer: var(--usgs-blue);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-muted-text: rgba(0, 0, 0, 0.7);
+}
+
+:root[data-theme="dark"] {
+  --color-background: var(--black-soft);
+  --color-text: #f5f7fb;
+  --color-title-text: #fdfdfd;
+  --color-overlay: rgba(255, 255, 255, 0.85);
+  --color-overlay-text: #0f1117;
+  --color-code-links-background: var(--black-soft);
+  --color-link: var(--dodger-blue);
+  --color-bar-focal: var(--dodger-blue);
+  --color-bar-default: rgba(255, 255, 255, 0.5);
+  --color-map-focal: var(--medium-orange);
+  --color-map-default: var(--black-soft);
+  --light-grey: rgba(255, 255, 255, 0.14);
+  --medium-grey: #9ca3af;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-muted-text: rgba(255, 255, 255, 0.75);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--black-soft);
+    --color-text: var(--white-soft);
+  }
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  /* font-weight: normal; */
+}
+
+.title {
+  font-family: 'Univers Condensed', var(--title-font), sans-serif;
+}
+
+.title-strong { font-weight: 700; }
+.title-light  { font-weight: 300; }
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  fill: var(--color-text); /* Needed for text added w/ d3 */
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.2;
+  font-family: sans-serif; /* This is fallback font for old browsers */
+  font-family: var(--default-font);
+  font-size: 2rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+h1 {
+  font-size: 7rem;
+  font-weight: 700;
+  padding: 0rem 0 0rem 0;
+  font-family: var(--title-font);
+  font-style: normal;
+
+}
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding: 0rem 0 1rem 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--sticky-nav-offset);
+}
+
+.section-header h2 {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  text-transform: uppercase;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+}
+
+[data-section-anchor] {
+  scroll-margin-top: var(--sticky-nav-offset);
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.section-title-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.section-title-link:hover,
+.section-title-link:focus-visible {
+  color: var(--color-link);
+  text-decoration: none;
+  box-shadow: inset 0 -0.4em rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-summary {
+  font-size: 1.8rem;
+  color: var(--color-muted-text);
+  max-width: 70ch;
+}
+
+p, text, li {
+  padding: 0 0 1rem 0;
+}
+
+@media (max-width: 700px) {
+  .viz-section {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+}
+.pill-button {
+  border: 1px solid currentColor;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  color: inherit;
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.1s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-button--active,
+.pill-button.active {
+  color: #fff;
+  background: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.pill-button:hover,
+.pill-button:focus-visible {
+  color: #fff;
+  background: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.pill-button:active {
+  transform: translateY(1px);
+}

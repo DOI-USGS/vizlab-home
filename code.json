@@ -1,10 +1,10 @@
 [
   {
-    "name": "vizlab-home",
+    "name": "vizlab",
     "organization": "U.S. Geological Survey",
-    "description": "Landing page for the USGS Vizlab",
-    "version": "0.15.0",
-    "status": "Production",
+    "description": "A collection of data visualizations and graphics about water",
+    "version": "main",
+    "status": "Development",
     "permissions": {
       "usageType": "openSource",
       "licenses": [
@@ -14,26 +14,27 @@
         }
       ]
     },
-    "homepageURL": "https://labs.waterdata.usgs.gov/visualizations/",
+    "homepageURL": "https://water.usgs.gov/vizlab",
     "downloadURL": "https://github.com/DOI-USGS/vizlab-home/archive/refs/heads/main.zip",
     "disclaimerURL": "https://github.com/DOI-USGS/vizlab-home/blob/main/DISCLAIMER.md",
     "repositoryURL": "https://github.com/DOI-USGS/vizlab-home.git",
     "vcs": "git",
-    "laborHours": 120,
+    "laborHours": 50,
     "tags": [
-      "R",
-      "USGS"
+      "USGS",
+      "Vizlab"
     ],
     "languages": [
       "R",
-      "Vue"
+      "Vue",
+      "JavaScript"
     ],
     "contact": {
       "name": "Cee Nell",
       "email": "cnell@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2025-11-20"
+      "metadataLastUpdated": "2026-01-12"
     }
   }
 ]

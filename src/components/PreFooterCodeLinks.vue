@@ -4,39 +4,31 @@
       :href="gitHubRepositoryLink"
       target="_blank"
       aria-label="github link"
-    >Get the code behind this site
+    >See the code behind this site
       <font-awesome-icon :icon="{ prefix: 'fab', iconName: 'github' }" />
     </a>
   </div>
 </template>
 
-<script>
-  export default {
-      name: 'PreFooterCodeLinks',
-      data() {
-          return {
-              gitHubRepositoryLink: process.env.VUE_APP_GITHUB_REPOSITORY_LINK
-          }
-      }
-  }
-
+<script setup>
+  const gitHubRepositoryLink = import.meta.env.VITE_APP_GITHUB_REPOSITORY_LINK;
 </script>
 
 <style scoped lang="scss">
-$nearBlack: #181a1a;
+
   #code-repository-link-container {
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    height: auto;
-    background-color: $nearBlack;
+    background-color: var(--color-code-links-background);
     margin: 0 auto;
-    padding: 0.4rem;
+    padding: 0.4rem 1.5rem;
     a {
-      color: white;
-      font-family: 'Source Sans Pro',sans-serif;
-      font-size: 14px;
-      text-decoration: none
+      color: var(--color-text);
+      font-weight: 300;
+      margin-left: 10px;
+      text-decoration: none;
+      font-family: 'Source Sans Pro', var(--default-font), sans-serif;
     }
   }
 
