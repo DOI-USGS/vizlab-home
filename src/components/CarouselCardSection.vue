@@ -4,29 +4,27 @@
     class="content-section"
   >
     <div class="section-header">
-      <div>
-        <div class="section-title-row">
-          <h2
-            :id="titleId"
-            :data-section-anchor="computedSectionId"
+      <div class="section-title-row">
+        <h2
+          :id="titleId"
+          :data-section-anchor="computedSectionId"
+        >
+          <a
+            class="section-title-link"
+            :href="`#${titleId}`"
           >
-            <a
-              class="section-title-link"
-              :href="`#${titleId}`"
-            >
-              {{ headingText }}
-            </a>
-          </h2>
-        </div>
-        <slot name="summary">
-          <p
-            v-if="summary"
-            class="section-summary"
-          >
-            {{ summary }}
-          </p>
-        </slot>
+            {{ headingText }}
+          </a>
+        </h2>
       </div>
+      <slot name="summary">
+        <p
+          v-if="summary"
+          class="section-summary"
+        >
+          {{ summary }}
+        </p>
+      </slot>
     </div>
 
     <ul
