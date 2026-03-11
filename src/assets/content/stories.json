@@ -62,7 +62,7 @@
       },
       "links": {
         "code": "https://github.com/DOI-USGS/trout_and_climate",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/trout-and-climate/"
+        "external": "https://water.usgs.gov/vizlab/trout-and-climate/index.html"
       }
     },
     {
@@ -75,7 +75,7 @@
       },
       "links": {
         "code": "https://github.com/DOI-USGS/vulnerability-indicators",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/vulnerability-indicators/index.html#/"
+        "external": "https://water.usgs.gov/vizlab/vulnerability-indicators/"
       }
     },
     {
@@ -114,7 +114,7 @@
       },
       "links": {
         "code": "https://github.com/DOI-USGS/what-is-drought",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/what-is-drought/index.html#/"
+        "external": "https://water.usgs.gov/vizlab/what-is-drought/"
       }
     },
     {
