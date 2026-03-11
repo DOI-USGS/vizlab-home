@@ -192,7 +192,7 @@
       },
       "links": {
         "code": "https://github.com/usgs-makerspace/delaware-basin-story",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/delaware-basin-story/index.html#/"
+        "external": "https://water.usgs.gov/vizlab/delaware-basin-story/index.html"
       }
     },
     {
@@ -205,7 +205,7 @@
       },
       "links": {
         "code": "https://github.com/usgs-makerspace/gages-through-the-ages",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/gages-through-the-ages/index.html#/"
+        "external": "https://water.usgs.gov/vizlab/gages-through-the-ages/index.html"
       }
     },
     {
