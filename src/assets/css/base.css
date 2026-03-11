@@ -364,7 +364,7 @@ p, text, li {
   width: auto;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: var(--button-justify, center);
   gap: 1rem;
   font-family: "Source Sans Pro", var(--default-font), sans-serif;
   font-size: var(--button-font-size);

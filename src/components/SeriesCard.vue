@@ -107,7 +107,15 @@
         <span aria-hidden="true">{{ expanded ? "−" : "+" }}</span>
       </button>
 
-      <transition name="history-collapse">
+      <transition
+        name="history-collapse"
+        @before-enter="onHistoryBeforeEnter"
+        @enter="onHistoryEnter"
+        @after-enter="resetHistoryStyles"
+        @before-leave="onHistoryBeforeLeave"
+        @leave="onHistoryLeave"
+        @after-leave="resetHistoryStyles"
+      >
         <div
           v-if="expanded && hasHistory"
           class="history-list"
@@ -205,6 +213,47 @@ const historyEntries = items
   }))
   .filter((entry) => entry.displayLabel)
 const hasHistory = historyEntries.length > 0
+
+const setHistoryCollapsedState = (el) => {
+  el.style.height = "0"
+  el.style.opacity = "0"
+  el.style.transform = "translateY(-0.4rem)"
+  el.style.overflow = "hidden"
+}
+
+const onHistoryBeforeEnter = (el) => {
+  setHistoryCollapsedState(el)
+}
+
+const onHistoryEnter = (el) => {
+  void el.offsetHeight
+  requestAnimationFrame(() => {
+    el.style.height = `${el.scrollHeight}px`
+    el.style.opacity = "1"
+    el.style.transform = "translateY(0)"
+  })
+}
+
+const onHistoryBeforeLeave = (el) => {
+  el.style.height = `${el.scrollHeight}px`
+  el.style.opacity = "1"
+  el.style.transform = "translateY(0)"
+  el.style.overflow = "hidden"
+}
+
+const onHistoryLeave = (el) => {
+  void el.offsetHeight
+  requestAnimationFrame(() => {
+    setHistoryCollapsedState(el)
+  })
+}
+
+const resetHistoryStyles = (el) => {
+  el.style.height = ""
+  el.style.opacity = ""
+  el.style.transform = ""
+  el.style.overflow = ""
+}
 </script>
 
 <style scoped>
@@ -376,17 +425,23 @@ const hasHistory = historyEntries.length > 0
 
 .history-collapse-enter-active,
 .history-collapse-leave-active {
-  transition: all 200ms ease;
+  transition:
+    height 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
 }
 
 .history-collapse-enter-from,
 .history-collapse-leave-to {
+  height: 0;
   opacity: 0;
   transform: translateY(-0.4rem);
 }
 @media (--bp-sm) {
   .series-card {
     width: 100%;
+    min-height: auto;
+    align-self: flex-start;
   }
 
   /* move interval badges to second lin on mobile */
