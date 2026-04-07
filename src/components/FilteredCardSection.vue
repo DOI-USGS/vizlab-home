@@ -42,7 +42,7 @@
             type="button"
             @click="selectTag(null)"
           >
-            All
+            all
           </button>
           <button
             v-for="tag in availableTags"
