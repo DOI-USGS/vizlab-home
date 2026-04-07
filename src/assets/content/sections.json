@@ -1,0 +1,41 @@
+{
+  "sketches": {
+    "id": "sketches",
+    "title": "Illustrations & Infographics",
+    "summary": "Diagrams, comics, and explainers, oh my!"
+  },
+  "snapshots": {
+    "id": "snapshots",
+    "title": "Charts & Maps",
+    "summary": "Reproducible visualizations."
+  },
+  "stories": {
+    "id": "stories",
+    "title": "Interactive Stories",
+    "summary": "Told with USGS water data."
+  },
+  "series": {
+    "id": "series",
+    "title": "Series",
+    "summary": "Recurring visualizations of current conditions and events."
+  },
+  "blogs": {
+    "id": "blogs",
+    "title": "Water Data Blog",
+    "summary": "",
+    "link": {
+      "intro": "Read more at",
+      "label": "waterdata.usgs.gov/blog",
+      "href": "https://waterdata.usgs.gov/blog"
+    }
+  },
+  "team": {
+    "id": "team",
+    "title": "Meet the Team",
+    "contact": {
+      "intro": "Email us at",
+      "label": "gs-w_vizlab@usgs.gov",
+      "href": "mailto:gs-w_vizlab@usgs.gov"
+    }
+  }
+}

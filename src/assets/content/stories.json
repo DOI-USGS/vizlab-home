@@ -1,0 +1,292 @@
+{
+  "items": [
+    {
+      "id": "streamflow-drought-forecasts",
+      "title": "River DroughtCast",
+      "released": "12/10/2025",
+      "image": {
+        "alt": "A map of Florida showing the streamflow drought status at streamgage locations. One gage is selected, and a window in the bottom left shows a timeseries of observed and forecast streamflow conditions at that site",
+        "thumbnail": "streamflow-drought-forecasts_thumbnail.png"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/streamflow-drought-forecasts",
+        "external": "https://water.usgs.gov/vizlab/streamflow-drought-forecasts"
+      }
+    },
+    {
+      "id": "modeling-drought",
+      "title": "Modeling streamflow drought",
+      "released": "12/10/2025",
+      "image": {
+        "alt": "An abstract compilation of snippets from charts that illustrate how streamflow drought is forecast",
+        "thumbnail": "modeling-drought_thumbnail.png"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/modeling-drought",
+        "external": "https://water.usgs.gov/vizlab/modeling-drought"
+      }
+    },
+    {
+      "id": "water-availability",
+      "title": "Water availability in the United States",
+      "released": "1/16/2025",
+      "image": {
+        "alt": "Map showing water limitation in the lower 48 United States by watershed. The background visualization shows monthly dynamics in water limitation from 2010 to 2020.",
+        "thumbnail": "water-availability_thumbnail.png"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/water-availability",
+        "external": "https://water.usgs.gov/vizlab/water-availability"
+      }
+    },
+    {
+      "id": "earth-in-flux",
+      "title": "Earth is in Flux",
+      "released": "12/18/24",
+      "image": {
+        "alt": "Six tiles arranged in a grid of 3 columns and 2 rows show thumbnails for visualizations in the Earth in Flux chart gallery",
+        "thumbnail": "earth-in-flux_thumbnail.webp"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/earth-in-flux",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/earth-in-flux/"
+      }
+    },
+    {
+      "id": "trout-and-climate",
+      "title": "Managing redband trout for climate resilience",
+      "released": "11/20/2024",
+      "image": {
+        "alt": "Illustrated river with two cartoon redband trout swimming in it in front of a data visualization that shows how cold- and warm-adapted redband trout are affected by water temperature. The visualization demonstrates that cold-adapted redband trout suffer from thermal stress at lower overall temperatures than warm-adapted redband trout. Text on the visualization includes labels for each line: \"cold-adapted redband trout\" and \"warm-adapted redband trout\" and a label for \"thermal stress.\"",
+        "thumbnail": "trout-and-climate_thumbnail.webp"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/trout_and_climate",
+        "external": "https://water.usgs.gov/vizlab/trout-and-climate/index.html"
+      }
+    },
+    {
+      "id": "vulnerability-indicators",
+      "title": "Unequal access to water",
+      "released": "9/23/2024",
+      "image": {
+        "alt": "Two contrasting images of water sources with the top image showing a close-up of a hand holding a clear glass being filled with water from a kitchen faucet. The bottom image shows a rustic landscape with a blue well tank labeled WELL-X-TROL with a wired fence and dry grass in the background.",
+        "thumbnail": "vulnerability_thumbnail_no_text.png"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/vulnerability-indicators",
+        "external": "https://water.usgs.gov/vizlab/vulnerability-indicators/"
+      }
+    },
+    {
+      "id": "bottled-water",
+      "title": "Water bottling across the U.S.",
+      "released": "11/21/2023",
+      "image": {
+        "alt": "A map of Texas showing the count of bottled water facilities in each county.",
+        "thumbnail": "bottled_water_thumbnail.webp"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/vizlab-bottled-water",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/bottled-water/index.html#/"
+      }
+    },
+    {
+      "id": "drought-timeline",
+      "title": "Five droughts that changed history",
+      "released": "9/20/2023",
+      "image": {
+        "alt": "An image of dried, cracked mud overlain by a chart with long vertical bands representing drought events",
+        "thumbnail": "drought_timeline_thumbnail.webp"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/drought-timeline",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/drought-timeline/index.html#/"
+      }
+    },
+    {
+      "id": "what-is-drought",
+      "title": "What is streamflow drought?",
+      "released": "6/22/2023",
+      "image": {
+        "alt": "An illustration of a partially dried-up streambed, wilted sunflower, and brown landscape depicting streamflow drought, which follows after meteorological and agricultural drought.",
+        "thumbnail": "WhatIsDrought-thumbnail.webp"
+      },
+      "links": {
+        "code": "https://github.com/DOI-USGS/what-is-drought",
+        "external": "https://water.usgs.gov/vizlab/what-is-drought/"
+      }
+    },
+    {
+      "id": "pools-and-fluxes",
+      "title": "Pools and Fluxes in the Water Cycle",
+      "released": "10/13/2022",
+      "image": {
+        "alt": "An illustration of the water cycle showing precipitation and runoff.",
+        "thumbnail": "pnf-thumbnail.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/pools-and-fluxes",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/pools-and-fluxes/index.html#/"
+      }
+    },
+    {
+      "id": "temperature-prediction-modeling",
+      "title": "How we Model Stream Temperature in the Delaware River Basin",
+      "released": "6/2/2021",
+      "image": {
+        "alt": "An illustration of a stream showing icons for factors that affect stream temperature: solar radiation, precipitation, and shade.",
+        "thumbnail": "temp-modeling-physics-01.png"
+      },
+      "links": {
+        "code": "https://github.com/usgs-makerspace/temperature-prediction",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling"
+      }
+    },
+    {
+      "id": "temperature-prediction-monitoring",
+      "title": "How we Monitor Stream Temperature in the Delaware River Basin",
+      "released": "6/2/2021",
+      "image": {
+        "alt": "A map of stream reaches in the Delaware River Basin artistically embedded in a line chart showing stream temperature throughtout the year.",
+        "thumbnail": "temp-monitor.jpg"
+      },
+      "links": {
+        "code": "https://github.com/usgs-makerspace/temperature-prediction",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/monitoring"
+      }
+    },
+    {
+      "id": "snow-to-flow",
+      "title": "From Snow to Flow",
+      "released": "4/16/2021",
+      "image": {
+        "alt": "An image of mountains near a lake covered in snow, with peak-like line charts artistically placed in the background.",
+        "thumbnail": "snow-to-flow.jpg"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/snow-to-flow",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/snow-to-flow/index.html#/"
+      }
+    },
+    {
+      "id": "fire-hydro",
+      "title": "How wildfires threaten U.S. water supplies",
+      "released": "11/5/2020",
+      "image": {
+        "alt": "A thumbnail showing a burn scar from a wildfire, with a line chart of the total acres burned by wildfires abstractly in the background.",
+        "thumbnail": "fire-hydro.jpg"
+      },
+      "links": {
+        "code": "https://github.com/usgs-makerspace/fire-hydro",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/fire-hydro/index.html#/"
+      }
+    },
+    {
+      "id": "delaware-basin-story",
+      "title": "Water science and management in the Delaware River Basin",
+      "released": "12/1/2020",
+      "image": {
+        "alt": "A watercolor image of the Delaware River Basin showing the locations of reservoirs, NGWOS sensors, and stream reaches.",
+        "thumbnail": "DRBthumb.png"
+      },
+      "links": {
+        "code": "https://github.com/usgs-makerspace/delaware-basin-story",
+        "external": "https://water.usgs.gov/vizlab/delaware-basin-story/index.html"
+      }
+    },
+    {
+      "id": "gages-through-the-ages",
+      "title": "Gages Through the Ages",
+      "released": "7/1/2020",
+      "image": {
+        "alt": "A cartogram map of the U.S. made from area charts depicting the total number of USGS streamgages in each state over time.",
+        "thumbnail": "gages-cartogram-01.png"
+      },
+      "links": {
+        "code": "https://github.com/usgs-makerspace/gages-through-the-ages",
+        "external": "https://water.usgs.gov/vizlab/gages-through-the-ages/index.html"
+      }
+    },
+    {
+      "id": "water-use-15",
+      "title": "Water use in the U.S., 2015",
+      "released": "1/1/18",
+      "image": {
+        "alt": "A bubble map with bubbles for each U.S. county, showing total water use in 2015.",
+        "thumbnail": "water-use-2015-01.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/water-use-15",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/water-use-15/index.html#view=USA&category=total"
+      }
+    },
+    {
+      "id": "water-use-15-state",
+      "title": "U.S. Water Use from 1950-2015",
+      "released": "1/1/2018",
+      "image": {
+        "alt": "A map of the U.S. with each state area scaled to total water use in 2015",
+        "thumbnail": "water-use-time-01.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/water-use",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/water-use/index.html"
+      }
+    },
+    {
+      "id": "climate-change-walleye-bass",
+      "title": "Shifts in Fish Habitat Under Climate Change",
+      "released": "1/1/2017",
+      "image": {
+        "alt": "An image of two fish silhouettes with a line chart overlaid artistically.",
+        "thumbnail": "climate-change-fish-01.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/climate-fish-habitat",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/climate-change-walleye-bass/index.html"
+      }
+    },
+    {
+      "id": "microplastics",
+      "title": "Microplastics in the Great Lakes",
+      "released": "1/1/2017",
+      "image": {
+        "alt": "A sankey chart showing how much of the water stored in Lake Mead is distributed among California, Nevada, Arizona, and Mexico.",
+        "thumbnail": "microplastics.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/great-lakes-microplastics",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/microplastics/index.html"
+      }
+    },
+    {
+      "id": "owdi-cr-drought",
+      "title": "OWDI Lower Colorado Drought",
+      "released": "1/1/2016",
+      "image": {
+        "alt": "A sankey chart showing how much of the water stored in Lake Mead is distributed among California, Nevada, Arizona, and Mexico.",
+        "thumbnail": "co-drought-lakemead.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/OWDI-Lower-Colorado-Drought-Vis",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/OWDI-drought/"
+      },
+      "archive": true
+    },
+    {
+      "id": "ca-drought",
+      "title": "California Drought",
+      "released": "1/1/2016",
+      "image": {
+        "alt": "A heatmap of California showing drought intensity throughout the central valley.",
+        "thumbnail": "ca-drought-map.png"
+      },
+      "links": {
+        "code": "https://github.com/USGS-VIZLAB/CIDA-Viz",
+        "external": "https://labs.waterdata.usgs.gov/visualizations/ca_drought/index.html"
+      },
+      "archive": true
+    }
+  ]
+}

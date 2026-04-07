@@ -23,59 +23,65 @@ Nell, C., Archer, A., Azadpour, E., Carr, A., Kwang, J., Martinez, A., Corson-Do
 
 ## Adding new items
 
-Each section on the portfolio is populated by a similarly named file in `src/assets/content`. All of the content JSON files share a common structure so cards render consistently. The general structure looks like:
+Each section on the portfolio is populated by a file in `src/assets/content`. The card-based content files all use an `items` array, but the exact fields differ a little by section.
 
-```
+The common card structure looks like:
+
+```jsonc
 {
   "items": [
     {
-      "id": "streamflow-drought-forecasts", // unique id
-      "title": "Streamflow drought assessment and forecasting tool", // label that appears on card
+      "id": "streamflow-drought-forecasts",
+      "title": "River DroughtCast",
       "released": "12/16/2025",
       "image": {
-        "thumbnail": "streamflow-drought-forecasts_thumbnail.webp", // filename in the `thumbnail` directory in the water-visualizations-prod-website s3 bucket
-        "alt": "A map of Florida showing the streamflow drought status at streamgage locations…" // alt for the thumbnail
+        "thumbnail": "streamflow-drought-forecasts_thumbnail.png",
+        "alt": "A map of Florida showing the streamflow drought status at streamgage locations..."
       },
       "links": {
-        "external": "https://water.usgs.gov/vizlab/streamflow-drought-forecasts", // opens in new window when card is clicked
-        "asset": "" // image filename in s3 for standalone files
+        "external": "https://water.usgs.gov/vizlab/streamflow-drought-forecasts",
+        "code": "https://github.com/DOI-USGS/streamflow-drought-forecasts"
       },
-      "archive": "true" // hide from portfolio
+      "archive": true
     }
   ]
 }
 ```
 
 **File-specific notes**
-Not all of the sections require exactly the same data to populate the cards. Refer to the json files to see what is used for the different type. All thumbnails (except blogs) should be stored in the s3 prod under `thumbnails`. 
+Not all sections use the same fields. Refer to the existing JSON files before adding a new entry. Thumbnails for stories, sketches, snapshots, and most series items should match the filenames/paths already used in `src/assets/content`.
 
-- `viz-list.json` – interactive websites. These use the same card style as blogs with a link to the code on github.
-- `blogs.json` – `released` date is shown on card. These use the same card style as viz-list with the date shown on the card. Use the link for the thumbnail used on the blog. 
-- `sketches.json` – use `links.asset` to open direct files stored in s3 under wma-prod > water-visualizations-prod-website > illustrations. optional `tags` that can be filtered on. right now, only includes "water use", "water cycle", and "flood" from the `illustrations` directory in the wma-prod > water-visualizations-prod-website s3 bucket. These use the same card style as snapshots.
-- `snapshots.json` – use `links.asset` to open direct files from the `charts` directory in the wma-prod > water-visualizations-prod-website s3 bucket. optional `tags` that can be filtered on. right now, only includes "maps". These use the same card style as sketches.
-- `series-list.json` – contains a `collections` array, where each collection represents a series card. The most recent item within is displayed on the card. Other items are linked in collapsable menu. Can archive entire series or items within. `intervals` adds badges to the series card. See the example below for series:
+- `stories.json`
+  Interactive stories and web experiences. These cards use `links.external` for the main destination and may include `links.code` for the GitHub icon button.
+- `blogs.json`
+  Blog cards use the same top-level shape as stories, but typically only include `links.external`. `image.thumbnail` is usually a full URL to the blog thumbnail image, and `released` is shown on the card.
+- `sketches.json`
+  Illustration and infographic cards. Use `links.asset` for the hosted illustration filename and `links.external` when there is a public landing page. `tags` is optional but should be an array when present.
+- `snapshots.json`
+  Chart and map cards. These use the same general shape as `sketches.json`: `links.asset`, `links.external`, and optional `tags`.
+- `series.json`
+  Series cards use an outer `items` array. Each series object contains its own nested `items` array for releases. The newest release is shown on the card and older releases appear under “Past versions”. `intervals` adds the badge labels on the card. Example:
 
   ```jsonc
   {
-    "collections": [
+    "items": [
       {
         "id": "flowTiles",
-        // appears on the series card
         "title": "Flow tiles",
         "description": "Monthly tile maps summarizing streamflow conditions by state.",
-        "intervals": ["Monthly"],// generated each month
-
-        // all past versions
+        "intervals": ["Monthly"],
         "items": [
           {
             "id": "flow_cartogram-aug-2025",
             "title": "August 2025",
             "released": "2025-08-01",
-            "archive": , // add true to filter out
-            "image": { "thumbnail": "2025_08/flow_cartogram-aug-2025.png", "alt": "..." },
+            "archive": true,
+            "image": { 
+              "thumbnail": "2025_08/flow_cartogram-aug-2025.png", 
+              "alt": "..." },
             "links": {
               "external": "2025_08/flow_cartogram-aug-2025.png",
-              "x": "https://x.com/USGS_Water/status/1965102031225700461"
+              "x": "1965102031225700461"
             }
           }
         ]
@@ -84,9 +90,11 @@ Not all of the sections require exactly the same data to populate the cards. Ref
   }
   ```
 
-  Flow Tiles and River Conditions use relative paths (e.g., `2025_08/...`) that the app resolves against their S3 folders. Hurricanes and groundwater typically use absolute URLs.
-
-- `charts.json` – contains past charts that are not currently featured anywhere in the portfolio
+  Some series use relative asset paths such as `2025_08/...`, which the app resolves against the configured series bucket.
+- `sections.json`
+  Controls the section titles, summaries, ids, and special link/contact text for the homepage sections.
+- `team.json`
+  Controls the team section summary, aria text, and member list. It does not use the card `items` structure.
 
 Whenever you add a new entry, make sure the referenced thumbnail (and any assets) exist in S3 and that `links.external` points to the public destination you want users to reach.
 

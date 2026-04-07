@@ -1,21 +1,21 @@
 <template>
   <article
-    class="sketch-card"
+    class="sketch-card card-shell"
   >
     <a
-      class="sketch-card__link"
+      class="main"
       :href="targetUrl"
       target="_blank"
       rel="noopener noreferrer"
     >
       <img
-        class="sketch-card__thumb"
+        class="image"
         :src="thumbnailSrc"
         :alt="altText"
         loading="lazy"
       >
-      <div class="sketch-card__overlay">
-        <p class="sketch-card__title">
+      <div class="overlay">
+        <p class="card-heading title">
           {{ card.title }}
         </p>
       </div>
@@ -24,7 +24,6 @@
 </template>
 
 <script setup>
-import { computed } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 
 const props = defineProps({
@@ -41,12 +40,8 @@ const props = defineProps({
 
 const assetStore = useAssetPathStore()
 
-const thumbnailSrc = computed(() => {
-  const src = props.card.image.thumbnail 
-  return assetStore.buildThumbUrl(src)
-})
-
-const altText = computed(() => props.card?.image?.alt || props.card.title)
+const thumbnailSrc = assetStore.buildThumbUrl(props.card.image.thumbnail)
+const altText = props.card?.image?.alt || props.card.title
 
 const resolveAssetBySource = (path = "") => {
   if (props.assetSource === "chart") return assetStore.resolveChartAsset(path)
@@ -54,27 +49,20 @@ const resolveAssetBySource = (path = "") => {
 }
 
 // if an external link is not provided, use the hosted asset for the section
-const targetUrl = computed(() => {
-  const primary = props.card.links.external
-  if (primary) return primary
-  const asset = resolveAssetBySource(props.card?.links?.asset || "")
-  return asset || "#"
-})
+const primaryLink = props.card.links.external
+const assetLink = resolveAssetBySource(props.card?.links?.asset || "")
+const targetUrl = primaryLink || assetLink || "#"
 </script>
 
 <style scoped>
 .sketch-card {
+  --card-border-radius: 1.2rem;
   break-inside: avoid;
   margin: 0 0 1.5rem;
-  border-radius: 1.2rem;
   display: block;
 }
 
-.sketch-card--wide {
-  break-inside: avoid;
-}
-
-.sketch-card__link {
+.main {
   display: block;
   position: relative;
   border-radius: 1.2rem;
@@ -82,21 +70,19 @@ const targetUrl = computed(() => {
   background: var(--light-grey);
 }
 
-.sketch-card__thumb {
+.image {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.sketch-card__title {
-  margin: 0;
-  font-weight: 700;
+.title {
   color: var(--black-soft);
   padding: 1rem 1.5rem;
   text-align: center;
 }
 
-.sketch-card__overlay {
+.overlay {
   position: absolute;
   inset: 0;
   display: flex;
@@ -108,8 +94,8 @@ const targetUrl = computed(() => {
   transition: opacity 0.1s ease;
 }
 
-.sketch-card__link:hover .sketch-card__overlay,
-.sketch-card__link:focus-visible .sketch-card__overlay {
+.main:hover .overlay,
+.main:focus-visible .overlay {
   opacity: 1;
 }
 

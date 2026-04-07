@@ -1,30 +1,27 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '@/views/HomePage.vue'
-
-function lazyLoad(view){
-  return() => import(`@/views/${view}.vue`)
-}
+import { createRouter, createWebHistory } from "vue-router"
+import Error404Page from "@/views/Error404Page.vue"
+import HomePage from "@/views/HomePage.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'VisualizationContent',
+      path: "/",
+      name: "VisualizationContent",
       component: HomePage
     },
     {
-      path: '/index.html',
-      name: 'Index',
+      path: "/index.html",
+      name: "Index",
       component: HomePage
     },
     {
       path: "/404",
       name: "Error404",
-      component: lazyLoad('Error404Page')
+      component: Error404Page
     },
-    { 
-      path: '/:pathMatch(.*)*', 
+    {
+      path: "/:pathMatch(.*)*",
       redirect: { name: "Error404" }
     }
   ]

@@ -38,9 +38,9 @@ for file in "$src_dir"/*.{jpg,jpeg,png,JPG,JPEG,PNG}; do
   out="$dest_dir/${name}_thumbnail.${ext}"
 
   if command -v magick >/dev/null; then
-    magick "$file" -resize 600x600\> -quality 80 "$out"
+    magick "$file" -resize 400x400\> -quality 80 "$out"
   else
-    convert "$file" -resize 600x600\> -quality 80 "$out"
+    convert "$file" -resize 400x400\> -quality 80 "$out"
   fi
   echo "Created $out"
 done

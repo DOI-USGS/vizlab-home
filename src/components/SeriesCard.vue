@@ -1,18 +1,18 @@
 <template>
-  <article class="series-card">
-    <header class="series-card__header">
-      <div class="series-card__eyebrow-row">
-        <p class="series-card__eyebrow">
-          {{ series?.title }}
+  <article class="series-card card-shell">
+    <header class="header">
+      <div class="row">
+        <p class="card-heading eyebrow">
+          {{ series.title }}
         </p>
         <div
-          v-if="series?.intervals?.length"
-          class="series-card__badges"
+          v-if="series.intervals.length"
+          class="badges"
         >
           <span
             v-for="interval in series.intervals"
             :key="interval"
-            class="series-card__badge"
+            class="badge"
           >
             {{ interval }}
           </span>
@@ -21,7 +21,7 @@
     </header>
 
     <a
-      class="series-card__image"
+      class="image"
       :href="latestPrimaryLink"
       target="_blank"
       rel="noopener noreferrer"
@@ -33,22 +33,22 @@
       >
     </a>
 
-    <div class="series-card__body">
+    <div class="body">
       <p
         v-if="latestReleaseLabel"
-        class="series-card__meta"
+        class="card-meta"
       >
         {{ latestReleaseLabel }}
       </p>
       <p
         v-if="series?.description"
-        class="series-card__description"
+        class="section-summary description"
       >
         {{ series.description }}
       </p>
-      <div class="series-card__actions">
+      <div class="actions">
         <a
-          class="series-link"
+          class="ui-button ui-button--chip"
           :href="latestPrimaryLink"
           target="_blank"
           rel="noopener noreferrer"
@@ -57,7 +57,7 @@
         <button
           v-for="share in shareLinks"
           :key="share.label"
-          class="series-link"
+          class="ui-button ui-button--chip"
           type="button"
           :aria-label="`Share on ${share.label}`"
           @click="() => openShare(share.url)"
@@ -67,11 +67,11 @@
 
         <div
           v-if="hasCodeIcon"
-          class="series-card__code-icons"
+          class="code-icons"
         >
           <a
             v-if="seriesCodeLink"
-            class="series-card__code-button"
+            class="code-button"
             :href="seriesCodeLink"
             target="_blank"
             rel="noopener noreferrer"
@@ -82,7 +82,7 @@
           </a>
           <a
             v-if="latestCodeLink"
-            class="series-card__code-button"
+            class="code-button"
             :href="latestCodeLink"
             target="_blank"
             rel="noopener noreferrer"
@@ -95,11 +95,9 @@
       </div>
     </div>
 
-    <footer
-      v-if="hasHistory"
-      class="series-card__footer"
-    >
+    <footer class="footer">
       <button
+        v-if="hasHistory"
         class="history-toggle"
         type="button"
         :aria-expanded="expanded.toString()"
@@ -109,9 +107,17 @@
         <span aria-hidden="true">{{ expanded ? "−" : "+" }}</span>
       </button>
 
-      <transition name="history-collapse">
+      <transition
+        name="history-collapse"
+        @before-enter="onHistoryBeforeEnter"
+        @enter="onHistoryEnter"
+        @after-enter="resetHistoryStyles"
+        @before-leave="onHistoryBeforeLeave"
+        @leave="onHistoryLeave"
+        @after-leave="resetHistoryStyles"
+      >
         <div
-          v-if="expanded"
+          v-if="expanded && hasHistory"
           class="history-list"
         >
           <a
@@ -131,7 +137,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue"
+import { ref } from "vue"
 import { useAssetPathStore } from "@/stores/AssetPathStore.js"
 import { useDateStore } from "@/stores/DateStore.js"
 
@@ -169,39 +175,7 @@ const buildXShareUrl = (value) => {
   return `https://twitter.com/intent/retweet?tweet_id=${encodeURIComponent(id)}`
 }
 
-const buildInstagramShareUrl = (value) => {
-  return typeof value === "string" ? value : ""
-}
-
-const buildFacebookShareUrl = (value) => {
-  if (!value) return ""
-  const url = typeof value === "object" ? value.url : value
-  if (!url) return ""
-  return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
-}
-
-// build links to share out on social media plaftorms
-const shareLinks = [
-  {
-    label: "X",
-    url: buildXShareUrl(latestEntry.links?.x)
-  },
-  {
-    label: "Instagram",
-    url: buildInstagramShareUrl(latestEntry.links?.instagram)
-  },
-  {
-    label: "Facebook",
-    url: buildFacebookShareUrl(latestEntry.links?.facebook)
-  }
-].filter((entry) => entry.url)
-
-function openShare(url) {
-  if (!url) return
-  window.open(url, "_blank", "noopener,noreferrer")
-}
-
-// assume is in thumbnails in s3 unless a full url is provided
+// series entries can point to a bucketed release asset or a shared local thumbnail
 const resolveThumbnail = (src = "") => {
   if (!src) return ""
   if (isAbsolute(src)) return src
@@ -228,7 +202,7 @@ const resolvePrimaryLink = (entry) => {
 const latestPrimaryLink = resolvePrimaryLink(latestEntry) || "#"
 const latestCodeLink = latestEntry.links?.code || ""
 const seriesCodeLink = props.series?.links?.code || ""
-const hasCodeIcon = computed(() => Boolean(seriesCodeLink || latestCodeLink))
+const hasCodeIcon = Boolean(seriesCodeLink || latestCodeLink)
 
 const historyEntries = items
   .slice(1)
@@ -239,31 +213,71 @@ const historyEntries = items
   }))
   .filter((entry) => entry.displayLabel)
 const hasHistory = historyEntries.length > 0
+
+const setHistoryCollapsedState = (el) => {
+  el.style.height = "0"
+  el.style.opacity = "0"
+  el.style.transform = "translateY(-0.4rem)"
+  el.style.overflow = "hidden"
+}
+
+const onHistoryBeforeEnter = (el) => {
+  setHistoryCollapsedState(el)
+}
+
+const onHistoryEnter = (el) => {
+  void el.offsetHeight
+  requestAnimationFrame(() => {
+    el.style.height = `${el.scrollHeight}px`
+    el.style.opacity = "1"
+    el.style.transform = "translateY(0)"
+  })
+}
+
+const onHistoryBeforeLeave = (el) => {
+  el.style.height = `${el.scrollHeight}px`
+  el.style.opacity = "1"
+  el.style.transform = "translateY(0)"
+  el.style.overflow = "hidden"
+}
+
+const onHistoryLeave = (el) => {
+  void el.offsetHeight
+  requestAnimationFrame(() => {
+    setHistoryCollapsedState(el)
+  })
+}
+
+const resetHistoryStyles = (el) => {
+  el.style.height = ""
+  el.style.opacity = ""
+  el.style.transform = ""
+  el.style.overflow = ""
+}
 </script>
 
 <style scoped>
 .series-card {
   flex: 1;
   border: 1px solid var(--light-grey);
-  border-radius: 1.2rem;
   overflow: visible;
-  background: #fff;
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 100%;
 }
 
-.series-card__header {
+.header {
   padding: 1.5rem 1.5rem 0;
 }
 
-.series-card__code-icons {
+.code-icons {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-.series-card__code-button {
+.code-button {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 999px;
@@ -277,29 +291,25 @@ const hasHistory = historyEntries.length > 0
   transition: color 0.2s ease;
 }
 
-.series-card__code-button:hover,
-.series-card__code-button:focus-visible {
+.code-button:hover,
+.code-button:focus-visible,
+.code-button:active {
   color: var(--color-link);
 }
 
-.series-card__eyebrow-row {
+.row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.series-card__eyebrow {
+.eyebrow {
   flex: 1 1 auto;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 1.7rem;
   color: var(--black-soft);
-  margin: 0;
-  line-height: 1;
 }
 
-.series-card__badges {
+.badges {
   flex: 0 0 auto;
   display: flex;
   justify-content: flex-end;
@@ -308,24 +318,17 @@ const hasHistory = historyEntries.length > 0
   flex-wrap: wrap;
 }
 
-.series-card__badge {
+.badge {
   display: inline-flex;
   align-items: center;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 1.4rem;
   border: 1px solid currentColor;
   border-radius: 999px;
   padding: 0.1rem 0.8rem;
   line-height: 1;
 }
 
-.series-card__title {
-  font-size: 2.4rem;
-  margin: 0;
-}
-
-.series-card__image {
+.image {
   display: block;
   position: relative;
   padding-top: 56%;
@@ -334,7 +337,7 @@ const hasHistory = historyEntries.length > 0
   border-top-right-radius: 1.2rem;
 }
 
-.series-card__image img {
+.image img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -342,64 +345,50 @@ const hasHistory = historyEntries.length > 0
   object-fit: cover;
 }
 
-.series-card__body {
+.body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   position: relative;
+  flex: 1 1 auto;
 }
 
-.series-card__meta {
-  font-size: 1.8rem;
-  font-weight: 600;
+.description {
+  margin: 0;
   color: var(--black-soft);
-  margin: 0;
 }
 
-.series-card__description {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-.series-card__actions {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  margin-top: auto;
 }
 
-.series-link {
-  border: 1px solid currentColor;
-  background: transparent;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  font-size: 1.3rem;
-  padding: 0.4rem 1.2rem;
-  cursor: pointer;
-  color: inherit;
-  border-radius: 999px;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease,
-    background 0.2s ease,
-    transform 0.1s ease;
-  text-decoration: none;
+.actions .ui-button {
+  --pill-font-size: 1.4rem;
+  --pill-padding: 0.4rem 1.2rem;
+  backdrop-filter: none;
 }
 
-.series-link:hover,
-.series-link:focus-visible {
-  color: #fff;
-  background: var(--color-link);
-  border-color: var(--color-link);
+.actions .ui-button--chip {
+  --pill-bg-color: transparent;
+  --pill-border-color: var(--color-link);
+  --pill-text-color: var(--color-link);
+  --pill-hover-bg-color: var(--color-link);
+  --pill-hover-border-color: var(--color-link);
+  --pill-hover-text: #fff;
 }
 
-.series-link:active {
-  transform: translateY(1px);
-}
-
-.series-card__footer {
+.footer {
   padding: 1.5rem;
   border-top: 1px solid var(--light-grey);
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-surface);
 }
 
 .history-toggle {
@@ -407,13 +396,14 @@ const hasHistory = historyEntries.length > 0
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.2rem;
   background: none;
   border: none;
-  padding: 0.4rem 0;
-  font-size: 1.4rem;
+  padding: 0.2rem 0;
+  font-size: 1.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  line-height: 1.2;
+  color: var(--black-soft);
   cursor: pointer;
 }
 
@@ -433,51 +423,36 @@ const hasHistory = historyEntries.length > 0
   color: inherit;
 }
 
-.x-share {
-  cursor: pointer;
-}
-
 .history-collapse-enter-active,
 .history-collapse-leave-active {
-  transition: all 200ms ease;
+  transition:
+    height 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
 }
 
 .history-collapse-enter-from,
 .history-collapse-leave-to {
+  height: 0;
   opacity: 0;
   transform: translateY(-0.4rem);
 }
-
-.x-icon {
-  width: 1.6rem;
-  height: 1.6rem;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-@media (max-width: 700px) {
+@media (--bp-sm) {
   .series-card {
     width: 100%;
+    min-height: auto;
+    align-self: flex-start;
   }
 
   /* move interval badges to second lin on mobile */
-  .series-card__eyebrow-row {
+  .row {
     flex-direction: column;
     align-items: flex-start;
     gap: 0px;
     margin: 0px 0px 15px;
   }
 
-  .series-card__badges {
+  .badges {
     width: 100%;
     justify-content: flex-start;
   }

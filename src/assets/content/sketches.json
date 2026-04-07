@@ -1,6 +1,35 @@
 {
   "items": [
     {
+      "id": "gage-to-page",
+      "title": "Gage to page",
+      "released": "03/04/2026",
+      "image": {
+        "alt": "How USGS water data goes from streamgage measurements to webpage delivery",
+        "thumbnail": "streamgage-to-page_thumbnail.jpg"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/diagram-how-usgs-water-data-are-transferred-streamgage-internet",
+        "external": "https://www.usgs.gov/media/images/diagram-how-usgs-water-data-are-transferred-streamgage-internet"
+      },
+      "tags": ["streamgaging"]
+    },
+    {
+      "id": "gage-installation",
+      "title": "Streamgage installation",
+      "released": "03/12/2026",
+      "image": {
+        "alt": "Diagram of a Typical Streamgage Installation With Equipment",
+        "thumbnail": "streamgage-to-page_thumbnail.jpg"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/diagram-how-usgs-water-data-are-transferred-streamgage-internet",
+        "external": "https://www.usgs.gov/media/images/diagram-a-typical-streamgage-installation-equipment"
+      },
+      "tags": ["streamgaging"]
+    },
+
+    {
       "id": "unequal-access-to-water-eazadpour-infographic",
       "title": "Unequal access to water",
       "released": "11/13/2024",
@@ -10,7 +39,7 @@
       },
       "links": {
         "asset": "unequal-access-to-water-eazadpour-infographic.png",
-        "external": "https://water.usgs.gov/vizlab/vulnerability-indicators/index.html#/en"
+        "external": ""
       },
       "tags": []
     },
@@ -138,7 +167,23 @@
         "external": "https://www.usgs.gov/media/images/water-data-keep-us-strong"
       },
       "tags": [
-        "flood"
+        "flood", "streamgaging"
+      ]
+    },
+    {
+      "id": "20230401a_part-to-whole_mcarr",
+      "title": "All the water on Earth (chart)",
+      "released": "04/01/2023",
+      "image": {
+        "alt": "Series of 3 interconnected tree maps for all the water on Earh, all freshwater, and surface & other freshwater. First tree map is broken down in size order displaying oceans, other saline water, and freshwater. Second tree map displays all freshwater broken down in size order by glaciers & ice caps, groundwater, and surface & other freshwater. Third tree map breaks down surface & other freshwater in size order by ground ice & permafrost, lakes, soil moisture, atmosphere, swaps & marshes, rivers, and living things.",
+        "thumbnail": "20230401a_part-to-whole_mcarr_thumbnail.png"
+      },
+      "links": {
+        "asset": "20230401a_part-to-whole_mcarr.png",
+        "external": "https://www.usgs.gov/media/images/comparisons-part-whole-image-1"
+      },
+      "tags": [
+        
       ]
     },
     {
@@ -154,7 +199,7 @@
         "external": "https://www.usgs.gov/media/images/usgs-wateralert-water-safety-your-fingertips"
       },
       "tags": [
-        "flood"
+        "flood", "streamgaging"
       ]
     },
     {

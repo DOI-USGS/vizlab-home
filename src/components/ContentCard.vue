@@ -1,14 +1,14 @@
 <template>
   <li class="content-card">
-    <article class="card">
+    <article class="shell">
       <a
-        class="card-main"
+        class="main card-shell"
         :href="externalHref"
         target="_blank"
         rel="noopener noreferrer"
       >
         <div
-          class="card-image"
+          class="image"
           aria-hidden="true"
         >
           <img
@@ -18,8 +18,8 @@
           >
         </div>
 
-        <div class="card-content">
-          <h3 class="card-title">
+        <div class="body">
+          <h3 class="card-heading">
             {{ title }}
           </h3>
           <p
@@ -32,7 +32,7 @@
       </a>
       <a
         v-if="codeHref"
-        class="card-action"
+        class="action"
         :href="codeHref"
         target="_blank"
         rel="noopener noreferrer"
@@ -85,37 +85,36 @@ const imagePadding = `${props.imageRatio}%`
   height: 100%;
 }
 
-.card {
+.shell {
   position: relative;
   height: 100%;
   overflow: visible;
 }
 
-.card-main {
+.main {
+  --card-border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   text-decoration: none;
   color: inherit;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 0.8rem;
   overflow: hidden;
-  background: var(--color-background, #fff);
   transition:
     transform 200ms ease,
     box-shadow 200ms ease;
   min-height: 100%;
 }
 
-.card-main:hover,
-.card-main:focus-visible,
-.card:hover .card-main,
-.card:focus-within .card-main {
+.main:hover,
+.main:focus-visible,
+.shell:hover .main,
+.shell:focus-within .main {
   transform: translateY(-2px);
   box-shadow: 0 12px 20px var(--light-grey);
 }
 
-.card-image {
+.image {
   position: relative;
   width: 100%;
   padding-top: v-bind(imagePadding);
@@ -123,7 +122,7 @@ const imagePadding = `${props.imageRatio}%`
   background: var(--light-grey);
 }
 
-.card-image img {
+.image img {
   position: absolute;
   top: 0;
   left: 0;
@@ -132,24 +131,11 @@ const imagePadding = `${props.imageRatio}%`
   object-fit: cover;
 }
 
-.card-content {
+.body {
   padding: 0 1.6rem 1.6rem;
 }
 
-.card-title {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.card-meta {
-  margin: 0.4rem 0 0;
-  color: var(--black-400);
-  font-size: 1.4rem;
-  padding-bottom: 0;
-}
-
-.card-action {
+.action {
   position: absolute;
   bottom: 1.2rem;
   right: 1.2rem;
@@ -169,25 +155,25 @@ const imagePadding = `${props.imageRatio}%`
   box-shadow: none;
 }
 
-.card-action :deep(svg) {
+.action :deep(svg) {
   transition: color 0.2s ease, fill 0.2s ease;
 }
 
-.card-action:hover,
-.card-action:focus-visible {
+.action:hover,
+.action:focus-visible {
   color: var(--color-link);
 }
 
-.card-action:hover :deep(svg),
-.card-action:focus-visible :deep(svg) {
+.action:hover :deep(svg),
+.action:focus-visible :deep(svg) {
   color: currentColor;
   fill: currentColor;
 }
 
-.card-main:hover + .card-action,
-.card-main:focus-visible + .card-action,
-.card:hover .card-action,
-.card:focus-within .card-action {
+.main:hover + .action,
+.main:focus-visible + .action,
+.shell:hover .action,
+.shell:focus-within .action {
   transform: translateY(-2px);
 }
 

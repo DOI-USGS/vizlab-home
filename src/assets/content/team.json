@@ -1,57 +1,56 @@
 {
-  "heading": "meet the team",
-  "paragraph1": "The Vizlab is a team of designers, data scientists, developers, and communicators working with water data.",
+  "summary": "The USGS Vizlab is a team of designers, data scientists, and science communicators working with water data.",
   "ariaLabel": "Vizlab team members represented as circles connected in a force layout",
-  "ariaDesc": "Animated bubbles showing the Vizlab team clustered by focus area.",
-  "nodes": [
+  "ariaDescription": "Animated bubbles showing the Vizlab team in a cluster.",
+  "members": [
     {
       "id": "Althea",
       "name": "Althea Archer",
       "group": "IIDD",
-      "img": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/staff_profile/public/media/images/aaarcher_staff_profile.jpg?h=585bdce6&itok=Z0LQ51Gs",
-      "url": "https://www.usgs.gov/staff-profiles/althea-a-archer"
+      "image": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/staff_profile/public/media/images/aaarcher_staff_profile.jpg?h=585bdce6&itok=Z0LQ51Gs",
+      "href": "https://www.usgs.gov/staff-profiles/althea-a-archer"
     },
     {
       "id": "Mandie",
       "name": "Amanda Carr",
       "group": "IIDD",
-      "img": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/staff_profile/public/media/images/mandiecarr_oct2022.JPG?itok=j5wLD7PI",
-      "url": "https://www.usgs.gov/staff-profiles/amanda-carr"
+      "image": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/staff_profile/public/media/images/mandiecarr_oct2022.JPG?itok=j5wLD7PI",
+      "href": "https://www.usgs.gov/staff-profiles/amanda-carr"
     },
     {
       "id": "Jeffrey",
       "name": "Jeffrey Kwang",
       "group": "IIDD",
-      "img": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/jeffrey_kwang_profile.png",
-      "url": "https://www.usgs.gov/staff-profiles/jeffrey-kwang"
+      "image": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/jeffrey_kwang_profile.png",
+      "href": "https://www.usgs.gov/staff-profiles/jeffrey-kwang"
     },
     {
       "id": "Cee",
       "name": "Cee Nell",
       "group": "IIDD",
-      "img": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/staff_profile/public/media/images/cee%20nell%20resized.png?h=53fbb397&itok=I7tqKZDm",
-      "url": "https://www.usgs.gov/staff-profiles/cee-nell"
+      "image": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/staff_profile/public/media/images/cee%20nell%20resized.png?h=53fbb397&itok=I7tqKZDm",
+      "href": "https://www.usgs.gov/staff-profiles/cee-nell"
     },
     {
       "id": "Elmera",
       "name": "Elmera Azadpour",
       "group": "IIDD",
-      "img": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/elmera_azadpourSquare.jpg",
-      "url": "https://www.usgs.gov/staff-profiles/elmera-azadpour"
+      "image": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/elmera_azadpourSquare.jpg",
+      "href": "https://www.usgs.gov/staff-profiles/elmera-azadpour"
     },
     {
       "id": "Anthony",
       "name": "Anthony Martinez",
       "group": "IIDD",
-      "img": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/anthony_martinezSquare.jpg",
-      "url": "https://www.usgs.gov/staff-profiles/anthony-martinez"
+      "image": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/anthony_martinezSquare.jpg",
+      "href": "https://www.usgs.gov/staff-profiles/anthony-martinez"
     },
     {
       "id": "Hayley",
       "name": "Hayley Corson-Dosch",
       "group": "IIDD",
-      "img": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/HCorson-Dosch.png",
-      "url": "https://www.usgs.gov/staff-profiles/hayley-corson-dosch"
+      "image": "https://dfi09q69oy2jm.cloudfront.net/visualizations/headshots/HCorson-Dosch.png",
+      "href": "https://www.usgs.gov/staff-profiles/hayley-corson-dosch"
     }
   ]
 }

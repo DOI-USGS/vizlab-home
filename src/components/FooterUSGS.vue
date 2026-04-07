@@ -66,12 +66,6 @@
           </li>
           <li class="leaf menu-links menu-level-1">
             <a
-              href="https://www.whitehouse.gov/omb/management/egov/"
-              target="_blank"
-            >E-gov</a>
-          </li>
-          <li class="leaf menu-links menu-level-1">
-            <a
               href="https://www.doi.gov/pmb/eeo/no-fear-act"
               target="_blank"
             >No Fear Act</a>

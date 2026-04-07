@@ -1,71 +1,88 @@
 <template>
   <section
     :id="sectionId"
-    class="about-section"
+    class="content-section"
   >
     <div class="section-header">
-      <div class="section-title-row">
-        <h2
-          :id="titleId"
-          :data-section-anchor="sectionId"
+      <h2
+        :id="titleId"
+        :data-section-anchor="sectionId"
+      >
+        <a
+          class="section-title-link"
+          :href="`#${titleId}`"
         >
-          <a
-            class="section-title-link"
-            :href="`#${titleId}`"
-          >
-            {{ headingText }}
-          </a>
-        </h2>
-      </div>
+          {{ headingText }}
+        </a>
+      </h2>
+      <p
+        v-if="text.summary"
+        class="section-summary"
+        v-html="text.summary"
+      ></p>
+      <p
+        v-if="contactIntro && contactHref"
+        class="section-summary about-contact"
+      >
+        {{ contactIntro }}
+        <a
+          :href="contactHref"
+        >
+          {{ contactLabel }}
+        </a>
+      </p>
     </div>
 
-    <div class="about-copy">
-      <p v-html="text.paragraph1" />
-    </div>
-
-    <div class="about-figure">
-      <div class="svg-container">
-        <svg
-          id="force-svg"
-          ref="svg"
-          class="svg"
-          role="img"
-          :width="width"
-          :height="height"
-          :aria-label="text.ariaLabel"
-        />
-      </div>
+    <div class="svg-container">
+      <svg
+        ref="svg"
+        class="about-chart"
+        role="img"
+        :width="width"
+        :height="height"
+        :aria-label="text.ariaLabel"
+      />
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, watch, computed } from "vue";
+import { ref, onMounted, onBeforeUnmount, watch } from "vue";
 import { isMobile } from "mobile-device-detect";
 import * as d3 from "d3";
+import sections from "@/assets/content/sections.json"
 
 // Importing images from assets
 
 const props = defineProps({
-    text: { 
-      type: Object,
-      default() {
-        return {}
-      } 
-    },
-    id: {
-      type: String,
-      default: ""
+  text: {
+    type: Object,
+    default() {
+      return {}
     }
+  },
+  id: {
+    type: String,
+    default: ""
+  },
+  title: {
+    type: String,
+    default: ""
+  }
 });
 
-const sectionId = computed(() => props.id || "team")
-const headingText = computed(() => props.text?.heading || "team")
-const titleId = computed(() => `${sectionId.value}`)
+const teamMeta = sections.team || {}
 
-const cloneNodes = (source = []) => {
+const sectionId = props.id || teamMeta.id || "team"
+const headingText = props.title || teamMeta.title || "team"
+const titleId = sectionId
+const contactIntro = teamMeta.contact?.intro || ""
+const contactHref = teamMeta.contact?.href || ""
+const contactLabel = teamMeta.contact?.label || ""
+
+const cloneMembers = (source = []) => {
     if (!Array.isArray(source)) return []
-    return source.map((node) => ({ ...node }))
+    return source.map((member) => ({ ...member }))
 }
 
 // global variables
@@ -76,11 +93,11 @@ let nodeRadius = 45;
 
 const svg = ref(null);
 
-const nodes = ref(cloneNodes(props.text?.nodes));
+const members = ref(cloneMembers(props.text?.members));
 watch(
-    () => props.text?.nodes,
+    () => props.text?.members,
     (next) => {
-        nodes.value = cloneNodes(next);
+        members.value = cloneMembers(next);
         if (svg.value) resizeAndDraw();
     }
 );
@@ -99,10 +116,15 @@ onBeforeUnmount(() => {
 
 // adjust the cluster space based on svg and screen 
 function resizeAndDraw() {
+  if (!svg.value) return
 
   const bounds = svg.value.getBoundingClientRect();
   width = bounds.width;
-  height = bounds.height;  
+  height = bounds.height;
+
+  if (!width || !height) {
+    return
+  }
 
   // edit multipliers here to change desktop node size
   nodeRadius = window.innerHeight < 700 
@@ -117,14 +139,15 @@ function resizeAndDraw() {
   drawGraph();
 }
 
+// make the bubble viz
 function drawGraph() {
 
-    if (!nodes.value.length) {
+    if (!members.value.length) {
         return;
     }
 
     // for group positioning
-    const groupNames = [...new Set(nodes.value.map(d => d.group))];
+    const groupNames = [...new Set(members.value.map(d => d.group))];
     const groupCenters = new Map();
 
     groupNames.forEach(group => {
@@ -134,7 +157,7 @@ function drawGraph() {
     });
 
     // force simulation to control positioning
-    const simulation = d3.forceSimulation(nodes.value)
+    const simulation = d3.forceSimulation(members.value)
         .force('charge', d3.forceManyBody().strength(d => -200 - Math.random() * 100))
         .force('center', d3.forceCenter(width / 2, height / 2).strength(0.05))
         .force('collision', d3.forceCollide().radius(nodeRadius*1.1))
@@ -146,10 +169,10 @@ function drawGraph() {
 
     svgElement.append('desc')
         .attr("id", "force-svg-desc")
-        .text(props.text.ariaDesc)
+        .text(props.text.ariaDescription)
 
     svgElement.append("defs").selectAll("clipPath")
-        .data(nodes.value)
+        .data(members.value)
         .join("clipPath")
         .attr("id", d => `clip-${d.id}`)
         .append("circle")
@@ -161,12 +184,12 @@ function drawGraph() {
 
     const node = svgElement.append('g')
         .selectAll('a')
-        .data(nodes.value)
+        .data(members.value)
         .join('a')
-        .attr('xlink:href', d => d.url || null)
+        .attr('xlink:href', d => d.href || null)
         .attr('target', '_blank')
-        .attr('aria-hidden', d => d.url ? false : true)
-        .attr('aria-label', d => d.url ? `Link to USGS staff profile for ${d.name}` : null)
+        .attr('aria-hidden', d => d.href ? false : true)
+        .attr('aria-label', d => d.href ? `Link to USGS staff profile for ${d.name}` : null)
         .append('circle')
         .attr('aria-hidden', true)
         .attr('r', nodeRadius)
@@ -197,7 +220,7 @@ function drawGraph() {
     // define styles for images in bubbles
     const patterns = defs.append('defs')
         .selectAll('pattern')
-        .data(nodes.value)
+        .data(members.value)
         .enter()
         .append('pattern')
         .attr('id', d => `pattern-${d.id}`)
@@ -207,7 +230,7 @@ function drawGraph() {
 
     // add profile images
     patterns.append('image')
-        .attr('href', d => d.img)
+        .attr('href', d => d.image)
         .attr('height', 1)
         .attr('width', 1)
         .style('opacity', 0.8)
@@ -224,7 +247,7 @@ function drawGraph() {
     // name labels for mouseover
     const labels = svgElement.append('g')
         .selectAll('text')
-        .data(nodes.value)
+        .data(members.value)
         .join('text')
         .text(d => d.id)
         .attr('x', d => d.x)
@@ -261,7 +284,7 @@ function drawGraph() {
                 .style('visibility', 'hidden');
         })
         .on('click', (event, d) => {
-            window.open(d.url, '_blank');
+            window.open(d.href, '_blank');
         });
 
     // allow circles to move
@@ -314,7 +337,7 @@ function drawGraph() {
 
     function forceCluster(strength = 0.1) {
         return alpha => {
-            nodes.value.forEach(d => {
+            members.value.forEach(d => {
                 // get the target center for the circle's group
                 const center = groupCenters.get(d.group);
 
@@ -357,40 +380,26 @@ function drawGraph() {
 </script>
 
 <style lang="scss" scoped>
-.about-section {
-  padding: 4rem 2rem 5rem;
-  margin: 0 auto;
-  max-width: 1200px;
+.section-summary {
+  max-width: 80ch;
 }
 
-.about-copy {
-  max-width: 65ch;
-  margin-bottom: 2rem;
-}
-
-.about-copy p {
+.section-summary.about-contact {
   padding-bottom: 0.8rem;
-}
-
-.about-figure {
-  margin-top: 2rem;
-}
-
-@media (min-width: 960px) {
-  .about-copy {
-    max-width: 50%;
-  }
+  word-break: keep-all;
+  hyphens: none;
 }
 
 .svg-container {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 60vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
 }
-#force-svg {
+
+.about-chart {
   width: 100%;
   height: 100%;
   overflow: visible;
