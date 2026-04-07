@@ -14,6 +14,20 @@
       },
       "tags": ["streamgaging"]
     },
+    {
+      "id": "gage-installation",
+      "title": "Streamgage installation",
+      "released": "03/12/2026",
+      "image": {
+        "alt": "Diagram of a Typical Streamgage Installation With Equipment",
+        "thumbnail": "streamgage-to-page_thumbnail.jpg"
+      },
+      "links": {
+        "asset": "https://www.usgs.gov/media/images/diagram-how-usgs-water-data-are-transferred-streamgage-internet",
+        "external": "https://www.usgs.gov/media/images/diagram-a-typical-streamgage-installation-equipment"
+      },
+      "tags": ["streamgaging"]
+    },
 
     {
       "id": "unequal-access-to-water-eazadpour-infographic",
