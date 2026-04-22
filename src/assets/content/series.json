@@ -528,6 +528,18 @@
       ],
       "items": [
         {
+          "id": "river_conditions_jan_mar_2026_insta",
+          "title": "January 1, 2026 - March 31, 2026",
+          "released": "2026-04-02",
+          "image": {
+            "alt": "U.S. River Conditions from January 1, 2026 to March 31, 2026 at USGS streamgages.",
+            "thumbnail": "FY26_Q2/river_conditions_jan_mar_2026_square_thumbnail.png"
+          },
+          "links": {
+            "external": "https://www.usgs.gov/media/videos/us-river-conditions-january-march-2026"
+          }
+        },
+        {
           "id": "river_conditions_oct_dec_2025_insta",
           "title": " October 1, 2025 - December 31, 2025",
           "released": "2026-01-01",

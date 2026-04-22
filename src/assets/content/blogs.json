@@ -1,6 +1,18 @@
 {
   "items": [
     {
+      "id": "nwdc-inset-map-tutorial",
+      "title": "Purrrfect mini-maps - Visualizing water availability across the U.S.",
+      "released": "04/20/2026",
+      "image": {
+        "alt": "Paired maps and timeserires chart of SUI for each HUC04 in the Great Basin (HUC02 id 16).",
+        "thumbnail": "https://waterdata.usgs.gov/blog/static/nwdc-inset-map-tutorial/mini-map-insets-thumbnail.png"
+      },
+      "links": {
+        "external": "https://waterdata.usgs.gov/blog/nwdc-inset-map-tutorial/"
+      }
+    },
+    {
       "id": "vizlab-stream-names-map",
       "title": "A map that glows with the vocabulary of water",
       "released": "02/27/2026",
