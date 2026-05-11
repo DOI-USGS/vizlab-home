@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "id": "crb-snow-may2026",
+      "title": "A boon, but not a bounty",
+      "released": "05/11/2026",
+      "image": {
+        "alt": "A graphic showing the impact of a May5-6, 2026 snowstorm on snow water equivalent in the Colorado River Basin.",
+        "thumbnail": "May2026_CRB_thumbnail.png"
+      },
+      "links": {
+        "asset": "",
+        "external": "https://www.usgs.gov/media/images/may-2026-snowstorm-colorado-river-basin"
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
       "id": "earths-water",
       "title": "How much water is there on Earth?",
       "released": "04/03/2025",
