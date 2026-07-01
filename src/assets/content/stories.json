@@ -1,19 +1,6 @@
 {
   "items": [
     {
-      "id": "current-conditions",
-      "title": "Current water conditions",
-      "released": "07/01/2026",
-      "image": {
-        "alt": "Two U.S. maps showing water conditions, with colorized spikes on the left depicting groundwater levels and circles on the right depicting streamflow, where brown marks below-normal and blue marks above-normal conditions.",
-        "thumbnail": "current-conditions-thumbnail.png"
-      },
-      "links": {
-        "code": "https://github.com/DOI-USGS/current-conditions",
-        "external": "https://water.usgs.gov/vizlab/current-conditions/"
-      }
-    },
-    {
       "id": "streamflow-drought-forecasts",
       "title": "River DroughtCast",
       "released": "12/10/2025",
