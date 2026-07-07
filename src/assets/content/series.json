@@ -574,7 +574,7 @@
             "thumbnail": "current-conditions-thumbnail.png"
           },
           "links": {
-            "code": "https://github.com/DOI-USGS/current-conditions",
+            "code": "",
             "external": "https://water.usgs.gov/vizlab/current-conditions/"
           }
         }
