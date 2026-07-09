@@ -10,7 +10,7 @@
       },
       "links": {
         "asset": "columbia_river_poster.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/columbia-river-great-american-waterways-poster"
       },
       "tags": ["streamgaging"]
     },
@@ -24,7 +24,7 @@
       },
       "links": {
         "asset": "mississippi_river_poster.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/mississippi-river-great-american-waterways-poster"
       },
       "tags": ["streamgaging"]
     },
@@ -38,7 +38,7 @@
       },
       "links": {
         "asset": "delaware_river_poster.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/delaware-river-great-american-waterways-poster"
       },
       "tags": ["streamgaging"]
     },
@@ -52,7 +52,7 @@
       },
       "links": {
         "asset": "great_lakes_poster.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/great-lakes-great-american-waterways-poster"
       },
       "tags": ["streamgaging"]
     },
@@ -66,7 +66,7 @@
       },
       "links": {
         "asset": "colorado_river_poster.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/colorado-river-great-american-waterway-poster"
       },
       "tags": ["streamgaging"]
     },
@@ -80,7 +80,7 @@
       },
       "links": {
         "asset": "chesapeake_bay_poster.png",
-        "external": ""
+        "external": "https://www.usgs.gov/media/images/chesapeake-bay-great-american-waterways-poster"
       },
       "tags": ["streamgaging"]
     },
