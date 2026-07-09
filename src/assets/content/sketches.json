@@ -1,6 +1,90 @@
 {
   "items": [
     {
+      "id": "columbia_river_poster",
+      "title": "Columbia River",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "The Columbia River flowing alongside Mount Hood with a USGS streamgage featured in the foreground.",
+        "thumbnail": "columbia_river_poster_thumbnail.png"
+      },
+      "links": {
+        "asset": "columbia_river_poster.png",
+        "external": ""
+      },
+      "tags": ["streamgaging"]
+    },
+    {
+      "id": "mississippi_river_poster",
+      "title": "Mississippi River",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "St. Anthony FAlls on the Mississippi River showing a streamgage in the foreground.",
+        "thumbnail": "mississippi_river_poster_thumbnail.png"
+      },
+      "links": {
+        "asset": "mississippi_river_poster.png",
+        "external": ""
+      },
+      "tags": ["streamgaging"]
+    },
+    {
+      "id": "delaware_river_poster",
+      "title": "Delaware River",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "The Delaware River near the Delaware Water Gap with a USGS gage on the bridge in the foreground",
+        "thumbnail": "delaware_river_poster_thumbnail.png"
+      },
+      "links": {
+        "asset": "delaware_river_poster.png",
+        "external": ""
+      },
+      "tags": ["streamgaging"]
+    },
+    {
+      "id": "great_lakes_poster",
+      "title": "Great Lakes",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "A Great Lake during sunset with a USGS streamgage in the foreground on the shore",
+        "thumbnail": "great_lakes_poster_thumbnail.png"
+      },
+      "links": {
+        "asset": "great_lakes_poster.png",
+        "external": ""
+      },
+      "tags": ["streamgaging"]
+    },
+    {
+      "id": "colorado_river_poster",
+      "title": "Colorado River",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "The Colorado River with a USGS water quality monitor portrayed on pulleys across the canyon.",
+        "thumbnail": "colorado_river_poster_thumbnail.png"
+      },
+      "links": {
+        "asset": "colorado_river_poster.png",
+        "external": ""
+      },
+      "tags": ["streamgaging"]
+    },
+    {
+      "id": "cheapeake_bay_poster",
+      "title": "Chesapeake Bay",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Chesapeake Bay with a USGS gage and blue crab on the shoreline in the foreground and estuaries feeding the bay in the background.",
+        "thumbnail": "chesapeake_bay_poster_thumbnail.png"
+      },
+      "links": {
+        "asset": "chesapeake_bay_poster.png",
+        "external": ""
+      },
+      "tags": ["streamgaging"]
+    },
+    {
       "id": "gage-to-page",
       "title": "Gage to page",
       "released": "03/04/2026",

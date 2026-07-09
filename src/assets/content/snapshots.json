@@ -1,6 +1,102 @@
 {
   "items": [
     {
+      "id": "columbia_river_map",
+      "title": "Columbia River gages",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Map of the Columbia River, showing USGS streamgages within 1 km of the river.",
+        "thumbnail": "columbia_river_map_thumbnail.png"
+      },
+      "links": {
+        "asset": "columbia_river_map.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "mississippi_river_map",
+      "title": "Mississippi River gages",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Map of the Mississippi River, showing USGS streamgages within 1 km of the river.",
+        "thumbnail": "mississippi_river_map_thumbnail.png"
+      },
+      "links": {
+        "asset": "mississippi_river_map.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "delaware_river_map",
+      "title": "Delaware River gages",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Map of the Delaware River, showing USGS streamgages within 1 km of the river.",
+        "thumbnail": "delaware_river_map_thumbnail.png"
+      },
+      "links": {
+        "asset": "delaware_river_map.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "great_lakes_map",
+      "title": "Great Lakes gages",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Map of the Great Lakes, showing USGS streamgages within 1 km of the lakes. ",
+        "thumbnail": "great_lakes_map_thumbnail.png"
+      },
+      "links": {
+        "asset": "great_lakes_map.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "colorado_river_map",
+      "title": "Colorado River gages",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Map of the Colorado River, showing USGS streamgages within 1 km of the main river.",
+        "thumbnail": "colorado_river_map_thumbnail.png"
+      },
+      "links": {
+        "asset": "colorado_river_map.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
+      "id": "chesapeake_bay_map",
+      "title": "Chesapeake Bay gages",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Map of the Chesapeake Bay, showing USGS streamgages within 1 km of the bay.",
+        "thumbnail": "chesapeake_bay_map_thumbnail.png"
+      },
+      "links": {
+        "asset": "chesapeake_bay_map.png",
+        "external": ""
+      },
+      "tags": [
+        "maps"
+      ]
+    },
+    {
       "id": "crb-snow-may2026",
       "title": "A boon, but not a bounty",
       "released": "05/11/2026",
