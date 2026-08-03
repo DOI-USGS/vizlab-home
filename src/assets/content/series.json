@@ -9,6 +9,19 @@
       ],
       "items": [
         {
+          "id": "flow_cartogram-july-2026",
+          "title": "July 2026",
+          "released": "2026-07-01",
+          "image": {
+            "alt": "A tile map of the U.S. showing streamgages by flow levels through the month of July 2026. For each state, an area chart shows the proportion of streamgages in wet, normal, or dry conditions. Streamflow conditions are quantified using percentiles comparing the past month’s flow levels to the historic record for each streamgage.",
+            "thumbnail": "2026_07/flow_cartogram-july-2026.png"
+          },
+          "links": {
+            "x": "",
+            "external": "2026_07/flow_cartogram-july-2026.png"
+          }
+        },
+        {
           "id": "flow_cartogram-june-2026",
           "title": "June 2026",
           "released": "2026-06-01",
