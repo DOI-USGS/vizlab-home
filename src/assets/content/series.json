@@ -602,16 +602,16 @@
       ],
       "items": [
         {
-          "id": "hurricane-ida-2020",
-          "title": "Hurricane Ida, 2021",
-          "released": "9/28/2021",
+          "id": "hurricane-helene-2024",
+          "title": "Hurricane Helene, 2024",
+          "released": "07/29/2026",
           "image": {
-            "alt": "A map showing the path of Hurricane Ida, and subsequent precipitation and flooding in the area.",
-            "thumbnail": "water-viz-hurricane-ida-thumbnail.png"
+            "alt": "A map showing the path of Hurricane Helene, and subsequent streamflow percentiles, precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-helene-thumbnail.png"
           },
           "links": {
-            "code": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Ida-2021",
-            "external": "https://www.usgs.gov/media/images/hurricane-ida-water-footprint-data-visualization"
+            "code": "https://github.com/DOI-USGS/storm-flood-viz",
+            "external": "https://dfi09q69oy2jm.cloudfront.net/visualizations/mp4s/helene_flood_stage_spike_animation.mp4"
           }
         },
         {
