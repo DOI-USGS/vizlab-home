@@ -614,6 +614,19 @@
             "external": "https://www.usgs.gov/media/videos/hurricane-helene-animation-usgs-vizlab"
           }
         },
+          {
+          "id": "hurricane-ida-2020",
+          "title": "Hurricane Ida, 2021",
+          "released": "9/28/2021",
+          "image": {
+            "alt": "A map showing the path of Hurricane Ida, and subsequent precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-ida-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/USGS-VIZLAB/vizstorm-GIF/tree/Ida-2021",
+            "external": "https://www.usgs.gov/media/images/hurricane-ida-water-footprint-data-visualization"
+          }
+        },  
         {
           "id": "hurricane-henri-2020",
           "title": "Hurricane Henri, 2021",
