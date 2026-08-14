@@ -43,13 +43,14 @@
       "id": "earth-in-flux",
       "title": "Earth is in Flux",
       "released": "12/18/24",
+      "lastUpdated": "08/14/2026",
       "image": {
         "alt": "Six tiles arranged in a grid of 3 columns and 2 rows show thumbnails for visualizations in the Earth in Flux chart gallery",
         "thumbnail": "earth-in-flux_thumbnail.webp"
       },
       "links": {
         "code": "https://github.com/DOI-USGS/earth-in-flux",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/earth-in-flux/"
+        "external": "https://water.usgs.gov/vizlab/earth-in-flux/index.html"
       }
     },
     {
@@ -126,8 +127,8 @@
         "thumbnail": "pnf-thumbnail.png"
       },
       "links": {
-        "code": "https://github.com/USGS-VIZLAB/pools-and-fluxes",
-        "external": "https://labs.waterdata.usgs.gov/visualizations/pools-and-fluxes/index.html#/"
+        "code": "https://github.com/DOI-USGS/pools-and-fluxes",
+        "external": "https://water.usgs.gov/vizlab/pools-and-fluxes/"
       }
     },
     {
@@ -139,7 +140,7 @@
         "thumbnail": "temp-modeling-physics-01.png"
       },
       "links": {
-        "code": "https://github.com/usgs-makerspace/temperature-prediction",
+        "code": "https://github.com/DOI-USGS/temperature-prediction",
         "external": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/modeling"
       }
     },
@@ -152,7 +153,7 @@
         "thumbnail": "temp-monitor.jpg"
       },
       "links": {
-        "code": "https://github.com/usgs-makerspace/temperature-prediction",
+        "code": "https://github.com/DOI-USGS/temperature-prediction",
         "external": "https://labs.waterdata.usgs.gov/visualizations/temperature-prediction/index.html#/monitoring"
       }
     },
@@ -165,7 +166,7 @@
         "thumbnail": "snow-to-flow.jpg"
       },
       "links": {
-        "code": "https://github.com/USGS-VIZLAB/snow-to-flow",
+        "code": "https://github.com/DOI-USGS/snow-to-flow",
         "external": "https://labs.waterdata.usgs.gov/visualizations/snow-to-flow/index.html#/"
       }
     },
@@ -178,7 +179,7 @@
         "thumbnail": "fire-hydro.jpg"
       },
       "links": {
-        "code": "https://github.com/usgs-makerspace/fire-hydro",
+        "code": "https://github.com/DOI-USGS/fire-hydro",
         "external": "https://labs.waterdata.usgs.gov/visualizations/fire-hydro/index.html#/"
       }
     },
@@ -191,7 +192,7 @@
         "thumbnail": "DRBthumb.png"
       },
       "links": {
-        "code": "https://github.com/usgs-makerspace/delaware-basin-story",
+        "code": "https://github.com/DOI-USGS/delaware-basin-story",
         "external": "https://water.usgs.gov/vizlab/delaware-basin-story/index.html"
       }
     },
@@ -204,7 +205,7 @@
         "thumbnail": "gages-cartogram-01.png"
       },
       "links": {
-        "code": "https://github.com/usgs-makerspace/gages-through-the-ages",
+        "code": "https://github.com/DOI-USGS/gages-through-the-ages",
         "external": "https://water.usgs.gov/vizlab/gages-through-the-ages/index.html"
       }
     },
@@ -272,7 +273,7 @@
         "code": "https://github.com/USGS-VIZLAB/OWDI-Lower-Colorado-Drought-Vis",
         "external": "https://labs.waterdata.usgs.gov/visualizations/OWDI-drought/"
       },
-      "archive": true
+      "archive": false
     },
     {
       "id": "ca-drought",
@@ -286,7 +287,7 @@
         "code": "https://github.com/USGS-VIZLAB/CIDA-Viz",
         "external": "https://labs.waterdata.usgs.gov/visualizations/ca_drought/index.html"
       },
-      "archive": true
+      "archive": false
     }
   ]
 }
