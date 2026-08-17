@@ -107,8 +107,8 @@ const sortedSnapshots = (snapshotsData.items || []).sort((a, b) => dateStore.toT
 const blogs = blogsData.items.sort((a, b) => dateStore.toTimestamp(b.released) - dateStore.toTimestamp(a.released))
 const series = seriesData.items // not sorted here, b/c content for each card sorted in `SeriesCard.vue`
 
-const sketches = shufflePreview(sortedSketches)
-const snapshots = shufflePreview(sortedSnapshots)
+const sketches = sortedSketches
+const snapshots = sortedSnapshots
 const team = teamData
 </script>
 

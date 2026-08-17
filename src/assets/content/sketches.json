@@ -1,6 +1,31 @@
 {
   "items": [
     {
+      "id": "fireBefore",
+      "title": "Fire impacts - before",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Diagram showing how water flows before a fire",
+        "thumbnail": "fireBefore_thumbnail.png"
+      },
+      "links": {
+        "asset": "fireBefore.png"
+      },
+      "tags": []
+    },
+    {
+      "id": "fireAfter",
+      "title": "Fire impacts - after",
+      "released": "07/09/2026",
+      "image": {
+        "alt": "Diagram showing how water flows after a fire",
+        "thumbnail": "fireAfter_thumbnail.png"
+      },
+      "links": {
+        "asset": "fireAfter.png"
+      },
+      "tags": []
+    },{
       "id": "columbia_river_poster",
       "title": "Columbia River",
       "released": "07/09/2026",
