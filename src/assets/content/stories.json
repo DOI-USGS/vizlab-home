@@ -1,6 +1,19 @@
 {
   "items": [
     {
+      "id": "flood-game",
+      "title": "Flood Decisions: A Flood-Risk Simulator",
+      "released": "09/28/2026",
+      "image": {
+        "alt": "Illustration of a flooded playground with submerged dollar bills, highlighting the financial impacts of flooding.",
+        "thumbnail": "flood-game_thumbnail.png"
+      },
+      "links": {
+        "code": "",
+        "external": "https://water.usgs.gov/vizlab/flood-game/"
+      }
+    },
+    {
       "id": "streamflow-drought-forecasts",
       "title": "River DroughtCast",
       "released": "12/10/2025",
