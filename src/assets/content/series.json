@@ -628,6 +628,19 @@
       ],
       "items": [
         {
+          "id": "hurricane-isaias-2026",
+          "title": "Hurricane Isaias, 2026",
+          "released": "10/22/2026",
+          "image": {
+            "alt": "A map showing the path of Hurricane Isaias, and subsequent streamflow percentiles, precipitation and flooding in the area.",
+            "thumbnail": "water-viz-hurricane-isaias-thumbnail.png"
+          },
+          "links": {
+            "code": "https://github.com/DOI-USGS/storm-flood-viz",
+            "external": "https://www.usgs.gov/media/videos/hurricane-isaias-animation-usgs-vizlab"
+          }
+        },
+        {
           "id": "hurricane-helene-2024",
           "title": "Hurricane Helene, 2024",
           "released": "07/29/2026",
